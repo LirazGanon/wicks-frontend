@@ -3,12 +3,8 @@
 
 
     <section class="wap-editor">
-
         <editor :cmps="cmps" />
-
         <wap :wap="wap" />
-
-
     </section>
 
 

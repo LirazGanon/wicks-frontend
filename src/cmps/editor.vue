@@ -1,24 +1,25 @@
 <template>
     <h2>Types</h2>
+    <section>
+        <ul>
+            <li v-for="t in view.type">
+                <button @click="type = t.data">{{ t.data }}</button>
+            </li>
+        </ul>
 
-    <ul>
-        <li v-for="t in view.type">
-            <button @click="type = t.data">{{ t.data }}</button>
-        </li>
-    </ul>
 
-
-    <cmp-preview :cmps="data" />
+        <editor-cmp-prev :cmps="data" />
+    </section>
 
 
 </template>
 <script>
-import cmpPreview from './cmp-preview.vue'
+import editorCmpPrev from './editor-cmp-prev.vue'
 
 export default {
     name: 'Editor',
     props: { cmps: Object },
-    components: { cmpPreview },
+    components: { editorCmpPrev },
     data() {
         return {
             view: {},

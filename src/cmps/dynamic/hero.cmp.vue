@@ -1,10 +1,11 @@
 <template>
-    <h2>hero-cmp</h2>
+      <h2>{{info.txt}}</h2>
+
 </template>
 <script>
 export default {
     name: 'dynamic-hero-cmp',
-    props: {},
+    props: { info: Object },
     components: {},
     data() {
         return {};

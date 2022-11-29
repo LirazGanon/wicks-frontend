@@ -6,7 +6,8 @@
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.layout" :key="item.id">
         <div class="draggable-item">
-          {{ item.info?.txt || 'puki' }}
+          <!-- {{item}} -->
+          <component :is="(item.type || 'headerCmp')" :info="item.info"/>
         </div>
       </Draggable>
     </Container>
@@ -25,7 +26,7 @@ import textCmp from './dynamic/text.cmp.vue'
 import footerCmp from './dynamic/footer.cmp.vue'
 export default {
   name: "wap",
-  components: { Draggable, Container, headerCmp,heroCmp,formCmp,textCmp,footerCmp },
+  components: { Draggable, Container, headerCmp, heroCmp, formCmp, textCmp, footerCmp },
   data() {
     return {
       view: {}

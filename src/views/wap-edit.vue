@@ -49,35 +49,35 @@ export default {
                 layout: [
                     {
                         id: "item-6",
-                        type: "Header",
+                        type: "headerCmp",
                         info:{
                             txt:'Im an Header'
                         }
                     },
                     {
                         id: "item-7",
-                        type: "Hero",
+                        type: "heroCmp",
                         info:{
                             txt:'Im an Hero'
                         }
                     },
                     {
                         id: "item-8",
-                        type: "Form",
+                        type: "formCmp",
                         info:{
                             txt:'Im a Form'
                         }
                     },
                     {
                         id: "item-9",
-                        type: "Text",
+                        type: "textCmp",
                         info:{
                             txt:'Im a Text'
                         }
                     },
                     {
                         id: "item-10",
-                        type: "Footer",
+                        type: "footerCmp",
                         info:{
                             txt:'Im a Footer'
                         }

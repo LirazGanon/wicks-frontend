@@ -1,10 +1,11 @@
 <template>
-    <h2>footer-cmp</h2>
+    <h2>{{info.txt}}</h2>
+
 </template>
 <script>
 export default {
     name: 'dynamic-footer-cmp',
-    props: {},
+    props: { info: Object },
     components: {},
     data() {
         return {};

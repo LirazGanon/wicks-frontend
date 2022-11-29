@@ -1,10 +1,12 @@
 <template>
-    <h2>text-cmp</h2>
+       <h2>{{info.txt}}</h2>
+
+
 </template>
 <script>
 export default {
     name: 'dynamic-text-cmp',
-    props: {},
+    props: { info: Object },
     components: {},
     data() {
         return {};

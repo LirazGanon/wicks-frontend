@@ -6,6 +6,7 @@
           {{wap.name}}
         </p>
         <p>
+          
           {{wap.desc}}
         </p>
         <button @click="removeWap(wap._id)">x</button>
@@ -28,8 +29,9 @@
 <script>
 import {showErrorMsg, showSuccessMsg} from '../services/event-bus.service'
 import {wapService} from '../services/wap.service.local'
-import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/wap.store'
+import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/modules/wap.store'
 export default {
+  name:'wap-app',
   data() {
     return {
       wapToAdd: wapService.getEmptyWap()

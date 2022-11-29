@@ -9,7 +9,7 @@
 <script>
 
 
-import { store } from './store/store'
+import { store } from './store'
 import appHeader from './cmps/app-header.vue'
 import userMsg from './cmps/user-msg.vue'
 import { userService } from './services/user.service'

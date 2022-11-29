@@ -30,6 +30,7 @@ import {showErrorMsg, showSuccessMsg} from '../services/event-bus.service'
 import {wapService} from '../services/wap.service.local'
 import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/wap.store'
 export default {
+  name:'wap-app',
   data() {
     return {
       wapToAdd: wapService.getEmptyWap()

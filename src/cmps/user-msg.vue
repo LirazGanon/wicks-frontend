@@ -9,6 +9,7 @@
 import { eventBus, SHOW_MSG } from "../services/event-bus.service.js"
 
 export default {
+  name:'user-msg',
   created() {
     eventBus.on(SHOW_MSG, (msg) => {
       this.msg = msg

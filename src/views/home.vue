@@ -3,6 +3,8 @@
     <h1>Home Page</h1>
     <h5 class="text-center">
       Powered up Frontend 
+      <span class="material-symbols-outlined">search</span>
+
     </h5>
     <img alt="Vue logo" src="@/assets/logo.png">
   </section>

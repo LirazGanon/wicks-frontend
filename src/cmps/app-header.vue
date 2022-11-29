@@ -3,10 +3,12 @@
     <nav class="flex flex.align-center">
       <router-link to="/">
         <span role="img" aria-label="logo">
-        <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
+          <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
         </span>
       </router-link>
       <router-link to="/wap">Waps</router-link>
+      
+      <router-link :to="`/wap/edit/` + 123">WapsEdit</router-link>
       <router-link to="/review">Reviews</router-link>
       <router-link to="/chat">Chat</router-link>
       <router-link to="/login">Login / Signup</router-link>
@@ -21,6 +23,9 @@
   </header>
 </template>
 <script>
+
+// TODO: remember the wap id
+
 export default {
   computed: {
     loggedInUser() {

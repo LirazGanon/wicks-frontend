@@ -1,6 +1,5 @@
 <template>
-       <h2>{{info.txt || 'header'}}</h2>
-
+       <h2>{{info?.txt || 'header'}}</h2>
 </template>
 <script>
 export default {

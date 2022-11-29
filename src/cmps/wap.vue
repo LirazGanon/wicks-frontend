@@ -6,7 +6,6 @@
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.layout" :key="item.id">
         <div class="draggable-item">
-          <!-- {{item}} -->
           <component :is="(item.type || 'headerCmp')" :info="item.info"/>
         </div>
       </Draggable>

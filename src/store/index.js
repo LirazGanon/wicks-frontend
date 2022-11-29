@@ -1,8 +1,8 @@
 import Vuex from 'vuex'
 
-import { userStore } from './user.store.js'
-import { wapStore } from './wap.store.js'
-import { reviewStore } from './review.store.js'
+import { userStore } from './modules/user.store.js'
+import { wapStore } from './modules/wap.store.js'
+import { reviewStore } from './modules/review.store.js'
 
 export const store = Vuex.createStore({
   strict: true,

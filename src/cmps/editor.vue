@@ -94,7 +94,7 @@ export default {
                 data: this.type + ` ${i}`
             }))
             this.data = { ...cmps }
-            console.log('cmps:', this.data)
+            // console.log('cmps:', this.data)
         }
     },
     computed: {

@@ -72,7 +72,7 @@ export default {
       return Date.now() / 1500
     },
     onDragStart(...args) {
-      console.log(args);
+      // console.log(args);
     },
 
   },

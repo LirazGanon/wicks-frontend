@@ -2,7 +2,7 @@
     <h2>wap-edit</h2>
 
 
-    <section class="wap-editor">
+    <section class="wap-editor flex">
         <editor :cmps="cmps" />
         <wap :wap="wap" />
     </section>

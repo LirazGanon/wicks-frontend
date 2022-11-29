@@ -1,14 +1,28 @@
 <template>
-    <h2>Types</h2>
-    <section>
-        <ul>
-            <li v-for="t in view.type">
-                <button @click="type = t.data">{{ t.data }}</button>
-            </li>
-        </ul>
+    <section class="main-editor">
+
+        <!-- CMPS ADDITIONS -->
+        <section>
+            <span class="material-symbols-outlined">
+                add_circle
+            </span>
+            <ul>
+                <li v-for="t in view.type">
+                    <button @click="type = t.data">{{ t.data }}</button>
+                </li>
+            </ul>
 
 
-        <editor-cmp-prev :cmps="data" />
+            <editor-cmp-prev :cmps="getData" />
+        </section>
+
+
+        <!-- THEME PICKER -->
+
+
+
+        <!-- ACTUAL CMP EDITOR -->
+
     </section>
 
 

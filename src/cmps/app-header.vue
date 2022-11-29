@@ -27,6 +27,7 @@
 // TODO: remember the wap id
 
 export default {
+  name:'main-header',
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser

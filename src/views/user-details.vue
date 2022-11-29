@@ -23,6 +23,8 @@
 // import {userService} from '../services/user.service'
 
 export default {
+  name:'user-details',
+
   data() {
     return {
       // user: null

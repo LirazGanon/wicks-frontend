@@ -1,12 +1,64 @@
 <template>
-    <h2>Types</h2>
-    <section>
-        <ul>
-            <li v-for="t in view.type">
-                <button @click="type = t.data">{{ t.data }}</button>
-            </li>
-            <editor-cmp-prev :cmps="data" />
-        </ul>
+    <section class="main-editor">
+
+        <!-- CMPS ADDITIONS -->
+        <section class="flex">
+            <button class="material-symbols-outlined" title="Add Section" @click="active = 'cmps'">
+                add_circle
+            </button>
+
+            <section v-if="active === 'cmps'">
+
+
+                <ul>
+                    <li v-for="t in view.type" :key="t.id">
+                        <button @click="type = t.data">{{ t.data }}</button>
+                    </li>
+                </ul>
+
+
+                <editor-cmp-prev :cmps="getData" />
+            </section>
+
+        </section>
+
+
+        <!-- THEME PICKER -->
+        <section class="flex">
+            <button class="material-symbols-outlined" title="Pick Palette" @click="active = 'palette'">
+                palette
+            </button>
+
+            <ul v-if="active === 'palette'">
+                <li v-for="p in 5"  >
+                    <button>
+                        חשוכי
+                    </button>
+                </li>
+            </ul>
+
+
+        </section>
+
+
+        <!-- ACTUAL CMP EDITOR -->
+
+        <section class="flex">
+
+            <button class="material-symbols-outlined" title="Edit" @click="active = 'edit'">
+                brush
+            </button>
+
+            <ul v-if="active === 'edit'">
+                <li v-for="p in 5">
+                    <button>
+                        options
+                    </button>
+                </li>
+            </ul>
+
+
+        </section>
 
 
     </section>
@@ -24,7 +76,8 @@ export default {
         return {
             view: {},
             type: null,
-            data: {}
+            data: {},
+            active: null
         };
     },
     created() {

@@ -2,7 +2,7 @@
     <h2>wap-edit</h2>
 
 
-    <section class="wap-editor">
+    <section class="wap-editor flex">
         <editor :cmps="cmps" />
         <wap :wap="wap" />
     </section>
@@ -30,7 +30,7 @@ export default {
                 },
                 {
                     "id": "item-3",
-                    "data": "FORUM"
+                    "data": "FORM"
                 },
                 {
                     "id": "item-4",
@@ -48,24 +48,39 @@ export default {
             wap: {
                 layout: [
                     {
-                        "id": "item-6",
-                        "data": "Draggable 2 - 1"
+                        id: "item-6",
+                        type: "Header",
+                        info:{
+                            txt:'Im an Header'
+                        }
                     },
                     {
-                        "id": "item-7",
-                        "data": "Draggable 2 - 2"
+                        id: "item-7",
+                        type: "Hero",
+                        info:{
+                            txt:'Im an Hero'
+                        }
                     },
                     {
-                        "id": "item-8",
-                        "data": "Draggable 2 - 3"
+                        id: "item-8",
+                        type: "Form",
+                        info:{
+                            txt:'Im a Form'
+                        }
                     },
                     {
-                        "id": "item-9",
-                        "data": "Draggable 2 - 4"
+                        id: "item-9",
+                        type: "Text",
+                        info:{
+                            txt:'Im a Text'
+                        }
                     },
                     {
-                        "id": "item-10",
-                        "data": "Draggable 2 - 5"
+                        id: "item-10",
+                        type: "Footer",
+                        info:{
+                            txt:'Im a Footer'
+                        }
                     }
                 ],
                 options: {

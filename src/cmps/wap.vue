@@ -6,7 +6,7 @@
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.layout" :key="item.id">
         <div class="draggable-item">
-          {{ item.data }}
+          {{ item.info?.txt || 'puki' }}
         </div>
       </Draggable>
     </Container>
@@ -18,10 +18,14 @@
   
 <script>
 import { Container, Draggable } from "vue3-smooth-dnd";
-
+import headerCmp from './dynamic/header.cmp.vue'
+import heroCmp from './dynamic/hero.cmp.vue'
+import formCmp from './dynamic/form.cmp.vue'
+import textCmp from './dynamic/text.cmp.vue'
+import footerCmp from './dynamic/footer.cmp.vue'
 export default {
   name: "wap",
-  components: { Draggable, Container },
+  components: { Draggable, Container, headerCmp,heroCmp,formCmp,textCmp,footerCmp },
   data() {
     return {
       view: {}
@@ -63,7 +67,7 @@ export default {
 
   },
   computed: {
-    wapA(){
+    wapA() {
       return this.$store.getters.wap
     }
   }

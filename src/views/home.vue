@@ -4,7 +4,7 @@
     <h5 class="text-center">
       Powered up Frontend 
     </h5>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="@/assets/logo.png">
   </section>
 
   

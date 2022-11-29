@@ -5,10 +5,10 @@
             <li v-for="t in view.type">
                 <button @click="type = t.data">{{ t.data }}</button>
             </li>
+            <editor-cmp-prev :cmps="data" />
         </ul>
 
 
-        <editor-cmp-prev :cmps="data" />
     </section>
 
 

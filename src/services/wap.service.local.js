@@ -73,7 +73,7 @@ function getEmptyWap() {
 
 
 // TEST DATA
-;(async ()=>{
-    await storageService.post(STORAGE_KEY, {name: 'Bake Shop', desc: 'Cookies for all'})
-    await storageService.post(STORAGE_KEY, {name: 'My Blog', desc: 'Posts for all'})
-})()
+// ;(async ()=>{
+//     await storageService.post(STORAGE_KEY, {name: 'Bake Shop', desc: 'Cookies for all'})
+//     await storageService.post(STORAGE_KEY, {name: 'My Blog', desc: 'Posts for all'})
+// })()

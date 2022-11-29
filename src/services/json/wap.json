@@ -1,0 +1,412 @@
+[
+    {
+      "_id": "5e28393890dd7201a06d4e4ghhhh4",
+      "name": "bakery",
+      "imgUrl": "https://i.ibb.co/kHCLLdn/v4951.png",
+      "type": "food",
+      "style": {},
+      "createdBy": {
+        "_id": "5e26e0b718a0891d4c995bgfhghh527",
+        "fullname": "Nadav Gonen",
+        "imgUrl": "img.jpg"
+      },
+      "usersData": {
+        "contacts": [
+          {
+            "email": "user@user.com",
+            "msg": "Please send me stuff",
+            "at": 123
+          }
+        ],
+        "signups": [
+          {
+            "email": "user@user.com",
+            "at": 123
+          }
+        ]
+      },
+      "theme": "calm",
+      "cmps": [
+        {
+          "id": "fhngh1",
+          "type": "wap-header",
+          "classes": [
+            "bakery-header",
+            "flex",
+            "justify-between",
+            "full",
+            "bakery-layout"
+          ],
+          "info": {
+            
+            "logo": {
+
+              "type": "txt",
+              "txt":"brun.",
+              "style": {}
+            },
+            "nav": {
+              "id": "wc05",
+              "type": "wap-nav",
+              "style": {},
+              "classes": ["bakery-nav"],
+              "info": {
+                "links": [
+                  {
+                    "type": "txt",
+                    "txt": "Story",
+                    "link": "#story",
+                    "style": {}
+                  },
+                  {
+                    "type": "txt",
+                    "txt": "Menu",
+                    "link": "#menu",
+                    "style": {}
+                  },
+                  {
+                    "type": "txt",
+                    "txt": "Contact",
+                    "link": "#contact",
+                    "style": {}
+                  },
+                  {
+                    "type": "txt",
+                    "txt": "Features",
+                    "link": "#features",
+                    "style": {}
+                  }
+                ]
+              }
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "gbfgg",
+          "type": "wap-hero",
+          "classes": ["betaa-hero", "full", "betaa-layout"],
+          "info": {
+            "heading": {
+              "type": "txt",
+              "txt": "Make your software better using the best solutions in one tool",
+              "style": {}
+            },
+            "subHeading": {
+              "type": "txt",
+              "txt": "Task tracking, customer support, and workflow management all wrapped up into one software tool your team and customers will love.",
+              "style": {}
+            },
+            "btns": [
+              {
+                "type": "btn",
+                "txt": "Start free trial",
+                "link": "#wc03",
+                "style": {}
+              },
+              {
+                "type": "btn",
+                "txt": "Learn more",
+                "link": "#wc03",
+                "style": {}
+              }
+            ],
+            "img": {
+              "type": "img",
+              "url": "https://i.ibb.co/b3dbfTs/625d80b8b75698210e93919d-Top-Section-Illustration.png",
+              "style": {}
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "jjyuh",
+          "type": "wap-container",
+          "classes": [
+            "betaa",
+            "betaa-container",
+            "betaa-capabilities",
+            "betaa-layout"
+          ],
+          "info": {
+            "cmps": [
+              {
+                "type": "wap-card",
+                "info": {
+                  "tag": {
+                    "type": "txt",
+                    "txt": "CAPABILITIES",
+                    "style": {}
+                  },
+                  "img": {
+                    "type": "img",
+                    "url": "https://i.ibb.co/7bKWtCz/145.png",
+                    "style": {}
+                  },
+                  "heading": {
+                    "type": "txt",
+                    "txt": "Overview of your progress and tasks",
+                    "style": {}
+                  },
+                  "subHeading": {
+                    "type": "txt",
+                    "txt": "Some metrics play an essential role to measure the pulse of a company’s customer service efficiency, while others are more evaluating if a brand has a best approach.",
+                    "style": {}
+                  },
+                  "list": [
+                    {
+                      "type": "txt",
+                      "style": {},
+                      "icon": "https://i.ibb.co/gJwr1v3/cogwheel-4.png",
+                      "txt": "Task"
+                    },
+                    {
+                      "type": "txt",
+                      "style": {},
+                      "icon": "https://i.ibb.co/xfCNDGg/envelope-4.png",
+                      "txt": "Messaging"
+                    },
+                    {
+                      "type": "txt",
+                      "style": {},
+                      "icon": "https://i.ibb.co/hgRTZ96/growth-4.png",
+                      "txt": "Results"
+                    },
+                    {
+                      "type": "txt",
+                      "style": {},
+                      "icon": "https://i.ibb.co/NW4JM8g/task-4-1.png",
+                      "txt": "Support"
+                    }
+                  ]
+                },
+                "style": {}
+              }
+            ]
+          },
+          "style": {}
+        },
+        {
+          "id": "gbgty42",
+          "classes": ["betaa-txt", "betaa-layout"],
+          "type": "wap-text",
+          "info": {
+            "tag": {
+              "type": "txt",
+              "txt": "basic features",
+              "style": {}
+            },
+            "heading": {
+              "type": "txt",
+              "txt": "Tool for every kind of business",
+              "style": {}
+            },
+            "subHeading": {
+              "type": "txt",
+              "txt": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+              "style": {}
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "mukjyu6584",
+          "type": "wap-container",
+          "classes": ["betaa-container", "betaa-features", "betaa-layout"],
+          "info": {
+            "cmps": [
+              {
+                "id": "wc04gfbg21g",
+                "classes": ["betaa"],
+                "type": "wap-card",
+                "info": {
+                  "img": {
+                    "type": "img",
+                    "url": "https://i.ibb.co/mHtHp6b/Card-01.png",
+                    "style": {}
+                  },
+                  "heading": {
+                    "type": "txt",
+                    "txt": "Startups",
+                    "style": {}
+                  },
+                  "subHeading": {
+                    "type": "txt",
+                    "txt": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit minus.",
+                    "style": {}
+                  },
+                  "list": []
+                },
+                "style": {}
+              },
+              {
+                "id": "wc04hjjhvcb55",
+                "classes": ["betaa", "betaa-layout"],
+                "type": "wap-card",
+                "info": {
+                  "img": {
+                    "type": "img",
+                    "url": "https://i.ibb.co/LSPP6s3/Card-02.png",
+                    "style": {}
+                  },
+                  "heading": {
+                    "type": "txt",
+                    "txt": "Entrepreneurs",
+                    "style": {}
+                  },
+                  "subHeading": {
+                    "type": "txt",
+                    "txt": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit minus.",
+                    "style": {}
+                  },
+                  "list": []
+                },
+                "style": {}
+              },
+              {
+                "id": "mhn25212",
+                "classes": ["betaa", "betaa-layout"],
+                "type": "wap-card",
+                "info": {
+                  "img": {
+                    "type": "img",
+                    "url": "https://i.ibb.co/Lr1HMz4/Card-03.png",
+                    "style": {}
+                  },
+                  "heading": {
+                    "type": "txt",
+                    "txt": "Employees",
+                    "style": {}
+                  },
+                  "subHeading": {
+                    "type": "txt",
+                    "txt": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit minus.",
+                    "style": {}
+                  },
+                  "list": []
+                },
+                "style": {}
+              }
+            ],
+            "style": {}
+          },
+          "style": {}
+        },
+        {
+          "id": "wc0554njj",
+          "classes": ["betaa-contact", "full", "betaa-layout"],
+          "type": "wap-contact",
+          "info": {
+            "heading": {
+              "type": "txt",
+              "txt": "Contact us",
+              "style": {}
+            },
+            "form": {
+              "type": "form",
+              "inputs": [
+                {
+                  "type": "text",
+                  "placeholder": "name"
+                },
+                {
+                  "type": "email",
+                  "placeholder": "email"
+                }
+              ],
+              "textarea": {
+                "placeholder": "Message"
+              },
+              "btn": {
+                "type": "submit",
+                "txt": "submit"
+              },
+              "style": {}
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "mfgnih987",
+          "classes": ["betaa-review", "betaa-layout"],
+          "type": "wap-review",
+          "info": {
+            "img": {
+              "type": "img",
+              "url": "https://i.ibb.co/1rWVn2F/Image.png",
+              "style": {}
+            },
+            "text": {
+              "type": "txt",
+              "txt": "\"It is really refreshing to work with this software which is truly helpful in the client’s preferences.\"",
+              "style": {}
+            },
+            "author": {
+              "type": "txt",
+              "txt": "Rebecca Calderon, ",
+              "style": {}
+            },
+            "role": {
+              "type": "txt",
+              "txt": "Head of marketing, Apple Inc.",
+              "style": {}
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "wc05jjjj4",
+          "classes": ["betaa-txt", "betaa-trial", "betaa-layout"],
+          "type": "wap-text",
+          "info": {
+            "heading": {
+              "txt": "Improve your business and make your work easy",
+              "type": "txt",
+              "style": {}
+            },
+            "subHeading": {
+              "txt": "Start free trial",
+              "type": "txt",
+              "style": {}
+            }
+          },
+          "style": {}
+        },
+        {
+          "id": "sc599966",
+          "classes": ["betaa-footer", "full", "betaa-layout"],
+          "type": "wap-footer",
+          "info": {
+            "logoImg": {
+              "type": "img",
+              "url": "https://i.ibb.co/k9KJG2b/footer-Illustration.png",
+              "style": {}
+            },
+            "row1": {
+              "type": "txt",
+              "txt": "Contact us",
+              "texts": ["2307 Beverley Rd, New York", "office@betaa.com"],
+              "style": {}
+            },
+            "row2": {
+              "type": "txt",
+              "txt": "",
+              "texts": [],
+              "style": {}
+            },
+            "copyright": {
+              "type": "txt",
+              "txt": "copyright © 2022 by BETAA, Inc. All rights reserved.",
+              "style": {}
+            }
+          },
+          "style": {}
+        }
+      ],
+      "isPublic": true
+    }
+  ]
+  
+  
+  
+  

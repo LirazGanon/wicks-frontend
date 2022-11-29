@@ -2,7 +2,7 @@
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
-
+import defaultWaps from './json/wap.json' assert{type: 'json'}
 
 
 const STORAGE_KEY = 'wap'
@@ -18,16 +18,13 @@ export const wapService = {
 window.cs = wapService
 
 
-async function query(filterBy = { txt: '', desc: '' }) {
+async function query() {
     var waps = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        waps = waps.filter(wap => regex.test(wap.name) || regex.test(wap.desc))
+    if (!waps || !waps.length) {
+        waps = defaultWaps
+        await storageService.post(STORAGE_KEY, waps[0])
     }
-    if (filterBy.desc) {
-        waps = waps.filter(wap => wap.desc <= filterBy.desc)
-    }
-    return waps
+    return await storageService.query(STORAGE_KEY)
 }
 
 function getById(wapId) {
@@ -76,6 +73,6 @@ function getEmptyWap() {
 
 // TEST DATA
 // ;(async ()=>{
-//     await storageService.post(STORAGE_KEY, {name: 'Bake Shop', desc: 'Cookies for all'})
+    // await storageService.post(STORAGE_KEY, {name: 'Bake Shop', desc: 'Cookies for all'})
 //     await storageService.post(STORAGE_KEY, {name: 'My Blog', desc: 'Posts for all'})
 // })()

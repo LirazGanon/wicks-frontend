@@ -1,22 +1,8 @@
 <template>
   <div class="container home">
-    <ul class="wap-list">
-      <li v-for="wap in waps" :key="wap._id">
-        <p>
-          {{wap.name}}
-        </p>
-        <p>
-          
-          {{wap.desc}}
-        </p>
-        <button @click="removeWap(wap._id)">x</button>
-        <button @click="updateWap(wap)">Update</button>
-        <hr />
-        <button @click="addWapMsg(wap._id)">Add wap msg</button>
-        <button @click="printWapToConsole(wap)">Print msgs to console</button>
 
-      </li>
-    </ul>
+    <wap-list @removeWap="removeWap" :waps="waps" />
+
     <hr />
     <form @submit.prevent="addWap()">
       <h2>Add wap</h2>
@@ -27,11 +13,16 @@
 </template>
 
 <script>
-import {showErrorMsg, showSuccessMsg} from '../services/event-bus.service'
-import {wapService} from '../services/wap.service.local'
+import wapList from '../cmps/wap-list.vue'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { wapService } from '../services/wap.service.local'
 import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/modules/wap.store'
+
 export default {
-  name:'wap-app',
+  name: 'wap-app',
+  components: {
+    wapList
+  },
   data() {
     return {
       wapToAdd: wapService.getEmptyWap()
@@ -46,37 +37,38 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch({type: 'loadWaps'})
+    this.$store.dispatch({ type: 'loadWaps' })
   },
   methods: {
     async addWap() {
       try {
-        await this.$store.dispatch({type: 'addWap', wap: this.wapToAdd})
+        await this.$store.dispatch({ type: 'addWap', wap: this.wapToAdd })
         showSuccessMsg('Wap added')
         this.wapToAdd = wapService.getEmptyWap()
-      } catch(err) {
+      } catch (err) {
         console.log(err)
         showErrorMsg('Cannot add wap')
       }
     },
     async removeWap(wapId) {
+      console.log(wapId)
       try {
         await this.$store.dispatch(getActionRemoveWap(wapId))
         showSuccessMsg('Wap removed')
 
-      } catch(err) {
+      } catch (err) {
         console.log(err)
         showErrorMsg('Cannot remove wap')
       }
     },
     async updateWap(wap) {
       try {
-        wap = {...wap}
+        wap = { ...wap }
         wap.desc = prompt('New desc?', wap.desc)
         await this.$store.dispatch(getActionUpdateWap(wap))
         showSuccessMsg('Wap updated')
 
-      } catch(err) {
+      } catch (err) {
         console.log(err)
         showErrorMsg('Cannot update wap')
       }
@@ -85,7 +77,7 @@ export default {
       try {
         await this.$store.dispatch(getActionAddWapMsg(wapId))
         showSuccessMsg('Wap msg added')
-      } catch(err) {
+      } catch (err) {
         console.log(err)
         showErrorMsg('Cannot add wap msg')
       }
@@ -95,6 +87,6 @@ export default {
     }
   }
 
-  
+
 }
 </script>

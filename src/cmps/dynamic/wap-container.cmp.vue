@@ -1,10 +1,13 @@
 <template>
-        <h2>{{info.txt}}</h2>
+    <!-- <h2>{{ info }}</h2> -->
 
+    <section class="wap-container">
+        <h4>container-{{ info.heading }}</h4>
+    </section>
 </template>
 <script>
 export default {
-    name: 'dynamic-form-cmp',
+    name: 'dynamic-container-cmp',
     props: { info: Object },
     components: {},
     data() {

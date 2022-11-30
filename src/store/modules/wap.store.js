@@ -31,9 +31,6 @@ export const wapStore = {
     state: {
         waps: []
     },
-    getters: {
-        waps({waps}) { return waps },
-    },
     mutations: {
         setWaps(state, { waps }) {
             state.waps = waps

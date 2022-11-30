@@ -1,10 +1,14 @@
 <template>
-    <h2>{{info.txt}}</h2>
+
+    <section class="wap-hero">
+
+        <h4>HERO-{{info.heading.txt}}</h4>
+    </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-footer-cmp',
+    name: 'dynamic-hero-cmp',
     props: { info: Object },
     components: {},
     data() {

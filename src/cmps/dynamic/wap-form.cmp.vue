@@ -1,10 +1,14 @@
 <template>
-      <h2>{{info.txt}}</h2>
+    <section class="wap-form">
+        <pre>{{ info }}</pre>
+
+        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
+    </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-hero-cmp',
+    name: 'dynamic-form-cmp',
     props: { info: Object },
     components: {},
     data() {

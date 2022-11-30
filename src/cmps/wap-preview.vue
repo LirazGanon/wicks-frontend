@@ -1,21 +1,28 @@
 <template>
-  <li>
+  <!-- <li> -->
+  <section class="wap-preview">
+    <!-- <p> -->
+      <!-- {{ wap.desc }} -->
+    <!-- </p> -->
+    <img :src="wap.src" :alt="wap.name">
+    <!-- {{ wap._id }} -->
+    <section class="preview-btns-bg"> </section>
+      <!-- <button @click="$emit('removeWap', wap._id)">x</button> -->
+   
+    <div class="preview-btns">
+      <button @click="editWap(wap._id)">Edit</button>
+      <button @click="prevWap(wap._id)">Preview</button>
+    </div>
+    
+    <!-- <hr /> -->
     <p>
       {{ wap.name }}
     </p>
-    <p>
-      {{ wap.desc }}
-    </p>
-    <img :src="wap.src" :alt="wap.name">
-    {{wap._id}}
-    <button @click="$emit('removeWap', wap._id)">x</button>
-    <button @click="editWap(wap._id)">Edit</button>
-    <button @click="prevWap(wap._id)">Preview</button>
-    <hr />
-    <!-- <button @click="addWapMsg(wap._id)">Add wap msg</button>
+  </section>
+  <!-- <button @click="addWapMsg(wap._id)">Add wap msg</button>
       <button @click="printWapToConsole(wap)">Print msgs to console</button> -->
 
-  </li>
+  <!-- </li> -->
 
 </template>
 

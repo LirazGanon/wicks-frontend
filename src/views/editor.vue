@@ -1,22 +1,22 @@
 <template>
-    <h2>wap-edit</h2>
-
-
-    <section class="wap-editor flex">
-        <editor-side :cmps="cmps" />
-        <editor-wap/>
-    </section>
-
+    <main class="edit-container flex full column">
+        <h2>wap-edit</h2>
+               
+        <section class="wap-editor flex">
+            <editor :cmps="cmps" />
+            <wap/>
+        </section>
+    </main>
 
 </template>
 <script>
-import editorWap from '../cmps/editor-wap.vue'
-import editorSide from '../cmps/editor-side.vue'
+import wap from '../cmps/wap.vue'
+import editor from '../cmps/editor.vue'
 
 export default {
     name: 'wap-edit',
     props: {},
-    components: {  editorSide, editorWap },
+    components: {  editor, wap },
     data() {
         return {
             cmps: {

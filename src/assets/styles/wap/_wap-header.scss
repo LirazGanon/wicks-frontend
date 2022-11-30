@@ -2,13 +2,20 @@
     width: clamp(10px, 100%, 100%);
     
     
+
     &.bakery{
-        // background: ;
+        background: $bakery-pr-clr;
         
         .wap-logo {
             text-transform: uppercase;
             color: $clr6;
         }
 
+    }
+
+    &.cars{
+        .wap-logo{
+            color: green;
+        }
     }
 }

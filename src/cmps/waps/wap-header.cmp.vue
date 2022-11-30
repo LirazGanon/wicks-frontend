@@ -8,8 +8,6 @@
         </div>
         <!-- <pre>{{info}}</pre> -->
 
-
-
         <wap-nav :nav="info.nav" />
 
 

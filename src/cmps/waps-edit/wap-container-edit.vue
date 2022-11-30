@@ -1,14 +1,14 @@
 <template>
-    <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
+    <!-- <h2>{{ info }}</h2> -->
+
+    <section class="wap-container">
+        <h4>container-{{ cmp.info.heading }}</h4>
     </section>
-
-
 </template>
 <script>
 export default {
-    name: 'dynamic-gallery-cmp',
-    props: { info: Object },
+    name: 'dynamic-container-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

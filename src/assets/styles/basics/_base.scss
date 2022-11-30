@@ -23,19 +23,15 @@ h2,
 h3,
 h4,
 h5,
-h6
- {
-    font-family: caveat;
-    margin: 0 ;
-    line-height: 1;
+h6 {
+    margin: 0;
 }
 
-ul{
+ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-
 
 // img {
 //     width: 100%;
@@ -55,8 +51,7 @@ a:hover {
     text-decoration: underline;
 }
 
-
-.material-symbols-outlined{
+.material-symbols-outlined {
     user-select: none;
     cursor: pointer;
 }

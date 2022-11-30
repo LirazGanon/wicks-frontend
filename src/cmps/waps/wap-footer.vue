@@ -1,14 +1,16 @@
 <template>
-    <!-- <h2>{{ info }}</h2> -->
-
-    <section class="wap-container">
-        <h4>container-{{ info.heading }}</h4>
+    <section class="wap-footer">
+       <pre>
+        {{ cmp }}
+       </pre>
+        <h4>footer-{{ cmp.info.logo.txt}}</h4>
     </section>
+
 </template>
 <script>
 export default {
-    name: 'dynamic-container-cmp',
-    props: { info: Object },
+    name: 'dynamic-footer-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

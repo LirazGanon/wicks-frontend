@@ -1,15 +1,15 @@
 <template>
+    <section class="wap-form">
+        <pre>{{ cmp }}</pre>
 
-    <section class="wap-hero">
-
-        <h4>HERO-{{info.heading.txt}}</h4>
+        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
     </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-hero-cmp',
-    props: { info: Object },
+    name: 'dynamic-form-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

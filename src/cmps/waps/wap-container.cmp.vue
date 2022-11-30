@@ -1,8 +1,9 @@
 <template>
-    <!-- <h2>{{ info }}</h2> -->
+    <h4>container- {{ info.id }} </h4>
+
+    <pre>{{info}}</pre>
 
     <section class="wap-container">
-        <h4>container-{{ info.heading }}</h4>
     </section>
 </template>
 <script>

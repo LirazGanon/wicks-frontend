@@ -91,7 +91,7 @@
 						"style": {}
 					},
 					"btns": [],
-					"bcImg": {
+					"bgImg": {
 						"type": "img",
 						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
 						"style": {}

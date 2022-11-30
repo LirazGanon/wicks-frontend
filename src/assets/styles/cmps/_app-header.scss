@@ -1,5 +1,4 @@
 header {
-    background-color: $clr4;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -29,23 +28,5 @@ header {
         }
     }
 
-    nav {
-        // background-color: $clr4;
-        padding: 5px 0;
-        > a{
-            display: flex;
-            align-items: center;
-        }
-        .logo{
-            height: 60px;
-        }
-        a:not(:first-child) {
-            border-top: 1px solid $clr1;
-            padding: 0 5px;
-            margin: 10px;
-        }
-        .active {
-            color: $clr1;
-        }
-    }
+   
 }

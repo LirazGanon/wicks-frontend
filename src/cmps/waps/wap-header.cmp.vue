@@ -1,15 +1,17 @@
 <template>
-    <header class="wap-header bakery">
+    <header class="wap-header bakery main-container ">
+        <section class="flex space-between">
 
 
-        <div class="wap-logo flex align-center">
-            <img :src="info.logo?.img" alt="" v-if="info.logo.img">
-            <h4 v-else>{{ info.logo.txt }}</h4>
-        </div>
-        <!-- <pre>{{info}}</pre> -->
+            <div class="wap-logo flex align-center">
+                <img :src="info.logo?.img" alt="" v-if="info.logo.img">
+                <h4 v-else>{{ info.logo.txt }}</h4>
+            </div>
+            <!-- <pre>{{info}}</pre> -->
 
-        <wap-nav :nav="info.nav" />
+            <wap-nav :nav="info.nav" />
 
+        </section>
 
     </header>
 </template>

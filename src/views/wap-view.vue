@@ -10,10 +10,8 @@
 
 
 
-            <pre>
-            {{ item.type }}
+            
             XXXXXXXXXXXXXXXX
-          </pre>
         </div>
     </div>
 

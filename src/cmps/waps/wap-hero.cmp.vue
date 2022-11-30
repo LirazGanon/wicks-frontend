@@ -2,7 +2,14 @@
 
     <section class="wap-hero">
 
-        <h4>HERO-{{info.heading.txt}}</h4>
+        <h1>{{info.heading.txt}}</h1>
+        <h6>{{info.subHeading.txt}}</h6>
+        <button v-for="btn in info.btns">
+            {{btn.txt}}
+        </button>
+        <pre>
+            {{info}}
+        </pre> 
     </section>
 
 </template>

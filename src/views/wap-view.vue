@@ -1,8 +1,8 @@
 <template>
 
 
-    <div v-for="item in view.cmps" :key="item.id">
-        <div class="draggable-item">
+    <div v-for="item in view.cmps" :key="item.id" class="">
+        <div class="main-layout ">
 
 
 
@@ -10,7 +10,7 @@
 
 
             <!-- <pre>{{item}}</pre> -->
-            
+
             XXXXXXXXXXXXXXXX
         </div>
     </div>
@@ -37,7 +37,7 @@ import { wapService } from '../services/wap.service.local.js'
 export default {
     name: 'variable',
     props: {},
-    components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter ,wapBgImg},
+    components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, wapBgImg },
     data() {
         return {
             view: {}

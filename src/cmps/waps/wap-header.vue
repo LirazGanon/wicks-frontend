@@ -1,5 +1,5 @@
 <template>
-    <header class="wap-header bakery main-container ">
+    <header class="wap-header bakery main-container full">
         <section class="flex space-between">
 
 

@@ -1,6 +1,7 @@
 <template>
       <!-- <pre>{{info}}</pre> -->
     <pre>
+        {{cmp.type}}
         {{cmp.info.cmps[0].type}}
         {{cmp.info.cmps[1].type}}
     </pre>

@@ -2,13 +2,13 @@
 	{
 		"_id": "5e28393890dd7201a06d4e4ghhhh4",
 		"name": "bakery",
-		"imgUrl": "https://i.ibb.co/kHCLLdn/v4951.png",
+		"src": "https://i.ibb.co/kHCLLdn/v4951.png",
 		"type": "food",
 		"style": {},
 		"createdBy": {
 			"_id": "5e26e0b718a0891d4c995bgfhghh527",
 			"fullname": "Nadav Gonen",
-			"imgUrl": "img.jpg"
+			"src": "img.jpg"
 		},
 		"usersData": {
 			"contacts": [
@@ -268,7 +268,8 @@
 				"info": {
 					"logo": {
 						"type": "txt",
-						"url": "Brun.",
+						"txt": "brun.",
+                        "src":"",
 						"style": {}
 					},
 					"row1": {

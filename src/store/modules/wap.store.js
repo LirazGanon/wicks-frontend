@@ -55,8 +55,8 @@ export const wapStore = {
             if (!wap.msgs) wap.msgs = []
             wap.msgs.push(msg)
         },
-        toggleLoading({ isLoading }) {
-            isLoading = !isLoading
+        toggleLoading(state) {
+            state.isLoading = !state.isLoading
         }
     },
     actions: {

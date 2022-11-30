@@ -3,8 +3,8 @@
     <ul v-if="waps"  class="wap-list">
       <wap-preview v-for="wap in waps" :key="wap._id" :wap="wap" @removeWap="remove" />
     </ul>
-    <section v-if="loading" class="skeleton">
-      <div class="skeleton-tuazaeqw532"></div>
+    <section v-if="loading" class="skeleton" >
+      <div v-for="n in 2" class="skeleton-tuazaeqw532"></div>
     </section>
   </section>
 </template>

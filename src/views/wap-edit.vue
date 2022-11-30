@@ -4,7 +4,7 @@
 
     <section class="wap-editor flex">
         <editor :cmps="cmps" />
-        <wap :wap="wap" />
+        <wap/>
     </section>
 
 
@@ -13,6 +13,7 @@
 import { Container, Draggable } from "vue3-smooth-dnd";
 import wap from '../cmps/wap.vue'
 import editor from '../cmps/editor.vue'
+
 export default {
     name: 'wap-edit',
     props: {},
@@ -46,53 +47,21 @@ export default {
                 }
             },
             wap: {
-                layout: [
-                    {
-                        id: "item-6",
-                        type: "headerCmp",
-                        info:{
-                            txt:'Im an Header'
-                        }
-                    },
-                    {
-                        id: "item-7",
-                        type: "heroCmp",
-                        info:{
-                            txt:'Im an Hero'
-                        }
-                    },
-                    {
-                        id: "item-8",
-                        type: "formCmp",
-                        info:{
-                            txt:'Im a Form'
-                        }
-                    },
-                    {
-                        id: "item-9",
-                        type: "textCmp",
-                        info:{
-                            txt:'Im a Text'
-                        }
-                    },
-                    {
-                        id: "item-10",
-                        type: "footerCmp",
-                        info:{
-                            txt:'Im a Footer'
-                        }
-                    }
-                ],
-                options: {
-                    "drop": true,
-                    "animate": true
-                }
+               
             }
         }
     },
-    created() { },
-    methods: {},
-    computed: {},
+    created() {
+    },
+    methods: {
+
+    },
+    computed: {
+        wapToEdit() {
+            return this.$store.getters.waps
+        },
+
+    },
     unmounted() { },
 }
 </script>

@@ -1,11 +1,13 @@
 <template>
-       <h2>{{info.txt}}</h2>
+    <section class="wap-gallery">
+        <h4>gallery-{{ info.imgs.length }}</h4>
+    </section>
 
 
 </template>
 <script>
 export default {
-    name: 'dynamic-text-cmp',
+    name: 'dynamic-gallery-cmp',
     props: { info: Object },
     components: {},
     data() {

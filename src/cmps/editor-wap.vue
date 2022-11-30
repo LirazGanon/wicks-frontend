@@ -8,16 +8,15 @@
       <Draggable v-for="item in view.cmps" :key="item.id">
         <div class="draggable-item">
 
-
-
-          <component :is="(item.type || 'wapHeader')" :cmp="item" />
-
-
-
+<!-- 
           <pre>
-            {{ item.type }}
+            {{ item }}
             XXXXXXXXXXXXXXXX
-          </pre>
+          </pre> -->
+          <component :is="(item.type || 'wap-header')" :cmp="item" />
+
+
+
         </div>
       </Draggable>
 
@@ -32,16 +31,16 @@
 <script>
 import { Container, Draggable } from "vue3-smooth-dnd";
 
-import wapHeader from './waps/wap-header.cmp.vue'
-import wapHero from './waps/wap-hero.cmp.vue'
-import wapForm from './waps/wap-form.cmp.vue'
-import wapContainer from './waps/wap-container.cmp.vue'
+import wapHeader from '../cmps/waps-edit/wap-header-edit.vue'
+import wapHero from '../cmps/waps-edit/wap-hero-edit.vue'
+import wapForm from '../cmps/waps-edit/wap-form-edit.vue'
+import wapContainer from '../cmps/waps-edit/wap-container-edit.vue'
 
-import wapGallery from './waps/wap-gallery.cmp.vue'
-import wapContact from './waps/wap-contact.cmp.vue'
-import wapReviews from './waps/wap-reviews.cmp.vue'
+import wapGallery from '../cmps/waps-edit/wap-gallery-edit.vue'
+import wapContact from '../cmps/waps-edit/wap-contact-edit.vue'
+import wapReviews from '../cmps/waps-edit/wap-reviews-edit.vue'
 
-import wapFooter from './waps/wap-footer.cmp.vue'
+import wapFooter from '../cmps/waps-edit/wap-footer-edit.vue'
 import appHeader from "./app-header.vue";
 
 

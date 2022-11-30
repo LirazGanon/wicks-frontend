@@ -1,16 +1,14 @@
 <template>
-    <section class="wap-footer">
-       <!-- <pre>
-        {{ info }}
-       </pre> -->
-        <h4>footer-{{ info.logo.url }}</h4>
+    <section class="wap-reviews">
+        <!-- <pre>{{info}}</pre> -->
+        <h4>reviews-{{ cmp.info.heading.txt }}</h4>
     </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-footer-cmp',
-    props: { info: Object },
+    name: 'dynamic-review-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

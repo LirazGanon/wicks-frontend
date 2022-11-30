@@ -1,15 +1,14 @@
 <template>
-    <section class="wap-form">
-        <pre>{{ info }}</pre>
-
-        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
+    <section class="wap-gallery">
+        <h4>gallery-{{ cmp.info.imgs.length }}</h4>
     </section>
+
 
 </template>
 <script>
 export default {
-    name: 'dynamic-form-cmp',
-    props: { info: Object },
+    name: 'dynamic-gallery-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

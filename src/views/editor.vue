@@ -2,14 +2,21 @@
     <main class="edit-container flex full column">
 
         <h2>wap-edit</h2>
-        
-        
+
+
         <section class="wap-editor flex">
-            <editor-side :cmps="cmps" />
-            <editor-wap/>
+            <editor-side :cmps="cmps" v-if="cmps" />
+            <editor-wap />
         </section>
-        
+
+        <!-- <pre>
+            {{cmps}}
+        </pre> -->
+
     </main>
+
+    <button @click="puki">asdasd</button>
+
 </template>
 
 <script>
@@ -19,49 +26,26 @@ import editorSide from '../cmps/editor-side.vue'
 export default {
     name: 'wap-edit',
     props: {},
-    components: {  editorSide, editorWap },
+    components: { editorSide, editorWap },
     data() {
         return {
-            cmps: {
-                type: [{
-                    "id": "item-1",
-                    "data": "HEADER"
-                },
-                {
-                    "id": "item-2",
-                    "data": "HERO"
-                },
-                {
-                    "id": "item-3",
-                    "data": "FORM"
-                },
-                {
-                    "id": "item-4",
-                    "data": "TEXT"
-                },
-                {
-                    "id": "item-5",
-                    "data": "FOOTER"
-                }],
-                options: {
-                    "drop": false,
-                    "animate": true
-                }
-            },
-            wap: {
-               
-            }
+
         }
     },
     created() {
     },
     methods: {
-
+        puki() {
+            console.log(this.$store.getters.cmps);
+        }
     },
     computed: {
         wapToEdit() {
             return this.$store.getters.waps
         },
+        cmps() {
+            return this.$store.getters.cmps
+        }
 
     },
     unmounted() { },

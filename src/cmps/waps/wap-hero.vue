@@ -3,16 +3,14 @@
     <section class="wap-hero bakery">
 
         <h1>{{ cmp.info.heading.txt }}</h1>
-        <h6>{{ cmp.info.subHeading.txt }}</h6>
+        <p>{{ cmp.info.subHeading.txt }}</p>
         <button v-for="btn in cmp.info.btns">
             {{ cmp.btn.txt }}
         </button>
 
         <img :src="img.src" v-for="img in cmp.info.imgs" alt="" class="wap-img">
         <img :src="cmp.info.bgImg.src" alt="" class="wap-bg-img">
-        <pre>
-            {{ cmp.info }}
-        </pre>
+        
 
     </section>
 

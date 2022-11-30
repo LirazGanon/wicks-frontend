@@ -1,15 +1,14 @@
 <template>
+    <!-- <h2>{{ info }}</h2> -->
 
-    <section class="wap-hero">
-
-        <h4>HERO-{{info.heading.txt}}</h4>
+    <section class="wap-container">
+        <h4>container-{{ cmp.info.heading }}</h4>
     </section>
-
 </template>
 <script>
 export default {
-    name: 'dynamic-hero-cmp',
-    props: { info: Object },
+    name: 'dynamic-container-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

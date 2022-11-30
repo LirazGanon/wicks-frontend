@@ -18,7 +18,8 @@ import { userService } from './services/user.service'
 
 export default {
 
-  created() {
+  async created() {
+    await this.$store.dispatch({type: 'loadCmps'})
     console.log('Vue App created')
     const user = userService.getLoggedinUser()
     if (user) store.commit({ type: 'setLoggedinUser', user })

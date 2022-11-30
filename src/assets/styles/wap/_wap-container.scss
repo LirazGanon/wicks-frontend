@@ -1,0 +1,33 @@
+.wap-container {
+    
+    &.bakery {
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
+        padding: clamp(10px,5vw,50px);
+        &.img-card {
+            display: flex;
+            gap: 20px;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                aspect-ratio: 3/1.5;
+            }
+
+            .wap-card {
+                margin-inline-start: clamp(10px, 10vw, 150px);
+                margin-inline-end: clamp(10px, 10vw, 150px);
+
+                h1 {
+                    font-size: 2em;
+                    text-align: center;
+                }
+
+                p {}
+            }
+        }
+
+    }
+
+}

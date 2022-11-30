@@ -1,9 +1,6 @@
 <template>
     <section class="wap-img">
-<!-- <pre>
-    {{cmp}}
-</pre> -->
-        <h4>image - {{ cmp.id }}</h4>
+
         <img v-for="img in cmp.imgs" :src="img.src" alt="">
 
     </section>

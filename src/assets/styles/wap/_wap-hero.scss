@@ -28,7 +28,7 @@
 
         .wap-img {
             grid-area: bl;
-            width: clamp(16px, 100%, 500px);
+            width: clamp(16px, 20em, 500px);
             height: 100%;
             align-self: end;
             object-fit: cover;
@@ -38,9 +38,11 @@
 
         .wap-bg-img {
             grid-area: mbr;
-            width: clamp(16px, 100%, 550px);
+            width: clamp(16px, 50em, 550px);
+            // position: absolute;
             object-fit: cover;
             height: 100%;
+            overflow-y: auto;
             // transform: translateZ(10px) scale(2);
             // height: 100%;
         }

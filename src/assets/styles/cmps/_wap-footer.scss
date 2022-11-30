@@ -1,4 +1,13 @@
-.wap-footer{
-color:$bakery-bg ;
-background-color: $bakery-pr-clr;
+.wap-footer {
+    &.bakery {
+        color: $bakery-bg ;
+        background-color: $bakery-pr-clr;
+
+        p:nth-child(-n+2) {
+            background-color: blue;
+        }
+        p:nth-of-type(n+3):nth-of-type(-n+4) {
+            background-color: rgb(76, 76, 222);
+        }
+    }
 }

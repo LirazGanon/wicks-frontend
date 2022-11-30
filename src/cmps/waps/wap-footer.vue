@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-footer">
+    <section class="wap-footer bakery">
        <!-- <pre>
         {{ cmp.info.details }}
        </pre> -->

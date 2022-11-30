@@ -10,9 +10,9 @@
 
         <img :src="img.src" v-for="img in info.imgs" alt="" class="wap-img">
         <img :src="info.bgImg.src" alt="" class="wap-bg-img">
-        <pre>
+        <!-- <pre>
             {{ info }}
-        </pre>
+        </pre> -->
 
     </section>
 

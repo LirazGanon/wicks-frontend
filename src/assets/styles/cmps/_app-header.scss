@@ -2,6 +2,22 @@ header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background: #333;
+
+    .logo {
+        width: rem(150px);
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    a:not(:last-child){
+        margin-inline-end: 20px;
+    }
 
     .loggedin-user {
         // background-color: $clr1;
@@ -10,11 +26,11 @@ header {
         // border-radius: 1em;
         align-self: flex-end;
         color: whitesmoke;
-        *{
+        * {
             display: flex;
             align-items: center;
         }
-        span{
+        span {
             background-color: $clr2;
             padding: 4px;
             margin: 10px;
@@ -27,6 +43,4 @@ header {
             object-fit: cover;
         }
     }
-
-   
 }

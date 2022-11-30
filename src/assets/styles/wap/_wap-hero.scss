@@ -10,7 +10,8 @@
             "bl mbr";
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
-
+        perspective: 10px;
+        transform-style: preserve-3d;
         h1 {
             grid-area: t;
             font-size: clamp(16px, 2.5em, 64px);
@@ -33,12 +34,12 @@
         .wap-bg-img {
             grid-area: mbr;
             width: clamp(16px, 24em, 550px);
-
             object-fit: cover;
+            transform: translateZ(10px) scale(2);
         }
     }
 
     &.cars{
-        
+
     }
 }

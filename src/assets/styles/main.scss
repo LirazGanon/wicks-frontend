@@ -13,6 +13,8 @@
 @import "basics/skeleton";
 
 
+// pages
+@import "pages/edit";
 
 
 // Components
@@ -20,5 +22,7 @@
 @import "cmps/user-msg";
 @import "cmps/review-list";
 @import "cmps/wap-list";
+@import "cmps/wap-editor";
+@import "cmps/wap";
 
 

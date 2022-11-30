@@ -42,3 +42,9 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+
+//overflow
+
+.overflow{
+    overflow: hidden
+}

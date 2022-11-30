@@ -1,6 +1,6 @@
 <template>
 
-  <section v-if="view">
+  <section v-if="view" class="page-editor">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">

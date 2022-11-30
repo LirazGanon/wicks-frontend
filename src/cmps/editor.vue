@@ -1,54 +1,44 @@
 <template>
-    <section class="main-editor">
+    <section class="main-editor flex">
 
         <!-- CMPS ADDITIONS -->
-        <section class="flex">
-            <button class="material-symbols-outlined" title="Add Section" @click="active = 'cmps'">
+        <section class="flex column">
+            <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')">
                 add_circle
             </button>
+            <button class="material-symbols-outlined" title="Pick Palette" @click="active = 'palette'">
+                palette
+            </button>
+            <button class="material-symbols-outlined" title="Edit" @click="active = 'edit'">
+                brush
+            </button>
+        </section>
 
-            <section v-if="active === 'cmps'">
-
-
-                <ul>
-                    <li v-for="t in view.type" :key="t.id">
-                        <button @click="type = t.data">{{ t.data }}</button>
-                    </li>
-                </ul>
-
-
-                <editor-cmp-prev :cmps="getData" />
-            </section>
-
+        <section v-if="active === 'cmp'" class="options flex">
+            <ul>
+                <li v-for="t in view.type" :key="t.id">
+                    <button @click="type = t.data">{{ t.data }}</button>
+                </li>
+            </ul>
+            <editor-cmp-prev :cmps="getData" />
         </section>
 
 
         <!-- THEME PICKER -->
-        <section class="flex">
-            <button class="material-symbols-outlined" title="Pick Palette" @click="active = 'palette'">
-                palette
-            </button>
+        <section v-if="active === 'palette'" class="flex options">
 
-            <ul v-if="active === 'palette'">
-                <li v-for="p in 5"  >
+            <ul >
+                <li v-for="p in 5">
                     <button>
                         חשוכי
                     </button>
                 </li>
             </ul>
-
-
         </section>
 
 
         <!-- ACTUAL CMP EDITOR -->
-
         <section class="flex">
-
-            <button class="material-symbols-outlined" title="Edit" @click="active = 'edit'">
-                brush
-            </button>
-
             <ul v-if="active === 'edit'">
                 <li v-for="p in 5">
                     <button>
@@ -56,13 +46,8 @@
                     </button>
                 </li>
             </ul>
-
-
         </section>
-
-
     </section>
-
 
 </template>
 <script>
@@ -95,6 +80,9 @@ export default {
             }))
             this.data = { ...cmps }
             // console.log('cmps:', this.data)
+        },
+        toggleActive(val) {
+            this.active = this.active ? null : val
         }
     },
     computed: {

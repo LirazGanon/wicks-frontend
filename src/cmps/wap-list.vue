@@ -1,11 +1,12 @@
 <template>
   <section class="wap-list-container">
-    <ul v-if="waps"  class="wap-list">
-      <wap-preview v-for="wap in waps" :key="wap._id" :wap="wap" @removeWap="remove" />
-    </ul>
-    <section v-if="loading" class="skeleton" >
+    <section v-if="loading" class="skeleton">
       <div v-for="n in 2" class="skeleton-tuazaeqw532"></div>
     </section>
+
+    <ul v-else class="wap-list">
+      <wap-preview v-for="wap in waps" :key="wap._id" :wap="wap" @removeWap="remove" />
+    </ul>
   </section>
 </template>
 

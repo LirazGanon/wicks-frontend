@@ -1,12 +1,12 @@
 <template>
-    <h2>wap-edit</h2>
-
-
-    <section class="wap-editor flex">
-        <editor :cmps="cmps" />
-        <wap/>
-    </section>
-
+    <main class="edit-container flex full column">
+        <h2>wap-edit</h2>
+               
+        <section class="wap-editor flex">
+            <editor :cmps="cmps" />
+            <wap/>
+        </section>
+    </main>
 
 </template>
 <script>

@@ -6,7 +6,7 @@
     <p>
       {{ wap.desc }}
     </p>
-    <img :src="wap.imgUrl" :alt="wap.name">
+    <img :src="wap.src" :alt="wap.name">
     {{wap._id}}
     <button @click="$emit('removeWap', wap._id)">x</button>
     <button @click="editWap(wap._id)">Edit</button>

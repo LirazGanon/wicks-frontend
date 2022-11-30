@@ -7,9 +7,6 @@
 
 
             <component :is="(item.type || 'wapHeader')" :cmp="item" />
-
-
-            <!-- <pre>{{item}}</pre> -->
             
             XXXXXXXXXXXXXXXX
         </div>

@@ -159,7 +159,7 @@
 			},
 			{
 				"id": "gbgty42",
-				"classes": [],
+				"classes": ["card-gallery"],
 				"type": "wap-container",
 				"info": {
 					"cmps": [

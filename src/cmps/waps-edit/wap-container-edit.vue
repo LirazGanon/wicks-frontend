@@ -6,10 +6,13 @@
     </section>
 </template>
 <script>
+
+
+import wapGallery from './wap-gallery-edit.vue'
 export default {
     name: 'dynamic-container-cmp',
     props: { cmp: Object },
-    components: {},
+    components: { wapGallery },
     data() {
         return {};
     },

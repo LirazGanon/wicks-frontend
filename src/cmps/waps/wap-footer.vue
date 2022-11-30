@@ -4,8 +4,11 @@
         {{ cmp.info.details }}
        </pre> -->
        <!-- <h4>footer-{{ cmp.info.logo.txt}}</h4> -->
-       <p v-for="txt in cmp.info.details.texts">{{txt}}</p>
-       <p>{{cmp.info.logo.txt}}</p>
+    <div v-for="txts in cmp.info.details">
+        <p v-for="txt in txts">{{txt}}</p>
+        <pre>{{}}</pre>
+    </div>
+       <p class="bakery-footer-logo">{{cmp.info.logo.txt}}</p>
     </section>
 
 </template>

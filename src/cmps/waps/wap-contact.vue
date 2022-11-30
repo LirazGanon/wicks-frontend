@@ -1,7 +1,8 @@
 <template>
       <!-- <pre>{{info}}</pre> -->
     <pre>
-        {{cmp.info.texts}}
+        {{cmp.info.cmps[0].type}}
+        {{cmp.info.cmps[1].type}}
     </pre>
 
       <!-- <section class="wap-gallery">

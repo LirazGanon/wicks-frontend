@@ -1,9 +1,9 @@
 <template>
     <section class="wap-footer">
-       <!-- <pre>
-        {{ info }}
-       </pre> -->
-        <h4>footer-{{ cmp.info.logo.url }}</h4>
+       <pre>
+        {{ cmp }}
+       </pre>
+        <h4>footer-{{ cmp.info.logo.txt}}</h4>
     </section>
 
 </template>

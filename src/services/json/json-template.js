@@ -68,8 +68,13 @@
             // WAP-HERO-DOUBLE
 			{
 				"id": "gbfgg",
-				"type": "wap-hero-double",
+				"type": "wap-hero",
 				"classes": [],
+				"bgImg":{
+						"type": "img",
+						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
+						"style": {}
+					},
 				"info": {
 					"heading": {
 						"type": "txt",
@@ -83,16 +88,11 @@
 					},
 					"btns": [
 					],
-					"mainImg": {
-						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
-						"style": {}
-					},
-					"sideImg": {
+					"imgs":[ {
 						"type": "img",
 						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
 						"style": {}
-					}
+					}]
 				},
 				"style": {}
 			},
@@ -296,3 +296,11 @@
 		"isPublic": true
 	}
 ]
+
+// {
+// 	"id": "",
+// 	"type": "wap-img",
+// 	"classes": [],
+// 	"info": {},
+// 	"style": {}
+// }

@@ -30,14 +30,12 @@
 			{
 				"id": "fhngh1",
 				"type": "wap-header",
-				"classes": [
-				],
+				"classes": [],
 				"info": {
-
 					"logo": {
 						"type": "txt",
 						"txt": "brun.",
-                        "src":"",
+						"src": "",
 						"style": {}
 					},
 					"nav": {
@@ -79,7 +77,7 @@
 			},
 			{
 				"id": "gbfgg",
-				"type": "wap-hero-double",
+				"type": "wap-hero",
 				"classes": [],
 				"info": {
 					"heading": {
@@ -92,48 +90,65 @@
 						"txt": "500 Terry Francois Street San Francisco, CA 94158",
 						"style": {}
 					},
-					"btns": [
-					],
-					"mainImg": {
+					"btns": [],
+					"bcImg": {
 						"type": "img",
 						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
 						"style": {}
 					},
-					"sideImg": {
-						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
-						"style": {}
-					}
+					"imgs": [
+						{
+							"type": "img",
+							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
+							"style": {}
+						}
+					]
 				},
 				"style": {}
 			},
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
-				"classes": [
-				],
+				"classes": [],
 				"info": {
-					"imgs": [
+					"cmps": [
 						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+							"id": "jj4yugh",
+							"type": "wap-img",
+							"classes": [],
+							"imgs": [
+								{
+									"type": "img",
+									"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+									"style": {}
+								}
+							],
+							"info": {},
 							"style": {}
-						}
-					],
-					"heading": {
-						"type": "txt",
-						"txt": "Handcrafted Pastres, Made Locally",
-						"style": {}
-					},
-					"subHeading": {
-						"type": "txt",
-						"txt": "With traditional methods and the finest seasonal ingredients, we bake delicious, hand-crafted pastries.",
-						"style": {}
-					},
-					"btns": [
+						},
 						{
-							"type": "primery",
-							"txt": "Our story",
+							"id": "jj4yugh",
+							"type": "wap-card",
+							"classes": [],
+							"info": {
+								"heading": {
+									"type": "txt",
+									"txt": "Handcrafted Pastres, Made Locally",
+									"style": {}
+								},
+								"subHeading": {
+									"type": "txt",
+									"txt": "With traditional methods and the finest seasonal ingredients, we bake delicious, hand-crafted pastries.",
+									"style": {}
+								},
+								"btns": [
+									{
+										"type": "primery",
+										"txt": "Our story",
+										"style": {}
+									}
+								]
+							},
 							"style": {}
 						}
 					]
@@ -143,7 +158,7 @@
 			{
 				"id": "gbgty42",
 				"classes": [],
-				"type": "wap-container",
+				"type": "wap-card",
 				"info": {
 					"heading": {
 						"type": "txt",
@@ -205,35 +220,53 @@
 				"classes": [],
 				"type": "wap-contact",
 				"info": {
-					"heading": {
-						"type": "txt",
-						"txt": "We Deliver! Get BRUN'S Pastries to Your Doorstep",
-						"style": {}
-					},
-					"prgphs": [
+					"cmps": [
 						{
-							"type": "txt",
-							"txt": "Wherever you are, Our crust will follow you.",
+							"id": "jjcls435h",
+							"type": "wap-card",
+							"classes": [],
+							"info": {
+								"heading": {
+									"type": "txt",
+									"txt": "We Deliver! Get BRUN'S Pastries to Your Doorstep",
+									"style": {}
+								},
+								"texts": [
+									{
+										"type": "txt",
+										"txt": "Wherever you are, Our crust will follow you.",
+										"style": {}
+									},
+									{
+										"type": "txt",
+										"txt": "We deliver Mon-Sat from 9am to 6pm",
+										"style": {}
+									}
+								],
+								"btns": [
+									{
+										"type": "primery",
+										"txt": "Order Online",
+										"style": {}
+									}
+								]
+							},
 							"style": {}
 						},
 						{
-							"type": "txt",
-							"txt": "We deliver Mon-Sat from 9am to 6pm",
+							"id": "234msd09",
+							"type": "wap-img",
+							"classes": [],
+							"info": {
+								"img": {
+									"type": "img",
+									"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+									"style": {}
+								}
+							},
 							"style": {}
 						}
-					],
-					"btns": [
-						{
-							"type": "primery",
-							"txt": "Order Online",
-							"style": {}
-						}
-					],
-					"img": {
-						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-						"style": {}
-					}
+					]
 				},
 				"style": {}
 			},
@@ -247,7 +280,7 @@
 						"txt": "Rumor ha it",
 						"style": {}
 					},
-					"prgrphs": [
+					"texts": [
 						{
 							"type": "txt",
 							"txt": "“Relaxing space, good coffee and pastries - and the staff is lovely.”",
@@ -273,7 +306,6 @@
 							"style": {}
 						}
 					]
-
 				},
 				"style": {}
 			},
@@ -296,36 +328,53 @@
 				"classes": [],
 				"type": "wap-container",
 				"info": {
-
-					"heading": {
-						"type": "txt",
-						"txt": "Sneak Peek: BRUN Behind the Scenes",
-						"style": {}
-					},
-					"btns": [
+					"cmps": [
 						{
-							"type": "primery",
-							"txt": "Contact Brun",
-							"style": {}
-						}
-					],
-					"imgs": [
-						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
-							"txt": "",
-							"style": {}
-						},
-						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
-							"txt": "",
+							"id": "nxla87ej",
+							"type": "wap-card",
+							"classes": [],
+							"info": {
+								"heading": {
+									"type": "txt",
+									"txt": "Sneak Peek: BRUN Behind the Scenes",
+									"style": {}
+								},
+								"btns": [
+									{
+										"type": "primery",
+										"txt": "Contact Brun",
+										"style": {}
+									}
+								]
+							},
 							"style": {}
 						},
 						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
-							"txt": "",
+							"id": "nis7ej8",
+							"type": "wap-gallery",
+							"classes": [],
+							"info": {
+								"imgs": [
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
+										"txt": "",
+										"style": {}
+									},
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
+										"txt": "",
+										"style": {}
+									},
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
+										"txt": "",
+										"style": {}
+									}
+								]
+							},
 							"style": {}
 						}
 					]
@@ -340,19 +389,25 @@
 					"logo": {
 						"type": "txt",
 						"txt": "brun.",
-                        "src":"",
+						"src": "",
 						"style": {}
 					},
 					"row1": {
 						"type": "txt",
 						"txt": "",
-						"texts": ["500 Terry Francois Street", "San Francisco, CA 94158"],
+						"texts": [
+							"500 Terry Francois Street",
+							"San Francisco, CA 94158"
+						],
 						"style": {}
 					},
 					"row2": {
 						"type": "txt",
 						"txt": "",
-						"texts": ["123-456-7890", "info@mysite.com"],
+						"texts": [
+							"123-456-7890",
+							"info@mysite.com"
+						],
 						"style": {}
 					},
 					"copyright": {

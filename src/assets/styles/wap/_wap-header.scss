@@ -7,13 +7,14 @@
         .wap-logo {
             text-transform: uppercase;
             color: $clr6;
+            font-size: em(25px);
         }
 
         .wap-nav {
             font-size: rem(15px);
 
             a:not(:last-child) {
-                margin-inline-end: rem(24px) ;
+                margin-inline-end: rem(24px);
             }
         }
     }

@@ -1,5 +1,7 @@
 <template>
-    <h2>wap-bg-img</h2>
+    <section class="wap-bg-img">
+        <img :src="cmp.info.img.src" alt="">
+    </section>
 </template>
 <script>
 export default {

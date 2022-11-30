@@ -4,6 +4,7 @@ export const storageService = {
     post,
     put,
     remove,
+    postMany
 }
 
 function query(entityType, delay = 500) {
@@ -28,6 +29,13 @@ function post(entityType, newEntity) {
         return newEntity
     })
 }
+function postMany(entityType, newEntities) {
+    return query(entityType).then(entities => {
+      entities.push(...newEntities)
+      _save(entityType, entities)
+      return entities
+    })
+  }
 
 function put(entityType, updatedEntity) {
     updatedEntity = JSON.parse(JSON.stringify(updatedEntity))    

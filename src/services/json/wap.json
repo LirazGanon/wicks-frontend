@@ -109,7 +109,7 @@
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
-				"classes": [],
+				"classes": ["img-card"],
 				"info": {
 					"cmps": [
 						{
@@ -331,7 +331,7 @@
 			},
 			{
 				"id": "gbits42",
-				"classes": [],
+				"classes": ["card-gallery"],
 				"type": "wap-container",
 				"info": {
 					"cmps": [

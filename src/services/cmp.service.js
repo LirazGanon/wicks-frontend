@@ -24,7 +24,7 @@ async function query(filterBy = { txt: '', desc: '' }) {
     var cmps = await storageService.query(STORAGE_KEY)
     if (!cmps || !cmps.length) {
         cmps = defaultCmps
-        await storageService.post(STORAGE_KEY, cmps)
+        await storageService.postMany(STORAGE_KEY, cmps)
     }
     // if (filterBy.txt) {
     //     const regex = new RegExp(filterBy.txt, 'i')

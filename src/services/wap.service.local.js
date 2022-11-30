@@ -22,7 +22,7 @@ async function query() {
     var waps = await storageService.query(STORAGE_KEY)
     if (!waps || !waps.length) {
         waps = defaultWaps
-        await storageService.post(STORAGE_KEY, waps[0])
+        await storageService.postMany(STORAGE_KEY, waps)
     }
     return await storageService.query(STORAGE_KEY)
 }

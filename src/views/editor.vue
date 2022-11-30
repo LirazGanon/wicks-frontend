@@ -15,7 +15,7 @@
 
     </main>
 
-    <button @click="puki">asdasd</button>
+
 
 </template>
 
@@ -35,9 +35,7 @@ export default {
     created() {
     },
     methods: {
-        puki() {
-            console.log(this.$store.getters.cmps);
-        }
+
     },
     computed: {
         wapToEdit() {

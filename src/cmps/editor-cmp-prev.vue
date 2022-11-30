@@ -4,9 +4,12 @@
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => false"
       @drop="onDrop($event)">
-      <Draggable v-for="item in view" :key="item.id">
+      <Draggable v-for="item in cmps" :key="item.id">
         <div class="draggable-item">
-          {{ item }}
+        <pre>
+          {{item.type}}
+        </pre> 
+          XXXXXXXXXXXXX
         </div>
 
 
@@ -34,7 +37,7 @@ export default {
     cmps: Object,
   },
   created() {
-    this.view = { ...this.cmps }
+    this.view = [...this.cmps]
   },
   methods: {
     getShouldAcceptDrop(index, sourceContainerOptions, payload) {

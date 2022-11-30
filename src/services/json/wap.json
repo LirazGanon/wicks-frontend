@@ -109,7 +109,9 @@
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
-				"classes": ["img-card"],
+				"classes": [
+					"img-card"
+				],
 				"info": {
 					"cmps": [
 						{
@@ -331,7 +333,9 @@
 			},
 			{
 				"id": "gbits42",
-				"classes": ["card-gallery"],
+				"classes": [
+					"card-gallery"
+				],
 				"type": "wap-container",
 				"info": {
 					"cmps": [
@@ -398,17 +402,26 @@
 						"src": "",
 						"style": {}
 					},
-					"details": {
-						"type": "txt",
-						"txt": "",
-						"texts": [
-							"500 Terry Francois Street",
-							"San Francisco, CA 94158",
-							"123-456-7890",
-							"info@mysite.com"
-						],
-						"style": {}
-					},
+					"details": [
+						{
+							"type": "txt",
+							"txt": "",
+							"texts": [
+								"500 Terry Francois Street",
+								"San Francisco, CA 94158"
+							],
+							"style": {}
+						},
+						{
+							"type": "txt",
+							"txt": "",
+							"texts": [
+								"123-456-7890",
+								"info@mysite.com"
+							],
+							"style": {}
+						}
+					],
 					"socials": [
 						{}
 					],

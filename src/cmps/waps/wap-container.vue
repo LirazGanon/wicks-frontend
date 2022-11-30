@@ -1,25 +1,38 @@
 <template>
     <section>
         <h4>container- {{ cmp.id }} </h4>
-    
-        <!-- <pre>{{cmp.info}}</pre> -->
-    
+
+        <!-- <pre>{{ cmp.info }}</pre> -->
+
         <section class="wap-container">
-            <h4>container-{{ cmp.info.heading }}</h4>
+            <div v-for="childCmp in cmp.info.cmps">
+                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
+            </div>
+
         </section>
     </section>
 </template>
+
 <script>
+import wapImg from './wap-img.vue'
+import wapCard from './wap-card.vue'
+
 export default {
+
     name: 'dynamic-container-cmp',
     props: { cmp: Object },
-    components: {},
+    components: {
+        wapImg,
+        wapCard
+    },
     data() {
         return {};
     },
     created() { },
     methods: {},
-    computed: {},
+    computed: {
+    
+    },
     unmounted() { },
 };
 </script>

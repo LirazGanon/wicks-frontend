@@ -24,7 +24,6 @@
 @import "cmps/wap-list";
 @import "cmps/wap-preview";
 @import "cmps/wap-editor";
-@import "cmps/wap-footer";
 @import "cmps/wap";
 
 
@@ -32,7 +31,9 @@
 
 // Dynamic
 
+@import "wap/wap-footer";
 @import "wap/wap-header";
 @import "wap/wap-hero";
 @import "wap/wap-container";
 @import "wap/wap-bg-img";
+@import "wap/wap-reviews";

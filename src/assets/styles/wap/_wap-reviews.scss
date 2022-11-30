@@ -1,0 +1,35 @@
+.wap-reviews {
+    display: flex;
+
+    h4 {
+        flex-basis: 40%;
+    }
+
+
+    .reviews-container {
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+        gap:51px;
+
+        
+            div{
+                border-top: 1px solid black;
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            p:nth-of-type(2) {
+                font-style: italic;
+                font-size: smaller;
+            }
+    
+    }
+
+
+
+
+}

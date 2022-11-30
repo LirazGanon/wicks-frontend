@@ -1,8 +1,9 @@
 <template>
-    <section class="wap-card">
-        <pre>{{cmp}}</pre>
-        <h1>{{cmp.heading.txt}}</h1>
+    <section class="wap-card" >
         <h4>card - {{ cmp.id }}</h4>
+        <h1>{{ cmp.info.heading.txt }}</h1>
+        <p>{{ cmp.info.subHeading?.txt }}</p>
+        <button v-for="btn in cmp.info.btns">{{btn.txt}}</button>
     </section>
 
 </template>

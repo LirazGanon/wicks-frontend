@@ -2,9 +2,9 @@
     <section>
         <h4>container- {{ cmp.id }} </h4>
 
-        <!-- <pre>{{ cmp.info }}</pre> -->
+        <pre>{{cmp.class }}</pre>
 
-        <section class="wap-container">
+        <section class="wap-container" :class="cmp.class">
             <div v-for="childCmp in cmp.info.cmps">
                 <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
             </div>

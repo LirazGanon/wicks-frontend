@@ -1,30 +1,51 @@
 .wap-container {
-    
+  
     &.bakery {
-        @media (max-width: 500px) {
+        @media (max-width: 650px) {
             flex-direction: column;
         }
-        padding: clamp(10px,5vw,50px);
+
+        padding: clamp(10px, 5%, 50px);
+
         &.img-card {
             display: flex;
             gap: 20px;
+            * {
+                color: $text-primary;
+            }
 
             img {
                 object-fit: cover;
                 width: 100%;
-                aspect-ratio: 3/1.5;
+                aspect-ratio: 3/2;
+
+                @media (min-width: 650px) and (max-width: 950px) {
+                    aspect-ratio: 3/4;
+                }
             }
 
             .wap-card {
-                margin-inline-start: clamp(10px, 10vw, 150px);
-                margin-inline-end: clamp(10px, 10vw, 150px);
+                margin-inline-start: 2vw;
+                margin-inline-end: 2vw;
 
                 h1 {
-                    font-size: 2em;
-                    text-align: center;
+                    font-size: calc(15px + 1.5vw);
+                    margin-bottom: 1em;
+
                 }
 
-                p {}
+                p {
+                    margin-bottom: 2em;
+
+                }
+
+                button {
+                    padding: 20px 40px;
+                    font-size: 1em;
+                    background-color: transparent;
+                    border: 1px solid $text-primary;
+
+                }
             }
         }
 

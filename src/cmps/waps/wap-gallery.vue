@@ -2,7 +2,7 @@
     <section class="wap-gallery">
         <h4>gallery-{{ cmp.info.imgs.length }}</h4>
     </section>
-    <pre>{{cmp}}</pre>
+    <!-- <pre>{{cmp}}</pre> -->
 
 </template>
 <script>

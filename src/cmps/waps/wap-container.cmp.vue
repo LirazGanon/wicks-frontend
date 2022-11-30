@@ -1,10 +1,12 @@
 <template>
-    <h4>container- {{ cmp.info.id }} </h4>
-
-    <pre>{{cmp.info}}</pre>
-
-    <section class="wap-container">
-        <h4>container-{{ cmp.info.heading }}</h4>
+    <section>
+        <h4>container- {{ cmp.id }} </h4>
+    
+        <!-- <pre>{{cmp.info}}</pre> -->
+    
+        <section class="wap-container">
+            <h4>container-{{ cmp.info.heading }}</h4>
+        </section>
     </section>
 </template>
 <script>

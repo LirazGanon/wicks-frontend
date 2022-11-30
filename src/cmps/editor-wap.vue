@@ -36,7 +36,6 @@ import wapHero from '../cmps/waps-edit/wap-hero-edit.vue'
 import wapForm from '../cmps/waps-edit/wap-form-edit.vue'
 import wapContainer from '../cmps/waps-edit/wap-container-edit.vue'
 
-import wapGallery from '../cmps/waps-edit/wap-gallery-edit.vue'
 import wapContact from '../cmps/waps-edit/wap-contact-edit.vue'
 import wapReviews from '../cmps/waps-edit/wap-reviews-edit.vue'
 
@@ -48,7 +47,7 @@ import appHeader from "./app-header.vue";
 import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter, appHeader, wapBg },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBg },
   data() {
     return {
       view: {}

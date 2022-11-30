@@ -14,13 +14,17 @@
 import wapImg from './wap-img.vue'
 import wapCard from './wap-card.vue'
 
+import wapGallery from './wap-gallery.vue'
+
+
 export default {
 
     name: 'dynamic-container-cmp',
     props: { cmp: Object },
     components: {
         wapImg,
-        wapCard
+        wapCard,
+        wapGallery
     },
     data() {
         return {};

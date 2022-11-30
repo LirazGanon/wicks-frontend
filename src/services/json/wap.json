@@ -109,7 +109,7 @@
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
-				"classes": [],
+				"classes": ["img-card"],
 				"info": {
 					"cmps": [
 						{

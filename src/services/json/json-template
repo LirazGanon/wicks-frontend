@@ -27,13 +27,13 @@
 		},
 		"theme": "calm",
 		"cmps": [
+            // WAP HEADER
 			{
 				"id": "fhngh1",
 				"type": "wap-header",
 				"classes": [
 				],
 				"info": {
-
 					"logo": {
 						"type": "txt",
 						"txt": "brun.",
@@ -54,18 +54,6 @@
 									"style": {}
 								},
 								{
-									"type": "txt",
-									"txt": "Menu",
-									"link": "#menu",
-									"style": {}
-								},
-								{
-									"type": "txt",
-									"txt": "Contact",
-									"link": "#contact",
-									"style": {}
-								},
-								{
 									"type": "button",
 									"txt": "Order online",
 									"link": "#order",
@@ -77,6 +65,7 @@
 				},
 				"style": {}
 			},
+            // WAP-HERO-DOUBLE
 			{
 				"id": "gbfgg",
 				"type": "wap-hero-double",
@@ -107,6 +96,7 @@
 				},
 				"style": {}
 			},
+            // WAP-CONTAINER
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
@@ -140,31 +130,7 @@
 				},
 				"style": {}
 			},
-			{
-				"id": "gbgty42",
-				"classes": [],
-				"type": "wap-container",
-				"info": {
-					"heading": {
-						"type": "txt",
-						"txt": "Things we bake",
-						"style": {}
-					},
-					"subHeading": {
-						"type": "txt",
-						"txt": "We offer a variety of pastries. A unique collection of artisanal croissants, delicious cookies and classic cakes with a twists",
-						"style": {}
-					},
-					"btns": [
-						{
-							"type": "primery",
-							"txt": "See full menu",
-							"style": {}
-						}
-					]
-				},
-				"style": {}
-			},
+			// WAP-GALLERY
 			{
 				"id": "mukjyu6584",
 				"type": "wap-gallery",
@@ -200,9 +166,10 @@
 				},
 				"style": {}
 			},
+            // WAP-CONTACT
 			{
 				"id": "wc0554njj",
-				"classes": [],
+				"classes": ["betaa-contact", "full", "betaa-layout"],
 				"type": "wap-contact",
 				"info": {
 					"heading": {
@@ -237,6 +204,7 @@
 				},
 				"style": {}
 			},
+            // WAP-REVIEWS
 			{
 				"id": "mfgnih987",
 				"classes": [],
@@ -277,6 +245,7 @@
 				},
 				"style": {}
 			},
+            // WAP-BG-IMG
 			{
 				"id": "wc05jjjj4",
 				"classes": [],
@@ -291,47 +260,7 @@
 				},
 				"style": {}
 			},
-			{
-				"id": "gbits42",
-				"classes": [],
-				"type": "wap-container",
-				"info": {
-
-					"heading": {
-						"type": "txt",
-						"txt": "Sneak Peek: BRUN Behind the Scenes",
-						"style": {}
-					},
-					"btns": [
-						{
-							"type": "primery",
-							"txt": "Contact Brun",
-							"style": {}
-						}
-					],
-					"imgs": [
-						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
-							"txt": "",
-							"style": {}
-						},
-						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
-							"txt": "",
-							"style": {}
-						},
-						{
-							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
-							"txt": "",
-							"style": {}
-						}
-					]
-				},
-				"style": {}
-			},
+			// WAP-FOOTER
 			{
 				"id": "sc599966",
 				"classes": [],

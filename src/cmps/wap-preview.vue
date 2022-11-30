@@ -32,7 +32,7 @@ export default {
       this.$router.push(`/wap/edit/${wapId}`);
     },
     prevWap(wapId) {
-      this.$router.push(`/wap/${wapId}`);
+      this.$router.push(`/wap/preview/${wapId}`);
     },
   },
 };

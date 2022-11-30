@@ -7,7 +7,7 @@ import reviewApp from './views/review-app.vue'
 import loginSignup from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 import wapEdit from './views/wap-edit.vue'
-import wapPreview from './views/wap-preview.vue'
+import wapLivePage from './views/wap-live-page.vue'
 
 const routes = [
   {
@@ -26,9 +26,9 @@ const routes = [
     component: wapEdit
   },
   {
-    path: '/wap/:wapId',
-    name: 'wap-preview',
-    component: wapPreview
+    path: '/wap/preview/:wapId',
+    name: 'wap-live-page',
+    component: wapLivePage
   },
   {
     path: '/review',

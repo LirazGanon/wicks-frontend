@@ -1,5 +1,5 @@
 <template>
-    <header class="wap-header ">
+    <header class="wap-header bakery ">
 
 
         <div class="wap-logo flex align-center">

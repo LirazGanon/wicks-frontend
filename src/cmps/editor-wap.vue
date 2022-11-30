@@ -8,7 +8,7 @@
       <Draggable v-for="item in view.cmps" :key="item.id">
         <div class="draggable-item">
 
-<!-- 
+          <!-- 
           <pre>
             {{ item }}
             XXXXXXXXXXXXXXXX
@@ -41,13 +41,14 @@ import wapContact from '../cmps/waps-edit/wap-contact-edit.vue'
 import wapReviews from '../cmps/waps-edit/wap-reviews-edit.vue'
 
 import wapFooter from '../cmps/waps-edit/wap-footer-edit.vue'
+import wapBg from '../cmps/waps-edit/wap-bg-img-edit.vue'
 import appHeader from "./app-header.vue";
 
 
 import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter, appHeader },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter, appHeader, wapBg },
   data() {
     return {
       view: {}
@@ -55,7 +56,7 @@ export default {
   },
   created() {
     this.getCurrWap()
-    
+
   },
   methods: {
     async getCurrWap() {

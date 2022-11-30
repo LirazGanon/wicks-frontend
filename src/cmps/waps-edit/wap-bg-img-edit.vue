@@ -1,13 +1,9 @@
 <template>
-    <section class="wap-gallery">
-        <h4>gallery-{{ cmp.info.imgs.length }}</h4>
-    </section>
-    <pre>{{cmp}}</pre>
-
+    <h2>wap-bg-img</h2>
 </template>
 <script>
 export default {
-    name: 'dynamic-gallery-cmp',
+    name: 'wap-bg-img',
     props: { cmp: Object },
     components: {},
     data() {

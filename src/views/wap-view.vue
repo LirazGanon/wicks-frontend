@@ -28,6 +28,7 @@ import wapContainer from '../cmps/waps/wap-container.vue'
 import wapGallery from '../cmps/waps/wap-gallery.vue'
 import wapContact from '../cmps/waps/wap-contact.vue'
 import wapReviews from '../cmps/waps/wap-reviews.vue'
+import wapBgImg from '../cmps/waps/wap-bg-img.vue'
 
 import wapFooter from '../cmps/waps/wap-footer.vue'
 
@@ -37,7 +38,7 @@ import { wapService } from '../services/wap.service.local.js'
 export default {
     name: 'variable',
     props: {},
-    components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter },
+    components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter ,wapBgImg},
     data() {
         return {
             view: {}

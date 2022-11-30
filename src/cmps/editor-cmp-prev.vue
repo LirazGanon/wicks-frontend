@@ -6,10 +6,10 @@
       @drop="onDrop($event)">
       <Draggable v-for="item in cmps" :key="item.id">
         <div class="draggable-item">
-        <pre>
+        <p>
           {{item.type}}
-        </pre> 
-          XXXXXXXXXXXXX
+        </p> 
+         
         </div>
 
 
@@ -48,7 +48,7 @@ export default {
     },
 
     getChildPayload(itemIndex) {
-      return this.view.cmps[itemIndex]
+      return this.cmps[itemIndex]
     },
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.type, dropResult)

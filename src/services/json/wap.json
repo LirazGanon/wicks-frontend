@@ -181,43 +181,43 @@
 									"type": "primery",
 									"txt": "See full menu",
 									"style": {}
-								},
-								{
-									"id": "mukjyu6584",
-									"type": "wap-gallery",
-									"classes": [],
-									"info": {
-										"imgs": [
-											{
-												"type": "img",
-												"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
-												"txt": "Cookies",
-												"style": {}
-											},
-											{
-												"type": "img",
-												"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
-												"txt": "Cakes",
-												"style": {}
-											},
-											{
-												"type": "img",
-												"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
-												"txt": "Viennoisrie",
-												"style": {}
-											},
-											{
-												"type": "img",
-												"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
-												"txt": "Specials",
-												"style": {}
-											}
-										],
-										"style": {}
-									},
-									"style": {}
 								}
 							]
+						},
+						{
+							"id": "mukjyu6584",
+							"type": "wap-gallery",
+							"classes": [],
+							"info": {
+								"imgs": [
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
+										"txt": "Cookies",
+										"style": {}
+									},
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
+										"txt": "Cakes",
+										"style": {}
+									},
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
+										"txt": "Viennoisrie",
+										"style": {}
+									},
+									{
+										"type": "img",
+										"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
+										"txt": "Specials",
+										"style": {}
+									}
+								],
+								"style": {}
+							},
+							"style": {}
 						}
 					]
 				},

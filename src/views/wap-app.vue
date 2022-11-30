@@ -1,7 +1,7 @@
 <template>
   <div class="container home">
 
-    <wap-list @removeWap="removeWap" :waps="waps" />
+    <wap-list @removeWap="removeWap" :waps="waps" :loading="isLoading" />
 
     <hr />
     <form @submit.prevent="addWap()">
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      wapToAdd: wapService.getEmptyWap()
+      wapToAdd: wapService.getEmptyWap(),
     }
   },
   computed: {
@@ -34,6 +34,9 @@ export default {
     },
     waps() {
       return this.$store.getters.waps
+    },
+    isLoading() {
+      return this.$store.getters.isLoading
     }
   },
   created() {

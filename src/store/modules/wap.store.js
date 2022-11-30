@@ -29,10 +29,12 @@ export function getActionAddWapMsg(wapId) {
 
 export const wapStore = {
     state: {
-        waps: []
+        waps: [],
+        isLoading:false
     },
     getters: {
-        waps({waps}) { return waps },
+        waps({ waps }) { return waps },
+        isLoading({ isLoading }) { return isLoading },
     },
     mutations: {
         setWaps(state, { waps }) {
@@ -48,11 +50,14 @@ export const wapStore = {
         removeWap(state, { wapId }) {
             state.waps = state.waps.filter(wap => wap._id !== wapId)
         },
-        addWapMsg(state, { wapId , msg}) {
+        addWapMsg(state, { wapId, msg }) {
             const wap = state.waps.find(wap => wap._id === wapId)
             if (!wap.msgs) wap.msgs = []
             wap.msgs.push(msg)
         },
+        toggleLoading({ isLoading }) {
+            isLoading = !isLoading
+        }
     },
     actions: {
         async addWap(context, { wap }) {
@@ -77,9 +82,12 @@ export const wapStore = {
         },
         async loadWaps(context) {
             try {
+                context.commit({ type: 'toggleLoading'})
                 const waps = await wapService.query()
                 context.commit({ type: 'setWaps', waps })
+                context.commit({ type: 'toggleLoading'})
             } catch (err) {
+                context.store.isLoading = false
                 console.log('wapStore: Error in loadWaps', err)
                 throw err
             }
@@ -96,7 +104,7 @@ export const wapStore = {
         async addWapMsg(context, { wapId, txt }) {
             try {
                 const msg = await wapService.addWapMsg(wapId, txt)
-                context.commit({type: 'addWapMsg', wapId, msg })
+                context.commit({ type: 'addWapMsg', wapId, msg })
             } catch (err) {
                 console.log('wapStore: Error in addWapMsg', err)
                 throw err

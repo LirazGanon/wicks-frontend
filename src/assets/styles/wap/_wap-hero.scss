@@ -3,12 +3,12 @@
     perspective: 10px;
     overflow: hidden;
     padding: em(60px) em(10px);
-
+    
     &.bakery {
         grid-template-areas:
-            "t t"
-            "ml ml"
-            "bl mbr";
+            ". t t . "
+            ". ml ml ."
+            ". bl mbr .";
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
         transform-style: preserve-3d;
@@ -20,7 +20,7 @@
 
         p {
             grid-area: ml;
-            font-size: clamp(12px, .4em, 64px);
+            font-size: clamp(12px, 0.4em, 64px);
             width: clamp(16px, 12em, 550px);
             margin-block: 2.8em;
             font-weight: 300;
@@ -28,22 +28,26 @@
 
         .wap-img {
             grid-area: bl;
-            width: clamp(16px, 100%, 500px);
+            width: clamp(16px, 20em, 500px);
             height: 100%;
             align-self: end;
             object-fit: cover;
             padding-block-start: 20%;
+            overflow: hidden;
         }
 
         .wap-bg-img {
             grid-area: mbr;
-            width: clamp(16px, 100%, 550px);
+            width: clamp(16px, 50em, 550px);
+            // position: absolute;
             object-fit: cover;
             height: 100%;
+            overflow-y: auto;
             // transform: translateZ(10px) scale(2);
             // height: 100%;
         }
     }
+
 
     // &.cars{
 

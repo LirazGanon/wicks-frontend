@@ -31,6 +31,10 @@ position: absolute;
     .preview-btns {
     position: absolute;
     display: none;
+button{
+border-radius:0.5em
+}
+
     }
     &:hover .preview-btns-bg {
         display: block;

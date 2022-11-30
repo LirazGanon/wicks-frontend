@@ -22,16 +22,16 @@
 
 import { Container, Draggable } from "vue3-smooth-dnd";
 
-import wapHeader from '../cmps/waps-live-page/wap-header.cmp.vue'
-import wapHero from '../cmps/waps-live-page/wap-hero.cmp.vue'
-import wapForm from '../cmps/waps-live-page/wap-form.cmp.vue'
-import wapContainer from '../cmps/waps-live-page/wap-container.cmp.vue'
+import wapHeader from '../cmps/waps/wap-header.cmp.vue'
+import wapHero from '../cmps/waps/wap-hero.cmp.vue'
+import wapForm from '../cmps/waps/wap-form.cmp.vue'
+import wapContainer from '../cmps/waps/wap-container.cmp.vue'
 
-import wapGallery from '../cmps/waps-live-page/wap-gallery.cmp.vue'
-import wapContact from '../cmps/waps-live-page/wap-contact.cmp.vue'
-import wapReviews from '../cmps/waps-live-page/wap-reviews.cmp.vue'
+import wapGallery from '../cmps/waps/wap-gallery.cmp.vue'
+import wapContact from '../cmps/waps/wap-contact.cmp.vue'
+import wapReviews from '../cmps/waps/wap-reviews.cmp.vue'
 
-import wapFooter from '../cmps/waps-live-page/wap-footer.cmp.vue'
+import wapFooter from '../cmps/waps/wap-footer.cmp.vue'
 
 
 import { wapService } from '../services/wap.service.local.js'

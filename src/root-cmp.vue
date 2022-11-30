@@ -2,7 +2,6 @@
   
   <main>
     <user-msg />
-    {{ checkParams }}
     <router-view />
   </main>
 

@@ -7,18 +7,20 @@
         </span>
       </router-link>
       <router-link to="/wap">Waps</router-link>
-      
+
       <router-link :to="`/wap/edit/` + 123">WapsEdit</router-link>
       <router-link to="/review">Reviews</router-link>
       <router-link to="/chat">Chat</router-link>
       <router-link to="/login">Login / Signup</router-link>
     </nav>
-    <section class="loggedin-user" v-if="loggedInUser">
+    <section class="loggedin-user flex" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
         {{ loggedInUser.fullname }}
       </router-link>
       <span>{{ loggedInUser.score.toLocaleString() }}</span>
-      <img :src="loggedInUser.imgUrl" />
+      <div>
+        <img :src="loggedInUser.imgUrl" />
+      </div>
     </section>
   </header>
 </template>
@@ -27,7 +29,7 @@
 // TODO: remember the wap id
 
 export default {
-  name:'main-header',
+  name: 'main-header',
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser

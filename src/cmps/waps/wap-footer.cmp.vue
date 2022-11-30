@@ -3,14 +3,14 @@
        <!-- <pre>
         {{ info }}
        </pre> -->
-        <h4>footer-{{ info.logo.url }}</h4>
+        <h4>footer-{{ cmp.info.logo.url }}</h4>
     </section>
 
 </template>
 <script>
 export default {
     name: 'dynamic-footer-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

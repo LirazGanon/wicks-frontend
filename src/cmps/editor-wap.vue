@@ -10,7 +10,7 @@
 
 
 
-          <component :is="(item.type || 'wapHeader')" :info="item.info" />
+          <component :is="(item.type || 'wapHeader')" :cmp="item" />
 
 
 
@@ -56,12 +56,14 @@ export default {
   },
   created() {
     this.getCurrWap()
+    
   },
   methods: {
     async getCurrWap() {
       const id = this.$route.params.wapId
       const wap = await wapService.getById(id)
       this.view = wap
+      console.log(this.view.cmps)
     },
     getChildPayload2(itemIndex) {
       return this.view.cmps[itemIndex]

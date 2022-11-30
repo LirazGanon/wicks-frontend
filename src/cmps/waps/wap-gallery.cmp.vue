@@ -1,6 +1,6 @@
 <template>
     <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
+        <h4>gallery-{{ cmp.info.imgs.length }}</h4>
     </section>
     <!-- <pre>{{info}}</pre> -->
 
@@ -8,7 +8,7 @@
 <script>
 export default {
     name: 'dynamic-gallery-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

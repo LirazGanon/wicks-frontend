@@ -4,12 +4,12 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="info.logo?.img" alt="" v-if="info.logo.img">
-                <h4 v-else>{{ info.logo.txt }}</h4>
+                <img :src="cmp.info.logo?.img" alt="" v-if="cmp.info.logo.img">
+                <h4 v-else>{{ cmp.info.logo.txt }}</h4>
             </div>
             <!-- <pre>{{info}}</pre> -->
 
-            <wap-nav :nav="info.nav" />
+            <wap-nav :nav="cmp.info.nav" />
 
         </section>
 
@@ -20,7 +20,7 @@
 import wapNav from './wap-nav.cmp.vue'
 export default {
     name: 'dynamic-header-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: { wapNav },
     data() {
         return {};

@@ -1,7 +1,7 @@
 .wap-hero {
     display: grid;
     padding: em(20px);
-
+    perspective: 10px;
 
     &.bakery {
         grid-template-areas:
@@ -10,7 +10,6 @@
             "bl mbr";
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
-        perspective: 10px;
         transform-style: preserve-3d;
         h1 {
             grid-area: t;
@@ -36,10 +35,11 @@
             width: clamp(16px, 24em, 550px);
             object-fit: cover;
             transform: translateZ(10px) scale(2);
+            height: 100%;
         }
     }
 
-    &.cars{
+    // &.cars{
 
-    }
+    // }
 }

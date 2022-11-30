@@ -9,7 +9,7 @@
           {{ item.data }}
         </div>
 
-        
+
       </Draggable>
     </Container>
 

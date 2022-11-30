@@ -4,7 +4,7 @@
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => false"
       @drop="onDrop($event)">
-      <Draggable v-for="item in cmps" :key="item.id">
+      <Draggable v-for="item in view" :key="item.id">
         <div class="draggable-item">
           {{ item }}
         </div>
@@ -45,7 +45,7 @@ export default {
     },
 
     getChildPayload(itemIndex) {
-      return this.view.type[itemIndex]
+      return this.view.cmps[itemIndex]
     },
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.type, dropResult)

@@ -1,17 +1,14 @@
 <template>
-      <!-- <pre>{{info}}</pre> -->
-    <pre>
-        {{info.texts}}
-    </pre>
+    <section class="wap-form">
+        <pre>{{ info }}</pre>
 
-      <!-- <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
-    </section> -->
+        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
+    </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-contact-cmp',
+    name: 'dynamic-form-cmp',
     props: { info: Object },
     components: {},
     data() {

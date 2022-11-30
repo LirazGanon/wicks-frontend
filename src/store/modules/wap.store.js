@@ -30,7 +30,8 @@ export function getActionAddWapMsg(wapId) {
 export const wapStore = {
     state: {
         waps: [],
-        isLoading:false
+        isLoading:false,
+        isHeader:true
     },
     getters: {
         waps({ waps }) { return waps },

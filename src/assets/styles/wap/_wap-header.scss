@@ -1,0 +1,14 @@
+.wap-header {
+    width: clamp(10px, 100%, 100%);
+    
+    
+    &.bakery{
+        // background: ;
+        
+        .wap-logo {
+            text-transform: uppercase;
+            color: $clr6;
+        }
+
+    }
+}

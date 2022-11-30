@@ -1,16 +1,18 @@
 <template>
-  <section>
-    <user-msg/>
-    <app-header />
-    <router-view/>
-  </section>
+  
+  <main>
+    <user-msg />
+    {{ checkParams }}
+    <router-view />
+  </main>
+
+
 </template>
 
 <script>
 
 
 import { store } from './store'
-import appHeader from './cmps/app-header.vue'
 import userMsg from './cmps/user-msg.vue'
 import { userService } from './services/user.service'
 
@@ -20,11 +22,12 @@ export default {
   created() {
     console.log('Vue App created')
     const user = userService.getLoggedinUser()
-    if (user)  store.commit({type: 'setLoggedinUser', user})
+    if (user) store.commit({ type: 'setLoggedinUser', user })
+
   },
   components: {
-    appHeader,
     userMsg
   },
+
 }
 </script>

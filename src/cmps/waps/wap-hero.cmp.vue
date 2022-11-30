@@ -2,17 +2,17 @@
 
     <section class="wap-hero bakery">
 
-        <h1>{{ info.heading.txt }}</h1>
-        <h6>{{ info.subHeading.txt }}</h6>
-        <button v-for="btn in info.btns">
-            {{ btn.txt }}
+        <h1>{{ cmp.info.heading.txt }}</h1>
+        <h6>{{ cmp.info.subHeading.txt }}</h6>
+        <button v-for="btn in cmp.info.btns">
+            {{ cmp.btn.txt }}
         </button>
 
-        <img :src="img.src" v-for="img in info.imgs" alt="" class="wap-img">
-        <img :src="info.bgImg.src" alt="" class="wap-bg-img">
-        <!-- <pre>
-            {{ info }}
-        </pre> -->
+        <img :src="img.src" v-for="img in cmp.info.imgs" alt="" class="wap-img">
+        <img :src="cmp.info.bgImg.src" alt="" class="wap-bg-img">
+        <pre>
+            {{ cmp.info }}
+        </pre>
 
     </section>
 
@@ -20,7 +20,7 @@
 <script>
 export default {
     name: 'dynamic-hero-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

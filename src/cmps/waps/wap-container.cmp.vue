@@ -2,13 +2,13 @@
     <!-- <h2>{{ info }}</h2> -->
 
     <section class="wap-container">
-        <h4>container-{{ info.heading }}</h4>
+        <h4>container-{{ cmp.info.heading }}</h4>
     </section>
 </template>
 <script>
 export default {
     name: 'dynamic-container-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

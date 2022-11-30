@@ -1,6 +1,6 @@
 <template>
     <section class="wap-form">
-        <pre>{{ info }}</pre>
+        <pre>{{ cmp.info }}</pre>
 
         <!-- <h4>form-{{ info.heading.txt }}</h4> -->
     </section>
@@ -9,7 +9,7 @@
 <script>
 export default {
     name: 'dynamic-form-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

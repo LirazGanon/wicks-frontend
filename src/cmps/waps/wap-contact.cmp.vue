@@ -1,7 +1,7 @@
 <template>
       <!-- <pre>{{info}}</pre> -->
     <pre>
-        {{info.texts}}
+        {{cmp.info.texts}}
     </pre>
 
       <!-- <section class="wap-gallery">
@@ -12,7 +12,7 @@
 <script>
 export default {
     name: 'dynamic-contact-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

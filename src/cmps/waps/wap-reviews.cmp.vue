@@ -1,14 +1,14 @@
 <template>
     <section class="wap-reviews">
         <!-- <pre>{{info}}</pre> -->
-        <h4>reviews-{{ info.heading.txt }}</h4>
+        <h4>reviews-{{ cmp.info.heading.txt }}</h4>
     </section>
 
 </template>
 <script>
 export default {
     name: 'dynamic-review-cmp',
-    props: { info: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

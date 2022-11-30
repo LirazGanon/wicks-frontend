@@ -7,14 +7,10 @@
 
 
             <component :is="(item.type || 'wapHeader')" :cmp="item" />
-<<<<<<< HEAD
-            
-=======
 
 
             <!-- <pre>{{item}}</pre> -->
 
->>>>>>> f441d5a662aea26408d3300570746da3f113243b
             XXXXXXXXXXXXXXXX
         </div>
     </div>

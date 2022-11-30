@@ -20,7 +20,7 @@
                     <button @click="type = t.data">{{ t.data }}</button>
                 </li>
             </ul>
-            <editor-cmp-prev :cmps="getData" />
+            <editor-cmp-prev :cmps="cmps" />
         </section>
 
 
@@ -55,7 +55,6 @@ import editorCmpPrev from './editor-cmp-prev.vue'
 
 export default {
     name: 'Editor',
-    props: { cmps: Object },
     components: { editorCmpPrev },
     data() {
         return {
@@ -67,8 +66,8 @@ export default {
     },
     created() {
         this.view = { ...this.cmps }
-        this.type = this.cmps.type[0].data
-        this.setData()
+        // this.type = this.cmps.type[0].data
+        // this.setData()
     },
     methods: {
         setData() {
@@ -139,6 +138,9 @@ export default {
     computed: {
         getData() {
             return this.data
+        },
+        cmps(){
+            return this.$store.getters.cmps
         }
     },
     watch: {

@@ -1,7 +1,8 @@
 .wap-hero {
     display: grid;
-    padding: em(20px);
     perspective: 10px;
+    overflow: hidden;
+    padding: em(60px) em(10px);
 
     &.bakery {
         grid-template-areas:
@@ -17,25 +18,30 @@
             width: clamp(16px, 9em, 550px);
         }
 
-        h6 {
+        p {
             grid-area: ml;
-            font-size: clamp(12px, .5em, 64px);
+            font-size: clamp(12px, .4em, 64px);
             width: clamp(16px, 12em, 550px);
+            margin-block: 2.8em;
+            font-weight: 300;
         }
 
         .wap-img {
             grid-area: bl;
-            width: clamp(16px, 16em, 550px);
+            width: clamp(16px, 100%, 500px);
+            height: 100%;
             align-self: end;
             object-fit: cover;
+            padding-block-start: 20%;
         }
 
         .wap-bg-img {
             grid-area: mbr;
-            width: clamp(16px, 24em, 550px);
+            width: clamp(16px, 100%, 550px);
             object-fit: cover;
-            transform: translateZ(10px) scale(2);
             height: 100%;
+            // transform: translateZ(10px) scale(2);
+            // height: 100%;
         }
     }
 

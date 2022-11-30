@@ -1,14 +1,16 @@
 <template>
-    <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
+    <section class="wap-footer">
+       <!-- <pre>
+        {{ info }}
+       </pre> -->
+        <h4>footer-{{ cmp.info.logo.url }}</h4>
     </section>
-
 
 </template>
 <script>
 export default {
-    name: 'dynamic-gallery-cmp',
-    props: { info: Object },
+    name: 'dynamic-footer-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

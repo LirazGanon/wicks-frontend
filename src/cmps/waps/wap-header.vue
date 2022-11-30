@@ -17,7 +17,7 @@
 </template>
 <script>
 
-import wapNav from './wap-nav.cmp.vue'
+import wapNav from './wap-nav.vue'
 export default {
     name: 'dynamic-header-cmp',
     props: { cmp: Object },

@@ -1,14 +1,15 @@
 <template>
-    <!-- <h2>{{ info }}</h2> -->
+    <section class="wap-form">
+        <pre>{{ cmp }}</pre>
 
-    <section class="wap-container">
-        <h4>container-{{ info.heading }}</h4>
+        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
     </section>
+
 </template>
 <script>
 export default {
-    name: 'dynamic-container-cmp',
-    props: { info: Object },
+    name: 'dynamic-form-cmp',
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

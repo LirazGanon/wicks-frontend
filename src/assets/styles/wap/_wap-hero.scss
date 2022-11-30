@@ -1,0 +1,44 @@
+.wap-hero {
+    display: grid;
+    padding: em(20px);
+
+
+    &.bakery {
+        grid-template-areas:
+            "t t"
+            "ml ml"
+            "bl mbr";
+        background-color: $bakery-pr-clr;
+        color: $bakery-bg;
+
+        h1 {
+            grid-area: t;
+            font-size: clamp(16px, 2.5em, 64px);
+            width: clamp(16px, 9em, 550px);
+        }
+
+        h6 {
+            grid-area: ml;
+            font-size: clamp(12px, .5em, 64px);
+            width: clamp(16px, 12em, 550px);
+        }
+
+        .wap-img {
+            grid-area: bl;
+            width: clamp(16px, 16em, 550px);
+            align-self: end;
+            object-fit: cover;
+        }
+
+        .wap-bg-img {
+            grid-area: mbr;
+            width: clamp(16px, 24em, 550px);
+
+            object-fit: cover;
+        }
+    }
+
+    &.cars{
+        
+    }
+}

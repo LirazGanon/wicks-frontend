@@ -1,6 +1,6 @@
 <template>
-    <section class="wap-card" >
-        <h1>{{ cmp.info.heading.txt }}</h1>
+    <section class="wap-card" v-if="cmp.info">
+        <h1>{{ cmp.info.heading?.txt }}</h1>
         <p>{{ cmp.info.subHeading?.txt }}</p>
         <button v-for="btn in cmp.info.btns">{{btn.txt}}</button>
     </section>

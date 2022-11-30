@@ -1,8 +1,11 @@
 <template>
   <section class="wap-list-container">
-    <ul class="wap-list">
+    <ul v-if="waps"  class="wap-list">
       <wap-preview v-for="wap in waps" :key="wap._id" :wap="wap" @removeWap="remove" />
     </ul>
+    <section v-if="loading" class="skeleton">
+      <div class="skeleton-tuazaeqw532"></div>
+    </section>
   </section>
 </template>
 
@@ -12,6 +15,7 @@ import wapPreview from "./wap-preview.vue"
 export default {
   props: {
     waps: Array,
+    loading: Boolean
   },
   components: {
     wapPreview,

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="flex flex.align-center">
+    <nav class="flex">
       <router-link to="/">
         <span role="img" aria-label="logo">
           <img class="logo" src="@/assets/wicks-header-logo.png" alt="">

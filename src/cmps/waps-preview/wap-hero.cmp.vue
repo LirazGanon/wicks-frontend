@@ -1,17 +1,14 @@
 <template>
-      <!-- <pre>{{info}}</pre> -->
-    <pre>
-        {{info.texts}}
-    </pre>
 
-      <!-- <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
-    </section> -->
+    <section class="wap-hero">
+
+        <h4>HERO-{{info.heading.txt}}</h4>
+    </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-contact-cmp',
+    name: 'dynamic-hero-cmp',
     props: { info: Object },
     components: {},
     data() {

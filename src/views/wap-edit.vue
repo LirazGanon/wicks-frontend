@@ -10,14 +10,13 @@
 
 </template>
 <script>
-import { Container, Draggable } from "vue3-smooth-dnd";
 import wap from '../cmps/wap.vue'
 import editor from '../cmps/editor.vue'
 
 export default {
     name: 'wap-edit',
     props: {},
-    components: { Container, Draggable, editor, wap },
+    components: {  editor, wap },
     data() {
         return {
             cmps: {

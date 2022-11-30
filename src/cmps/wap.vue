@@ -1,6 +1,6 @@
 <template>
 
-  <section v-if="view">
+  <section v-if="view" class="full">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
@@ -8,11 +8,11 @@
         <div class="draggable-item">
 
 
-          
+
           <component :is="(item.type || 'wapHeader')" :info="item.info" />
-         
-         
-         
+
+
+
           <pre>
             {{ item.type }}
             XXXXXXXXXXXXXXXX
@@ -23,7 +23,7 @@
     </Container>
 
 
-   
+
 
   </section>
 </template>
@@ -46,7 +46,7 @@ import wapFooter from './waps/wap-footer.cmp.vue'
 import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer,wapGallery,wapContact,wapReviews, wapFooter },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter },
   data() {
     return {
       view: {}

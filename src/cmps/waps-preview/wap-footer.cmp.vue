@@ -1,17 +1,15 @@
 <template>
-      <!-- <pre>{{info}}</pre> -->
-    <pre>
-        {{info.texts}}
-    </pre>
-
-      <!-- <section class="wap-gallery">
-        <h4>gallery-{{ info.imgs.length }}</h4>
-    </section> -->
+    <section class="wap-footer">
+       <!-- <pre>
+        {{ info }}
+       </pre> -->
+        <h4>footer-{{ info.logo.url }}</h4>
+    </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-contact-cmp',
+    name: 'dynamic-footer-cmp',
     props: { info: Object },
     components: {},
     data() {

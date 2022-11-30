@@ -10,6 +10,7 @@
     {{wap._id}}
     <button @click="$emit('removeWap', wap._id)">x</button>
     <button @click="editWap(wap._id)">Edit</button>
+    <button @click="prevWap(wap._id)">Preview</button>
     <hr />
     <!-- <button @click="addWapMsg(wap._id)">Add wap msg</button>
       <button @click="printWapToConsole(wap)">Print msgs to console</button> -->
@@ -29,6 +30,9 @@ export default {
     },
     editWap(wapId) {
       this.$router.push(`/wap/edit/${wapId}`);
+    },
+    prevWap(wapId) {
+      this.$router.push(`/wap/${wapId}`);
     },
   },
 };

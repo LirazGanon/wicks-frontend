@@ -2,7 +2,7 @@
     <section class="wap-gallery">
         <h4>gallery-{{ info.imgs.length }}</h4>
     </section>
-
+    <!-- <pre>{{info}}</pre> -->
 
 </template>
 <script>

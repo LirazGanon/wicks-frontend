@@ -1,4 +1,7 @@
 <template>
+
+  <app-header/>
+
   <div class="container home">
 
     <wap-list @removeWap="removeWap" :waps="waps" :loading="isLoading" />
@@ -17,11 +20,12 @@ import wapList from '../cmps/wap-list.vue'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { wapService } from '../services/wap.service.local'
 import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/modules/wap.store'
-
+import appHeader from '../cmps/app-header.vue'
 export default {
   name: 'wap-app',
   components: {
-    wapList
+    wapList,
+    appHeader
   },
   data() {
     return {

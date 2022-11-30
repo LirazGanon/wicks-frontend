@@ -1,5 +1,6 @@
 <template>
 
+
   <section v-if="view" class="page-editor">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
@@ -41,12 +42,13 @@ import wapContact from './waps/wap-contact.cmp.vue'
 import wapReviews from './waps/wap-reviews.cmp.vue'
 
 import wapFooter from './waps/wap-footer.cmp.vue'
+import appHeader from "./app-header.vue";
 
 
 import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapGallery, wapContact, wapReviews, wapFooter, appHeader },
   data() {
     return {
       view: {}

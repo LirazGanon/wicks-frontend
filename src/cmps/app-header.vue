@@ -1,11 +1,11 @@
 <template>
   <header>
+    <router-link to="/">
+      <span role="img" aria-label="logo">
+        <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
+      </span>
+    </router-link>
     <nav class="flex">
-      <router-link to="/">
-        <span role="img" aria-label="logo">
-          <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
-        </span>
-      </router-link>
       <router-link to="/wap">Waps</router-link>
 
       <router-link :to="`/wap/edit/` + 123">WapsEdit</router-link>

@@ -1,9 +1,11 @@
 <template>
     <section class="wap-footer">
-       <pre>
-        {{ cmp }}
-       </pre>
-        <h4>footer-{{ cmp.info.logo.txt}}</h4>
+       <!-- <pre>
+        {{ cmp.info.details }}
+       </pre> -->
+       <!-- <h4>footer-{{ cmp.info.logo.txt}}</h4> -->
+       <p v-for="txt in cmp.info.details.texts">{{txt}}</p>
+       <p>{{cmp.info.logo.txt}}</p>
     </section>
 
 </template>

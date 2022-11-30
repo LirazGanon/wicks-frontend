@@ -109,7 +109,7 @@
 			{
 				"id": "jjyuh",
 				"type": "wap-container",
-				"classes": [],
+				"classes": ["img-card"],
 				"info": {
 					"cmps": [
 						{
@@ -325,7 +325,7 @@
 			},
 			{
 				"id": "gbits42",
-				"classes": [],
+				"classes": ["card-gallery"],
 				"type": "wap-container",
 				"info": {
 					"cmps": [
@@ -392,24 +392,20 @@
 						"src": "",
 						"style": {}
 					},
-					"row1": {
+					"details": {
 						"type": "txt",
 						"txt": "",
 						"texts": [
 							"500 Terry Francois Street",
-							"San Francisco, CA 94158"
-						],
-						"style": {}
-					},
-					"row2": {
-						"type": "txt",
-						"txt": "",
-						"texts": [
+							"San Francisco, CA 94158",
 							"123-456-7890",
 							"info@mysite.com"
 						],
 						"style": {}
 					},
+					"socials":[
+					{}
+					],
 					"copyright": {
 						"type": "txt",
 						"txt": "CoffeRights 2035 by BRUN. Proudly created with Wicks.com",

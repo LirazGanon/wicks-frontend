@@ -12,7 +12,6 @@
             <button class="material-symbols-outlined" title="Edit" @click="toggleActive('edit')">
                 brush
             </button>
-            <pre>{{ editor }}</pre>
         </section>
 
 
@@ -43,12 +42,7 @@
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex">
             <ul v-if="active === 'edit'">
-                <li v-for="p in 5">
-                    <button>
-                        options
-                    </button>
-                </li>
-                <pre>{{editor}}</pre>
+                <component :is="editor.type + 'Editor'" :info="editor" />
             </ul>
         </section>
     </section>
@@ -56,12 +50,15 @@
 </template>
 <script>
 import editorCmpPrev from './editor-cmp-prev.vue'
+import txtEditor from './txt-editor.vue'
+import imgEditor from './img-editor.vue'
+
 
 
 
 export default {
     name: 'Editor',
-    components: { editorCmpPrev },
+    components: { editorCmpPrev, txtEditor, imgEditor },
     props: { editor: Object },
     data() {
         return {

@@ -1,5 +1,5 @@
 <template>
-    <header class="wap-header bakery main-container full">
+    <header class="wap-header main-layout full" :class="cmp.classes">
         <section class="flex space-between">
 
 

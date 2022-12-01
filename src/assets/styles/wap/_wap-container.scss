@@ -18,7 +18,8 @@
             margin-inline-end: 2vw;
 
             h1 {
-                font-size: calc(1em + 1.5vw);
+                // font-size: calc(1.5em + 1.5vw);
+                font-size: 2em;
                 margin-bottom: 1em;
 
             }
@@ -40,6 +41,9 @@
         &.card-img {
             display: flex;
             background-color:$bakery-sc-clr ;
+            img{
+                width:100%;
+            }
             
         }
 

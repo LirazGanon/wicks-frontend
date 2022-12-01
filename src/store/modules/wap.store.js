@@ -30,12 +30,23 @@ export function getActionAddWapMsg(wapId) {
 export const wapStore = {
     state: {
         waps: [],
-        isLoading:false,
-        isHeader:true
+        isLoading: false,
+        isHeader: true,
+        wapInEdit: null
     },
     getters: {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
+        getWapById({ wapInEdit }) { return wapInEdit },
+        // async getWapById({ state }) {
+        //     try {
+        //         const wap = await wapService.getById(id)
+        //         this.wapInEdit = wap
+        //         return this.wapInEdit
+        //     } catch {
+        //         console.log('could not get wap to edit')
+        //     }
+        // },
     },
     mutations: {
         setWaps(state, { waps }) {
@@ -58,7 +69,12 @@ export const wapStore = {
         },
         toggleLoading(state) {
             state.isLoading = !state.isLoading
+        },
+        setWapToEdit(state, { wap }) {
+            state.wapInEdit = wap
+            console.log(wap)
         }
+
     },
     actions: {
         async addWap(context, { wap }) {
@@ -83,10 +99,10 @@ export const wapStore = {
         },
         async loadWaps(context) {
             try {
-                context.commit({ type: 'toggleLoading'})
+                context.commit({ type: 'toggleLoading' })
                 const waps = await wapService.query()
                 context.commit({ type: 'setWaps', waps })
-                context.commit({ type: 'toggleLoading'})
+                context.commit({ type: 'toggleLoading' })
             } catch (err) {
                 context.store.isLoading = false
                 console.log('wapStore: Error in loadWaps', err)
@@ -111,6 +127,15 @@ export const wapStore = {
                 throw err
             }
         },
+        async setWapToEdit(context, { id }) {
+            try {
+                console.log(id)
+                const wapToEdit = await wapService.getById(id)
+                context.commit({ type: 'setWapToEdit', wapToEdit })
+            } catch (err) {
+                console.log('could not get wap')
+            }
+        }
 
     }
 }

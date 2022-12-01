@@ -1,6 +1,6 @@
 [
   {
-    "id": "fhngh1",
+    "id": "3hnhh1",
     "type": "wap-header",
     "classes": [],
     "info": {
@@ -37,8 +37,8 @@
             },
             {
               "type": "button",
-              "txt": "Order online",
-              "link": "#order",
+              "txt": "Subscribe",
+              "link": "#Subscribe",
               "style": {}
             }
           ]
@@ -48,18 +48,18 @@
     "style": {}
   },
   {
-    "id": "gbfgg",
+    "id": "v0bfzg",
     "type": "wap-hero",
     "classes": [],
     "info": {
       "heading": {
         "type": "txt",
-        "txt": "We are brun artisanal bakehouse",
+        "txt": "The future of mobility is here",
         "style": {}
       },
       "subHeading": {
         "type": "txt",
-        "txt": "500 Terry Francois Street San Francisco, CA 94158",
+        "txt": "Discover the safest self-driving experience with Autono.",
         "style": {}
       },
       "btns": [],
@@ -69,17 +69,13 @@
         "style": {}
       },
       "imgs": [
-        {
-          "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
-          "style": {}
-        }
+        
       ]
     },
     "style": {}
   },
   {
-    "id": "jjyuh",
+    "id": "jfy8h",
     "type": "wap-container",
     "classes": [],
     "info": {

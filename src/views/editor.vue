@@ -1,8 +1,6 @@
 <template>
     <main class="edit-container flex full column">
 
-
-
         <editor-top />
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->

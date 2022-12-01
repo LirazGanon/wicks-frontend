@@ -29,16 +29,16 @@
             display: flex;
             justify-content: center;
             margin-bottom: 10px;
-        }
-
-        img {
-            width: 95%;
             &:hover{
                 cursor:grab;
             }
-            &:active{
-                cursor:grabbing;
-            }
+
+        }
+
+        img {
+            pointer-events: none;
+            width: 95%;
+       
 
         }
     }

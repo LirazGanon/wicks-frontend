@@ -8,7 +8,7 @@
 }
 
 html {
-    font-family: workSans-eLight, Helvetica, Arial, sans-serif;
+    font-family: openSans, Helvetica, Arial, sans-serif;
     // line-height: 1.6;
     color: $clr2;
 }
@@ -57,7 +57,26 @@ a:hover {
     cursor: pointer;
 }
 
+header{
+    &.main-header{
+        padding: 0;
+        background-color: transparent;
+        * {
+            color: $text-primary;
+            font-size: 1.1em;
+        }
+        .logo{
+            max-width: 5.19em;
+            margin-block: 10px;
+            margin-inline-start: 15px;
+        }
+        nav{
+            margin-inline-end: 50px;
+        }
+    }}
+
 .bakery {
+    font-family: workSans-eLight, Helvetica, Arial, sans-serif;
     button{
         transition: 0.3s;
     }

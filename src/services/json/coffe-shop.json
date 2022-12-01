@@ -1,0 +1,790 @@
+[
+    {
+        "_id": "5e2839389cddf209a0jj4e4ghhhh4",
+        "name": "coffeShop",
+        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669927585/wicks/coffeshop/coffe-shop-preview_pmpvox.png",
+        "type": "food",
+        "style": {},
+        "createdBy": {
+            "_id": "5e26e0b7d8a0z91d4c995bgfhghh527",
+            "fullname": "LIraz Shambi"
+        },
+        "usersData": {
+            "contacts": [
+                {
+                    "email": "user@user.com",
+                    "msg": "Please send me stuff",
+                    "at": 123
+                }
+            ],
+            "signups": [
+                {
+                    "email": "user@user.com",
+                    "at": 123
+                }
+            ]
+        },
+        "theme": "inviting",
+        "cmps": [
+            {
+                "id": "fhnzh31",
+                "type": "wap-header",
+                "classes": [
+                    " "
+                ],
+                "info": {
+                    "logo": {
+                        "type": "txt",
+                        "txt": "pukoffe",
+                        "src": "",
+                        "style": {}
+                    },
+                    "nav": {
+                        "id": "wc05",
+                        "type": "wap-nav",
+                        "style": {},
+                        "classes": [],
+                        "info": {
+                            "links": [
+                                {
+                                    "type": "txt",
+                                    "txt": "Story",
+                                    "link": "#story",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Menu",
+                                    "link": "#menu",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Contact",
+                                    "link": "#contact",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "button",
+                                    "txt": "Order online",
+                                    "link": "#order",
+                                    "style": {}
+                                }
+                            ]
+                        }
+                    }
+                },
+                "style": {}
+            },
+            {
+                "id": "nsl2zr5zs29",
+                "type": "wap-container",
+                "classes": [
+                    "bakery"
+                ],
+                "info": {
+                    "cmps": [
+                        {
+                            "id": "nsljvlo6yws",
+                            "classes": [
+                                "full"
+                            ],
+                            "type": "wap-bg-img",
+                            "info": {
+                                "img": {
+                                    "type": "img",
+                                    "txt": "",
+                                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "nslxxofxdmw",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "heading": {
+                                    "type": "txt",
+                                    "txt": "Unique Craft Cafe in NYC",
+                                    "style": {}
+                                },
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. A lacus vestibulum sed arcu non. Dolor magna eget est lorem ipsum dolor sit amet consectetur.",
+                                    "style": {}
+                                },
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "View menu",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        }
+                    ],
+                    "style": {}
+                }
+            },
+            {
+                "id": "nsl42ixeifo",
+                "type": "wap-container",
+                "classes": [
+                    "img-card bakery"
+                ],
+                "info": {
+                    "heading": "Coffee & Cakes",
+                    "cmps": [
+                        {
+                            "id": "nslq0fgmtqa",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/tgrd-min-min_eczekg.png",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led. Oh feel if up to till like.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "id": "nsllycple06",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Our coffee is rich in flavor and the espresso is a perfect balance of sweetness and acidity that functions well in milk drinks.",
+                                        "style": {}
+                                    },
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "id": "nsls3682juo",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "In addition to our own unique line-up of seasonal Single Origin Drip Coffees, Single Origin Cold Brews",
+                                        "style": {}
+                                    },
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "id": "nsl659ytyjs",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/cxcc-min_jvl4nw.png",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "He an thing rapid these after going drawn or. Timed she his law the spoil round defer. In surprise concerns informed betrayed he learning is ye. Ignorant formerly so ye blessing. He as spoke avoid given downs money on we. Of properly carriage shutters ye as wandered up repeated moreover.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        }
+                    ]
+                },
+                "style": {}
+            },
+            {
+                "id": "nsld13h14dk",
+                "classes": [
+                    "card-gallery bakery"
+                ],
+                "type": "wap-container",
+                "info": {
+                    "cmps": [
+                        {
+                            "id": "nslz8zq9on7",
+                            "type": "wap-img",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "type": "wap-card",
+                            "id": "nslu6wzhz73",
+                            "info": {
+                                "heading": {
+                                    "type": "txt",
+                                    "txt": "01",
+                                    "style": {}
+                                },
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "About Us",
+                                    "style": {}
+                                },
+                                "txts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "type": "wap-card",
+                            "id": "nslget8pkhp",
+                            "info": {
+                                "heading": {
+                                    "type": "txt",
+                                    "txt": "02",
+                                    "style": {}
+                                },
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "Our Food",
+                                    "style": {}
+                                },
+                                "txts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "type": "wap-card",
+                            "id": "nsl1bqio51l",
+                            "info": {
+                                "heading": {
+                                    "type": "txt",
+                                    "txt": "03",
+                                    "style": {}
+                                },
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "Our Drinks",
+                                    "style": {}
+                                },
+                                "txts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        },
+                        {
+                            "type": "wap-card",
+                            "id": "nsln9nrxpbh",
+                            "info": {
+                                "heading": {
+                                    "type": "txt",
+                                    "txt": "04",
+                                    "style": {}
+                                },
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "Excellent coffee",
+                                    "style": {}
+                                },
+                                "txts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        }
+                    ]
+                },
+                "style": {}
+            },
+            {
+                "id": "nslpcescfpm",
+                "classes": [
+                    "card-img bakery"
+                ],
+                "type": "wap-container",
+                "info": {
+                    "cmps": [
+                        {
+                            "id": "nslp2esnfplm",
+                            "classes": [],
+                            "type": "wap-bg-img",
+                            "info": {
+                                "img": {
+                                    "type": "img",
+                                    "txt": "",
+                                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669932077/wicks/coffeshop/bg-cake_gdwsxs.jpg",
+                                    "style": {}
+                                }
+                            },
+                            "style": {}
+                        },
+                        {
+                            "id": "nslak11kqzi",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "TOP ICE-CREAM",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "nsl3ehjdu50",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "FRUIT SORBETS",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "nslihk05av4",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "CHIP FLAVORS",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "nslwiybtbje",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "SUNDAES",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "nsldnst0gcx",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "SMOOTHIES",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "nslrfvkrvt1",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "DRINKS & MORE",
+                                        "style": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "234msd09",
+                            "type": "wap-img",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        }
+                    ]
+                },
+                "style": {
+                    "background-color": "#ca8263"
+                }
+            },
+            {
+                "id": "",
+                "classes": [
+                    "card-img bakery"
+                ],
+                "type": "wap-container",
+                "info": {
+                    "cmps": [
+                        {
+                            "id": "",
+                            "classes": [],
+                            "type": "wap-heading",
+                            "info": {
+                                "img": {
+                                    "type": "txt",
+                                    "txt": "Popular Dishes",
+                                    "style": {}
+                                }
+                            },
+                            "style": {}
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922275/wicks/coffeshop/1_vxfvru.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "TIRAMISU CAKE",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "10",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/2_mqxqn4.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "CHIA PUDDING",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "8",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/4_lb0c6r.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "CHEESECAKE",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "7",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/677u_yrukuv.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "CHOCOLATE CAKE",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "7",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/7_pb3r8p.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "CHEESECAKE",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "7",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "",
+                            "type": "wap-card",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922273/wicks/coffeshop/fff_ftdytx.jpg",
+                                        "txt": "",
+                                        "style": {}
+                                    }
+                                ],
+                                "subHeading": {
+                                    "type": "txt",
+                                    "txt": "ORANGE CAKE",
+                                    "style": {}
+                                },
+                                "texts": [
+                                    {
+                                        "type": "txt",
+                                        "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                                        "style": {}
+                                    }
+                                ],
+                                "btns": [
+                                    {
+                                        "type": "primery",
+                                        "txt": "Buy now",
+                                        "style": {}
+                                    }
+                                ],
+                                "price": {
+                                    "type": "price",
+                                    "txt": "7",
+                                    "style": {}
+                                }
+                            }
+                        }
+                    ]
+                },
+                "style": {}
+            }
+        ],
+        "isPublic": true
+    }
+]

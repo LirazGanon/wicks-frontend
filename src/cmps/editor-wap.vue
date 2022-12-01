@@ -61,7 +61,7 @@ export default {
       const id = this.$route.params.wapId
       await this.$store.dispatch({type:'setWapToEdit', id})
       const wap = this.$store.getters.getWapToEdit
-      this.view = wap
+      this.view = {...wap}
       console.log(this.view.cmps)
     },
     getChildPayload2(itemIndex) {

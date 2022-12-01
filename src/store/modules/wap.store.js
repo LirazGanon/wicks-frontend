@@ -38,15 +38,6 @@ export const wapStore = {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
-        // async getWapById({ state }) {
-        //     try {
-        //         const wap = await wapService.getById(id)
-        //         this.wapInEdit = wap
-        //         return this.wapInEdit
-        //     } catch {
-        //         console.log('could not get wap to edit')
-        //     }
-        // },
     },
     mutations: {
         setWaps(state, { waps }) {

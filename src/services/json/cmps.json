@@ -2,7 +2,7 @@
   {
     "id": "fhngh1",
     "type": "wap-header",
-    "classes": [],
+    "classes": ["bakery "],
     "info": {
       "logo": {
         "type": "txt",
@@ -50,11 +50,11 @@
   {
     "id": "gbfgg",
     "type": "wap-hero",
-    "classes": [],
+    "classes": ["bakery"],
     "info": {
       "heading": {
         "type": "txt",
-        "txt": "We are brun artisanal bakehouse",
+        "txt": "We are BRUN artisanal bakehouse",
         "style": {}
       },
       "subHeading": {
@@ -76,12 +76,12 @@
         }
       ]
     },
-    "style": {}
+    "style": { "background-color": "#1c2e3b" }
   },
   {
     "id": "jjyuh",
     "type": "wap-container",
-    "classes": [],
+    "classes": ["img-card bakery"],
     "info": {
       "cmps": [
         {
@@ -129,23 +129,67 @@
   },
   {
     "id": "gbgty42",
-    "classes": [],
-    "type": "wap-card",
+    "classes": ["card-gallery bakery"],
+    "type": "wap-container",
     "info": {
-      "heading": {
-        "type": "txt",
-        "txt": "Things we bake",
-        "style": {}
-      },
-      "subHeading": {
-        "type": "txt",
-        "txt": "We offer a variety of pastries. A unique collection of artisanal croissants, delicious cookies and classic cakes with a twists",
-        "style": {}
-      },
-      "btns": [
+      "cmps": [
         {
-          "type": "primery",
-          "txt": "See full menu",
+          "type": "wap-card",
+          "id": "k2sm903",
+          "info": {
+            "heading": {
+              "type": "txt",
+              "txt": "Things we bake",
+              "style": {}
+            },
+            "subHeading": {
+              "type": "txt",
+              "txt": "We offer a variety of pastries. A unique collection of artisanal croissants, delicious cookies and classic cakes with a twists",
+              "style": {}
+            },
+            "btns": [
+              {
+                "type": "primery",
+                "txt": "See full menu",
+                "style": {}
+              }
+            ]
+          },
+          "style": {}
+        },
+        {
+          "id": "mukjyu6584",
+          "type": "wap-gallery",
+          "classes": [],
+          "info": {
+            "imgs": [
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
+                "txt": "Cookies",
+                "style": {}
+              },
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
+                "txt": "Cakes",
+                "style": {}
+              },
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
+                "txt": "Viennoisrie",
+                "style": {}
+              },
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
+                "txt": "Specials",
+                "style": {}
+              }
+            ],
+            "style": {}
+          },
           "style": {}
         }
       ]
@@ -153,44 +197,9 @@
     "style": {}
   },
   {
-    "id": "mukjyu6584",
-    "type": "wap-gallery",
-    "classes": [],
-    "info": {
-      "imgs": [
-        {
-          "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
-          "txt": "Cookies",
-          "style": {}
-        },
-        {
-          "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
-          "txt": "Cakes",
-          "style": {}
-        },
-        {
-          "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
-          "txt": "Viennoisrie",
-          "style": {}
-        },
-        {
-          "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
-          "txt": "Specials",
-          "style": {}
-        }
-      ],
-      "style": {}
-    },
-    "style": {}
-  },
-  {
     "id": "wc0554njj",
-    "classes": [],
-    "type": "wap-contact",
+    "classes": ["card-img bakery"],
+    "type": "wap-container",
     "info": {
       "cmps": [
         {
@@ -229,18 +238,19 @@
           "id": "234msd09",
           "type": "wap-img",
           "classes": [],
-          "info": {
-            "img": {
+          "imgs": [
+            {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
               "style": {}
             }
-          },
+          ],
+          "info": {},
           "style": {}
         }
       ]
     },
-    "style": {}
+    "style": { "background-color": "#ca8263" }
   },
   {
     "id": "mfgnih987",
@@ -249,10 +259,10 @@
     "info": {
       "heading": {
         "type": "txt",
-        "txt": "Rumor ha it",
+        "txt": "Rumor has it",
         "style": {}
       },
-      "texts": [
+      "reviews": [
         {
           "type": "txt",
           "txt": "“Relaxing space, good coffee and pastries - and the staff is lovely.”",
@@ -283,7 +293,7 @@
   },
   {
     "id": "wc05jjjj4",
-    "classes": [],
+    "classes": ["full"],
     "type": "wap-bg-img",
     "info": {
       "img": {
@@ -297,7 +307,7 @@
   },
   {
     "id": "gbits42",
-    "classes": [],
+    "classes": ["card-gallery bakery"],
     "type": "wap-container",
     "info": {
       "cmps": [
@@ -355,7 +365,7 @@
   },
   {
     "id": "sc599966",
-    "classes": [],
+    "classes": ["bakery"],
     "type": "wap-footer",
     "info": {
       "logo": {
@@ -364,30 +374,27 @@
         "src": "",
         "style": {}
       },
-      "row1": {
-        "type": "txt",
-        "txt": "",
-        "texts": [
-          "500 Terry Francois Street",
-          "San Francisco, CA 94158"
-        ],
-        "style": {}
-      },
-      "row2": {
-        "type": "txt",
-        "txt": "",
-        "texts": [
-          "123-456-7890",
-          "info@mysite.com"
-        ],
-        "style": {}
-      },
+      "details": [
+        {
+          "type": "txt",
+          "txt": "",
+          "texts": ["500 Terry Francois Street", "San Francisco, CA 94158"],
+          "style": {}
+        },
+        {
+          "type": "txt",
+          "txt": "",
+          "texts": ["123-456-7890", "info@mysite.com"],
+          "style": {}
+        }
+      ],
+      "socials": [{}],
       "copyright": {
         "type": "txt",
         "txt": "CoffeRights 2035 by BRUN. Proudly created with Wicks.com",
         "style": {}
       }
     },
-    "style": {}
+    "style": { "background-color": "#1c2e3b" }
   }
 ]

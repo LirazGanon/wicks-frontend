@@ -39,14 +39,14 @@ import wapContact from '../cmps/waps-edit/wap-contact-edit.vue'
 import wapReviews from '../cmps/waps-edit/wap-reviews-edit.vue'
 
 import wapFooter from '../cmps/waps-edit/wap-footer-edit.vue'
-import wapBg from '../cmps/waps-edit/wap-bg-img-edit.vue'
+import wapBgImg from '../cmps/waps-edit/wap-bg-img-edit.vue'
 import appHeader from "./app-header.vue";
 
 
 import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBg },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
   data() {
     return {
       view: {}

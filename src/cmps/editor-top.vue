@@ -3,7 +3,7 @@
     <section class="editor-header">
         <router-link to="/">
             <span role="img" aria-label="logo">
-                <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
+                <img class="logo" src="@/assets/logo-black.png" alt="">
             </span>
         </router-link>
     </section>
@@ -21,7 +21,10 @@
                     phone_iphone
                 </div>
 
-                <div class="dynamic-url">
+             
+
+            </section>
+            <div class="dynamic-url">
                     <div class="material-symbols-outlined">
                         vpn_key
                     </div>
@@ -29,8 +32,6 @@
                     <span>://wicks.renderapp.com/</span>
                     <span contenteditable="true">my-site</span>
                 </div>
-
-            </section>
 
             <div class="site-preview">
                 <span>Preview</span>

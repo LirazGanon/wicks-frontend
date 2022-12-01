@@ -1,6 +1,6 @@
 .editor-header {
     .logo {
-        max-height: 64px;
+        max-height: em(46px);
         margin-block: 10px;
         margin-inline-start: 15px;
     }
@@ -16,13 +16,11 @@
             padding: em(5.63px);
             color: #3335;
             border-radius: 50%;
-            transition: background-color 0.3s;
+            transition: background 0.3s;
         }
-        > :last-child {
-            margin-inline-start: em(66px);
-        }
-        .icon:not(:last-child):hover {
-            background: lighten($clr1, 30%);
+
+        .icon:hover {
+            background: radial-gradient(lighten($clr1, 33%), transparent);
         }
     }
 
@@ -30,7 +28,7 @@
         display: flex;
         align-items: center;
         font-weight: 900;
-
+        font-size: rem(16px);
         div {
             color: #3335;
             margin-inline-end: 10px;
@@ -51,5 +49,17 @@
         align-self: center;
         justify-self: end;
         font-weight: 900;
+
+        &::after {
+            content: "→";
+            opacity: 0;
+        }
+        
+        &:hover { 
+            .site-preview::after{
+                opacity: 1;
+                
+            }
+        }
     }
 }

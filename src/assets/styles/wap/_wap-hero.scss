@@ -2,7 +2,7 @@
     display: grid;
     perspective: 10px;
     overflow: hidden;
-    padding: em(60px) em(10px);
+    padding: em(60px) 0;
     
     &.bakery {
         grid-template-areas:

@@ -1,7 +1,7 @@
 <template>
     <section class="main-layout full" :style="cmp.style">
 
-        <section class="wap-hero bakery  " >
+        <section class="wap-hero " :class="cmp.classes">
 
             <h1>{{ cmp.info.heading.txt }}</h1>
             <p>{{ cmp.info.subHeading.txt }}</p>
@@ -14,6 +14,7 @@
 
         </section>
     </section>
+
 
 </template>
 <script>

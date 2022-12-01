@@ -53,14 +53,14 @@ export default {
     }
   },
   created() {
-    // this.getCurrWap()
+    this.getCurrWap()
 
   },
   methods: {
     async getCurrWap() {
       const id = this.$route.params.wapId
       await this.$store.dispatch({type:'setWapToEdit', id})
-      const wap = this.$store.getWapById
+      const wap = this.$store.getters.getWapToEdit
       this.view = wap
       console.log(this.view.cmps)
     },

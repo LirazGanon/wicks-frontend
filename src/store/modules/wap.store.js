@@ -32,12 +32,12 @@ export const wapStore = {
         waps: [],
         isLoading: false,
         isHeader: true,
-        wapInEdit: null
+        wapInEdit: 'null'
     },
     getters: {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
-        getWapById({ wapInEdit }) { return wapInEdit },
+        getWapToEdit({ wapInEdit }) { return wapInEdit },
         // async getWapById({ state }) {
         //     try {
         //         const wap = await wapService.getById(id)
@@ -70,9 +70,8 @@ export const wapStore = {
         toggleLoading(state) {
             state.isLoading = !state.isLoading
         },
-        setWapToEdit(state, { wap }) {
-            state.wapInEdit = wap
-            console.log(wap)
+        setWapToEdit(state, { wapToEdit }) {
+            state.wapInEdit = wapToEdit
         }
 
     },
@@ -129,7 +128,6 @@ export const wapStore = {
         },
         async setWapToEdit(context, { id }) {
             try {
-                console.log(id)
                 const wapToEdit = await wapService.getById(id)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
             } catch (err) {

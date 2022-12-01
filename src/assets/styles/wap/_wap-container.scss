@@ -41,8 +41,12 @@
         &.card-img {
             display: flex;
             background-color:$bakery-sc-clr ;
+            * {color: $clr4}
             img{
                 width:100%;
+            }
+            button:hover{
+                color:$bakery-sc-clr ;
             }
             
         }

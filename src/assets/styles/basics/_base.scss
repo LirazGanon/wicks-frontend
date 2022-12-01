@@ -56,3 +56,15 @@ a:hover {
     user-select: none;
     cursor: pointer;
 }
+
+.bakery {
+    button{
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: $bakery-pr-clr !important;
+        color: $clr6;
+        cursor: pointer;
+       
+    }
+}

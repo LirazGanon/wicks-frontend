@@ -2,7 +2,7 @@
     <section class="main-editor flex">
 
         <!-- LEFT NAV -->
-        <section class="flex column">
+        <section class="flex column left-nav">
             <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')">
                 add_circle
             </button>

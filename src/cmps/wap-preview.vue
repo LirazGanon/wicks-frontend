@@ -28,6 +28,7 @@
 
 <script>
 import { wapService } from '../services/wap.service.local';
+import { store } from '../store';
 
 export default {
   props: {
@@ -38,8 +39,11 @@ export default {
       this.$router.push('/wap/' + this.wap._id);
     },
     async editWap(wapId) {
-      const wapToEdit =  await wapService.getCustomWap(wapId)
-      this.$router.push(`/wap/edit/${wapId}`);
+
+      const wapToEdit =  await this.$store.dispatch({type:'getCustomWap',wapId})
+      //  wapService.getCustomWap(wapId)
+      console.log(wapToEdit)
+      this.$router.push(`/wap/edit/${wapToEdit._id}`);
     },
     prevWap(wapId) {
       this.$router.push(`/wap/${wapId}`);

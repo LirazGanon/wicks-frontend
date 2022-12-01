@@ -54,15 +54,18 @@ export default {
   },
   created() {
     this.getCurrWap()
-
+  },
+  unmounted(){
+    this.$store.commit({type:'removeWapToEdit'})
   },
   methods: {
     async getCurrWap() {
       const id = this.$route.params.wapId
-      await this.$store.dispatch({type:'setWapToEdit', id})
+      if(!this.$store.getters.getWapToEdit){
+        await this.$store.dispatch({type:'setWapToEdit', id})
+      }
       const wap = this.$store.getters.getWapToEdit
-      this.view = {...wap}
-      console.log(this.view.cmps)
+      this.view = JSON.parse(JSON.stringify(wap))
     },
     getChildPayload2(itemIndex) {
       return this.view.cmps[itemIndex]

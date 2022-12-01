@@ -25,7 +25,7 @@
   </header>
 </template>
 <script>
-
+import 'animate.css'
 // TODO: remember the wap id
 
 export default {

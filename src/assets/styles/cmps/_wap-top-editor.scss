@@ -1,0 +1,55 @@
+.editor-header {
+    .logo {
+        max-height: 64px;
+        margin-block: 10px;
+        margin-inline-start: 15px;
+    }
+    border-bottom: 1px solid #3335;
+}
+
+.editor-top {
+    border-bottom: 1px solid #3335;
+    margin-block-end: 5px;
+    .view-port-editor {
+        .icon {
+            font-size: em(24px);
+            padding: em(5.63px);
+            color: #3335;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        > :last-child {
+            margin-inline-start: em(66px);
+        }
+        .icon:not(:last-child):hover {
+            background: lighten($clr1, 30%);
+        }
+    }
+
+    .dynamic-url {
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+
+        div {
+            color: #3335;
+            margin-inline-end: 10px;
+        }
+        span {
+            color: #000;
+        }
+
+        > span:first-of-type {
+            color: blue;
+        }
+        > span:last-of-type {
+            color: blueviolet;
+        }
+    }
+
+    .site-preview {
+        align-self: center;
+        justify-self: end;
+        font-weight: 900;
+    }
+}

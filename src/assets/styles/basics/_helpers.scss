@@ -55,3 +55,12 @@
 .isDragging{
     cursor:grabbing !important;
 }
+
+.movearea {
+    transition: 0.3s background-color ease;
+    cursor: pointer;
+    p{
+        margin: 0;
+        padding: 5px
+    }
+  }

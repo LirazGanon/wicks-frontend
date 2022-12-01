@@ -48,8 +48,10 @@ export const wapStore = {
             state.waps.push(wap)
         },
         updateWap(state, { wap }) {
-            const idx = state.waps.findIndex(c => c.id === wap._id)
-            state.waps.splice(idx, 1, wap)
+            // const idx = state.waps.findIndex(c => c.id === wap._id)
+            // state.waps.splice(idx, 1, wap)
+            // console.log(wap);
+            state.wapInEdit = wap
         },
         removeWap(state, { wapId }) {
             state.waps = state.waps.filter(wap => wap._id !== wapId)
@@ -64,11 +66,10 @@ export const wapStore = {
         },
         setWapToEdit(state, { wapToEdit }) {
             state.wapInEdit = wapToEdit
-            console.log(wapToEdit._id)
         },
-        removeWapToEdit(state){
-        state.wapToEdit=null
-        console.log(state.wapToEdit)
+        removeWapToEdit(state) {
+            state.wapToEdit = null
+            console.log(state.wapToEdit)
         },
 
     },
@@ -85,10 +86,11 @@ export const wapStore = {
         },
         async updateWap(context, { wap }) {
             try {
-                wap = await wapService.save(wap)
                 context.commit(getActionUpdateWap(wap))
+                wap = await wapToEditService.save(wap)
                 return wap
             } catch (err) {
+                // TODO:RETURN BACK - LAZY SOMETHING ?
                 console.log('wapStore: Error in updateWap', err)
                 throw err
             }

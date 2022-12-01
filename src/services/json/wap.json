@@ -30,7 +30,9 @@
       {
         "id": "fhngh1",
         "type": "wap-header",
-        "classes": ["bakery "],
+        "classes": [
+          "bakery "
+        ],
         "info": {
           "logo": {
             "type": "txt",
@@ -78,7 +80,9 @@
       {
         "id": "gbfgg",
         "type": "wap-hero",
-        "classes": ["bakery"],
+        "classes": [
+          "bakery"
+        ],
         "info": {
           "heading": {
             "type": "txt",
@@ -104,26 +108,31 @@
             }
           ]
         },
-        "style": { "background-color": "#1c2e3b" }
+        "style": {
+          "background-color": "#1c2e3b"
+        }
       },
       {
         "id": "jjyuh",
         "type": "wap-container",
-        "classes": ["img-card bakery"],
+        "classes": [
+          "img-card bakery"
+        ],
         "info": {
           "cmps": [
             {
               "id": "jj4yugh",
               "type": "wap-img",
               "classes": [],
-              "imgs": [
-                {
-                  "type": "img",
-                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
-                  "style": {}
-                }
-              ],
-              "info": {},
+              "info": {
+                "imgs": [
+                  {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+                    "style": {}
+                  }
+                ]
+              },
               "style": {}
             },
             {
@@ -157,7 +166,9 @@
       },
       {
         "id": "gbgty42",
-        "classes": ["card-gallery bakery"],
+        "classes": [
+          "card-gallery bakery"
+        ],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -226,7 +237,9 @@
       },
       {
         "id": "wc0554njj",
-        "classes": ["card-img bakery"],
+        "classes": [
+          "card-img bakery"
+        ],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -266,19 +279,22 @@
               "id": "234msd09",
               "type": "wap-img",
               "classes": [],
-              "imgs": [
-                {
-                  "type": "img",
-                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-                  "style": {}
-                }
-              ],
-              "info": {},
+              "info": {
+                "imgs": [
+                  {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+                    "style": {}
+                  }
+                ]
+              },
               "style": {}
             }
           ]
         },
-        "style": { "background-color": "#ca8263" }
+        "style": {
+          "background-color": "#ca8263"
+        }
       },
       {
         "id": "mfgnih987",
@@ -321,7 +337,9 @@
       },
       {
         "id": "wc05jjjj4",
-        "classes": ["full"],
+        "classes": [
+          "full"
+        ],
         "type": "wap-bg-img",
         "info": {
           "img": {
@@ -335,7 +353,9 @@
       },
       {
         "id": "gbits42",
-        "classes": ["card-gallery bakery"],
+        "classes": [
+          "card-gallery bakery"
+        ],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -393,7 +413,9 @@
       },
       {
         "id": "sc599966",
-        "classes": ["bakery"],
+        "classes": [
+          "bakery"
+        ],
         "type": "wap-footer",
         "info": {
           "logo": {
@@ -406,24 +428,34 @@
             {
               "type": "txt",
               "txt": "",
-              "texts": ["500 Terry Francois Street", "San Francisco, CA 94158"],
+              "texts": [
+                "500 Terry Francois Street",
+                "San Francisco, CA 94158"
+              ],
               "style": {}
             },
             {
               "type": "txt",
               "txt": "",
-              "texts": ["123-456-7890", "info@mysite.com"],
+              "texts": [
+                "123-456-7890",
+                "info@mysite.com"
+              ],
               "style": {}
             }
           ],
-          "socials": [{}],
+          "socials": [
+            {}
+          ],
           "copyright": {
             "type": "txt",
             "txt": "CoffeRights 2035 by BRUN. Proudly created with Wicks.com",
             "style": {}
           }
         },
-        "style": { "background-color": "#1c2e3b" }
+        "style": {
+          "background-color": "#1c2e3b"
+        }
       }
     ],
     "isPublic": true

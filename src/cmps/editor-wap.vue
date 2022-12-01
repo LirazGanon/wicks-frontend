@@ -5,7 +5,7 @@
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
-      <Draggable v-for="item in view.cmps" :key="item.id">
+      <Draggable v-if="wapToEdit" v-for="item in wapToEdit.cmps" :key="item.id">
 
 
         <!-- 
@@ -13,7 +13,7 @@
             {{ item }}
             XXXXXXXXXXXXXXXX
           </pre> -->
-        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" @openEditor="$emit('openEditor',$event)" />
+        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" @openEditor="$emit('openEditor', $event)" />
 
 
       </Draggable>
@@ -101,8 +101,8 @@ export default {
 
   },
   computed: {
-    wapA() {
-      return this.$store.getters.waps
+    wapToEdit() {
+      return this.$store.getters.getWapToEdit
     }
   }
 };

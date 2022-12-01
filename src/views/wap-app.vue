@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      wapToAdd: wapService.getEmptyWap(),
+      wapToAdd: wapService.getCustomWap(),
     }
   },
   computed: {
@@ -51,7 +51,7 @@ export default {
       try {
         await this.$store.dispatch({ type: 'addWap', wap: this.wapToAdd })
         showSuccessMsg('Wap added')
-        this.wapToAdd = wapService.getEmptyWap()
+        this.wapToAdd = wapService.getCustomWap()
       } catch (err) {
         console.log(err)
         showErrorMsg('Cannot add wap')

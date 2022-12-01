@@ -26,6 +26,46 @@
     animation: shineForSkeleton-tuazaeqw532 2s infinite;
 }
 
+.skeleton-shmh4b68a9d:empty {
+    position: relative;
+    height: 800px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 0px 0px;
+    background-image: linear-gradient(#cccccc 333px, transparent 0), radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px), linear-gradient(#cccccc 61px, transparent 0), radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px), linear-gradient(#cccccc 340px, transparent 0), radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px);
+    background-repeat: repeat-y;
+    background-size: 90% 800px, 28px 800px, 90% 800px, 28px 800px, 90% 800px, 28px 800px;
+    background-position: 70px 98px, 20px 120px, 70px 24px, 20px 70px, 68px 446px, 20px 20px;
+}
+
+.skeleton-shmh4b68a9d:empty:before {
+    content: ' ';
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 800px;
+    -webkit-mask-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%);
+    -webkit-mask-repeat: repeat-y;
+    -webkit-mask-size: 50px 800px;
+    -webkit-mask-position: -20% 0;
+    background-image: linear-gradient(rgba(102, 102, 102, 1) 333px, transparent 0), radial-gradient(circle 14px at 14px 14px, rgba(102, 102, 102, 1) 13px, transparent 14px), linear-gradient(rgba(102, 102, 102, 1) 61px, transparent 0), radial-gradient(circle 14px at 14px 14px, rgba(102, 102, 102, 1) 13px, transparent 14px), linear-gradient(rgba(102, 102, 102, 1) 340px, transparent 0), radial-gradient(circle 14px at 14px 14px, rgba(102, 102, 102, 1) 13px, transparent 14px);
+    background-repeat: repeat-y;
+    background-size: 90% 800px, 28px 800px, 90% 800px, 28px 800px, 90% 800px, 28px 800px;
+    background-position: 70px 98px, 20px 120px, 70px 24px, 20px 70px, 68px 446px, 20px 20px;
+    animation: shineForSkeleton-shmh4b68a9d 2s infinite;
+}
+
+@keyframes shineForSkeleton-shmh4b68a9d {
+    to {
+        -webkit-mask-position: 120% 0
+    }
+}
+
+@keyframes shineForSkeleton-shmh4b68a9d {
+    to {
+        -webkit-mask-position: 120% 0
+    }
+}
+
 @keyframes shineForSkeleton-tuazaeqw532 {
     to {
         -webkit-mask-position: 120% 0

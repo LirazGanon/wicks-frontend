@@ -1,6 +1,6 @@
 <template>
   <app-header />
-    <div class="container home">
+    <div class="container">
       <wap-list :waps="waps" :loading="isLoading" />
     </div>
 </template>

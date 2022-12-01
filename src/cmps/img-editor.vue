@@ -1,14 +1,17 @@
 <template>
-    <label>
+    <section class="img-cmp-editor flex column">
+        <h2>Edit</h2>
         <img :src="src" :style="info.style">
-        <span>src</span>
-        <input type="text" :value="src" @change="updateSrc">
-    </label>
-    <label>
-        <span>Border-radius</span>
-        <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
-    </label>
-    <!-- :value="+info?.style['border-radius'].slice(0,-2)" -->
+        <label>
+            <span>src </span>
+            <input type="text" :value="src" @change="updateSrc">
+        </label>
+        <label>
+            <span>Border-radius </span>
+            <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
+        </label>
+        <!-- :value="+info?.style['border-radius'].slice(0,-2)" -->
+    </section>
 </template>
 <script>
 export default {

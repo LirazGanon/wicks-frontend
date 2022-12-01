@@ -28,22 +28,22 @@ async function query() {
     return await storageService.query(STORAGE_KEY)
 }
 
-function getById(wapId,key) {
-    return storageService.get(key||STORAGE_KEY, wapId)
+function getById(wapId, key) {
+    return storageService.get(key || STORAGE_KEY, wapId)
 }
 
 async function remove(wapId) {
     await storageService.remove(STORAGE_KEY, wapId)
 }
 
-async function save(wap,key) {
+async function save(wap, key) {
     var savedWap
     if (wap._id) {
-        savedWap = await storageService.put(key||STORAGE_KEY, wap)
+        savedWap = await storageService.put(key || STORAGE_KEY, wap)
     } else {
         // Later, owner is set by the backend
         wap.owner = userService.getLoggedinUser()
-        savedWap = await storageService.post(key||STORAGE_KEY, wap)
+        savedWap = await storageService.post(key || STORAGE_KEY, wap)
     }
     return savedWap
 }
@@ -67,10 +67,10 @@ async function addWapMsg(wapId, txt) {
 async function getCustomWap(wapId) {
     // const wapToEdit = await JSON.parse(JSON.stringify(getById(wapId)))
     let wapToEdit = await getById(wapId)
-    wapToEdit=JSON.parse(JSON.stringify(wapToEdit))
+    wapToEdit = JSON.parse(JSON.stringify(wapToEdit))
     delete wapToEdit._id
     wapToEdit.user = 'user_' + utilService.makeId()
-    wapToEdit = save(wapToEdit,EDITABLE_STORAGE_KEY)
+    wapToEdit = save(wapToEdit, EDITABLE_STORAGE_KEY)
     console.log(wapToEdit)
     return wapToEdit
 }

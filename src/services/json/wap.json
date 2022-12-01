@@ -276,7 +276,7 @@
             }
           ]
         },
-        "style": {}
+        "style": {"background-color":"#ca8263"}
       },
       {
 		"id": "mfgnih987",
@@ -421,7 +421,7 @@
             "style": {}
           }
         },
-        "style": {}
+        "style": { "background-color": "#1c2e3b" }
       }
     ],
     "isPublic": true

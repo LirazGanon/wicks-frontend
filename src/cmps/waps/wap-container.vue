@@ -1,11 +1,14 @@
 <template>
 
-        <section class="wap-container bakery main-layout" :class="cmp.classes">
+    <section class="main-layout full" :style="cmp.style">
+
+        <section class="wap-container bakery" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
                 <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
             </div>
 
         </section>
+    </section>
 
 </template>
 
@@ -31,7 +34,7 @@ export default {
     created() { },
     methods: {},
     computed: {
-    
+
     },
     unmounted() { },
 };

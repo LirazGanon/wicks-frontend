@@ -22,11 +22,13 @@
 <script>
 import editorWap from '../cmps/editor-wap.vue'
 import editorSide from '../cmps/editor-side.vue'
+import editorTop from '../cmps/editor-top.vue'
+
 
 export default {
     name: 'wap-edit',
     props: {},
-    components: { editorSide, editorWap },
+    components: { editorSide, editorWap,editorTop },
     data() {
         return {
 

@@ -1,16 +1,21 @@
 .wap-reviews {
     display: flex;
     padding: 2em 0;
+
     h4 {
         flex-basis: 40%;
     }
 
+    @media (max-width:650px) {
+        flex-direction: column;
+    }
 
     .reviews-container {
-
+        flex: 1;
         display: grid;
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        // grid-template-columns: repeat(2, minmax(250px, 1fr));
+        // grid-template-rows: repeat(2, 1fr);
         gap: 51px;
 
 

@@ -109,7 +109,7 @@
       {
         "id": "jjyuh",
         "type": "wap-container",
-        "classes": ["img-card"],
+        "classes": ["img-card bakery"],
         "info": {
           "cmps": [
             {
@@ -157,7 +157,7 @@
       },
       {
         "id": "gbgty42",
-        "classes": ["card-gallery"],
+        "classes": ["card-gallery bakery"],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -226,7 +226,7 @@
       },
       {
         "id": "wc0554njj",
-        "classes": ["card-img "],
+        "classes": ["card-img bakery"],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -266,57 +266,59 @@
               "id": "234msd09",
               "type": "wap-img",
               "classes": [],
-                "imgs": [{
+              "imgs": [
+                {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
                   "style": {}
-              }],
+                }
+              ],
               "info": {},
               "style": {}
             }
           ]
         },
-        "style": {"background-color":"#ca8263"}
+        "style": { "background-color": "#ca8263" }
       },
       {
-		"id": "mfgnih987",
-		"classes": [],
-		"type": "wap-reviews",
-		"info": {
-			"heading": {
-				"type": "txt",
-				"txt": "Rumor has it",
-				"style": {}
-			},
-			"reviews": [
-				{
-					"type": "txt",
-					"txt": "“Relaxing space, good coffee and pastries - and the staff is lovely.”",
-					"author": "Licia",
-					"style": {}
-				},
-				{
-					"type": "txt",
-					"txt": "“My fave spot, all day every day. The vibe is as magical as their pastries.”",
-					"author": "Oliver",
-					"style": {}
-				},
-				{
-					"type": "txt",
-					"txt": "“Such a great spot. Incredible pastries and I had an unreal cheesecake.”",
-					"author": "Sean",
-					"style": {}
-				},
-				{
-					"type": "txt",
-					"txt": "“A five star place for breakfast and weekend brunch.”",
-					"author": "Jai",
-					"style": {}
-				}
-			]
-		},
-		"style": {}
-	},
+        "id": "mfgnih987",
+        "classes": [],
+        "type": "wap-reviews",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Rumor has it",
+            "style": {}
+          },
+          "reviews": [
+            {
+              "type": "txt",
+              "txt": "“Relaxing space, good coffee and pastries - and the staff is lovely.”",
+              "author": "Licia",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "“My fave spot, all day every day. The vibe is as magical as their pastries.”",
+              "author": "Oliver",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "“Such a great spot. Incredible pastries and I had an unreal cheesecake.”",
+              "author": "Sean",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "“A five star place for breakfast and weekend brunch.”",
+              "author": "Jai",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
       {
         "id": "wc05jjjj4",
         "classes": ["full"],
@@ -333,7 +335,7 @@
       },
       {
         "id": "gbits42",
-        "classes": ["card-gallery"],
+        "classes": ["card-gallery bakery"],
         "type": "wap-container",
         "info": {
           "cmps": [

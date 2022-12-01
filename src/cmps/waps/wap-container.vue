@@ -2,7 +2,7 @@
 
     <section class="main-layout full" :style="cmp.style">
 
-        <section class="wap-container bakery" :class="cmp.classes">
+        <section class="wap-container" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
                 <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
             </div>

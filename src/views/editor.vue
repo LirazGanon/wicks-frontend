@@ -1,5 +1,5 @@
 <template>
-    <main class="edit-container flex full column">
+    <main class="edit-container">
 
         <editor-top />
         <section class="wap-editor flex">

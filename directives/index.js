@@ -14,6 +14,7 @@ export const rainbowDirective = {
   },
 }
 
+
 export const customOnDirective = {
   mounted(el, binding) {
     console.log('binding', binding)

@@ -4,8 +4,8 @@
         <editor-top />
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->
-            <editor-side :cmps="cmps" v-if="cmps" />
-            <editor-wap />
+            <editor-side :cmps="cmps" v-if="cmps" :editor="editor"/>
+            <editor-wap @openEditor="openEditor" />
         </section>
 
         <!-- <pre>
@@ -30,13 +30,16 @@ export default {
     components: { editorSide, editorWap, editorTop },
     data() {
         return {
-
+            type:null,
+            editor:null
         }
     },
     created() {
     },
     methods: {
-
+        openEditor(el){
+            this.editor = el
+        }
     },
     computed: {
         wapToEdit() {

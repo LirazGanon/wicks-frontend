@@ -17,6 +17,9 @@
         // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
         border-right: 1px solid #3335;
+        section{
+            overflow-y: auto;
+        }
 
         .draggable-item:first-child {
             margin-top: 10px;
@@ -30,6 +33,12 @@
 
         img {
             width: 95%;
+            &:hover{
+                cursor:grab;
+            }
+            &:active{
+                cursor:grabbing;
+            }
 
         }
     }

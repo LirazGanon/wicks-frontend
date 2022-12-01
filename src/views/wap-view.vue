@@ -1,12 +1,13 @@
 <template>
 
+    <div class="wap-view">
+        <div v-for="item in view.cmps" :key="item.id">
+            <div class="main-layout full">
 
-    <div v-for="item in view.cmps" :key="item.id" class="wap-view">
-        <div class="main-layout full">
+                <component :is="(item.type || 'wapHeader')" :cmp="item" />
+                <!-- <pre>{{item}}</pre> -->
 
-            <component :is="(item.type || 'wapHeader')" :cmp="item" />
-            <!-- <pre>{{item}}</pre> -->
-
+            </div>
         </div>
     </div>
 

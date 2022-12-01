@@ -1,9 +1,14 @@
+.edit-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
 section.page-editor {
     overflow-y: auto;
     flex: 1;
-    height: calc(100vh - 46px - 76px);
+    // height: 80vh;
+    height: calc(100vh - 46px - 76.75px);
 }
 
 .wap-view {
-    overflow-y: scroll;
 }

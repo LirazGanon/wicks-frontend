@@ -49,11 +49,8 @@
         align-self: center;
         justify-self: end;
         font-weight: 900;
-
-        &::after {
-            content: "→";
-            opacity: 0;
+        span{
+            color: #000;
         }
-        
     }
 }

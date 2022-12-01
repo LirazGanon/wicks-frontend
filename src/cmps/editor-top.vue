@@ -21,20 +21,20 @@
                     phone_iphone
                 </div>
 
-             
+
 
             </section>
             <div class="dynamic-url">
-                    <div class="material-symbols-outlined">
-                        vpn_key
-                    </div>
-                    <span>https</span>
-                    <span>://wicks.renderapp.com/</span>
-                    <span contenteditable="true">my-site</span>
+                <div class="material-symbols-outlined">
+                    vpn_key
                 </div>
+                <span>https</span>
+                <span>://wicks.renderapp.com/</span>
+                <span contenteditable="true">my-site</span>
+            </div>
 
             <div class="site-preview">
-                <span>Preview</span>
+                <router-link :to="(`/wap/` + wapId)"><span>Preview</span></router-link>
             </div>
 
 
@@ -61,7 +61,9 @@ export default {
 
     },
     computed: {
-
+        wapId(){
+            return this.$route.params.wapId
+        }
     },
     watch: {
 

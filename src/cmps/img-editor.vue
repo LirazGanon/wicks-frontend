@@ -1,5 +1,6 @@
 <template>
     <h2>{{ info }}</h2>
+    <pre>{{cmp}}</pre>
 </template>
 <script>
 export default {
@@ -7,9 +8,15 @@ export default {
     props: { info: Object },
     components: {},
     data() {
-        return {};
+        return {
+            cmp:null
+        };
     },
-    created() { },
+    created() {
+        const wap = this.$store.getters.getWapToEdit
+        const cmp = wap.cmps.find(cmp => cmp.id === this.info.id)
+        this.cmp = JSON.parse(JSON.stringify(cmp))
+     },
     methods: {},
     computed: {},
     unmounted() { },

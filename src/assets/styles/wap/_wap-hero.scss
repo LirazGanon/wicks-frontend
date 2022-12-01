@@ -14,13 +14,13 @@
         transform-style: preserve-3d;
         h1 {
             grid-area: t;
-            font-size: clamp(16px, 2em, 64px);
-            width: clamp(16px, 10em, 550px);
+            font-size: clamp(16px, 5em, 80px);
+            width: clamp(16px, 100vw, 750px);
         }
 
         p {
             grid-area: ml;
-            font-size: clamp(12px, 0.4em, 64px);
+            font-size: clamp(12px, 1em, 64px);
             width: clamp(16px, 12em, 550px);
             margin-block: 2.8em;
             font-weight: 300;

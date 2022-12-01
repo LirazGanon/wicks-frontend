@@ -1,6 +1,6 @@
 <template>
-    <section class="wap-bg-img">
-        <img :src="cmp.info.img.src" alt="">
+    <section class="wap-bg-img bakery full" :style="{backgroundImage:'url('+ cmp.info.img.src+ ')'}">
+        <!-- <img :src="cmp.info.img.src" alt=""> -->
     </section>
 </template>
 <script>

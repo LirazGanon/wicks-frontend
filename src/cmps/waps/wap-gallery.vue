@@ -1,6 +1,6 @@
 <template>
     <section class="wap-gallery">
-        <h4>gallery-{{ cmp.info.imgs.length }}</h4>
+        <img v-for="img in cmp.info.imgs" :src="img.src" alt="">
     </section>
     <!-- <pre>{{cmp}}</pre> -->
 

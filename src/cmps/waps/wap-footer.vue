@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-footer bakery">
+    <section class="wap-footer bakery" :class="cmp.classes">
        <!-- <pre>
         {{ cmp.info.details }}
        </pre> -->

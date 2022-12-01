@@ -1,6 +1,18 @@
 .wap-bg-img {
+<<<<<<< HEAD
     img {
         object-fit: cover;
         width: 100%;
     }
 }
+=======
+    &.bakery {
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+    }
+}
+>>>>>>> 37888e7ed41ed71cb1f356406488a9906091c20c

@@ -1,5 +1,4 @@
 <template>
-    <section>
 
         <section class="wap-container bakery" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
@@ -7,7 +6,7 @@
             </div>
 
         </section>
-    </section>
+
 </template>
 
 <script>

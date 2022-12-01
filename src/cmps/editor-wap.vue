@@ -74,8 +74,10 @@ export default {
     },
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.cmps, dropResult)
+      console.log(result);
       this.view.cmps = result
-      this.$store.dispatch('saveWap', this.view)
+      const wap = JSON.parse(JSON.stringify(this.view))
+      this.$store.dispatch({ type: 'updateWap', wap })
     },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;

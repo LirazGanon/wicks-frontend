@@ -48,9 +48,6 @@ export const wapStore = {
             state.waps.push(wap)
         },
         updateWap(state, { wap }) {
-            // const idx = state.waps.findIndex(c => c.id === wap._id)
-            // state.waps.splice(idx, 1, wap)
-            // console.log(wap);
             state.wapInEdit = wap
         },
         removeWap(state, { wapId }) {

@@ -3,6 +3,7 @@ import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 import defaultWaps from './json/wap.json' assert{type: 'json'}
+import { wapService } from './wap.service.local.js'
 
 
 const STORAGE_KEY = 'editableWaps'
@@ -69,11 +70,12 @@ async function addWapMsg(wapId, txt) {
 
 async function getCustomWap(wapId) {
     // const wapToEdit = await JSON.parse(JSON.stringify(getById(wapId)))
-    let wapToEdit = await getById(wapId)
+    let wapToEdit = await wapService.getById(wapId)
     wapToEdit=JSON.parse(JSON.stringify(wapToEdit))
     delete wapToEdit._id
     wapToEdit.user = 'user_' + utilService.makeId()
-    wapToEdit = save(wapToEdit,EDITABLE_STORAGE_KEY)
+    wapToEdit = await save(wapToEdit, STORAGE_KEY)
+    console.log(wapToEdit)
     return wapToEdit
 }
 

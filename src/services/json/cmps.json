@@ -1,8 +1,7 @@
 [
   {
-    "id": "3hnhh1",
+    "id": "fhngh1",
     "type": "wap-header",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669888885/wicks/cmp-prev/bakery_header.png",
     "classes": ["bakery "],
     "info": {
       "logo": {
@@ -38,8 +37,8 @@
             },
             {
               "type": "button",
-              "txt": "Subscribe",
-              "link": "#Subscribe",
+              "txt": "Order online",
+              "link": "#order",
               "style": {}
             }
           ]
@@ -49,7 +48,7 @@
     "style": {}
   },
   {
-    "id": "v0bfzg",
+    "id": "gbfgg",
     "type": "wap-hero",
     "classes": ["bakery"],
     "info": {
@@ -60,7 +59,7 @@
       },
       "subHeading": {
         "type": "txt",
-        "txt": "Discover the safest self-driving experience with Autono.",
+        "txt": "500 Terry Francois Street San Francisco, CA 94158",
         "style": {}
       },
       "btns": [],
@@ -70,13 +69,17 @@
         "style": {}
       },
       "imgs": [
-        
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
+          "style": {}
+        }
       ]
     },
     "style": { "background-color": "#1c2e3b" }
   },
   {
-    "id": "jfy8h",
+    "id": "jjyuh",
     "type": "wap-container",
     "classes": ["img-card bakery"],
     "info": {

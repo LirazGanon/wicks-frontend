@@ -5,10 +5,10 @@ import { userService } from './user.service.js'
 import defaultWaps from './json/wap.json' assert{type: 'json'}
 
 
-const STORAGE_KEY = 'wap'
-const EDITABLE_STORAGE_KEY = 'editableWaps'
+const STORAGE_KEY = 'editableWaps'
 
-export const wapService = {
+
+export const wapToEditService = {
     query,
     getById,
     save,
@@ -16,7 +16,7 @@ export const wapService = {
     getCustomWap,
     addWapMsg
 }
-window.cs = wapService
+window.cs = wapToEditService
 
 
 async function query() {
@@ -31,22 +31,22 @@ async function query() {
     return  waps
 }
 
-function getById(wapId,key) {
-    return storageService.get(key||STORAGE_KEY, wapId)
+function getById(wapId) {
+    return storageService.get(STORAGE_KEY, wapId)
 }
 
 async function remove(wapId) {
     await storageService.remove(STORAGE_KEY, wapId)
 }
 
-async function save(wap,key) {
+async function save(wap) {
     var savedWap
     if (wap._id) {
-        savedWap = await storageService.put(key||STORAGE_KEY, wap)
+        savedWap = await storageService.put(STORAGE_KEY, wap)
     } else {
         // Later, owner is set by the backend
         wap.owner = userService.getLoggedinUser()
-        savedWap = await storageService.post(key||STORAGE_KEY, wap)
+        savedWap = await storageService.post(STORAGE_KEY, wap)
     }
     return savedWap
 }

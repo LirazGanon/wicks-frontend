@@ -1,4 +1,5 @@
 import { wapService } from '../../services/wap.service.local'
+import { wapToEditService } from '../../services/wap-to-edit.service'
 
 export function getActionRemoveWap(wapId) {
     return {
@@ -124,7 +125,7 @@ export const wapStore = {
         },
         async setWapToEdit(context, { id }) {
             try {
-                const wapToEdit = await wapService.getById(id, 'editableWaps')
+                const wapToEdit = await wapToEditService.getById(id)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
             } catch (err) {
                 console.log('could not get wap')
@@ -132,9 +133,10 @@ export const wapStore = {
         },
         async getCustomWap(context, { wapId }) {
             try {
-                const wapToEdit = await wapService.getCustomWap(wapId)
+                const wapToEdit = await wapToEditService.getCustomWap(wapId)
                 console.log(wapToEdit)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
+                // TODO: check what is the eror from the console
                 return wapToEdit
             }
             catch {

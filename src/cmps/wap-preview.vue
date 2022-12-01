@@ -41,8 +41,6 @@ export default {
     async editWap(wapId) {
 
       const wapToEdit =  await this.$store.dispatch({type:'getCustomWap',wapId})
-      //  wapService.getCustomWap(wapId)
-      console.log(wapToEdit)
       this.$router.push(`/wap/edit/${wapToEdit._id}`);
     },
     prevWap(wapId) {

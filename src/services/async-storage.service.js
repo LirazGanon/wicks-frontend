@@ -15,7 +15,6 @@ function query(entityType, delay = 500) {
 function get(entityType, entityId) {
     return query(entityType).then(entities => {
         const entity = entities.find(entity => entity._id === entityId)
-        console.log(entityId)
         if (!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
         return entity
     })
@@ -41,10 +40,8 @@ function postMany(entityType, newEntities) {
 function put(entityType, updatedEntity) {
     updatedEntity = JSON.parse(JSON.stringify(updatedEntity))    
     return query(entityType).then(entities => {
-        console.log(updatedEntity);
-        console.log('all',entities);
+  
         const idx = entities.findIndex(entity => {
-            console.log(entity._id);
             return entity._id === updatedEntity._id})
         if (idx < 0) throw new Error(`Update failed, cannot find entity with id: ${updatedEntity._id} in: ${entityType}`)
         entities.splice(idx, 1, updatedEntity)

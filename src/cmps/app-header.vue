@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header class="main-header">
     <router-link to="/">
       <span role="img" aria-label="logo">
-        <img class="logo" src="@/assets/wicks-header-logo.png" alt="">
+        <img v-if="!noLogo" class="logo" src="@/assets/logo-black.png" alt="">
       </span>
     </router-link>
     <nav class="flex">
@@ -25,10 +25,13 @@
   </header>
 </template>
 <script>
-
+import 'animate.css'
 // TODO: remember the wap id
 
 export default {
+  props: {
+    noLogo: Boolean
+  },
   name: 'main-header',
   computed: {
     loggedInUser() {

@@ -1,0 +1,30 @@
+.container {
+    &.home {
+        gap: 50px;
+        background-image: url(@/assets/wicks_hero.jpg);
+        min-height: 500px;
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        h1{
+            font-size: 2em;
+        }
+        img {
+            width: 40%;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 2em;
+            width: 300px;
+            padding: 20px;
+            margin-inline-start: calc(20px + 25vw);
+            background-color: $clr3;
+            transition:background-color 0.2s;
+            &:hover{
+                background-color: $clr2;
+
+            }
+        }
+    }
+}

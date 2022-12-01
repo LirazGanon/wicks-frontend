@@ -6,8 +6,12 @@
       @drop="onDrop($event)">
 
 
-      <Draggable v-for="item in cmps" :key="item.id">
-        <div class="draggable-item">
+      <Draggable v-for="item in cmps" :key="item.id" >
+        <div class="draggable-item"
+        @mousedown="isDragging=true"
+        @mouseup="isDragging=false"
+       :class="{isDragging:isDragging}"
+        >
           <img v-if="item.src" :src="item.src" />
           <p v-else>
             {{ item.type }}
@@ -33,7 +37,8 @@ export default {
   components: { Draggable, Container },
   data() {
     return {
-      view: {}
+      view: {},
+      isDragging: false
     }
   },
   props: {
@@ -80,7 +85,7 @@ export default {
     onDragStart(...args) {
       // console.log(args);
     },
-
+  
   },
   computed: {
     cmpsA() {

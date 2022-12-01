@@ -1,13 +1,16 @@
 <template>
-  <app-header />
-  <section class="container home text-center">
-    <h1>Home Page</h1>
+  <app-header :noLogo="true" />
+  <section class="container home flex column">
+
+    <!-- <h1>Home Page</h1>
     <h5 class="text-center">
       Powered up Frontend
       <span class="material-symbols-outlined">search</span>
 
-    </h5>
-    <img alt="Vue logo" src="@/assets/logo.png">
+    </h5> -->
+    <img alt="Vue logo" src="@/assets/logo-black.png"  class="animate__animated animate__bounce animate__delay-2s">
+    <h1 class="animate__animated animate__slideInLeft animate__delay-1s">Build Amazing Sites</h1>
+    <button class="animate__animated animate__slideInRight" @click="this.$router.push('/wap')">Start Now</button>
 
   </section>
 

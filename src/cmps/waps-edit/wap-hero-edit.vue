@@ -10,7 +10,7 @@
                 {{ btn.txt }}
             </button>
 
-            <img :src="img.src" v-for="img in cmp.info.imgs" alt="" class="wap-img">
+            <img :src="img.src" v-for="img in cmp.info.imgs" alt="" class="wap-img" @click="openEditor">
             <img :src="cmp.info.bgImg.src" alt="" class="wap-bg-img">
 
         </section>
@@ -26,7 +26,12 @@ export default {
         return {};
     },
     created() { },
-    methods: {},
+    methods: {
+
+        openEditor(){
+            console.log(this.cmp.id);
+        }
+    },
     computed: {},
     unmounted() { },
 };

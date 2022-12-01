@@ -1,5 +1,5 @@
 <template>
-    <section class="main-layout" :class="cmp.classes" :style="cmp.style">
+    <section class="main-layout full"  :style="cmp.style">
         <section class="wap-footer" :class="cmp.classes" >
 
             <div v-for="txts in cmp.info.details">

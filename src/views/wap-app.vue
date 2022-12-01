@@ -1,25 +1,13 @@
 <template>
-
-  <app-header/>
-
-  <div class="container home">
-
-    <wap-list @removeWap="removeWap" :waps="waps" :loading="isLoading" />
-
-    <hr />
-    <form @submit.prevent="addWap()">
-      <h2>Add wap</h2>
-      <input type="text" v-model="wapToAdd.name" />
-      <button>Save</button>
-    </form>
-  </div>
+  <app-header />
+    <div class="container home">
+      <wap-list :waps="waps" :loading="isLoading" />
+    </div>
 </template>
 
 <script>
 import wapList from '../cmps/wap-list.vue'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { wapService } from '../services/wap.service.local'
-import { getActionRemoveWap, getActionUpdateWap, getActionAddWapMsg } from '../store/modules/wap.store'
 import appHeader from '../cmps/app-header.vue'
 export default {
   name: 'wap-app',
@@ -28,9 +16,7 @@ export default {
     appHeader
   },
   data() {
-    return {
-      wapToAdd: wapService.getCustomWap(),
-    }
+    return {}
   },
   computed: {
     loggedInUser() {
@@ -47,39 +33,6 @@ export default {
     this.$store.dispatch({ type: 'loadWaps' })
   },
   methods: {
-    async addWap() {
-      try {
-        await this.$store.dispatch({ type: 'addWap', wap: this.wapToAdd })
-        showSuccessMsg('Wap added')
-        this.wapToAdd = wapService.getCustomWap()
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot add wap')
-      }
-    },
-    async removeWap(wapId) {
-      console.log(wapId)
-      try {
-        await this.$store.dispatch(getActionRemoveWap(wapId))
-        showSuccessMsg('Wap removed')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot remove wap')
-      }
-    },
-    async updateWap(wap) {
-      try {
-        wap = { ...wap }
-        wap.desc = prompt('New desc?', wap.desc)
-        await this.$store.dispatch(getActionUpdateWap(wap))
-        showSuccessMsg('Wap updated')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot update wap')
-      }
-    },
     async addWapMsg(wapId) {
       try {
         await this.$store.dispatch(getActionAddWapMsg(wapId))
@@ -93,7 +46,5 @@ export default {
       console.log('Wap msgs:', wap.msgs)
     }
   }
-
-
 }
 </script>

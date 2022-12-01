@@ -32,7 +32,7 @@ export const wapStore = {
         waps: [],
         isLoading: false,
         isHeader: true,
-        wapInEdit: 'null'
+        wapInEdit: null
     },
     getters: {
         waps({ waps }) { return waps },
@@ -63,7 +63,12 @@ export const wapStore = {
         },
         setWapToEdit(state, { wapToEdit }) {
             state.wapInEdit = wapToEdit
-        }
+            console.log(wapToEdit._id)
+        },
+        removeWapToEdit(state){
+        state.wapToEdit=null
+        console.log(state.wapToEdit)
+        },
 
     },
     actions: {
@@ -119,10 +124,21 @@ export const wapStore = {
         },
         async setWapToEdit(context, { id }) {
             try {
-                const wapToEdit = await wapService.getById(id)
+                const wapToEdit = await wapService.getById(id, 'editableWaps')
                 context.commit({ type: 'setWapToEdit', wapToEdit })
             } catch (err) {
                 console.log('could not get wap')
+            }
+        },
+        async getCustomWap(context, { wapId }) {
+            try {
+                const wapToEdit = await wapService.getCustomWap(wapId)
+                console.log(wapToEdit)
+                context.commit({ type: 'setWapToEdit', wapToEdit })
+                return wapToEdit
+            }
+            catch {
+                console.log('could not create wap')
             }
         }
 

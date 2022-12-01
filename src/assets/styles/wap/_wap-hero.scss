@@ -16,6 +16,7 @@
             grid-area: t;
             font-size: clamp(16px, 5em, 80px);
             width: clamp(16px, 100vw, 750px);
+            text-transform: capitalize;
         }
 
         p {

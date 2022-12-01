@@ -20,21 +20,11 @@
             font-size: small;
         }
 
-        div:nth-child(n+1) {
-            // justify-self: flex-end;
-        }
 
         div:nth-child(n+2) {
             text-align: right;
             order: 1
         }
 
-
-        // }
-        // p:nth-of-type(n+3):nth-of-type(-n+4) {
-        //     background-color: rgb(76, 76, 222);
-        //     align-self: flex-start;
-        // }
-        .bakery-footer-logo {}
     }
 }

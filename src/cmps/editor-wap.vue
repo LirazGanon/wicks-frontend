@@ -6,18 +6,16 @@
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.cmps" :key="item.id">
-        <div class="draggable-item">
 
-          <!-- 
+
+        <!-- 
           <pre>
             {{ item }}
             XXXXXXXXXXXXXXXX
           </pre> -->
-          <component :is="(item.type || 'wap-header')" :cmp="item" />
+        <component :is="(item.type || 'wap-header')" :cmp="item" />
 
 
-
-        </div>
       </Draggable>
 
     </Container>

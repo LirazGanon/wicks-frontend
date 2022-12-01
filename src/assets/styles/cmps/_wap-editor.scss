@@ -2,14 +2,16 @@
     height: 100vh;
 
     .left-nav{
-        background-color: aqua;
+        // background-color: aqua;
+        border-right: 1px solid #3335;
     }
 
     .options {
         display: flex;
         height: 100vh;
-        background-color: aqua;
+        // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
+        border-right: 1px solid #3335;
         .draggable-item:first-child{
             margin-top: 10px;
         }

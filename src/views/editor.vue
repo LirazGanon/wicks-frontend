@@ -5,6 +5,7 @@
 
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->
+            <editor-top />
             <editor-side :cmps="cmps" v-if="cmps" />
             <editor-wap />
         </section>
@@ -28,7 +29,7 @@ import editorTop from '../cmps/editor-top.vue'
 export default {
     name: 'wap-edit',
     props: {},
-    components: { editorSide, editorWap,editorTop },
+    components: { editorSide, editorWap, editorTop },
     data() {
         return {
 

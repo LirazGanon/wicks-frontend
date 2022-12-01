@@ -6,7 +6,7 @@
 
             <div class="wap-logo flex align-center">
                 <img :src="cmp.info.logo?.img" alt="" v-if="cmp.info.logo.img">
-                <h4 v-else contenteditable="true">{{ cmp.info.logo.txt }}</h4>
+                <h4 v-else contenteditable="true" @click="contentEdit">{{ cmp.info.logo.txt }}</h4>
             </div>
             <!-- <pre>{{info}}</pre> -->
 
@@ -27,7 +27,11 @@ export default {
         return {};
     },
     created() { },
-    methods: {},
+    methods: {
+        contentEdit() {
+            this.$emit('log', this.cmp.id)
+        }
+    },
     computed: {},
     unmounted() { },
 };

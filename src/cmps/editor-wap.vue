@@ -4,7 +4,6 @@
   <section v-if="view" class="page-editor">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
-      
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.cmps" :key="item.id">
 
@@ -14,7 +13,7 @@
             {{ item }}
             XXXXXXXXXXXXXXXX
           </pre> -->
-        <component :is="(item.type || 'wap-header')" :cmp="item" />
+        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" />
 
 
       </Draggable>
@@ -66,6 +65,9 @@ export default {
       }
       const wap = this.$store.getters.getWapToEdit
       this.view = JSON.parse(JSON.stringify(wap))
+    },
+    log(id) {
+     console.log( this.view.cmps.findIndex(cmp => cmp.id == id))
     },
     getChildPayload2(itemIndex) {
       return this.view.cmps[itemIndex]

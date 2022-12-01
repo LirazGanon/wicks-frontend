@@ -1,9 +1,14 @@
 .main-editor {
     height: 100vh;
 
-    .left-nav{
+    .left-nav {
         // background-color: aqua;
         border-right: 1px solid #3335;
+
+        button {
+            color: #1c2e3bc9;
+            background-color: transparent;
+        }
     }
 
     .options {
@@ -12,10 +17,12 @@
         // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
         border-right: 1px solid #3335;
-        .draggable-item:first-child{
+
+        .draggable-item:first-child {
             margin-top: 10px;
         }
-        .draggable-item{
+
+        .draggable-item {
             display: flex;
             justify-content: center;
             margin-bottom: 10px;
@@ -23,7 +30,7 @@
 
         img {
             width: 95%;
-        
+
         }
     }
 

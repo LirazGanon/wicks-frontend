@@ -8,8 +8,8 @@
 }
 
 html {
-    font-family: openSans;
-    line-height: 1.6;
+    font-family: workSans-eLight, Helvetica, Arial, sans-serif;
+    // line-height: 1.6;
     color: $clr2;
 }
 
@@ -24,6 +24,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-weight: 400;
     margin: 0;
 }
 

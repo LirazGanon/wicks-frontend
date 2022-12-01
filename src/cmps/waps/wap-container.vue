@@ -1,6 +1,6 @@
 <template>
 
-        <section class="wap-container bakery" :class="cmp.classes">
+        <section class="wap-container bakery main-layout" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
                 <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
             </div>

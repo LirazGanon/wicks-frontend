@@ -226,7 +226,7 @@
       },
       {
         "id": "wc0554njj",
-        "classes": ["card-img full"],
+        "classes": ["card-img "],
         "type": "wap-container",
         "info": {
           "cmps": [

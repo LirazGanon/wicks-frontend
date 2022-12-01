@@ -5,7 +5,7 @@
          {{nav}}
      </pre>  -->
 
-        <a href="#" v-for="l in nav.info.links"> {{ l.txt }}</a>
+        <a href="" v-for="l in nav.info.links" contenteditable="true"> {{ l.txt }}</a>
 
     </nav>
 

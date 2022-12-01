@@ -2,16 +2,11 @@
 
 
     <div v-for="item in view.cmps" :key="item.id" class="">
-        <div class="main-layout ">
-
-
+        <div class="main-layout full">
 
             <component :is="(item.type || 'wapHeader')" :cmp="item" />
-
-
             <!-- <pre>{{item}}</pre> -->
 
-      
         </div>
     </div>
 

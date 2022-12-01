@@ -1,7 +1,7 @@
 <template>
     <section class="wap-img">
 
-        <img v-for="img in cmp.imgs" :src="img.src" alt="">
+        <img v-for="img in cmp.info.imgs" :src="img.src" alt="">
 
     </section>
 

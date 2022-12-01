@@ -2,6 +2,7 @@
   {
     "id": "fhngh1",
     "type": "wap-header",
+    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669888885/wicks/cmp-prev/bakery_header.png",
     "classes": ["bakery "],
     "info": {
       "logo": {

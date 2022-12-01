@@ -8,10 +8,11 @@
 
       <Draggable v-for="item in cmps" :key="item.id">
         <div class="draggable-item">
-        <p>
-          {{item.type}}
-        </p> 
-         
+          <img v-if="item.src" :src="item.src" />
+          <p v-else>
+            {{ item.type }}
+          </p>
+
         </div>
 
 

@@ -30,7 +30,7 @@
       {
         "id": "fhngh1",
         "type": "wap-header",
-        "classes": [],
+        "classes": ["bakery "],
         "info": {
           "logo": {
             "type": "txt",
@@ -78,7 +78,7 @@
       {
         "id": "gbfgg",
         "type": "wap-hero",
-        "classes": [],
+        "classes": ["bakery"],
         "info": {
           "heading": {
             "type": "txt",

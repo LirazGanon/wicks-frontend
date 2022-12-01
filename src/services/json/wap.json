@@ -152,7 +152,7 @@
                 },
                 "btns": [
                   {
-                    "type": "primery",
+                    "type": "txt",
                     "txt": "Our story",
                     "style": {}
                   }
@@ -188,7 +188,7 @@
                 },
                 "btns": [
                   {
-                    "type": "primery",
+                    "type": "txt",
                     "txt": "See full menu",
                     "style": {}
                   }
@@ -267,7 +267,7 @@
                 ],
                 "btns": [
                   {
-                    "type": "primery",
+                    "type": "txt",
                     "txt": "Order Online",
                     "style": {}
                   }
@@ -371,7 +371,7 @@
                 },
                 "btns": [
                   {
-                    "type": "primery",
+                    "type": "txt",
                     "txt": "Contact Brun",
                     "style": {}
                   }

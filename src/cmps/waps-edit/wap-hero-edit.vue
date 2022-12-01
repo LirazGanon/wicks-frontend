@@ -4,8 +4,13 @@
 
         <section class="wap-hero " :class="cmp.classes">
 
-            <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading.style" @input="updateCmp"
-                data-type="heading">
+            <h1 
+            contenteditable="true" 
+            @click="openEditor('heading')" 
+            :style="cmp.info.heading.style" 
+            @input="updateCmp"
+            data-type="heading"
+            >
                 {{ cmp.info.heading.txt }}
             </h1>
             <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading.style"
@@ -13,14 +18,17 @@
                         (cmp.info.subHeading.txt)
                 }}</p>
 
-            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click="openEditor(btn)"
-                :style="cmp.info.btns[idx].style">
+            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click="openEditor('btns',idx)"
+                :style="cmp.info.btns[idx].style" data-type="btns">
                 {{ btn.txt }}
             </button>
 
-            <img :src="img.src" v-for="(img, idx) in cmp.info.imgs" alt="" class="wap-img"
-                @click="openEditor('imgs', idx)"
-                :style="img.style">
+            <img 
+            :src="img.src" 
+            v-for="(img, idx) in cmp.info.imgs" 
+            class="wap-img"
+            @click="openEditor('imgs', idx)"
+            :style="img.style">
 
 
 

@@ -19,11 +19,12 @@
             </button>
 
             <img :src="img.src" v-for="(img, idx) in cmp.info.imgs" alt="" class="wap-img"
-                @click="openEditor('imgs', idx)">
+                @click="openEditor('imgs', idx)"
+                :style="img.style">
 
 
 
-            <img :src="cmp.info.bgImg.src" alt="" class="wap-bg-img" @click="openEditor('bgImg')">
+            <img :src="cmp.info.bgImg.src" :style="cmp.info.bgImg.style" alt="" class="wap-bg-img" @click="openEditor('bgImg')">
         </section>
     </section>
 

@@ -2,7 +2,7 @@
     <h2>{{ info }}</h2>
     <label>
         <span>color</span>
-        <input type="color" v-model="cmp.style.color" @change="updateCmp">
+        <input type="color" :value="info.style.color || '#333333'" @input="updateCmp">
     </label>
 </template>
 <script>
@@ -22,11 +22,12 @@ export default {
     },
 
     methods: {
-        updateCmp() {
+        updateCmp(ev) {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
+            this.cmp.info[this.info.key].style.color = ev.target.value
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = { ...this.cmp }
+            wap.cmps[idx] = JSON.parse(JSON.stringify(this.cmp))
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

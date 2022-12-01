@@ -1,33 +1,44 @@
 <template>
 
-    <section class="flex column" v-if="cmp">
+    <section class="flex column txt-cmps-editor" v-if="cmp">
+        <h2>Edit</h2>
+        <span>Color</span>
+        <div @mousemove="onMousemove" @click="updateCmp('color', `hsl(${x}, 80%, 50%)`)"
+            :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" class="movearea">
+            <p>Click on the desire color...</p>
+        </div>
+
+        <span>Backround Color</span>
+        <div @mousemove="onMousemovey" @click="updateCmp('background-color', `hsl(${y}, 80%, 50%)`)"
+            :style="{ backgroundColor: `hsl(${y}, 80%, 50%)` }" class="movearea">
+            <p>Click on the desire color...</p>
+        </div>
 
 
-        <label>
-            <span>color</span>
+        <!-- <label>
             <input type="color" :value="info.style.color || '#333333'" @input="updateClr">
         </label>
         <label>
             <span>background color</span>
             <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
-        </label>
+        </label> -->
         <label>
-            <span>Font Size</span>
+            <span>Font Size </span>
             <input type="number" min="10" max="100" :value="rangeValue" @input="updateFS">
         </label>
-        <label>
+        <label class="flex">
+            <input type="checkbox" :checked="info.style['font-weight'] === 'bold'" @change="updateWeight">
             <span class="material-symbols-outlined">
                 format_bold
             </span>
-            <input type="checkbox" :checked="info.style['font-weight'] === 'bold'" @change="updateWeight">
         </label>
-        <label>
+        <label class="flex">
+            <input type="checkbox" :checked="info.style['font-style'] === 'italic'" @change="updateStyle">
             <span class="material-symbols-outlined">
                 format_italic
             </span>
-            <input type="checkbox" :checked="info.style['font-style'] === 'italic'" @change="updateStyle">
         </label>
-        <label for="font">Choose Font:</label>
+        <label for="font">Choose Font:
         <select name="font" @change="updateFont" :selected="info.style['font-family']">
             <option value="">default</option>
             <option value="puki">puki</option>
@@ -35,6 +46,7 @@
             <option value="shuki">shuki</option>
             <option value="kuki">kuki</option>
         </select>
+    </label>
 
         <label>
             <span>Border-radius</span>
@@ -51,7 +63,9 @@ export default {
     components: {},
     data() {
         return {
-            cmp: null
+            cmp: null,
+            x: 0,
+            y: 0,
         };
     },
     created() {
@@ -83,6 +97,12 @@ export default {
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
+        onMousemove(e) {
+            this.x = e.clientX
+        },
+        onMousemovey(e) {
+            this.y = e.clientX
+        },
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
@@ -101,8 +121,8 @@ export default {
         rangeValue() {
             return this.info.style['font-size'] ? +this.info.style['font-size'].slice(0, -2) : 16
         },
-        borderRadius(){
-            return this.info.style['border-radius'] ? + this.info.style['border-radius'].slice(0,-1) : 0
+        borderRadius() {
+            return this.info.style['border-radius'] ? + this.info.style['border-radius'].slice(0, -1) : 0
         }
 
     },

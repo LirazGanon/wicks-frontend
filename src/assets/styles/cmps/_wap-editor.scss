@@ -1,6 +1,15 @@
 .main-editor {
     height: 100vh;
 
+    .txt-cmps-editor{
+        padding: 10px;
+        > *{
+            margin-bottom: 10px;
+        }
+    }
+
+
+
     .left-nav {
         // background-color: aqua;
         border-right: 1px solid #3335;
@@ -9,6 +18,7 @@
             color: #1c2e3bc9;
             background-color: transparent;
         }
+    
     }
 
     .options {

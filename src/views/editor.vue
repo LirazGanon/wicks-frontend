@@ -1,10 +1,10 @@
 <template>
     <main class="edit-container flex full column">
 
-        <h2>wap-edit</h2>
 
 
         <section class="wap-editor flex">
+            <!-- EDITOR TOP -->
             <editor-side :cmps="cmps" v-if="cmps" />
             <editor-wap />
         </section>

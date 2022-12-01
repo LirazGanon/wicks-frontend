@@ -1,12 +1,14 @@
 <template>
-    <section class="wap-gallery">
-        <img v-for="img in cmp.info.imgs" :src="img.src" alt="">
+    <section class="wap-img">
+
+        <img v-for="img in cmp.imgs" :src="img.src" alt="">
+
     </section>
 
 </template>
 <script>
 export default {
-    name: 'dynamic-gallery-cmp',
+    name: 'dynamic-review-cmp',
     props: { cmp: Object },
     components: {},
     data() {

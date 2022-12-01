@@ -4,6 +4,7 @@
   <section v-if="view" class="page-editor">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
+      
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-for="item in view.cmps" :key="item.id">
 
@@ -68,6 +69,7 @@ export default {
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.cmps, dropResult)
       this.view.cmps = result
+      this.$store.dispatch('saveWap', this.view)
     },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;
@@ -93,7 +95,7 @@ export default {
   },
   computed: {
     wapA() {
-      return this.$store.getters.wap
+      return this.$store.getters.waps
     }
   }
 };

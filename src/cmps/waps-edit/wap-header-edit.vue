@@ -1,5 +1,5 @@
 <template>
-    <header class="wap-header bakery ">
+    <!-- <header class="wap-header bakery ">
 
 
         <div class="wap-logo flex align-center">
@@ -11,6 +11,21 @@
 
         <wap-nav :nav="cmp.info.nav" />
 
+
+    </header> -->
+    <header class="wap-header main-layout full" :class="cmp.classes">
+        <section class="flex space-between">
+
+
+            <div class="wap-logo flex align-center">
+                <img :src="cmp.info.logo?.img" alt="" v-if="cmp.info.logo.img">
+                <h4 v-else contenteditable="true">{{ cmp.info.logo.txt }}</h4>
+            </div>
+            <!-- <pre>{{info}}</pre> -->
+
+            <wap-nav :nav="cmp.info.nav" />
+
+        </section>
 
     </header>
 </template>

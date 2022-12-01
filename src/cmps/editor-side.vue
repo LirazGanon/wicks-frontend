@@ -1,19 +1,21 @@
 <template>
     <section class="main-editor flex">
 
-        <!-- CMPS ADDITIONS -->
+        <!-- LEFT NAV -->
         <section class="flex column">
             <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')">
                 add_circle
             </button>
-            <button class="material-symbols-outlined" title="Pick Palette" @click="active = 'palette'">
+            <button class="material-symbols-outlined" title="Pick Palette"  @click="toggleActive('palette')">
                 palette
             </button>
-            <button class="material-symbols-outlined" title="Edit" @click="active = 'edit'">
+            <button class="material-symbols-outlined" title="Edit"  @click="toggleActive('edit')">
                 brush
             </button>
         </section>
 
+
+        <!-- CMPS ADDITIONS -->
         <section v-if="active === 'cmp'" class="options flex">
             <ul>
                 <li v-for="t in view.type" :key="t.id">

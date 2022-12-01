@@ -101,6 +101,9 @@ export default {
         rangeValue() {
             return this.info.style['font-size'] ? +this.info.style['font-size'].slice(0, -2) : 16
         },
+        borderRadius(){
+            return this.info.style['border-radius'] ? + this.info.style['border-radius'].slice(0,-1) : 0
+        }
 
     },
     unmounted() { },

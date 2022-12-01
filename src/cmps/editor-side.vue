@@ -81,60 +81,10 @@ export default {
             }))
             
             this.data = { ...cmps }
-    //         this.data = { options:{drop: false, animate: true},
-    //         type:[{id: 'fhngh1',data:'HERO 1',cmp:{
-    //     "id": "fhngh1",
-    //     "type": "wap-header",
-    //     "classes": [],
-    //     "info": {
-    //         "logo": {
-    //             "type": "txt",
-    //             "txt": "brun.",
-    //             "src": "",
-    //             "style": {}
-    //         },
-    //         "nav": {
-    //             "id": "wc05",
-    //             "type": "wap-nav",
-    //             "style": {},
-    //             "classes": [],
-    //             "info": {
-    //                 "links": [
-    //                     {
-    //                         "type": "txt",
-    //                         "txt": "Story",
-    //                         "link": "#story",
-    //                         "style": {}
-    //                     },
-    //                     {
-    //                         "type": "txt",
-    //                         "txt": "Menu",
-    //                         "link": "#menu",
-    //                         "style": {}
-    //                     },
-    //                     {
-    //                         "type": "txt",
-    //                         "txt": "Contact",
-    //                         "link": "#contact",
-    //                         "style": {}
-    //                     },
-    //                     {
-    //                         "type": "button",
-    //                         "txt": "Order online",
-    //                         "link": "#order",
-    //                         "style": {}
-    //                     }
-    //                 ]
-    //             }
-    //         }
-    //     },
-    //     "style": {}
-    // },}] }
- 
-            // console.log('cmps:', this.data)
         },
         toggleActive(val) {
-            this.active = this.active ? null : val
+            if (!this.active || this.active !== val ) this.active = val
+            else this.active = null
         }
     },
     computed: {

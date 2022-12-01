@@ -1,7 +1,7 @@
 <template>
    <section class="wap-bg-img bakery full" :style="{backgroundImage:'url('+ cmp.info.img.src+ ')'}">
         <!-- <img :src="cmp.info.img.src" alt=""> -->
-        <h2>PUKI</h2>
+        <h2>jQuery</h2>
     </section>
 </template>
 <script>

@@ -51,10 +51,6 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        log(ev) {
-            console.log(ev.target.innerText);
-            console.log(ev.target.dataset.type);
-        },
         updateCmp(ev) {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)

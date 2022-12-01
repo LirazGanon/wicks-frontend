@@ -3,7 +3,7 @@
 
     .options {
         display: flex;
-        height: 100%;
+        height: 100vh;
         background-color: aqua;
         width: clamp(200px, 30vw, 400px);
         .draggable-item:first-child{

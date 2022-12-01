@@ -12,7 +12,7 @@ export const wapService = {
     getById,
     save,
     remove,
-    getEmptyWap,
+    getCustomWap,
     addWapMsg
 }
 window.cs = wapService
@@ -63,11 +63,12 @@ async function addWapMsg(wapId, txt) {
     return msg
 }
 
-function getEmptyWap() {
-    return {
-        name: 'Great Site -' + (Date.now() % 1000),
-        desc: 'My Site',
-    }
+async function getCustomWap(wapId) {
+    const wapToEdit = await getById(wapId)
+    wapToEdit._id = utilService.makeId()
+    wapToEdit.user = 'user_' + utilService.makeId()
+    console.log(wapToEdit)
+    return wapToEdit
 }
 
 

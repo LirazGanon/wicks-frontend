@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { wapService } from '../services/wap.service.local';
+
 export default {
   props: {
     wap: Object,
@@ -35,7 +37,8 @@ export default {
     showToyDetails() {
       this.$router.push('/wap/' + this.wap._id);
     },
-    editWap(wapId) {
+    async editWap(wapId) {
+      const wapToEdit =  await wapService.getCustomWap(wapId)
       this.$router.push(`/wap/edit/${wapId}`);
     },
     prevWap(wapId) {

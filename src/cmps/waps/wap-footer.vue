@@ -1,18 +1,14 @@
 <template>
     <section class="main-layout" :class="cmp.classes" :style="cmp.style">
-        <section class="wap-footer bakery" >
-            <!-- <pre>
-        {{ cmp.info.details }}
-    </pre> -->
-            <!-- <h4>footer-{{ cmp.info.logo.txt}}</h4> -->
-            <!-- <pre>{{cmp.info.details}}</pre> -->
+        <section class="wap-footer" :class="cmp.classes" >
+
             <div v-for="txts in cmp.info.details">
-                <!-- <pre>{{txts}}</pre> -->
                 <p v-for="txt in txts.texts">{{ txt }}
                 </p>
-                <!-- <pre>{{txts}}</pre> -->
             </div>
-            <p class="bakery-footer-logo">{{ cmp.info.logo.txt }}</p>
+            <p v-if="(cmp.info.logo.type==='txt')" class="logo">{{ cmp.info.logo.txt }}</p>
+            <img v-if="(cmp.info.logo.type==='img')" class="logo" src="{{ cmp.info.logo.src}}">
+            
         </section>
     </section>
 

@@ -391,7 +391,7 @@
       },
       {
         "id": "sc599966",
-        "classes": ["full"],
+        "classes": ["full", "bakery"],
         "type": "wap-footer",
         "info": {
           "logo": {

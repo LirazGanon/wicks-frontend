@@ -1,7 +1,7 @@
 <template>
 
 
-    <div v-for="item in view.cmps" :key="item.id" class="">
+    <div v-for="item in view.cmps" :key="item.id" class="wap-view">
         <div class="main-layout full">
 
             <component :is="(item.type || 'wapHeader')" :cmp="item" />

@@ -1,5 +1,9 @@
-   section.page-editor{
-        overflow-y: auto;
-        flex: 1;
-        height: 100vh;
-    }
+section.page-editor {
+    overflow-y: auto;
+    flex: 1;
+    height: calc(100vh - 46px - 76px);
+}
+
+.wap-view {
+    overflow-y: scroll;
+}

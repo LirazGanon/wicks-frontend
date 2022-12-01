@@ -3,9 +3,9 @@
 
 
 
+        <editor-top />
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->
-            <editor-top />
             <editor-side :cmps="cmps" v-if="cmps" />
             <editor-wap />
         </section>

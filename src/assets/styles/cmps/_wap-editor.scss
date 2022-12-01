@@ -1,10 +1,25 @@
 .main-editor {
-height: 100%;
-    .options{
+    height: 100%;
+
+    .options {
+        display: flex;
         height: 100%;
         background-color: aqua;
-        width:clamp(200px,30vw,400px)
+        width: clamp(200px, 30vw, 400px);
+        .draggable-item:first-child{
+            margin-top: 10px;
+        }
+        .draggable-item{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 95%;
+        
+        }
     }
- 
+
 
 }

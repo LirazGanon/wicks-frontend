@@ -6,12 +6,13 @@
             <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')">
                 add_circle
             </button>
-            <button class="material-symbols-outlined" title="Pick Palette"  @click="toggleActive('palette')">
+            <button class="material-symbols-outlined" title="Pick Palette" @click="toggleActive('palette')">
                 palette
             </button>
-            <button class="material-symbols-outlined" title="Edit"  @click="toggleActive('edit')">
+            <button class="material-symbols-outlined" title="Edit" @click="toggleActive('edit')">
                 brush
             </button>
+            <pre>{{ editor }}</pre>
         </section>
 
 
@@ -29,7 +30,7 @@
         <!-- THEME PICKER -->
         <section v-if="active === 'palette'" class="flex options">
 
-            <ul >
+            <ul>
                 <li v-for="p in 5">
                     <button>
                         חשוכי
@@ -47,6 +48,7 @@
                         options
                     </button>
                 </li>
+                <pre>{{editor}}</pre>
             </ul>
         </section>
     </section>
@@ -58,6 +60,7 @@ import editorCmpPrev from './editor-cmp-prev.vue'
 export default {
     name: 'Editor',
     components: { editorCmpPrev },
+    props: { editor: Object },
     data() {
         return {
             view: {},
@@ -79,11 +82,11 @@ export default {
                 id: Date.now() / 15500 + i,
                 data: this.type + ` ${i}`
             }))
-            
+
             this.data = { ...cmps }
         },
         toggleActive(val) {
-            if (!this.active || this.active !== val ) this.active = val
+            if (!this.active || this.active !== val) this.active = val
             else this.active = null
         }
     },
@@ -91,7 +94,7 @@ export default {
         getData() {
             return this.data
         },
-        cmps(){
+        cmps() {
             return this.$store.getters.cmps
         }
     },

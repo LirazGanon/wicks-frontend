@@ -13,7 +13,7 @@
             {{ item }}
             XXXXXXXXXXXXXXXX
           </pre> -->
-        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" />
+        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" @openEditor="$emit('openEditor',$event)" />
 
 
       </Draggable>
@@ -54,20 +54,20 @@ export default {
   created() {
     this.getCurrWap()
   },
-  unmounted(){
-    this.$store.commit({type:'removeWapToEdit'})
+  unmounted() {
+    this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
     async getCurrWap() {
       const id = this.$route.params.wapId
-      if(!this.$store.getters.getWapToEdit){
-        await this.$store.dispatch({type:'setWapToEdit', id})
+      if (!this.$store.getters.getWapToEdit) {
+        await this.$store.dispatch({ type: 'setWapToEdit', id })
       }
       const wap = this.$store.getters.getWapToEdit
       this.view = JSON.parse(JSON.stringify(wap))
     },
     log(id) {
-     console.log( this.view.cmps.findIndex(cmp => cmp.id == id))
+      console.log(this.view.cmps.findIndex(cmp => cmp.id == id))
     },
     getChildPayload2(itemIndex) {
       return this.view.cmps[itemIndex]
@@ -97,6 +97,7 @@ export default {
     makeId() {
       return Date.now() / 1500
     },
+
 
   },
   computed: {

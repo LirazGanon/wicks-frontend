@@ -7,12 +7,15 @@
             <h1 contenteditable="true" @click="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
             <p contenteditable="true" @click="openEditor('subHeading')">{{ (cmp.info.subHeading.txt) }}</p>
 
-            <button contenteditable="true" v-for="btn in cmp.info.btns" @click="openEditor(btn)">
+            <button contenteditable="true" v-for="(btn,idx) in cmp.info.btns" @click="openEditor(btn)">
                 {{ btn.txt }}
             </button>
 
             <img :src="img.src" v-for="(img, idx) in cmp.info.imgs" alt="" class="wap-img"
                 @click="openEditor('imgs', idx)">
+
+
+                
             <img :src="cmp.info.bgImg.src" alt="" class="wap-bg-img" @click="openEditor('bgImg')">
         </section>
     </section>

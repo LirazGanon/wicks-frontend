@@ -57,6 +57,8 @@
 <script>
 import editorCmpPrev from './editor-cmp-prev.vue'
 
+
+
 export default {
     name: 'Editor',
     components: { editorCmpPrev },

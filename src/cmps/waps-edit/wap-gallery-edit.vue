@@ -1,6 +1,12 @@
 <template>
     <section class="wap-gallery" :class="cmp.classes">
-        <img v-for="(img,idx) in cmp.info.imgs" :src="img.src" alt="" @click="openEditor('imgs', idx)" :style="img.style">
+        <img 
+            v-for="(img,idx) in cmp.info.imgs"
+            :src="img.src"
+            alt="" 
+            @click="openEditor('imgs', idx)"
+           :style="img.style"
+           >
     </section>
 
 
@@ -26,25 +32,13 @@ export default {
                 idx,
                 type: el.type,
                 style: el.style,
-                isContainer:true
+                isContainer:true,
+                currCmp:'wap-gallery'
             }
             // console.log(wapContent);
 
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev) {
-            let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            cmpCopy.info[ev.target.dataset.type].txt = ev.target.innerText
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = cmpCopy
-            try {
-                this.$store.dispatch({ type: 'updateWap', wap })
-            } catch {
-                console.log('ops')
-            }
-        }
     },
     computed: {},
     unmounted() { },

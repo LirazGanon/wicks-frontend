@@ -345,7 +345,7 @@
         {
           "id": "nis7ej8",
           "type": "wap-gallery",
-          "classes": [],
+          "classes": ["three"],
           "info": {
             "imgs": [
               {
@@ -376,29 +376,17 @@
   },
   {
     "id": "sc599966",
-    "classes": ["bakery"],
+    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669916168/wicks/cmp-prev/footer.png",
+    "classes": ["bakery flex column space-around align-center"],
     "type": "wap-footer",
     "info": {
       "logo": {
         "type": "txt",
         "txt": "brun.",
-        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669916168/wicks/cmp-prev/footer.png",
+        "src": "",
         "style": {}
       },
-      "details": [
-        {
-          "type": "txt",
-          "txt": "",
-          "texts": ["500 Terry Francois Street", "San Francisco, CA 94158"],
-          "style": {}
-        },
-        {
-          "type": "txt",
-          "txt": "",
-          "texts": ["123-456-7890", "info@mysite.com"],
-          "style": {}
-        }
-      ],
+
       "socials": [{}],
       "copyright": {
         "type": "txt",
@@ -406,6 +394,8 @@
         "style": {}
       }
     },
-    "style": { "background-color": "#1c2e3b" }
+    "style": {
+      "background-color": "#1c2e3b"
+    }
   }
 ]

@@ -424,38 +424,7 @@
             "src": "",
             "style": {}
           },
-          "details": [
-            {
-              "texts": [
-                {
-                  "type": "txt",
-                  "txt": "500 Terry Francois Street",
-                  "style": {}
-                },
-                {
-                  "type": "txt",
-                  "txt": "San Francisco, CA 94158",
-                  "style": {}
-                }
-              ],
-              "style": {}
-            },
-            {
-              "texts": [
-                {
-                  "type": "txt",
-                  "txt": "123-456-7890",
-                  "style": {}
-                },
-                {
-                  "type": "txt",
-                  "txt": "info@mysite.com",
-                  "style": {}
-                }
-              ],
-              "style": {}
-            }
-          ],
+         
           "socials": [
             {}
           ],

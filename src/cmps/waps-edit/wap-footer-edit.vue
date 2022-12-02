@@ -11,12 +11,7 @@
                 {{ cmp.info.heading.txt }}
             </h1> -->
 
-            <div v-for="(txts, idx) in cmp.info.details">
-                <p v-for="txt in txts.texts" contenteditable="true" @click="openEditor('details', idx)"
-                    :style="cmp.info.details[idx].style" @input="updateCmp" data-type="details">
-                    {{ txt.txt }}
-                </p>
-            </div>
+          
 
             <p v-if="(cmp.info.logo.type === 'txt')"
              class="logo" contenteditable="true"
@@ -28,7 +23,7 @@
              
              {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
-            <p>{{ cmp.info.copyright.txt }}</p>
+            <p class="copyright">{{ cmp.info.copyright.txt }}</p>
         </section>
     </section>
 
@@ -43,25 +38,28 @@ export default {
     },
     created() { },
     methods: {
-        openEditor(key, idx) {
+        openEditor(key, idx,innerIdx ) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-
+// console.log(key, idx)
             const wapContent = {
                 key,
                 id: this.cmp.id,
                 idx,
-                type: el.type,
-                style: el.style
+                type: el.type||el.texts[innerIdx].type,
+                style: el.style||el.texts[innerIdx].style
             }
+            console.log('el', el)
+            console.log('key', wapContent)
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev) {
+        updateCmp(ev, outerIdx, innerIdx) {
+            console.log(ev)
             let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             let puk = JSON.parse(JSON.stringify(this.cmp))
-            puk.info[ev.target.dataset.type].txt = ev.target.innerText
+            puk.info[ev.target.dataset.type][outerIdx].texts[innerIdx].txt = ev.target.innerText
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = puk
+            wap.cmps[cmpIdx] = puk
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

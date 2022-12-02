@@ -2,13 +2,11 @@
     <section class="main-layout full"  :style="cmp.style">
         <section class="wap-footer" :class="cmp.classes" >
 
-            <div v-for="txts in cmp.info.details">
-                <p v-for="txt in txts.texts">{{ txt.txt }}
-                </p>
-            </div>
+           
             <p v-if="(cmp.info.logo.type==='txt')" class="logo">{{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type==='img')" class="logo" src="{{ cmp.info.logo.src}}">
             
+            <p class="copyright">{{ cmp.info.copyright.txt }}</p>
         </section>
     </section>
 

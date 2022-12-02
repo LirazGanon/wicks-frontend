@@ -1,5 +1,6 @@
 .wap-footer {
     &.bakery {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -24,6 +25,15 @@
         div:nth-child(n+2) {
             text-align: right;
             order: 1
+        }
+
+        .copyright{
+        position: absolute;
+        right: 50%;
+        transform: translatex(50%);
+        bottom: 0px;
+        font-size: 0.6em;
+        white-space: nowrap;
         }
 
     }

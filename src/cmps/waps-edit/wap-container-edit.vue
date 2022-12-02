@@ -4,7 +4,7 @@
 
         <section class="wap-container" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
-                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" @openEditor="puk" />
+                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" :cmpId="cmp.id" @openEditor="puk" />
             </div>
 
         </section>

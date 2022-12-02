@@ -1,7 +1,9 @@
 <template>
     <section class="wap-card" v-if="cmp.info">
-        <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading?.style" @input="updateCmp">{{ cmp.info.heading?.txt }}</h1>
-        <p contenteditable="true">{{ cmp.info.subHeading?.txt }}</p>
+        <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading?.style"
+            @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
+
+        <p contenteditable="true" @click="openEditor('subHeading')">{{ cmp.info.subHeading?.txt }}</p>
         <p v-for="txt in cmp.info.texts" contenteditable="true">{{ txt.txt }}</p>
         <button v-for="btn in cmp.info.btns" contenteditable="true">{{ btn.txt }}</button>
     </section>
@@ -37,18 +39,22 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev, innerIdx) {
+        updateCmp(ev, key, innerIdx) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmpId)
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
 
-            // console.log('cmpCopy:',  cmpCopy.info.links[innerIdx].txt)
-            // console.log('wap',wap.cmps[cmpIdx].info.nav);
-            // console.log('cmpCopy:', cmpCopy)
-            // console.log(wap.cmps[cmpIdx].info.nav.info.links[innerIdx]);
-            cmpCopy.info.links[innerIdx].txt = ev.target.innerText
-            wap.cmps[cmpIdx].info.nav = cmpCopy
+            if (innerIdx !== undefined) {
+                cmpCopy.info[key][innerIdx].txt = ev.target.innerText
+            } else {
+                cmpCopy.info[key].txt = ev.target.innerText
+            }
+            console.log('cmpIdx:', cmpIdx)
+            console.log('wap', wap.cmps[cmpIdx].info.cmps.find(cmp => cmp.type === cmpCopy.type));
+            console.log('cmpCopy:', cmpCopy.info[key])
+
+            wap.cmps[cmpIdx].info.cmps.find(cmp => cmp.type === cmpCopy.type) = cmpCopy
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

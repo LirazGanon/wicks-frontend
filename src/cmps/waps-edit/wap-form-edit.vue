@@ -2,7 +2,18 @@
     <section class="wap-form">
         <pre>{{ cmp }}</pre>
 
-        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
+        <form action="">
+        <div v-for="input in cmp.info.inputs">
+            <input contenteditable="true"
+            v-if="input.inpType === 'input'" 
+            :type="input.inpContentType">
+
+            <textarea contenteditable="true"
+            v-if="input.inpType === 'textarea'"
+            :type="input.inpContentType">
+        </textarea>
+        </div>
+    </form>
     </section>
 
 </template>

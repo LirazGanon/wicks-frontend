@@ -4,6 +4,16 @@
 
         <!-- <h4>form-{{ info.heading.txt }}</h4> -->
     </section>
+    <form action="">
+        <div v-for="input in cmp.info.inputs">
+            <input v-if="input.inpType === 'input'" 
+            :type="input.inpContentType">
+
+            <textarea v-if="input.inpType === 'textarea'"
+            :type="input.inpContentType">
+        </textarea>
+        </div>
+    </form>
 
 </template>
 <script>

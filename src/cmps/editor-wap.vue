@@ -11,7 +11,7 @@
         <!-- 
           <pre>
             {{ item }}
-            XXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXX
           </pre> -->
         <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" @openEditor="$emit('openEditor', $event)" />
 

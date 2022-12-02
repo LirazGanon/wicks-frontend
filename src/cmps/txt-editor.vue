@@ -109,14 +109,11 @@ export default {
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
-            const { key, fatherEl, idx} = this.info
+            const { key, fatherEl, idx } = this.info
             if (fatherEl) {
                 this.cmp.info[fatherEl].info[key][idx].style[att] = value
-                console.log(this.cmp.info[fatherEl].info[key][idx].style);
             }
-            else{
-                console.log('down');
-                console.log('fatherEl:', fatherEl)
+            else {
                 this.cmp.info[key].style[att] = value
             }
             wap = JSON.parse(JSON.stringify(wap))

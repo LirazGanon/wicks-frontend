@@ -37,8 +37,8 @@ export default {
     created() {
     },
     methods: {
-        openEditor(el){
-            this.editor = el
+        openEditor(editorContent){
+            this.editor = editorContent
         }
     },
     computed: {

@@ -3,7 +3,6 @@
 
         <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" @click="openEditor('imgs', idx)"
             :style="img.style">
-        <pre>{{cmp}}</pre>
     </section>
 
 </template>

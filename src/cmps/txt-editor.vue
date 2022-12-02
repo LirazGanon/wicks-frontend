@@ -111,7 +111,12 @@ export default {
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
             const { key, fatherEl, idx } = this.info
             if (fatherEl) {
-                this.cmp.info[fatherEl].info[key][idx].style[att] = value
+                if (idx !== undefined) {
+                    this.cmp.info[fatherEl].info[key][idx].style[att] = value
+
+                } else {
+                    this.cmp.info[fatherEl].info[key].style[att] = value
+                }
             }
             else {
                 this.cmp.info[key].style[att] = value

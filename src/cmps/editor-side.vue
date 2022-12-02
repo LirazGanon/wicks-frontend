@@ -50,6 +50,8 @@
 </template>
 <script>
 import editorCmpPrev from './editor-cmp-prev.vue'
+
+
 import txtEditor from './txt-editor.vue'
 import imgEditor from './img-editor.vue'
 
@@ -88,7 +90,8 @@ export default {
         toggleActive(val) {
             if (!this.active || this.active !== val) this.active = val
             else this.active = null
-        }
+        },
+        
     },
     computed: {
         getData() {

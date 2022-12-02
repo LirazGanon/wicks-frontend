@@ -1,7 +1,8 @@
 <template>
     <section class="wap-img">
 
-        <img v-for="img in cmp.info.imgs" :src="img.src" alt="">
+        <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" @click="openEditor('imgs', idx)"
+            :style="img.style">
         <!-- <pre>{{cmp}}</pre> -->
     </section>
 
@@ -15,7 +16,23 @@ export default {
         return {};
     },
     created() { },
-    methods: {},
+    methods: {
+        openEditor(key, idx) {
+            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+            const wapContent = {
+                key,
+                id: this.cmp.id,
+                idx,
+                type: el.type,
+                style: el.style,
+                isContainer:true,
+                currCmp:'wap-img'
+            }
+            // console.log(wapContent);
+
+            this.$emit('openEditor', wapContent)
+        },
+    },
     computed: {},
     unmounted() { },
 };

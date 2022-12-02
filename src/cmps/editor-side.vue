@@ -109,6 +109,12 @@ export default {
                         if (item.type === 'wap-gallery') {
                             return item.id === this.editor.id
                         }
+                        if (item.type === 'wap-img') {
+                            return item.id === this.editor.id
+                        }
+                        if (item.type === 'wap-card') {
+                            return item.id === this.editor.id
+                        }
                     });
                 }
                 return cmp.id === this.editor.id

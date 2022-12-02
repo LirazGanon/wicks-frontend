@@ -74,11 +74,11 @@ export default {
     },
     computed: {
         src() {
-            const { key, idx, isContainer } = this.info
+            const { key, idx, isContainer, currCmp } = this.info
             console.log(key, idx, isContainer);
             if (isContainer) {
                 console.log('this.cmp.info:', this.cmp.info)
-                return this.cmp.info.cmps[1].info.imgs[idx].src
+                return this.cmp.info.cmps.find(cmp => cmp.type === currCmp).info.imgs[idx].src
             }
             if (key === 'bgImg') {
                 console.log('this.cmp.info:', this.cmp.info)

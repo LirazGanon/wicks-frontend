@@ -14,6 +14,7 @@
 
 <script>
 import wapImg from './wap-img.vue'
+import wapBgImg from './wap-bg-img.vue'
 import wapCard from './wap-card.vue'
 
 import wapGallery from './wap-gallery.vue'
@@ -28,7 +29,8 @@ export default {
         wapCard,
         wapGallery,
         wapForm,
-        wapImg
+        wapImg,
+        wapBgImg
     },
     data() {
         return {};

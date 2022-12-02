@@ -100,12 +100,15 @@ export default {
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
-            const { key, fatherEl, idx } = this.info
+            const { key, fatherEl, idx,isContainer } = this.info
             if (fatherEl) {
                 if (idx !== undefined) {
                     this.cmp.info[fatherEl].info[key][idx].style[att] = value
 
+                } else if (isContainer) {
+                    console.log('puki');
                 } else {
+
                     this.cmp.info[fatherEl].info[key].style[att] = value
                 }
             }

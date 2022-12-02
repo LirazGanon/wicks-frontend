@@ -29,6 +29,7 @@ export default {
     created() { },
     methods: {
           puk(payload) {
+            console.log('payload:', payload)
             this.$emit('openEditor', payload)
         },
     },

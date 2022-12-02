@@ -414,7 +414,7 @@
       {
         "id": "sc599966",
         "classes": [
-          "bakery"
+          "bakery flex column space-around align-center"
         ],
         "type": "wap-footer",
         "info": {

@@ -17,7 +17,7 @@ import wapImg from './wap-img.vue'
 import wapCard from './wap-card.vue'
 
 import wapGallery from './wap-gallery.vue'
-
+import wapForm from './wap-form.vue'
 
 export default {
 
@@ -26,7 +26,8 @@ export default {
     components: {
         wapImg,
         wapCard,
-        wapGallery
+        wapGallery,
+        wapForm
     },
     data() {
         return {};

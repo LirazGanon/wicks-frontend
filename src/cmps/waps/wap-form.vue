@@ -4,7 +4,7 @@
 
         <!-- <h4>form-{{ info.heading.txt }}</h4> -->
     </section>
-    <form action="">
+    <form >
 
 
         <div v-for="input in cmp.info.inputs">
@@ -17,7 +17,7 @@
             :type="input.inpContentType">
         </textarea>
         </div>
-        <button v-for="btn in cmp.info.btns">{{btn.txt}}</button>
+        <button v-for="btn in cmp.info.btns" @click.prevent>{{btn.txt}}</button>
     </form>
 
 </template>

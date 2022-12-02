@@ -27,7 +27,8 @@ export default {
         wapImg,
         wapCard,
         wapGallery,
-        wapForm
+        wapForm,
+        wapImg
     },
     data() {
         return {};

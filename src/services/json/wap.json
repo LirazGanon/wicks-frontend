@@ -940,7 +940,7 @@
       },
       {
         "id": "nslop34brez",
-        "classes": ["card-img bakery"],
+        "classes": [],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -1195,7 +1195,182 @@
         },
         "style": {}
       },
-      {}
+      {
+        "id": "nsl8suwq8sn",
+        "type": "wap-gallery",
+        "classes": [],
+        "info": {
+            "heading": {
+                "type": "txt",
+                "txt": "Cake & Dessert Cafe",
+                "style": {}
+            },
+            "btns": [
+                {
+                    "type": "txt",
+                    "txt": "View more",
+                    "style": {}
+                }
+            ],
+            "imgs": [
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/22_xeoe3v.jpg",
+                    "txt": "",
+                    "style": {}
+                },
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/rrr_dpjppp.jpg",
+                    "txt": "",
+                    "style": {}
+                },
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/jjj_a9bg0u.jpg",
+                    "txt": "",
+                    "style": {}
+                },
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/ghgh_wcfcdj.jpg",
+                    "txt": "",
+                    "style": {}
+                },
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/ghghgh_ijkutq.jpg",
+                    "txt": "",
+                    "style": {}
+                },
+                {
+                    "type": "img",
+                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/trtrt_u0rwfm.jpg",
+                    "txt": "",
+                    "style": {}
+                }
+            ],
+            "style": {}
+        },
+        "style": {}
+    },
+    {
+        "id": "nsl41t81v4b",
+        "type": "wap-container",
+        "classes": [],
+        "info": {
+            "cmps": [
+                {
+                    "id": "nsljuwytauf",
+                    "type": "wap-img",
+                    "classes": [],
+                    "info": {
+                        "imgs": [
+                            {
+                                "type": "img",
+                                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
+                                "style": {}
+                            }
+                        ]
+                    },
+                    "style": {}
+                },
+                {
+                    "id": "nslzzqh0foy",
+                    "type": "wap-form",
+                    "classes": [],
+                    "info": {
+                        "heading": {
+                            "type": "txt",
+                            "txt": "Contact Us",
+                            "style": {}
+                        },
+                        "subHeading": {
+                            "type": "txt",
+                            "txt": "",
+                            "style": {}
+                        },
+                        "inputs": [
+                            {
+                                "type": "txt",
+                                "label": "Name",
+                                "placeholder": "Enter your name",
+                                "inpType": "input",
+                                "inpContentType": "text",
+                                "title": "",
+                                "isRequired": true,
+                                "style": {}
+                            },
+                            {
+                                "type": "txt",
+                                "label": "Email",
+                                "placeholder": "Enter a valid email address",
+                                "inpType": "input",
+                                "inpContentType": "email",
+                                "title": "",
+                                "isRequired": true,
+                                "style": {}
+                            },
+                            {
+                                "type": "txt",
+                                "label": "Message",
+                                "placeholder": "",
+                                "inpType": "textarea",
+                                "inpContentType": "",
+                                "title": "",
+                                "isRequired": true,
+                                "style": {}
+                            },
+                            {
+                                "type": "txt",
+                                "label": "I accept the",
+                                "link": "Terms of Service",
+                                "placeholder": "",
+                                "inpType": "input",
+                                "inpContentType": "checkbox",
+                                "title": "",
+                                "isRequired": true,
+                                "style": {}
+                            }
+                        ],
+                        "style": {},
+                        "btns": [
+                            {
+                                "type": "txt",
+                                "txt": "Submit",
+                                "style": {}
+                            }
+                        ]
+                    },
+                    "style": {}
+                }
+            ]
+        },
+        "style": {}
+    },
+    {
+      "id": "nsllxnq80yu",
+      "classes": [],
+      "type": "wap-footer",
+      "info": {
+        "logo": {
+          "type": "txt",
+          "txt": "pukoffe",
+          "src": "",
+          "style": {}
+        },
+
+        "socials": [{}],
+        "copyright": {
+          "type": "txt",
+          "txt": "CoffeRights 2035 by Pucoffe. Proudly created with Wicks.in",
+          "style": {}
+        }
+      },
+      "style": {
+        "background-color": ""
+      }
+    }
     ],
     "isPublic": true
   }

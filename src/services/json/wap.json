@@ -199,7 +199,7 @@
             {
               "id": "mukjyu6584",
               "type": "wap-gallery",
-              "classes": [],
+              "classes": ["four"],
               "info": {
                 "imgs": [
                   {
@@ -382,7 +382,7 @@
             {
               "id": "nis7ej8",
               "type": "wap-gallery",
-              "classes": [],
+              "classes": ["three"],
               "info": {
                 "imgs": [
                   {

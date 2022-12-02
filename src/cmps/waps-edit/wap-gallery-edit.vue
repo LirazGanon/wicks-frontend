@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-gallery">
+    <section class="wap-gallery" :class="cmp.classes">
         <img v-for="img in cmp.info.imgs" :src="img.src" alt="">
     </section>
 

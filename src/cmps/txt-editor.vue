@@ -3,9 +3,9 @@
     <section class="flex column txt-cmps-editor" v-if="cmp">
         <h2>Edit</h2>
         <span>Color</span>
-        <color-picker @setColor="updateClr" />
+        <!-- <color-picker @setColor="updateClr" />
         <span>Backround Color</span>
-        <color-picker  @setColor="updateBgClr" />
+        <color-picker @setColor="updateBgClr" /> -->
 
 
 
@@ -16,6 +16,8 @@
             <span>background color</span>
             <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
         </label> -->
+
+<!--         
         <label>
             <span>Font Size </span>
             <input type="number" min="10" max="100" :value="rangeValue" @input="updateFS">
@@ -31,7 +33,7 @@
             <span class="material-symbols-outlined">
                 format_italic
             </span>
-        </label>
+        </label> -->
         <label for="font">Choose Font:
             <select name="font" @change="updateFont" :selected="info?.style['font-family']">
                 <option value="">default</option>
@@ -49,7 +51,7 @@
 
 
         <pre>{{ this.info }}</pre>
-        <!-- <pre>{{ this.cmp }}</pre> -->
+        <pre>{{ this.cmp }}</pre>
     </section>
 
 </template>
@@ -75,7 +77,7 @@ export default {
     },
     methods: {
         updateClr(ev) {
-            this.updateCmp('color', ev.target?.value || ev) 
+            this.updateCmp('color', ev.target?.value || ev)
         },
         updateBgClr(ev) {
             this.updateCmp('background-color', ev.target?.value || ev)
@@ -101,16 +103,22 @@ export default {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
             const { key, fatherEl, idx, isContainer } = this.info
-            if (fatherEl) {
-                if (idx !== undefined) {
-                    this.cmp.info[fatherEl].info[key][idx].style[att] = value
 
-                } else if (isContainer) {
-                    console.log(this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl));
+
+
+            if (fatherEl) {
+                if (isContainer) {
+                    const innerIdx = this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl)
+                    // this.cmp.info.cmps[fatherEl].info
+                    console.log('----', innerIdx);
+                } else if (idx !== undefined) {
+
+                    this.cmp.info[fatherEl].info[key][idx].style[att] = value
                 } else {
 
                     this.cmp.info[fatherEl].info[key].style[att] = value
                 }
+
             }
             else {
                 this.cmp.info[key].style[att] = value

@@ -165,7 +165,7 @@
         {
           "id": "mukjyu6584",
           "type": "wap-gallery",
-          "classes": [],
+          "classes": ["four"],
           "info": {
             "imgs": [
               {

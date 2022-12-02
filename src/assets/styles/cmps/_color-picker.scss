@@ -1,9 +1,11 @@
 .color-picker {
 
     display: flex;
+    flex-wrap: wrap;
+    max-width: 270px;
     gap: 7px;
     .color-picker-item {
-        cursor: pointer;
+        cursor: poi;
         > div{
             width: 2em;
             height: 2em;

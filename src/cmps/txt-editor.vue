@@ -3,9 +3,9 @@
     <section class="flex column txt-cmps-editor" v-if="cmp">
         <h2>Edit</h2>
         <span>Color</span>
-        <color-picker />
+        <color-picker @setColor="updateClr" />
         <span>Backround Color</span>
-        <color-picker />
+        <color-picker  @setColor="updateBgClr" />
 
 
 
@@ -75,10 +75,10 @@ export default {
     },
     methods: {
         updateClr(ev) {
-            this.updateCmp('color', ev.target.value)
+            this.updateCmp('color', ev.target?.value || ev) 
         },
         updateBgClr(ev) {
-            this.updateCmp('background-color', ev.target.value)
+            this.updateCmp('background-color', ev.target?.value || ev)
         },
         updateFS(ev) {
             this.updateCmp('font-size', ev.target.value + 'px')

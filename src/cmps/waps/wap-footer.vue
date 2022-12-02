@@ -3,7 +3,7 @@
         <section class="wap-footer" :class="cmp.classes" >
 
             <div v-for="txts in cmp.info.details">
-                <p v-for="txt in txts.texts">{{ txt }}
+                <p v-for="txt in txts.texts">{{ txt.txt }}
                 </p>
             </div>
             <p v-if="(cmp.info.logo.type==='txt')" class="logo">{{ cmp.info.logo.txt }}</p>

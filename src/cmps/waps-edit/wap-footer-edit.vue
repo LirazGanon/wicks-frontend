@@ -14,7 +14,7 @@
             <div v-for="(txts, idx) in cmp.info.details">
                 <p v-for="txt in txts.texts" contenteditable="true" @click="openEditor('details', idx)"
                     :style="cmp.info.details[idx].style" @input="updateCmp" data-type="details">
-                    >{{ txt }}
+                    {{ txt.txt }}
                 </p>
             </div>
 
@@ -28,7 +28,7 @@
              
              {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
-
+            <p>{{ cmp.info.copyright.txt }}</p>
         </section>
     </section>
 

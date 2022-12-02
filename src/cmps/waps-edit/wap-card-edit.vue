@@ -3,9 +3,14 @@
         <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading?.style"
             @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
-        <p contenteditable="true" @click="openEditor('subHeading')">{{ cmp.info.subHeading?.txt }}</p>
-        <p v-for="txt in cmp.info.texts" contenteditable="true">{{ txt.txt }}</p>
-        <button v-for="btn in cmp.info.btns" contenteditable="true">{{ btn.txt }}</button>
+        <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
+            @input="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
+        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click="openEditor('texts')" :style="txt?.style"
+            @input="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
+
+        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true"
+        @click="openEditor('btns')" :style="txt?.style"
+            @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
     </section>
 
 
@@ -54,7 +59,9 @@ export default {
             console.log('wap', wap.cmps[cmpIdx].info.cmps.find(cmp => cmp.type === cmpCopy.type));
             console.log('cmpCopy:', cmpCopy.info[key])
 
-            wap.cmps[cmpIdx].info.cmps.find(cmp => cmp.type === cmpCopy.type) = cmpCopy
+            const sadIdx = wap.cmps[cmpIdx].info.cmps.findIndex(cmp => cmp.type === cmpCopy.type)
+
+            wap.cmps[cmpIdx].info.cmps[sadIdx] = cmpCopy
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

@@ -16,36 +16,22 @@
 <script>
 export default {
     name: 'img-editor',
-    props: { info: Object },
+    props: {
+        info: Object,
+        cmp: Object
+    },
     components: {},
     data() {
         return {
-            cmp: null
+
         };
     },
     created() {
-        const wap = this.$store.getters.getWapToEdit
-        const cmp = wap.cmps.find(cmp => {
-            if (cmp.type === 'wap-container') {
-                return cmp.info.cmps.find(item => {
-                    if (item.type === 'wap-gallery') {
-                        console.log('item:', item.id)
-                        console.log('infoId', this.info.id)
-                        return item.id === this.info.id
-
-                    }
-
-                });
-            }
-            return cmp.id === this.info.id
-        })
-        // console.log('this.info:', this.info)
-        // console.log('wap', wap);
-        console.log('cmp', cmp);
-        this.cmp = JSON.parse(JSON.stringify(cmp))
     },
     methods: {
+
         updateSrc(ev) {
+
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
             const { key, idx } = this.info
@@ -70,14 +56,15 @@ export default {
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
+            const cmp = JSON.parse(JSON.stringify(this.cmp))
             const { key, idx } = this.info
             if (key === 'bgImg') {
-                this.cmp.info[key].style[att] = value
+                cmp.info[key].style[att] = value
             } else {
-                this.cmp.info[key][idx].style[att] = value
+                cmp.info[key][idx].style[att] = value
             }
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[cmpIdx] = JSON.parse(JSON.stringify(this.cmp))
+            wap.cmps[cmpIdx] = cmp
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

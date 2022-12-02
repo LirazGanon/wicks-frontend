@@ -62,28 +62,26 @@
 <script>
 export default {
     name: 'text-editor',
-    props: { info: Object },
+    props: {
+        info: Object,
+        cmp: Object
+    },
     components: {},
     data() {
         return {
-            cmp: null,
             x: 0,
             y: 0,
         };
     },
     created() {
-        const wap = this.$store.getters.getWapToEdit
-        const cmp = wap.cmps.find(cmp => cmp.id === this.info.id)
-        this.cmp = JSON.parse(JSON.stringify(cmp))
     },
-
     methods: {
         updateClr(ev) {
             this.updateCmp('color', ev.target.value)
         },
         updateBgClr(ev) {
             this.updateCmp('background-color', ev.target.value)
-        },
+        }, 
         updateFS(ev) {
             this.updateCmp('font-size', ev.target.value + 'px')
         },

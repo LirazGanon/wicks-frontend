@@ -1,25 +1,18 @@
 <template>
-   
+
     <header class="wap-header main-layout full" :class="cmp.classes">
         <section class="flex space-between">
 
 
             <div class="wap-logo flex align-center">
-                <img 
-                :src="cmp.info.logo?.img" 
-                v-if="cmp.info.logo.img"
-                @click="openEditor('imgs', idx)"
-                :style="cmp.info.logo.style"
-                >
-                <h4 v-else contenteditable="true"
-                 @click="openEditor('logo')"
-                 :style="cmp.info.logo.style"
-                 @input="updateCmp"
-                 data-type="logo">{{ cmp.info.logo.txt }}</h4>
+                <img :src="cmp.info.logo?.img" v-if="cmp.info.logo.img" @click="openEditor('imgs', idx)"
+                    :style="cmp.info.logo.style">
+                <h4 v-else contenteditable="true" @click="openEditor('logo')" :style="cmp.info.logo.style"
+                    @input="updateCmp" data-type="logo">{{ cmp.info.logo.txt }}</h4>
             </div>
             <!-- <pre>{{info}}</pre> -->
 
-            <wap-nav :nav="cmp.info.nav" />
+            <wap-nav :nav="cmp.info.nav" :cmpId="cmp.id" @openEdit="puk" />
 
         </section>
 
@@ -37,6 +30,9 @@ export default {
     },
     created() { },
     methods: {
+        puk(payload) {
+            this.$emit('openEditor', payload)
+        },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
 
@@ -47,6 +43,8 @@ export default {
                 type: el.type,
                 style: el.style
             }
+            console.log(wapContent);
+
             this.$emit('openEditor', wapContent)
         },
         updateCmp(ev) {

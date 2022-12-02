@@ -70,6 +70,7 @@ export default {
     },
     created() {
         this.view = { ...this.cmps }
+        console.log('this.editor:', this.editor)
         // this.type = this.cmps.type[0].data
         // this.setData()
     },

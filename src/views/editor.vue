@@ -8,9 +8,6 @@
             <editor-wap @openEditor="openEditor" />
         </section>
 
-        <!-- <pre>
-            {{cmps}}
-        </pre> -->
 
     </main>
 
@@ -38,6 +35,7 @@ export default {
     },
     methods: {
         openEditor(editorContent) {
+            
             this.editor = editorContent
         },
        

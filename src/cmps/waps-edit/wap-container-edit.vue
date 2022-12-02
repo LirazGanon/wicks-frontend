@@ -4,7 +4,7 @@
 
         <section class="wap-container" :class="cmp.classes">
             <div v-for="childCmp in cmp.info.cmps">
-                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
+                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" @openEditor="puk" />
             </div>
 
         </section>
@@ -27,7 +27,11 @@ export default {
         return {};
     },
     created() { },
-    methods: {},
+    methods: {
+          puk(payload) {
+            this.$emit('openEditor', payload)
+        },
+    },
     computed: {},
     unmounted() { },
 };

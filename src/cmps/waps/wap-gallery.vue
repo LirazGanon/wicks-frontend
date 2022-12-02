@@ -5,14 +5,18 @@
 
 </template>
 <script>
+
 export default {
     name: 'dynamic-gallery-cmp',
-    props: { cmp: Object },
+    props: {
+        cmp: Object,
+    },
     components: {},
     data() {
         return {};
     },
-    created() { },
+    created() {
+    },
     methods: {},
     computed: {},
     unmounted() { },

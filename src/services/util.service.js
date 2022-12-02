@@ -5,7 +5,9 @@ export const utilService = {
     debounce,
     randomPastTime,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    findPath,
+    deepSet,
 }
 
 function makeId(length = 6) {
@@ -61,3 +63,67 @@ function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
+
+function findPath(ob, key, value){
+    const path = [];
+    const keyExists = (obj) => {
+      if (!obj || (typeof obj !== "object" && !Array.isArray(obj))) {
+        return false;
+      }
+      else if (obj.hasOwnProperty(key) && obj[key] === value) {
+        return true;
+      }
+      else if (Array.isArray(obj)) {
+        let parentKey = path.length ? path.pop() : "";
+  
+        for (let i = 0; i < obj.length; i++) {
+          path.push(`${parentKey}[${i}]`);
+          const result = keyExists(obj[i], key);
+          if (result) {
+            return result;
+          }
+          path.pop();
+        }
+      }
+      else {
+        for (const k in obj) {
+          path.push(k);
+          const result = keyExists(obj[k], key);
+          if (result) {
+            return result;
+          }
+          path.pop();
+        }
+      }
+  
+      return false;
+    };
+  
+    keyExists(ob);
+  
+    return path.join(".");
+  }
+  
+   function deepSet(obj, path, val) {
+      path = path.replaceAll("[", ".[");
+      const keys = path.split(".");
+  
+      for (let i = 0; i < keys.length; i++) {
+          let currentKey = keys[i] 
+          let nextKey = keys[i + 1] 
+          if (currentKey.includes("[")) {
+              currentKey = parseInt(currentKey.substring(1, currentKey.length - 1));
+          }
+          if (nextKey && nextKey.includes("[")) {
+              nextKey = parseInt(nextKey.substring(1, nextKey.length - 1));
+          }
+  
+          if (typeof nextKey !== "undefined") {
+              obj[currentKey] = obj[currentKey] ? obj[currentKey] : (isNaN(nextKey) ? {} : []);
+          } else {
+              obj[currentKey] = val;
+          }
+  
+          obj = obj[currentKey];
+      }
+  };

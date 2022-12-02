@@ -8,8 +8,9 @@
         </router-link>
     </section>
 
-    <section class="editor-top main-container">
-        <section class="flex space-between">
+    <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
+    <section class="editor-top flex">
+        <section class="flex space-between full">
             <section class="view-port-editor flex">
                 <div class="material-symbols-outlined icon">
                     desktop_windows
@@ -20,23 +21,19 @@
                 <div class="material-symbols-outlined icon">
                     phone_iphone
                 </div>
-
-
-
             </section>
             <div class="dynamic-url">
                 <div class="material-symbols-outlined">
                     vpn_key
                 </div>
                 <span>https</span>
-                <span>://wicks.renderapp.com/</span>
+                <span>://wicks.in/</span>
                 <span contenteditable="true">my-site</span>
             </div>
 
             <div class="site-preview">
                 <router-link :to="(`/wap/` + wapId)"><span>Preview</span></router-link>
             </div>
-
 
         </section>
 
@@ -61,7 +58,7 @@ export default {
 
     },
     computed: {
-        wapId(){
+        wapId() {
             return this.$route.params.wapId
         }
     },

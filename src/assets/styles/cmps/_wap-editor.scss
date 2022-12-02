@@ -3,7 +3,10 @@
 
     .txt-cmps-editor,
     .img-cmp-editor {
-        padding: 10px;
+        >*{
+            padding-inline-start: 10px;
+        }
+        // padding: 10px;
 
         img {
             width: 90%;

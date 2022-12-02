@@ -3,16 +3,10 @@
     <section class="flex column txt-cmps-editor" v-if="cmp">
         <h2>Edit</h2>
         <span>Color</span>
-        <div @mousemove="onMousemove" @click="updateCmp('color', `hsl(${x}, 80%, 50%)`)"
-            :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" class="movearea">
-            <p>Click on the desire color...</p>
-        </div>
-
+        <color-picker @setColor="updateClr" />
         <span>Backround Color</span>
-        <div @mousemove="onMousemovey" @click="updateCmp('background-color', `hsl(${y}, 80%, 50%)`)"
-            :style="{ backgroundColor: `hsl(${y}, 80%, 50%)` }" class="movearea">
-            <p>Click on the desire color...</p>
-        </div>
+        <color-picker  @setColor="updateBgClr" />
+
 
 
         <!-- <label>
@@ -60,27 +54,31 @@
 
 </template>
 <script>
+import colorPicker from './util/color-picker.vue';
+
+
 export default {
     name: 'text-editor',
     props: {
         info: Object,
         cmp: Object
     },
-    components: {},
+    components: {
+        colorPicker
+    },
     data() {
         return {
-            x: 0,
-            y: 0,
+
         };
     },
     created() {
     },
     methods: {
         updateClr(ev) {
-            this.updateCmp('color', ev.target.value)
+            this.updateCmp('color', ev.target?.value || ev) 
         },
         updateBgClr(ev) {
-            this.updateCmp('background-color', ev.target.value)
+            this.updateCmp('background-color', ev.target?.value || ev)
         },
         updateFS(ev) {
             this.updateCmp('font-size', ev.target.value + 'px')
@@ -98,12 +96,7 @@ export default {
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
-        onMousemove(e) {
-            this.x = e.clientX
-        },
-        onMousemovey(e) {
-            this.y = e.clientX
-        },
+
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)

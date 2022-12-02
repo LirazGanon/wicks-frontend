@@ -6,6 +6,12 @@
         >*{
             padding-inline-start: 10px;
         }
+        h2{
+            border-bottom: 1px solid $border-clr;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
         // padding: 10px;
 
         img {
@@ -23,18 +29,19 @@
 
     .left-nav {
         // background-color: aqua;
-        border-right: 1px solid #3335;
+        border-right: 1px solid $border-clr;
 
         button {
             aspect-ratio: 1/1;
             color: #1c2e3bc9;
             background-color: transparent;
+            border-radius: 50%;
             transition: background 0.3s;
             &:hover{
-                border-radius: 50%;
                 background:$clr5;
             }
         }
+      
 
     }
 
@@ -47,7 +54,7 @@
         height: 100vh;
         // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
-        border-right: 1px solid #3335;
+        border-right: 1px solid $border-clr;
 
         section {
             overflow-y: auto;
@@ -74,6 +81,10 @@
 
 
         }
+    }
+
+    .cmp-side-editor{
+        border-right: 1px solid $border-clr;
     }
 
 

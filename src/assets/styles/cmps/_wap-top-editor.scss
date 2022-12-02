@@ -4,11 +4,11 @@
         margin-block: 10px;
         margin-inline-start: 15px;
     }
-    border-bottom: 1px solid #3335;
+    border-bottom: 1px solid $border-clr;
 }
 
 .editor-top {
-    border-bottom: 1px solid #3335;
+    border-bottom: 1px solid $border-clr;
     min-height:em(45px) ;
     > section{
         margin-inline-start: em(50px);
@@ -38,7 +38,7 @@
         font-weight: 900;
         font-size: rem(16px);
         div {
-            color: #3335;
+            color: $border-clr;
             margin-inline-end: 10px;
         }
         span {
@@ -52,7 +52,7 @@
             color: blueviolet;
         }
     }
-
+    
     .site-preview {
         align-self: center;
         justify-self: end;

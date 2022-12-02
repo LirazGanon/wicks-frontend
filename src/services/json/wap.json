@@ -502,12 +502,12 @@
       {
         "id": "nsl2zr5zs29",
         "type": "wap-container",
-        "classes": ["bakery"],
+        "classes": [],
         "info": {
           "cmps": [
             {
               "id": "nsljvlo6yws",
-              "classes": ["full"],
+              "classes": [],
               "type": "wap-bg-img",
               "info": {
                 "img": {
@@ -550,7 +550,7 @@
       {
         "id": "nsl42ixeifo",
         "type": "wap-container",
-        "classes": ["img-card bakery"],
+        "classes": [],
         "info": {
           "heading": "Coffee & Cakes",
           "cmps": [
@@ -646,7 +646,7 @@
       },
       {
         "id": "nsld13h14dk",
-        "classes": ["card-gallery bakery"],
+        "classes": [],
         "type": "wap-container",
         "info": {
           "cmps": [
@@ -767,7 +767,7 @@
       },
       {
         "id": "nslpcescfpm",
-        "classes": ["card-img bakery"],
+        "classes": [],
         "type": "wap-container",
         "info": {
           "cmps": [

@@ -46,6 +46,7 @@
             </ul>
         </section>
     </section>
+    <pre>{{editor}}</pre>
 
 </template>
 <script>

@@ -3,7 +3,7 @@
     <div class="wap-view">
         <div v-for="item in view.cmps" :key="item.id">
             <div class="main-layout full">
-
+<!-- <pre>{{item}}</pre> -->
                 <component :is="(item.type || 'wapHeader')" :cmp="item" />
                 <!-- <pre>{{item}}</pre> -->
 

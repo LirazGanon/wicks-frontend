@@ -1,0 +1,13 @@
+.color-picker {
+
+    display: flex;
+    gap: 7px;
+    .color-picker-item {
+        cursor: pointer;
+        > div{
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+        }
+    }
+}

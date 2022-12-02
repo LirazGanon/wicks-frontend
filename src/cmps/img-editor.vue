@@ -55,10 +55,14 @@ export default {
         },
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             const cmp = JSON.parse(JSON.stringify(this.cmp))
-            const { key, idx } = this.info
-            if (key === 'bgImg') {
+            const { key, idx, isContainer } = this.info
+            if (isContainer) {
+                console.log(cmp.info.cmps.find(cmp => cmp.type === 'wap-img'));
+                cmp.info.cmps.find(cmp => cmp.type === 'wap-img').info.imgs[idx].style[att] = value
+            }
+            else if (key === 'bgImg') {
                 cmp.info[key].style[att] = value
             } else {
                 cmp.info[key][idx].style[att] = value

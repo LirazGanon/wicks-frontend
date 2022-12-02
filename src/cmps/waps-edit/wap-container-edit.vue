@@ -28,8 +28,9 @@ export default {
     },
     created() { },
     methods: {
-          puk(payload) {
+        puk(payload) {
             console.log('payload:', payload)
+            // payload.id = cmp.id
             this.$emit('openEditor', payload)
         },
     },

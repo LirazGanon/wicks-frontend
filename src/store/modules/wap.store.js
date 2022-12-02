@@ -83,6 +83,7 @@ export const wapStore = {
         },
         async updateWap(context, { wap }) {
             try {
+                console.log('wap:', wap)
                 context.commit(getActionUpdateWap(wap))
                 wap = await wapToEditService.save(wap)
                 return wap

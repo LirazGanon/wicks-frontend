@@ -40,15 +40,20 @@
 
         &.card-img {
             display: flex;
-            background-color:$bakery-sc-clr ;
-            * {color: $clr4}
-            img{
-                width:100%;
+            background-color: $bakery-sc-clr ;
+
+            * {
+                color: $clr4
             }
-            button:hover{
-                color:$bakery-sc-clr ;
+
+            img {
+                width: 100%;
             }
-            
+
+            button:hover {
+                color: $bakery-sc-clr ;
+            }
+
         }
 
         &.img-card {
@@ -73,7 +78,7 @@
                 flex: 1;
             }
 
-            .wap-card{
+            .wap-card {
                 margin-inline-start: 0;
             }
 
@@ -87,29 +92,51 @@
                     max-width: 100%;
                 }
 
-                > :nth-child(1) {
-                    grid-column: 2 / 4;
-                    grid-row: 2 / 4;
+                &.four {
+
+                    > :nth-child(1) {
+                        grid-column: 2 / 4;
+                        grid-row: 2 / 4;
+                    }
+
+                    > :nth-child(2) {
+                        grid-column: 4 / 7;
+                        grid-row: 1 / 4;
+                    }
+
+                    > :nth-child(3) {
+                        grid-column: 1 / 4;
+                        grid-row: 4 / 7
+                    }
+
+                    > :nth-child(4) {
+                        grid-column: 4 / 6;
+                        grid-row: 4 / 6;
+                    }
                 }
 
-                > :nth-child(2) {
-                    grid-column: 4 / 7;
-                    grid-row: 1 / 4;
-                }
+                &.three {
 
-                > :nth-child(3) {
-                    grid-column: 1 / 4;
-                    grid-row: 4 / 7
-                }
+                    > :nth-child(1) {
+                        grid-column: 1 / 4;
+                        grid-row: 2 / 5;
+                    }
 
-                > :nth-child(4) {
-                    grid-column: 4 / 6;
-                    grid-row: 4 / 6;
+                    > :nth-child(2) {
+                        grid-column: 4 / 7;
+                        grid-row: 1 / 4;
+                        height: 100%;
+                        object-fit: cover;
+
+                    }
+
+                    > :nth-child(3) {
+                        grid-column: 4 / 9;
+                        grid-row: 4 / 7
+                    }
+
                 }
             }
-
-
         }
-
     }
 }

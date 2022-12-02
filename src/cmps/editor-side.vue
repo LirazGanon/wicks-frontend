@@ -91,12 +91,13 @@ export default {
         toggleActive(val) {
             if (!this.active || this.active !== val) this.active = val
             else this.active = null
+
         },
 
     },
     computed: {
-        getData() {
-            return this.data
+        getEditor() {
+            return this.editor
         },
         cmps() {
             return this.$store.getters.cmps
@@ -126,9 +127,8 @@ export default {
         }
     },
     watch: {
-        type() {
-            this.setData()
-        }
+        editor: function () {this.active = 'edit'}
+        
     }
 };
 </script>

@@ -2,8 +2,8 @@
   {
     "id": "fhngh1",
     "type": "wap-header",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
-    "classes": ["bakery "], 
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
+    "classes": ["bakery "],
     "info": {
       "logo": {
         "type": "txt",
@@ -51,7 +51,7 @@
   {
     "id": "gbfgg",
     "type": "wap-hero",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
     "classes": ["bakery"],
     "info": {
       "heading": {
@@ -84,21 +84,22 @@
     "id": "jjyuh",
     "type": "wap-container",
     "classes": ["img-card bakery"],
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
     "info": {
       "cmps": [
         {
           "id": "jj4yugh",
           "type": "wap-img",
           "classes": [],
-          "imgs": [
-            {
-              "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
-              "style": {}
-            }
-          ],
-          "info": {},
+          "info": {
+            "imgs": [
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+                "style": {}
+              }
+            ]
+          },
           "style": {}
         },
         {
@@ -134,7 +135,7 @@
     "id": "gbgty42",
     "classes": ["card-gallery bakery"],
     "type": "wap-container",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
     "info": {
       "cmps": [
         {
@@ -204,7 +205,7 @@
     "id": "wc0554njj",
     "classes": ["card-img bakery"],
     "type": "wap-container",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
     "info": {
       "cmps": [
         {
@@ -243,14 +244,16 @@
           "id": "234msd09",
           "type": "wap-img",
           "classes": [],
-          "imgs": [
-            {
-              "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-              "style": {}
-            }
-          ],
-          "info": {},
+          "info": {
+            "imgs": [
+              {
+                "type": "img",
+                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+                "style": {}
+              }
+            ]
+          },
+
           "style": {}
         }
       ]
@@ -261,7 +264,7 @@
     "id": "mfgnih987",
     "classes": [],
     "type": "wap-reviews",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669915523/wicks/cmp-prev/review.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915523/wicks/cmp-prev/review.png",
     "info": {
       "heading": {
         "type": "txt",
@@ -301,7 +304,7 @@
     "id": "wc05jjjj4",
     "classes": ["full"],
     "type": "wap-bg-img",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
     "info": {
       "img": {
         "type": "img",
@@ -316,7 +319,7 @@
     "id": "gbits42",
     "classes": ["card-gallery bakery"],
     "type": "wap-container",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
     "info": {
       "cmps": [
         {

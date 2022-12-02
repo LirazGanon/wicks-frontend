@@ -40,13 +40,13 @@
 
 
         <!-- ACTUAL CMP EDITOR -->
-        <section class="flex">
+        <section class="flex cmp-side-editor">
             <ul v-if="active === 'edit'">
-                <component :is="editor.type + 'Editor'" :info="editor" class="cmp-editor" />
+                <component :is="editor.type + 'Editor'" :info="editor" :cmp="getCmp" class="cmp-editor" />
             </ul>
         </section>
     </section>
-    <pre>{{editor}}</pre>
+    <pre>{{ editor }}</pre>
 
 </template>
 <script>
@@ -92,7 +92,7 @@ export default {
             if (!this.active || this.active !== val) this.active = val
             else this.active = null
         },
-        
+
     },
     computed: {
         getData() {
@@ -100,6 +100,23 @@ export default {
         },
         cmps() {
             return this.$store.getters.cmps
+        },
+        getCmp() {
+            const wap = this.$store.getters.getWapToEdit
+            const cmp = wap.cmps.find(cmp => {
+                if (cmp.type === 'wap-container') {
+                    return cmp.info.cmps.find(item => {
+                        if (item.type === 'wap-gallery') {
+                            return item.id === this.editor.id
+                        }
+                    });
+                }
+                return cmp.id === this.editor.id
+            })
+            // console.log('this.info:', this.info)
+            // console.log('wap', wap);
+            console.log('cmp', cmp);
+            return JSON.parse(JSON.stringify(cmp))
         }
     },
     watch: {

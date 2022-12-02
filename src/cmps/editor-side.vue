@@ -42,7 +42,7 @@
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex">
             <ul v-if="active === 'edit'">
-                <component :is="editor.type + 'Editor'" :info="editor" />
+                <component :is="editor.type + 'Editor'" :info="editor" class="cmp-editor" />
             </ul>
         </section>
     </section>

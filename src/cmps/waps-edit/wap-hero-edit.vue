@@ -54,10 +54,10 @@ export default {
         updateCmp(ev) {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let puk = JSON.parse(JSON.stringify(this.cmp))
-            puk.info[ev.target.dataset.type].txt = ev.target.innerText
+            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
+            cmpCopy.info[ev.target.dataset.type].txt = ev.target.innerText
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = puk
+            wap.cmps[idx] = cmpCopy
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

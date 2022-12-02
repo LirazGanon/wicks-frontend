@@ -1,16 +1,11 @@
 <template>
     <nav class="wap-nav flex">
-      
+
         <!-- TODO:START -->
 
-        <a href="" v-for="(l, idx) in nav.info.links" 
-       
-        contenteditable="true" 
-        @click="openEditor('links', idx)"
-        :style="nav.info.links[idx].style"
-        @input="updateCmp"
-        data-type="links"> {{ l.txt
-        }}</a>
+        <a href="" v-for="(l, idx) in nav.info.links" contenteditable="true" @click="openEditor('links', idx)"
+            :style="nav.info.links[idx].style" @input="updateCmp($event, idx)" data-type="links"> {{ l.txt
+            }}</a>
 
     </nav>
 
@@ -18,17 +13,17 @@
 <script>
 export default {
     name: 'dynamic-nav-cmp',
-    props: { nav: Object , cmpId:String},
+    props: { nav: Object, cmpId: String },
     components: {},
     data() {
         return {
-            cmp:null
+            cmp: null
         };
     },
     created() {
         this.cmp = this.nav
         console.log(this.cmpId);
-     },
+    },
     methods: {
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
@@ -41,16 +36,20 @@ export default {
                 style: el.style,
                 fatherEl: 'nav'
             }
-            console.log(wapContent);
             this.$emit('openEdit', wapContent)
         },
-        updateCmp(ev) {
+        updateCmp(ev, innerIdx) {
             let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmpId)
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            cmpCopy.info[ev.target.dataset.type].txt = ev.target.innerText
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = cmpCopy
+            
+            // console.log('cmpCopy:',  cmpCopy.info.links[innerIdx].txt)
+            // console.log('wap',wap.cmps[cmpIdx].info.nav);
+            // console.log('cmpCopy:', cmpCopy)
+            // console.log(wap.cmps[cmpIdx].info.nav.info.links[innerIdx]);
+            cmpCopy.info.links[innerIdx].txt = ev.target.innerText
+            wap.cmps[cmpIdx].info.nav = cmpCopy
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

@@ -10,7 +10,7 @@
 
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
     <section class="editor-top flex">
-        <section class="flex space-between full">
+        <section class="flex space-between full align-center">
             <section class="view-port-editor flex">
                 <div class="material-symbols-outlined icon">
                     desktop_windows
@@ -32,7 +32,11 @@
             </div>
 
             <div class="site-preview">
-                <router-link :to="(`/wap/` + wapId)"><span>Preview</span></router-link>
+                <router-link :to="(`/wap/` + wapId)" class="flex">
+                    <span>Preview </span><span class="material-symbols-outlined">
+                        arrow_forward
+                    </span></router-link>
+
             </div>
 
         </section>

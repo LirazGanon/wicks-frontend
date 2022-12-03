@@ -1,31 +1,7 @@
 .main-editor {
-    height:calc(100vh - 180px) .txt-cmps-editor,
-    .img-cmp-editor {
-        > * {
-            padding-inline-start: 10px;
-        }
-
-        h2 {
-            border-bottom: 1px solid $border-clr;
-            font-weight: bold;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        // padding: 10px;
-
-        img {
-            width: 90%;
-            margin: auto;
-            margin-bottom: 10px;
-        }
-
-        > * {
-            margin-bottom: 10px;
-        }
-    }
-
-    .left-nav {
+    height:calc(100vh - 127px);
+    
+       .left-nav {
         // background-color: aqua;
         border-right: 1px solid $border-clr;
 
@@ -88,6 +64,35 @@
             }
         }
 
+        .txt-cmps-editor,
+        .img-cmp-editor,
+        .section-cmp-editor {
+            height: 100%;
+            > * {
+                padding-inline-start: 10px;
+            }
+    
+            h2 {
+                border-bottom: 1px solid $border-clr;
+                font-weight: bold;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+    
+            // padding: 10px;
+    
+            img {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+    
+            > * {
+                margin-bottom: 10px;
+            }
+        }
+
         img {
             pointer-events: none;
             width: 95%;
@@ -110,6 +115,7 @@
 
     .prev-cmp-wrapper {
         height: 100%;
+        
 
         .prev-cmp-filter {
             height: 100%;
@@ -133,11 +139,11 @@
     }
 
     .cmp-editor {
-        width: auto;
         border-right: 1px solid $border-clr;
     }
 
-    .cmp-side-editor {
-        // border-right: 1px solid $border-clr;
+    .options.active .cmp-side-editor {
+        width: 100%;
+
     }
 }

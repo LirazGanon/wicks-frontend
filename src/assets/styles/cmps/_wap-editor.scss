@@ -1,4 +1,5 @@
 .main-editor {
+    
     height: 100vh;
     .txt-cmps-editor,
     .img-cmp-editor {
@@ -47,7 +48,6 @@
     }
 
     .options {
-        // background-color: aqua;
         width: clamp(200px, 35vw, 500px);
         border-right: 1px solid $border-clr;
 
@@ -82,6 +82,17 @@
             pointer-events: none;
             width: 95%;
         }
+
+        &.theme{
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                width: 70%;
+                margin-bottom: 1em;
+cursor: pointer;
+            }
+        }
     }
 
 
@@ -111,10 +122,11 @@
     
     .cmp-editor {
         width: clamp(200px, 30vw, 400px);
+        border-right: 1px solid $border-clr;
     }
 
     
     .cmp-side-editor {
-        border-right: 1px solid $border-clr;
+        // border-right: 1px solid $border-clr;
     }
 }

@@ -19,14 +19,14 @@
 
 
         <!-- CMPS ADDITIONS -->
-        <section v-if="active === 'cmp'" class="options">
+        <section v-if="active === 'cmp'" class="options animate__animated animate__fadeInLeft">
             <h2>Add Section</h2>
             <!-- <ul>
                 <li v-for="t in view.type" :key="t.id">
                     <button @click="type = t.data">{{ t.data }}</button>
                 </li>
             </ul> -->
-            <section class="prev-cmp-wrapper flex">
+            <section class="prev-cmp-wrapper flex ">
 
                 <ul class="prev-cmp-filter">
                     <li @click="setFilter('All')" :class="{ active: cmpFilter === 'All' }">All</li>
@@ -45,22 +45,19 @@
 
 
         <!-- THEME PICKER -->
-        <section v-if="active === 'palette'" class="flex options">
+        <section v-if="active === 'palette'" class="flex options theme">
 
-            <ul>
-                <li v-for="p in 5">
-                    <button>
-                        חשוכי
-                    </button>
-                </li>
-            </ul>
+         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/1.png" alt="">
+         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/2.png" alt="">
+         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+
         </section>
 
 
         <!-- ACTUAL CMP EDITOR -->
-        <section class="flex cmp-side-editor">
+        <section class="flex cmp-side-editor ">
             <ul v-if="active === 'edit'">
-                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor" />
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor animate__animated animate__fadeInLeft" />
             </ul>
         </section>
     </section>

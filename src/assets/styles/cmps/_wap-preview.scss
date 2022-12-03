@@ -16,7 +16,7 @@
 
     p {
         font-size: 1.5em;
-        font-weight: bold;
+        font-weight: lighter;
         display: grid;
         place-items: center;
         margin: 0;
@@ -27,32 +27,41 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
     .preview-btns {
         position: absolute;
-        display: none;
-        
+        transition: 0.5s;
+        transform: translateX(-50%);
+        opacity: 0;
+
+
         button {
-            border-radius: 0.5em;
+            border-radius: 0.2em;
             font-size: 1.5em;
+            padding: 10px;
+            background-color: $clr2 ;
         }
 
     }
 
+
     &:hover .preview-btns-bg {
         display: block;
+        opacity: 1;
         background-color: rgba(255, 255, 255, 0.6);
     }
 
     &:hover .preview-btns {
         display: flex;
+        opacity: 1;
         flex-direction: column;
         gap: 10px;
         right: 50%;
         bottom: 3em;
-        transform: translatex(50%);
+        transform: translateX(50%);
     }
 
     button:hover {

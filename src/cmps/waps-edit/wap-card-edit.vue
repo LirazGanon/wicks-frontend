@@ -10,7 +10,8 @@
 
         <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop="openEditor('btns', idx)"
             :style="btn.style" @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
-        <img v-for="(img, idx) in cmp.info.imgs" @click.stop="openEditor('img', idx)" :src="img.src" :style="img.style" />
+        <img v-for="(img, idx) in cmp.info.imgs" @click.stop="openEditor('imgs', idx)" :src="img.src"
+            :style="img.style" />
     </section>
 
 

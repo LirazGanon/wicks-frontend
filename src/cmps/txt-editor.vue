@@ -108,8 +108,9 @@ export default {
         },
 
         updateCmp(att, value) {
-            const { key, path, el, currCmp, elIdx } = this.info
+            const { key, path, el, elIdx } = this.info
             const originalWap = this.$store.getters.getWapToEdit
+            const currCmp = this.getCurrCmp()
             console.log(currCmp);
             const elCopy = utilService.copy(el)
             const copyCmp = utilService.copy(currCmp)
@@ -134,6 +135,17 @@ export default {
             } catch {
                 console.log('ops')
             }
+        },
+        getCurrCmp() {
+            const wap = this.$store.getters.getWapToEdit
+            const { path } = this.info
+            let currCmp
+            if (path.idx !== undefined) {
+                currCmp = wap.cmps[path.fatherIdx].cmps[path.idx]
+            } else {
+                currCmp = wap.cmps[path.fatherIdx]
+            }
+            return utilService.copy(currCmp)
         }
 
     },

@@ -1065,7 +1065,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/4_lb0c6r.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {
@@ -1104,7 +1105,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/677u_yrukuv.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {
@@ -1143,7 +1145,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/7_pb3r8p.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {
@@ -1182,7 +1185,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922273/wicks/coffeshop/fff_ftdytx.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {
@@ -1237,37 +1241,43 @@
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/22_xeoe3v.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/rrr_dpjppp.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/jjj_a9bg0u.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922272/wicks/coffeshop/ghgh_wcfcdj.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/ghghgh_ijkutq.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/trtrt_u0rwfm.jpg",
               "txt": "",
-              "style": {}
+              "style": {},
+              "classes":[]
             }
           ],
           "style": {}
@@ -1289,7 +1299,8 @@
                   {
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ]
               },

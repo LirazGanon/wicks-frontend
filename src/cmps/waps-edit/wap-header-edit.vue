@@ -5,13 +5,13 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.img" v-if="cmp.info.logo.img" @click="openEditor('imgs', idx)"
+                <img :src="cmp.info.logo?.img" v-if="cmp.info.logo.img" @click.stop="openEditor('imgs', idx)"
                     :style="cmp.info.logo.style">
 
 
 
-                <h4 v-else contenteditable="true" @click="openEditor('logo')" :style="cmp.info.logo.style"
-                    @input="updateCmp" data-type="logo">{{ cmp.info.logo.txt }}</h4>
+                <h4 v-else contenteditable="true" @click.stop="openEditor('logo')" :style="cmp.info.logo.style"
+                    @input="updateCmp($event,'logo')">{{ cmp.info.logo.txt }}</h4>
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
@@ -47,11 +47,11 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev) {
+        updateCmp(ev, key) {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            cmpCopy.info[ev.target.dataset.type].txt = ev.target.innerText
+            cmpCopy.info[key].txt = ev.target.innerText
             wap = JSON.parse(JSON.stringify(wap))
             wap.cmps[idx] = cmpCopy
             try {

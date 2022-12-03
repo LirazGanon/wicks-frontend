@@ -1,9 +1,8 @@
 .main-editor {
     height: 100vh;
-
     .txt-cmps-editor,
     .img-cmp-editor {
-        >* {
+        > * {
             padding-inline-start: 10px;
         }
 
@@ -22,11 +21,10 @@
             margin-bottom: 10px;
         }
 
-        >* {
+        > * {
             margin-bottom: 10px;
         }
     }
-
 
     .left-nav {
         // background-color: aqua;
@@ -43,22 +41,21 @@
                 background: $clr5;
             }
         }
-
     }
 
     .prev-cmp-filter {
         height: 100%;
         background-color: rgb(248, 247, 247);
 
-        >li {
+        > li {
             padding: 7px 10px;
             font-size: 1.1em;
             cursor: pointer;
 
             &:hover {
-                color:blueviolet;
+                color: blueviolet;
             }
-            
+
             &.active {
                 color: blueviolet;
                 -webkit-box-shadow: inset 14px 0px 0px -10px blueviolet;
@@ -67,15 +64,11 @@
         }
     }
 
-
-
     .cmp-editor {
         width: clamp(200px, 30vw, 400px);
     }
 
     .options {
-
-        height: 100vh;
         // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
         border-right: 1px solid $border-clr;
@@ -87,13 +80,13 @@
             font-weight: bold;
         }
 
-        .prev-cmp-wrapper {
+        // .prev-cmp-wrapper {
+        //     overflow-y: auto;
+        //     height: calc(100vh - 0px);
+        // }
+        .prev-cmp-img-container {
             overflow-y: auto;
-            height: 100%;
-        }
-
-        .cmp-prev-img-container {
-            overflow-y: auto;
+            height: calc(100vh - 0px);
         }
 
         .draggable-item {
@@ -101,25 +94,19 @@
             justify-content: center;
             margin-bottom: 10px;
             padding: 0 5px;
-        
 
             &:hover {
                 cursor: grab;
             }
-
         }
 
         img {
             pointer-events: none;
             width: 95%;
-
-
         }
     }
 
     .cmp-side-editor {
         border-right: 1px solid $border-clr;
     }
-
-
 }

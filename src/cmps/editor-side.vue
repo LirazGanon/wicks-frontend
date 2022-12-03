@@ -3,7 +3,7 @@
 
         <!-- LEFT NAV -->
         <section class="flex column left-nav">
-            <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')">
+            <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')" >
                 add_circle
             </button>
             <button class="material-symbols-outlined" title="Pick Palette" @click="toggleActive('palette')">

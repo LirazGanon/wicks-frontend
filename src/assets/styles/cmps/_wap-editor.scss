@@ -11,6 +11,8 @@
             background-color: transparent;
             border-radius: 50%;
             transition: background 0.3s;
+            font-size: 1.5em;
+            padding: 8px;
 
             &:hover {
                 background: $clr5;
@@ -78,6 +80,17 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
+            .color-picker{
+                margin-bottom: 2em;
+            }
+            label.gap{
+                gap: 20px;
+            }
+            hr{
+                width: 100%;
+                color: $border-clr;
+                opacity: 0.2;
+            }
     
             // padding: 10px;
     
@@ -101,7 +114,6 @@
             flex-direction: column;
             align-items: center;
             overflow-y: auto;
-            height: calc(100vh - 185px);
 
             img {
                 width: 70%;

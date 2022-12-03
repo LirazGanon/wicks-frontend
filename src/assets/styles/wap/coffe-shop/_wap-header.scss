@@ -1,0 +1,27 @@
+.wap-header {
+    width: clamp(10px, 100%, 100%);
+
+    &.bakery {
+        background: $bakery-pr-clr;
+
+        .wap-logo {
+            text-transform: uppercase;
+            color: $clr6;
+            font-size: em(25px);
+        }
+
+        .wap-nav {
+            font-size: rem(15px);
+
+            a:not(:last-child) {
+                margin-inline-end: rem(24px);
+            }
+        }
+    }
+
+    &.cars {
+        .wap-logo {
+            color: green;
+        }
+    }
+}

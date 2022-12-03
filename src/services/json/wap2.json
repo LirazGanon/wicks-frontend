@@ -462,7 +462,7 @@
       {
         "id": "fhnzh31",
         "type": "wap-header",
-        "classes": [" "],
+        "classes": ["coffe-shop"],
         "info": {
           "logo": {
             "type": "txt",
@@ -476,7 +476,7 @@
           {
             "type": "wap-nav",
             "id": "wcdi5",
-            "classes": [],
+            "classes": ["coffe-shop"],
             "info": {
               "links": [
                 {
@@ -513,14 +513,14 @@
       {
         "id": "nsl2zr5zs29",
         "type": "wap-container",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "info": {
         },
         "cmps":[
           {
             "type": "wap-card",
             "id": "nslxxofxdmw",
-            "classes": [],
+            "classes": ["coffe-shop"],
             "info": {
               "heading": {
                 "type": "txt",
@@ -548,7 +548,7 @@
       {
         "type": "wap-container",
         "id": "nsl42ixeifo",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "info": {
           "heading": "Coffee & Cakes"
         },
@@ -647,7 +647,7 @@
       {
         "type": "wap-container",
         "id": "nsld13h14dk",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "info": {
           "imgs": [
             {
@@ -915,7 +915,7 @@
       },
       {
         "id": "nslop34brez",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "type": "wap-container",
         "info": {
           "heading": {
@@ -1171,7 +1171,7 @@
       {
         "type": "wap-gallery",
         "id": "nsl8suwq8sn",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "info": {
           "heading": {
             "type": "txt",
@@ -1236,7 +1236,7 @@
       {
         "type": "wap-container",
         "id": "nsl41t81v4b",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "info": {
           "imgs": [
             {
@@ -1252,7 +1252,7 @@
           {
             "type": "wap-form",
             "id": "nslzzqh0foy",
-            "classes": [],
+            "classes": ["coffe-shop"],
             "info": {
               "heading": {
                 "type": "txt",
@@ -1323,7 +1323,7 @@
       },
       {
         "id": "nsllxnq80yu",
-        "classes": [],
+        "classes": ["coffe-shop"],
         "type": "wap-footer",
         "info": {
           "logo": {

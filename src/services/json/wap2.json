@@ -99,12 +99,14 @@
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
-              "style": {}
+              "style": {},
+              "class": ["left"]
             },
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
-              "style": {}
+              "style": {},
+              "class": ["right"]
             }
           ]
         },

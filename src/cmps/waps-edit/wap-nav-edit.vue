@@ -8,7 +8,7 @@
             }}</a> -->
 
 
-        <a href="#" v-for="l in cmp.info.links">
+        <a  v-for="l in cmp.info.links">
             <span >
                 {{ l.txt }}
             </span>

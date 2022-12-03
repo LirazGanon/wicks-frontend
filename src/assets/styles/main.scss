@@ -32,10 +32,18 @@
 
 
 // Dynamic
+// bakery
+@import "wap/bakery/wap-footer";
+@import "wap/bakery/wap-header";
+@import "wap/bakery/wap-hero";
+@import "wap/bakery/wap-container";
+@import "wap/bakery/wap-bg-img";
+@import "wap/bakery/wap-reviews";
 
-@import "wap/wap-footer";
-@import "wap/wap-header";
-@import "wap/wap-hero";
-@import "wap/wap-container";
-@import "wap/wap-bg-img";
-@import "wap/wap-reviews";
+// coffe-shop
+@import "wap/coffe-shop/wap-footer";
+@import "wap/coffe-shop/wap-header";
+@import "wap/coffe-shop/wap-hero";
+@import "wap/coffe-shop/wap-container";
+@import "wap/coffe-shop/wap-bg-img";
+@import "wap/coffe-shop/wap-reviews";

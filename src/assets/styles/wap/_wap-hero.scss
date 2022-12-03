@@ -27,7 +27,7 @@
             font-weight: 300;
         }
 
-        .wap-img {
+        .wap-img.left {
             grid-area: bl;
             width: calc(100% - 0.5vw);
             height: 100%;
@@ -37,7 +37,7 @@
             overflow: hidden;
         }
 
-        .wap-bg-img {
+        .wap-img.right {
             grid-area: mbr;
             width: 100%;
             object-fit: cover;

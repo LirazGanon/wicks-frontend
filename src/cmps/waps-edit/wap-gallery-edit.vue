@@ -15,9 +15,6 @@
 
 </template>
 <script>
-
-import { utilService } from '../../services/util.service';
-
 export default {
     name: 'dynamic-gallery-cmp',
     props: { cmp: Object },
@@ -25,11 +22,7 @@ export default {
     data() {
         return {};
     },
-    created() {
-        const wap = this.$store.getters.getWapToEdit
-        console.log(wap)
-        console.log(utilService.findPath(wap, "id","k2sm903"))
-     },
+    created() { },
     methods: {
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]

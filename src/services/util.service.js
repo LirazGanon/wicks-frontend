@@ -71,11 +71,14 @@ function findPath(ob, key, value){
         return false;
       }
       else if (obj.hasOwnProperty(key) && obj[key] === value) {
+        obj[key] = {a:'sksksks'}
         return true;
       }
       else if (Array.isArray(obj)) {
         let parentKey = path.length ? path.pop() : "";
   
+        console.log(obj)
+
         for (let i = 0; i < obj.length; i++) {
           path.push(`${parentKey}[${i}]`);
           const result = keyExists(obj[i], key);

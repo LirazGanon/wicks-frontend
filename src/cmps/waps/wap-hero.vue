@@ -8,12 +8,8 @@
             <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">
                 {{ btn.txt }}
             </button>
-
-            <section v-for="img in cmp.info.imgs">
-                <img :src="img.src"  alt="" class="wap-img" :style="img.style">
-            </section>
-
-            
+                <img v-for="img in cmp.info.imgs" :src="img.src"  alt="" class="wap-img" :class="img.classes" :style="img.style">
+                    
 
         </section>
     </section>

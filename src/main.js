@@ -17,6 +17,7 @@ import {
   import './assets/styles/main.scss'
   import rootCmp from './root-cmp.vue'
   
+  
   const app = createApp(rootCmp)
   app.use(router)
   app.use(store)

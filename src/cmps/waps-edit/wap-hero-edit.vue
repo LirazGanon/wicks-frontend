@@ -19,9 +19,8 @@
             </button>
 
             
-            <section v-for="img in cmp.info.imgs">
-                <img :src="img.src"  alt="" class="wap-img" :style="img.style" @click="openEditor('imgs', idx)">
-            </section>
+            <img v-for="img in cmp.info.imgs" :src="img.src"  alt="" class="wap-img" :class="img.classes" :style="img.style">
+
 
        
 

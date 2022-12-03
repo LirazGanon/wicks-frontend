@@ -72,7 +72,6 @@ function findPath(ob, key, value){
         return false;
       }
       else if (obj.hasOwnProperty(key) && obj[key] === value) {
-        obj[key] = {a:'sksksks'}
         return true;
       }
       else if (Array.isArray(obj)) {

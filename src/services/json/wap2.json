@@ -469,11 +469,13 @@
             "txt": "pukoffe",
             "src": "",
             "style": {}
-          },
-          "nav": {
-            "id": "wc05",
+          }
+         
+        },
+        "cmps":[
+          {
             "type": "wap-nav",
-            "style": {},
+            "id": "wcdi5",
             "classes": [],
             "info": {
               "links": [
@@ -502,9 +504,10 @@
                   "style": {}
                 }
               ]
-            }
+            },
+            "style": {}
           }
-        },
+        ],
         "style": {}
       },
       {
@@ -512,59 +515,47 @@
         "type": "wap-container",
         "classes": [],
         "info": {
-          "cmps": [
-            {
-              "id": "nsljvlo6yws",
-              "classes": [],
-              "type": "wap-bg-img",
-              "info": {
-                "img": {
-                  "type": "img",
-                  "txt": "",
-                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg",
+        },
+        "cmps":[
+          {
+            "type": "wap-card",
+            "id": "nslxxofxdmw",
+            "classes": [],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "Unique Craft Cafe in NYC",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. A lacus vestibulum sed arcu non. Dolor magna eget est lorem ipsum dolor sit amet consectetur.",
+                "style": {}
+              },
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "View menu",
                   "style": {}
                 }
-              }
+              ]
             },
-            {
-              "id": "nslxxofxdmw",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "Unique Craft Cafe in NYC",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. A lacus vestibulum sed arcu non. Dolor magna eget est lorem ipsum dolor sit amet consectetur.",
-                  "style": {}
-                },
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "View menu",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
-            }
-          ],
-          "style": {}
-        }
+            "style": {}
+          }
+        ],
+        "style":{"bacground-img":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg"}
       },
       {
-        "id": "nsl42ixeifo",
         "type": "wap-container",
+        "id": "nsl42ixeifo",
         "classes": [],
         "info": {
-          "heading": "Coffee & Cakes",
-          "cmps": [
+          "heading": "Coffee & Cakes"
+        },
+         "cmps": [
             {
-              "id": "nslq0fgmtqa",
               "type": "wap-card",
+              "id": "nslq0fgmtqa",
               "classes": [],
               "info": {
                 "imgs": [
@@ -587,8 +578,8 @@
               "style": {}
             },
             {
-              "id": "nsllycple06",
               "type": "wap-card",
+              "id": "nsllycple06",
               "classes": [],
               "info": {
                 "texts": [
@@ -607,8 +598,8 @@
               "style": {}
             },
             {
-              "id": "nsls3682juo",
               "type": "wap-card",
+              "id": "nsls3682juo",
               "classes": [],
               "info": {
                 "texts": [
@@ -627,8 +618,8 @@
               "style": {}
             },
             {
-              "id": "nsl659ytyjs",
               "type": "wap-card",
+              "id": "nsl659ytyjs",
               "classes": [],
               "info": {
                 "imgs": [
@@ -650,310 +641,276 @@
               },
               "style": {}
             }
-          ]
-        },
+          ],
         "style": {}
       },
       {
+        "type": "wap-container",
         "id": "nsld13h14dk",
         "classes": [],
-        "type": "wap-container",
         "info": {
-          "cmps": [
+          "imgs": [
             {
-              "id": "nslz8zq9on7",
-              "type": "wap-img",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
-                    "style": {},
-                    "classes":[]
-                  }
-                ]
-              },
-              "style": {}
-            },
-            {
-              "type": "wap-card",
-              "id": "nslu6wzhz73",
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "01",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "About Us",
-                  "style": {}
-                },
-                "txts": [
-                  {
-                    "type": "txt",
-                    "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
-            },
-            {
-              "type": "wap-card",
-              "id": "nslget8pkhp",
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "02",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "Our Food",
-                  "style": {}
-                },
-                "txts": [
-                  {
-                    "type": "txt",
-                    "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
-            },
-            {
-              "type": "wap-card",
-              "id": "nsl1bqio51l",
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "03",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "Our Drinks",
-                  "style": {}
-                },
-                "txts": [
-                  {
-                    "type": "txt",
-                    "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
-            },
-            {
-              "type": "wap-card",
-              "id": "nsln9nrxpbh",
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "04",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "Excellent coffee",
-                  "style": {}
-                },
-                "txts": [
-                  {
-                    "type": "txt",
-                    "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
+              "style": {},
+              "classes":[]
             }
           ]
         },
+        "cmps": [
+          {
+            "type": "wap-card",
+            "id": "nslu6wzhz73",
+            "classes":[],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "01",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "About Us",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          },
+          {
+            "type": "wap-card",
+            "id": "nslget8pkhp",
+            "classes":[],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "02",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "Our Food",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          },
+          {
+            "type": "wap-card",
+            "id": "nsl1bqio51l",
+            "classes":[],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "03",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "Our Drinks",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          },
+          {
+            "type": "wap-card",
+            "id": "nsln9nrxpbh",
+            "classes":[],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "04",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "Excellent coffee",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          }
+        ],
         "style": {}
       },
       {
+        "type": "wap-container",
         "id": "nslpcescfpm",
         "classes": [],
-        "type": "wap-container",
         "info": {
-          "cmps": [
-            {
-              "id": "nslp2esnfplm",
-              "classes": [],
-              "type": "wap-bg-img",
-              "info": {
-                "img": {
+        },
+        "cmps": [
+            
+          {
+            "type": "wap-card",
+            "id": "nslak11kqzi",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
                   "type": "img",
+                  "src": "",
                   "txt": "",
-                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669932077/wicks/coffeshop/bg-cake_gdwsxs.jpg",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "TOP ICE-CREAM",
                   "style": {}
                 }
-              },
-              "style": {}
-            },
-            {
-              "id": "nslak11kqzi",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "TOP ICE-CREAM",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nsl3ehjdu50",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "FRUIT SORBETS",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nslihk05av4",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "CHIP FLAVORS",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nslwiybtbje",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "SUNDAES",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nsldnst0gcx",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "SMOOTHIES",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nslrfvkrvt1",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "DRINKS & MORE",
-                    "style": {}
-                  }
-                ]
-              }
-            },
-            {
-              "id": "nsl9w0ejcyv",
-              "type": "wap-img",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-                    "style": {},
-                    "classes":[]
-                  }
-                ]
-              },
-              "style": {}
+              ]
             }
-          ]
-        },
+          },
+          {
+            "type": "wap-card",
+            "id": "nsl3ehjdu50",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "FRUIT SORBETS",
+                  "style": {}
+                }
+              ]
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslihk05av4",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "CHIP FLAVORS",
+                  "style": {}
+                }
+              ]
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslwiybtbje",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "SUNDAES",
+                  "style": {}
+                }
+              ]
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nsldnst0gcx",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "SMOOTHIES",
+                  "style": {}
+                }
+              ]
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslrfvkrvt1",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "DRINKS & MORE",
+                  "style": {}
+                }
+              ]
+            }
+          }
+        ],
         "style": {
-          "background-color": "#ca8263"
+          "background-img": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669932077/wicks/coffeshop/bg-cake_gdwsxs.jpg"
         }
       },
       {
@@ -961,267 +918,259 @@
         "classes": [],
         "type": "wap-container",
         "info": {
-          "cmps": [
-            {
-              "id": "nsltr7v374c",
-              "classes": [],
-              "type": "wap-header",
-              "info": {
-                "img": {
-                  "type": "txt",
-                  "txt": "Popular Dishes",
-                  "style": {}
+          "heading": {
+            "type": "txt",
+            "txt": "Popular Dishes",
+            "style": {}
+          }
+        },
+        "cmps": [
+          {
+            "type": "wap-card",
+            "id": "nsl7tamumkg",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922275/wicks/coffeshop/1_vxfvru.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
                 }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "TIRAMISU CAKE",
+                "style": {}
               },
-              "style": {}
-            },
-            {
-              "id": "nsl7tamumkg",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922275/wicks/coffeshop/1_vxfvru.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
+              "texts": [
+                {
                   "type": "txt",
-                  "txt": "TIRAMISU CAKE",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "10",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
                   "style": {}
                 }
-              }
-            },
-            {
-              "id": "nslmmddw2au",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/2_mqxqn4.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
+              ],
+              "btns": [
+                {
                   "type": "txt",
-                  "txt": "CHIA PUDDING",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "8",
+                  "txt": "Buy now",
                   "style": {}
                 }
-              }
-            },
-            {
-              "id": "nsl0ogunhry",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/4_lb0c6r.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "CHEESECAKE",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "7",
-                  "style": {}
-                }
-              }
-            },
-            {
-              "id": "nslfqjlfwg2",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/677u_yrukuv.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "CHOCOLATE CAKE",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "7",
-                  "style": {}
-                }
-              }
-            },
-            {
-              "id": "nslkimcglxf",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/7_pb3r8p.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "CHEESECAKE",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "7",
-                  "style": {}
-                }
-              }
-            },
-            {
-              "id": "nslylp281nj",
-              "type": "wap-card",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922273/wicks/coffeshop/fff_ftdytx.jpg",
-                    "txt": "",
-                    "style": {},
-                    "classes":[]
-                  }
-                ],
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "ORANGE CAKE",
-                  "style": {}
-                },
-                "texts": [
-                  {
-                    "type": "txt",
-                    "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-                    "style": {}
-                  }
-                ],
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Buy now",
-                    "style": {}
-                  }
-                ],
-                "price": {
-                  "type": "price",
-                  "txt": "7",
-                  "style": {}
-                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "10",
+                "style": {}
               }
             }
-          ]
-        },
+          },
+          {
+            "type": "wap-card",
+            "id": "nslmmddw2au",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/2_mqxqn4.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "CHIA PUDDING",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                  "style": {}
+                }
+              ],
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Buy now",
+                  "style": {}
+                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "8",
+                "style": {}
+              }
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nsl0ogunhry",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/4_lb0c6r.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "CHEESECAKE",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                  "style": {}
+                }
+              ],
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Buy now",
+                  "style": {}
+                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "7",
+                "style": {}
+              }
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslfqjlfwg2",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/677u_yrukuv.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "CHOCOLATE CAKE",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                  "style": {}
+                }
+              ],
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Buy now",
+                  "style": {}
+                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "7",
+                "style": {}
+              }
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslkimcglxf",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/7_pb3r8p.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "CHEESECAKE",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                  "style": {}
+                }
+              ],
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Buy now",
+                  "style": {}
+                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "7",
+                "style": {}
+              }
+            }
+          },
+          {
+            "type": "wap-card",
+            "id": "nslylp281nj",
+            "classes": [],
+            "info": {
+              "imgs": [
+                {
+                  "type": "img",
+                  "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922273/wicks/coffeshop/fff_ftdytx.jpg",
+                  "txt": "",
+                  "style": {},
+                  "classes":[]
+                }
+              ],
+              "subHeading": {
+                "type": "txt",
+                "txt": "ORANGE CAKE",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
+                  "style": {}
+                }
+              ],
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Buy now",
+                  "style": {}
+                }
+              ],
+              "price": {
+                "type": "price",
+                "txt": "7",
+                "style": {}
+              }
+            }
+          }
+        ],
         "style": {}
       },
       {
-        "id": "nsl8suwq8sn",
         "type": "wap-gallery",
+        "id": "nsl8suwq8sn",
         "classes": [],
         "info": {
           "heading": {
@@ -1285,98 +1234,91 @@
         "style": {}
       },
       {
-        "id": "nsl41t81v4b",
         "type": "wap-container",
+        "id": "nsl41t81v4b",
         "classes": [],
         "info": {
-          "cmps": [
+          "imgs": [
             {
-              "id": "nsljuwytauf",
-              "type": "wap-img",
-              "classes": [],
-              "info": {
-                "imgs": [
-                  {
-                    "type": "img",
-                    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
-                    "style": {},
-                    "classes":[]
-                  }
-                ]
-              },
-              "style": {}
-            },
-            {
-              "id": "nslzzqh0foy",
-              "type": "wap-form",
-              "classes": [],
-              "info": {
-                "heading": {
-                  "type": "txt",
-                  "txt": "Contact Us",
-                  "style": {}
-                },
-                "subHeading": {
-                  "type": "txt",
-                  "txt": "",
-                  "style": {}
-                },
-                "inputs": [
-                  {
-                    "type": "txt",
-                    "label": "Name",
-                    "placeholder": "Enter your name",
-                    "inpType": "input",
-                    "inpContentType": "text",
-                    "title": "",
-                    "isRequired": true,
-                    "style": {}
-                  },
-                  {
-                    "type": "txt",
-                    "label": "Email",
-                    "placeholder": "Enter a valid email address",
-                    "inpType": "input",
-                    "inpContentType": "email",
-                    "title": "",
-                    "isRequired": true,
-                    "style": {}
-                  },
-                  {
-                    "type": "txt",
-                    "label": "Message",
-                    "placeholder": "",
-                    "inpType": "textarea",
-                    "inpContentType": "",
-                    "title": "",
-                    "isRequired": true,
-                    "style": {}
-                  },
-                  {
-                    "type": "txt",
-                    "label": "I accept the",
-                    "link": "Terms of Service",
-                    "placeholder": "",
-                    "inpType": "input",
-                    "inpContentType": "checkbox",
-                    "title": "",
-                    "isRequired": true,
-                    "style": {}
-                  }
-                ],
-                "style": {},
-                "btns": [
-                  {
-                    "type": "txt",
-                    "txt": "Submit",
-                    "style": {}
-                  }
-                ]
-              },
-              "style": {}
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
+              "style": {},
+              "classes":[]
             }
           ]
         },
+        "cmps": [
+       
+          {
+            "type": "wap-form",
+            "id": "nslzzqh0foy",
+            "classes": [],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "Contact Us",
+                "style": {}
+              },
+              "subHeading": {
+                "type": "txt",
+                "txt": "",
+                "style": {}
+              },
+              "inputs": [
+                {
+                  "type": "txt",
+                  "label": "Name",
+                  "placeholder": "Enter your name",
+                  "inpType": "input",
+                  "inpContentType": "text",
+                  "title": "",
+                  "isRequired": true,
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "label": "Email",
+                  "placeholder": "Enter a valid email address",
+                  "inpType": "input",
+                  "inpContentType": "email",
+                  "title": "",
+                  "isRequired": true,
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "label": "Message",
+                  "placeholder": "",
+                  "inpType": "textarea",
+                  "inpContentType": "",
+                  "title": "",
+                  "isRequired": true,
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "label": "I accept the",
+                  "link": "Terms of Service",
+                  "placeholder": "",
+                  "inpType": "input",
+                  "inpContentType": "checkbox",
+                  "title": "",
+                  "isRequired": true,
+                  "style": {}
+                }
+              ],
+              "style": {},
+              "btns": [
+                {
+                  "type": "txt",
+                  "txt": "Submit",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          }
+        ],
         "style": {}
       },
       {

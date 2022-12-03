@@ -13,131 +13,94 @@
         padding-top: clamp(10px, 5%, 50px);
         padding-bottom: clamp(10px, 5%, 50px);
 
-        .wap-card {
-            margin-inline-start: 2vw;
-            margin-inline-end: 2vw;
+        &.img-pill-cards {
+            display: grid;
+            // grid-template-columns: repeat(2, minmax(100px, 1fr));
+            // grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "tl tr"
+                "ml mr"
+                "bl br";
+            gap: 15px;
 
-            h1 {
-                // font-size: calc(1.5em + 1.5vw);
-                font-size: 2em;
-                margin-bottom: 1em;
-
-            }
-
-            p {
-                font-size: 1.2em;
-                margin-bottom: 2em;
-
-            }
-
-            button {
-                padding: 20px 40px;
-                font-size: 1em;
-                background-color: transparent;
-                border: 1px solid $text-primary;
-            }
-        }
-
-        &.card-img {
-            display: flex;
-            background-color: $bakery-sc-clr ;
-
-            * {
-                color: $clr4
-            }
-
-            img {
-                width: 100%;
-            }
-
-            button:hover {
-                color: $bakery-sc-clr ;
-            }
-
-        }
-
-        &.img-card {
-            display: flex;
-            flex-direction: row-reverse;
-            gap: 20px;
-
-            img {
-                object-fit: cover;
-                width: 100%;
-                aspect-ratio: 3/2;
-
-                @media (min-width: 650px) and (max-width: 950px) {
-                    aspect-ratio: 3/4;
-                }
-            }
-        }
-
-        &.card-gallery {
-            display: flex;
-
-            * {
-                flex: 1;
-            }
 
             .wap-card {
-                margin-inline-start: 0;
-            }
-
-            .wap-gallery {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-                gap: 1em;
+                display: flex;
+                flex-direction: column;
+                // margin-inline-start: 2vw;
+                // margin-inline-end: 2vw;
 
                 img {
-                    max-width: 100%;
-                }
-
-                &.four {
-
-                    > :nth-child(1) {
-                        grid-column: 2 / 4;
-                        grid-row: 2 / 4;
-                    }
-
-                    > :nth-child(2) {
-                        grid-column: 4 / 7;
-                        grid-row: 1 / 4;
-                    }
-
-                    > :nth-child(3) {
-                        grid-column: 1 / 4;
-                        grid-row: 4 / 7
-                    }
-
-                    > :nth-child(4) {
-                        grid-column: 4 / 6;
-                        grid-row: 4 / 6;
-                    }
-                }
-
-                &.three {
-
-                    > :nth-child(1) {
-                        grid-column: 1 / 4;
-                        grid-row: 2 / 5;
-                    }
-
-                    > :nth-child(2) {
-                        grid-column: 4 / 7;
-                        grid-row: 1 / 4;
-                        height: 100%;
-                        object-fit: cover;
-
-                    }
-
-                    > :nth-child(3) {
-                        grid-column: 4 / 9;
-                        grid-row: 4 / 7
-                    }
-
+                    width: 100%;
                 }
             }
+
+            >:nth-child(1) {
+
+                // flex-direction: column-reverse;
+                .wap-card {}
+
+                img {
+                    grid-area: tl;
+                }
+
+                p {
+                    grid-area: ml;
+                    // grid-column: 1 / 2;
+                    // grid-row: 2 / 3;
+                }
+
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: space-between;
+                // .wap-card{
+                //     height: 100%;
+                // }
+                // background-color: rgb(209, 143, 37);
+                // margin-top: 20px;
+                // .wap-card{
+                //     gap:20px;
+                // }
+
+            }
+
+            >:nth-child(2) {
+                // flex-direction: column-reverse;
+                // background-color: rgb(57, 173, 28);
+                // grid-column: 2 / 3;
+                // grid-row: 1 / 2;
+
+                background-color: #C2AD91;
+                //  padding: 10px;
+                border-radius: 1.5em;
+
+                .wap-card {}
+            }
+
+            >:nth-child(3) {
+                // flex-direction: column-reverse;
+                // background-color: rgb(92, 92, 177);
+                // grid-column: 1 / 2;
+                // grid-row: 3 / 4;
+                // background-color: #C2AD91;
+                // padding: 15px;
+                // border-radius: 1.5em;
+
+                .wap-card {}
+            }
+
+            >:nth-child(4) {
+                // background-color: blue;
+                // grid-column: 2 / 3;
+                // grid-row: 2 / 4;
+
+                .wap-card {
+                    flex-direction: column-reverse;
+                    height: 100%;
+                }
+
+            }
         }
+
     }
 }

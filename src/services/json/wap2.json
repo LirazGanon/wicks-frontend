@@ -548,7 +548,7 @@
       {
         "type": "wap-container",
         "id": "nsl42ixeifo",
-        "classes": ["coffe-shop"],
+        "classes": ["coffe-shop img-pill-cards"],
         "info": {
           "heading": "Coffee & Cakes"
         },

@@ -102,7 +102,7 @@ export default {
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
             const originalWap = this.$store.getters.getWapToEdit
-
+            console.log(currCmp);
             const elCopy = utilService.copy(el)
             const copyCmp = utilService.copy(currCmp)
             const wap = utilService.copy(originalWap)

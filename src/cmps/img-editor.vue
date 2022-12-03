@@ -6,7 +6,7 @@
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
-        <label>
+        <label v-if="info.currCmp.type !== 'wap-bg-img' ">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
         </label>

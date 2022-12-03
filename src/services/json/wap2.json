@@ -409,7 +409,7 @@
         "type": "wap-footer",
         "level" : 0,
         "id": "sc599966",
-        "classes": ["bakery flex column space-around align-center"],
+        "classes": ["bakery"],
         "info": {
           "logo": {
             "type": "txt",

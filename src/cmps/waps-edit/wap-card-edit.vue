@@ -43,22 +43,25 @@ export default {
         },
         updateCmp(ev, key, innerIdx) {
             let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmpId)
+            const path = this.path
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
+
+            console.log(this.path);
+            console.log(cmpCopy.info[key])
 
             if (innerIdx !== undefined) {
                 cmpCopy.info[key][innerIdx].txt = ev.target.innerText
             } else {
                 cmpCopy.info[key].txt = ev.target.innerText
             }
-            console.log('cmpIdx:', cmpIdx)
-            console.log('wap', wap.cmps[cmpIdx].info.cmps.find(cmp => cmp.type === cmpCopy.type));
-            console.log('cmpCopy:', cmpCopy.info[key])
 
-            const sadIdx = wap.cmps[cmpIdx].info.cmps.findIndex(cmp => cmp.type === cmpCopy.type)
-
-            wap.cmps[cmpIdx].info.cmps[sadIdx] = cmpCopy
+            if (path.idx !== undefined) {
+                wap.cmps[path.fatherIdx].cmps[path.idx] = cmpCopy
+            } else {
+                wap.cmps[path.fatherIdx] = cmpCopy
+            }
+           
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

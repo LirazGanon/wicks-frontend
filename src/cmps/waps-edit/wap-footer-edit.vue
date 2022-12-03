@@ -4,15 +4,14 @@
 
 
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @click="openEditor('logo')"
-                :style="cmp.info.logo.style" @input="updateCmp" >
+                :style="cmp.info.logo.style" @input="updateCmp($event,'logo')" >
                 {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
 
             <p class="copyright" contenteditable="true" @click="openEditor('copyright')"
-                :style="cmp.info.copyright.style" @input="updateCmp" >{{ cmp.info.copyright.txt }}
+                :style="cmp.info.copyright.style" @input="updateCmp($event,'copyright')" >{{ cmp.info.copyright.txt }}
             </p>
         </section>
-        <!-- <pre>{{cmp}}</pre> -->
     </section>
 
 </template>
@@ -37,14 +36,13 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev) {
-            console.log(ev)
+        updateCmp(ev, key) {
             let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let puk = JSON.parse(JSON.stringify(this.cmp))
-            puk.info[ev.target.dataset.type].txt = ev.target.innerText
+            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
+            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
+            cmpCopy.info[key].txt = ev.target.innerText
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[cmpIdx] = puk
+            wap.cmps[idx] = cmpCopy
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

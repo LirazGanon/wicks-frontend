@@ -1,5 +1,5 @@
 <template>
-    <nav class="wap-nav flex" v-if="cmp.info.links" >
+    <nav class="wap-nav flex" v-if="cmp.info.links">
 
         <!-- TODO:START -->
 
@@ -8,8 +8,8 @@
             }}</a> -->
 
 
-        <a  v-for="l in cmp.info.links">
-            <span >
+        <a v-for="(l, idx) in cmp.info.links" @click="openEditor('links', idx)">
+            <span>
                 {{ l.txt }}
             </span>
         </a>
@@ -21,7 +21,7 @@
 <script>
 export default {
     name: 'dynamic-nav-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object, path: Object },
     components: {},
     data() {
         return {
@@ -31,18 +31,28 @@ export default {
         console.log(this.cmp);
     },
     methods: {
-        openEditor(key, idx) {
-            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+        openEditor(key, i) {
+            const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
 
-            const wapContent = {
-                key,
-                id: this.cmpId,
-                idx,
-                type: el.type,
-                style: el.style,
-                fatherEl: 'nav'
-            }
-            this.$emit('openEdit', wapContent)
+            const { fatherIdx, idx } = this.path
+
+            const wap = this.$store.getters.getWapToEdit
+
+            const puk = wap.cmps[fatherIdx].cmps[idx]
+
+            console.log('el:', el)
+            console.log('puk:', puk.info[key][i])
+
+            // const wapContent = {
+            //     key,
+            //     idx,
+            //     el,
+            //     currCmp: this.cmp
+            // }
+
+            console.log(a);
+            console.log(wapContent)
+            // this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, innerIdx) {
             let wap = this.$store.getters.getWapToEdit

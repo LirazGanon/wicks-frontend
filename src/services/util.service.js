@@ -8,6 +8,7 @@ export const utilService = {
     loadFromStorage,
     findPath,
     deepSet,
+    copy
 }
 
 function makeId(length = 6) {
@@ -130,3 +131,8 @@ function findPath(ob, key, value){
           obj = obj[currentKey];
       }
   };
+
+
+  function copy(val){
+    return JSON.parse(JSON.stringify(val))
+  }

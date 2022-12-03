@@ -42,7 +42,7 @@
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex cmp-side-editor">
             <ul v-if="active === 'edit'">
-                <component :is="editor.type + 'Editor'" :info="editor" :cmp="getCmp" class="cmp-editor" />
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor" />
             </ul>
         </section>
     </section>
@@ -101,33 +101,13 @@ export default {
         cmps() {
             return this.$store.getters.cmps
         },
-        getCmp() {
-            const wap = this.$store.getters.getWapToEdit
-            const { id, innerId } = this.editor
-            const cmp = wap.cmps.find(cmp => {
-                if (cmp.type === 'wap-container') {
-                    return cmp.info.cmps.find(item => {
-                        if (item.type === 'wap-gallery') {
-                            return item.id === id
-                        }
-                        if (item.type === 'wap-img') {
-                            return item.id === id
-                        }
-                        if (item.type === 'wap-card') {
-                            return item.id === innerId
-                        }
-                    });
-                }
-                return cmp.id === id
-            })
-            // console.log('this.info:', this.info)
-            // console.log('wap', wap);
-            console.log('cmp', cmp);
-            return JSON.parse(JSON.stringify(cmp))
-        }
+
     },
     watch: {
-        editor: function () { this.active = 'edit' }
+        editor: function () {
+            this.active = 'edit'
+            console.log(this.editor);
+        }
 
     }
 };

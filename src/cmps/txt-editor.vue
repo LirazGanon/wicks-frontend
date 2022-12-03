@@ -1,6 +1,6 @@
 <template>
 
-    <section class="flex column txt-cmps-editor" v-if="cmp">
+    <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
         <span>Color</span>
         <color-picker @setColor="updateClr" />
@@ -18,9 +18,9 @@
         </label> -->
 
 
-        <label>
+        <!-- <label>
             <span>Font Size </span>
-            <input type="number" min="10" max="100" :value="rangeValue" @input="updateFS">
+            <input type="number" min="10" max="100" @input="updateFS">
         </label>
         <label class="flex">
             <input type="checkbox" :checked="info.style['font-weight'] === 'bold'" @change="updateWeight">
@@ -46,16 +46,17 @@
 
         <label>
             <span>Border-radius</span>
-            <input type="range" min="0" max="100" :value="borderRadius" @input="updateRadius">
-        </label>
+            <input type="range" min="0" max="100" @input="updateRadius">
+        </label> -->
 
 
-        <pre>{{ this.info }}</pre>
-        <!-- <pre>{{ this.cmp }}</pre> -->
+        <pre>{{ info.path }}</pre>
+
     </section>
 
 </template>
 <script>
+import { xor } from 'lodash';
 import { utilService } from '../services/util.service';
 import colorPicker from './util/color-picker.vue';
 
@@ -63,8 +64,7 @@ import colorPicker from './util/color-picker.vue';
 export default {
     name: 'text-editor',
     props: {
-        info: Object,
-        cmp: Object
+        info: Object
     },
     components: {
         colorPicker
@@ -101,34 +101,32 @@ export default {
         },
 
         updateCmp(att, value) {
-            let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
-            const { key, fatherEl, idx, isContainer, id } = this.info
+            const { key, path, el, currCmp } = this.info
+            const originalWap = this.$store.getters.getWapToEdit
 
-            if (fatherEl) {
-                if (isContainer) {
-                    const innerIdx = this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl)
-                    // console.log('puk:', this.cmp.info.cmps[innerIdx].info[key])
-                    this.cmp.info.cmps[innerIdx].info[key].style[att] = value
-                    // console.log('----', this.cmp.info.cmps[innerIdx].info[key]);
-                } else if (idx !== undefined) {
+            const elCopy = utilService.copy(el)
+            const copyCmp = utilService.copy(currCmp)
+            const wap = utilService.copy(originalWap)
 
-                    this.cmp.info[fatherEl].info[key][idx].style[att] = value
+
+            elCopy.style[att] = value
+            console.log('elCopy:', elCopy)
+
+            if (!copyCmp.level) {
+
+                if (path.idx === undefined) {
+                    copyCmp.info[key] = elCopy
+                    console.log('copyCmp:', copyCmp)
                 } else {
-
-                    this.cmp.info[fatherEl].info[key].style[att] = value
+                    copyCmp.info[key][path.idx] = elCopy
                 }
 
-            }
-            else {
-                this.cmp.info[key].style[att] = value
-            }
 
-            wap = JSON.parse(JSON.stringify(wap))
-            // console.log('xxx', wap.cmps[cmpIdx]);
-            const currCmp = JSON.parse(JSON.stringify(this.cmp))
-            wap.cmps[cmpIdx] = currCmp
-            // console.log(wap);
+            } else {
+
+            }
+            console.log(wap[path.fatherIdx])
+            wap[path.fatherIdx] = copyCmp
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {
@@ -139,20 +137,44 @@ export default {
     },
     computed: {
         rangeValue() {
-            const { key, isContainer ,idx } = this.info
-            if(!isContainer){
+            const { key, isContainer, idx } = this.info
+            if (!isContainer) {
                 return this.cmp.info[key].style['font-size'] ? +this.cmp.info[key].style['font-size'].slice(0, -2) : 0
             } else {
-                
+
             }
         },
         borderRadius() {
+            // if (fatherEl) {
+            //     if (isContainer) {
+            //         const innerIdx = this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl)
+            //         // console.log('puk:', this.cmp.info.cmps[innerIdx].info[key])
+            //         this.cmp.info.cmps[innerIdx].info[key].style[att] = value
+            //         // console.log('----', this.cmp.info.cmps[innerIdx].info[key]);
+            //     } else if (idx !== undefined) {
+
+            //         this.cmp.info[fatherEl].info[key][idx].style[att] = value
+            //     } else {
+
+            //         this.cmp.info[fatherEl].info[key].style[att] = value
+            //     }
+
+            // }
+            // else {
+            //     this.cmp.info[key].style[att] = value
+            // }
             const { key } = this.info
             return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
         }
 
     },
     unmounted() { },
+    watch: {
+        info: function () {
+            console.log(this.info)
+        }
+
+    }
 };
 </script>
 <style>

@@ -16,13 +16,26 @@
 
 
         <!-- CMPS ADDITIONS -->
-        <section v-if="active === 'cmp'" class="options flex">
-            <ul>
+        <section v-if="active === 'cmp'" class="options">
+            <h2>Add Section</h2>
+            <!-- <ul>
                 <li v-for="t in view.type" :key="t.id">
                     <button @click="type = t.data">{{ t.data }}</button>
                 </li>
-            </ul>
-            <editor-cmp-prev :cmps="cmps" />
+            </ul> -->
+            <section class="prev-cmp-wrapper flex">
+
+                <ul class="prev-cmp-filter">
+                    <li @click="setFilter('All')" :class="{active:cmpFilter==='All'}">All</li>
+                    <li @click="setFilter('wap-header')" :class="{active:cmpFilter==='wap-header'}">Headers</li>
+                    <li @click="setFilter('wap-hero')" :class="{active:cmpFilter==='wap-hero'}" >Heros</li>
+                    <li @click="setFilter('wap-container')" :class="{active:cmpFilter==='wap-container'}">Sections</li>
+                    <li @click="setFilter('wap-reviews')" :class="{active:cmpFilter==='wap-reviews'}">Testimonials</li>
+                    <li @click="setFilter('wap-bg-img')" :class="{active:cmpFilter==='wap-bg-img'}">Images</li>
+                    <li @click="setFilter('wap-footer')" :class="{active:cmpFilter==='wap-footer'}">Footer</li>
+                </ul>
+                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter"/>
+            </section>
         </section>
 
 
@@ -67,7 +80,8 @@ export default {
             view: {},
             type: null,
             data: {},
-            active: null
+            active: null,
+            cmpFilter:'All'
         };
     },
     created() {
@@ -83,6 +97,9 @@ export default {
             }))
 
             this.data = { ...cmps }
+        },
+        setFilter(val) {
+            this.cmpFilter = val
         },
         toggleActive(val) {
             if (!this.active || this.active !== val) this.active = val

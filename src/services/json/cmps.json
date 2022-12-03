@@ -207,7 +207,7 @@
     "type": "wap-container",
     "level": 0,
     "id": "wc0554njj",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
     "classes": ["card-img bakery"],
     "info": {
       "imgs": [
@@ -261,7 +261,7 @@
     "type": "wap-reviews",
     "level": 0,
     "id": "mfgnih987",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915523/wicks/cmp-prev/review.png",
     "classes": [],
     "info": {
       "heading": {
@@ -302,7 +302,7 @@
     "type": "wap-bg-img",
     "level": 0,
     "id": "wc05jjjj4",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
+    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
     "classes": ["full"],
     "info": {
       "img": {

@@ -1,22 +1,19 @@
 <template>
 
-  <section v-if="view">
+  <section class="cmp-prev-img-container" v-if="view">
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @drop="onDrop($event)">
 
 
-      <Draggable v-for="item in cmps" :key="item.id" >
-        <div class="draggable-item"
-        @mousedown="isDragging=true"
-        @mouseup="isDragging=false"
-       :class="{isDragging:isDragging}"
-        >
-          <img v-if="item.src" :src="item.src" />
-          <p v-else>
-            {{ item.type }}
-          </p>
-
+      <Draggable v-for="item in cmps" :key="item.id">
+        <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
+          :class="{ isDragging: isDragging }">
+          <img  :src="item.src" />
+        </div>
+        <div v-else-if="(item.type === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
+          :class="{ isDragging: isDragging }">
+          <img :src="item.src" />
         </div>
 
 
@@ -43,6 +40,7 @@ export default {
   },
   props: {
     cmps: Object,
+    filter: String
   },
   created() {
     this.view = [...this.cmps]
@@ -85,7 +83,7 @@ export default {
     onDragStart(...args) {
       // console.log(args);
     },
-  
+
   },
   computed: {
     cmpsA() {

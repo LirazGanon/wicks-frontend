@@ -3,15 +3,17 @@
 
     .txt-cmps-editor,
     .img-cmp-editor {
-        >*{
+        >* {
             padding-inline-start: 10px;
         }
-        h2{
+
+        h2 {
             border-bottom: 1px solid $border-clr;
             font-weight: bold;
             padding-top: 10px;
             padding-bottom: 10px;
         }
+
         // padding: 10px;
 
         img {
@@ -26,7 +28,6 @@
     }
 
 
-
     .left-nav {
         // background-color: aqua;
         border-right: 1px solid $border-clr;
@@ -37,37 +38,70 @@
             background-color: transparent;
             border-radius: 50%;
             transition: background 0.3s;
-            &:hover{
-                background:$clr5;
+
+            &:hover {
+                background: $clr5;
             }
         }
-      
 
     }
+
+    .prev-cmp-filter {
+        height: 100%;
+        background-color: rgb(248, 247, 247);
+
+        >li {
+            padding: 7px 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+
+            &:hover {
+                color:blueviolet;
+            }
+            
+            &.active {
+                color: blueviolet;
+                -webkit-box-shadow: inset 14px 0px 0px -10px blueviolet;
+                box-shadow: inset 14px 0px 0px -10px blueviolet;
+            }
+        }
+    }
+
+
 
     .cmp-editor {
         width: clamp(200px, 30vw, 400px);
     }
 
     .options {
-        display: flex;
+
         height: 100vh;
         // background-color: aqua;
         width: clamp(200px, 30vw, 400px);
         border-right: 1px solid $border-clr;
 
-        section {
-            overflow-y: auto;
+        h2 {
+            padding: 10px;
+            border-bottom: 1px solid $border-clr;
+
+            font-weight: bold;
         }
 
-        .draggable-item:first-child {
-            margin-top: 10px;
+        .prev-cmp-wrapper {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .cmp-prev-img-container {
+            overflow-y: auto;
         }
 
         .draggable-item {
             display: flex;
             justify-content: center;
             margin-bottom: 10px;
+            padding: 0 5px;
+        
 
             &:hover {
                 cursor: grab;
@@ -83,7 +117,7 @@
         }
     }
 
-    .cmp-side-editor{
+    .cmp-side-editor {
         border-right: 1px solid $border-clr;
     }
 

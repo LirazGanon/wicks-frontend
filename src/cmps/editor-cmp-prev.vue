@@ -1,6 +1,6 @@
 <template>
 
-  <section class="cmp-prev-img-container" v-if="view">
+  <section class="prev-cmp-img-container" v-if="view">
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @drop="onDrop($event)">

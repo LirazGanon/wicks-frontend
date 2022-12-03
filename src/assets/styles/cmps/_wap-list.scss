@@ -1,24 +1,72 @@
 .wap-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    // list-style: none;
+    // display: flex;
+    // flex-wrap: wrap;
+    background: $clr5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 30px;
+
+    padding: 3em;
+
     li {
-        padding: 5px;
-        margin: 5px;
-        position:relative
+        // padding: 0.425em;
+        // background: red;
+        box-shadow: 1px 1px 5px #3335;
+        border-radius: 0.325em;
+        position: relative;
+        height: auto;
+        .wap-preview {
+            border-radius: 3em;
+
+            img {
+                height: 13em;
+                object-fit: cover;
+                width: 100%;
+                padding: 0.65em 0.65em 0 0.65em;
+            }
+            .wap-details {
+                line-height: 2.4em;
+                text-align: center;
+                font-size: 1.2em;
+                span:first-child {
+                    color: $clr1;
+                }
+            }
+
+            .preview-btns {
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                position: absolute;
+                bottom: 3em;
+                // bottom: -30%;
+                background: #fff5;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: 0.5s;
+
+                button{
+                    align-self: center;
+                    width: 60%;
+                    margin-block-end: 10px;
+                    cursor: pointer;
+                    border: 1px solid #eee5;
+
+                    &:hover{
+                        background: lighten($clr1,10%);
+                    }
+
+                }
+
+            }
+
+            &:hover .preview-btns {
+                height: 13em;
+            }
+        }
     }
-    a {
-        // color: $clr1;
-        padding: 10px;
-    }    
-    pre {
-        background-color: #ddd;
-        font-size: .5em;
-        color: #333;
-        padding: .2em;
-        margin: .2em;
-    }    
 }
-
-
-

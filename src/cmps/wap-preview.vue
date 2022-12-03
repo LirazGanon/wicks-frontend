@@ -8,16 +8,10 @@
       <button @click="prevWap(wap._id)">Preview</button>
     </div>
 
-
     <div class="wap-details">
-      <span>
-        {{ wap.type }}
-      </span>
-      -
-      <span>
-        {{ wap.name }}
-      </span>
+      <span>{{ wap.type }}</span> - <span> {{ wap.name }}</span>
     </div>
+
 
   </section>
 

@@ -18,47 +18,44 @@
             <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
         </label> -->
 
+        <section class="text-format">
 
-        <label class="flex align-center gap">
-            <span>Font Size: </span>
-            <input type="range" min="10" max="100" @input="updateFS">
-        </label>
-        <label class="flex align-center">
-            <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
-            <span class="material-symbols-outlined">
-                format_bold
-            </span>
-        </label>
-        <label class="flex">
-            <input type="checkbox" :checked="info.el.style['font-style'] === 'italic'" @change="updateStyle">
-            <span class="material-symbols-outlined">
-                format_italic
-            </span>
-        </label>
-        <label class="flex">
-            <input type="checkbox" :checked="info.el.style['font-style'] === 'underlined'" @change="updateStyle">
-            <span class="material-symbols-outlined">
-                format_underlined
-            </span>
-        </label>
-        <label for="font" class="flex gap">
-            <span>Choose Font:</span>
-            <select name="font" @change="updateFont" :selected="info.el.style['font-family']">
-                <option value="">default</option>
-                <option value="puki">puki</option>
-                <option value="muki">muki</option>
-                <option value="shuki">shuki</option>
-                <option value="kuki">kuki</option>
-            </select>
-        </label>
+            <label class="flex align-center gap">
+                <span>Font Size: </span>
+                <input type="range" min="10" max="100" @input="updateFS">
+            </label>
 
-        <label v-if="info.key === 'btns'">
-            <span>Border-radius</span>
-            <input type="range" min="0" max="100" @input="updateRadius">
-        </label>
-
-
-
+            <section class="flex">
+                <label class="flex align-center">
+                    <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
+                    <span class="material-symbols-outlined">
+                        format_bold
+                    </span>
+                </label>
+                <label class="flex">
+                    <input type="checkbox" :checked="info.el.style['font-style'] === 'italic'" @change="updateStyle">
+                    <span class="material-symbols-outlined">
+                        format_italic
+                    </span>
+                </label>
+                <label class="flex">
+                    <input type="checkbox" :checked="info.el.style['text-decoration'] === 'underline'"
+                        @change="updateUnderline">
+                    <span class="material-symbols-outlined">
+                        format_underlined
+                    </span>
+                </label>
+            </section>
+            <label for="font" class="flex align-center gap">
+                <span>Choose Font:</span>
+                <font-picker @setFont="updateFont" />
+            </label>
+            <label v-if="info.key === 'btns'">
+                <span>Border-radius</span>
+                <input type="range" min="0" max="100" @input="updateRadius">
+            </label>
+            <hr>
+        </section>
     </section>
 
 </template>
@@ -66,6 +63,8 @@
 import { xor } from 'lodash';
 import { utilService } from '../services/util.service';
 import colorPicker from './util/color-picker.vue';
+import fontPicker from './util/font-picker.vue';
+
 
 
 export default {
@@ -74,7 +73,8 @@ export default {
         info: Object
     },
     components: {
-        colorPicker
+        colorPicker,
+        fontPicker
     },
     data() {
         return {
@@ -99,9 +99,11 @@ export default {
         updateStyle(ev) {
             this.updateCmp('font-style', ev.target.checked ? 'italic' : '')
         },
-        updateFont(ev) {
-            console.log(ev.target.value);
-            // this.updateCmp('font-family', ev.target.value)
+        updateUnderline(ev) {
+            this.updateCmp('text-decoration', ev.target.checked ? 'underline' : '')
+        },
+        updateFont(val) {
+            this.updateCmp('font-family', val)
         },
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')

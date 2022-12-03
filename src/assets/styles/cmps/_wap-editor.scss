@@ -87,12 +87,14 @@
                 gap: 20px;
             }
             hr{
-                width: 100%;
+                width: 95%;
                 color: $border-clr;
                 opacity: 0.2;
             }
     
-            // padding: 10px;
+           .text-format{
+           >*{margin-bottom: 15px;}
+           }
     
             img {
                 width: 90%;

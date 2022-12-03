@@ -10,6 +10,7 @@
 
         <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop="openEditor('btns', idx)"
             :style="btn.style" @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
+        <img v-for="(img, idx) in cmp.info.imgs" @click.stop="openEditor('img', idx)" :src="img.src" :style="img.style" />
     </section>
 
 
@@ -61,7 +62,7 @@ export default {
             } else {
                 wap.cmps[path.fatherIdx] = cmpCopy
             }
-           
+
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

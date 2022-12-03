@@ -111,7 +111,8 @@ export default {
 
             elCopy.style[att] = value
             console.log('elCopy:', elCopy)
-
+            console.log(path);
+            console.log(wap[path.fatherIdx]);
             if (!copyCmp.level) {
 
                 if (path.idx === undefined) {
@@ -126,7 +127,7 @@ export default {
 
             }
             console.log(wap[path.fatherIdx])
-            wap[path.fatherIdx] = copyCmp
+            wap.cmps[path.fatherIdx] = copyCmp
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {

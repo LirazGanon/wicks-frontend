@@ -106,7 +106,6 @@ export default {
     watch: {
         editor: function () {
             this.active = 'edit'
-            console.log(this.editor);
         }
 
     }

@@ -19,6 +19,8 @@
 
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-nav-cmp',
     props: { cmp: Object, path: Object },
@@ -28,31 +30,21 @@ export default {
         };
     },
     created() {
-        console.log(this.cmp);
     },
     methods: {
         openEditor(key, i) {
             const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
 
-            const { fatherIdx, idx } = this.path
+            const path = utilService.copy(this.path)
+            path.idx = i
 
-            const wap = this.$store.getters.getWapToEdit
-
-            const puk = wap.cmps[fatherIdx].cmps[idx]
-
-            console.log('el:', el)
-            console.log('puk:', puk.info[key][i])
-
-            // const wapContent = {
-            //     key,
-            //     idx,
-            //     el,
-            //     currCmp: this.cmp
-            // }
-
-            console.log(a);
-            console.log(wapContent)
-            // this.$emit('openEditor', wapContent)
+            const wapContent = {
+                key,
+                path,
+                el,
+                currCmp: this.cmp
+            }
+            this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, innerIdx) {
             let wap = this.$store.getters.getWapToEdit

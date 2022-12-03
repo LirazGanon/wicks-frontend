@@ -14,7 +14,7 @@
                     @input="updateCmp" data-type="logo">{{ cmp.info.logo.txt }}</h4>
             </div>
 
-            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath"
+            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath()"
                 @openEditor="$emit('openEditor', $event)" />
 
 

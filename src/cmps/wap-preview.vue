@@ -1,29 +1,26 @@
 <template>
-  <!-- <li> -->
   <section class="wap-preview">
-    <!-- <p> -->
-    <!-- {{ wap.desc }} -->
-    <!-- </p> -->
+
     <img :src="wap.src" :alt="wap.name">
-    <!-- {{ wap._id }} -->
-    <section class="preview-btns-bg"> </section>
-    <!-- <button @click="$emit('removeWap', wap._id)">x</button> -->
 
     <div class="preview-btns">
       <button @click="editWap(wap._id)">Edit</button>
       <button @click="prevWap(wap._id)">Preview</button>
     </div>
 
-    <!-- <hr /> -->
-    <p>
-      {{ wap.name }}
-    </p>
+
+    <div class="wap-details">
+      <span>
+        {{ wap.type }}
+      </span>
+      -
+      <span>
+        {{ wap.name }}
+      </span>
+    </div>
+
   </section>
 
-  <!-- <button @click="addWapMsg(wap._id)">Add wap msg</button>
-      <button @click="printWapToConsole(wap)">Print msgs to console</button> -->
-
-  <!-- </li> -->
 
 </template>
 
@@ -36,7 +33,7 @@ export default {
     wap: Object,
   },
   data() {
-    return {   }
+    return {}
   },
   methods: {
     async editWap(wapId) {

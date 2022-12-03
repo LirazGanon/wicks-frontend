@@ -23,13 +23,18 @@
         padding: 5px;
     }
 
-    .preview-btns-bg {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        opacity: 0;
-        transition: opacity 0.3s;
+    .wap-details {
+        height: 60px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: em(20px);
     }
+
+
+    
+
 
     .preview-btns {
         position: absolute;
@@ -37,19 +42,15 @@
         transform: translateX(-50%);
         opacity: 0;
 
-
         button {
             border-radius: 0.2em;
             font-size: 1.5em;
             padding: 10px;
-            background-color: $clr2 ;
+            background-color: $clr2;
         }
-
     }
 
-
     &:hover .preview-btns-bg {
-        display: block;
         opacity: 1;
         background-color: rgba(255, 255, 255, 0.6);
     }
@@ -65,9 +66,8 @@
     }
 
     button:hover {
-        background-color: rgb(111, 27, 79);
+        background-color: lighten($clr2, 15%);
 
         cursor: pointer;
     }
-
 }

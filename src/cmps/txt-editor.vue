@@ -18,24 +18,24 @@
         </label> -->
 
 
-        <!-- <label>
+        <label>
             <span>Font Size </span>
             <input type="number" min="10" max="100" @input="updateFS">
         </label>
         <label class="flex">
-            <input type="checkbox" :checked="info.style['font-weight'] === 'bold'" @change="updateWeight">
+            <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
             <span class="material-symbols-outlined">
                 format_bold
             </span>
         </label>
         <label class="flex">
-            <input type="checkbox" :checked="info.style['font-style'] === 'italic'" @change="updateStyle">
+            <input type="checkbox" :checked="info.el.style['font-style'] === 'italic'" @change="updateStyle">
             <span class="material-symbols-outlined">
                 format_italic
             </span>
         </label>
         <label for="font">Choose Font:
-            <select name="font" @change="updateFont" :selected="info?.style['font-family']">
+            <select name="font" @change="updateFont" :selected="info.el.style['font-family']">
                 <option value="">default</option>
                 <option value="puki">puki</option>
                 <option value="muki">muki</option>
@@ -44,10 +44,10 @@
             </select>
         </label>
 
-        <label>
+        <label v-if="info.key==='btns'">
             <span>Border-radius</span>
             <input type="range" min="0" max="100" @input="updateRadius">
-        </label> -->
+        </label>
 
 
         <pre>{{ info.path }}</pre>
@@ -101,39 +101,33 @@ export default {
         },
 
         updateCmp(att, value) {
-            const { key, path, el, currCmp } = this.info
+            const { key, path, el, currCmp, elIdx } = this.info
             const originalWap = this.$store.getters.getWapToEdit
 
             const elCopy = utilService.copy(el)
             const copyCmp = utilService.copy(currCmp)
             const wap = utilService.copy(originalWap)
-
-
+          
             elCopy.style[att] = value
-            console.log('elCopy:', elCopy)
-            console.log(path);
-            console.log(wap[path.fatherIdx]);
-            if (!copyCmp.level) {
-
-                if (path.idx === undefined) {
-                    copyCmp.info[key] = elCopy
-                    console.log('copyCmp:', copyCmp)
-                } else {
-                    copyCmp.info[key][path.idx] = elCopy
-                }
-
-
+            console.log(elCopy);
+            if (elIdx !== undefined) {
+                copyCmp.info[key][elIdx] = elCopy
             } else {
-
+                copyCmp.info[key] = elCopy
             }
-            console.log(wap[path.fatherIdx])
-            wap.cmps[path.fatherIdx] = copyCmp
+
+            if (path.idx !== undefined) {
+                wap.cmps[path.fatherIdx].cmps[path.idx] = copyCmp
+            } else {
+                wap.cmps[path.fatherIdx] = copyCmp
+            }
+
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {
                 console.log('ops')
             }
-        },
+        }
 
     },
     computed: {
@@ -178,6 +172,3 @@ export default {
     }
 };
 </script>
-<style>
-
-</style>

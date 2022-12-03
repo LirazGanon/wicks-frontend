@@ -32,15 +32,15 @@ export default {
     created() {
     },
     methods: {
-        openEditor(key, i) {
-            const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
+        openEditor(key, idx) {
+            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
 
             const wapContent = {
                 key,
                 path: this.path,
                 el,
                 currCmp: this.cmp,
-                elIdx: i
+                elIdx: idx
             }
             this.$emit('openEditor', wapContent)
         },

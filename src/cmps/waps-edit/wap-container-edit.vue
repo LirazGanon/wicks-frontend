@@ -6,9 +6,10 @@
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
-<!-- TODO:IMG EDITOR -->
+            <!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
-                <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style">
+                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"
+                    @click="openEditor('imgs', idx)">
             </section>
 
         </section>
@@ -33,11 +34,19 @@ export default {
     },
     created() { },
     methods: {
-        puk(payload) {
-            console.log('payload:', payload)
-            // payload.id = cmp.id
-            this.$emit('openEditor', payload)
-        }, getPath(idx) {
+        openEditor(key, idx) {
+            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+
+            const wapContent = {
+                key,
+                path: this.getPath(),
+                el,
+                currCmp: this.cmp,
+                elIdx: idx
+            }
+            this.$emit('openEditor', wapContent)
+        },
+        getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             return { fatherIdx: cmpIdx, idx }

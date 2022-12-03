@@ -1,24 +1,24 @@
 <template>
-    <section class="img-cmp-editor flex column" v-if="cmp">
+    <section class="img-cmp-editor flex column">
         <h2>Edit</h2>
-        <img :src="src" :style="info.style">
+        <img :src="info.el.src" :style="info.el.style">
         <label>
             <span>src </span>
-            <input type="text" :value="src" @change="updateSrc">
+            <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
         <label>
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
         </label>
-        <!-- :value="+info?.style['border-radius'].slice(0,-2)" -->
     </section>
 </template>
 <script>
+import { utilService } from '../services/util.service';
+
 export default {
     name: 'img-editor',
     props: {
-        info: Object,
-        cmp: Object
+        info: Object
     },
     components: {},
     data() {
@@ -31,44 +31,45 @@ export default {
     methods: {
 
         updateSrc(ev) {
-
-            let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
-            const { key, idx } = this.info
-            if (key === 'bgImg') {
-                this.cmp.info[key].src = ev.target.value
-            } else {
-                this.cmp.info[key][idx].src = ev.target.value
-            }
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[cmpIdx] = JSON.parse(JSON.stringify(this.cmp))
-            try {
-                this.$store.dispatch({ type: 'updateWap', wap })
-            } catch {
-                console.log('ops')
-            }
+            this.updateCmp('src', ev.target.value)
+            this.info.el.src = ev.target.value
         },
         updateRadius(ev) {
-            console.log(ev.target.value);
             this.updateCmp('border-radius', ev.target.value + '%')
-            this.info.style['border-radius'] = ev.target.value + '%'
+            this.info.el.style['border-radius'] = ev.target.value + '%'
         },
         updateCmp(att, value) {
-            let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            const cmp = JSON.parse(JSON.stringify(this.cmp))
-            const { key, idx, isContainer } = this.info
-            if (isContainer) {
-                console.log(cmp.info.cmps.find(cmp => cmp.type === 'wap-img'));
-                cmp.info.cmps.find(cmp => cmp.type === 'wap-img').info.imgs[idx].style[att] = value
-            }
-            else if (key === 'bgImg') {
-                cmp.info[key].style[att] = value
+            const { key, path, el, currCmp, elIdx } = this.info
+            const originalWap = this.$store.getters.getWapToEdit
+
+            const elCopy = utilService.copy(el)
+            const copyCmp = utilService.copy(currCmp)
+            const wap = utilService.copy(originalWap)
+
+
+            // console.log('elIdx:', elIdx)
+            if (att === 'src') {
+                elCopy.src = value
             } else {
-                cmp.info[key][idx].style[att] = value
+                elCopy.style[att] = value
             }
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[cmpIdx] = cmp
+            // console.log(elCopy);
+            if (elIdx !== undefined) {
+                copyCmp.info[key][elIdx] = elCopy
+                // console.log(copyCmp.info[key][elIdx]);
+            } else {
+                copyCmp.info[key] = elCopy
+                // console.log(copyCmp.info[key]);
+            }
+
+            if (path.idx !== undefined) {
+                wap.cmps[path.fatherIdx].cmps[path.idx] = copyCmp
+                // console.log( wap.cmps[path.fatherIdx].cmps[path.idx]);
+            } else {
+                wap.cmps[path.fatherIdx] = copyCmp
+                // console.log( wap.cmps[path.fatherIdx]);
+            }
+
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {
@@ -77,28 +78,15 @@ export default {
         },
     },
     computed: {
-        src() {
-            const { key, idx, isContainer, currCmp } = this.info
-            console.log(key, idx, isContainer);
-            if (isContainer) {
-                console.log('this.cmp.info:', this.cmp.info)
-                return this.cmp.info.cmps.find(cmp => cmp.type === currCmp).info.imgs[idx].src
-            }
-            if (key === 'bgImg') {
-                console.log('this.cmp.info:', this.cmp.info)
-                return this.cmp.info[key].src
-            }
-            else {
-                console.log('this.cmp.info:', this.cmp.info)
-                return this.cmp.info[key][idx].src
-            }
-            // return key === 'bgImg' ? this.cmp.info[key].src :
-        },
         rangeValue() {
-            return this.info.style['border-radius'] ? +this.info.style['border-radius'].slice(0, -1) : 0
+            return this.info.el.style['border-radius'] ? +this.info.el.style['border-radius'].slice(0, -1) : 0
         }
     },
     unmounted() { },
+    info: function () {
+        console.log(this.info);
+    }
+
 };
 </script>
 <style>

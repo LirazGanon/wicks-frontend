@@ -3,13 +3,16 @@
 
         <!-- LEFT NAV -->
         <section class="flex column left-nav">
-            <button class="material-symbols-outlined" title="Add Section" @click="toggleActive('cmp')" >
+            <button class="material-symbols-outlined" title="Add Section" :class="{ active: active === 'cmp' }"
+                @click="toggleActive('cmp')">
                 add_circle
             </button>
-            <button class="material-symbols-outlined" title="Pick Palette" @click="toggleActive('palette')">
+            <button class="material-symbols-outlined" title="Pick Palette" :class="{ active: active === 'palette' }"
+                @click="toggleActive('palette')">
                 palette
             </button>
-            <button class="material-symbols-outlined" title="Edit" @click="toggleActive('edit')">
+            <button class="material-symbols-outlined" title="Edit" :class="{ active: active === 'edit' }"
+                @click="toggleActive('edit')">
                 brush
             </button>
         </section>
@@ -26,15 +29,17 @@
             <section class="prev-cmp-wrapper flex">
 
                 <ul class="prev-cmp-filter">
-                    <li @click="setFilter('All')" :class="{active:cmpFilter==='All'}">All</li>
-                    <li @click="setFilter('wap-header')" :class="{active:cmpFilter==='wap-header'}">Headers</li>
-                    <li @click="setFilter('wap-hero')" :class="{active:cmpFilter==='wap-hero'}" >Heros</li>
-                    <li @click="setFilter('wap-container')" :class="{active:cmpFilter==='wap-container'}">Sections</li>
-                    <li @click="setFilter('wap-reviews')" :class="{active:cmpFilter==='wap-reviews'}">Testimonials</li>
-                    <li @click="setFilter('wap-bg-img')" :class="{active:cmpFilter==='wap-bg-img'}">Images</li>
-                    <li @click="setFilter('wap-footer')" :class="{active:cmpFilter==='wap-footer'}">Footer</li>
+                    <li @click="setFilter('All')" :class="{ active: cmpFilter === 'All' }">All</li>
+                    <li @click="setFilter('wap-header')" :class="{ active: cmpFilter === 'wap-header' }">Headers</li>
+                    <li @click="setFilter('wap-hero')" :class="{ active: cmpFilter === 'wap-hero' }">Heros</li>
+                    <li @click="setFilter('wap-container')" :class="{ active: cmpFilter === 'wap-container' }">Sections
+                    </li>
+                    <li @click="setFilter('wap-reviews')" :class="{ active: cmpFilter === 'wap-reviews' }">Testimonials
+                    </li>
+                    <li @click="setFilter('wap-bg-img')" :class="{ active: cmpFilter === 'wap-bg-img' }">Images</li>
+                    <li @click="setFilter('wap-footer')" :class="{ active: cmpFilter === 'wap-footer' }">Footer</li>
                 </ul>
-                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter"/>
+                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" />
             </section>
         </section>
 
@@ -81,7 +86,7 @@ export default {
             type: null,
             data: {},
             active: null,
-            cmpFilter:'All'
+            cmpFilter: 'All'
         };
     },
     created() {

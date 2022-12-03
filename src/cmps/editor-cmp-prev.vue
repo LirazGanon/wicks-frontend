@@ -8,11 +8,11 @@
 
       <Draggable v-for="item in cmps" :key="item.id">
         <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
-          :class="{ isDragging: isDragging }">
+        @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
           <img  :src="item.src" />
         </div>
         <div v-else-if="(item.type === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
-          :class="{ isDragging: isDragging }">
+        @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
           <img :src="item.src" />
         </div>
 

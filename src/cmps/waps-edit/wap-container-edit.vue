@@ -6,7 +6,7 @@
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
-
+<!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style">
             </section>

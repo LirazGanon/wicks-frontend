@@ -44,7 +44,7 @@
             </select>
         </label>
 
-        <label v-if="info.key==='btns'">
+        <label v-if="info.key === 'btns'">
             <span>Border-radius</span>
             <input type="range" min="0" max="100" @input="updateRadius">
         </label>
@@ -107,7 +107,7 @@ export default {
             const elCopy = utilService.copy(el)
             const copyCmp = utilService.copy(currCmp)
             const wap = utilService.copy(originalWap)
-          
+
             elCopy.style[att] = value
             console.log(elCopy);
             if (elIdx !== undefined) {

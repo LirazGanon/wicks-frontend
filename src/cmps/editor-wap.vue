@@ -3,18 +3,10 @@
 
   <section v-if="view" class="page-editor">
 
-    <Container group-name="column" :get-child-payload="itemIndex => getChildPayload2(itemIndex)"
+    <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
-      <Draggable v-if="wapToEdit" v-for="item in wapToEdit.cmps" :key="item.id">
-
-
-        <!-- 
-          <pre>
-            {{ item }}
-            XXXXXXXXXXXXXX
-          </pre> -->
-        <component :is="(item.type || 'wap-header')" :cmp="item" @log="log" @openEditor="$emit('openEditor', $event)" />
-
+      <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
+        <component :is="(cmp.type || 'wap-header')" :cmp="cmp" @log="log" @openEditor="$emit('openEditor', $event)" />
 
       </Draggable>
 
@@ -46,6 +38,7 @@ import { wapService } from '../services/wap.service.local.js'
 export default {
   name: "wap",
   components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
+  props: { wap: Object },
   data() {
     return {
       view: {}
@@ -69,7 +62,7 @@ export default {
     log(id) {
       console.log(this.view.cmps.findIndex(cmp => cmp.id == id))
     },
-    getChildPayload2(itemIndex) {
+    getChildPayload(itemIndex) {
       return this.view.cmps[itemIndex]
     },
     onDrop(dropResult) {
@@ -77,7 +70,12 @@ export default {
       console.log(result);
       this.view.cmps = result
       const wap = JSON.parse(JSON.stringify(this.view))
-      this.$store.dispatch({ type: 'updateWap', wap })
+      console.log(wap);
+      try {
+        this.$store.dispatch({ type: 'updateWap', wap })
+      } catch {
+        console.log('ops');
+      }
     },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;
@@ -90,15 +88,13 @@ export default {
         itemToAdd = result.splice(removedIndex, 1)[0];
       }
       if (addedIndex !== null) {
-        itemToAdd.id += this.makeId()
+
         result.splice(addedIndex, 0, itemToAdd);
       }
       return result;
 
     },
-    makeId() {
-      return Date.now() / 1500
-    },
+
 
 
   },

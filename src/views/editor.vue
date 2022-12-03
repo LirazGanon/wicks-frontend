@@ -35,15 +35,12 @@ export default {
     },
     methods: {
         openEditor(editorContent) {
-            
             this.editor = editorContent
         },
        
     },
     computed: {
-        wapToEdit() {
-            return this.$store.getters.waps
-        },
+
         cmps() {
             return this.$store.getters.cmps
         },

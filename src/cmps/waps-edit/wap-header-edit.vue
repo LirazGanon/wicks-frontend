@@ -42,7 +42,8 @@ export default {
                 key,
                 path: this.getPath(),
                 el,
-                currCmp: this.cmp
+                currCmp: this.cmp,
+                elIdx: idx
             }
             this.$emit('openEditor', wapContent)
         },

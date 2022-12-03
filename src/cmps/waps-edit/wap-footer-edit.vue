@@ -4,12 +4,12 @@
 
 
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @click="openEditor('logo')"
-                :style="cmp.info.logo.style" @input="updateCmp" data-type="logo">
+                :style="cmp.info.logo.style" @input="updateCmp" >
                 {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
 
             <p class="copyright" contenteditable="true" @click="openEditor('copyright')"
-                :style="cmp.info.copyright.style" @input="updateCmp" data-type="copyright">{{ cmp.info.copyright.txt }}
+                :style="cmp.info.copyright.style" @input="updateCmp" >{{ cmp.info.copyright.txt }}
             </p>
         </section>
         <!-- <pre>{{cmp}}</pre> -->
@@ -26,18 +26,15 @@ export default {
     },
     created() { },
     methods: {
-        openEditor(key, idx, innerIdx) {
+        openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-            // console.log(key, idx)
+
             const wapContent = {
                 key,
-                id: this.cmp.id,
-                idx,
-                type: el.type || el.texts[innerIdx].type,
-                style: el.style || el.texts[innerIdx].style
+                path: this.getPath(),
+                el,
+                currCmp: this.cmp
             }
-            console.log('el', el)
-            console.log('key', wapContent)
             this.$emit('openEditor', wapContent)
         },
         updateCmp(ev) {
@@ -53,6 +50,11 @@ export default {
             } catch {
                 console.log('ops')
             }
+        },
+        getPath(idx) {
+            const wap = this.$store.getters.getWapToEdit
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
+            return { fatherIdx: cmpIdx, idx }
         }
     },
     computed: {},

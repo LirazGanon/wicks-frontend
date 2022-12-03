@@ -1,10 +1,10 @@
 <template>
-    <h2>variable</h2>
+    <section class="section-cmp-editor flex column">
+    <h2>Section Edit</h2>
     <span>Backround Color</span>
     <color-picker @setColor="updateBgClr" />
 
-    <pre>{{ info.path.fatherIdx }}</pre>
-
+    </section>
 </template>
 <script>
 import { utilService } from '../services/util.service';
@@ -21,8 +21,8 @@ export default {
         console.log('this.info:', this.info)
     },
     methods: {
-        updateBgClr(clr){
-            this.updateCmp('background-color',clr)
+        updateBgClr(clr) {
+            this.updateCmp('background-color', clr)
         },
         updateCmp(att, value) {
             const { path, currCmp } = this.info

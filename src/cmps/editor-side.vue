@@ -66,7 +66,7 @@
 
         <!-- ACTUAL CMP EDITOR -->
         <section  class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor}">
-            <ul>
+            <ul class="cmp-side-editor">
                 <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor " />
             </ul>
         </section>

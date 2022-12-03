@@ -1,6 +1,6 @@
 .main-editor {
 
-    height: 100vh;
+    height:calc( 100vh - 180px)
 
     .txt-cmps-editor,
     .img-cmp-editor {
@@ -47,6 +47,10 @@
                 background: $clr5;
             }
         }
+
+        .bottom-button{
+            margin-bottom: 40px;
+        }
     }
 
     .options {
@@ -87,6 +91,8 @@
         &.theme {
             flex-direction: column;
             align-items: center;
+            overflow-y: auto;
+            height: calc(100vh - 185px);
 
             img {
                 width: 70%;

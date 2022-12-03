@@ -2,19 +2,29 @@
     <section class="main-editor flex">
 
         <!-- LEFT NAV -->
-        <section class="flex column left-nav">
-            <button class="material-symbols-outlined" title="Add Section" :class="{ active: active === 'cmp' }"
-                @click="toggleActive('cmp')">
-                add_circle
-            </button>
-            <button class="material-symbols-outlined" title="Pick Palette" :class="{ active: active === 'palette' }"
-                @click="toggleActive('palette')">
-                palette
-            </button>
-            <button class="material-symbols-outlined" title="Edit" :class="{ active: active === 'edit' }"
-                @click="toggleActive('edit')">
-                brush
-            </button>
+        <section class="left-nav flex column space-between">
+            <section class="flex column">
+                <button class="material-symbols-outlined" title="Add Section" :class="{ active: active === 'cmp' }"
+                    @click="toggleActive('cmp')">
+                    add_circle
+                </button>
+                <button class="material-symbols-outlined" title="Pick Palette" :class="{ active: active === 'palette' }"
+                    @click="toggleActive('palette')">
+                    palette
+                </button>
+                <button class="material-symbols-outlined" title="Edit" :class="{ active: active === 'edit' }"
+                    @click="toggleActive('edit')">
+                    brush
+                </button>
+            </section>
+            <section class="bottom-button flex column">
+                <button class="material-symbols-outlined" title="Edit" @click="placholder">
+                    group_add
+                </button>
+                <button class="material-symbols-outlined" title="Edit" @click="placholder">
+                    publish
+                </button>
+            </section>
         </section>
 
 
@@ -47,9 +57,9 @@
         <!-- THEME PICKER -->
         <section v-if="active === 'palette'" class="flex options theme">
 
-         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/1.png" alt="">
-         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/2.png" alt="">
-         <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/1.png" alt="">
+            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/2.png" alt="">
+            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/3.png" alt="">
 
         </section>
 
@@ -57,7 +67,8 @@
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex cmp-side-editor ">
             <ul v-if="active === 'edit'">
-                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor animate__animated animate__fadeInLeft" />
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor"
+                    class="cmp-editor animate__animated animate__fadeInLeft" />
             </ul>
         </section>
     </section>
@@ -108,6 +119,9 @@ export default {
             else this.active = null
 
         },
+        placholder(){
+            alert('Hi King!')
+        }
 
     },
     computed: {

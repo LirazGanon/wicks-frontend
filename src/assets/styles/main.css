@@ -587,7 +587,7 @@ header .loggedin-user img {
 }
 
 .main-editor {
-  height: 100vh;
+  height:calc( 100vh - 180px);
 }
 .main-editor .txt-cmps-editor > *,
 .main-editor .img-cmp-editor > * {

@@ -50,7 +50,6 @@
         </label>
 
 
-        <pre>{{ info.path }}</pre>
 
     </section>
 

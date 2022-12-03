@@ -17,28 +17,25 @@
 <script>
 export default {
     name: 'dynamic-gallery-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object ,  path: Object},
     components: {},
     data() {
         return {};
     },
     created() { },
     methods: {
-        openEditor(key, idx) {
-            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+        openEditor(key, i) {
+            const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
             const wapContent = {
                 key,
-                id: this.cmp.id,
-                idx,
-                type: el.type,
-                style: el.style,
-                isContainer:true,
-                currCmp:'wap-gallery'
+                path: this.path,
+                el,
+                currCmp: this.cmp,
+                elIdx: i
             }
-            // console.log(wapContent);
-
+            console.log(wapContent);
             this.$emit('openEditor', wapContent)
-        },
+        }
     },
     computed: {},
     unmounted() { },

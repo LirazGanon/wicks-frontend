@@ -13,14 +13,14 @@
                         (cmp.info.subHeading.txt)
                 }}</p>
 
-            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click="openEditor('btns',idx)"
+            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click="openEditor('btns', idx)"
                 :style="btn.style">
                 {{ btn.txt }}
             </button>
 
 
-            <img v-for="img in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes"
-                :style="img.style">
+            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes"
+                :style="img.style" @click="openEditor('imgs', idx)" />
 
 
         </section>
@@ -39,12 +39,12 @@ export default {
     methods: {
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-
             const wapContent = {
                 key,
                 path: this.getPath(),
                 el,
-                currCmp: this.cmp
+                currCmp: this.cmp,
+                elIdx: idx
             }
             this.$emit('openEditor', wapContent)
         },

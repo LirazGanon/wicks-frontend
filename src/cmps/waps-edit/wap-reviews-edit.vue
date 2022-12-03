@@ -1,9 +1,10 @@
 <template>
-    <section class="wap-reviews">
+    <section class="wap-reviews" @click="openSectionEditor" :style="cmp.style">
         <h4 contenteditable="true" @click.stop="openEditor('heading')" @input="updateCmp($event, 'heading')"
             :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
         <section class="reviews-container">
-            <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop="openEditor('reviews', idx)" :style="review.style">
+            <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop="openEditor('reviews', idx)"
+                :style="review.style">
                 <p contenteditable="true" @input="updateCmp($event, 'reviews', idx)">{{ review.txt }}</p>
                 <p contenteditable="true" @input="updateCmp($event, 'reviews', idx, 'author')">{{ review.author }}</p>
             </div>
@@ -21,6 +22,15 @@ export default {
     },
     created() { },
     methods: {
+        openSectionEditor() {
+
+            const wapContent = {
+                el: { type: 'section' },
+                currCmp: this.cmp,
+                path: this.getPath()
+            }
+            this.$emit('openEditor', wapContent)
+        },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
 

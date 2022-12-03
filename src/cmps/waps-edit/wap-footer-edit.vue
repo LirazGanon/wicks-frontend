@@ -1,15 +1,15 @@
 <template>
-    <section class="main-layout full" :style="cmp.style">
-        <section class="wap-footer" :class="cmp.classes">
+    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style">
+        <section class="wap-footer" :style="cmp.style" :class="cmp.classes">
 
 
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @click="openEditor('logo')"
-                :style="cmp.info.logo.style" @input="updateCmp($event,'logo')" >
+                :style="cmp.info.logo.style" @input="updateCmp($event, 'logo')">
                 {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
 
             <p class="copyright" contenteditable="true" @click="openEditor('copyright')"
-                :style="cmp.info.copyright.style" @input="updateCmp($event,'copyright')" >{{ cmp.info.copyright.txt }}
+                :style="cmp.info.copyright.style" @input="updateCmp($event, 'copyright')">{{ cmp.info.copyright.txt }}
             </p>
         </section>
     </section>
@@ -25,6 +25,15 @@ export default {
     },
     created() { },
     methods: {
+        openSectionEditor() {
+
+            const wapContent = {
+                el: { type: 'section' },
+                currCmp: this.cmp,
+                path: this.getPath()
+            }
+            this.$emit('openEditor', wapContent)
+        },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
 

@@ -1,15 +1,15 @@
 <template>
     <!-- <h2>{{ info }}</h2> -->
-    <section class="main-layout full" v-if="cmp" :style="cmp.style">
+    <section class="main-layout full" v-if="cmp" @click="openSectionEditor" :style="cmp.style">
 
-        <section class="wap-container" :class="cmp.classes">
+        <section class="wap-container"  :style="cmp.style" :class="cmp.classes">
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
             <!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"
-                    @click="openEditor('imgs', idx)">
+                    @click.stop="openEditor('imgs', idx)">
             </section>
 
         </section>
@@ -34,6 +34,15 @@ export default {
     },
     created() { },
     methods: {
+        openSectionEditor() {
+
+            const wapContent = {
+                el: { type: 'section' },
+                currCmp: this.cmp,
+                path: this.getPath()
+            }
+            this.$emit('openEditor', wapContent)
+        },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
 

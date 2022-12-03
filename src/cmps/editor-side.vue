@@ -29,7 +29,7 @@
 
 
         <!-- CMPS ADDITIONS -->
-        <section v-if="active === 'cmp'" class="options animate__animated animate__fadeInLeft">
+        <section class="options" :class="{ active: active === 'cmp' }">
             <h2>Add Section</h2>
             <!-- <ul>
                 <li v-for="t in view.type" :key="t.id">
@@ -55,7 +55,7 @@
 
 
         <!-- THEME PICKER -->
-        <section v-if="active === 'palette'" class="flex options theme">
+        <section class="flex options theme" :class="{ active: active === 'palette' }">
 
             <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/1.png" alt="">
             <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/2.png" alt="">
@@ -65,10 +65,9 @@
 
 
         <!-- ACTUAL CMP EDITOR -->
-        <section class="flex cmp-side-editor ">
-            <ul v-if="active === 'edit'">
-                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor"
-                    class="cmp-editor animate__animated animate__fadeInLeft" />
+        <section  class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor}">
+            <ul>
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor " />
             </ul>
         </section>
     </section>
@@ -86,7 +85,7 @@ import sectionEditor from './section-editor.vue'
 
 export default {
     name: 'Editor',
-    components: { editorCmpPrev, txtEditor, imgEditor,sectionEditor },
+    components: { editorCmpPrev, txtEditor, imgEditor, sectionEditor },
     props: { editor: Object },
     data() {
         return {
@@ -119,9 +118,11 @@ export default {
             else this.active = null
 
         },
-        placholder(){
+        placholder() {
             alert('Hi King!')
-        }
+        },
+
+
 
     },
     computed: {
@@ -131,7 +132,6 @@ export default {
         cmps() {
             return this.$store.getters.cmps
         },
-
     },
     watch: {
         editor: function () {
@@ -139,7 +139,7 @@ export default {
         }
 
     }
-};
+}
 </script>
 <style>
 

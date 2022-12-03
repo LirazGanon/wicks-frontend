@@ -4,7 +4,7 @@
             v-for="(img,idx) in cmp.info.imgs"
             :src="img.src"
             alt="" 
-            @click="openEditor('imgs', idx)"
+            @click.stop="openEditor('imgs', idx)"
            :style="img.style"
            >
     </section>

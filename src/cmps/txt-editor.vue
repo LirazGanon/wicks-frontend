@@ -2,10 +2,11 @@
 
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
-        <span>Color</span>
-        <color-picker @setColor="updateClr"  />
-        <span>Backround Color</span>
+        <span>Text Color:</span>
+        <color-picker @setColor="updateClr" />
+        <span>Background Color:</span>
         <color-picker @setColor="updateBgClr" />
+        <hr>
 
 
 
@@ -18,11 +19,11 @@
         </label> -->
 
 
-        <label>
-            <span>Font Size </span>
-            <input type="number" min="10" max="100" @input="updateFS">
+        <label class="flex align-center gap">
+            <span>Font Size: </span>
+            <input type="range" min="10" max="100" @input="updateFS">
         </label>
-        <label class="flex">
+        <label class="flex align-center">
             <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
             <span class="material-symbols-outlined">
                 format_bold
@@ -34,7 +35,14 @@
                 format_italic
             </span>
         </label>
-        <label for="font">Choose Font:
+        <label class="flex">
+            <input type="checkbox" :checked="info.el.style['font-style'] === 'underlined'" @change="updateStyle">
+            <span class="material-symbols-outlined">
+                format_underlined
+            </span>
+        </label>
+        <label for="font" class="flex gap">
+            <span>Choose Font:</span>
             <select name="font" @change="updateFont" :selected="info.el.style['font-family']">
                 <option value="">default</option>
                 <option value="puki">puki</option>

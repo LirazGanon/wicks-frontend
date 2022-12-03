@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             colors: ['#9FBBCC', '#6D67E4', '#937DC2', '#6ECCAF', '#F79F79', '#CF9893', '#F2DEBA', '#F7D08A', '#E3F09B',
-                '#F3FFB6', '#739E82'
+                '#F3FFB6', '#739E82','#46C2CB','#FB2576','#65647C','#285430','#DC3535','#009EFF'
             ],
             color1: ref('#346')
 

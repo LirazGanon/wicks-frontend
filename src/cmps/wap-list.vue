@@ -1,5 +1,5 @@
 <template>
-  <section class="wap-list-container">
+  <section class="wap-list-container main-layout">
 
     <section v-if="loading" class="skeleton">
       <div v-for="n in 2" class="skeleton-tuazaeqw532"></div>
@@ -9,11 +9,18 @@
       <div class="skeleton-shmh4b68a9d"></div>
     </section>
 
-    <ul v-else class="wap-list">
-      <li v-for="wap in waps" :key="wap._id">
-        <wap-preview :wap="wap" @setIsLoading="toggleIsLoading" />
-      </li>
-    </ul>
+    <section v-else>
+
+      <h1>Pick one of our professionally designed website templates</h1>
+
+      <ul class="wap-list">
+        <li v-for="wap in waps" :key="wap._id">
+          <wap-preview :wap="wap" @setIsLoading="toggleIsLoading" />
+        </li>
+      </ul>
+
+    </section>
+
 
 
 
@@ -46,7 +53,7 @@ export default {
     }
   },
   computed: {
-  
+
   }
 }
 </script>

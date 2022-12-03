@@ -2,12 +2,23 @@
 
     <section class="main-layout full" :style="cmp.style">
 
+
+
+
         <section class="wap-container" :class="cmp.classes">
-            <div v-for="childCmp in cmp.info.cmps">
-                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" />
+
+           
+
+            <div v-for="childCmp in cmp.cmps">
+                <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id"  />
             </div>
 
+            <section class="wap-img" v-if="cmp.info.imgs">
+                <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style">
+            </section>
+
         </section>
+        
     </section>
 
 </template>

@@ -103,21 +103,22 @@ export default {
         },
         getCmp() {
             const wap = this.$store.getters.getWapToEdit
+            const { id, innerId } = this.editor
             const cmp = wap.cmps.find(cmp => {
                 if (cmp.type === 'wap-container') {
                     return cmp.info.cmps.find(item => {
                         if (item.type === 'wap-gallery') {
-                            return item.id === this.editor.id
+                            return item.id === id
                         }
                         if (item.type === 'wap-img') {
-                            return item.id === this.editor.id
+                            return item.id === id
                         }
                         if (item.type === 'wap-card') {
-                            return item.id === this.editor.id
+                            return item.id === innerId
                         }
                     });
                 }
-                return cmp.id === this.editor.id
+                return cmp.id === id
             })
             // console.log('this.info:', this.info)
             // console.log('wap', wap);
@@ -126,8 +127,8 @@ export default {
         }
     },
     watch: {
-        editor: function () {this.active = 'edit'}
-        
+        editor: function () { this.active = 'edit' }
+
     }
 };
 </script>

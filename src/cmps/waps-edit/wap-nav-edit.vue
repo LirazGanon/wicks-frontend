@@ -1,11 +1,19 @@
 <template>
-    <nav class="wap-nav flex">
+    <nav class="wap-nav flex" v-if="cmp.info.links" >
 
         <!-- TODO:START -->
 
-        <a href="" v-for="(l, idx) in nav.info.links" contenteditable="true" @click="openEditor('links', idx)"
+        <!-- <a href="" v-for="(l, idx) in nav.info.links" contenteditable="true" @click="openEditor('links', idx)"
             :style="nav.info.links[idx].style" @input="updateCmp($event, idx)" data-type="links"> {{ l.txt
-            }}</a>
+            }}</a> -->
+
+
+        <a href="#" v-for="l in cmp.info.links">
+            <span >
+                {{ l.txt }}
+            </span>
+        </a>
+        <!-- <pre style="background:green;font-size:20px;color:black">{{ cmp }}</pre> -->
 
     </nav>
 
@@ -13,16 +21,14 @@
 <script>
 export default {
     name: 'dynamic-nav-cmp',
-    props: { nav: Object, cmpId: String },
+    props: { cmp: Object },
     components: {},
     data() {
         return {
-            cmp: null
         };
     },
     created() {
-        this.cmp = this.nav
-        console.log(this.cmpId);
+        console.log(this.cmp);
     },
     methods: {
         openEditor(key, idx) {
@@ -43,7 +49,7 @@ export default {
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmpId)
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
-            
+
             // console.log('cmpCopy:',  cmpCopy.info.links[innerIdx].txt)
             // console.log('wap',wap.cmps[cmpIdx].info.nav);
             // console.log('cmpCopy:', cmpCopy)

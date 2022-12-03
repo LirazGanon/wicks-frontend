@@ -1,7 +1,13 @@
 <template>
     <section class="wap-card" v-if="cmp.info">
-        <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading?.style"
-            @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
+        <h1
+        
+         contenteditable="true" 
+         @click="openEditor('heading')" 
+         :style="cmp.info.heading.style"
+        @input="updateCmp($event, 'heading')"
+        
+        >{{ cmp.info.heading?.txt }}</h1>
 
         <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
             @input="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
@@ -35,7 +41,8 @@ export default {
 
             const wapContent = {
                 key,
-                id: this.cmp.id,
+                id: this.cmpId,
+                innerId:this.cmp.id,
                 idx,
                 type: el.type,
                 style: el.style,

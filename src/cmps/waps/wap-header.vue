@@ -7,9 +7,8 @@
                 <img :src="cmp.info.logo?.img" alt="" v-if="cmp.info.logo.img">
                 <h4 v-else>{{ cmp.info.logo.txt }}</h4>
             </div>
-            <!-- <pre>{{info}}</pre> -->
 
-            <wap-nav :nav="cmp.info.nav" />
+            <component v-for="cmp in cmp.cmps" :is="cmp.type" :cmp="cmp"/>
 
         </section>
 

@@ -1,13 +1,17 @@
 <template>
     <!-- <h2>{{ info }}</h2> -->
-    <section class="main-layout full" :style="cmp.style">
-
+    <section class="main-layout full" v-if="cmp" :style="cmp.style">
+        
         <section class="wap-container" :class="cmp.classes">
-            <div v-for="childCmp in cmp.info.cmps">
-                <component :is="(childCmp.type || 'wapHeader')" :cmp="childCmp" :cmpId="cmp.id" @openEditor="puk" />
+            <div v-for="childCmp in cmp.cmps">
+                <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id" @openEditor="puk" />
             </div>
+            <section class="wap-img" v-if="cmp.info.imgs">
+                <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style" >
+            </section>
 
         </section>
+        <pre>{{ cmp }}</pre>
     </section>
 
 </template>

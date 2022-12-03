@@ -10,11 +10,12 @@
                 <h4 v-else contenteditable="true" @click="openEditor('logo')" :style="cmp.info.logo.style"
                     @input="updateCmp" data-type="logo">{{ cmp.info.logo.txt }}</h4>
             </div>
-            <!-- <pre>{{info}}</pre> -->
 
-            <wap-nav :nav="cmp.info.nav" :cmpId="cmp.id" @openEdit="puk" />
+            <component v-for="curCmp in cmp.cmps" :is="curCmp.type" :cmp="curCmp"/>
+
 
         </section>
+      
 
     </header>
 </template>

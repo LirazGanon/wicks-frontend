@@ -3,9 +3,9 @@
     <section class="flex column txt-cmps-editor" v-if="cmp">
         <h2>Edit</h2>
         <span>Color</span>
-        <!-- <color-picker @setColor="updateClr" />
+        <color-picker @setColor="updateClr" />
         <span>Backround Color</span>
-        <color-picker @setColor="updateBgClr" /> -->
+        <color-picker @setColor="updateBgClr" />
 
 
 
@@ -17,7 +17,7 @@
             <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
         </label> -->
 
-<!--         
+
         <label>
             <span>Font Size </span>
             <input type="number" min="10" max="100" :value="rangeValue" @input="updateFS">
@@ -33,7 +33,7 @@
             <span class="material-symbols-outlined">
                 format_italic
             </span>
-        </label> -->
+        </label>
         <label for="font">Choose Font:
             <select name="font" @change="updateFont" :selected="info?.style['font-family']">
                 <option value="">default</option>
@@ -51,11 +51,12 @@
 
 
         <pre>{{ this.info }}</pre>
-        <pre>{{ this.cmp }}</pre>
+        <!-- <pre>{{ this.cmp }}</pre> -->
     </section>
 
 </template>
 <script>
+import { utilService } from '../services/util.service';
 import colorPicker from './util/color-picker.vue';
 
 
@@ -102,15 +103,14 @@ export default {
         updateCmp(att, value) {
             let wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.info.id)
-            const { key, fatherEl, idx, isContainer } = this.info
-
-
+            const { key, fatherEl, idx, isContainer, id } = this.info
 
             if (fatherEl) {
                 if (isContainer) {
                     const innerIdx = this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl)
-                    // this.cmp.info.cmps[fatherEl].info
-                    console.log('----', innerIdx);
+                    // console.log('puk:', this.cmp.info.cmps[innerIdx].info[key])
+                    this.cmp.info.cmps[innerIdx].info[key].style[att] = value
+                    // console.log('----', this.cmp.info.cmps[innerIdx].info[key]);
                 } else if (idx !== undefined) {
 
                     this.cmp.info[fatherEl].info[key][idx].style[att] = value
@@ -123,8 +123,12 @@ export default {
             else {
                 this.cmp.info[key].style[att] = value
             }
+
             wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[cmpIdx] = JSON.parse(JSON.stringify(this.cmp))
+            // console.log('xxx', wap.cmps[cmpIdx]);
+            const currCmp = JSON.parse(JSON.stringify(this.cmp))
+            wap.cmps[cmpIdx] = currCmp
+            // console.log(wap);
             try {
                 this.$store.dispatch({ type: 'updateWap', wap })
             } catch {
@@ -135,10 +139,16 @@ export default {
     },
     computed: {
         rangeValue() {
-            return this.info.style['font-size'] ? +this.info.style['font-size'].slice(0, -2) : 16
+            const { key, isContainer ,idx } = this.info
+            if(!isContainer){
+                return this.cmp.info[key].style['font-size'] ? +this.cmp.info[key].style['font-size'].slice(0, -2) : 0
+            } else {
+                
+            }
         },
         borderRadius() {
-            return this.info.style['border-radius'] ? + this.info.style['border-radius'].slice(0, -1) : 0
+            const { key } = this.info
+            return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
         }
 
     },

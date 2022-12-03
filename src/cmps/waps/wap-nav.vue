@@ -1,16 +1,11 @@
 <template>
     <nav class="wap-nav flex">
-        <!-- <pre>
 
-         {{nav}}
-     </pre>  -->
 
-        <a href="#" v-for="l in nav.info.links"> <span v-if="(l.type !== 'button')">
+        <a href="#" v-for="l in cmp.info.links">
+            <span v-if="(l.type)">
                 {{ l.txt }}
             </span>
-            <button v-else>
-                {{l.txt}}
-            </button>
         </a>
 
 
@@ -21,7 +16,7 @@
 <script>
 export default {
     name: 'dynamic-nav-cmp',
-    props: { nav: Object },
+    props: { cmp: Object },
     components: {},
     data() {
         return {};

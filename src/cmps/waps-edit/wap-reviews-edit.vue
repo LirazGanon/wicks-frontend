@@ -1,16 +1,14 @@
 <template>
-    <section class="wap-reviews">
-        <!-- <pre>{{cmp.info.reviews}}</pre> -->
+    <!-- <section class="wap-reviews">
         <h4 contenteditable="true">{{ cmp.info.heading.txt }}</h4>
         <section class="reviews-container">
             <div v-for="review in cmp.info.reviews">
-                <!-- <div class="review"> -->
                 <p  contenteditable="true">{{ review.txt }}</p>
                 <p  contenteditable="true">{{ review.author }}</p>
-                <!-- </div> -->
             </div>
         </section>
-    </section>
+    </section> -->
+    <pre>{{cmp}}</pre>
 
 </template>
 <script>

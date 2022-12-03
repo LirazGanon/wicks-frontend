@@ -2,7 +2,7 @@
 
     <section class="main-layout full" :style="cmp.style">
 
-        <!-- <section class="wap-hero " :class="cmp.classes">
+        <section class="wap-hero " :class="cmp.classes">
 
             <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading.style" @input="updateCmp"
                 data-type="heading">
@@ -18,15 +18,16 @@
                 {{ btn.txt }}
             </button>
 
-            <img :src="img.src" v-for="(img, idx) in cmp.info.imgs" alt="" class="wap-img"
-                @click="openEditor('imgs', idx)"
-                :style="img.style">
+            
+            <section v-for="img in cmp.info.imgs">
+                <img :src="img.src"  alt="" class="wap-img" :style="img.style" @click="openEditor('imgs', idx)">
+            </section>
+
+       
 
 
 
-            <img :src="cmp.info.bgImg.src" :style="cmp.info.bgImg.style" alt="" class="wap-bg-img" @click="openEditor('bgImg')">
-        </section> -->
-        <pre>{{cmp}}</pre>
+        </section>
     </section>
 
 </template>

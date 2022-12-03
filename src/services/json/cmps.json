@@ -1,20 +1,21 @@
 [
   {
-    "id": "fhngh1",
     "type": "wap-header",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
+    "level": 0,
+    "id": "fhngh1",
     "classes": ["bakery "],
     "info": {
       "logo": {
         "type": "txt",
         "txt": "brun.",
-        "src": "",
         "style": {}
-      },
-      "nav": {
-        "id": "wc05",
+      }
+    },
+    "cmps": [
+      {
         "type": "wap-nav",
-        "style": {},
+        "level": 1,
+        "id": "wc05",
         "classes": [],
         "info": {
           "links": [
@@ -37,21 +38,22 @@
               "style": {}
             },
             {
-              "type": "button",
+              "type": "txt",
               "txt": "Order online",
               "link": "#order",
               "style": {}
             }
           ]
-        }
+        },
+        "style": {}
       }
-    },
+    ],
     "style": {}
   },
   {
-    "id": "gbfgg",
     "type": "wap-hero",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
+    "level": 0,
+    "id": "gbfgg",
     "classes": ["bakery"],
     "info": {
       "heading": {
@@ -65,206 +67,196 @@
         "style": {}
       },
       "btns": [],
-      "bgImg": {
-        "type": "img",
-        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
-        "style": {}
-      },
       "imgs": [
         {
           "type": "img",
           "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
           "style": {}
+        },
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
+          "style": {}
         }
       ]
     },
-    "style": { "background-color": "#1c2e3b" }
+    "style": {
+      "background-color": "#1c2e3b"
+    }
   },
   {
+    "type": "wap-container",
+    "level": 0,
     "id": "jjyuh",
-    "type": "wap-container",
     "classes": ["img-card bakery"],
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
     "info": {
-      "cmps": [
+      "imgs": [
         {
-          "id": "jj4yugh",
-          "type": "wap-img",
-          "classes": [],
-          "info": {
-            "imgs": [
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
-                "style": {}
-              }
-            ]
-          },
-          "style": {}
-        },
-        {
-          "id": "jj4yugh",
-          "type": "wap-card",
-          "classes": [],
-          "info": {
-            "heading": {
-              "type": "txt",
-              "txt": "Handcrafted Pastres, Made Locally",
-              "style": {}
-            },
-            "subHeading": {
-              "type": "txt",
-              "txt": "With traditional methods and the finest seasonal ingredients, we bake delicious, hand-crafted pastries.",
-              "style": {}
-            },
-            "btns": [
-              {
-                "type": "primery",
-                "txt": "Our story",
-                "style": {}
-              }
-            ]
-          },
+          "type": "img",
+          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
           "style": {}
         }
       ]
     },
-    "style": {}
-  },
-  {
-    "id": "gbgty42",
-    "classes": ["card-gallery bakery"],
-    "type": "wap-container",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
-    "info": {
-      "cmps": [
-        {
-          "type": "wap-card",
-          "id": "k2sm903",
-          "info": {
-            "heading": {
-              "type": "txt",
-              "txt": "Things we bake",
-              "style": {}
-            },
-            "subHeading": {
-              "type": "txt",
-              "txt": "We offer a variety of pastries. A unique collection of artisanal croissants, delicious cookies and classic cakes with a twists",
-              "style": {}
-            },
-            "btns": [
-              {
-                "type": "primery",
-                "txt": "See full menu",
-                "style": {}
-              }
-            ]
-          },
-          "style": {}
-        },
-        {
-          "id": "mukjyu6584",
-          "type": "wap-gallery",
-          "classes": ["four"],
-          "info": {
-            "imgs": [
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
-                "txt": "Cookies",
-                "style": {}
-              },
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
-                "txt": "Cakes",
-                "style": {}
-              },
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
-                "txt": "Viennoisrie",
-                "style": {}
-              },
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
-                "txt": "Specials",
-                "style": {}
-              }
-            ],
+    "cmps": [
+      {
+        "type": "wap-card",
+        "level": 1,
+        "id": "jj4yugh",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Handcrafted Pastres, Made Locally",
             "style": {}
           },
-          "style": {}
-        }
-      ]
-    },
+          "subHeading": {
+            "type": "txt",
+            "txt": "With traditional methods and the finest seasonal ingredients, we bake delicious, hand-crafted pastries.",
+            "style": {}
+          },
+          "btns": [
+            {
+              "type": "txt",
+              "txt": "Our story",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
     "style": {}
   },
   {
-    "id": "wc0554njj",
-    "classes": ["card-img bakery"],
     "type": "wap-container",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
-    "info": {
-      "cmps": [
-        {
-          "id": "jjcls435h",
-          "type": "wap-card",
-          "classes": [],
-          "info": {
-            "heading": {
+    "level": 0,
+    "id": "gbgty42",
+    "classes": ["card-gallery bakery"],
+    "info": {},
+    "cmps": [
+      {
+        "type": "wap-card",
+        "level": 1,
+        "id": "k2sm903",
+        "classes" : [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Things we bake",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "We offer a variety of pastries. A unique collection of artisanal croissants, delicious cookies and classic cakes with a twists",
+            "style": {}
+          },
+          "btns": [
+            {
               "type": "txt",
-              "txt": "We Deliver! Get BRUN'S Pastries to Your Doorstep",
+              "txt": "See full menu",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-gallery",
+        "level": 1,
+        "id": "mukjyu6584",
+        "classes": ["four"],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
+              "txt": "Cookies",
               "style": {}
             },
-            "texts": [
-              {
-                "type": "txt",
-                "txt": "Wherever you are, Our crust will follow you.",
-                "style": {}
-              },
-              {
-                "type": "txt",
-                "txt": "We deliver Mon-Sat from 9am to 6pm",
-                "style": {}
-              }
-            ],
-            "btns": [
-              {
-                "type": "primery",
-                "txt": "Order Online",
-                "style": {}
-              }
-            ]
-          },
-          "style": {}
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
+              "txt": "Cakes",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
+              "txt": "Viennoisrie",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
+              "txt": "Specials",
+              "style": {}
+            }
+          ]
         },
+        "style": {}
+      }
+    ],
+    "style": {}
+  },
+  {
+    "type": "wap-container",
+    "level": 0,
+    "id": "wc0554njj",
+    "classes": ["card-img bakery"],
+    "info": {
+      "imgs": [
         {
-          "id": "234msd09",
-          "type": "wap-img",
-          "classes": [],
-          "info": {
-            "imgs": [
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-                "style": {}
-              }
-            ]
-          },
-
+          "type": "img",
+          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
           "style": {}
         }
       ]
     },
-    "style": { "background-color": "#ca8263" }
+    "cmps": [
+      {
+        "type": "wap-card",
+        "level": 1,
+        "id": "jjcls435h",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "We Deliver! Get BRUN'S Pastries to Your Doorstep",
+            "style": {}
+          },
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "Wherever you are, Our crust will follow you.",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "We deliver Mon-Sat from 9am to 6pm",
+              "style": {}
+            }
+          ],
+          "btns": [
+            {
+              "type": "txt",
+              "txt": "Order Online",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style": {
+      "background-color": "#ca8263"
+    }
   },
   {
+    "type": "wap-reviews",
+    "level": 0,
     "id": "mfgnih987",
     "classes": [],
-    "type": "wap-reviews",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915523/wicks/cmp-prev/review.png",
     "info": {
       "heading": {
         "type": "txt",
@@ -301,10 +293,10 @@
     "style": {}
   },
   {
+    "type": "wap-bg-img",
+    "level": 0,
     "id": "wc05jjjj4",
     "classes": ["full"],
-    "type": "wap-bg-img",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
     "info": {
       "img": {
         "type": "img",
@@ -316,69 +308,69 @@
     "style": {}
   },
   {
+    "type": "wap-container",
+    "level": 0,
     "id": "gbits42",
     "classes": ["card-gallery bakery"],
-    "type": "wap-container",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
     "info": {
-      "cmps": [
-        {
-          "id": "nxla87ej",
-          "type": "wap-card",
-          "classes": [],
-          "info": {
-            "heading": {
+
+    },
+    "cmps": [
+      {
+        "type": "wap-card",
+        "level": 1,
+        "id": "nxla87ej",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Sneak Peek: BRUN Behind the Scenes",
+            "style": {}
+          },
+          "btns": [
+            {
               "type": "txt",
-              "txt": "Sneak Peek: BRUN Behind the Scenes",
+              "txt": "Contact Brun",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-gallery",
+        "level": 1,
+        "id": "nis7ej8",
+        "classes": ["three"],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
               "style": {}
             },
-            "btns": [
-              {
-                "type": "primery",
-                "txt": "Contact Brun",
-                "style": {}
-              }
-            ]
-          },
-          "style": {}
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
+              "style": {}
+            }
+          ]
         },
-        {
-          "id": "nis7ej8",
-          "type": "wap-gallery",
-          "classes": ["three"],
-          "info": {
-            "imgs": [
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
-                "txt": "",
-                "style": {}
-              },
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
-                "txt": "",
-                "style": {}
-              },
-              {
-                "type": "img",
-                "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
-                "txt": "",
-                "style": {}
-              }
-            ]
-          },
-          "style": {}
-        }
-      ]
-    },
+        "style": {}
+      }
+    ],
     "style": {}
   },
   {
-    "id": "sc599966",
-    "src":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669916168/wicks/cmp-prev/footer.png",
-    "classes": ["bakery flex column space-around align-center"],
     "type": "wap-footer",
+    "level" : 0,
+    "id": "sc599966",
+    "classes": ["bakery flex column space-around align-center"],
     "info": {
       "logo": {
         "type": "txt",
@@ -386,7 +378,6 @@
         "src": "",
         "style": {}
       },
-
       "socials": [{}],
       "copyright": {
         "type": "txt",

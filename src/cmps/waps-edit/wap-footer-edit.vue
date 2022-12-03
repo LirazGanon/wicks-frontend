@@ -1,6 +1,6 @@
 <template>
     <section class="main-layout full" :style="cmp.style">
-        <!-- <section class="wap-footer" :class="cmp.classes">
+        <section class="wap-footer" :class="cmp.classes">
 
 
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @click="openEditor('logo')"
@@ -11,8 +11,8 @@
             <p class="copyright" contenteditable="true" @click="openEditor('copyright')"
                 :style="cmp.info.copyright.style" @input="updateCmp" data-type="copyright">{{ cmp.info.copyright.txt }}
             </p>
-        </section> -->
-        <pre>{{cmp}}</pre>
+        </section>
+        <!-- <pre>{{cmp}}</pre> -->
     </section>
 
 </template>

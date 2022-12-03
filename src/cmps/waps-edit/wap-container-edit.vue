@@ -11,7 +11,7 @@
             </section>
 
         </section>
-        <pre>{{ cmp }}</pre>
+        <!-- <pre>{{ cmp }}</pre> -->
     </section>
 
 </template>

@@ -125,7 +125,7 @@
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
               "style": {},
-              "classes"
+              "classes" : []
             }
           ]
         },
@@ -203,25 +203,29 @@
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
                   "txt": "Cookies",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 },
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
                   "txt": "Cakes",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 },
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
                   "txt": "Viennoisrie",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 },
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
                   "txt": "Specials",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 }
               ]
             },
@@ -240,7 +244,8 @@
             {
               "type": "img",
               "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-              "style": {}
+              "style": {},
+              "classes":[]
             }
           ]
         },
@@ -378,17 +383,20 @@
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 },
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 },
                 {
                   "type": "img",
                   "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
-                  "style": {}
+                  "style": {},
+                  "classes":[]
                 }
               ]
             },
@@ -564,7 +572,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/tgrd-min-min_eczekg.png",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -627,7 +636,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/cxcc-min_jvl4nw.png",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -659,7 +669,8 @@
                   {
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ]
               },
@@ -795,7 +806,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -817,7 +829,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -839,7 +852,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -861,7 +875,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -883,7 +898,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -905,7 +921,8 @@
                     "type": "img",
                     "src": "",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "texts": [
@@ -926,7 +943,8 @@
                   {
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ]
               },
@@ -967,7 +985,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922275/wicks/coffeshop/1_vxfvru.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {
@@ -1006,7 +1025,8 @@
                     "type": "img",
                     "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922274/wicks/coffeshop/2_mqxqn4.jpg",
                     "txt": "",
-                    "style": {}
+                    "style": {},
+                    "classes":[]
                   }
                 ],
                 "subHeading": {

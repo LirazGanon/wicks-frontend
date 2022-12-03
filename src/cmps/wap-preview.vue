@@ -1,5 +1,5 @@
 <template>
-  <section class="wap-preview">
+  <section class="wap-preview ">
 
     <img :src="wap.src" :alt="wap.name">
 

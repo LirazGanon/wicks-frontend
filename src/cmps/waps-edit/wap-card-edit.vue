@@ -1,14 +1,14 @@
 <template>
     <section class="wap-card" v-if="cmp.info">
-        <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading.style"
+        <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style"
             @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
-        <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
+        <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
             @input="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
-        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click="openEditor('texts', idx)"
+        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click.stop="openEditor('texts', idx)"
             :style="txt?.style" @input="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
 
-        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click="openEditor('btns', idx)"
+        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop="openEditor('btns', idx)"
             :style="btn.style" @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
     </section>
 

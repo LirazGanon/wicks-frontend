@@ -1,10 +1,7 @@
 .main-editor {
-
-    height:calc( 100vh - 180px)
-
-    .txt-cmps-editor,
+    height:calc(100vh - 180px) .txt-cmps-editor,
     .img-cmp-editor {
-        >* {
+        > * {
             padding-inline-start: 10px;
         }
 
@@ -23,7 +20,7 @@
             margin-bottom: 10px;
         }
 
-        >* {
+        > * {
             margin-bottom: 10px;
         }
     }
@@ -48,13 +45,22 @@
             }
         }
 
-        .bottom-button{
+        .bottom-button {
             margin-bottom: 40px;
         }
     }
-
-    .options {
+    .options.active {
         width: clamp(200px, 35vw, 500px);
+        transition: all 0.5s;
+        opacity: 1;
+    }
+    .options {
+        width: 0;
+        opacity: 0;
+        transition: all 0.5s;
+
+        position: relative;
+
         border-right: 1px solid $border-clr;
 
         h2 {
@@ -63,8 +69,6 @@
 
             font-weight: bold;
         }
-
-
 
         .prev-cmp-img-container {
             overflow-y: auto;
@@ -97,13 +101,12 @@
             img {
                 width: 70%;
                 margin-bottom: 1em;
-                &:hover{
+                &:hover {
                     cursor: pointer !important;
                 }
             }
         }
     }
-
 
     .prev-cmp-wrapper {
         height: 100%;
@@ -112,7 +115,7 @@
             height: 100%;
             background-color: rgb(248, 247, 247);
 
-            >li {
+            > li {
                 padding: 7px 10px;
                 font-size: 0.9em;
                 cursor: pointer;
@@ -123,7 +126,6 @@
 
                 &.active {
                     color: blueviolet;
-                    -webkit-box-shadow: inset 14px 0px 0px -10px blueviolet;
                     box-shadow: inset 14px 0px 0px -10px blueviolet;
                 }
             }
@@ -131,10 +133,9 @@
     }
 
     .cmp-editor {
-        width: clamp(200px, 30vw, 400px);
+        width: auto;
         border-right: 1px solid $border-clr;
     }
-
 
     .cmp-side-editor {
         // border-right: 1px solid $border-clr;

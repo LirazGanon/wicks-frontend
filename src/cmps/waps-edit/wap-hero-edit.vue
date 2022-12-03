@@ -1,26 +1,26 @@
 <template>
 
-    <section class="main-layout full" :style="cmp.style">
+    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style">
 
-        <section class="wap-hero " :class="cmp.classes">
+        <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
-            <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading.style" @input="updateCmp"
+            <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style" @input="updateCmp"
                 data-type="heading">
                 {{ cmp.info.heading.txt }}
             </h1>
-            <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading.style"
+            <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
                 @input="updateCmp" data-type="subHeading">{{
                         (cmp.info.subHeading.txt)
                 }}</p>
 
-            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click="openEditor('btns', idx)"
+            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click.stop="openEditor('btns', idx)"
                 :style="btn.style">
                 {{ btn.txt }}
             </button>
 
 
             <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes"
-                :style="img.style" @click="openEditor('imgs', idx)" />
+                :style="img.style" @click.stop="openEditor('imgs', idx)" />
 
 
         </section>
@@ -37,6 +37,15 @@ export default {
     },
     created() { },
     methods: {
+        openSectionEditor() {
+
+            const wapContent = {
+                el: { type: 'section' },
+                currCmp: this.cmp,
+                path: this.getPath()
+            }
+            this.$emit('openEditor', wapContent)
+        },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             const wapContent = {

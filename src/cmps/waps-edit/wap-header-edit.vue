@@ -1,6 +1,6 @@
 <template>
 
-    <header class="wap-header main-layout full" :class="cmp.classes">
+    <header class="wap-header main-layout full" :class="cmp.classes" @click="openSectionEditor" :style="cmp.style">
         <section class="flex space-between">
 
 
@@ -46,6 +46,15 @@ export default {
                 elIdx: idx
             }
             this.$emit('openEditor', wapContent)
+        },
+        openSectionEditor(){
+
+            const wapContent = {
+                el:{type:'section'},
+                currCmp:this.cmp,
+                path:this.getPath()
+            }
+            this.$emit('openEditor',wapContent)
         },
         updateCmp(ev, key) {
             let wap = this.$store.getters.getWapToEdit

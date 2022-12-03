@@ -1,22 +1,15 @@
 <template>
     <section class="wap-card" v-if="cmp.info">
-        <h1
-        
-         contenteditable="true" 
-         @click="openEditor('heading')" 
-         :style="cmp.info.heading.style"
-        @input="updateCmp($event, 'heading')"
-        
-        >{{ cmp.info.heading?.txt }}</h1>
+        <h1 contenteditable="true" @click="openEditor('heading')" :style="cmp.info.heading.style"
+            @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
         <p contenteditable="true" @click="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
             @input="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
-        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click="openEditor('texts')" :style="txt?.style"
-            @input="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
+        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click="openEditor('texts', idx)"
+            :style="txt?.style" @input="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
 
-        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true"
-        @click="openEditor('btns')" :style="txt?.style"
-            @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
+        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click="openEditor('btns', idx)"
+            :style="btn.style" @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
     </section>
 
 
@@ -29,26 +22,23 @@
 <script>
 export default {
     name: 'dynamic-review-cmp',
-    props: { cmp: Object, cmpId: String },
+    props: { cmp: Object, path: Object },
     components: {},
     data() {
         return {};
     },
     created() { },
     methods: {
-        openEditor(key, idx) {
-            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-
+        openEditor(key, i) {
+            const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
             const wapContent = {
                 key,
-                id: this.cmpId,
-                innerId:this.cmp.id,
-                idx,
-                type: el.type,
-                style: el.style,
-                isContainer: true,
-                fatherEl: 'wap-card'
+                path: this.path,
+                el,
+                currCmp: this.cmp,
+                elIdx: i
             }
+            console.log(wapContent);
             this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, key, innerIdx) {

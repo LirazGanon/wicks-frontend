@@ -14,7 +14,7 @@
                     @input="updateCmp" data-type="logo">{{ cmp.info.logo.txt }}</h4>
             </div>
 
-            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath()"
+            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
 
 
@@ -66,11 +66,6 @@ export default {
         }
     },
     computed: {
-        getCmpIdx() {
-            const wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            return cmpIdx
-        }
     },
     unmounted() { },
 };

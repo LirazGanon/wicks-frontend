@@ -8,7 +8,7 @@
             }}</a> -->
 
 
-        <a v-for="(l, idx) in cmp.info.links" @click="openEditor('links', idx)">
+        <a v-for="(l, idx) in cmp.info.links" @click="openEditor('links', idx)" :style="l.style">
             <span>
                 {{ l.txt }}
             </span>
@@ -35,14 +35,12 @@ export default {
         openEditor(key, i) {
             const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
 
-            const path = utilService.copy(this.path)
-            path.idx = i
-
             const wapContent = {
                 key,
-                path,
+                path: this.path,
                 el,
-                currCmp: this.cmp
+                currCmp: this.cmp,
+                elIdx: i
             }
             this.$emit('openEditor', wapContent)
         },

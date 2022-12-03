@@ -38,7 +38,8 @@ export const wapStore = {
     getters: {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
-        getWapToEdit({ wapInEdit }) { return wapInEdit },
+        getWapToEdit({ wapInEdit }) { return wapInEdit }
+        ,
     },
     mutations: {
         setWaps(state, { waps }) {

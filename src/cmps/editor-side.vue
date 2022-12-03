@@ -80,13 +80,13 @@ import editorCmpPrev from './editor-cmp-prev.vue'
 
 import txtEditor from './txt-editor.vue'
 import imgEditor from './img-editor.vue'
-
+import sectionEditor from './section-editor.vue'
 
 
 
 export default {
     name: 'Editor',
-    components: { editorCmpPrev, txtEditor, imgEditor },
+    components: { editorCmpPrev, txtEditor, imgEditor,sectionEditor },
     props: { editor: Object },
     data() {
         return {

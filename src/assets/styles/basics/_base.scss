@@ -73,6 +73,12 @@ header{
         nav{
             margin-inline-end: 50px;
         }
+        &.home{
+            *{
+                color:$clr5;
+            }
+        }
+        
     }}
 
 .bakery {

@@ -1,9 +1,10 @@
 .main-editor {
-    
+
     height: 100vh;
+
     .txt-cmps-editor,
     .img-cmp-editor {
-        > * {
+        >* {
             padding-inline-start: 10px;
         }
 
@@ -22,7 +23,7 @@
             margin-bottom: 10px;
         }
 
-        > * {
+        >* {
             margin-bottom: 10px;
         }
     }
@@ -41,7 +42,8 @@
             &:hover {
                 background: $clr5;
             }
-            &.active{
+
+            &.active {
                 background: $clr5;
             }
         }
@@ -57,9 +59,9 @@
 
             font-weight: bold;
         }
-        
 
-        
+
+
         .prev-cmp-img-container {
             overflow-y: auto;
             height: calc(100vh - 185px);
@@ -70,7 +72,7 @@
             justify-content: center;
             margin-bottom: 10px;
             padding: 0 5px;
-            transition:transform 0.2s ;
+            transition: transform 0.2s;
 
             &:hover {
                 cursor: grab;
@@ -82,50 +84,52 @@
             pointer-events: none;
             width: 95%;
         }
-
-        &.theme{
+        &.theme {
             flex-direction: column;
             align-items: center;
 
-            img{
+            img {
                 width: 70%;
                 margin-bottom: 1em;
-cursor: pointer;
+                &:hover{
+                    cursor: pointer !important;
+                }
             }
         }
     }
 
 
- .prev-cmp-wrapper{
-    height: 100%;
-    .prev-cmp-filter {
+    .prev-cmp-wrapper {
         height: 100%;
-        background-color: rgb(248, 247, 247);
 
-        > li {
-            padding: 7px 10px;
-            font-size: 0.9em;
-            cursor: pointer;
+        .prev-cmp-filter {
+            height: 100%;
+            background-color: rgb(248, 247, 247);
 
-            &:hover {
-                color: blueviolet;
-            }
+            >li {
+                padding: 7px 10px;
+                font-size: 0.9em;
+                cursor: pointer;
 
-            &.active {
-                color: blueviolet;
-                -webkit-box-shadow: inset 14px 0px 0px -10px blueviolet;
-                box-shadow: inset 14px 0px 0px -10px blueviolet;
+                &:hover {
+                    color: blueviolet;
+                }
+
+                &.active {
+                    color: blueviolet;
+                    -webkit-box-shadow: inset 14px 0px 0px -10px blueviolet;
+                    box-shadow: inset 14px 0px 0px -10px blueviolet;
+                }
             }
         }
     }
- }
-    
+
     .cmp-editor {
         width: clamp(200px, 30vw, 400px);
         border-right: 1px solid $border-clr;
     }
 
-    
+
     .cmp-side-editor {
         // border-right: 1px solid $border-clr;
     }

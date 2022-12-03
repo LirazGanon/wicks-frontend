@@ -6,9 +6,8 @@
       </span>
     </router-link>
     <nav class="flex">
-      <router-link to="/wap">Waps</router-link>
+      <router-link to="/wap">Template</router-link>
 
-      <router-link :to="`/wap/edit/` + 123">WapsEdit</router-link>
       <router-link to="/review">Reviews</router-link>
       <router-link to="/chat">Chat</router-link>
       <router-link to="/login">Login / Signup</router-link>

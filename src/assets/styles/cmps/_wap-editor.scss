@@ -46,7 +46,7 @@
         h2 {
             padding: 10px;
             border-bottom: 1px solid $border-clr;
-            box-shadow: inset  0px 14px 0px -10px blueviolet;
+            box-shadow: inset 0px 14px 0px -10px blueviolet;
             font-weight: bold;
         }
 
@@ -72,9 +72,8 @@
         .img-cmp-editor,
         .section-cmp-editor {
             height: 100%;
-         
 
-            >* {
+            > * {
                 padding-inline-start: 10px;
             }
 
@@ -100,8 +99,29 @@
             }
 
             .text-format {
-                >* {
-                    margin-bottom: 15px;
+     
+                .editor-checkbox {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-block: 1em;
+                    label {
+                        transition: 0.3s;
+                        span {
+                            // ICON SIZE
+                            font-size: 2em;
+                        }
+                        input {
+                            display: none;
+                        }
+                        box-shadow: 1px 1px 5px #3335;
+
+                        &:has(input:checked) {
+                            // background: red;
+                            // border: 1px dotted #333;
+                            background: lighten($clr3, 30%);
+                            box-shadow: 1px 1px 5px $clr3;
+                        }
+                    }
                 }
             }
 
@@ -112,7 +132,7 @@
                 margin-bottom: 10px;
             }
 
-            >* {
+            > * {
                 margin-bottom: 10px;
             }
         }
@@ -141,12 +161,11 @@
     .prev-cmp-wrapper {
         height: 100%;
 
-
         .prev-cmp-filter {
             height: 100%;
             background-color: rgb(248, 247, 247);
 
-            >li {
+            > li {
                 padding: 10px;
                 font-size: 0.9em;
                 cursor: pointer;
@@ -169,10 +188,9 @@
 
     .options.active .cmp-side-editor {
         width: 100%;
-
     }
 }
 
-.options.active:has(.cmp-side-editor){
+.options.active:has(.cmp-side-editor) {
     width: clamp(150px, 23vw, 350px);
 }

@@ -25,7 +25,7 @@
                 <input type="range" min="10" max="100" @input="updateFS">
             </label>
 
-            <section class="flex">
+            <section class="editor-checkbox flex">
                 <label class="flex align-center">
                     <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
                     <span class="material-symbols-outlined">

@@ -42,23 +42,21 @@ export default {
         },
 
         removeCmp(){
-
         const { path, currCmp } = this.info
-        console.log(currCmp)
-        console.log(path)
+        const copyCmp = utilService.copy(currCmp)
+        this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
+
         try {
                 this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
             } catch {
                 console.log('ops')
             }
-        
         },
 
         duplicateCmp(){
             const { path, currCmp } = this.info
-            console.log(currCmp)
-            console.log(path)
-            
+            const copyCmp = utilService.copy(currCmp)
+
             try {
                 this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
             } catch {

@@ -169,6 +169,7 @@ export const wapStore = {
                     wap.cmps.splice([path.fatherIdx], 0, cmp)
                     console.log(cmp)
                 }
+                
                 wap = await wapToEditService.save(wap)
                 context.commit(getActionUpdateWap(wap))
                 return wap

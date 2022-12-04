@@ -44,6 +44,7 @@ export default {
         removeCmp(){
         const { path, currCmp } = this.info
         const copyCmp = utilService.copy(currCmp)
+        currCmp.id = utilService.makeId()
         this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
 
         try {

@@ -4,8 +4,8 @@
         <h2>Edit</h2>
         <span>Text Color:</span>
         <color-picker @setColor="updateClr" />
-        <span>Background Color:</span>
-        <color-picker @setColor="updateBgClr" />
+        <span v-if="info.key === 'btns'">Background Color:</span>
+        <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
         <hr>
 
         <!-- <label>

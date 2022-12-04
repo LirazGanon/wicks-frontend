@@ -38,24 +38,24 @@ export default {
     methods: {
         openSectionEditor() {
 
-            const wapContent = {
+            const cmpContent = {
                 el: { type: 'section' },
                 currCmp: this.cmp,
                 path: this.getPath()
             }
-            this.$emit('openEditor', wapContent)
+            this.$emit('openEditor', cmpContent)
         },
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             el = utilService.copy(el)
-            const wapContent = {
+            const cmpContent = {
                 key,
                 path: this.getPath(),
                 el,
                 currCmp: this.cmp,
                 elIdx: idx
             }
-            this.$emit('openEditor', wapContent)
+            this.$emit('openEditor', cmpContent)
         },
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit

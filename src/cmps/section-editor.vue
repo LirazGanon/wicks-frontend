@@ -59,7 +59,6 @@ export default {
 
             try {
                 this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
-                this.$emit('clearEditor')
             } catch {
                 console.log('ops')
             }

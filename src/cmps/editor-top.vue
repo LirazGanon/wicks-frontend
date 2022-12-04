@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         changeView(value){
-            // vue3.jQuerySelector('.doda-bamiklahat').style.display = 'none'
+            // vue3.jQuerySelector('.doda').style.display = 'none'
             document.querySelector('.wap-editor').style.maxWidth  = value
         }
     },

@@ -12,14 +12,14 @@
     <section class="editor-top flex">
         <section class="flex space-between full align-center">
             <section class="view-port-editor flex">
-                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'">
+                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('')">
                     desktop_windows
                 </div>
                 <div class="material-symbols-outlined icon"
-                v-tooltip="'Switch to Tablet'">
+                v-tooltip="'Switch to Tablet'" @click="changeView('800px')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'">
+                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'" @click="changeView('400px')">
                     phone_iphone
                 </div>
             </section>
@@ -60,7 +60,10 @@ export default {
 
     },
     methods: {
-
+        changeView(value){
+            // vue3.jQuerySelector('.doda-bamiklahat').style.display = 'none'
+            document.querySelector('.wap-editor').style.maxWidth  = value
+        }
     },
     computed: {
         wapId() {

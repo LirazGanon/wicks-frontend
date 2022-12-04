@@ -1248,7 +1248,6 @@
           ]
         },
         "cmps": [
-       
           {
             "type": "wap-form",
             "id": "nslzzqh0foy",
@@ -1307,7 +1306,6 @@
                   "style": {}
                 }
               ],
-              "style": {},
               "btns": [
                 {
                   "type": "txt",

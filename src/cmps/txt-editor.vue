@@ -8,8 +8,6 @@
         <color-picker @setColor="updateBgClr" />
         <hr>
 
-
-
         <!-- <label>
             <input type="color" :value="info.style.color || '#333333'" @input="updateClr">
         </label>
@@ -110,7 +108,6 @@ export default {
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
-
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)

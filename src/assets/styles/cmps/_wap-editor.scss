@@ -113,13 +113,13 @@
                         input {
                             display: none;
                         }
-                        box-shadow: 1px 1px 5px #3335;
+                        box-shadow: 1px 1px 5px #3333;
 
                         &:has(input:checked) {
                             // background: red;
                             // border: 1px dotted #333;
-                            background: lighten($clr3, 30%);
-                            box-shadow: 1px 1px 5px $clr3;
+                            background: $clr5;
+                            box-shadow: 1px 1px 5px $clr5;
                         }
                     }
                 }

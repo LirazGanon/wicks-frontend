@@ -5,7 +5,7 @@
 
         <section class="wap-container" :class="cmp.classes" >
 
-           <div class="bg-img"></div>
+           <div v-if="(cmp.style[background-image])" class="bg-img"></div>
 
 
             <div v-for="childCmp in cmp.cmps">

@@ -49,7 +49,6 @@ export default {
     },
     toggleIsLoading() {
       this.isLoading = !this.isLoading
-      console.log(this.isLoading)
     }
   },
   computed: {

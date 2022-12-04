@@ -6,9 +6,31 @@
 section.page-editor {
     overflow-y: auto;
     flex: 1;
+    position: relative;
     // height: 80vh;
-    height: calc(100vh - 46px - 76.75px);
-}
+    &> div {
+        height: calc(100vh - 46px - 76.75px);
+        min-height: 60vh;
+    }
 
-.wap-view {
+    .wap-placeholder{
+        position: absolute;
+        // background: red;
+        width: 100%;
+        height: 50vh;
+        &::after{
+            content: 'Drop Sections Here';
+            border: 3px dashed #3333;
+            position: absolute;
+            height: 95%;
+            width: 95%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            display: grid;
+            place-items: center;
+            font-size: 3em;
+            font-family: Raleway;
+        }
+    }
 }

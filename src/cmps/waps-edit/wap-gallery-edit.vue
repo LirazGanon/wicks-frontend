@@ -36,7 +36,6 @@ export default {
                 currCmp: this.cmp,
                 elIdx: i
             }
-            console.log(wapContent);
             this.$emit('openEditor', wapContent)
         }
     },

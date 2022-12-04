@@ -34,7 +34,6 @@ export default {
       this.$emit('setIsLoading', true)
       const wapToEdit = await this.$store.dispatch({ type: 'getCustomWap', wapId })
       //  wapService.getCustomWap(wapId)
-      console.log(wapToEdit)
       this.$router.push(`/wap/edit/${wapToEdit._id}`);
       this.$emit('setIsLoading', false)
     },

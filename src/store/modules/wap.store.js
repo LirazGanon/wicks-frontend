@@ -68,7 +68,6 @@ export const wapStore = {
         },
         removeWapToEdit(state) {
             state.wapToEdit = null
-            console.log(state.wapToEdit)
         },
 
     },
@@ -151,7 +150,6 @@ export const wapStore = {
         async getCustomWap(context, { wapId }) {
             try {
                 const wapToEdit = await wapToEditService.getCustomWap(wapId)
-                console.log(wapToEdit)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
                 // TODO: check what is the eror from the console
                 return wapToEdit

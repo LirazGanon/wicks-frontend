@@ -51,10 +51,7 @@ export default {
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
 
-            // console.log('cmpCopy:',  cmpCopy.info.links[innerIdx].txt)
-            // console.log('wap',wap.cmps[cmpIdx].info.nav);
-            // console.log('cmpCopy:', cmpCopy)
-            // console.log(wap.cmps[cmpIdx].info.nav.info.links[innerIdx]);
+ 
             cmpCopy.info.links[innerIdx].txt = ev.target.innerText
             wap.cmps[cmpIdx].info.nav = cmpCopy
             try {

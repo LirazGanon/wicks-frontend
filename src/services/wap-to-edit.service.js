@@ -24,12 +24,10 @@ window.cs = wapToEditService
 async function query() {
     // debugger
     var waps = await storageService.query(STORAGE_KEY)
-    console.log(waps)
     if (!waps || !waps.length) {
         waps = defaultWaps
         await storageService.postMany(STORAGE_KEY, waps)
     }
-    // console.log(storageService.query(STORAGE_KEY))
     return  waps
 }
 
@@ -76,7 +74,6 @@ async function getCustomWap(wapId) {
     delete wapToEdit._id
     wapToEdit.user = 'user_' + utilService.makeId()
     wapToEdit = await save(wapToEdit, STORAGE_KEY)
-    console.log(wapToEdit)
     return wapToEdit
 }
 

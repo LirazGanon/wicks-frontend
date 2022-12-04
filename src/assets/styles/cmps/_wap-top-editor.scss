@@ -1,24 +1,33 @@
 .editor-header {
-    
+
     .logo {
         max-height: em(46px);
         margin-block: 10px;
         margin-inline-start: 15px;
     }
+
+    nav>* {
+        color: black;
+        padding: 10px;
+    }
+
     border-bottom: 1px solid $border-clr;
 }
 
 .editor-top {
     border-bottom: 1px solid $border-clr;
-    min-height:em(45px) ;
-    > section{
+    min-height: em(45px);
+
+    >section {
         margin-inline-start: em(50px);
         margin-inline-end: em(18px);
     }
+
     // margin-block-end: 5px;
     .view-port-editor {
         gap: 7px;
         align-items: center;
+
         .icon {
             font-size: em(24px);
             padding: em(3px);
@@ -29,7 +38,7 @@
 
         .icon:hover {
             // background: radial-gradient(lighten($clr1, 33%), transparent);
-            background:$clr5;
+            background: $clr5;
         }
     }
 
@@ -39,43 +48,69 @@
         background-color: $clr5;
         border-radius: 0.6em;
         padding: 5px 2em;
+
         div {
             color: $border-clr;
             margin-inline-end: 10px;
         }
+
         span {
             color: #000;
 
         }
 
-        > span:first-of-type {
+        >span:first-of-type {
             color: blue;
         }
-        > span:last-of-type {
+
+        >span:last-of-type {
             color: blueviolet;
-            border-bottom:0.8px dashed;
+            border-bottom: 0.8px dashed;
             outline: none;
         }
     }
-    
+
+    .preview-container {
+        gap: 10px;
+    }
+
     .site-preview {
-        background-color:rgb(96, 60, 174) ;
-        padding:5px 12px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(95, 69, 151);
+        color: white;
         border-radius: 0.6em;
-    transition: background-color 0.2s;
-   
-        *{
+        padding: 5px 8px;
+        transition: background-color 0.2s;
+        font-size: small;
+
+        &:hover {
+            background-color: rgb(60, 39, 136);
+            cursor: pointer;
+        }
+
+    }
+
+    .site-publish {
+        background-color: rgb(96, 60, 174);
+        padding: 5px 12px;
+        border-radius: 0.6em;
+        transition: background-color 0.2s;
+
+        * {
             color: aliceblue;
             text-decoration: none;
         }
 
-        &:hover{
-            background-color:rgb(70, 39, 136) ;
+        &:hover {
+            background-color: rgb(70, 39, 136);
         }
+
         align-self: center;
         justify-self: end;
         font-weight: lighter;
-        span{
+
+        span {
             // color:$clr4;
         }
     }

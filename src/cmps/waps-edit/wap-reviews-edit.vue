@@ -55,7 +55,6 @@ export default {
             let wap = this.$store.getters.getWapToEdit
             const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            console.log(cmpCopy);
 
             if (innerIdx !== undefined) {
                 if (author) {

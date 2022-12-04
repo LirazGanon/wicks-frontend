@@ -23,9 +23,6 @@
                         groups
                     </span>
                 </button>
-                <button class="material-symbols-outlined" v-tooltip="'Site Preview'" @click="placholder">
-                    visibility
-                </button>
             </section>
         </section>
 
@@ -101,7 +98,6 @@ export default {
     },
     async created() {
         await this.$store.dispatch({ type: 'loadCmps' })
-        console.log('this.cmps:', this.cmps)
         this.view = { ...this.cmps }
     },
     methods: {

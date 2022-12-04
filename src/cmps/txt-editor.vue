@@ -4,8 +4,8 @@
         <h2>Edit</h2>
         <span>Text Color:</span>
         <color-picker @setColor="updateClr" />
-        <span>Background Color:</span>
-        <color-picker @setColor="updateBgClr" />
+        <span v-if="info.key === 'btns'">Background Color:</span>
+        <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
         <hr>
 
         <!-- <label>
@@ -111,7 +111,7 @@ export default {
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)
-            
+
             el.style[att] = value
 
             // CMP UPDATE
@@ -139,16 +139,16 @@ export default {
             }
         },
         borderRadius() {
-          
+
             const { key } = this.info
             return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
-        }
+        },
+
 
     },
     unmounted() { },
     watch: {
         info: function () {
-            console.log(this.info)
         }
 
     }

@@ -61,7 +61,6 @@ export default {
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.type, dropResult)
       this.view.type = result
-      console.log('payload:', result.payload)
     },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;
@@ -83,7 +82,6 @@ export default {
       return Date.now() / 1500
     },
     onDragStart(...args) {
-      // console.log(args);
     },
 
   },

@@ -1,11 +1,19 @@
 <template>
 
-    <section class="editor-header">
+    <section class="editor-header flex space-between">
         <router-link to="/">
             <span role="img" aria-label="logo">
                 <img class="logo" src="@/assets/logo-black.png" alt="">
             </span>
         </router-link>
+
+        <nav class="flex align-center">
+      <router-link to="/wap">Template</router-link>
+
+      <router-link to="/review">Reviews</router-link>
+      <router-link to="/chat">Chat</router-link>
+      <router-link to="/login">Login / Signup</router-link>
+    </nav>
     </section>
 
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
@@ -32,13 +40,28 @@
                 <span contenteditable="true">my-site</span>
             </div>
 
-            <div class="site-preview">
-                <router-link :to="(`/wap/` + wapId)" class="flex">
-                    <span>Publish</span><span class="material-symbols-outlined">
-                        publish
-                    </span></router-link>
+            <section class="preview-container flex">
+                <!-- <button class="material-symbols-outlined site-preview" v-tooltip="'Site Preview'" @click="placholder">
+                        visibility
+                    </button> -->
+                <div class="site-preview">
+                    <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
+                        <span>Preview</span><span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    <!-- </router-link> -->
+    
+                </div>
+                <div class="site-publish">
+                    
+                    <router-link :to="(`/wap/` + wapId)" class="flex">
+                        <span>Publish</span><span class="material-symbols-outlined">
+                            publish
+                        </span></router-link>
+    
+                </div>
 
-            </div>
+            </section>
 
         </section>
 
@@ -61,7 +84,7 @@ export default {
     },
     methods: {
         changeView(value){
-            // vue3.jQuerySelector('.doda-bamiklahat').style.display = 'none'
+            // vue3.jQuerySelector('.doda').style.display = 'none'
             document.querySelector('.wap-editor').style.maxWidth  = value
         }
     },

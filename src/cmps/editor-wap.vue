@@ -1,18 +1,22 @@
 <template>
 
 
+
+
   <section class="page-editor">
+
+    <section v-if="!cmpsLength" class="wap-placeholder">
+
+    </section>
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <component :is="(cmp.type || 'wap-header')" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
+        <component :is="cmp.type" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
 
       </Draggable>
 
     </Container>
-
-
 
 
   </section>
@@ -47,7 +51,7 @@ export default {
   },
   async created() {
     const id = this.$route.params.wapId
-    try{
+    try {
       this.$store.dispatch({ type: 'setWapToEdit', id })
     } catch {
       console.log('cannot load wap');
@@ -69,7 +73,7 @@ export default {
       let result = this.applyDrag(wap.cmps, dropResult)
       wap.cmps = result
 
-      
+
       try {
         this.$store.dispatch({ type: 'updateWapFull', wap })
       } catch {
@@ -78,7 +82,6 @@ export default {
     },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;
-      // console.log(dragResult);
       if (removedIndex === null && addedIndex === null) return arr;
       const result = [...arr];
       let itemToAdd = { ...payload };
@@ -96,7 +99,12 @@ export default {
   computed: {
     wapToEdit() {
       return this.$store.getters.getWapToEdit
+    },
+    cmpsLength() {
+      const wap = this.wapToEdit
+      return wap?.cmps.length || 0
     }
+
   }
 };
 </script>

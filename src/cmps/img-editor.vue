@@ -6,7 +6,7 @@
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
-        <img-uploader @uploaded="puk" />
+        <img-uploader @uploaded="uploadImg" />
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
@@ -30,8 +30,9 @@ export default {
     created() {
     },
     methods: {
-        puk(minipuk) {
-            console.log(minipuk);
+        uploadImg(imgUrl) {
+            this.info.el.src=imgUrl
+            console.log(imgUrl);
         },
 
         updateSrc(ev) {

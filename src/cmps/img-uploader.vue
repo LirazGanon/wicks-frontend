@@ -1,6 +1,6 @@
 <template>
   <div className="upload-preview">
-    <img v-if="imgUrl" :src="imgUrl" :style="{ maxWidth: '200px', float: 'right' }" />
+    <!-- <img v-if="imgUrl" :src="imgUrl" :style="{ maxWidth: '200px', float: 'right' }" /> -->
     <label for="imgUpload">{{ uploadMsg }}</label>
     <input type="file" @change="uploadImg" accept="img/*" id="imgUpload" />
   </div>
@@ -21,11 +21,14 @@ export default {
   methods: {
     async uploadImg(ev) {
       this.isUploading = true
+      console.log(ev)
       const { secure_url, height, width } = await uploadService.uploadImg(ev)
+      // const a =await uploadService.uploadImg(ev)
       this.isUploading = false
       this.imgUrl = secure_url
       this.height = height
       this.width = width
+      // console.log(a)
       this.$emit('uploaded', this.imgUrl)
     }
   },

@@ -99,7 +99,7 @@ section:has(.doda-cards) {
         gap: 20px;
         background-color: #BFA98B;
         padding: 40px;
-        
+
         .wap-card{
             width: 15em;
             background-color: rgb(238, 233, 233);
@@ -109,15 +109,15 @@ section:has(.doda-cards) {
             align-items: center;
     
         }
-    }
-    img{
-    width: 100%;
-    border-top-left-radius:1.5em ;
-    border-top-right-radius:1.5em ;
-
-    }
-    button{
-    width: 50%;
-    border-radius: 1.5em;
+        img{
+        width: 100%;
+        border-top-left-radius:1.5em ;
+        border-top-right-radius:1.5em ;
+    
+        }
+        button{
+        width: 50%;
+        border-radius: 1.5em;
+        }
     }
 }

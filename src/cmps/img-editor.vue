@@ -6,7 +6,7 @@
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
-        <img-uploader @uploaded="uploadImg" />
+        <img-uploader @uploaded="changeImg" />
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
@@ -30,9 +30,23 @@ export default {
     created() {
     },
     methods: {
-        uploadImg(imgUrl) {
-            this.info.el.src=imgUrl
-            console.log(imgUrl);
+        changeImg(imgUrl) {
+            const { key, path, el, currCmp, elIdx } = this.info
+            const copyCmp = utilService.copy(currCmp)
+            
+            el.src = imgUrl
+
+            // CMP UPDATE
+            if (elIdx !== undefined) {
+                copyCmp.info[key][elIdx] = el
+            } else {
+                copyCmp.info[key] = el
+            }
+            try {
+                this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
+            } catch {
+                console.log('could not updat image')
+            }
         },
 
         updateSrc(ev) {

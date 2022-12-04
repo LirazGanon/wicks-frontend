@@ -175,10 +175,14 @@
 
     .prev-cmp-wrapper {
         height: 100%;
+        .close-icon{
+            display: none;
+        }
 
         .prev-cmp-filter {
             height: 100%;
             background-color: rgb(248, 247, 247);
+         
 
             >li {
                 padding: 10px;
@@ -288,18 +292,20 @@
                     height: 150px;
                     width: 100vw;
                     overflow-x: auto;
+                    .close-icon{
+                        display: block;
+                        position: fixed;
+                        background-color: rgb(244, 244, 246);
+                        z-index: 15;
+                        right: 0;
+                    }
                 }
 
                 .smooth-dnd-container {
                     overflow-x: auto;
                     height: 100%;
                     display: flex;
-                    .close-icon{
-                        position: fixed;
-                        background-color: rgb(244, 244, 246);
-                        z-index: 15;
-                  right: 0;
-                    }
+                
 
                     .smooth-dnd-draggable-wrapper {
                         display: flex;

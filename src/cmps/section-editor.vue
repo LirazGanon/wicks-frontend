@@ -1,11 +1,20 @@
 <template>
+
+
     <section class="section-cmp-editor flex column">
         <h2>Section Edit</h2>
+        <section class="delete-duplicate">
+            <button v-tooltip="'Delete Section'" class="material-symbols-outlined" @click="removeCmp">delete</button>
+            <button v-tooltip="'Copy Section'" class="material-symbols-outlined"
+                @click="duplicateCmp">content_copy</button>
+        </section>
+
+        <hr>
+
         <span>Backround Color</span>
         <color-picker @setColor="updateBgClr" />
 
-        <button @click="removeCmp">remove</button>
-        <button @click="duplicateCmp">duplicate</button>
+
 
     </section>
 </template>
@@ -62,7 +71,9 @@ export default {
 
             const copyCmp = utilService.copy(currCmp)
             copyCmp.id = utilService.makeId()
-            copyCmp.style = this.style
+            if (this.style['background-color']) {
+                copyCmp.style = this.style
+            }
             try {
                 this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
             } catch {

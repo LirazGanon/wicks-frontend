@@ -8,8 +8,6 @@
         <color-picker @setColor="updateBgClr" />
         <hr>
 
-
-
         <!-- <label>
             <input type="color" :value="info.style.color || '#333333'" @input="updateClr">
         </label>
@@ -46,7 +44,7 @@
                     </span>
                 </label>
             </section>
-            <label for="font" class="flex align-center gap">
+            <label for="font" class="flex align-center gap font-picker-wrapper">
                 <span>Choose Font:</span>
                 <font-picker @setFont="updateFont" />
             </label>
@@ -110,7 +108,6 @@ export default {
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
-
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)

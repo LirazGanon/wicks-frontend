@@ -8,7 +8,7 @@
 
     background: $clr5;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 300px);
     gap: 30px;
 
     padding: 3em;
@@ -22,7 +22,7 @@
             border-radius: 3em;
 
             img {
-                height: 13em;
+                height: 16em;
                 object-fit: cover;
                 width: 100%;
                 padding: 0.65em 0.65em 0 0.65em;
@@ -53,12 +53,14 @@
                 transition: 0.5s;
                 
                 button{
+                    font-size: 1.3em;
                     align-self: center;
                     width: 60%;
                     margin-block-end: 10px;
                     cursor: pointer;
                     border: 1px solid #eee5;
                     background-color: $clr3;
+                    border-radius: 5px;
 
                     &:hover{
                         background: lighten($clr3,10%);

@@ -167,7 +167,6 @@ export const wapStore = {
                     wap.cmps[path.fatherIdx].cmps.splice(path.idx, 0, cmp)
                 } else {
                     wap.cmps.splice([path.fatherIdx], 0, cmp)
-                    console.log(cmp)
                 }
                 
                 wap = await wapToEditService.save(wap)
@@ -196,21 +195,3 @@ export const wapStore = {
         },
     }
 }
-// async updateWap(context, { cmp, path }) {
-//     try {
-//         let wap = utilService.copy(context.state.wapInEdit)
-//         if (path.idx !== undefined) {
-//             wap.cmps[path.fatherIdx].cmps[path.idx] = cmp
-//         } else {
-//             wap.cmps[path.fatherIdx] = cmp
-//         }
-//         wap = await wapToEditService.save(wap)
-//         context.commit(getActionUpdateWap(wap))
-//         return wap
-//     } catch (err) {
-//         // TODO:RETURN BACK - LAZY SOMETHING ?
-
-//         console.log('wapStore: Error in updateWap', err)
-//         throw err
-//     }
-// },

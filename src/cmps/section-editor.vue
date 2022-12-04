@@ -18,7 +18,9 @@ export default {
     props: { info: Object },
     components: { colorPicker },
     data() {
-        return {};
+        return {
+            
+        };
     },
     created() {
         console.log('this.info:', this.info)
@@ -33,7 +35,7 @@ export default {
             const copyCmp = utilService.copy(currCmp)
 
             copyCmp.style[att] = value
-
+            
             try {
                 this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
@@ -55,10 +57,10 @@ export default {
 
         duplicateCmp(){
             const { path, currCmp } = this.info
-            const copyCmp = utilService.copy(currCmp)
-            copyCmp.id = utilService.makeId()
+            console.log('currCmp:', currCmp)
+            currCmp.id = utilService.makeId()
             try {
-                this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
+                this.$store.dispatch({ type: 'duplicateCmp', cmp: currCmp, path })
             } catch {
                 console.log('ops')
             }

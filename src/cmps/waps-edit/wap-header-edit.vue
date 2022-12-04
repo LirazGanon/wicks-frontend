@@ -50,10 +50,10 @@ export default {
             this.$emit('openEditor', wapContent)
         },
         openSectionEditor(){
-
+            const currCmp = utilService.copy(this.cmp)
             const wapContent = {
                 el:{type:'section'},
-                currCmp:this.cmp,
+                currCmp,
                 path:this.getPath()
             }
             this.$emit('openEditor',wapContent)

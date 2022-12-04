@@ -48,7 +48,7 @@
                     <li @click="setFilter('wap-bg-img')" :class="{ active: cmpFilter === 'wap-bg-img' }">Images</li>
                     <li @click="setFilter('wap-footer')" :class="{ active: cmpFilter === 'wap-footer' }">Footer</li>
                 </ul>
-                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" />
+                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" @closeEditor="(active=null)"/>
             </section>
         </section>
 

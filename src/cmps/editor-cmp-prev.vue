@@ -5,14 +5,16 @@
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @drop="onDrop($event)">
 
-
+      <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
+        disabled_by_default
+      </span>
       <Draggable v-for="item in cmps" :key="item.id">
-        <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
-        @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
-          <img  :src="item.src" />
+        <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true"
+          @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
+          <img :src="item.src" />
         </div>
-        <div v-else-if="(item.type === filter)" class="draggable-item" @mousedown="isDragging = true" @mouseup="isDragging = false"
-        @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
+        <div v-else-if="(item.type === filter)" class="draggable-item" @mousedown="isDragging = true"
+          @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
           <img :src="item.src" />
         </div>
 

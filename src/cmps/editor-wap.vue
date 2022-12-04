@@ -3,7 +3,7 @@
 
 
 
-  <section class="page-editor">
+  <section class="page-editor" ref="container" :class="[responsiveClass, wrapper]" :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -40,13 +40,16 @@ import appHeader from "./app-header.vue";
 
 import { wapService } from '../services/wap.service.local.js'
 import { utilService } from "../services/util.service";
+import { eventBus } from "../services/event-bus.service";
+import { useStore } from "vuex";
 export default {
   name: "wap",
   components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
   props: { wap: Object },
   data() {
     return {
-
+      responsiveClass: [],
+      conMaxWidth: null
     }
   },
   async created() {
@@ -56,6 +59,10 @@ export default {
     } catch {
       console.log('cannot load wap');
     }
+  },
+  mounted() {
+    eventBus.on('resizeWap', this.resize)
+    new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
@@ -95,6 +102,41 @@ export default {
       return result;
 
     },
+    resized() {
+      if (!this.$refs.container) return
+      const { offsetWidth } = this.$refs.container
+      if (offsetWidth < 620) this.responsiveClass = 'mobile'
+      if (offsetWidth >= 620) this.responsiveClass = this.small()
+      if (offsetWidth >= 860) this.responsiveClass = this.medium()
+      if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
+      if (offsetWidth >= 1300) this.responsiveClass = this.normal()
+      if (offsetWidth >= 1500) this.responsiveClass = this.wide()
+    },
+    resize(size) {
+      const puk = size == '100' ? size + '%' : size + 'px'
+      this.conMaxWidth = puk
+    },
+
+    wrapper() {
+      if (this.conMaxWidth === 420) return 'smartphone'
+      if (this.conMaxWidth === 800) return 'tablet'
+      return ''
+    },
+    small() {
+      return ['small']
+    },
+    medium() {
+      return [...this.small(), 'medium']
+    },
+    narrow() {
+      return [...this.medium(), 'narrow']
+    },
+    normal() {
+      return [...this.narrow(), 'normal']
+    },
+    wide() {
+      return [...this.normal(), 'wide']
+    }
   },
   computed: {
     wapToEdit() {

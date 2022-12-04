@@ -236,3 +236,99 @@
 .options.active:has(.cmp-side-editor) {
     width: clamp(150px, 23vw, 350px);
 }
+
+.main-editor {
+    @media (max-width:900px) {
+
+
+        .left-nav {
+            position: fixed;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(244, 244, 246);
+            border: none;
+            border-top: 1px solid $border-clr;
+
+            >section {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0 !important;
+            }
+        }
+
+
+        .options.active {
+            position: fixed;
+            height: 300px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100% !important;
+            z-index: 10;
+          
+            h2{
+                display: none;
+            }
+            .prev-cmp-wrapper {
+                flex-direction: column-reverse;
+                background-color: rgb(244, 244, 246);
+                position: fixed;
+                bottom: 0;
+                height: auto;
+                border-top: 1px solid $border-clr;
+                box-shadow: 0px 10px 13px -7px #000000, 0px -3px 10px 0px rgba(0,0,0,0.35);
+
+                .prev-cmp-img-container {
+                    height: 150px;
+                    width: 100vw;
+                    overflow-x: auto;
+                }
+
+                .smooth-dnd-container {
+                    overflow-x: auto;
+                    height: 100%;
+                    display: flex;
+                    .close-icon{
+                        position: fixed;
+                        background-color: rgb(244, 244, 246);
+                        z-index: 15;
+                  right: 0;
+                    }
+
+                    .smooth-dnd-draggable-wrapper {
+                        display: flex;
+                        height: auto;
+                        padding: 10px 0;
+
+                        .draggable-item {
+                            height: 100%;
+                            width: 400px;
+                            padding: 0;
+                            img{
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+
+                .prev-cmp-filter {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    li.active{
+                        box-shadow: inset 0px 14px  0px -10px blueviolet;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}

@@ -6,7 +6,8 @@
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
-        <label v-if="info.currCmp.type !== 'wap-bg-img' ">
+        <img-uploader />
+        <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
         </label>
@@ -14,13 +15,13 @@
 </template>
 <script>
 import { utilService } from '../services/util.service';
-
+import imgUploader from './img-uploader.vue';
 export default {
     name: 'img-editor',
     props: {
         info: Object
     },
-    components: {},
+    components: { imgUploader },
     data() {
         return {
 

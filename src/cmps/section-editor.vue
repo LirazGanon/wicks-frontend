@@ -1,8 +1,11 @@
 <template>
     <section class="section-cmp-editor flex column">
-    <h2>Section Edit</h2>
-    <span>Backround Color</span>
-    <color-picker @setColor="updateBgClr" />
+        <h2>Section Edit</h2>
+        <span>Backround Color</span>
+        <color-picker @setColor="updateBgClr" />
+
+        <button>remove</button>
+        <button>duplicate</button>
 
     </section>
 </template>

@@ -67,9 +67,9 @@ export default {
       wap = utilService.copy(wap)
 
       let result = this.applyDrag(wap.cmps, dropResult)
-      console.log(result);
       wap.cmps = result
 
+      
       try {
         this.$store.dispatch({ type: 'updateWapFull', wap })
       } catch {

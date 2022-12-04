@@ -26,6 +26,8 @@
 <script>
 
 import wapNav from './wap-nav-edit.vue'
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-header-cmp',
     props: { cmp: Object },

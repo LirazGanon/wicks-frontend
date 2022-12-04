@@ -4,6 +4,8 @@
     </section>
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'wap-bg-img',
     props: { cmp: Object },

@@ -7,6 +7,8 @@
 
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-review-cmp',
     props: { cmp: Object },

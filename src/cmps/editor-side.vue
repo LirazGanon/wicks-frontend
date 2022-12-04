@@ -60,9 +60,9 @@
         <!-- THEME PICKER -->
         <section class="flex options theme" :class="{ active: active === 'palette' }">
 
-            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/1.png" alt="">
-            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/2.png" alt="">
-            <img src="https://res.cloudinary.com/dzghqfyip/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/1.png" alt="">
+            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
+            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
 
         </section>
 

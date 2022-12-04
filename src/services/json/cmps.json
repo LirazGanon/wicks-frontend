@@ -3,7 +3,7 @@
     "type": "wap-header",
     "level": 0,
     "id": "fhngh1",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
     "classes": ["bakery "],
     "info": {
       "logo": {
@@ -53,7 +53,7 @@
   },
   {
     "type": "wap-hero",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
     "level": 0,
     "id": "gbfgg",
     "classes": ["bakery"],
@@ -72,12 +72,12 @@
       "imgs": [
         {
           "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
           "style": {}
         },
         {
           "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
           "style": {}
         }
       ]
@@ -89,14 +89,14 @@
   {
     "type": "wap-container",
     "level": 0,
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
     "id": "jjyuh",
     "classes": ["img-card bakery"],
     "info": {
       "imgs": [
         {
           "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-dough.jpg",
           "style": {}
         }
       ]
@@ -134,7 +134,7 @@
   {
     "type": "wap-container",
     "level": 0,
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
     "id": "gbgty42",
     "classes": ["card-gallery bakery"],
     "info": {},
@@ -174,25 +174,25 @@
           "imgs": [
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
               "txt": "Cookies",
               "style": {}
             },
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
               "txt": "Cakes",
               "style": {}
             },
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-buns.jpg",
               "txt": "Viennoisrie",
               "style": {}
             },
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
               "txt": "Specials",
               "style": {}
             }
@@ -207,13 +207,13 @@
     "type": "wap-container",
     "level": 0,
     "id": "wc0554njj",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
     "classes": ["card-img bakery"],
     "info": {
       "imgs": [
         {
           "type": "img",
-          "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
           "style": {}
         }
       ]
@@ -261,7 +261,7 @@
     "type": "wap-reviews",
     "level": 0,
     "id": "mfgnih987",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915523/wicks/cmp-prev/review.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915523/wicks/cmp-prev/review.png",
     "classes": [],
     "info": {
       "heading": {
@@ -302,13 +302,13 @@
     "type": "wap-bg-img",
     "level": 0,
     "id": "wc05jjjj4",
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
     "classes": ["full"],
     "info": {
       "img": {
         "type": "img",
         "txt": "",
-        "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-display%20window.jpg",
+        "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-display%20window.jpg",
         "style": {}
       }
     },
@@ -317,7 +317,7 @@
   {
     "type": "wap-container",
     "level": 0,
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
     "id": "gbits42",
     "classes": ["card-gallery bakery"],
     "info": {},
@@ -352,17 +352,17 @@
           "imgs": [
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-cinnamon-rolls.jpg",
               "style": {}
             },
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-croissant.jpg",
               "style": {}
             },
             {
               "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-bycycle.jpg",
               "style": {}
             }
           ]
@@ -375,7 +375,7 @@
   {
     "type": "wap-footer",
     "level": 0,
-    "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669916168/wicks/cmp-prev/footer.png",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1669916168/wicks/cmp-prev/footer.png",
     "id": "sc599966",
     "classes": ["bakery flex column space-around align-center"],
     "info": {

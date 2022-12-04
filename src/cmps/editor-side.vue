@@ -23,9 +23,6 @@
                         groups
                     </span>
                 </button>
-                <button class="material-symbols-outlined" v-tooltip="'Site Preview'" @click="placholder">
-                    visibility
-                </button>
             </section>
         </section>
 

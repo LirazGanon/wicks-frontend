@@ -1,18 +1,22 @@
 <template>
 
 
+
+
   <section class="page-editor">
+
+    <section v-if="!wapToEdit.cmps.length" class="wap-placeholder">
+      
+    </section>
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <component :is="(cmp.type || 'wap-header')" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
+        <component :is="cmp.type" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
 
       </Draggable>
 
     </Container>
-
-
 
 
   </section>
@@ -95,7 +99,8 @@ export default {
   computed: {
     wapToEdit() {
       return this.$store.getters.getWapToEdit
-    }
+    },
+ 
   }
 };
 </script>

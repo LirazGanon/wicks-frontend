@@ -4,8 +4,8 @@
         <span>Backround Color</span>
         <color-picker @setColor="updateBgClr" />
 
-        <button>remove</button>
-        <button>duplicate</button>
+        <button @click="removeCmp">remove</button>
+        <button @click="duplicateCmp">duplicate</button>
 
     </section>
 </template>
@@ -42,7 +42,23 @@ export default {
             } catch {
                 console.log('ops')
             }
-        }
+        },
+
+        removeCmp(){
+
+        const { path, currCmp } = this.info
+        console.log(currCmp)
+        console.log(path)
+        
+        },
+
+        duplicateCmp(){
+            const { path, currCmp } = this.info
+            console.log(currCmp)
+            console.log(path)
+
+            
+        },
     },
     computed: {},
     unmounted() { },

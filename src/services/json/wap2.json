@@ -543,7 +543,7 @@
             "style": {}
           }
         ],
-        "style":{"bacground-img":"https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg"}
+        "style":{"background-image":"url('https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg')"}
       },
       {
         "type": "wap-container",
@@ -647,16 +647,8 @@
       {
         "type": "wap-container",
         "id": "nsld13h14dk",
-        "classes": ["coffe-shop"],
+        "classes": ["coffe-shop doda-cards"],
         "info": {
-          "imgs": [
-            {
-              "type": "img",
-              "src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
-              "style": {},
-              "classes":[]
-            }
-          ]
         },
         "cmps": [
           {
@@ -915,7 +907,7 @@
       },
       {
         "id": "nslop34brez",
-        "classes": ["coffe-shop"],
+        "classes": ["coffe-shop shower-cards"],
         "type": "wap-container",
         "info": {
           "heading": {

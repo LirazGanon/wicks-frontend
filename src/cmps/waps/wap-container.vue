@@ -12,6 +12,8 @@
                 <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id" />
             </div>
 
+            <div v-if="cmp.info.price">{{cmp.info.price}}</div>
+
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style">
             </section>

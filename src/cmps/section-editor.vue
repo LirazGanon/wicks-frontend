@@ -46,6 +46,11 @@ export default {
         const { path, currCmp } = this.info
         console.log(currCmp)
         console.log(path)
+        try {
+                this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
+            } catch {
+                console.log('ops')
+            }
         
         },
 
@@ -53,7 +58,12 @@ export default {
             const { path, currCmp } = this.info
             console.log(currCmp)
             console.log(path)
-
+            
+            try {
+                this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
+            } catch {
+                console.log('ops')
+            }
             
         },
     },

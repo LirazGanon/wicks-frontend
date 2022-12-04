@@ -159,7 +159,33 @@ export const wapStore = {
             catch {
                 console.log('could not create wap')
             }
-        }
-
+        },
+        duplicateCmp(context, { cmp, path }){
+            let wap = utilService.copy(context.state.wapInEdit)
+        },
+        removeCmp(context, { cmp, path }){
+            console.log(';lks;ad')
+            let wap = utilService.copy(context.state.wapInEdit)
+            // wap.cmp
+            console.log(wap.cmp[path.fatherIdx])
+        },
     }
 }
+// async updateWap(context, { cmp, path }) {
+//     try {
+//         let wap = utilService.copy(context.state.wapInEdit)
+//         if (path.idx !== undefined) {
+//             wap.cmps[path.fatherIdx].cmps[path.idx] = cmp
+//         } else {
+//             wap.cmps[path.fatherIdx] = cmp
+//         }
+//         wap = await wapToEditService.save(wap)
+//         context.commit(getActionUpdateWap(wap))
+//         return wap
+//     } catch (err) {
+//         // TODO:RETURN BACK - LAZY SOMETHING ?
+
+//         console.log('wapStore: Error in updateWap', err)
+//         throw err
+//     }
+// },

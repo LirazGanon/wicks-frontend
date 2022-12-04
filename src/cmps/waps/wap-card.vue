@@ -6,6 +6,8 @@
         <h1 v-if="cmp.info.heading">{{ cmp.info.heading?.txt }}</h1>
         <p v-if="cmp.info.subHeading">{{ cmp.info.subHeading?.txt }}</p>
         <p v-if="cmp.info.texts" v-for="txt in cmp.info.texts">{{ txt.txt }}</p>
+        <p v-if="cmp.info.price">{{localeCurrency}}</p>
+
         <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">{{ btn.txt }}</button>
     </section>
 
@@ -20,7 +22,11 @@ export default {
     },
     created() { },
     methods: {},
-    computed: {},
+    computed: {
+    localeCurrency(){
+        return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+    }
+    },
     unmounted() { },
 };
 </script>

@@ -99,15 +99,16 @@ section:has(.doda-cards) {
         gap: 20px;
         background-color: #BFA98B;
         padding: 40px;
-    }
-    .wap-card{
-        width: 15em;
-        background-color: rgb(238, 233, 233);
-        border-radius: 1.5em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
+        
+        .wap-card{
+            width: 15em;
+            background-color: rgb(238, 233, 233);
+            border-radius: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+        }
     }
     img{
     width: 100%;

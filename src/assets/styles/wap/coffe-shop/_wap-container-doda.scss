@@ -1,0 +1,122 @@
+section:has(.doda-cards) {
+    // background-color: aqua;
+    // background-size: 100% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wap-container {
+
+    &.coffe-shop {
+
+        * {
+            color: $text-primary;
+        }
+
+        @media (max-width: 650px) {
+            flex-direction: column;
+        }
+
+
+
+        &.doda-cards {
+            position: relative;
+            height: 900px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+
+            // position: relative;
+            .bg-img {
+                background-image: url("https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg");
+                height: 90%;
+                z-index: -1;
+                width: 99%;
+                position: absolute;
+                // transform: translateY(-312px);
+                background-position: 0,100px;
+                    background-size: cover;
+                    // background-repeat: no-repeat;
+            }
+
+            img {
+                position: absolute;
+                z-index: -1;
+                // height: 50%;
+                width: 100px;
+                // display: none;
+                object-fit: cover;
+            }
+
+
+            .wap-card {
+                // background-color: antiquewhite;
+                box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 1.5em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 20em;
+                width: 14em;
+                background-color: #fff;
+
+                h1 {
+                    color: #BFA98B;
+                    font-size: 3em;
+                    padding-inline-start: 15px;
+                    padding-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                p:nth-of-type(1) {
+                    font-size: 1.4em;
+                    font-weight: bold;
+                }
+
+                p:nth-of-type(2) {
+
+                    font-style: italic;
+                }
+
+                p {
+                    padding-inline-start: 15px;
+
+
+                }
+            }
+
+
+        }
+
+    }
+
+    &.shower-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        background-color: #BFA98B;
+        padding: 40px;
+    }
+    .wap-card{
+        width: 15em;
+        background-color: rgb(238, 233, 233);
+        border-radius: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    img{
+    width: 100%;
+    border-top-left-radius:1.5em ;
+    border-top-right-radius:1.5em ;
+
+    }
+    button{
+    width: 50%;
+    border-radius: 1.5em;
+    }
+}

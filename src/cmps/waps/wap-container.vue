@@ -3,14 +3,13 @@
     <section class="main-layout full" :style="cmp.style">
 
 
+        <section class="wap-container" :class="cmp.classes" >
 
+           <div class="bg-img"></div>
 
-        <section class="wap-container" :class="cmp.classes">
-
-           
 
             <div v-for="childCmp in cmp.cmps">
-                <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id"  />
+                <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id" />
             </div>
 
             <section class="wap-img" v-if="cmp.info.imgs">
@@ -18,7 +17,7 @@
             </section>
 
         </section>
-        
+
     </section>
 
 </template>

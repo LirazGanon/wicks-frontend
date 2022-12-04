@@ -19,7 +19,9 @@
             </section>
             <section class="bottom-button flex column">
                 <button class="material-symbols-outlined" v-tooltip="'Work With Friends'" @click="placholder">
-                    group_add
+                    <span class="material-symbols-outlined">
+                        groups
+                    </span>
                 </button>
                 <button class="material-symbols-outlined" v-tooltip="'Publish Site'" @click="placholder">
                     publish

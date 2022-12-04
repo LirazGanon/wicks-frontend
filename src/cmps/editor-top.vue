@@ -32,13 +32,28 @@
                 <span contenteditable="true">my-site</span>
             </div>
 
-            <div class="site-preview">
-                <router-link :to="(`/wap/` + wapId)" class="flex">
-                    <span>Publish</span><span class="material-symbols-outlined">
-                        publish
-                    </span></router-link>
+            <section class="preview-container flex">
+                <!-- <button class="material-symbols-outlined site-preview" v-tooltip="'Site Preview'" @click="placholder">
+                        visibility
+                    </button> -->
+                <div class="site-preview">
+                    <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
+                        <span>Preview</span><span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    <!-- </router-link> -->
+    
+                </div>
+                <div class="site-publish">
+                    
+                    <router-link :to="(`/wap/` + wapId)" class="flex">
+                        <span>Publish</span><span class="material-symbols-outlined">
+                            publish
+                        </span></router-link>
+    
+                </div>
 
-            </div>
+            </section>
 
         </section>
 

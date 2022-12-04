@@ -34,8 +34,8 @@
 
             <div class="site-preview">
                 <router-link :to="(`/wap/` + wapId)" class="flex">
-                    <span>Preview </span><span class="material-symbols-outlined">
-                        arrow_forward
+                    <span>Publish</span><span class="material-symbols-outlined">
+                        publish
                     </span></router-link>
 
             </div>

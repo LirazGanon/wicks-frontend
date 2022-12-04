@@ -59,11 +59,24 @@
     }
     
     .site-preview {
+        background-color:rgb(96, 60, 174) ;
+        padding:5px 12px;
+        border-radius: 0.6em;
+    transition: background-color 0.2s;
+   
+        *{
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        &:hover{
+            background-color:rgb(70, 39, 136) ;
+        }
         align-self: center;
         justify-self: end;
         font-weight: lighter;
         span{
-            color:$clr4;
+            // color:$clr4;
         }
     }
 }

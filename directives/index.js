@@ -17,7 +17,6 @@ export const rainbowDirective = {
 
 export const customOnDirective = {
   mounted(el, binding) {
-    console.log('binding', binding)
     const type = binding.arg
     const fn = binding.value
     el.addEventListener(type, fn)
@@ -35,7 +34,6 @@ export const clickOutsideDirective = {
           clientY < top + height)
       ) {
         cb()
-        console.log('outside')
       } else {
         console.log('inside')
       }

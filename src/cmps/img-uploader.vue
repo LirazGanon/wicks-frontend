@@ -46,7 +46,6 @@ export default {
       this.imgUrl = secure_url
       this.height = height
       this.width = width
-      // console.log(a)
       this.$emit('uploaded', this.imgUrl)
     }
   },

@@ -91,8 +91,8 @@ export const wapStore = {
                 } else {
                     wap.cmps[path.fatherIdx] = cmp
                 }
-                wap = await wapToEditService.save(wap)
                 context.commit(getActionUpdateWap(wap))
+                wap = await wapToEditService.save(wap)
                 return wap
             } catch (err) {
                 // TODO:RETURN BACK - LAZY SOMETHING ?
@@ -103,8 +103,8 @@ export const wapStore = {
         },
         async updateWapFull(context, { wap }) {
             try {
-                wap = await wapToEditService.save(wap)
                 context.commit(getActionUpdateWap(wap))
+                wap = await wapToEditService.save(wap)
             } catch {
                 console.log('wapStore: Error in updateWap', err)
                 throw err
@@ -124,8 +124,8 @@ export const wapStore = {
         },
         async removeWap(context, { wapId }) {
             try {
-                await wapService.remove(wapId)
                 context.commit(getActionRemoveWap(wapId))
+                await wapService.remove(wapId)
             } catch (err) {
                 console.log('wapStore: Error in removeWap', err)
                 throw err
@@ -151,8 +151,8 @@ export const wapStore = {
         async getCustomWap(context, { wapId }) {
             try {
                 const wapToEdit = await wapToEditService.getCustomWap(wapId)
-                console.log(wapToEdit)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
+                console.log(wapToEdit)
                 // TODO: check what is the eror from the console
                 return wapToEdit
             }
@@ -169,8 +169,8 @@ export const wapStore = {
                     wap.cmps.splice([path.fatherIdx], 0, cmp)
                 }
                 
-                wap = await wapToEditService.save(wap)
                 context.commit(getActionUpdateWap(wap))
+                wap = await wapToEditService.save(wap)
                 return wap
             }
             catch {
@@ -185,8 +185,8 @@ export const wapStore = {
                 } else {
                     wap.cmps.splice([path.fatherIdx], 1)
                 }
-                wap = await wapToEditService.save(wap)
                 context.commit(getActionUpdateWap(wap))
+                wap = await wapToEditService.save(wap)
                 return wap
             }
             catch {

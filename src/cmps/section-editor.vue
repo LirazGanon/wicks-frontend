@@ -19,7 +19,7 @@ export default {
     components: { colorPicker },
     data() {
         return {
-            
+            style: {}
         };
     },
     created() {
@@ -27,15 +27,16 @@ export default {
     },
     methods: {
         updateBgClr(clr) {
-            this.updateCmp('background-color', clr)
+            this.style = { 'background-color': clr }
+            this.updateCmp()
         },
-        updateCmp(att, value) {
+        updateCmp() {
             const { path, currCmp } = this.info
 
             const copyCmp = utilService.copy(currCmp)
 
-            copyCmp.style[att] = value
-            
+            copyCmp.style = this.style
+
             try {
                 this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
@@ -43,28 +44,31 @@ export default {
             }
         },
 
-        removeCmp(){
-        const { path, currCmp } = this.info
-        const copyCmp = utilService.copy(currCmp)
-        this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
+        removeCmp() {
+            const { path, currCmp } = this.info
+            const copyCmp = utilService.copy(currCmp)
+            this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
 
-        try {
+            try {
                 this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
+                this.$emit('clearEditor')
             } catch {
                 console.log('ops')
             }
         },
 
-        duplicateCmp(){
+        duplicateCmp() {
             const { path, currCmp } = this.info
-            console.log('currCmp:', currCmp)
-            currCmp.id = utilService.makeId()
+
+            const copyCmp = utilService.copy(currCmp)
+            copyCmp.id = utilService.makeId()
+            copyCmp.style = this.style
             try {
-                this.$store.dispatch({ type: 'duplicateCmp', cmp: currCmp, path })
+                this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
             } catch {
                 console.log('ops')
             }
-            
+
         },
     },
     computed: {},

@@ -82,7 +82,24 @@
             minmax(auto, $wide-breakpoint)
             minmax(100px, 1fr);
     }
-
+    @include for-x-wide-layout {
+        grid-template-columns:
+            minmax(100px, 1fr)
+            minmax(auto, $x-wide-breakpoint)
+            minmax(100px, 1fr);
+    }
+    @include for-xx-wide-layout {
+        grid-template-columns:
+            minmax(100px, 1fr)
+            minmax(auto, $xx-wide-breakpoint)
+            minmax(100px, 1fr);
+    }
+    @include for-xxx-wide-layout {
+        grid-template-columns:
+            minmax(100px, 1fr)
+            minmax(auto, $xxx-wide-breakpoint)
+            minmax(100px, 1fr);
+    }
 
 }
 

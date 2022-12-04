@@ -106,7 +106,7 @@
               "type": "img",
               "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
               "style": {},
-              "classes": ["left"]
+              "classes": ["right"]
             }
           ]
         },

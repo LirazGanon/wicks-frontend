@@ -6,7 +6,7 @@
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
         </label>
-        <img-uploader />
+        <img-uploader @uploaded="puk" />
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
@@ -30,6 +30,9 @@ export default {
     created() {
     },
     methods: {
+        puk(minipuk) {
+            console.log(minipuk);
+        },
 
         updateSrc(ev) {
             this.updateCmp('src', ev.target.value)
@@ -41,38 +44,22 @@ export default {
         },
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
-            const originalWap = this.$store.getters.getWapToEdit
 
-            const elCopy = utilService.copy(el)
             const copyCmp = utilService.copy(currCmp)
-            const wap = utilService.copy(originalWap)
 
-
-            // console.log('elIdx:', elIdx)
             if (att === 'src') {
-                elCopy.src = value
+                el.src = value
             } else {
-                elCopy.style[att] = value
+                el.style[att] = value
             }
-            // console.log(elCopy);
             if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = elCopy
-                // console.log(copyCmp.info[key][elIdx]);
+                copyCmp.info[key][elIdx] = el
             } else {
-                copyCmp.info[key] = elCopy
-                // console.log(copyCmp.info[key]);
-            }
-
-            if (path.idx !== undefined) {
-                wap.cmps[path.fatherIdx].cmps[path.idx] = copyCmp
-                // console.log( wap.cmps[path.fatherIdx].cmps[path.idx]);
-            } else {
-                wap.cmps[path.fatherIdx] = copyCmp
-                // console.log( wap.cmps[path.fatherIdx]);
+                copyCmp.info[key] = el
             }
 
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
                 console.log('ops')
             }

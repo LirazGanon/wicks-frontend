@@ -78,7 +78,9 @@ export default {
     },
     data() {
         return {
+            style: {
 
+            }
         };
     },
     created() {
@@ -110,45 +112,24 @@ export default {
         },
 
         updateCmp(att, value) {
-            const { key, path, el, elIdx } = this.info
-            const originalWap = this.$store.getters.getWapToEdit
-            const currCmp = this.getCurrCmp()
-            console.log(currCmp);
-            const elCopy = utilService.copy(el)
+            const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)
-            const wap = utilService.copy(originalWap)
+            
+            el.style[att] = value
 
-            elCopy.style[att] = value
-            console.log(elCopy);
+            // CMP UPDATE
             if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = elCopy
+                copyCmp.info[key][elIdx] = el
             } else {
-                copyCmp.info[key] = elCopy
-            }
-
-            if (path.idx !== undefined) {
-                wap.cmps[path.fatherIdx].cmps[path.idx] = copyCmp
-            } else {
-                wap.cmps[path.fatherIdx] = copyCmp
+                copyCmp.info[key] = el
             }
 
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
                 console.log('ops')
             }
         },
-        getCurrCmp() {
-            const wap = this.$store.getters.getWapToEdit
-            const { path } = this.info
-            let currCmp
-            if (path.idx !== undefined) {
-                currCmp = wap.cmps[path.fatherIdx].cmps[path.idx]
-            } else {
-                currCmp = wap.cmps[path.fatherIdx]
-            }
-            return utilService.copy(currCmp)
-        }
 
     },
     computed: {
@@ -161,24 +142,7 @@ export default {
             }
         },
         borderRadius() {
-            // if (fatherEl) {
-            //     if (isContainer) {
-            //         const innerIdx = this.cmp.info.cmps.findIndex(cmp => cmp.type === fatherEl)
-            //         // console.log('puk:', this.cmp.info.cmps[innerIdx].info[key])
-            //         this.cmp.info.cmps[innerIdx].info[key].style[att] = value
-            //         // console.log('----', this.cmp.info.cmps[innerIdx].info[key]);
-            //     } else if (idx !== undefined) {
-
-            //         this.cmp.info[fatherEl].info[key][idx].style[att] = value
-            //     } else {
-
-            //         this.cmp.info[fatherEl].info[key].style[att] = value
-            //     }
-
-            // }
-            // else {
-            //     this.cmp.info[key].style[att] = value
-            // }
+          
             const { key } = this.info
             return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
         }

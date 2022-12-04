@@ -45,7 +45,7 @@ export default {
         },
         openEditor(key, idx) {
             const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-
+            el = utilService.copy(el)
             const wapContent = {
                 key,
                 path: this.getPath(),

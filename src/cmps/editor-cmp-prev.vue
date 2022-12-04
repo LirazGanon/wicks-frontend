@@ -1,13 +1,14 @@
 <template>
 
   <section class="prev-cmp-img-container" v-if="view">
+    
+    <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
+        disabled_by_default
+      </span>
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @drop="onDrop($event)">
 
-      <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
-        disabled_by_default
-      </span>
       <Draggable v-for="item in cmps" :key="item.id">
         <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true"
           @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">

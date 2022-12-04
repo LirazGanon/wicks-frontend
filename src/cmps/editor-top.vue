@@ -20,14 +20,14 @@
     <section class="editor-top flex">
         <section class="flex space-between full align-center">
             <section class="view-port-editor flex">
-                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('')">
+                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
                     desktop_windows
                 </div>
                 <div class="material-symbols-outlined icon"
-                v-tooltip="'Switch to Tablet'" @click="changeView('800px')">
+                v-tooltip="'Switch to Tablet'" @click="changeView('800')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'" @click="changeView('400px')">
+                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'" @click="changeView('420')">
                     phone_iphone
                 </div>
             </section>
@@ -70,6 +70,8 @@
 
 </template>
 <script>
+import { eventBus } from '../services/event-bus.service';
+
 
 export default {
     name: 'Editor-top',
@@ -83,9 +85,8 @@ export default {
 
     },
     methods: {
-        changeView(value){
-            // vue3.jQuerySelector('.doda').style.display = 'none'
-            document.querySelector('.wap-editor').style.maxWidth  = value
+        changeView(size){
+            eventBus.emit('resizeWap',size)
         }
     },
     computed: {

@@ -145,6 +145,7 @@ export const wapStore = {
                 context.commit({ type: 'setWapToEdit', wapToEdit })
             } catch (err) {
                 console.log('could not get wap')
+                throw err
             }
         },
         async getCustomWap(context, { wapId }) {

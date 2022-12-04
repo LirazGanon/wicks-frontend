@@ -1,6 +1,7 @@
 <template>
 
-    <header class="wap-header main-layout full" :class="cmp.classes" @click="openSectionEditor" :style="cmp.style">
+    <header class="wap-header main-layout full" :class="cmp.classes" @click="openSectionEditor" :style="cmp.style"
+        v-bind:class="class" >
         <section class="flex space-between">
 
 
@@ -11,7 +12,7 @@
 
 
                 <h4 v-else contenteditable="true" @click.stop="openEditor('logo')" :style="cmp.info.logo.style"
-                    @input="updateCmp($event,'logo')">{{ cmp.info.logo.txt }}</h4>
+                    @input="updateCmp($event, 'logo')">{{ cmp.info.logo.txt }}</h4>
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
@@ -33,7 +34,9 @@ export default {
     props: { cmp: Object },
     components: { wapNav },
     data() {
-        return {};
+        return {
+            selected: false
+        };
     },
     created() { },
     methods: {
@@ -49,14 +52,15 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        openSectionEditor(){
+        openSectionEditor() {
+            this.selected = true
             const currCmp = utilService.copy(this.cmp)
             const wapContent = {
-                el:{type:'section'},
+                el: { type: 'section' },
                 currCmp,
-                path:this.getPath()
+                path: this.getPath()
             }
-            this.$emit('openEditor',wapContent)
+            this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, key) {
             let wap = this.$store.getters.getWapToEdit
@@ -78,6 +82,9 @@ export default {
         }
     },
     computed: {
+        class() {
+            return { selected: this.selected }
+        }
     },
     unmounted() { },
 };

@@ -66,7 +66,6 @@ export default {
             const path = this.path
             const currCmp = utilService.copy(this.cmp)
 
-            console.log('path:', path)
             try {
                 await this.$store.dispatch({ type: 'removeCmp', cmp: currCmp, path })
                 const wap = this.$store.getters.getWapToEdit

@@ -4,24 +4,27 @@
         <!-- LEFT NAV -->
         <section class="left-nav flex column space-between">
             <section class="flex column">
-                <button class="material-symbols-outlined" title="Add Section" :class="{ active: active === 'cmp' }"
+                <button class="material-symbols-outlined" 
+                :class="{ active: active === 'cmp' }"  v-tooltip="'Add Section'"
                     @click="toggleActive('cmp')">
                     add_circle
                 </button>
-                <button class="material-symbols-outlined" title="Pick Palette" :class="{ active: active === 'palette' }"
+                <button class="material-symbols-outlined" v-tooltip="'Pick Palette'"
+                :class="{ active: active === 'palette' }"
                     @click="toggleActive('palette')">
                     palette
                 </button>
-                <button class="material-symbols-outlined" title="Edit" :class="{ active: active === 'edit' }"
+                <button class="material-symbols-outlined"  v-tooltip="'Edit Section'"
+                :class="{ active: active === 'edit' }"
                     @click="toggleActive('edit')">
                     brush
                 </button>
             </section>
             <section class="bottom-button flex column">
-                <button class="material-symbols-outlined" title="Edit" @click="placholder">
+                <button class="material-symbols-outlined" v-tooltip="'Work With Friends'" @click="placholder">
                     group_add
                 </button>
-                <button class="material-symbols-outlined" title="Edit" @click="placholder">
+                <button class="material-symbols-outlined" v-tooltip="'Publish Site'" @click="placholder">
                     publish
                 </button>
             </section>

@@ -12,13 +12,14 @@
     <section class="editor-top flex">
         <section class="flex space-between full align-center">
             <section class="view-port-editor flex">
-                <div class="material-symbols-outlined icon">
+                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'">
                     desktop_windows
                 </div>
-                <div class="material-symbols-outlined icon">
+                <div class="material-symbols-outlined icon"
+                v-tooltip="'Switch to Tablet'">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon">
+                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'">
                     phone_iphone
                 </div>
             </section>

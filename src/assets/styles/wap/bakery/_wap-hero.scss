@@ -12,6 +12,7 @@
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
         transform-style: preserve-3d;
+
         h1 {
             grid-area: t;
             font-size: clamp(16px, 4em, 80px);
@@ -29,8 +30,8 @@
 
         .wap-img.left {
             grid-area: bl;
-            width: calc(100% - 0.5vw);
-            height: 100%;
+            width: calc(100% - 5vw);
+            height: 90%;
             align-self: end;
             object-fit: cover;
             padding-block-start: 20%;
@@ -39,9 +40,11 @@
 
         .wap-img.right {
             grid-area: mbr;
-            width: 100%;
-            object-fit: cover;
+            align-self: end;
+            object-fit:cover;
             height: 100%;
+            width: 55vw;
+            aspect-ratio: 2/1;
             overflow-y: auto;
             // transform: translateZ(10px) scale(2);
             // height: 100%;

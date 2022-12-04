@@ -58,7 +58,7 @@
 
         <!-- THEME PICKER -->
         <section class="flex options theme" :class="{ active: active === 'palette' }">
-            <!-- <h2>Theme</h2> -->
+            <h2>Theme</h2>
             <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/1.png" alt="">
             <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
             <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">

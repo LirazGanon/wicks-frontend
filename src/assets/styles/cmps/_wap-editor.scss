@@ -48,6 +48,7 @@
             border-bottom: 1px solid $border-clr;
             box-shadow: inset 0px 14px 0px -10px blueviolet;
             font-weight: bold;
+            width: 100%;
         }
 
         .prev-cmp-img-container {
@@ -181,11 +182,35 @@
             }
         }
     }
-
     .cmp-editor {
         border-right: 1px solid $border-clr;
     }
+    .section-cmp-editor{
+        .delete-duplicate{
+            margin: 0;
+            padding-inline-start: 7px;
+    
+        }
+        button {
+            margin: 0;
+            aspect-ratio: 1/1;
+            color: #1c2e3bc9;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: background 0.3s;
+            font-size: 1.5em;
+            padding: 8px;
 
+            &:hover {
+                background: $clr5;
+            }
+
+            &.active {
+                background: $clr5;
+            }
+        }
+    }
+    
     .options.active .cmp-side-editor {
         width: 100%;
     }

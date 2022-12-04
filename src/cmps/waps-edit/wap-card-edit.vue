@@ -24,6 +24,8 @@
 
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-review-cmp',
     props: { cmp: Object, path: Object },
@@ -34,7 +36,7 @@ export default {
     created() { },
     methods: {
         openEditor(key, i) {
-            const el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
+            let el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]
             el = utilService.copy(el)
             const wapContent = {
                 key,

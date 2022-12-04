@@ -71,7 +71,7 @@ export default {
       wap.cmps = result
 
       try {
-        this.$store.dispatch({ type: 'updateWap', wap })
+        this.$store.dispatch({ type: 'updateWapFull', wap })
       } catch {
         console.log('ops');
       }
@@ -87,7 +87,6 @@ export default {
         itemToAdd = result.splice(removedIndex, 1)[0];
       }
       if (addedIndex !== null) {
-
         result.splice(addedIndex, 0, itemToAdd);
       }
       return result;

@@ -101,6 +101,15 @@ export const wapStore = {
                 throw err
             }
         },
+        async updateWapFull(context, { wap }) {
+            try {
+                wap = await wapToEditService.save(wap)
+                context.commit(getActionUpdateWap(wap))
+            } catch {
+                console.log('wapStore: Error in updateWap', err)
+                throw err
+            }
+        },
         async loadWaps(context) {
             try {
                 context.commit({ type: 'toggleLoading' })

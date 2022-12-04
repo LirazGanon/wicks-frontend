@@ -44,7 +44,6 @@ export default {
         removeCmp(){
         const { path, currCmp } = this.info
         const copyCmp = utilService.copy(currCmp)
-        currCmp.id = utilService.makeId()
         this.$store.dispatch({ type: 'removeCmp', cmp: copyCmp, path })
 
         try {
@@ -57,7 +56,7 @@ export default {
         duplicateCmp(){
             const { path, currCmp } = this.info
             const copyCmp = utilService.copy(currCmp)
-
+            currCmp.id = utilService.makeId()
             try {
                 this.$store.dispatch({ type: 'duplicateCmp', cmp: copyCmp, path })
             } catch {

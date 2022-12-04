@@ -1,7 +1,7 @@
 .main-editor {
-    height:calc(100vh - 127px);
-    
-       .left-nav {
+    height: calc(100vh - 127px);
+
+    .left-nav {
         // background-color: aqua;
         border-right: 1px solid $border-clr;
 
@@ -27,11 +27,13 @@
             margin-bottom: 40px;
         }
     }
+
     .options.active {
         width: clamp(200px, 35vw, 500px);
         transition: all 0.5s;
         opacity: 1;
     }
+
     .options {
         width: 0;
         opacity: 0;
@@ -44,7 +46,7 @@
         h2 {
             padding: 10px;
             border-bottom: 1px solid $border-clr;
-
+            box-shadow: inset  0px 14px 0px -10px blueviolet;
             font-weight: bold;
         }
 
@@ -70,40 +72,47 @@
         .img-cmp-editor,
         .section-cmp-editor {
             height: 100%;
-            > * {
+         
+
+            >* {
                 padding-inline-start: 10px;
             }
-    
+
             h2 {
                 border-bottom: 1px solid $border-clr;
                 font-weight: bold;
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
-            .color-picker{
+
+            .color-picker {
                 margin-bottom: 2em;
             }
-            label.gap{
+
+            label.gap {
                 gap: 20px;
             }
-            hr{
+
+            hr {
                 width: 95%;
                 color: $border-clr;
                 opacity: 0.2;
             }
-    
-           .text-format{
-           >*{margin-bottom: 15px;}
-           }
-    
+
+            .text-format {
+                >* {
+                    margin-bottom: 15px;
+                }
+            }
+
             img {
                 width: 90%;
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 10px;
             }
-    
-            > * {
+
+            >* {
                 margin-bottom: 10px;
             }
         }
@@ -112,6 +121,7 @@
             pointer-events: none;
             width: 95%;
         }
+
         &.theme {
             flex-direction: column;
             align-items: center;
@@ -120,6 +130,7 @@
             img {
                 width: 70%;
                 margin-bottom: 1em;
+
                 &:hover {
                     cursor: pointer !important;
                 }
@@ -129,14 +140,14 @@
 
     .prev-cmp-wrapper {
         height: 100%;
-        
+
 
         .prev-cmp-filter {
             height: 100%;
             background-color: rgb(248, 247, 247);
 
-            > li {
-                padding: 7px 10px;
+            >li {
+                padding: 10px;
                 font-size: 0.9em;
                 cursor: pointer;
 
@@ -160,4 +171,8 @@
         width: 100%;
 
     }
+}
+
+.options.active:has(.cmp-side-editor){
+    width: clamp(150px, 23vw, 350px);
 }

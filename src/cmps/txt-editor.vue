@@ -111,7 +111,7 @@ export default {
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)
-            
+
             el.style[att] = value
 
             // CMP UPDATE
@@ -139,10 +139,11 @@ export default {
             }
         },
         borderRadius() {
-          
+
             const { key } = this.info
             return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
-        }
+        },
+
 
     },
     unmounted() { },

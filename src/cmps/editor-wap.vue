@@ -5,8 +5,8 @@
 
   <section class="page-editor">
 
-    <section v-if="!wapToEdit.cmps.length" class="wap-placeholder">
-      
+    <section v-if="!cmpsLength" class="wap-placeholder">
+
     </section>
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
@@ -51,7 +51,7 @@ export default {
   },
   async created() {
     const id = this.$route.params.wapId
-    try{
+    try {
       this.$store.dispatch({ type: 'setWapToEdit', id })
     } catch {
       console.log('cannot load wap');
@@ -73,7 +73,7 @@ export default {
       let result = this.applyDrag(wap.cmps, dropResult)
       wap.cmps = result
 
-      
+
       try {
         this.$store.dispatch({ type: 'updateWapFull', wap })
       } catch {
@@ -100,7 +100,11 @@ export default {
     wapToEdit() {
       return this.$store.getters.getWapToEdit
     },
- 
+    cmpsLength() {
+      const wap = this.wapToEdit
+      return wap?.cmps.length || 0
+    }
+
   }
 };
 </script>

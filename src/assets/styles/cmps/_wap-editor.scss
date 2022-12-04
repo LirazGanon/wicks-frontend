@@ -236,3 +236,8 @@
 .options.active:has(.cmp-side-editor) {
     width: clamp(150px, 23vw, 350px);
 }
+
+
+.editor-selected-cmp{
+    border: 6px solid red;
+}

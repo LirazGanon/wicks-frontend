@@ -87,7 +87,6 @@ export default {
     },
     unmounted() { },
     info: function () {
-        console.log(this.info);
     }
 
 };

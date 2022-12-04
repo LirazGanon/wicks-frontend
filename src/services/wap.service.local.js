@@ -23,12 +23,10 @@ window.cs = wapService
 async function query() {
     // debugger
     var waps = await storageService.query(STORAGE_KEY)
-    console.log(waps)
     if (!waps || !waps.length) {
         waps = defaultWaps
         await storageService.postMany(STORAGE_KEY, waps)
     }
-    // console.log(storageService.query(STORAGE_KEY))
     return  waps
 }
 

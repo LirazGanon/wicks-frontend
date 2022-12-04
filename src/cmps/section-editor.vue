@@ -32,7 +32,6 @@ export default {
         };
     },
     created() {
-        console.log('this.info:', this.info)
     },
     methods: {
         updateBgClr(clr) {

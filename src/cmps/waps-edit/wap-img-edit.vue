@@ -30,7 +30,6 @@ export default {
                 isContainer:true,
                 currCmp:'wap-img'
             }
-            // console.log(wapContent);
 
             this.$emit('openEditor', wapContent)
         },

@@ -68,7 +68,6 @@ export const wapStore = {
         },
         removeWapToEdit(state) {
             state.wapToEdit = null
-            console.log(state.wapToEdit)
         },
 
     },

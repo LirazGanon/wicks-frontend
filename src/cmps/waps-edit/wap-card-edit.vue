@@ -45,7 +45,6 @@ export default {
                 currCmp: this.cmp,
                 elIdx: i
             }
-            console.log(wapContent);
             this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, key, innerIdx) {
@@ -54,8 +53,6 @@ export default {
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
 
-            console.log(this.path);
-            console.log(cmpCopy.info[key])
 
             if (innerIdx !== undefined) {
                 cmpCopy.info[key][innerIdx].txt = ev.target.innerText

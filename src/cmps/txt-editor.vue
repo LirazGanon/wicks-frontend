@@ -148,7 +148,6 @@ export default {
     unmounted() { },
     watch: {
         info: function () {
-            console.log(this.info)
         }
 
     }

@@ -4,19 +4,16 @@
         <!-- LEFT NAV -->
         <section class="left-nav flex column space-between">
             <section class="flex column">
-                <button class="material-symbols-outlined" 
-                :class="{ active: active === 'cmp' }"  v-tooltip="'Add Section'"
-                    @click="toggleActive('cmp')">
+                <button class="material-symbols-outlined" :class="{ active: active === 'cmp' }"
+                    v-tooltip="'Add Section'" @click="toggleActive('cmp')">
                     add_circle
                 </button>
                 <button class="material-symbols-outlined" v-tooltip="'Pick Palette'"
-                :class="{ active: active === 'palette' }"
-                    @click="toggleActive('palette')">
+                    :class="{ active: active === 'palette' }" @click="toggleActive('palette')">
                     palette
                 </button>
-                <button class="material-symbols-outlined"  v-tooltip="'Edit Section'"
-                :class="{ active: active === 'edit' }"
-                    @click="toggleActive('edit')">
+                <button class="material-symbols-outlined" v-tooltip="'Edit Section'"
+                    :class="{ active: active === 'edit' }" @click="toggleActive('edit')">
                     brush
                 </button>
             </section>
@@ -68,9 +65,10 @@
 
 
         <!-- ACTUAL CMP EDITOR -->
-        <section  class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor}">
+        <section class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor }">
             <ul class="cmp-side-editor">
-                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" @clearEditor="clear" class="cmp-editor " />
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" @clearEditor="clear"
+                    class="cmp-editor " />
             </ul>
         </section>
     </section>
@@ -99,33 +97,25 @@ export default {
             cmpFilter: 'All'
         };
     },
-    created() {
+    async created() {
+        await this.$store.dispatch({ type: 'loadCmps' })
+        console.log('this.cmps:', this.cmps)
         this.view = { ...this.cmps }
     },
     methods: {
-        setData() {
-            const cmps = { ...this.view }
 
-            cmps.type = cmps.type.map((x, i) => ({
-                id: Date.now() / 15500 + i,
-                data: this.type + ` ${i}`
-            }))
-
-            this.data = { ...cmps }
-        },
         setFilter(val) {
             this.cmpFilter = val
         },
         toggleActive(val) {
             if (!this.active || this.active !== val) this.active = val
             else this.active = null
-
         },
         placholder() {
             alert('Hi King!')
         },
 
-        clear(){
+        clear() {
             this.active = null
         }
 

@@ -1,12 +1,12 @@
 <template>
 
 
-  <section v-if="view" class="page-editor">
+  <section class="page-editor">
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <component :is="(cmp.type || 'wap-header')" :cmp="cmp" @log="log" @openEditor="$emit('openEditor', $event)" />
+        <component :is="(cmp.type || 'wap-header')" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
 
       </Draggable>
 
@@ -35,44 +35,43 @@ import appHeader from "./app-header.vue";
 
 
 import { wapService } from '../services/wap.service.local.js'
+import { utilService } from "../services/util.service";
 export default {
   name: "wap",
   components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
   props: { wap: Object },
   data() {
     return {
-      view: {}
+
     }
   },
-  created() {
-    this.getCurrWap()
+  async created() {
+    const id = this.$route.params.wapId
+    try{
+      this.$store.dispatch({ type: 'setWapToEdit', id })
+    } catch {
+      console.log('cannot load wap');
+    }
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
-    async getCurrWap() {
-      const id = this.$route.params.wapId
-      if (!this.$store.getters.getWapToEdit) {
-        await this.$store.dispatch({ type: 'setWapToEdit', id })
-      }
-      const wap = this.$store.getters.getWapToEdit
-      this.view = JSON.parse(JSON.stringify(wap))
-    },
-    log(id) {
-      console.log(this.view.cmps.findIndex(cmp => cmp.id == id))
-    },
+
     getChildPayload(itemIndex) {
-      return this.view.cmps[itemIndex]
+      const wap = this.$store.getters.getWapToEdit
+      return wap.cmps[itemIndex]
     },
     onDrop(dropResult) {
-      let result = this.applyDrag(this.view.cmps, dropResult)
+      let wap = this.$store.getters.getWapToEdit
+      wap = utilService.copy(wap)
+
+      let result = this.applyDrag(wap.cmps, dropResult)
       console.log(result);
-      this.view.cmps = result
-      const wap = JSON.parse(JSON.stringify(this.view))
-      console.log(wap);
+      wap.cmps = result
+
       try {
-        this.$store.dispatch({ type: 'updateWap', wap })
+        this.$store.dispatch({ type: 'updateWapFull', wap })
       } catch {
         console.log('ops');
       }
@@ -88,15 +87,11 @@ export default {
         itemToAdd = result.splice(removedIndex, 1)[0];
       }
       if (addedIndex !== null) {
-
         result.splice(addedIndex, 0, itemToAdd);
       }
       return result;
 
     },
-
-
-
   },
   computed: {
     wapToEdit() {

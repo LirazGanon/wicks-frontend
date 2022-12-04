@@ -26,6 +26,8 @@
 <script>
 
 import wapNav from './wap-nav-edit.vue'
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-header-cmp',
     props: { cmp: Object },
@@ -36,8 +38,8 @@ export default {
     created() { },
     methods: {
         openEditor(key, idx) {
-            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-
+            let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+            el = utilService.copy(el)
             const wapContent = {
                 key,
                 path: this.getPath(),

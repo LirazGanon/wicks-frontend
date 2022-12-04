@@ -1,5 +1,6 @@
 import { wapService } from '../../services/wap.service.local'
 import { wapToEditService } from '../../services/wap-to-edit.service'
+import { utilService } from '../../services/util.service'
 
 export function getActionRemoveWap(wapId) {
     return {
@@ -39,7 +40,7 @@ export const wapStore = {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
-        
+
     },
     mutations: {
         setWaps(state, { waps }) {
@@ -82,13 +83,29 @@ export const wapStore = {
                 throw err
             }
         },
-        async updateWap(context, { wap }) {
+        async updateWap(context, { cmp, path }) {
             try {
-                context.commit(getActionUpdateWap(wap))
+                let wap = utilService.copy(context.state.wapInEdit)
+                if (path.idx !== undefined) {
+                    wap.cmps[path.fatherIdx].cmps[path.idx] = cmp
+                } else {
+                    wap.cmps[path.fatherIdx] = cmp
+                }
                 wap = await wapToEditService.save(wap)
+                context.commit(getActionUpdateWap(wap))
                 return wap
             } catch (err) {
                 // TODO:RETURN BACK - LAZY SOMETHING ?
+
+                console.log('wapStore: Error in updateWap', err)
+                throw err
+            }
+        },
+        async updateWapFull(context, { wap }) {
+            try {
+                wap = await wapToEditService.save(wap)
+                context.commit(getActionUpdateWap(wap))
+            } catch {
                 console.log('wapStore: Error in updateWap', err)
                 throw err
             }

@@ -4,8 +4,8 @@
 
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
-            <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style" @input="updateCmp"
-                data-type="heading">
+            <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style"
+                @input="updateCmp" data-type="heading">
                 {{ cmp.info.heading.txt }}
             </h1>
             <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
@@ -28,6 +28,8 @@
 
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-hero-cmp',
     props: { cmp: Object },
@@ -39,23 +41,24 @@ export default {
     methods: {
         openSectionEditor() {
 
-            const wapContent = {
+            const payload = {
                 el: { type: 'section' },
                 currCmp: this.cmp,
                 path: this.getPath()
             }
-            this.$emit('openEditor', wapContent)
+            this.$emit('openEditor', payload)
         },
         openEditor(key, idx) {
-            const el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
-            const wapContent = {
+            let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+            el = utilService.copy(el)
+            const payload = {
                 key,
                 path: this.getPath(),
                 el,
                 currCmp: this.cmp,
                 elIdx: idx
             }
-            this.$emit('openEditor', wapContent)
+            this.$emit('openEditor', payload)
         },
         updateCmp(ev) {
             let wap = this.$store.getters.getWapToEdit

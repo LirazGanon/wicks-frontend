@@ -29,16 +29,13 @@ export default {
         },
         updateCmp(att, value) {
             const { path, currCmp } = this.info
-            const originalWap = this.$store.getters.getWapToEdit
-            console.log(currCmp);
+
             const copyCmp = utilService.copy(currCmp)
-            const wap = utilService.copy(originalWap)
 
             copyCmp.style[att] = value
-            console.log(copyCmp);
-            wap.cmps[path.fatherIdx] = copyCmp
+
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
                 console.log('ops')
             }

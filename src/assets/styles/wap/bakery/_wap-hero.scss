@@ -6,9 +6,9 @@
 
     &.bakery {
         grid-template-areas:
-            ". t t . "
-            ". ml ml ."
-            ". bl mbr .";
+            " t t  "
+            " ml ml"
+            " bl mbr ";
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
         transform-style: preserve-3d;

@@ -845,9 +845,7 @@ section.page-editor {
 }
 .wap-container.bakery .wap-card {
   -webkit-margin-start: 2vw;
-          margin-inline-start: 2vw;
   -webkit-margin-end: 2vw;
-          margin-inline-end: 2vw;
 }
 .wap-container.bakery .wap-card h1 {
   font-size: 2em;

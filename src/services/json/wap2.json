@@ -543,11 +543,7 @@
             "style": {}
           }
         ],
-<<<<<<< HEAD
         "style":{"bacground-img":"https://res.cloudinary.com/wicksin/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg"}
-=======
-        "style":{"background-image":"url('https://res.cloudinary.com/dzghqfyip/image/upload/v1669922270/wicks/coffeshop/gggggg_pzhnor.jpg')"}
->>>>>>> 31aa741ab4022c73148b49fca1de2d2419f6dbc2
       },
       {
         "type": "wap-container",
@@ -653,7 +649,6 @@
         "id": "nsld13h14dk",
         "classes": ["coffe-shop doda-cards"],
         "info": {
-<<<<<<< HEAD
           "imgs": [
             {
               "type": "img",
@@ -662,8 +657,6 @@
               "classes":[]
             }
           ]
-=======
->>>>>>> 31aa741ab4022c73148b49fca1de2d2419f6dbc2
         },
         "cmps": [
           {

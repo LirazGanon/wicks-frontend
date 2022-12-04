@@ -72,7 +72,7 @@
 				"classes": [],
 				"bgImg":{
 						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
+						"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
 						"style": {}
 					},
 				"info": {
@@ -90,7 +90,7 @@
 					],
 					"imgs":[ {
 						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
+						"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-cookies.jpg",
 						"style": {}
 					}]
 				},
@@ -106,7 +106,7 @@
 					"imgs": [
 						{
 							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-dough.jpg",
+							"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-dough.jpg",
 							"style": {}
 						}
 					],
@@ -139,25 +139,25 @@
 					"imgs": [
 						{
 							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
+							"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790201/wicks/bakery-gal-cookies.jpg",
 							"txt": "Cookies",
 							"style": {}
 						},
 						{
 							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
+							"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-cake.jpg",
 							"txt": "Cakes",
 							"style": {}
 						},
 						{
 							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buns.jpg",
+							"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-buns.jpg",
 							"txt": "Viennoisrie",
 							"style": {}
 						},
 						{
 							"type": "img",
-							"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
+							"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-gal-yeast-cake.jpg",
 							"txt": "Specials",
 							"style": {}
 						}
@@ -198,7 +198,7 @@
 					],
 					"img": {
 						"type": "img",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
+						"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
 						"style": {}
 					}
 				},
@@ -254,7 +254,7 @@
 					"img": {
 						"type": "img",
 						"txt": "",
-						"src": "https://res.cloudinary.com/dzghqfyip/image/upload/v1669790202/wicks/bakery-display%20window.jpg",
+						"src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-display%20window.jpg",
 						"style": {}
 					}
 				},

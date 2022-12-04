@@ -46,9 +46,6 @@ export const cmpStore = {
             const idx = state.cmps.findIndex(c => c.id === cmp._id)
             state.cmps.splice(idx, 1, cmp)
         },
-        removeCmp(state, { cmpId }) {
-            state.cmps = state.cmps.filter(cmp => cmp._id !== cmpId)
-        },
         addCmpMsg(state, { cmpId, msg }) {
             const cmp = state.cmps.find(cmp => cmp._id === cmpId)
             if (!cmp.msgs) cmp.msgs = []
@@ -82,15 +79,6 @@ export const cmpStore = {
                 context.commit({ type: 'setCmps', cmps })
             } catch (err) {
                 console.log('cmpStore: Error in loadCmps', err)
-                throw err
-            }
-        },
-        async removeCmp(context, { cmpId }) {
-            try {
-                await cmpService.remove(cmpId)
-                context.commit(getActionRemoveCmp(cmpId))
-            } catch (err) {
-                console.log('cmpStore: Error in removeCmp', err)
                 throw err
             }
         },

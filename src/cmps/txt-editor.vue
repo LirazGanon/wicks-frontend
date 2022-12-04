@@ -44,7 +44,7 @@
                     </span>
                 </label>
             </section>
-            <label for="font" class="flex align-center gap">
+            <label for="font" class="flex align-center gap font-picker-wrapper">
                 <span>Choose Font:</span>
                 <font-picker @setFont="updateFont" />
             </label>

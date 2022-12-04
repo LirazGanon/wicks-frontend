@@ -6,6 +6,11 @@
         margin-inline-start: 15px;
     }
 
+    nav>* {
+        color: black;
+        padding: 10px;
+    }
+
     border-bottom: 1px solid $border-clr;
 }
 
@@ -66,24 +71,25 @@
     }
 
     .preview-container {
-    gap: 10px;
+        gap: 10px;
     }
 
     .site-preview {
-       display: flex;
-       align-items: center;
-    background-color: rgb(95, 69, 151);
-    color:white;
-    border-radius: 0.6em;
-    padding: 5px 8px;
-    transition: background-color 0.2s;
-    font-size: small;
-    &:hover {
-        background-color: rgb(60, 39, 136);
-        cursor: pointer;
-    }
+        display: flex;
+        align-items: center;
+        background-color: rgb(95, 69, 151);
+        color: white;
+        border-radius: 0.6em;
+        padding: 5px 8px;
+        transition: background-color 0.2s;
+        font-size: small;
 
-}
+        &:hover {
+            background-color: rgb(60, 39, 136);
+            cursor: pointer;
+        }
+
+    }
 
     .site-publish {
         background-color: rgb(96, 60, 174);

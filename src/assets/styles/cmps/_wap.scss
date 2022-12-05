@@ -15,7 +15,7 @@ section.page-editor {
     overflow-x: hidden;
     height: calc(100vh - 46px - 76.75px);
     & > div {
-        // min-height: 60vh;
+        min-height: calc(100vh - 46px - 76.75px);
     }
 
     &.mobile-display {

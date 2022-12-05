@@ -52,7 +52,8 @@ export default {
             const path = this.path
             const cmp = utilService.copy(this.cmp)
 
-
+            const wap = this.$store.getters.getLastState
+            console.log('wap:', wap)
             cmp.style = this.style
 
             try {

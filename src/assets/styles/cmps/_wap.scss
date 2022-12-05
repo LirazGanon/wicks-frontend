@@ -3,29 +3,39 @@
     overflow: hidden;
 }
 
+
+
 section.page-editor {
     overflow-y: auto;
     flex: 1;
     position: relative;
     align-self: center;
     justify-self: center;
+    transition: max-width 0.3s, max-height 0.3s, height 0.3s;
+    overflow-x: hidden;
+    height: calc(100vh - 46px - 76.75px);
     & > div {
-        height: calc(100vh - 46px - 76.75px);
-        min-height: 60vh;
+        min-height: calc(100vh - 46px - 76.75px);
     }
 
-    &.mobile {
-        // max-height: 60vh;
-        // overflow-y: scroll;
-        margin-left: auto;
-        margin-right: auto;
+    &.mobile-display {
+        max-height: clamp(200px, 70vh + 3rem, 90vh );
+        border: 16px #28282b solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        border-radius: 16px;
+        margin: auto;
     }
+   
     
-    
-    &.small{
-        // max-height: 70vh;
-        margin-left: auto;
-        margin-right: auto;
+    &.tablet-display {
+        max-height: clamp(200px, 70vh + 3rem, 90vh );
+        
+        border-radius: 16px;
+        border: 16px #28282b solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        margin: auto;
     }
 
     .wap-placeholder {

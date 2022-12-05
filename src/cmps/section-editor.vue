@@ -6,9 +6,10 @@
         <section class="delete-duplicate" v-if="cmpsLength">
             <button v-tooltip="'Delete Section'" class="material-symbols-outlined" @click="removeCmp">delete</button>
             <button v-tooltip="'Copy Section'" class="material-symbols-outlined"
-                @click="duplicateCmp">content_copy</button>
-
-            <span>Backround Color</span>
+            @click="duplicateCmp">content_copy</button>
+    
+            <hr>
+            <span class="background-color">Background Color</span>
             <color-picker @setColor="updateBgClr" />
 
         </section>
@@ -16,7 +17,6 @@
             Please select a section
         </section>
 
-        <hr>
 
 
     </section>
@@ -52,7 +52,8 @@ export default {
             const path = this.path
             const cmp = utilService.copy(this.cmp)
 
-
+            const wap = this.$store.getters.getLastState
+            console.log('wap:', wap)
             cmp.style = this.style
 
             try {

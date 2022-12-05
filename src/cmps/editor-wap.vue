@@ -2,7 +2,7 @@
 
 
 
-  <section class="page-editor" ref="container" :class="[responsiveClass, wrapper]" :style="{ maxWidth: conMaxWidth }">
+  <section class="page-editor" ref="container" :class="[responsiveClass,myClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -21,6 +21,9 @@
 
 
   </section>
+
+
+
 </template>
   
 <script>
@@ -51,7 +54,8 @@ export default {
   data() {
     return {
       responsiveClass: [],
-      conMaxWidth: null
+      conMaxWidth: null,
+      myClass: []
     }
   },
   created() {
@@ -82,6 +86,8 @@ export default {
     onDrop(dropResult) {
       let wap = this.$store.getters.getWapToEdit
       wap = utilService.copy(wap)
+      dropResult = utilService.copy(dropResult)
+      dropResult.payload.id = utilService.makeId()
 
       let result = this.applyDrag(wap.cmps, dropResult)
       wap.cmps = result
@@ -117,10 +123,14 @@ export default {
       if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
       if (offsetWidth >= 1300) this.responsiveClass = this.normal()
       if (offsetWidth >= 1500) this.responsiveClass = this.wide()
+
     },
     resize(size) {
       const puk = size == '100' ? size + '%' : size + 'px'
       this.conMaxWidth = puk
+      if (+size < 500) this.myClass = 'mobile-display'
+      if (+size >= 600) this.myClass = 'tablet-display'
+      if (size === '100') this.myClass = ''
     },
 
     wrapper() {

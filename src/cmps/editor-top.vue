@@ -24,7 +24,7 @@
                     desktop_windows
                 </div>
                 <div class="material-symbols-outlined icon"
-                v-tooltip="'Switch to Tablet'" @click="changeView('800')">
+                v-tooltip="'Switch to Tablet'" @click="changeView('860')">
                     tablet_mac
                 </div>
                 <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'" @click="changeView('420')">

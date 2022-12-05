@@ -2,10 +2,12 @@
 
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
-        <span>Text Color:</span>
-        <color-picker @setColor="updateClr" />
-        <span v-if="info.key === 'btns'">Background Color:</span>
-        <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+        <section class="color-picker-wrapper">
+            <span>Text Color:</span>
+            <color-picker @setColor="updateClr" />
+            <span v-if="info.key === 'btns'">Background Color:</span>
+            <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+        </section>
         <hr>
 
         <!-- <label>
@@ -48,17 +50,23 @@
                 <span>Choose Font:</span>
                 <font-picker @setFont="updateFont" />
             </label>
-            <label v-if="info.key === 'btns'">
+            <label v-if="info.key === 'btns'" class="border-radius-bar">
                 <span>Border-radius</span>
                 <input type="range" min="0" max="100" @input="updateRadius">
             </label>
-            <hr>
         </section>
+        <hr>
+        <slider :change="info" />
 
-        <section>
-            <button :disabled="!getHistory.currState" @click="goBack">Last Puk</button>
-            <button :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards">Next
-                Puk</button>
+        <section class="undo-redo">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                v-tooltip="'Undo'">
+                undo
+            </button>
+            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
+                @click="goForwards" v-tooltip="'Redo'">
+                redo
+            </button>
         </section>
     </section>
 
@@ -68,7 +76,7 @@ import { xor } from 'lodash';
 import { utilService } from '../services/util.service';
 import colorPicker from './util/color-picker.vue';
 import fontPicker from './util/font-picker.vue';
-
+import slider from './util/slider.vue'
 
 
 export default {
@@ -78,7 +86,8 @@ export default {
     },
     components: {
         colorPicker,
-        fontPicker
+        fontPicker,
+        slider
     },
     data() {
         return {
@@ -88,6 +97,7 @@ export default {
         };
     },
     created() {
+        this.updateCmp = utilService.debounce(this.updateCmp, 300)
     },
     methods: {
         updateClr(ev) {
@@ -115,11 +125,10 @@ export default {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
         updateCmp(att, value) {
-            const { key, path, currCmp, elIdx } = this.info
-
-            const copyCmp = utilService.copy(currCmp)
+            const { key, path, elIdx } = this.info
+            const cmp = this.getCurrCmp(path)
+            const copyCmp = utilService.copy(cmp)
             let elCopy
-
             if (elIdx !== undefined) {
                 elCopy = copyCmp.info[key][elIdx]
             } else {
@@ -144,6 +153,14 @@ export default {
         },
         goForwards() {
             this.$store.dispatch({ type: 'goForwards' })
+        },
+        getCurrCmp(path) {
+            const wap = this.$store.getters.getLastState
+            if (path.idx !== undefined) {
+                return wap.cmps[path.fatherIdx].cmps[path.idx]
+            } else {
+                return wap.cmps[path.fatherIdx]
+            }
         }
 
     },

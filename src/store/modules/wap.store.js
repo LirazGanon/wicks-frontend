@@ -19,6 +19,7 @@ export const wapStore = {
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
         getHistory({ history }) { return history },
+        getLastState({ history }) { return history.waps[history.waps.length - 1] }
     },
     mutations: {
         setTemplates(state, { templates }) {

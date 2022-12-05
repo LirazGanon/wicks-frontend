@@ -2,7 +2,7 @@
 
 
 
-  <section class="page-editor" ref="container" :class="[responsiveClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
+  <section class="page-editor" ref="container" :class="[responsiveClass,myClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -54,7 +54,7 @@ export default {
     return {
       responsiveClass: [],
       conMaxWidth: null,
-      class: []
+      myClass: []
     }
   },
   async created() {
@@ -67,7 +67,7 @@ export default {
   },
   mounted() {
     eventBus.on('resizeWap', this.resize)
-    // new ResizeObserver(this.resized).observe(this.$refs.container)
+    new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
@@ -121,9 +121,9 @@ export default {
     resize(size) {
       const puk = size == '100' ? size + '%' : size + 'px'
       this.conMaxWidth = puk
-      if (+size < 500) this.responsiveClass = 'mobile'
-      if (+size >= 600) this.responsiveClass = 'tablet'
-      if (size === '100') this.responsiveClass = ''
+      if (+size < 500) this.myClass = 'mobile-display'
+      if (+size >= 600) this.myClass = 'tablet-display'
+      if (size === '100') this.myClass = ''
     },
 
     wrapper() {

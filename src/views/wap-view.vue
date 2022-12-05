@@ -3,9 +3,7 @@
     <div class="wap-view">
         <div v-for="item in view.cmps" :key="item.id">
             <div class="main-layout full">
-<!-- <pre>{{item}}</pre> -->
                 <component :is="(item.type || 'wapHeader')" :cmp="item" />
-                <!-- <pre>{{item}}</pre> -->
 
             </div>
         </div>
@@ -29,7 +27,9 @@ import wapGallery from '../cmps/waps/wap-gallery.vue'
 import wapFooter from '../cmps/waps/wap-footer.vue'
 
 
-import { wapService } from '../services/wap.service.local.js'
+// import { templateService } from '../services/template.service.js'
+import { wapService } from '../services/wap.service.js'
+import { templateService } from "../services/template.service";
 
 export default {
     name: 'variable',
@@ -45,9 +45,13 @@ export default {
     },
     methods: {
         async getCurrWap() {
+            // TODO:ARRANGE THE PARAMS TO DIFFER BETWEEN WAP AND TEMPLATE
             const id = this.$route.params.wapId
-            const wap = await wapService.getById(id)
-            this.view = wap
+            // const wap = await wapService.getById(id)
+            const template = await templateService.getTemplate(id)
+            console.log(template)
+            console.log(this.view)
+            this.view = template
         }
     },
     computed: {},

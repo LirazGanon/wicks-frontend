@@ -19,43 +19,44 @@ window.cs = cmpService
 
 
 async function query(filterBy = { txt: '', desc: '' }) {
-    // return httpService.get(STORAGE_KEY, filterBy)
+    return httpService.get(STORAGE_KEY, filterBy)
 
-    var cmps = await storageService.query(STORAGE_KEY)
-    if (!cmps || !cmps.length) {
-        cmps = defaultCmps
-        await storageService.postMany(STORAGE_KEY, cmps)
-    }
-    // if (filterBy.txt) {
-    //     const regex = new RegExp(filterBy.txt, 'i')
-    //     cmps = cmps.filter(cmp => regex.test(cmp.name) || regex.test(cmp.description))
+    // var cmps = await storageService.query(STORAGE_KEY)
+    // if (!cmps || !cmps.length) {
+    //     cmps = defaultCmps
+    //     await storageService.postMany(STORAGE_KEY, cmps)
     // }
-    // if (filterBy.desc) {
-    //     cmps = cmps.filter(cmp => cmp.desc <= filterBy.desc)
-    // }
-    return cmps
+    // // if (filterBy.txt) {
+    // //     const regex = new RegExp(filterBy.txt, 'i')
+    // //     cmps = cmps.filter(cmp => regex.test(cmp.name) || regex.test(cmp.description))
+    // // }
+    // // if (filterBy.desc) {
+    // //     cmps = cmps.filter(cmp => cmp.desc <= filterBy.desc)
+    // // }
+    // return cmps
 
 }
 function getById(cmpId) {
-    return storageService.get(STORAGE_KEY, cmpId)
-    // return httpService.get(`cmp/${cmpId}`)
+    // return storageService.get(STORAGE_KEY, cmpId)
+    return httpService.get(`cmp/${cmpId}`)
 }
 
 async function remove(cmpId) {
-    await storageService.remove(STORAGE_KEY, cmpId)
-    // return httpService.delete(`cmp/${cmpId}`)
+    // await storageService.remove(STORAGE_KEY, cmpId)
+    return httpService.delete(`cmp/${cmpId}`)
 }
 async function save(cmp) {
     var savedCmp
     if (cmp._id) {
-        savedCmp = await storageService.put(STORAGE_KEY, cmp)
-        // savedCmp = await httpService.put(`cmp/${cmp._id}`, cmp)
+        // savedCmp = await storageService.put(STORAGE_KEY, cmp)
+        savedCmp = await httpService.put(`cmp/${cmp._id}`, cmp)
 
     } else {
         // Later, owner is set by the backend
+        // TODO:set the owner in the backend
         // cmp.owner = userService.getLoggedinUser()
-        savedCmp = await storageService.post(STORAGE_KEY, cmp)
-        // savedCmp = await httpService.post('cmp', cmp)
+        // savedCmp = await storageService.post(STORAGE_KEY, cmp)
+        savedCmp = await httpService.post('cmp', cmp)
     }
     return savedCmp
 }

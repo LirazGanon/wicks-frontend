@@ -14,8 +14,8 @@
       <h1>Pick one of our professionally designed website templates</h1>
 
       <ul class="wap-list">
-        <li v-for="wap in waps" :key="wap._id">
-          <wap-preview :wap="wap" @setIsLoading="toggleIsLoading" />
+        <li v-for="template in templates" :key="template._id">
+          <wap-preview :template="template" @setIsLoading="toggleIsLoading" />
         </li>
       </ul>
 
@@ -32,7 +32,7 @@ import wapPreview from "./wap-preview.vue"
 
 export default {
   props: {
-    waps: Array,
+    templates: Array,
     loading: Boolean
   },
   data() {

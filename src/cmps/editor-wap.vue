@@ -39,7 +39,8 @@ import wapBgImg from '../cmps/waps-edit/wap-bg-img-edit.vue'
 import appHeader from "./app-header.vue";
 
 
-import { wapService } from '../services/wap.service.local.js'
+import { templateService } from '../services/template.service.js'
+import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
@@ -53,14 +54,10 @@ export default {
       conMaxWidth: null
     }
   },
-  async created() {
-    const id = this.$route.params.wapId
-    try {
-      this.$store.dispatch({ type: 'setWapToEdit', id })
-    } catch {
-      console.log('cannot load wap');
-    }
-  },
+  created() {
+        this.setWapToEdit()
+    },
+
   mounted() {
     eventBus.on('resizeWap', this.resize)
     new ResizeObserver(this.resized).observe(this.$refs.container)
@@ -69,6 +66,14 @@ export default {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
+    async setWapToEdit() {
+            const id = this.$route.params
+            const wapId = (id.wapId)
+            console.log(wapId)
+            if (!this.$store.getters.getWapToEdit) {
+                await this.$store.dispatch({ type: 'setWapToEdit',wapId })
+            }
+        },
 
     getChildPayload(itemIndex) {
       const wap = this.$store.getters.getWapToEdit
@@ -145,7 +150,8 @@ export default {
     },
     cmpsLength() {
       const wap = this.wapToEdit
-      return wap?.cmps.length || 0
+      // TODO:REMOVE SECOND ?
+      return wap?.cmps?.length || 0
     }
 
   }

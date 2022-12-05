@@ -1,11 +1,11 @@
-import { wapService } from '../../services/wap.service.local'
-import { wapToEditService } from '../../services/wap-to-edit.service'
-import { utilService } from '../../services/util.service'
+import { templateService } from '../../services/template.service.js'
+import { wapService } from '../../services/wap.service.js'
+import { utilService } from '../../services/util.service.js'
 
 
 export const wapStore = {
     state: {
-        waps: [],
+        templates: [],
         isLoading: false,
         isHeader: true,
         wapInEdit: null,
@@ -15,14 +15,14 @@ export const wapStore = {
         }
     },
     getters: {
-        waps({ waps }) { return waps },
+        templates({ templates }) { return templates },
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
-        getHistory({ history }) { return history }
+        getHistory({ history }) { return history },
     },
     mutations: {
-        setWaps(state, { waps }) {
-            state.waps = waps
+        setTemplates(state, { templates }) {
+            state.templates = templates
         },
         addWap(state, { wap }) {
             state.waps.push(wap)
@@ -58,7 +58,7 @@ export const wapStore = {
                 && history.currState) {
                 history.waps = history.waps.slice(0, history.currState + 1)
             }
-            if(history.waps.length - 1 > 30){
+            if (history.waps.length - 1 > 30) {
                 history.waps.shift()
             }
             history.currState++
@@ -76,20 +76,21 @@ export const wapStore = {
             state.history.waps.pop()
             state.history.currState--
             state.wapInEdit = state.history.waps[state.history.waps.length - 1]
-        }
+        },
+       
 
     },
     actions: {
-        async addWap(context, { wap }) {
-            try {
-                wap = await wapService.save(wap)
-                context.commit({ type: 'addWap', wap })
-                return wap
-            } catch (err) {
-                console.log('wapStore: Error in addWap', err)
-                throw err
-            }
-        },
+        // async addWap(context, { wap }) {
+        //     try {
+        //         wap = await wapService.save(wap)
+        //         context.commit({ type: 'addWap', wap })
+        //         return wap
+        //     } catch (err) {
+        //         console.log('wapStore: Error in addWap', err)
+        //         throw err
+        //     }
+        // },
         async updateWap(context, { cmp, path }) {
             // TODO:send user msg
             try {
@@ -100,7 +101,7 @@ export const wapStore = {
                     wap.cmps[path.fatherIdx] = cmp
                 }
                 context.commit({ type: 'saveHistory', wap })
-                wap = await wapToEditService.save(wap)
+                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
                 return wap
             } catch (err) {
@@ -112,7 +113,7 @@ export const wapStore = {
         async updateWapFull(context, { wap }) {
             try {
                 context.commit({ type: 'saveHistory', wap })
-                wap = await wapToEditService.save(wap)
+                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
             } catch {
                 context.commit({ type: 'setLastHistoryState' })
@@ -120,15 +121,17 @@ export const wapStore = {
                 throw err
             }
         },
-        async loadWaps(context) {
+        async loadTemplates(context) {
             try {
                 context.commit({ type: 'toggleLoading' })
-                const waps = await wapService.query()
-                context.commit({ type: 'setWaps', waps })
+                const templates = await templateService.query()
+                console.log(templates)
+                context.commit({ type: 'setTemplates', templates })
                 context.commit({ type: 'toggleLoading' })
+                // return templates
             } catch (err) {
                 context.store.isLoading = false
-                console.log('wapStore: Error in loadWaps', err)
+                console.log('wapStore: Error in loadTemplates', err)
                 throw err
             }
         },
@@ -150,26 +153,32 @@ export const wapStore = {
                 throw err
             }
         },
-        async setWapToEdit(context, { id }) {
+        async setWapToEdit(context, { wapId }) {
+            if(context.state.wapInEdit){
+               let currWapId = context.state.wapInEdit._id
+               if(wapId===currWapId) return
+            }
             try {
-                const wapToEdit = await wapToEditService.getById(id)
+                const wapToEdit = await templateService.getTemplateToEdit(wapId)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
+                return wapToEdit
             } catch (err) {
                 console.log('could not get wap')
                 throw err
             }
         },
-        async getCustomWap(context, { wapId }) {
-            try {
-                const wapToEdit = await wapToEditService.getCustomWap(wapId)
-                context.commit({ type: 'setWapToEdit', wapToEdit })
-                // TODO: check what is the eror from the console
-                return wapToEdit
-            }
-            catch {
-                console.log('could not create wap')
-            }
-        },
+        // async getCustomWap(context, { wapId }) {
+        //     console.log('get custom')
+        //     try {
+                // const wapToEdit = await templateService.getCustomWap(wapId)
+        //         context.commit({ type: 'setWapToEdit', wapToEdit })
+        //         // TODO: check what is the eror from the console
+        //         return wapToEdit
+        //     }
+        //     catch {
+        //         console.log('could not create wap')
+        //     }
+        // },
         async duplicateCmp(context, { cmp, path }) {
             try {
                 let wap = utilService.copy(context.state.wapInEdit)
@@ -180,7 +189,7 @@ export const wapStore = {
                     console.log(cmp)
                 }
 
-                wap = await wapToEditService.save(wap)
+                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
                 return wap
             }
@@ -196,7 +205,7 @@ export const wapStore = {
                 } else {
                     wap.cmps.splice([path.fatherIdx], 1)
                 }
-                wap = await wapToEditService.save(wap)
+                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
                 return wap
             }
@@ -219,6 +228,10 @@ export const wapStore = {
                 console.log('something went wrong');
                 throw err
             }
+        },
+        getCurrWap(context, id) {
+            console.log(context.state.templates)
+            return context.state.templates.find(template => template._id === id)
         },
 
     }

@@ -1,7 +1,7 @@
 <template>
   <app-header />
     <div class="container">
-      <wap-list :waps="waps" :loading="isLoading" />
+      <wap-list :templates="templates" :loading="isLoading" />
     </div>
 </template>
 
@@ -22,15 +22,15 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser
     },
-    waps() {
-      return this.$store.getters.waps
+    templates() {
+      return this.$store.getters.templates
     },
     isLoading() {
       return this.$store.getters.isLoading
     }
   },
   created() {
-    this.$store.dispatch({ type: 'loadWaps' })
+    this.$store.dispatch({ type: 'loadTemplates' })
   },
   methods: {
     async addWapMsg(wapId) {

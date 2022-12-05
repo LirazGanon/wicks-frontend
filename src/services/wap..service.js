@@ -4,7 +4,7 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 // import defaultWaps from './json/wap.json' assert{type: 'json'}
 import defaultWaps from './json/wap2.json' assert{type: 'json'}
-import { wapService } from './wap.service.local.js'
+import { templateService } from './template.service.js'
 
 
 const STORAGE_KEY = 'editableWaps'

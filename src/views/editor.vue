@@ -28,16 +28,16 @@ export default {
     data() {
         return {
             type: null,
-            editor: null
+            editor: null,
         }
     },
-    created() {
-    },
+ 
     methods: {
+
         openEditor(editorContent) {
             this.editor = editorContent
         },
-       
+
     },
     computed: {
 

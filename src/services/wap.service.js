@@ -12,7 +12,7 @@ export const wapService = {
     getById,
     save,
     remove,
-    getCustomWap,
+    // getCustomWap,
     addWapMsg
 }
 window.cs = wapService
@@ -62,12 +62,12 @@ async function addWapMsg(wapId, txt) {
 }
 
 
-function getCustomWap() {
-    return {
-        name: 'Great Site -' + (Date.now() % 1000),
-        desc: 'Enjoy my site',
-    }
-}
+// function getCustomWap() {
+//     return {
+//         name: 'Great Site -' + (Date.now() % 1000),
+//         desc: 'Enjoy my site',
+//     }
+// }
 
 
 

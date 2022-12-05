@@ -44,7 +44,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch({ type: 'loadWaps' })
+    this.$store.dispatch({ type: 'loadTemplates' })
   },
   methods: {
     async addWap() {

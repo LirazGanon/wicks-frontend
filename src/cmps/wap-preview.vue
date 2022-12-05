@@ -1,15 +1,14 @@
 <template>
   <section class="wap-preview ">
-
-    <img :src="wap.src" :alt="wap.name">
+    <img :src="template.src" :alt="template.name">
 
     <div class="preview-btns">
-      <button @click="editWap(wap._id)">Edit</button>
-      <button @click="prevWap(wap._id)">Preview</button>
+      <button @click="editWap(template._id)">Edit</button>
+      <button @click="viewTemplate(template._id)">Preview</button>
     </div>
 
     <div class="wap-details">
-      <span>{{ wap.type }}</span> - <span> {{ wap.name }}</span>
+      <span>{{ template.type }}</span> - <span> {{ template.name }}</span>
     </div>
 
 
@@ -19,12 +18,12 @@
 </template>
 
 <script>
-import { wapService } from '../services/wap.service.local';
+import { wapService } from '../services/wap.service';
 import { store } from '../store';
 
 export default {
   props: {
-    wap: Object,
+    template: Object,
   },
   data() {
     return {}
@@ -32,13 +31,15 @@ export default {
   methods: {
     async editWap(wapId) {
       this.$emit('setIsLoading', true)
-      const wapToEdit = await this.$store.dispatch({ type: 'getCustomWap', wapId })
-      //  wapService.getCustomWap(wapId)
-      this.$router.push(`/wap/edit/${wapToEdit._id}`);
+console.log(wapId)
+      const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId })
+      console.log(wap)
+      this.$router.push(`/wap/edit/${wap._id}`);
       this.$emit('setIsLoading', false)
     },
-    prevWap(wapId) {
-      this.$router.push(`/wap/${wapId}`);
+    viewTemplate(templateId) {
+      this.$router.push(`/wap/${templateId}`);
+      console.log(this.template)
     },
   },
   computed: {

@@ -39,8 +39,9 @@ export default {
   },
   created() {
     // socketService.setup()
-    socketService.emit(SOCKET_EMIT_SET_TOPIC, this.topic)
+
     socketService.on(SOCKET_EVENT_ADD_MSG, this.addMsg)
+    socketService.on(SOCKET_EMIT_SEND_MSG, this.addMsg)
   },
   destroyed() {
     socketService.off(SOCKET_EVENT_ADD_MSG, this.addMsg)

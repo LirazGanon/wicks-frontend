@@ -3,7 +3,7 @@ import { userService } from './user.service'
 
 export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
 // export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
-export const SOCKET_EMIT_SEND_MSG = 'baba'
+export const SOCKET_EMIT_SEND_MSG = 'incoming-msg'
 export const SOCKET_EMIT_SET_TOPIC = 'chat-set-topic'
 export const SOCKET_EMIT_USER_WATCH = 'user-watch'
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
@@ -112,8 +112,13 @@ function createDummySocketService() {
 
 // Basic Tests
 function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
+function msg(msg) {
+  console.log(msg)
+  socketService.emit(msg)
+}
+
 socketService.on('baba', cb('puk'))
-// socketService.on('baba', cb)
+socketService.on('incoming-msg')
 // socketService.on('baba', cb)
 // socketService.on('mama', cb)
 // socketService.emit('baba', 'Puk')

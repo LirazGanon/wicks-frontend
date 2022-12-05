@@ -32,13 +32,21 @@
         width: clamp(200px, 35vw, 500px);
         transition: all 0.3s;
         opacity: 1;
+
+        .close-icon {
+            position: absolute;
+            z-index: 15;
+            right: 5px;
+            top: 15px;
+            padding: 0;
+        }
     }
 
     .options {
         width: 0;
         opacity: 0;
         transition: all 0.3s;
-
+        ;
         position: relative;
 
         border-right: 1px solid $border-clr;
@@ -99,6 +107,8 @@
                 opacity: 0.2;
             }
 
+     
+
             .text-format {
 
                 .editor-checkbox {
@@ -152,10 +162,6 @@
             }
         }
 
-        img {
-            pointer-events: none;
-            width: 95%;
-        }
 
         &.theme {
             flex-direction: column;
@@ -176,9 +182,6 @@
     .prev-cmp-wrapper {
         height: 100%;
 
-        .close-icon {
-            display: none;
-        }
 
         .prev-cmp-filter {
             height: 100%;
@@ -283,13 +286,23 @@
             align-items: center;
             width: 100% !important;
             z-index: 10;
+            box-shadow: 0px 10px 13px -7px #000000, 0px -3px 10px 0px rgba(0, 0, 0, 0.35);
 
             .close-icon {
-                display: block;
-                position: fixed;
+                top: 5px;
                 background-color: rgb(244, 244, 246);
                 z-index: 15;
-                right: 0;
+            }
+
+            .cmp-editor {
+                >span:first-of-type {
+                    margin-top: 10px;
+                }
+
+                .text-format {
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
 
             h2 {
@@ -335,9 +348,6 @@
                     }
                 }
 
-                .color-picker {
-                    margin-bottom: 1em;
-                }
 
                 .prev-cmp-filter {
                     display: flex;
@@ -351,6 +361,9 @@
 
             }
 
+            .color-picker {
+                margin-bottom: 0;
+            }
 
         }
     }

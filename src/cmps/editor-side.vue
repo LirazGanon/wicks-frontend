@@ -65,11 +65,12 @@
 
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor }">
+            <span class="material-symbols-outlined close-icon" @click="(active = null)">
+                disabled_by_default
+            </span>
             <ul class="cmp-side-editor">
                 <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor"
-                @clearEditor="clear"
-                @closeEditor="(active = null)" 
-                 />
+                    @clearEditor="clear" />
             </ul>
         </section>
     </section>

@@ -3,6 +3,7 @@
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
         <span>Text Color:</span>
+
         <color-picker @setColor="updateClr" />
         <span v-if="info.key === 'btns'">Background Color:</span>
         <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
@@ -52,13 +53,12 @@
                 <span>Border-radius</span>
                 <input type="range" min="0" max="100" @input="updateRadius">
             </label>
-            <hr>
         </section>
+        <hr>
 
         <section>
             <button :disabled="!getHistory.currState" @click="goBack">Last Puk</button>
-            <button :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards">Next
-                Puk</button>
+            <button :disabled="(getHistory.currState === getHistory.waps.length -1)" @click="goForwards">Next Puk</button>
         </section>
     </section>
 

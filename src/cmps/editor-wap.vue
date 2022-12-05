@@ -81,7 +81,8 @@ export default {
     onDrop(dropResult) {
       let wap = this.$store.getters.getWapToEdit
       wap = utilService.copy(wap)
-      console.log(dropResult.payload.id = utilService.makeId());
+      dropResult = utilService.copy(dropResult)
+      dropResult.payload.id = utilService.makeId()
 
       let result = this.applyDrag(wap.cmps, dropResult)
       wap.cmps = result

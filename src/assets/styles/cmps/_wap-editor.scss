@@ -71,6 +71,13 @@
             padding: 0 5px;
             transition: transform 0.2s;
 
+
+            img {
+                pointer-events: none;
+                width: 95%;
+            }
+
+
             &:hover {
                 cursor: grab;
                 transform: translateY(-0.1875rem);
@@ -107,7 +114,12 @@
                 opacity: 0.2;
             }
 
-     
+            .draggable-item {
+                img {
+                    pointer-events: none;
+                    width: 95%;
+                }
+            }
 
             .text-format {
 

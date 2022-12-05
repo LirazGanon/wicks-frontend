@@ -51,29 +51,23 @@ export default {
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             return { fatherIdx: cmpIdx, idx }
         },
-        updateCmp(ev, key, innerIdx, author) {
-            let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
+        updateCmp(ev, key, idx, author) {
+            const path = this.getPath()
+            const cmp = utilService.copy(this.cmp)
 
-            if (innerIdx !== undefined) {
+
+            if (idx !== undefined) {
                 if (author) {
-
-                    cmpCopy.info[key][innerIdx][author] = ev.target.innerText
+                    cmp.info[key][idx][author] = ev.target.innerText
                 } else {
-
-                    cmpCopy.info[key][innerIdx].txt = ev.target.innerText
+                    cmp.info[key][idx].txt = ev.target.innerText
                 }
             } else {
-                cmpCopy.info[key].txt = ev.target.innerText
+                cmp.info[key].txt = ev.target.innerText
             }
 
-
-
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = cmpCopy
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp, path })
             } catch {
                 console.log('ops')
             }

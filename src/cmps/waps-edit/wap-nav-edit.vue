@@ -8,7 +8,8 @@
             }}</a> -->
 
 
-        <a v-for="(l, idx) in cmp.info.links" @click.stop="openEditor('links', idx)" :style="l.style">
+        <a v-for="(l, idx) in cmp.info.links" @click.stop="openEditor('links', idx)" :style="l.style"
+            contenteditable="true" @input="updateCmp($event,'links',idx)">
             <span>
                 {{ l.txt }}
             </span>
@@ -45,17 +46,13 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev, innerIdx) {
-            let wap = this.$store.getters.getWapToEdit
-            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmpId)
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            wap = JSON.parse(JSON.stringify(wap))
+        updateCmp(ev, key, idx) {
+            const path = this.path
+            let cmp = utilService.copy(this.cmp)
+            cmp.info[key][idx].txt = ev.target.innerText
 
- 
-            cmpCopy.info.links[innerIdx].txt = ev.target.innerText
-            wap.cmps[cmpIdx].info.nav = cmpCopy
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp, path })
             } catch {
                 console.log('ops')
             }

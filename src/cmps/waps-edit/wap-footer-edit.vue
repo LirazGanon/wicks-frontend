@@ -48,14 +48,12 @@ export default {
             this.$emit('openEditor', wapContent)
         },
         updateCmp(ev, key) {
-            let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            cmpCopy.info[key].txt = ev.target.innerText
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = cmpCopy
+            const path = this.getPath()
+            let cmp = utilService.copy(this.cmp)
+            cmp.info[key].txt = ev.target.innerText
+
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp, path })
             } catch {
                 console.log('ops')
             }

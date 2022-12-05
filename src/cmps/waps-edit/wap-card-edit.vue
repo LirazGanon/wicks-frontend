@@ -47,28 +47,13 @@ export default {
             }
             this.$emit('openEditor', wapContent)
         },
-        updateCmp(ev, key, innerIdx) {
-            let wap = this.$store.getters.getWapToEdit
+        updateCmp(ev, key) {
             const path = this.path
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            wap = JSON.parse(JSON.stringify(wap))
-
-            
-
-            if (innerIdx !== undefined) {
-                cmpCopy.info[key][innerIdx].txt = ev.target.innerText
-            } else {
-                cmpCopy.info[key].txt = ev.target.innerText
-            }
-
-            if (path.idx !== undefined) {
-                wap.cmps[path.fatherIdx].cmps[path.idx] = cmpCopy
-            } else {
-                wap.cmps[path.fatherIdx] = cmpCopy
-            }
+            let cmp = utilService.copy(this.cmp)
+            cmp.info[key].txt = ev.target.innerText
 
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp, path })
             } catch {
                 console.log('ops')
             }

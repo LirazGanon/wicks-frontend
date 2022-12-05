@@ -5,11 +5,11 @@
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
             <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style"
-                @input="updateCmp" data-type="heading">
+                @input="updateCmp($event, 'heading')">
                 {{ cmp.info.heading.txt }}
             </h1>
             <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
-                @input="updateCmp" data-type="subHeading">{{
+                @input="updateCmp($event, 'subHeading')">{{
                         (cmp.info.subHeading.txt)
                 }}</p>
 
@@ -60,15 +60,13 @@ export default {
             }
             this.$emit('openEditor', payload)
         },
-        updateCmp(ev) {
-            let wap = this.$store.getters.getWapToEdit
-            const idx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
-            cmpCopy.info[ev.target.dataset.type].txt = ev.target.innerText
-            wap = JSON.parse(JSON.stringify(wap))
-            wap.cmps[idx] = cmpCopy
+        updateCmp(ev, key) {
+            const path = this.getPath()
+            let cmp = utilService.copy(this.cmp)
+            cmp.info[key].txt = ev.target.innerText
+
             try {
-                this.$store.dispatch({ type: 'updateWap', wap })
+                this.$store.dispatch({ type: 'updateWap', cmp, path })
             } catch {
                 console.log('ops')
             }

@@ -3,7 +3,6 @@
 
 
   <section class="page-editor" ref="container" :class="[responsiveClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
-
     <section v-if="!cmpsLength" class="wap-placeholder">
 
     </section>

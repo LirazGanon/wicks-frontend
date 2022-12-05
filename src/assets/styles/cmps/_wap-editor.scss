@@ -463,4 +463,10 @@
             }
         }
     }
+    @media (max-width: 550px) {
+        .left-nav {
+          background-color: $clr2;
+          * {color: $clr5 !important}
+        }
+    }
 }

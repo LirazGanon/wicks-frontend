@@ -2,7 +2,9 @@
 
     display: flex;
     flex-wrap: wrap;
-    max-width: 320px;
+    justify-content: space-between;
+    // max-width: 320px;
+margin-inline-end: 10px;
     gap: 7px;
     .color-picker-item {
         cursor: poi;

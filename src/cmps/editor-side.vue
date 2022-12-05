@@ -16,7 +16,7 @@
                     :class="{ active: active === 'edit' }" @click="toggleActive('edit')">
                     brush
                 </button>
-                <button class="material-symbols-outlined" @click="toggleMobileButton()">
+                <button class="material-symbols-outlined app-btn" @click="toggleMobileButton()">
                     apps
                 </button>
             </section>

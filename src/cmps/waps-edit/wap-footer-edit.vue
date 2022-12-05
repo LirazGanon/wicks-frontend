@@ -6,7 +6,7 @@
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @click="openEditor('logo')"
                 :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">
                 {{ cmp.info.logo.txt }}</p>
-            <img v-if="(cmp.info.logo.type === 'img')" class="logo" src="{{ cmp.info.logo.src}}">
+            <img v-if="(cmp.info.logo.type === 'img')" class="logo" :src="cmp.info.logo.src">
 
             <p class="copyright" contenteditable="true" @click="openEditor('copyright')"
                 :style="cmp.info.copyright.style" @blur="updateCmp($event, 'copyright')">{{ cmp.info.copyright.txt }}

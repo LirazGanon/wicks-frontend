@@ -2,7 +2,7 @@
     <section class="main-editor flex">
 
         <!-- LEFT NAV -->
-        <section class="left-nav flex column space-between" :class="{mobile_close:mobileMenuClose}">
+        <section class="left-nav flex column space-between" :class="{ mobile_close: mobileMenuClose }">
             <section class="flex column">
                 <button class="material-symbols-outlined" :class="{ active: active === 'cmp' }"
                     v-tooltip="'Add Section'" @click="toggleActive('cmp')">
@@ -16,7 +16,7 @@
                     :class="{ active: active === 'edit' }" @click="toggleActive('edit')">
                     brush
                 </button>
-                <button class="material-symbols-outlined"  @click="toggleMobileButton()">
+                <button class="material-symbols-outlined" @click="toggleMobileButton()">
                     apps
                 </button>
             </section>
@@ -89,7 +89,7 @@ import editorCmpPrev from './editor-cmp-prev.vue'
 import txtEditor from './txt-editor.vue'
 import imgEditor from './img-editor.vue'
 import sectionEditor from './section-editor.vue'
-
+import { utilService } from '../services/util.service'
 
 
 export default {
@@ -103,32 +103,68 @@ export default {
             data: {},
             active: null,
             cmpFilter: 'All',
-            mobileMenuClose:true,
+            mobileMenuClose: true,
             themes: {
                 a: {
-                    main: '#333333',
-                    secondary: '#345543',
-                    break: '#556778',
-                    txt: '#ffffff',
-                    secondaryTxt: '#333333'
+                    main: {
+                        'background-color': '#333333',
+                        'color': '#ffffff'
+                    },
+                    secondary: {
+                        'background-color': '#345543',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#556778',
+                        'color': '#333333'
+                    }
                 },
                 b: {
-                    main: '#111134',
-                    secondary: '#ff838f',
-                    break: '#f738f8',
-                    txt: '#73f73f',
-                    secondaryTxt: '#333333'
+                    main: {
+                        'background-color': '#111134',
+                        'color': 'blue'
+                    },
+                    secondary: {
+                        'background-color': '#ff838f',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#f738f8',
+                        'color': '#333333'
+                    },
 
                 },
-                c: {
-                    main: '#f38292',
-                    secondary: '#9393f3',
-                    break: '#118ff3',
-                    txt: '#1222f3',
-                    secondaryTxt: '#333333'
+                c:
+                {
+                    main: {
+                        'background-color': '#f38292',
+                        'color': 'red',
+                    },
+                    secondary: {
+                        'background-color': '#9393f3',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#1222f3',
+                        'color': '#333333'
+                    }
                 },
+                d: {
+                    main: {
+                        'background-color': '#f38292',
+                        'color': 'red'
+                    },
+                    secondary: {
+                        'background-color': '#9393f3',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#1222f3',
+                        'color': '#333333'
+                    }
+                }
             }
-        };
+        }
     },
     async created() {
         await this.$store.dispatch({ type: 'loadCmps' })
@@ -151,10 +187,63 @@ export default {
             this.active = null
         },
         setTheme(theme) {
-            console.log('hi');
-            console.log('theme', this.themes[theme])
+
+            let wap = this.$store.getters.getWapToEdit
+            wap = utilService.copy(wap)
+            const cmps = wap.cmps.map(cmp => {
+                if (cmp.cmps) {
+                    cmp.cmps = cmp.cmps.map(innerCmp => {
+                        for (let [key, value] of Object.entries(innerCmp.info)) {
+                            if (value[0]) {
+                                value = value.map(k => {
+                                    k.style = {}
+                                    return k
+                                })
+                            } else {
+                                value.style = {}
+                            }
+                            innerCmp.info[key] = value
+                        }
+                        return innerCmp
+                    })
+                }
+                for (let [key, value] of Object.entries(cmp.info)) {
+                    if (value[0]) {
+                        value = value.map(k => {
+                            k.style = {}
+                            return k
+                        })
+                    } else {
+                        value.style = {}
+                    }
+                    cmp.info[key] = value
+                }
+                switch (cmp.type) {
+                    case 'wap-header':
+                    case 'wap-hero':
+                    case 'wap-footer':
+                        cmp.style = this.themes[theme].main
+                        break;
+                    case 'wap-container':
+                    case 'wap-form':
+                    case 'wap-map':
+                    case 'wap-reviews':
+                        cmp.style = this.themes[theme].secondary
+                        break;
+                    default:
+                        cmp.style = this.themes[theme].break
+                }
+                return cmp
+            })
+
+            wap.cmps = cmps
+            try {
+                this.$store.dispatch({ type: 'updateWapFull', wap })
+            } catch {
+                console.log('ops');
+            }
         },
-        toggleMobileButton(){
+        toggleMobileButton() {
             this.mobileMenuClose = !this.mobileMenuClose
         }
 

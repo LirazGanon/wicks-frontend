@@ -18,18 +18,17 @@ section.page-editor {
         // min-height: 60vh;
     }
 
-    &.mobile {
+    &.mobile-display {
         max-height: clamp(200px, 70vh + 3rem, 90vh );
         border: 16px #28282b solid;
         border-top-width: 60px;
         border-bottom-width: 60px;
         border-radius: 16px;
         margin: auto;
-
     }
    
     
-    &.tablet {
+    &.tablet-display {
         max-height: clamp(200px, 70vh + 3rem, 90vh );
         
         border-radius: 16px;

@@ -18,7 +18,7 @@ export const wapStore = {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
-
+        getHistory({ history }) { return history }
     },
     mutations: {
         setWaps(state, { waps }) {
@@ -43,7 +43,10 @@ export const wapStore = {
         },
         setWapToEdit(state, { wapToEdit }) {
             state.wapInEdit = wapToEdit
-            state.history.waps.push(wapToEdit)
+            state.history = {
+                currState: 0,
+                waps: [wapToEdit]
+            }
         },
         removeWapToEdit(state) {
             state.wapToEdit = null
@@ -51,12 +54,14 @@ export const wapStore = {
             state.history.currState = 0
         },
         saveHistory({ history }, { wap }) {
-            if (history.currState > history.waps.length - 1) {
-                history.waps = history.waps.slice(0, history.currState)
+            if (history.currState < history.waps.length - 1
+                && history.currState) {
+                history.waps = history.waps.slice(0, history.currState + 1)
+                console.log('inside', history);
             }
             history.currState++
             history.waps.push(wap)
-            console.log(history.waps);
+            console.log(history);
         },
         goBack(state) {
             state.history.currState--
@@ -67,7 +72,7 @@ export const wapStore = {
             state.wapInEdit = state.history.waps[state.history.currState]
         },
         setLastHistoryState(state) {
-            state.history.wap.pop()
+            state.history.waps.pop()
             state.history.currState--
             state.wapInEdit = state.history.waps[state.history.waps.length - 1]
         }
@@ -197,18 +202,18 @@ export const wapStore = {
                 console.log('could not delete')
             }
         },
-        async goBack({commit}){
-            try{
-                commit({type:"goBack"})
-            } catch{
+        async goBack({ commit }) {
+            try {
+                commit({ type: "goBack" })
+            } catch {
                 console.log('something went wrong');
                 throw err
             }
         },
-        async goForwards({commit}){
-            try{
-                commit({type:"goForwards"})
-            } catch{
+        async goForwards({ commit }) {
+            try {
+                commit({ type: "goForwards" })
+            } catch {
                 console.log('something went wrong');
                 throw err
             }

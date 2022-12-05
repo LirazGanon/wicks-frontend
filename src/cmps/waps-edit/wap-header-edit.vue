@@ -1,7 +1,7 @@
 <template>
 
-    <header class="wap-header main-layout full" :class="cmp.classes" @click="openSectionEditor" :style="cmp.style"
-        v-bind:class="class">
+    <header class="wap-header main-layout full" :class="cmp.classes" @click.stop="openSectionEditor" :style="cmp.style"
+        v-bind:class="class" @mousedown="$emit('MakeLirazKing')">
         <section class="flex space-between">
 
 
@@ -10,14 +10,16 @@
                     :style="cmp.info.logo.style">
 
 
-                
-                <h4 v-else contenteditable="true" @click.stop="openEditor('logo')" :style="cmp.info.logo.style"
-                    @blur="updateCmp($event, 'logo')">{{ cmp.info.logo.txt }}</h4>
 
-              
+                <h4 v-else contenteditable="true" @click.stop @mousedown.stop="openEditor('logo')"
+                    :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">{{
+                            cmp.info.logo.txt
+                    }}</h4>
+
+
             </div>
 
-            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
+            <component v-for="(curCmp, idx) in     cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
 
 
@@ -44,6 +46,9 @@ export default {
         this.updateCmp = utilService.debounce(this.updateCmp, 0)
     },
     methods: {
+        puki() {
+            console.log('pukiel ben david is dead');
+        },
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             el = utilService.copy(el)
@@ -81,7 +86,7 @@ export default {
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            return { fatherIdx: cmpIdx, idx }
+            return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         },
         getCurrCmp(path) {
             const wap = this.$store.getters.getLastState

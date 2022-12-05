@@ -40,7 +40,7 @@ export const clickOutsideDirective = {
     }
     setTimeout(() => {
       document.addEventListener('click', el.clickOutside)
-    }, 0)
+    }, 1)
   },
   unmounted(el) {
     document.removeEventListener('click', el.clickOutside)

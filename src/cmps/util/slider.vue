@@ -55,7 +55,7 @@ html input[type=range] {
     outline: 0;
     border: 0;
     border-radius: 500px;
-    width: 400px;
+    width: 200px;
     max-width: 100%;
     margin: 24px 0 16px;
     transition: box-shadow 0.2s ease-in-out;
@@ -63,13 +63,13 @@ html input[type=range] {
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     html input[type=range] {
-        height: 20px;
+        height: 8px;
         -webkit-appearance: none;
         background-color: #ddd;
     }
 
     html input[type=range]::-webkit-slider-runnable-track {
-        height: 20px;
+        height: 8px;
         -webkit-appearance: none;
         color: #444;
         -webkit-transition: box-shadow 0.2s ease-in-out;
@@ -77,16 +77,16 @@ html input[type=range] {
     }
 
     html input[type=range]::-webkit-slider-thumb {
-        width: 40px;
+        width: 26px;
         -webkit-appearance: none;
-        height: 40px;
+        height: 26px;
         cursor: ew-resize;
         box-shadow:  inset 0 0 0 40px blueviolet;
         border-radius: 50%;
         -webkit-transition: box-shadow 0.2s ease-in-out;
         transition: box-shadow 0.2s ease-in-out;
         position: relative;
-        transform: translateY(-20%);
+        transform: translateY(-35%);
     }
 
     html input[type=range]:active::-webkit-slider-thumb {
@@ -113,9 +113,9 @@ html input[type=range]::-ms-fill-upper {
 }
 
 #h4-container {
-    width: 400px;
+    width: 200px;
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 1em;
     box-sizing: border-box;
     position: relative;
 }
@@ -130,11 +130,11 @@ html input[type=range]::-ms-fill-upper {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -100px;
+    top: -80px;
     width: 40px;
     height: 40px;
     color: #fff !important;
-    font-size: 12px;
+    font-size: 14px;
     transform-origin: center -10px;
     transform: translateX(-50%);
     transition: margin-top 0.15s ease-in-out, opacity 0.15s ease-in-out;

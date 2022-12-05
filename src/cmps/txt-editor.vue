@@ -140,9 +140,13 @@ export default {
             }
         },
         goBack() {
+            // TODO: IM FOR REDO UNDO
+
             this.$store.dispatch({ type: 'goBack' })
         },
         goForwards() {
+            // TODO: IM FOR REDO UNDO
+
             this.$store.dispatch({ type: 'goForwards' })
         },
         getCurrCmp(path) {
@@ -171,6 +175,7 @@ export default {
         },
 
         getHistory() {
+            // TODO: IM FOR REDO UNDO
             return this.$store.getters.getHistory
         }
     },

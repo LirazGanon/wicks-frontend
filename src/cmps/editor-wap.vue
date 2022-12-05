@@ -2,7 +2,8 @@
 
 
 
-  <section class="page-editor" ref="container" :class="[responsiveClass,myClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
+  <section class="page-editor" ref="container" :class="[responsiveClass, myClass, wrapper()]"
+    :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -11,9 +12,9 @@
 
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
+      :should-accept-drop="() => lirazKing" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <component :is="cmp.type" :cmp="cmp" @openEditor="$emit('openEditor', $event)" />
+        <component :is="cmp.type" :cmp="cmp" @openEditor="makeLirazjQueen" @MakeLirazKing="makeLirazKing" />
 
       </Draggable>
 
@@ -55,12 +56,13 @@ export default {
     return {
       responsiveClass: [],
       conMaxWidth: null,
-      myClass: []
+      myClass: [],
+      lirazKing: false
     }
   },
   created() {
-        this.setWapToEdit()
-    },
+    this.setWapToEdit()
+  },
 
   mounted() {
     eventBus.on('resizeWap', this.resize)
@@ -70,14 +72,21 @@ export default {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
+    makeLirazKing() {
+      this.lirazKing = true
+    },
+    makeLirazjQueen(ev) {
+      this.lirazKing = false
+      this.$emit('openEditor', ev)
+    },
     async setWapToEdit() {
-            const id = this.$route.params
-            const wapId = (id.wapId)
-            console.log(wapId)
-            if (!this.$store.getters.getWapToEdit) {
-                await this.$store.dispatch({ type: 'setWapToEdit',wapId })
-            }
-        },
+      const id = this.$route.params
+      const wapId = (id.wapId)
+      console.log(wapId)
+      if (!this.$store.getters.getWapToEdit) {
+        await this.$store.dispatch({ type: 'setWapToEdit', wapId })
+      }
+    },
 
     getChildPayload(itemIndex) {
       const wap = this.$store.getters.getWapToEdit

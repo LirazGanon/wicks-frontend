@@ -56,9 +56,12 @@
         <!-- THEME PICKER -->
         <section class="flex options theme" :class="{ active: active === 'palette' }">
             <h2>Theme</h2>
-            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/1.png" alt="">
-            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
-            <img src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+            <img @click="setTheme('a')"
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/1.png" alt="">
+            <img @click="setTheme('b')"
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
+            <img @click="setTheme('c')"
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
 
         </section>
 
@@ -96,7 +99,31 @@ export default {
             type: null,
             data: {},
             active: null,
-            cmpFilter: 'All'
+            cmpFilter: 'All',
+            themes: {
+                a: {
+                    main: '#333333',
+                    secondary: '#345543',
+                    break: '#556778',
+                    txt: '#ffffff',
+                    secondaryTxt:'#333333'
+                },
+                b: {
+                    main: '#111134',
+                    secondary: '#ff838f',
+                    break: '#f738f8',
+                    txt: '#73f73f',
+                    secondaryTxt:'#333333'
+
+                },
+                c: {
+                    main: '#f38292',
+                    secondary: '#9393f3',
+                    break: '#118ff3',
+                    txt: '#1222f3',
+                    secondaryTxt:'#333333'
+                },
+            }
         };
     },
     async created() {
@@ -118,6 +145,10 @@ export default {
 
         clear() {
             this.active = null
+        },
+        setTheme(theme) {
+            console.log('hi');
+            console.log('theme', this.themes[theme])
         }
 
     },
@@ -128,6 +159,7 @@ export default {
         cmps() {
             return this.$store.getters.cmps
         },
+
     },
     watch: {
         editor: function () {

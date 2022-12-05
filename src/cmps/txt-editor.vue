@@ -54,6 +54,11 @@
             </label>
             <hr>
         </section>
+
+        <section>
+            <button @click="goBack">Last Puk</button>
+            <button @click="goForwards">Next Puk</button>
+        </section>
     </section>
 
 </template>
@@ -109,16 +114,22 @@ export default {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
         updateCmp(att, value) {
-            const { key, path, el, currCmp, elIdx } = this.info
+            const { key, path, currCmp, elIdx } = this.info
+
             const copyCmp = utilService.copy(currCmp)
+            let elCopy
 
-            el.style[att] = value
-
+            if (elIdx !== undefined) {
+                elCopy = copyCmp.info[key][elIdx]
+            } else {
+                elCopy = copyCmp.info[key]
+            }
+            elCopy.style[att] = value
             // CMP UPDATE
             if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = el
+                copyCmp.info[key][elIdx] = elCopy
             } else {
-                copyCmp.info[key] = el
+                copyCmp.info[key] = elCopy
             }
 
             try {
@@ -127,6 +138,12 @@ export default {
                 console.log('ops')
             }
         },
+        goBack() {
+            this.$store.dispatch({ type: 'goBack' })
+        },
+        goForwards() {
+            this.$store.dispatch({ type: 'goForwards' })
+        }
 
     },
     computed: {

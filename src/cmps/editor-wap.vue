@@ -2,12 +2,13 @@
 
 
 
-
   <section class="page-editor" ref="container" :class="[responsiveClass, wrapper]" :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
     </section>
+
+
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">

@@ -2,39 +2,17 @@ import { wapService } from '../../services/wap.service.local'
 import { wapToEditService } from '../../services/wap-to-edit.service'
 import { utilService } from '../../services/util.service'
 
-export function getActionRemoveWap(wapId) {
-    return {
-        type: 'removeWap',
-        wapId
-    }
-}
-export function getActionAddWap(wap) {
-    return {
-        type: 'addWap',
-        wap
-    }
-}
-export function getActionUpdateWap(wap) {
-    return {
-        type: 'updateWap',
-        wap
-    }
-}
-
-export function getActionAddWapMsg(wapId) {
-    return {
-        type: 'addWapMsg',
-        wapId,
-        txt: 'Stam txt'
-    }
-}
 
 export const wapStore = {
     state: {
         waps: [],
         isLoading: false,
         isHeader: true,
-        wapInEdit: null
+        wapInEdit: null,
+        history: {
+            currState: 0,
+            waps: []
+        }
     },
     getters: {
         waps({ waps }) { return waps },
@@ -65,17 +43,41 @@ export const wapStore = {
         },
         setWapToEdit(state, { wapToEdit }) {
             state.wapInEdit = wapToEdit
+            state.history.waps.push(wapToEdit)
         },
         removeWapToEdit(state) {
             state.wapToEdit = null
+            state.history.waps = []
+            state.history.currState = 0
         },
+        saveHistory({ history }, { wap }) {
+            if (history.currState > history.waps.length - 1) {
+                history.waps = history.waps.slice(0, history.currState)
+            }
+            history.currState++
+            history.waps.push(wap)
+            console.log(history.waps);
+        },
+        goBack(state) {
+            state.history.currState--
+            state.wapInEdit = state.history.waps[state.history.currState]
+        },
+        goForwards(state) {
+            state.history.currState++
+            state.wapInEdit = state.history.waps[state.history.currState]
+        },
+        setLastHistoryState(state) {
+            state.history.wap.pop()
+            state.history.currState--
+            state.wapInEdit = state.history.waps[state.history.waps.length - 1]
+        }
 
     },
     actions: {
         async addWap(context, { wap }) {
             try {
                 wap = await wapService.save(wap)
-                context.commit(getActionAddWap(wap))
+                context.commit({ type: 'addWap', wap })
                 return wap
             } catch (err) {
                 console.log('wapStore: Error in addWap', err)
@@ -90,21 +92,23 @@ export const wapStore = {
                 } else {
                     wap.cmps[path.fatherIdx] = cmp
                 }
+                context.commit({ type: 'saveHistory', wap })
                 wap = await wapToEditService.save(wap)
-                context.commit(getActionUpdateWap(wap))
+                context.commit({ type: 'updateWap', wap })
                 return wap
             } catch (err) {
-                // TODO:RETURN BACK - LAZY SOMETHING ?
-
+                context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updateWap', err)
                 throw err
             }
         },
         async updateWapFull(context, { wap }) {
             try {
+                context.commit({ type: 'saveHistory', wap })
                 wap = await wapToEditService.save(wap)
-                context.commit(getActionUpdateWap(wap))
+                context.commit({ type: 'updateWap', wap })
             } catch {
+                context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updateWap', err)
                 throw err
             }
@@ -124,7 +128,7 @@ export const wapStore = {
         async removeWap(context, { wapId }) {
             try {
                 await wapService.remove(wapId)
-                context.commit(getActionRemoveWap(wapId))
+                context.commit({ type: 'removeWap', wapId })
             } catch (err) {
                 console.log('wapStore: Error in removeWap', err)
                 throw err
@@ -168,9 +172,9 @@ export const wapStore = {
                     wap.cmps.splice([path.fatherIdx], 0, cmp)
                     console.log(cmp)
                 }
-                
+
                 wap = await wapToEditService.save(wap)
-                context.commit(getActionUpdateWap(wap))
+                context.commit({ type: 'updateWap', wap })
                 return wap
             }
             catch {
@@ -186,12 +190,29 @@ export const wapStore = {
                     wap.cmps.splice([path.fatherIdx], 1)
                 }
                 wap = await wapToEditService.save(wap)
-                context.commit(getActionUpdateWap(wap))
+                context.commit({ type: 'updateWap', wap })
                 return wap
             }
             catch {
                 console.log('could not delete')
             }
         },
+        async goBack({commit}){
+            try{
+                commit({type:"goBack"})
+            } catch{
+                console.log('something went wrong');
+                throw err
+            }
+        },
+        async goForwards({commit}){
+            try{
+                commit({type:"goForwards"})
+            } catch{
+                console.log('something went wrong');
+                throw err
+            }
+        },
+
     }
 }

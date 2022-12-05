@@ -62,6 +62,8 @@
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
             <img @click="setTheme('c')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+            <img @click="setTheme('d')"
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
 
         </section>
 
@@ -86,6 +88,7 @@ import editorCmpPrev from './editor-cmp-prev.vue'
 import txtEditor from './txt-editor.vue'
 import imgEditor from './img-editor.vue'
 import sectionEditor from './section-editor.vue'
+import { utilService } from '../services/util.service'
 
 
 
@@ -102,26 +105,61 @@ export default {
             cmpFilter: 'All',
             themes: {
                 a: {
-                    main: '#333333',
-                    secondary: '#345543',
-                    break: '#556778',
-                    txt: '#ffffff',
-                    secondaryTxt:'#333333'
+                    main: {
+                        'background-color': '#333333',
+                        'color': '#ffffff'
+                    },
+                    secondary: {
+                        'background-color': '#345543',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#556778',
+                        'color': '#333333'
+                    },
                 },
                 b: {
-                    main: '#111134',
-                    secondary: '#ff838f',
-                    break: '#f738f8',
-                    txt: '#73f73f',
-                    secondaryTxt:'#333333'
+                    main: {
+                        'background-color': '#111134',
+                        'color': 'blue'
+                    },
+                    secondary: {
+                        'background-color': '#ff838f',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#f738f8',
+                        'color': '#333333'
+                    }
 
                 },
                 c: {
-                    main: '#f38292',
-                    secondary: '#9393f3',
-                    break: '#118ff3',
-                    txt: '#1222f3',
-                    secondaryTxt:'#333333'
+                    main: {
+                        'background-color': '#f38292',
+                        'color': 'red',
+                    },
+                    secondary: {
+                        'background-color': '#9393f3',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#1222f3',
+                        'color': '#333333'
+                    }
+                },
+                d: {
+                    main: {
+                        'background-color': '#f38292',
+                        'color': 'red'
+                    },
+                    secondary: {
+                        'background-color': '#9393f3',
+                        'color': '#333333'
+                    },
+                    break: {
+                        'background-color': '#1222f3',
+                        'color': '#333333'
+                    }
                 },
             }
         };
@@ -147,8 +185,66 @@ export default {
             this.active = null
         },
         setTheme(theme) {
-            console.log('hi');
-            console.log('theme', this.themes[theme])
+            let wap = this.$store.getters.getWapToEdit
+            wap = utilService.copy(wap)
+            const cmps = wap.cmps.map(cmp => {
+                if (cmp.cmps) {
+                    cmp.cmps = cmp.cmps.map(innerCmp => {
+                        for (let [key, value] of Object.entries(innerCmp.info)) {
+                            if (value[0]) {
+                                value = value.map(k => {
+                                    k.style = {}
+                                    return k
+                                })
+                            } else {
+                                value.style = {}
+                            }
+                            innerCmp.info[key] = value
+                        }
+
+                        return innerCmp
+                    })
+                }
+                for (let [key, value] of Object.entries(cmp.info)) {
+                    if (value[0]) {
+                        value = value.map(k => {
+                            k.style = {}
+                            return k
+                        })
+                    } else {
+                        value.style = {}
+                    }
+                    cmp.info[key] = value
+                }
+
+
+                switch (cmp.type) {
+                    case 'wap-header':
+                    case 'wap-hero':
+                    case 'wap-footer':
+                        cmp.style = this.themes[theme].main
+                        break;
+                    case 'wap-container':
+                    case 'wap-form':
+                    case 'wap-map':
+                    case 'wap-reviews':
+                        cmp.style = this.themes[theme].secondary
+                        break;
+                    default:
+                        cmp.style = this.themes[theme].break
+
+                }
+                return cmp
+            })
+    
+            wap.cmps = cmps
+
+            try {
+                this.$store.dispatch({ type: 'updateWapFull', wap })
+            } catch {
+                console.log('ops');
+            }
+
         }
 
     },

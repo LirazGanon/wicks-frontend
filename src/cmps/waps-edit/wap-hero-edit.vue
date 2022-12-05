@@ -5,11 +5,11 @@
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
             <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style"
-                @input="updateCmp($event, 'heading')">
+                @blur="updateCmp($event, 'heading')">
                 {{ cmp.info.heading.txt }}
             </h1>
             <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
-                @input="updateCmp($event, 'subHeading')">{{
+                @blur="updateCmp($event, 'subHeading')">{{
                         (cmp.info.subHeading.txt)
                 }}</p>
 
@@ -38,7 +38,6 @@ export default {
         return {}
     },
     created() { 
-        this.updateCmp = utilService.debounce(this.updateCmp,500)
     },
     methods: {
         openSectionEditor() {

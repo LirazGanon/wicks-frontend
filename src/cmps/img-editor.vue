@@ -12,20 +12,22 @@
             </section>
         </section>
             <label v-if="info.currCmp.type !== 'wap-bg-img'">
-            <span>Border-radius </span>
-            <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
+            <span>Border-radius: </span>
+            <slider :change="info" @changed="updateRadius"/>
         </label>
     </section>
 </template>
 <script>
 import { utilService } from '../services/util.service';
 import imgUploader from './img-uploader.vue';
+import slider from './util/slider.vue'
+
 export default {
     name: 'img-editor',
     props: {
         info: Object
     },
-    components: { imgUploader },
+    components: { imgUploader,slider },
     data() {
         return {
             el: null
@@ -59,8 +61,8 @@ export default {
             this.updateCmp('src', ev.target.value)
             this.info.el.src = ev.target.value
         },
-        updateRadius(ev) {
-            this.updateCmp('border-radius', ev.target.value + '%')
+        updateRadius(value) {
+            this.updateCmp('border-radius', value + '%')
         },
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info

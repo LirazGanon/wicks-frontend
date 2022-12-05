@@ -10,20 +10,11 @@
         </section>
         <hr>
 
-        <!-- <label>
-            <input type="color" :value="info.style.color || '#333333'" @input="updateClr">
-        </label>
-        <label>
-            <span>background color</span>
-            <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
-        </label> -->
 
         <section class="text-format">
 
-            <label class="flex align-center gap">
                 <span>Font Size: </span>
-                <input type="range" min="10" max="100" @input="updateFS">
-            </label>
+                <slider :change="info" @changed="updateFS"/>
 
             <section class="editor-checkbox flex">
                 <label class="flex align-center">
@@ -56,7 +47,7 @@
             </label>
         </section>
         <hr>
-        <slider :change="info" />
+        
 
         <section class="undo-redo">
             <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
@@ -106,8 +97,10 @@ export default {
         updateBgClr(ev) {
             this.updateCmp('background-color', ev.target?.value || ev)
         },
-        updateFS(ev) {
-            this.updateCmp('font-size', ev.target.value + 'px')
+        updateFS(value) {
+            console.log(value);
+
+            this.updateCmp('font-size', value + 'px')
         },
         updateWeight(ev) {
             this.updateCmp('font-weight', ev.target.checked ? 'bold' : '')

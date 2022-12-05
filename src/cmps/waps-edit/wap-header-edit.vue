@@ -10,9 +10,11 @@
                     :style="cmp.info.logo.style">
 
 
-
+                
                 <h4 v-else contenteditable="true" @click.stop="openEditor('logo')" :style="cmp.info.logo.style"
-                    @input="updateCmp($event, 'logo')">{{ cmp.info.logo.txt }}</h4>
+                    @blur="updateCmp($event, 'logo')">{{ cmp.info.logo.txt }}</h4>
+
+              
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
@@ -39,8 +41,8 @@ export default {
         };
     },
     created() {
-        this.updateCmp = utilService.debounce(this.updateCmp,500)
-     },
+        this.updateCmp = utilService.debounce(this.updateCmp, 0)
+    },
     methods: {
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
@@ -66,7 +68,8 @@ export default {
         },
         updateCmp(ev, key) {
             const path = this.getPath()
-            let cmp = utilService.copy(this.cmp)
+            let cmp = this.getCurrCmp(path)
+            cmp = utilService.copy(cmp)
             cmp.info[key].txt = ev.target.innerText
 
             try {
@@ -79,6 +82,14 @@ export default {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             return { fatherIdx: cmpIdx, idx }
+        },
+        getCurrCmp(path) {
+            const wap = this.$store.getters.getLastState
+            if (path.idx !== undefined) {
+                return wap.cmps[path.fatherIdx].cmps[path.idx]
+            } else {
+                return wap.cmps[path.fatherIdx]
+            }
         }
     },
     computed: {

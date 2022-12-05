@@ -1,15 +1,15 @@
 <template>
     <section class="wap-card" v-if="cmp.info">
         <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading?.style"
-            @input="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
+            @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
         <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
-            @input="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
+            @blur="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}</p>
         <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click.stop="openEditor('texts', idx)"
-            :style="txt?.style" @input="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
+            :style="txt?.style" @blur="updateCmp($event, 'texts', idx)">{{ txt.txt }}</p>
 
         <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop="openEditor('btns', idx)"
-            :style="btn.style" @input="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
+            :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{ btn.txt }}</button>
         <img v-for="(img, idx) in cmp.info.imgs" @click.stop="openEditor('imgs', idx)" :src="img.src"
             :style="img.style" />
     </section>
@@ -19,7 +19,7 @@
 
 
     <!-- <a href="" v-for="(l, idx) in nav.info.links" contenteditable="true" @click="openEditor('links', idx)"
-        :style="nav.info.links[idx].style" @input="updateCmp($event, idx)" data-type="links"> {{ l.txt
+        :style="nav.info.links[idx].style" @blur="updateCmp($event, idx)" data-type="links"> {{ l.txt
         }}</a> -->
 
 </template>
@@ -36,7 +36,6 @@ export default {
         };
     },
     created() {
-        this.updateCmp = utilService.debounce(this.updateCmp,500)
      },
     methods: {
         openEditor(key, i) {

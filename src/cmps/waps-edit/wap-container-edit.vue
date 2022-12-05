@@ -22,7 +22,6 @@
 
 import wapGallery from './wap-gallery-edit.vue'
 
-import wapImg from './wap-img-edit.vue'
 import wapCard from './wap-card-edit.vue'
 
 import { utilService } from '../../services/util.service';
@@ -30,7 +29,7 @@ import { utilService } from '../../services/util.service';
 export default {
     name: 'dynamic-container-cmp',
     props: { cmp: Object },
-    components: { wapGallery, wapImg, wapCard },
+    components: { wapGallery, wapCard },
     data() {
         return {};
     },

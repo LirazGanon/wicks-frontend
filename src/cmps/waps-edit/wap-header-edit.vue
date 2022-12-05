@@ -38,7 +38,9 @@ export default {
             selected: false
         };
     },
-    created() { },
+    created() {
+        this.updateCmp = utilService.debounce(this.updateCmp,500)
+     },
     methods: {
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]

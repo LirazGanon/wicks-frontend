@@ -25,7 +25,9 @@ export default {
     data() {
         return {};
     },
-    created() { },
+    created() { 
+        this.updateCmp = utilService.debounce(this.updateCmp,500)
+    },
     methods: {
         openSectionEditor() {
 

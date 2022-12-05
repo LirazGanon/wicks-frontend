@@ -57,6 +57,7 @@ export const wapStore = {
             if (history.currState < history.waps.length - 1
                 && history.currState) {
                 history.waps = history.waps.slice(0, history.currState + 1)
+                // TODO: clearHistory 30 
             }
             history.currState++
             history.waps.push(wap)

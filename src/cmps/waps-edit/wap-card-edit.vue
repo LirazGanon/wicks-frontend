@@ -31,9 +31,14 @@ export default {
     props: { cmp: Object, path: Object },
     components: {},
     data() {
-        return {};
+        return {
+            
+        };
     },
-    created() { },
+    created() {
+        this.updateCmp = utilService.debounce(this.updateCmp,500)
+
+     },
     methods: {
         openEditor(key, i) {
             let el = (i !== undefined) ? this.cmp.info[key][i] : this.cmp.info[key]

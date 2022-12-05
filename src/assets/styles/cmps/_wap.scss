@@ -3,26 +3,7 @@
     overflow: hidden;
 }
 
-.wap-wapper {
-    margin:auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // max-height: 100%;
 
-    .phone-display-header,
-    .phone-display-footer {
-        width: 100%;
-        background: #28282b;
-        border-radius: 1em 1em 0 0;
-        height: em(58px);
-        box-shadow: -10px 0 #28282b, 10px 0 #28282b;
-        transition: max-width 0.3s;
-    }
-    .phone-display-footer {
-        border-radius: 0 0 1em 1em;
-    }
-}
 
 section.page-editor {
     overflow-y: auto;
@@ -38,14 +19,24 @@ section.page-editor {
     }
 
     &.mobile {
-        max-height: clamp(200px, 65vh + 3rem, 75rem );
-        box-shadow: -10px 0 #28282b, 10px 0 #28282b;
+        max-height: clamp(200px, 70vh + 3rem, 90vh );
+        border: 16px #28282b solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        border-radius: 16px;
+        margin: auto;
+
     }
-
+   
+    
     &.tablet {
-        max-height: clamp(200px, 65vh + 3rem, 75rem );
-
-        box-shadow: -10px 0 #333, 10px 0 #333;
+        max-height: clamp(200px, 70vh + 3rem, 90vh );
+        
+        border-radius: 16px;
+        border: 16px #28282b solid;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        margin: auto;
     }
 
     .wap-placeholder {

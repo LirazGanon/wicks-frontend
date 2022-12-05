@@ -939,6 +939,20 @@ header .loggedin-user img {
   .main-editor .options.active .cmp-editor .text-format {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .main-editor .options.active .cmp-editor .text-format > label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .main-editor .options.active .cmp-editor .text-format .border-radius-bar {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .main-editor .options.active .cmp-editor .text-format .font-picker-wrapper span {
+    flex-basis: 0;
   }
   .main-editor .options.active h2 {
     display: none;
@@ -984,8 +998,42 @@ header .loggedin-user img {
   .main-editor .options.active .prev-cmp-wrapper .prev-cmp-filter li.active {
     box-shadow: inset 0px 14px 0px -10px blueviolet;
   }
-  .main-editor .options.active .color-picker {
+  .main-editor .options.active .color-picker-wrapper {
+    margin-bottom: 0em;
+  }
+  .main-editor .options.active .color-picker-wrapper > span {
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+  .main-editor .options.active .color-picker-wrapper .color-picker {
     margin-bottom: 0;
+  }
+  .main-editor .section-cmp-editor span.background-color {
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .main-editor .section-cmp-editor .color-picker {
+    margin-bottom: 0.5em;
+  }
+  .main-editor .img-cmp-editor {
+    padding-top: 10px;
+  }
+  .main-editor .img-cmp-editor img {
+    width: 30% !important;
+    max-height: 150px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    align-self: flex-end;
+  }
+  .main-editor .img-cmp-editor .img-replace {
+    flex-direction: row-reverse;
+  }
+  .main-editor .img-cmp-editor .img-replace label:first-child {
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .main-editor .img-cmp-editor .img-replace .img-replace-src p {
+    display: none;
   }
 }
 
@@ -1099,25 +1147,6 @@ header .loggedin-user img {
   overflow: hidden;
 }
 
-.wap-wapper {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.wap-wapper .phone-display-header,
-.wap-wapper .phone-display-footer {
-  width: 100%;
-  background: #28282b;
-  border-radius: 1em 1em 0 0;
-  height: 3.625em;
-  box-shadow: -10px 0 #28282b, 10px 0 #28282b;
-  transition: max-width 0.3s;
-}
-.wap-wapper .phone-display-footer {
-  border-radius: 0 0 1em 1em;
-}
-
 section.page-editor {
   overflow-y: auto;
   flex: 1;
@@ -1128,12 +1157,20 @@ section.page-editor {
   overflow-x: hidden;
 }
 section.page-editor.mobile {
-  max-height: clamp(200px, 65vh + 3rem, 75rem);
-  box-shadow: -10px 0 #28282b, 10px 0 #28282b;
+  max-height: clamp(200px, 70vh + 3rem, 90vh);
+  border: 16px #28282b solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 16px;
+  margin: auto;
 }
 section.page-editor.tablet {
-  max-height: clamp(200px, 65vh + 3rem, 75rem);
-  box-shadow: -10px 0 #333, 10px 0 #333;
+  max-height: clamp(200px, 70vh + 3rem, 90vh);
+  border-radius: 16px;
+  border: 16px #28282b solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  margin: auto;
 }
 section.page-editor .wap-placeholder {
   position: absolute;

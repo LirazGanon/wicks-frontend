@@ -1,10 +1,6 @@
 <template>
 
-<section class="wap-wapper">
 
-  <div class="phone-display-header" v-if="responsiveClass.length" :style="{ maxWidth: conMaxWidth }">
-    
-  </div>
 
   <section class="page-editor" ref="container" :class="[responsiveClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
 
@@ -26,9 +22,7 @@
 
   </section>
 
-  <div class="phone-display-footer" v-if="responsiveClass.length" :style="{ maxWidth: conMaxWidth }">
-  </div>
-</section>
+
 
 </template>
   

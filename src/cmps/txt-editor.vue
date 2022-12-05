@@ -95,6 +95,7 @@ export default {
         };
     },
     created() {
+        this.updateCmp = utilService.debounce(this.updateCmp,300)
     },
     methods: {
         updateClr(ev) {

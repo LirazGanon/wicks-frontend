@@ -1,7 +1,7 @@
 <template>
-    <section class="img-cmp-editor flex column">
+    <section class="img-cmp-editor flex column" v-if="info">
         <h2>Edit</h2>
-        <img :src="info.el.src" :style="info.el.style">
+        <img :src="info.el.src">
         <label>
             <span>src </span>
             <input type="text" :value="info.el.src" @input="updateSrc">
@@ -24,16 +24,18 @@ export default {
     components: { imgUploader },
     data() {
         return {
-
+            el: null
         };
     },
     created() {
+        this.updateCmp = utilService.debounce(this.updateCmp, 300)
+        this.el = utilService.copy(this.info.el)
     },
     methods: {
         changeImg(imgUrl) {
             const { key, path, el, currCmp, elIdx } = this.info
             const copyCmp = utilService.copy(currCmp)
-            
+
             el.src = imgUrl
 
             // CMP UPDATE
@@ -55,22 +57,24 @@ export default {
         },
         updateRadius(ev) {
             this.updateCmp('border-radius', ev.target.value + '%')
-            this.info.el.style['border-radius'] = ev.target.value + '%'
         },
         updateCmp(att, value) {
             const { key, path, el, currCmp, elIdx } = this.info
-
+            
+            console.log(el);
+            this.el.style[att] = value
             const copyCmp = utilService.copy(currCmp)
+            const elCopy = utilService.copy(el)
 
             if (att === 'src') {
-                el.src = value
+                elCopy.src = value
             } else {
-                el.style[att] = value
+                elCopy.style[att] = value
             }
             if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = el
+                copyCmp.info[key][elIdx] = elCopy
             } else {
-                copyCmp.info[key] = el
+                copyCmp.info[key] = elCopy
             }
 
             try {
@@ -86,7 +90,11 @@ export default {
         }
     },
     unmounted() { },
-    info: function () {
+    watch: {
+        info: function () {
+            this.el = utilService.copy(this.info.el)
+            console.log('hi');
+        }
     }
 
 };

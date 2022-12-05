@@ -1,8 +1,12 @@
 <template>
 
+<section class="wap-wapper">
 
+  <div class="phone-display-header" v-if="responsiveClass.length" :style="{ maxWidth: conMaxWidth }">
+    
+  </div>
 
-  <section class="page-editor" ref="container" :class="[responsiveClass, wrapper]" :style="{ maxWidth: conMaxWidth }">
+  <section class="page-editor" ref="container" :class="[responsiveClass, wrapper()]" :style="{ maxWidth: conMaxWidth }">
 
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -21,6 +25,11 @@
 
 
   </section>
+
+  <div class="phone-display-footer" v-if="responsiveClass.length" :style="{ maxWidth: conMaxWidth }">
+  </div>
+</section>
+
 </template>
   
 <script>
@@ -50,7 +59,8 @@ export default {
   data() {
     return {
       responsiveClass: [],
-      conMaxWidth: null
+      conMaxWidth: null,
+      class: []
     }
   },
   async created() {
@@ -63,7 +73,7 @@ export default {
   },
   mounted() {
     eventBus.on('resizeWap', this.resize)
-    new ResizeObserver(this.resized).observe(this.$refs.container)
+    // new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
@@ -112,10 +122,14 @@ export default {
       if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
       if (offsetWidth >= 1300) this.responsiveClass = this.normal()
       if (offsetWidth >= 1500) this.responsiveClass = this.wide()
+
     },
     resize(size) {
       const puk = size == '100' ? size + '%' : size + 'px'
       this.conMaxWidth = puk
+      if (+size < 500) this.responsiveClass = 'mobile'
+      if (+size >= 600) this.responsiveClass = 'tablet'
+      if (size === '100') this.responsiveClass = ''
     },
 
     wrapper() {

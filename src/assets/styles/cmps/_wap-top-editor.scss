@@ -1,12 +1,11 @@
 .editor-header {
-
     .logo {
         max-height: em(46px);
         margin-block: 10px;
         margin-inline-start: 15px;
     }
 
-    nav>* {
+    nav > * {
         color: black;
         padding: 10px;
     }
@@ -18,9 +17,12 @@
     border-bottom: 1px solid $border-clr;
     min-height: em(45px);
 
-    >section {
+    > section {
         margin-inline-start: em(50px);
         margin-inline-end: em(18px);
+        @media (max-width: 800px) {
+            margin-inline-start: em(18px);
+        }
     }
 
     // margin-block-end: 5px;
@@ -40,6 +42,9 @@
             // background: radial-gradient(lighten($clr1, 33%), transparent);
             background: $clr5;
         }
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 
     .dynamic-url {
@@ -56,14 +61,13 @@
 
         span {
             color: #000;
-
         }
 
-        >span:first-of-type {
+        > span:first-of-type {
             color: blue;
         }
 
-        >span:last-of-type {
+        > span:last-of-type {
             color: blueviolet;
             border-bottom: 0.8px dashed;
             outline: none;
@@ -88,7 +92,6 @@
             background-color: rgb(60, 39, 136);
             cursor: pointer;
         }
-
     }
 
     .site-publish {

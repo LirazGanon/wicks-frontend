@@ -57,11 +57,9 @@ export const wapStore = {
             if (history.currState < history.waps.length - 1
                 && history.currState) {
                 history.waps = history.waps.slice(0, history.currState + 1)
-                console.log('inside', history);
             }
             history.currState++
             history.waps.push(wap)
-            console.log(history);
         },
         goBack(state) {
             state.history.currState--
@@ -90,7 +88,6 @@ export const wapStore = {
             }
         },
         async updateWap(context, { cmp, path }) {
-            console.log(path);
             // TODO:send user msg
             try {
                 let wap = utilService.copy(context.state.wapInEdit)

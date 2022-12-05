@@ -43,7 +43,7 @@
             </label>
             <label v-if="info.key === 'btns'" class="border-radius-bar">
                 <span>Border-radius</span>
-                <input type="range" min="0" max="100" @input="updateRadius">
+                <slider :change="info" @changed="updateRadius"/>
             </label>
         </section>
         <hr>
@@ -97,10 +97,8 @@ export default {
         updateBgClr(ev) {
             this.updateCmp('background-color', ev.target?.value || ev)
         },
-        updateFS(value) {
-            console.log(value);
-
-            this.updateCmp('font-size', value + 'px')
+        updateFS(val) {
+            this.updateCmp('font-size', val + 'px')
         },
         updateWeight(ev) {
             this.updateCmp('font-weight', ev.target.checked ? 'bold' : '')
@@ -114,10 +112,10 @@ export default {
         updateFont(val) {
             this.updateCmp('font-family', val)
         },
-        updateRadius(ev) {
-            this.updateCmp('border-radius', ev.target.value + '%')
+        updateRadius(val) {
+            this.updateCmp('border-radius', val + '%')
         },
-        updateCmp(att, value) {
+        updateCmp(att, val) {
             const { key, path, elIdx } = this.info
             const cmp = this.getCurrCmp(path)
             const copyCmp = utilService.copy(cmp)
@@ -127,7 +125,7 @@ export default {
             } else {
                 elCopy = copyCmp.info[key]
             }
-            elCopy.style[att] = value
+            elCopy.style[att] = val
             // CMP UPDATE
             if (elIdx !== undefined) {
                 copyCmp.info[key][elIdx] = elCopy

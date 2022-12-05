@@ -48,7 +48,7 @@
                     <li @click="setFilter('wap-bg-img')" :class="{ active: cmpFilter === 'wap-bg-img' }">Images</li>
                     <li @click="setFilter('wap-footer')" :class="{ active: cmpFilter === 'wap-footer' }">Footer</li>
                 </ul>
-                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" @closeEditor="(active=null)"/>
+                <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" @closeEditor="(active = null)" />
             </section>
         </section>
 
@@ -66,8 +66,10 @@
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor }">
             <ul class="cmp-side-editor">
-                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" @clearEditor="clear"
-                    class="cmp-editor " />
+                <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor"
+                @clearEditor="clear"
+                @closeEditor="(active = null)" 
+                 />
             </ul>
         </section>
     </section>

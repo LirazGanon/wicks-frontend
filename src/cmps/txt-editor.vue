@@ -2,11 +2,12 @@
 
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
-        <span>Text Color:</span>
-
-        <color-picker @setColor="updateClr" />
-        <span v-if="info.key === 'btns'">Background Color:</span>
-        <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+        <section class="color-picker-wrapper">
+            <span>Text Color:</span>
+            <color-picker @setColor="updateClr" />
+            <span v-if="info.key === 'btns'">Background Color:</span>
+            <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+        </section>
         <hr>
 
         <!-- <label>
@@ -56,9 +57,15 @@
         </section>
         <hr>
 
-        <section>
-            <button :disabled="!getHistory.currState" @click="goBack">Last Puk</button>
-            <button :disabled="(getHistory.currState === getHistory.waps.length -1)" @click="goForwards">Next Puk</button>
+        <section class="undo-redo">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                v-tooltip="'Undo'">
+                undo
+            </button>
+            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
+                @click="goForwards" v-tooltip="'Redo'">
+                redo
+            </button>
         </section>
     </section>
 

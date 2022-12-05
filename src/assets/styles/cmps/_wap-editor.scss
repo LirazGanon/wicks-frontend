@@ -100,8 +100,14 @@
                 padding-bottom: 10px;
             }
 
-            .color-picker {
-                margin-bottom: 2em;
+            .color-picker-wrapper {
+                > span{
+                    display: inline-block;
+                    margin-bottom: 0.5em;
+                } 
+                .color-picker {
+                    margin-bottom: 2em;
+                }
             }
 
             label.gap {
@@ -125,6 +131,7 @@
 
                 .editor-checkbox {
                     display: flex;
+                    gap: 5px;
                     justify-content: space-around;
                     margin-block: 1em;
 
@@ -253,6 +260,17 @@
     }
 }
 
+.undo-redo {
+    button {
+        color: $clr4;
+        background-color: transparent;
+
+        &:disabled {
+            opacity: 0.4;
+        }
+    }
+}
+
 .options.active:has(.cmp-side-editor) {
     width: clamp(150px, 23vw, 350px);
 }
@@ -283,7 +301,6 @@
         }
 
         .options {
-            transition: none;
             bottom: 0;
             transition: height 0.3s;
             border: none;
@@ -291,6 +308,7 @@
         }
 
         .options.active {
+            transition: opacity 0.2s;
             position: fixed;
             // height: 300px;
             flex-direction: row;

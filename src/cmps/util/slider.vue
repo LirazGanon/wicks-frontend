@@ -80,7 +80,7 @@ html input[type=range] {
         width: 26px;
         -webkit-appearance: none;
         height: 26px;
-        cursor: ew-resize;
+        cursor: pointer;
         box-shadow:  inset 0 0 0 40px blueviolet;
         border-radius: 50%;
         -webkit-transition: box-shadow 0.2s ease-in-out;

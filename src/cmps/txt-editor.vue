@@ -50,7 +50,7 @@
                 <span>Choose Font:</span>
                 <font-picker @setFont="updateFont" />
             </label>
-            <label v-if="info.key === 'btns'">
+            <label v-if="info.key === 'btns'" class="border-radius-bar">
                 <span>Border-radius</span>
                 <input type="range" min="0" max="100" @input="updateRadius">
             </label>

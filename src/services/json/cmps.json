@@ -2,7 +2,7 @@
   {
     "type": "wap-header",
     "level": 0,
-    "id": "fhngh1",
+    "_id": "fhngh1",
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669889861/wicks/cmp-prev/bakery_header.png",
     "classes": ["bakery "],
     "info": {
@@ -55,7 +55,7 @@
     "type": "wap-hero",
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669914119/wicks/cmp-prev/bakery_hero.png",
     "level": 0,
-    "id": "gbfgg",
+    "_id": "gbfgg",
     "classes": ["bakery"],
     "info": {
       "heading": {
@@ -92,7 +92,7 @@
     "type": "wap-container",
     "level": 0,
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669914829/wicks/cmp-prev/container_1.png",
-    "id": "jjyuh",
+    "_id": "jjyuh",
     "classes": ["img-card bakery"],
     "info": {
       "imgs": [
@@ -137,7 +137,7 @@
     "type": "wap-container",
     "level": 0,
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915012/wicks/cmp-prev/container_2.png",
-    "id": "gbgty42",
+    "_id": "gbgty42",
     "classes": ["card-gallery bakery"],
     "info": {},
     "cmps": [
@@ -208,7 +208,7 @@
   {
     "type": "wap-container",
     "level": 0,
-    "id": "wc0554njj",
+    "_id": "wc0554njj",
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915242/wicks/cmp-prev/container_3.png",
     "classes": ["card-img bakery"],
     "info": {
@@ -262,7 +262,7 @@
   {
     "type": "wap-reviews",
     "level": 0,
-    "id": "mfgnih987",
+    "_id": "mfgnih987",
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915523/wicks/cmp-prev/review.png",
     "classes": [],
     "info": {
@@ -303,7 +303,7 @@
   {
     "type": "wap-bg-img",
     "level": 0,
-    "id": "wc05jjjj4",
+    "_id": "wc05jjjj4",
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669915679/wicks/cmp-prev/bg_img.png",
     "classes": ["full"],
     "info": {
@@ -320,7 +320,7 @@
     "type": "wap-container",
     "level": 0,
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669916059/wicks/cmp-prev/container_4.png",
-    "id": "gbits42",
+    "_id": "gbits42",
     "classes": ["card-gallery bakery"],
     "info": {},
     "cmps": [
@@ -378,7 +378,7 @@
     "type": "wap-footer",
     "level": 0,
     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669916168/wicks/cmp-prev/footer.png",
-    "id": "sc599966",
+    "_id": "sc599966",
     "classes": ["bakery flex column space-around align-center"],
     "info": {
       "logo": {

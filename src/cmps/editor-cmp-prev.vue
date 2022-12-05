@@ -1,15 +1,15 @@
 <template>
 
   <section class="prev-cmp-img-container" v-if="view">
-    
+
     <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
-        disabled_by_default
-      </span>
+      disabled_by_default
+    </span>
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @drop="onDrop($event)">
 
-      <Draggable v-for="item in cmps" :key="item.id">
+      <Draggable v-for="item in cmps" :key="item._id">
         <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true"
           @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
           <img :src="item.src" />
@@ -61,6 +61,7 @@ export default {
     },
     onDrop(dropResult) {
       let result = this.applyDrag(this.view.type, dropResult)
+      console.log(result)
       this.view.type = result
     },
     applyDrag(arr, dragResult) {

@@ -56,6 +56,7 @@
             </label>
         </section>
         <hr>
+        <slider :change="info" />
 
         <section class="undo-redo">
             <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
@@ -75,7 +76,7 @@ import { xor } from 'lodash';
 import { utilService } from '../services/util.service';
 import colorPicker from './util/color-picker.vue';
 import fontPicker from './util/font-picker.vue';
-
+import slider from './util/slider.vue'
 
 
 export default {
@@ -85,7 +86,8 @@ export default {
     },
     components: {
         colorPicker,
-        fontPicker
+        fontPicker,
+        slider
     },
     data() {
         return {
@@ -95,7 +97,7 @@ export default {
         };
     },
     created() {
-        this.updateCmp = utilService.debounce(this.updateCmp,300)
+        this.updateCmp = utilService.debounce(this.updateCmp, 300)
     },
     methods: {
         updateClr(ev) {
@@ -123,11 +125,10 @@ export default {
             this.updateCmp('border-radius', ev.target.value + '%')
         },
         updateCmp(att, value) {
-            const { key, path, currCmp, elIdx } = this.info
-
-            const copyCmp = utilService.copy(currCmp)
+            const { key, path, elIdx } = this.info
+            const cmp = this.getCurrCmp(path)
+            const copyCmp = utilService.copy(cmp)
             let elCopy
-
             if (elIdx !== undefined) {
                 elCopy = copyCmp.info[key][elIdx]
             } else {
@@ -152,6 +153,14 @@ export default {
         },
         goForwards() {
             this.$store.dispatch({ type: 'goForwards' })
+        },
+        getCurrCmp(path) {
+            const wap = this.$store.getters.getLastState
+            if (path.idx !== undefined) {
+                return wap.cmps[path.fatherIdx].cmps[path.idx]
+            } else {
+                return wap.cmps[path.fatherIdx]
+            }
         }
 
     },

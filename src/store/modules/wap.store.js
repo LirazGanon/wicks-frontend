@@ -18,7 +18,8 @@ export const wapStore = {
         waps({ waps }) { return waps },
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
-        getHistory({ history }) { return history }
+        getHistory({ history }) { return history },
+        getLastState({ history }) { return history.waps[history.waps.length - 1] }
     },
     mutations: {
         setWaps(state, { waps }) {
@@ -58,7 +59,7 @@ export const wapStore = {
                 && history.currState) {
                 history.waps = history.waps.slice(0, history.currState + 1)
             }
-            if(history.waps.length - 1 > 30){
+            if (history.waps.length - 1 > 30) {
                 history.waps.shift()
             }
             history.currState++

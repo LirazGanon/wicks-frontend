@@ -1040,6 +1040,14 @@ header .loggedin-user img {
     display: none;
   }
 }
+@media (max-width: 550px) {
+  .main-editor .left-nav {
+    background-color: #4f3a65;
+  }
+  .main-editor .left-nav * {
+    color: #e0eae6 !important;
+  }
+}
 
 .editor-header {
   border-bottom: 1px solid rgba(51, 51, 51, 0.3333333333);
@@ -1159,6 +1167,7 @@ section.page-editor {
   justify-self: center;
   transition: max-width 0.3s, max-height 0.3s, height 0.3s;
   overflow-x: hidden;
+  height: calc(100vh - 46px - 76.75px);
 }
 section.page-editor.mobile-display {
   max-height: clamp(200px, 70vh + 3rem, 90vh);
@@ -1358,9 +1367,10 @@ section.page-editor .wap-placeholder::after {
 }
 .wap-hero.bakery h1 {
   grid-area: t;
-  font-size: clamp(16px, 4em, 80px);
-  width: clamp(16px, 100vw, 800px);
+  font-size: clamp(16px, 2vw + 1.2em, 80px);
+  max-width: clamp(16px, 100%, 2vw + 10.2em);
   text-transform: capitalize;
+  font-size: clamp(16px, 1vw + 2.5em, 80px);
 }
 .wap-hero.bakery p {
   grid-area: ml;

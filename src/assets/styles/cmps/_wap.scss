@@ -13,8 +13,8 @@ section.page-editor {
     justify-self: center;
     transition: max-width 0.3s, max-height 0.3s, height 0.3s;
     overflow-x: hidden;
+    height: calc(100vh - 46px - 76.75px);
     & > div {
-        // height: calc(100vh - 46px - 76.75px);
         // min-height: 60vh;
     }
 

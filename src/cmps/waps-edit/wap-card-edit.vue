@@ -37,7 +37,6 @@ export default {
     },
     created() {
         this.updateCmp = utilService.debounce(this.updateCmp,500)
-
      },
     methods: {
         openEditor(key, i) {

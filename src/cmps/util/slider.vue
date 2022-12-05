@@ -1,7 +1,11 @@
 <template>
-    <div class="slider">
+    <div class="slider-container">
+        <label>
+            <span>{{ value }}</span>
+            <input type="range" v-model="value" min="0" max="100" class="slider">
+        </label>
 
-        <span>10</span>
+
 
 
     </div>
@@ -14,47 +18,34 @@ import { ref } from 'vue'
 export default {
     name: 'color-picker',
     props: {
+        change: Object
+    },
+    components: {
 
     },
-    components: {},
     data() {
         return {
-
+            value: 50
         }
     },
     created() {
     },
     methods: {
     },
-    computed: {}
+    computed: {},
+    watch: {
+        change: function () {
+            this.value = 50
+        }
+    }
 }
 </script>
-  
+
+
 <style>
-.demo-color-block .el-color-picker__trigger {
-    padding: 0;
-    border-radius: 50%;
-    border: none;
-    height: 35px;
-    width: 35px;
+.slider {
+    background: #555;
 }
 
-.demo-color-block .el-icon svg {
-    scale: 1.7;
-}
-
-.demo-color-block .el-color-picker__color-inner,
-.el-color-picker__color.is-alpha {
-    border-radius: 50%;
-}
-
-.demo-color-block .el-color-picker__color {
-    border: none;
-}
-
-.demo-color-block {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
+/* input */
 </style>

@@ -15,9 +15,10 @@
 
         h1 {
             grid-area: t;
-            font-size: clamp(16px, 4em, 80px);
-            width: clamp(16px, 100vw, 800px);
+            font-size: clamp(16px, 2vw + 1.2em, 80px);
+            max-width: clamp(16px, 100%, 2vw + 10.2em);
             text-transform: capitalize;
+            font-size: clamp(16px, 1vw + 2.5em, 80px);
         }
 
         p {
@@ -43,7 +44,7 @@
             grid-area: mbr;
             align-self: end;
             justify-self: end;
-            object-fit:cover;
+            object-fit: cover;
             height: 100%;
             width: 55vw;
             aspect-ratio: 2/1;

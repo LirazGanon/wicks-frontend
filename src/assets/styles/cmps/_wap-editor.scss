@@ -101,10 +101,11 @@
             }
 
             .color-picker-wrapper {
-                > span{
+                >span {
                     display: inline-block;
                     margin-bottom: 0.5em;
-                } 
+                }
+
                 .color-picker {
                     margin-bottom: 2em;
                 }
@@ -332,6 +333,23 @@
                 .text-format {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
+
+                    >label {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 5px;
+                    }
+
+                    .border-radius-bar {
+                        width: min-content;
+                    }
+
+                    .font-picker-wrapper {
+                        span {
+                            flex-basis: 0;
+                        }
+                    }
                 }
             }
 
@@ -391,10 +409,58 @@
 
             }
 
-            .color-picker {
-                margin-bottom: 0;
+            .color-picker-wrapper {
+                margin-bottom: 0em;
+
+                >span {
+                    display: inline-block;
+                    margin-top: 0.5em;
+                }
+
+                .color-picker {
+                    margin-bottom: 0;
+                }
             }
 
+        }
+
+        .section-cmp-editor {
+            span.background-color {
+                display: inline-block;
+                margin-bottom: 0.5em;
+            }
+            .color-picker{
+                margin-bottom: 0.5em;
+            }
+        }
+
+        .img-cmp-editor {
+            padding-top: 10px;
+
+            img {
+                width: 30% !important;
+                max-height: 150px;
+                object-fit: cover;
+                align-self: flex-end;
+            }
+
+            .img-replace {
+                flex-direction: row-reverse;
+
+                label:first-child {
+                    display: inline-block;
+                    margin-bottom: 0.5em;
+                }
+
+                .img-replace-src {
+                    p {
+                        display: none;
+                    }
+
+
+                }
+
+            }
         }
     }
 }

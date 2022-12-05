@@ -1,13 +1,17 @@
 <template>
-    <section class="img-cmp-editor flex column" v-if="info">
-        <h2>Edit</h2>
-        <img :src="info.el.src">
-        <label>
-            <span>src </span>
-            <input type="text" :value="info.el.src" @input="updateSrc">
-        </label>
-        <img-uploader @uploaded="changeImg" />
-        <label v-if="info.currCmp.type !== 'wap-bg-img'">
+    <section class="img-cmp-editor flex column">
+        <h2>Edit Image</h2>
+        <section class="img-replace flex column">
+            <img :src="info.el.src" :style="info.el.style">
+            <section class="img-replace-src">
+                <label>
+                    <span>src </span>
+                    <input type="text" :value="info.el.src" @input="updateSrc">
+                </label>
+                <img-uploader @uploaded="changeImg" />
+            </section>
+        </section>
+            <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius </span>
             <input type="range" min="0" max="50" :value="rangeValue" @input="updateRadius">
         </label>

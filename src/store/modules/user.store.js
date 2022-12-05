@@ -30,7 +30,7 @@ export const userStore = {
             state.users = state.users.filter(user => user._id !== userId)
         },
         setUserScore(state, { score }) {
-            state.loggedinUser.score = score
+            // state.loggedinUser.score = score
         },
     },
     actions: {
@@ -103,15 +103,15 @@ export const userStore = {
             }
 
         },
-        async increaseScore({ commit }) {
-            try {
-                const score = await userService.changeScore(100)
-                commit({ type: 'setUserScore', score })
-            } catch (err) {
-                console.log('userStore: Error in increaseScore', err)
-                throw err
-            }
-        },
+        // async increaseScore({ commit }) {
+        //     try {
+        //         const score = await userService.changeScore(100)
+        //         commit({ type: 'setUserScore', score })
+        //     } catch (err) {
+        //         console.log('userStore: Error in increaseScore', err)
+        //         throw err
+        //     }
+        // },
         // Keep this action for compatability with a common user.service ReactJS/VueJS
         setWatchedUser({commit}, payload) {
             commit(payload)

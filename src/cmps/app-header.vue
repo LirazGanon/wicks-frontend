@@ -16,7 +16,7 @@
       <router-link :to="`/user/${loggedInUser._id}`">
         {{ loggedInUser.fullname }}
       </router-link>
-      <span>{{ loggedInUser.score.toLocaleString() }}</span>
+      <!-- <span>{{ loggedInUser.score.toLocaleString() }}</span> -->
       <div>
         <img :src="loggedInUser.imgUrl" />
       </div>

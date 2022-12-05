@@ -2,12 +2,21 @@ import io from 'socket.io-client'
 import { userService } from './user.service'
 
 export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
-export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
+// export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
+export const SOCKET_EMIT_SEND_MSG = 'baba'
 export const SOCKET_EMIT_SET_TOPIC = 'chat-set-topic'
 export const SOCKET_EMIT_USER_WATCH = 'user-watch'
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
+
+export const SOCKET_EVENT_SEND_UPDATE_WAP= 'send-update-wap'
+export const SOCKET_EMIT_GET_UPDATED_WAP = 'get-update-wap'
+
+export const SOCKET_EVENT__GET_POINTER = 'send-pointer-pos'
+export const SOCKET_EMIT_SEND_POINTER = 'get-pointer-pos'
+
+
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
@@ -93,7 +102,7 @@ function createDummySocketService() {
       this.emit(SOCKET_EVENT_ADD_MSG, { from: 'Someone', txt: 'Aha it worked!' })
     },
     testUserUpdate() {
-      this.emit(SOCKET_EVENT_USER_UPDATED, {...userService.getLoggedinUser(), score: 555})
+      this.emit(SOCKET_EVENT_USER_UPDATED, {...userService.getLoggedinUser()/*, score: 555*/})
     },
   }
   window.listenersMap = listenersMap;
@@ -102,8 +111,8 @@ function createDummySocketService() {
 
 
 // Basic Tests
-// function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
-// socketService.on('baba', cb)
+function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
+socketService.on('baba', cb('puk'))
 // socketService.on('baba', cb)
 // socketService.on('baba', cb)
 // socketService.on('mama', cb)

@@ -2,9 +2,6 @@
 
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
-        <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
-        disabled_by_default
-      </span>
         <span>Text Color:</span>
         <color-picker @setColor="updateClr" />
         <span v-if="info.key === 'btns'">Background Color:</span>
@@ -60,7 +57,8 @@
 
         <section>
             <button :disabled="!getHistory.currState" @click="goBack">Last Puk</button>
-            <button :disabled="(getHistory.currState === getHistory.waps.length -1)" @click="goForwards">Next Puk</button>
+            <button :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards">Next
+                Puk</button>
         </section>
     </section>
 

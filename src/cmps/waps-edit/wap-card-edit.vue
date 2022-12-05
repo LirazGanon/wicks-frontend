@@ -53,6 +53,7 @@ export default {
             let cmpCopy = JSON.parse(JSON.stringify(this.cmp))
             wap = JSON.parse(JSON.stringify(wap))
 
+            
 
             if (innerIdx !== undefined) {
                 cmpCopy.info[key][innerIdx].txt = ev.target.innerText

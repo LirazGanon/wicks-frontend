@@ -90,6 +90,8 @@ export const wapStore = {
             }
         },
         async updateWap(context, { cmp, path }) {
+            console.log(path);
+            // TODO:send user msg
             try {
                 let wap = utilService.copy(context.state.wapInEdit)
                 if (path.idx !== undefined) {

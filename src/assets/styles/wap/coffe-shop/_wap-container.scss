@@ -1,15 +1,98 @@
+.main-layout:has(.coffee-shop.wap-container) {
+
+    background-size: cover;
+    background-position: right;
+}
+
 .wap-container {
+font-size: 1rem;
     &.coffee-shop {
         * {
             color: $text-primary;
         }
 
-        @media (max-width: 650px) {
-            flex-direction: column;
+        >div {
+            display: flex;
+            align-items: center;
+            height: 670px;
+
+            .mobile & {
+                justify-content: center;
+            }
         }
 
-        // padding-top: clamp(10px, 5%, 50px);
-        // padding-bottom: clamp(10px, 5%, 50px);
+
+        .wap-card.hero {
+            display: flex;
+            flex-direction: column;
+            background-color: #332f29da;
+            width: 50%;
+            max-width: 650px;
+            height: 85%;
+            padding: 2.5em 1.5em 2em 1.5em;
+            border-radius: 1em;
+
+            * {
+                color: $coffee-bg;
+            }
+
+            .mobile & {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 44px;
+                font-weight: bold;
+                margin-bottom: 16px;
+
+                .small & {
+                    font-size: 35px;
+                }
+
+                .medium & {
+                    font-size: 49px;
+                }
+
+                .narrow & {
+                    font-size: 60px;
+                }
+
+                .wide & {
+                    font-size: 85px;
+                }
+
+            }
+
+            p {
+                flex: 1;
+                line-height: 2.1;
+                margin: 0;
+                font-size: 1.2em;
+                .small &{
+                    line-height: 1.2;
+                }
+                .medium &{
+                    font-size: 1.5em;
+                }
+    
+    
+            }
+            button{
+                width: fit-content;
+                text-transform: uppercase;
+                padding: 1em 3em;
+                background-color: transparent;
+                border: 2px solid $coffee-bg;
+                font-size: 1em;
+                letter-spacing: 2px;
+                border-radius: 3em;
+                .medium &{
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+
 
         &.img-pill-cards {
             display: grid;
@@ -17,7 +100,7 @@
                 "tl tr"
                 "tl br"
                 "bl br";
-        
+
             // gap: 15px;
 
             .wap-card {
@@ -32,7 +115,8 @@
                     height: 10em;
                     margin: 0;
                 }
-                p{
+
+                p {
                     // text-align: center;
                 }
             }
@@ -40,11 +124,12 @@
             > :nth-child(1) {
                 grid-area: tl;
                 height: 20em;
-                p{
-                    
+
+                p {
+
                     height: 10em;
                 }
-               
+
             }
 
             > :nth-child(2) {
@@ -63,6 +148,7 @@
 
             > :nth-child(4) {
                 grid-area: br;
+
                 .wap-card {
                     flex-direction: column-reverse;
                     justify-content: st;

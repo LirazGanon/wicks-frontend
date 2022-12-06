@@ -1,7 +1,7 @@
 <template>
 
     <section class="main-layout full" :style="cmp.style">
-
+        
 
         <section class="wap-container" :class="cmp.classes" >
 

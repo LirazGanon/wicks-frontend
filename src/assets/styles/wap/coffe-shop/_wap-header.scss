@@ -11,10 +11,14 @@
         }
 
         .wap-nav {
-            font-size: rem(15px);
+            font-size: rem(16px);
 
             a {
                 color: $coffee-pr-clr;
+                &:hover {
+                    color: $coffee-hover;
+                    text-decoration: none;
+                }
             }
 
             a:not(:last-child) {

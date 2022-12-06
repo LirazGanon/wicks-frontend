@@ -97,6 +97,8 @@ font-size: 1rem;
 
         &.img-pill-cards {
             display: grid;
+            width: 80%;
+            margin: auto;
             grid-template-areas:
                 "tl tr"
                 "tl br"
@@ -125,9 +127,12 @@ font-size: 1rem;
             > :nth-child(1) {
                 grid-area: tl;
                 height: 20em;
+                img{
+                    height: 20em;
+                    object-fit: contain;
+                }
 
                 p {
-
                     height: 10em;
                 }
 
@@ -149,6 +154,10 @@ font-size: 1rem;
 
             > :nth-child(4) {
                 grid-area: br;
+                img{
+                    height: 20em;
+                    object-fit: contain;
+                }
 
                 .wap-card {
                     flex-direction: column-reverse;

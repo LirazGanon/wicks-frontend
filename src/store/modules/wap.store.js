@@ -19,7 +19,7 @@ export const wapStore = {
         isLoading({ isLoading }) { return isLoading },
         getWapToEdit({ wapInEdit }) { return wapInEdit },
         getHistory({ history }) { return history },
-        getLastState({ history }) { return history.waps[history.waps.length - 1] }
+        getLastState({ history }) { return history.waps[history.waps.length - 1] },
     },
     mutations: {
         setTemplates(state, { templates }) {
@@ -96,10 +96,11 @@ export const wapStore = {
             // TODO:send user msg
             try {
                 let wap = utilService.copy(context.state.wapInEdit)
+                const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
                 if (path.idx !== undefined) {
-                    wap.cmps[path.fatherIdx].cmps[path.idx] = cmp
+                    wap.cmps[cmpIdx].cmps[path.idx] = cmp
                 } else {
-                    wap.cmps[path.fatherIdx] = cmp
+                    wap.cmps[cmpIdx] = cmp
                 }
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
@@ -183,10 +184,11 @@ export const wapStore = {
         async duplicateCmp(context, { cmp, path }) {
             try {
                 let wap = utilService.copy(context.state.wapInEdit)
+                const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
                 if (path.idx !== undefined) {
-                    wap.cmps[path.fatherIdx].cmps.splice(path.idx, 0, cmp)
+                    wap.cmps[cmpIdx].cmps.splice(path.idx, 0, cmp)
                 } else {
-                    wap.cmps.splice([path.fatherIdx], 0, cmp)
+                    wap.cmps.splice([cmpIdx], 0, cmp)
                     console.log(cmp)
                 }
 
@@ -201,10 +203,11 @@ export const wapStore = {
         async removeCmp(context, { cmp, path }) {
             try {
                 let wap = utilService.copy(context.state.wapInEdit)
+                const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
                 if (path.idx !== undefined) {
-                    wap.cmps[path.fatherIdx].cmps.splice(path.idx, 1)
+                    wap.cmps[cmpIdx].cmps.splice(path.idx, 1)
                 } else {
-                    wap.cmps.splice([path.fatherIdx], 1)
+                    wap.cmps.splice([cmpIdx], 1)
                 }
                 wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })

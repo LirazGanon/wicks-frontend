@@ -13,8 +13,8 @@
 
         <section class="text-format">
 
-                <span>Font Size: </span>
-                <slider :change="info" @changed="updateFS"/>
+            <span>Font Size: </span>
+            <slider :change="info" @changed="updateFS" />
 
             <section class="editor-checkbox flex">
                 <label class="flex align-center">
@@ -43,11 +43,11 @@
             </label>
             <label v-if="info.key === 'btns'" class="border-radius-bar">
                 <span>Border-radius</span>
-                <slider :change="info" @changed="updateRadius"/>
+                <slider :change="info" @changed="updateRadius" />
             </label>
         </section>
         <hr>
-        
+
 
         <section class="undo-redo">
             <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
@@ -151,25 +151,20 @@ export default {
         },
         getCurrCmp(path) {
             const wap = this.$store.getters.getLastState
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
+            console.log(wap.cmps[cmpIdx]);
+            console.log(cmpIdx);
+
             if (path.idx !== undefined) {
-                return wap.cmps[path.fatherIdx].cmps[path.idx]
+                return wap.cmps[cmpIdx].cmps[path.idx]
             } else {
-                return wap.cmps[path.fatherIdx]
+                return wap.cmps[cmpIdx]
             }
         }
 
     },
     computed: {
-        rangeValue() {
-            const { key, isContainer, idx } = this.info
-            if (!isContainer) {
-                return this.cmp.info[key].style['font-size'] ? +this.cmp.info[key].style['font-size'].slice(0, -2) : 0
-            } else {
-
-            }
-        },
         borderRadius() {
-
             const { key } = this.info
             return this.cmp.info[key].style['border-radius'] ? +this.cmp.info[key].style['border-radius'].slice(0, -1) : 0
         },

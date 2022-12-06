@@ -12,7 +12,7 @@
 
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
+      :should-accept-drop="() => lirazKing" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
         <component :is="cmp.type" :cmp="cmp" @openEditor="makeLirazjQueen" @MakeLirazKing="makeLirazKing" />
 
@@ -56,21 +56,32 @@ export default {
     return {
       responsiveClass: [],
       conMaxWidth: null,
-      myClass: []
+      myClass: [],
+      lirazKing: false
     }
   },
   created() {
     this.setWapToEdit()
   },
-
+  
   mounted() {
     eventBus.on('resizeWap', this.resize)
+    eventBus.on('drag',this.makeLirazKing)
     new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
+    makeLirazKing() {
+      this.lirazKing = true
+      console.log('6:', 6)
+
+    },
+    makeLirazjQueen(ev) {
+      this.lirazKing = false
+      this.$emit('openEditor', ev)
+    },
     async setWapToEdit() {
       const id = this.$route.params
       const wapId = (id.wapId)

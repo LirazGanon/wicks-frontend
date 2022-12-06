@@ -82,7 +82,7 @@ html input[type=range] {
         -webkit-appearance: none;
         height: 26px;
         cursor: pointer;
-        box-shadow:  inset 0 0 0 40px blueviolet;
+        box-shadow:  inset 0 0 0 40px #c78afb;
         border-radius: 50%;
         -webkit-transition: box-shadow 0.2s ease-in-out;
         transition: box-shadow 0.2s ease-in-out;
@@ -92,13 +92,13 @@ html input[type=range] {
 
     html input[type=range]:active::-webkit-slider-thumb {
         background: #fefeff;
-        box-shadow:  inset 0 0 0 3px blueviolet;
+        box-shadow:  inset 0 0 0 3px #c78afb;
     }
 }
 
 html input[type=range]::-moz-range-progress
  {
-    background-color: blueviolet;
+    background-color: #c78afb;
 }
 
 html input[type=range]::-moz-range-track {
@@ -106,7 +106,7 @@ html input[type=range]::-moz-range-track {
 }
 
 html input[type=range]::-ms-fill-lower {
-    background-color: blueviolet;
+    background-color: #c78afb;
 }
 
 html input[type=range]::-ms-fill-upper {
@@ -146,7 +146,7 @@ html input[type=range]::-ms-fill-upper {
     width: 100%;
     height: 100%;
     left: 0;
-    background-color: blueviolet;
+    background-color: #c78afb;
     border-radius:  50%  50% 0 50%;
     transform: rotate(45deg);
     z-index: -1;

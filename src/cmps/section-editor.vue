@@ -19,8 +19,10 @@
 
 
             <hr>
-            <span class="background-color">Background Color</span>
-            <color-picker @setColor="updateBgClr" />
+            <section class="color-picker-wrapper">
+                <span class="background-color">Background Color</span>
+                <color-picker @setColor="updateBgClr" />
+            </section>
 
         </section>
         <section v-else>

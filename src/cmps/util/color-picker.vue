@@ -62,6 +62,5 @@ export default {
 .demo-color-block {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
 }
 </style>

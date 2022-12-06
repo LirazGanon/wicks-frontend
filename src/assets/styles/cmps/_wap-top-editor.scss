@@ -74,12 +74,10 @@
             color: #000;
         }
 
-        > span:first-of-type {
-            color: blue;
-        }
+      
 
         > span:last-of-type {
-            color: blueviolet;
+            color: $logo-clr;
             border-bottom: 0.8px dashed;
             outline: none;
         }
@@ -92,23 +90,20 @@
     .site-preview {
         display: flex;
         align-items: center;
-        background-color: rgb(95, 69, 151);
-        color: white;
-        border-radius: 0.6em;
+        color: $logo-clr;
         padding: 5px 8px;
         transition: background-color 0.2s;
-        font-size: small;
 
         &:hover {
-            background-color: rgb(60, 39, 136);
+            color:$hover-clr;
             cursor: pointer;
         }
     }
 
     .site-publish {
-        background-color: rgb(96, 60, 174);
+        background-color: $logo-clr;
         padding: 5px 12px;
-        border-radius: 0.6em;
+        border-radius: 0.4em;
         transition: background-color 0.2s;
 
         * {
@@ -117,7 +112,7 @@
         }
 
         &:hover {
-            background-color: rgb(70, 39, 136);
+            background-color:$hover-clr;
         }
 
         align-self: center;

@@ -33,9 +33,10 @@
                     </button> -->
                 <div class="site-preview">
                     <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
-                        <span>Preview</span><span class="material-symbols-outlined">
+                        <span>Preview</span>
+                        <!-- <span class="material-symbols-outlined">
                             visibility
-                        </span>
+                        </span> -->
                     <!-- </router-link> -->
     
                 </div>

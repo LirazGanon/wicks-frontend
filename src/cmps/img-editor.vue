@@ -16,9 +16,10 @@
             <img :src="getSrc.src" >
             <section class="img-replace-src">
                 <label>
-                    <span>src </span>
+                    <span>Insert an image src: </span>
                     <input type="text" :value="getSrc?.src" @input="updateSrc">
                 </label>
+                <p>OR</p>
                 <img-uploader @uploaded="changeImg" />
             </section>
         </section>

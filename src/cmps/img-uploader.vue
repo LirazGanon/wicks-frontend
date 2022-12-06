@@ -7,8 +7,8 @@
       @dragleave="isDragover = false"
   >
       <label v-if="!isUploading" :class="{ drag: isDragover }">
-          <p>click to upload image - or drag image from your computer</p>
-          <upload-icon :class="{ drag: isDragover }" />
+        <upload-icon :class="{ drag: isDragover }" />
+          <p> Drag or click to upload</p>
           <input type="file" @change="uploadImg" hidden />
       </label>
       <img v-else src="../assets/loader.gif" alt="" />

@@ -12,30 +12,24 @@ header {
     .logo {
         width: rem(150px);
     }
-    a {
+    article {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        align-items: start;
+        justify-content: space-between;
+        > :last-child {
+            padding-inline-end: 20px;
+        }
     }
-
-    a:not(:last-child) {
-        margin-inline-end: 20px;
-    }
-
-    
 
     .loggedin-user {
-        * {
-            display: flex;
-            align-items: center;
-        }
+        display: flex;
         span {
             background-color: $clr2;
             border-radius: 50%;
         }
         img {
-            width: 2em;
-            height: 2em;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             object-fit: cover;
             width: 100%;
@@ -44,6 +38,8 @@ header {
     &.main-header {
         padding: 0;
         background-color: transparent;
+        position: relative;
+        display: flex;
         * {
             color: $text-primary;
             font-size: 1.1em;
@@ -52,6 +48,70 @@ header {
             max-width: 5.19em;
             margin-block: 10px;
             margin-inline-start: 15px;
+        }
+
+        .main-nav {
+            background: #eee;
+            position: absolute;
+            right: 0;
+            height: calc(100vh - 80px);
+            z-index: 20;
+            top: 80px;
+            width: 0;
+            transition: width 0.3s;
+            overflow: hidden;
+            display: flex;
+            &.active {
+                width: 30%;
+                flex-direction: column;
+
+                > * {
+                    border-bottom: 1px solid #5555;
+                    padding-block: 0.8em;
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: 900px) {
+                display: flex;
+                position: relative;
+                flex-direction: row;
+                width: auto;
+                top: 0;
+                height: auto;
+                background: transparent;
+            }
+        }
+
+        .burger {
+            height: 80px;
+            width: 80px;
+            position: relative;
+            cursor: pointer;
+            z-index: 30;
+
+            @media (min-width: 900px) {
+                display: none;
+            }
+            > * {
+                width: 40%;
+                height: 3px;
+                background: $clr2;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                top: calc(10px * var(--i) + 50%);
+                border-radius: 25px;
+                transition: 0.5s;
+            }
+
+            &.active > *:not(:nth-child(even)) {
+                transform: translate(-50%, -50%) rotate(-45deg);
+                top: 50%;
+            }
+            &.active > *:not(:nth-child(odd)) {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
         }
 
         .edit-container & {
@@ -63,6 +123,9 @@ header {
             nav > * {
                 color: black;
             }
+
+            
+
             border-bottom: 1px solid #3335;
         }
 

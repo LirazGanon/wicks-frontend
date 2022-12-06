@@ -115,7 +115,7 @@ export const wapStore = {
             }
         },
         async updateWapFull(context, { wap }) {
-            socketService.emit(SOCKET_EVENT_SEND_UPDATE_WAP, wap)
+            socketService.emit(SOCKET_EVENT_SEND_UPDATE_WAP, wap.style)
             try {
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })

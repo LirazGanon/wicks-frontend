@@ -22,9 +22,10 @@ export const userService = {
 window.userService = userService
 
 
-function getUsers() {
+async function getUsers() {
     // return storageService.query('user')
-    return httpService.get(`user`)
+    const users = await httpService.get(`user`)
+    return users
 }
 
 function onUserUpdate(user) {

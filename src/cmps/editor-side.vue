@@ -58,13 +58,18 @@
 
         <!-- THEME PICKER -->
         <section class="flex options theme" :class="{ active: active === 'palette' }">
+            <span class="material-symbols-outlined close-icon" @click="(active = null)">
+                disabled_by_default
+            </span>
             <h2>Theme</h2>
             <img @click="setTheme('a')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/1.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_1_an9yi7.png" alt="">
             <img @click="setTheme('b')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/2.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_2_ezy13a.png" alt="">
             <img @click="setTheme('c')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670082405/wicks/pallte/3.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_3_dmrup6.png" alt="">
+            <img @click="setTheme('d')"
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_4png_ypukjj.png" alt="">
 
         </section>
 

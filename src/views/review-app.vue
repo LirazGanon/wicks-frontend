@@ -4,7 +4,39 @@
     
     
     <button v-tooltip="'Look! It\'s a button, let\'s push it!'">DON\'T PUSH</button>
-
+    
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <img src="@/assets/SVG.svg" alt="">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <ul class="review-list">
       <li v-for="review in reviews" :key="review._id">

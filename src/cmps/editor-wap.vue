@@ -79,8 +79,6 @@ export default {
   methods: {
     makeLirazKing() {
       this.lirazKing = true
-      console.log('6:', 6)
-
     },
     makeLirazjQueen(ev) {
       this.lirazKing = false

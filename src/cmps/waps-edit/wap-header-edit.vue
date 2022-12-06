@@ -1,7 +1,7 @@
 <template>
 
-    <header class="wap-header main-layout full" :class="cmp.classes" @click.stop="openSectionEditor" :style="cmp.style"
-        v-bind:class="class" @mousedown="$emit('MakeLirazKing')">
+    <header class="wap-header main-layout full" :class="[...cmp.classes, selected]" @click.stop="openSectionEditor"
+        :style="cmp.style" @mousedown="$emit('MakeLirazKing')" v-click-outside="unselect">
         <section class="flex space-between">
 
 
@@ -11,9 +11,7 @@
 
 
 
-                <h4 v-else 
-                contenteditable="true" 
-                @click.stop @mousedown.stop="openEditor('logo')"
+                <h4 v-else contenteditable="true" @click.stop @mousedown.stop="openEditor('logo')"
                     :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">{{
                             cmp.info.logo.txt
                     }}</h4>
@@ -41,13 +39,16 @@ export default {
     components: { wapNav },
     data() {
         return {
-            selected: false
+            isSelected: false
         };
     },
     created() {
         this.updateCmp = utilService.debounce(this.updateCmp, 0)
     },
     methods: {
+        unselect() {
+            this.isSelected = false
+        },
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             el = utilService.copy(el)
@@ -61,7 +62,7 @@ export default {
             this.$emit('openEditor', wapContent)
         },
         openSectionEditor() {
-            this.selected = true
+            this.isSelected = true
             const currCmp = utilService.copy(this.cmp)
             const wapContent = {
                 el: { type: 'section' },
@@ -97,8 +98,8 @@ export default {
         }
     },
     computed: {
-        class() {
-            return { selected: this.selected }
+        selected() {
+            return this.isSelected ? 'selected' : ''
         }
     },
     unmounted() { },

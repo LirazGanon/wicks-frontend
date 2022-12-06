@@ -1,7 +1,7 @@
 <template>
 
 
-    <section class="section-cmp-editor flex column">
+    <section class="section-cmp-editor flex column" >
         <h2>Section Edit</h2>
         <section class="delete-duplicate" v-if="cmpsLength">
             <button v-tooltip="'Delete Section'" class="material-symbols-outlined" @click="removeCmp">delete</button>

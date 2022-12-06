@@ -4,7 +4,6 @@
         <div v-for="item in view.cmps" :key="item.id">
             <div class="main-layout full">
                 <component :is="(item.type || 'wapHeader')" :cmp="item" />
-
             </div>
         </div>
     </div>

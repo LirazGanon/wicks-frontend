@@ -1,7 +1,7 @@
 <template>
 
     <header class="wap-header main-layout full" :class="[...cmp.classes, selected]" @click.stop="openSectionEditor"
-        :style="cmp.style" @mousedown="$emit('acceptDrop')" v-click-outside="unselect">
+        :style="cmp.style" @mousedown="$emit('acceptDrop')" >
         <section class="flex space-between">
 
 
@@ -35,20 +35,16 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-header-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object ,isSelected: Boolean },
     components: { wapNav },
     data() {
         return {
-            isSelected: false
         };
     },
     created() {
-        this.updateCmp = utilService.debounce(this.updateCmp, 0)
     },
     methods: {
-        unselect() {
-            this.isSelected = false
-        },
+
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             el = utilService.copy(el)
@@ -62,7 +58,6 @@ export default {
             this.$emit('openEditor', wapContent)
         },
         openSectionEditor() {
-            this.isSelected = true
             const currCmp = utilService.copy(this.cmp)
             const wapContent = {
                 el: { type: 'section' },

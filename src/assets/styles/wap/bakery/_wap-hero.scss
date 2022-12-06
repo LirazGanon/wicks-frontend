@@ -1,43 +1,113 @@
 .wap-hero {
     display: grid;
-    perspective: 10px;
     overflow: hidden;
-    padding: em(60px) 0;
+    font-size: 1rem;
+    padding-top: em(10px);
+    padding-bottom: em(80px);
+
+    .medium & {
+
+        padding-bottom: em(80px);
+    }
+
+    >img {
+        border-radius: 5px;
+    }
 
 
     &.bakery {
         grid-template-areas:
-            " t t  "
-            " ml ml "
-            " bl mbr ";
+            " t  "
+            " ml  "
+            "  mbr "
+            " bl   ";
+
         background-color: $bakery-pr-clr;
         color: $bakery-bg;
-        transform-style: preserve-3d;
+
+        .small & {
+            grid-template-areas:
+                "t t "
+                "ml ml  "
+                " bl mbr  ";
+        }
+
+        .medium & {
+            grid-template-areas:
+                "t t t"
+                "ml ml ml "
+                " bl mbr mbr ";
+        }
 
         h1 {
             grid-area: t;
-            font-size: 2em;
             max-width: clamp(16px, 100%, 12em);
             text-transform: capitalize;
+
+
+            .mobile & {
+                font-size: em(30px);
+            }
+
+            .small & {
+                font-size: em(45px);
+            }
+
+            .medium & {
+                font-size: em(70px);
+            }
+
+            .narrow & {
+                font-size: em(80px);
+            }
+
+            .wide & {
+                margin-top: em(5px);
+                font-size: em(100px);
+            }
+
         }
+
+
 
         p {
             grid-area: ml;
-            font-size: clamp(12px, 1em, 64px);
-            width: clamp(16px, 12em, 550px);
-            margin-block: 2.8em;
+            max-width: 550px;
+            margin-block: 1em;
             font-weight: 300;
+
+            .mobile & {
+                font-size: em(16px);
+                max-width: em(200px);
+            }
+
+            .small & {
+                font-size: em(20px);
+                max-width: em(200px);
+            }
+
+            .medium & {
+                font-size: em(30px);
+                max-width: em(170px)
+            }
+
+
         }
 
         .wap-img.left {
             grid-area: bl;
-            width: calc(100% - 5vw);
-            height: 90%;
-            min-width: 200px;
             align-self: end;
             object-fit: cover;
-            padding-block-start: 20%;
             overflow: hidden;
+            width: 80%;
+            height: 80%;
+            display: none;
+
+            .small & {
+                display: block;
+            }
+
+
         }
 
         .wap-img.right {
@@ -45,15 +115,20 @@
             align-self: end;
             justify-self: end;
             object-fit: cover;
-            height: 100%;
-            width: 55vw;
-            aspect-ratio: 2/1;
-            // transform: translateZ(10px) scale(2);
-            // height: 100%;
+            width: 100%;
+            height: 300px;
+
+            .small & {
+                height: 400px;
+            }
+
+            .medium & {
+                height: 500px;
+            }
+
         }
+
     }
 
-    // &.cars{
 
-    // }
 }

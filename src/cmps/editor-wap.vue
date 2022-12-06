@@ -14,8 +14,10 @@
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop" />
-
+        <div class="main-layout full">
+          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
+          :isSelected="selectedId === cmp.id ? true : false" />
+        </div>
       </Draggable>
 
     </Container>
@@ -59,7 +61,8 @@ export default {
       responsiveClass: [],
       conMaxWidth: null,
       myClass: [],
-      shouldAcceptDrop: false
+      shouldAcceptDrop: false,
+      selectedId:null
     }
   },
   created() {
@@ -86,6 +89,7 @@ export default {
     },
     openEditor(ev) {
       this.shouldAcceptDrop = false
+      this.selectedId = ev.path.id
       this.$emit('openEditor', ev)
     },
     getUpdate(wap) {
@@ -143,8 +147,8 @@ export default {
     resized() {
       if (!this.$refs.container) return
       const { offsetWidth } = this.$refs.container
-      if (offsetWidth < 620) this.responsiveClass = 'mobile'
-      if (offsetWidth >= 620) this.responsiveClass = this.small()
+      if (offsetWidth < 550) this.responsiveClass = 'mobile'
+      if (offsetWidth >= 550) this.responsiveClass = this.small()
       if (offsetWidth >= 860) this.responsiveClass = this.medium()
       if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
       if (offsetWidth >= 1300) this.responsiveClass = this.normal()

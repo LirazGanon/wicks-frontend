@@ -1644,7 +1644,7 @@ section.page-editor .wap-placeholder::after {
   font-size: smaller;
 }
 
-.wap-footer.coffe-shop {
+.wap-footer.coffee-shop {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1653,15 +1653,15 @@ section.page-editor .wap-placeholder::after {
   background-color: #1c2e3b;
   height: 12vh;
 }
-.wap-footer.coffe-shop p {
+.wap-footer.coffee-shop p {
   margin: 0;
 }
-.wap-footer.coffe-shop .logo {
+.wap-footer.coffee-shop .logo {
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5em;
 }
-.wap-footer.coffe-shop .copyright {
+.wap-footer.coffee-shop .copyright {
   font-size: 0.8125em;
   white-space: nowrap;
   text-align: center;
@@ -1670,18 +1670,18 @@ section.page-editor .wap-placeholder::after {
 .wap-header {
   width: clamp(10px, 100%, 100%);
 }
-.wap-header.coffe-shop {
+.wap-header.coffee-shop {
   background: #1c2e3b;
 }
-.wap-header.coffe-shop .wap-logo {
+.wap-header.coffee-shop .wap-logo {
   text-transform: uppercase;
   color: #fff;
   font-size: 1.5625em;
 }
-.wap-header.coffe-shop .wap-nav {
+.wap-header.coffee-shop .wap-nav {
   font-size: 0.9375rem;
 }
-.wap-header.coffe-shop .wap-nav a:not(:last-child) {
+.wap-header.coffee-shop .wap-nav a:not(:last-child) {
   -webkit-margin-end: 1.5rem;
           margin-inline-end: 1.5rem;
 }
@@ -1695,26 +1695,26 @@ section.page-editor .wap-placeholder::after {
   overflow: hidden;
   padding: 3.75em 0;
 }
-.wap-hero.coffe-shop {
+.wap-hero.coffee-shop {
   grid-template-areas: ". t t . " ". ml ml ." ". bl mbr .";
   background-color: #1c2e3b;
   color: #FFFDF9;
   transform-style: preserve-3d;
 }
-.wap-hero.coffe-shop h1 {
+.wap-hero.coffee-shop h1 {
   grid-area: t;
   font-size: clamp(16px, 5em, 80px);
   width: clamp(16px, 100vw, 750px);
   text-transform: capitalize;
 }
-.wap-hero.coffe-shop p {
+.wap-hero.coffee-shop p {
   grid-area: ml;
   font-size: clamp(12px, 1em, 64px);
   width: clamp(16px, 12em, 550px);
   margin-block: 2.8em;
   font-weight: 300;
 }
-.wap-hero.coffe-shop .wap-img.left {
+.wap-hero.coffee-shop .wap-img.left {
   grid-area: bl;
   width: calc(100% - 0.5vw);
   height: 100%;
@@ -1725,7 +1725,7 @@ section.page-editor .wap-placeholder::after {
           padding-block-start: 20%;
   overflow: hidden;
 }
-.wap-hero.coffe-shop .wap-img.right {
+.wap-hero.coffee-shop .wap-img.right {
   grid-area: mbr;
   width: 100%;
   -o-object-fit: cover;
@@ -1734,19 +1734,19 @@ section.page-editor .wap-placeholder::after {
   overflow-y: auto;
 }
 
-.wap-container.coffe-shop * {
+.wap-container.coffee-shop * {
   color: #57585d;
 }
 @media (max-width: 650px) {
-  .wap-container.coffe-shop {
+  .wap-container.coffee-shop {
     flex-direction: column;
   }
 }
-.wap-container.coffe-shop.img-pill-cards {
+.wap-container.coffee-shop.img-pill-cards {
   display: grid;
   grid-template-areas: "tl tr" "tl br" "bl br";
 }
-.wap-container.coffe-shop.img-pill-cards .wap-card {
+.wap-container.coffee-shop.img-pill-cards .wap-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1754,31 +1754,31 @@ section.page-editor .wap-placeholder::after {
   gap: 15px;
   position: relative;
 }
-.wap-container.coffe-shop.img-pill-cards .wap-card img {
+.wap-container.coffee-shop.img-pill-cards .wap-card img {
   height: 10em;
   margin: 0;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(1) {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(1) {
   grid-area: tl;
   height: 20em;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(1) p {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(1) p {
   height: 10em;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(2) {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(2) {
   grid-area: tr;
   display: block;
   background-color: #c2ad91;
   border-radius: 1.5em;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(3) {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(3) {
   grid-area: bl;
   background-color: #c2ad91;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(4) {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(4) {
   grid-area: br;
 }
-.wap-container.coffe-shop.img-pill-cards > :nth-child(4) .wap-card {
+.wap-container.coffee-shop.img-pill-cards > :nth-child(4) .wap-card {
   flex-direction: column-reverse;
   justify-content: st;
   height: 100%;
@@ -1789,15 +1789,15 @@ section:has(.doda-cards) {
   background-repeat: no-repeat;
 }
 
-.wap-container.coffe-shop * {
+.wap-container.coffee-shop * {
   color: #57585d;
 }
 @media (max-width: 650px) {
-  .wap-container.coffe-shop {
+  .wap-container.coffee-shop {
     flex-direction: column;
   }
 }
-.wap-container.coffe-shop.doda-cards {
+.wap-container.coffee-shop.doda-cards {
   position: relative;
   height: 900px;
   display: flex;
@@ -1806,7 +1806,7 @@ section:has(.doda-cards) {
   align-items: flex-end;
   width: 100%;
 }
-.wap-container.coffe-shop.doda-cards .bg-img {
+.wap-container.coffee-shop.doda-cards .bg-img {
   background-image: url("https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg");
   height: 90%;
   z-index: -1;
@@ -1815,14 +1815,14 @@ section:has(.doda-cards) {
   background-position: 0, 100px;
   background-size: cover;
 }
-.wap-container.coffe-shop.doda-cards img {
+.wap-container.coffee-shop.doda-cards img {
   position: absolute;
   z-index: -1;
   width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.wap-container.coffe-shop.doda-cards .wap-card {
+.wap-container.coffee-shop.doda-cards .wap-card {
   box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.3);
   border-radius: 1.5em;
   display: flex;
@@ -1832,7 +1832,7 @@ section:has(.doda-cards) {
   width: 14em;
   background-color: #fff;
 }
-.wap-container.coffe-shop.doda-cards .wap-card h1 {
+.wap-container.coffee-shop.doda-cards .wap-card h1 {
   color: #BFA98B;
   font-size: 3em;
   -webkit-padding-start: 15px;
@@ -1840,14 +1840,14 @@ section:has(.doda-cards) {
   padding-top: 10px;
   margin-bottom: 10px;
 }
-.wap-container.coffe-shop.doda-cards .wap-card p:nth-of-type(1) {
+.wap-container.coffee-shop.doda-cards .wap-card p:nth-of-type(1) {
   font-size: 1.4em;
   font-weight: bold;
 }
-.wap-container.coffe-shop.doda-cards .wap-card p:nth-of-type(2) {
+.wap-container.coffee-shop.doda-cards .wap-card p:nth-of-type(2) {
   font-style: italic;
 }
-.wap-container.coffe-shop.doda-cards .wap-card p {
+.wap-container.coffee-shop.doda-cards .wap-card p {
   -webkit-padding-start: 15px;
           padding-inline-start: 15px;
 }
@@ -1877,7 +1877,7 @@ section:has(.doda-cards) {
   border-radius: 1.5em;
 }
 
-.wap-bg-img.coffe-shop {
+.wap-bg-img.coffee-shop {
   height: 500px;
   background-attachment: fixed;
   background-position: center;

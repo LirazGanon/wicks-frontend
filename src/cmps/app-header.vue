@@ -25,11 +25,11 @@
         <router-link v-else to="/login">Login / Signup</router-link>
       </nav>
 
-      <div class="burger" @click="toggleMenu">
+      <!-- <div class="burger" @click="toggleMenu">
         <span style="--i: -1"></span>
         <span style="--i: 0"></span>
         <span style="--i: 1"></span>
-      </div>
+      </div> -->
 
 
 

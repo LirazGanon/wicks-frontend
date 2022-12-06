@@ -3,15 +3,19 @@
     <h1>User Details - {{ user.fullname }}</h1>
     <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
     <img style="max-width: 200px;" :src="user.imgUrl" />
-    <ul>
+    <!-- <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
         {{ review.txt }}
         <router-link :to="`/user/${review.aboutUser._id}`">
           About {{ review.aboutUser.fullname }}
         </router-link>
       </li>
+    </ul> -->
+    <ul>
+      <li>
+<div>{{userWaps}}</div> 
+      </li>
     </ul>
-
     <details>
       <summary>Full JSON</summary>
       <pre>{{ user }}</pre>
@@ -23,22 +27,24 @@
 // import {userService} from '../services/user.service'
 
 export default {
-  name:'user-details',
+  name: 'user-details',
 
   data() {
     return {
+
       // user: null
     }
   },
   async created() {
+    await this$store.dispath({type:'getUserWaps', userId})
     // const user = await userService.getById(id)
     // this.user = user
   },
   watch: {
     userId: {
       handler() {
-        if(this.userId){
-            this.$store.dispatch({ type: "loadAndWatchUser", userId: this.userId })
+        if (this.userId) {
+          this.$store.dispatch({ type: "loadAndWatchUser", userId: this.userId })
         }
       },
       immediate: true,
@@ -51,6 +57,9 @@ export default {
     userId() {
       return this.$route.params.id
     },
+    userWaps(){
+    return this.$store.getter.userWaps
+    }
   },
 }
 </script>

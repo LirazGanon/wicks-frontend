@@ -11,8 +11,9 @@ export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
 // update wap events
-export const SOCKET_EVENT_SEND_UPDATE_WAP= 'send-update-wap'
-export const SOCKET_EMIT_GET_UPDATED_WAP = 'get-update-wap'
+export const SOCKET_EMIT_SET_USER_EDITOR= 'user-entered-editor'
+export const SOCKET_EMIT_SEND_UPDATE_WAP= 'set-wap'
+export const SOCKET_EVENT_GET_UPDATED_WAP = 'updated-wap'
 
 // export const SOCKET_EVENT__GET_POINTER = 'send-pointer-pos'
 // export const SOCKET_EMIT_SEND_POINTER = 'get-pointer-pos'

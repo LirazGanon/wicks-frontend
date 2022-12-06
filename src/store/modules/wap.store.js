@@ -1,7 +1,9 @@
 import { templateService } from '../../services/template.service.js'
 import { wapService } from '../../services/wap.service.js'
 import { utilService } from '../../services/util.service.js'
-import { socketService, SOCKET_EVENT_SEND_UPDATE_WAP } from '../../services/socket.service.js'
+import { socketService, SOCKET_EMIT_SEND_UPDATE_WAP } from '../../services/socket.service.js'
+import { storageService } from '../../services/async-storage.service.js'
+import { userService } from '../../services/user.service.js'
 
 
 
@@ -107,6 +109,8 @@ export const wapStore = {
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
+                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
+
                 return wap
             } catch (err) {
                 context.commit({ type: 'setLastHistoryState' })
@@ -115,12 +119,12 @@ export const wapStore = {
             }
         },
         async updateWapFull(context, { wap }) {
-            socketService.emit(SOCKET_EVENT_SEND_UPDATE_WAP, wap.style)
             try {
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
-            } catch {
+                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
+            } catch(err) {
                 context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updateWap', err)
                 throw err
@@ -170,6 +174,15 @@ export const wapStore = {
             } catch (err) {
                 console.log('could not get wap')
                 throw err
+            }
+        },
+        async getUserWaps(context, {userId}){
+            try{
+                const waps = await wapService.getByUserId(id)
+                this.$commit({type:'setUserWaps', waps})
+            }catch(err){
+            console.log('could not get user waps')
+            throw err
             }
         },
         // async getCustomWap(context, { wapId }) {

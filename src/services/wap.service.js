@@ -13,6 +13,7 @@ export const wapService = {
     save,
     remove,
     // getCustomWap,
+    getByUserId,
     addWapMsg
 }
 window.cs = wapService
@@ -35,6 +36,10 @@ async function query(filterBy = { txt: '', desc: '' }) {
 function getById(wapId) {
     // return storageService.get(STORAGE_KEY, wapId)
     return httpService.get(`wap/${wapId}`)
+}
+function getByUserId(userId) {
+    // return storageService.get(STORAGE_KEY, wapId)
+    return httpService.get(`wap/user/${userId}`)
 }
 
 async function remove(wapId) {

@@ -18,7 +18,7 @@
       </router-link>
       <!-- <span>{{ loggedInUser.score.toLocaleString() }}</span> -->
       <div>
-        <img :src="loggedInUser.imgUrl" />
+        <img :src="loggedInUser.imgUrl||avatarIcon" />
       </div>
     </section>
   </header>
@@ -32,6 +32,11 @@ export default {
     noLogo: Boolean
   },
   name: 'main-header',
+  data() {
+    return {
+      avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670322893/user_ha6zol.png'
+    }
+  },
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser

@@ -2,20 +2,22 @@
     <section class="img-cmp-editor flex column">
         <h2>Edit Image</h2>
         <section class="img-replace flex column">
-            <img :src="info.el.src" :style="info.el.style">
+            <img :src="getSrc.src" :style="info.el.style">
             <section class="img-replace-src">
                 <label>
                     <span>src </span>
-                    <input type="text" :value="info.el.src" @input="updateSrc">
+                    <input type="text" :value="getSrc.src" @input="updateSrc">
                 </label>
                 <img-uploader @uploaded="changeImg" />
             </section>
         </section>
-            <label v-if="info.currCmp.type !== 'wap-bg-img'">
+        <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius: </span>
-            <slider :change="info" @changed="updateRadius"/>
+            <slider :change="info" @changed="updateRadius" />
         </label>
     </section>
+   
+    <!-- <pre>{{getSrc}}</pre> -->
 </template>
 <script>
 import { utilService } from '../services/util.service';
@@ -27,7 +29,7 @@ export default {
     props: {
         info: Object
     },
-    components: { imgUploader,slider },
+    components: { imgUploader, slider },
     data() {
         return {
             el: null
@@ -39,17 +41,35 @@ export default {
     },
     methods: {
         changeImg(imgUrl) {
-            const { key, path, el, currCmp, elIdx } = this.info
-            const copyCmp = utilService.copy(currCmp)
+            // const { key, path, el, currCmp, elIdx } = this.info
+            // const copyCmp = utilService.copy(currCmp)
 
-            el.src = imgUrl
+
+
+            const { key, path, elIdx } = this.info
+            const cmp = this.getCurrCmp(path)
+            const copyCmp = utilService.copy(cmp)
+            let elCopy
+
+            if (elIdx !== undefined) {
+                elCopy = copyCmp.info[key][elIdx]
+            } else {
+                elCopy = copyCmp.info[key]
+            }
+
+            elCopy.src = imgUrl
+
 
             // CMP UPDATE
             if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = el
+                copyCmp.info[key][elIdx] = elCopy
             } else {
-                copyCmp.info[key] = el
+                copyCmp.info[key] = elCopy
             }
+
+
+
+
             try {
                 this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
             } catch {
@@ -59,29 +79,32 @@ export default {
 
         updateSrc(ev) {
             this.updateCmp('src', ev.target.value)
-            this.info.el.src = ev.target.value
         },
         updateRadius(value) {
             this.updateCmp('border-radius', value + '%')
         },
         updateCmp(att, value) {
-            const { key, path, el, currCmp, elIdx } = this.info
-            
-            console.log(el);
-            this.el.style[att] = value
-            const copyCmp = utilService.copy(currCmp)
-            const elCopy = utilService.copy(el)
 
+            const { key, path, elIdx } = this.info
+            const cmp = this.getCurrCmp(path)
+            const copyCmp = utilService.copy(cmp)
+            let elCopy
+
+            if (elIdx !== undefined) {
+                elCopy = copyCmp.info[key][elIdx]
+            } else {
+                elCopy = copyCmp.info[key]
+            }
+            // CMP UPDATE
             if (att === 'src') {
                 elCopy.src = value
             } else {
                 elCopy.style[att] = value
             }
-            if (elIdx !== undefined) {
-                copyCmp.info[key][elIdx] = elCopy
-            } else {
-                copyCmp.info[key] = elCopy
-            }
+
+
+
+
 
             try {
                 this.$store.dispatch({ type: 'updateWap', cmp: copyCmp, path })
@@ -89,10 +112,34 @@ export default {
                 console.log('ops')
             }
         },
+        getCurrCmp(path) {
+            const wap = this.$store.getters.getLastState
+            const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
+  
+            if (path.idx !== undefined) {
+                return wap.cmps[cmpIdx].cmps[path.idx]
+            } else {
+                return wap.cmps[cmpIdx]
+            }
+        }
     },
     computed: {
         rangeValue() {
             return this.info.el.style['border-radius'] ? +this.info.el.style['border-radius'].slice(0, -1) : 0
+        },
+        getSrc() {
+            const { key, path, elIdx } = this.info
+            const cmp = this.getCurrCmp(path)
+            const copyCmp = utilService.copy(cmp)
+            let elCopy
+
+            if (elIdx !== undefined) {
+                elCopy = copyCmp.info[key][elIdx]
+            } else {
+                elCopy = copyCmp.info[key]
+            }
+            return elCopy
+
         }
     },
     unmounted() { },

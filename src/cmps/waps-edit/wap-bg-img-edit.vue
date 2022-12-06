@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-bg-img bakery full" :style="{ backgroundImage: 'url(' + cmp.info.img.src + ')' }" @click="openEditor('img')">
+    <section class="wap-bg-img bakery full" :style="{ backgroundImage: 'url(' + cmp.info.img.src + ')' }" @click="openEditor('img')" @mousedown="$emit('acceptDrop')">
         <!-- <img :src="cmp.info.img.src" alt=""> -->
     </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
 
-    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style" >
+    <section class="main-layout full" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"  >
 
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 

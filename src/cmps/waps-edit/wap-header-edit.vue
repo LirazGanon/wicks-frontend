@@ -1,7 +1,7 @@
 <template>
 
     <header class="wap-header main-layout full" :class="[...cmp.classes, selected]" @click.stop="openSectionEditor"
-        :style="cmp.style" @mousedown="$emit('MakeLirazKing')" v-click-outside="unselect">
+        :style="cmp.style" @mousedown="$emit('acceptDrop')" v-click-outside="unselect">
         <section class="flex space-between">
 
 

@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-reviews" @click="openSectionEditor" :style="cmp.style"  >
+    <section class="wap-reviews" @click="openSectionEditor" :style="cmp.style"  @mousedown="$emit('acceptDrop')">
         <h4 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')"
             :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
         <section class="reviews-container">

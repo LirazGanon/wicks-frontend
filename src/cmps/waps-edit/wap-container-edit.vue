@@ -1,6 +1,6 @@
 <template>
     <!-- <h2>{{ info }}</h2> -->
-    <section class="main-layout full" v-if="cmp" @click="openSectionEditor" :style="cmp.style">
+    <section class="main-layout full" v-if="cmp" @click="openSectionEditor" @mousedown="$emit('acceptDrop')" :style="cmp.style" :class="[...cmp.classes, selected]">
 
         <section class="wap-container"  :style="cmp.style" :class="cmp.classes">
 
@@ -28,17 +28,19 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-container-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object, isSelected: Boolean },
     components: { wapGallery, wapCard },
     data() {
-        return {};
+        return {
+
+        };
     },
     created() {
         
      },
     methods: {
-        openSectionEditor() {
 
+        openSectionEditor() {
             const cmpContent = {
                 el: { type: 'section' },
                 currCmp: this.cmp,
@@ -64,7 +66,11 @@ export default {
             return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
-    computed: {},
+    computed: {
+        selected() {
+            return this.isSelected ? 'selected' : ''
+        }
+    },
     unmounted() { },
 };
 </script>

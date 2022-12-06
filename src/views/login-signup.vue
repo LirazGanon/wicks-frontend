@@ -12,10 +12,13 @@
     <div v-else>
       <h2>Login</h2>
       <form @submit.prevent="doLogin">
-        <select v-model="loginCred.username">
+        <input type="text" v-model="loginCred.username" placeholder="puki">
+        <input type="text" v-model="loginCred.password" placeholder="ja">
+
+        <!-- <select v-model="loginCred.username">
           <option value="">Select User</option>
           <option v-for="user in users" :key="user._id" :value="user.username">{{ user.fullname }}</option>
-        </select>
+        </select> -->
         <!-- <input type="text" v-model="loginCred.username" placeholder="User name" />
         <input
           type="text"
@@ -58,8 +61,8 @@ export default {
   data() {
     return {
       msg: '',
-      loginCred: { username: 'user1', password: '123' },
-      signupCred: { username: '', password: '', fullname: '', imgUrl : '' },
+      loginCred: { username: '', password: '' },
+      signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
     }
   },
   computed: {
@@ -75,13 +78,17 @@ export default {
   },
   methods: {
     async doLogin() {
-      if (!this.loginCred.username) {
+
+      // TODO:MAKE IT ASSENTIAL TO FILL THE INPUT AND GET RID OF THIS CONDITION
+      if (!this.loginCred.username || !this.loginCred.password) {
         this.msg = 'Please enter username/password'
         return
       }
       try {
         await this.$store.dispatch({ type: "login", userCred: this.loginCred })
-        this.$router.push('/')
+        console.log(this.loggedinUser)
+        const loggedinUserId = this.loggedinUser._id
+        this.$router.push(`/user/${loggedinUserId}`)
       } catch (err) {
         console.log(err)
         this.msg = 'Failed to login'
@@ -96,7 +103,7 @@ export default {
         return
       }
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
-      this.$router.push('/')
+      // this.$router.push('/')
 
     },
     loadUsers() {

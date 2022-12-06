@@ -12,10 +12,11 @@
 
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      :should-accept-drop="() => lirazKing" :should-animate-drop="() => true" @drop="onDrop($event)">
+      :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
         <div class="main-layout full">
-          <component :is="cmp.type" :cmp="cmp" @openEditor="makeLirazjQueen" @MakeLirazKing="makeLirazKing" />
+          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
+          :isSelected="selectedId === cmp.id ? true : false" />
         </div>
       </Draggable>
 
@@ -49,7 +50,7 @@ import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
-import {socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP} from '../services/socket.service'
+import { socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP } from '../services/socket.service'
 
 export default {
   name: "wap",
@@ -60,33 +61,35 @@ export default {
       responsiveClass: [],
       conMaxWidth: null,
       myClass: [],
-      lirazKing: false
+      shouldAcceptDrop: false,
+      selectedId:null
     }
   },
   created() {
-        this.setWapToEdit()
-        socketService.on(SOCKET_EMIT_GET_UPDATED_WAP, this.getUpdate())
-    },
+    this.setWapToEdit()
+    socketService.on(SOCKET_EMIT_GET_UPDATED_WAP, this.getUpdate())
+  },
 
   mounted() {
     eventBus.on('resizeWap', this.resize)
-    eventBus.on('drag',this.makeLirazKing)
+    eventBus.on('drag', this.acceptDrop)
     new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
-    makeLirazKing() {
-      this.lirazKing = true
+    acceptDrop() {
+      this.shouldAcceptDrop = true
     },
-    makeLirazjQueen(ev) {
-      this.lirazKing = false
+    openEditor(ev) {
+      this.shouldAcceptDrop = false
+      this.selectedId = ev.path.id
       this.$emit('openEditor', ev)
     },
-    getUpdate(wap){
+    getUpdate(wap) {
       console.log('baba')
-    console.log(wap)
+      console.log(wap)
     },
 
     async setWapToEdit() {

@@ -6,7 +6,7 @@
       disabled_by_default
     </span>
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-       :should-accept-drop="() => false" :should-animate-drop="() => true"
+      @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
       @mousedown="onDragStart"
       @drop="onDrop($event)">
 

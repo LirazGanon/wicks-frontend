@@ -1,6 +1,6 @@
 <template>
     <!-- <h2>{{ info }}</h2> -->
-    <section class="main-layout full" v-if="cmp" @click="openSectionEditor" :style="cmp.style">
+    <section class="main-layout full" v-if="cmp" @click="openSectionEditor" @mousedown="$emit('acceptDrop')" :style="cmp.style">
 
         <section class="wap-container"  :style="cmp.style" :class="cmp.classes">
 

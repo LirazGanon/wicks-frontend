@@ -4,6 +4,7 @@
     overflow: hidden;
     padding: em(60px) 0;
 
+
     &.bakery {
         grid-template-areas:
             " t t  "
@@ -15,10 +16,9 @@
 
         h1 {
             grid-area: t;
-            font-size: clamp(16px, 2vw + 1.2em, 80px);
-            max-width: clamp(16px, 100%, 2vw + 10.2em);
+            font-size: 2em;
+            max-width: clamp(16px, 100%, 12em);
             text-transform: capitalize;
-            font-size: clamp(16px, 1vw + 2.5em, 80px);
         }
 
         p {

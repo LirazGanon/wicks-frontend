@@ -10,20 +10,11 @@
         </section>
         <hr>
 
-        <!-- <label>
-            <input type="color" :value="info.style.color || '#333333'" @input="updateClr">
-        </label>
-        <label>
-            <span>background color</span>
-            <input type="color" :value="info.style['background-color'] || '#333333'" @input="updateBgClr">
-        </label> -->
 
         <section class="text-format">
 
-            <label class="flex align-center gap">
                 <span>Font Size: </span>
-                <input type="range" min="10" max="100" @input="updateFS">
-            </label>
+                <slider :change="info" @changed="updateFS"/>
 
             <section class="editor-checkbox flex">
                 <label class="flex align-center">
@@ -52,11 +43,11 @@
             </label>
             <label v-if="info.key === 'btns'" class="border-radius-bar">
                 <span>Border-radius</span>
-                <input type="range" min="0" max="100" @input="updateRadius">
+                <slider :change="info" @changed="updateRadius"/>
             </label>
         </section>
         <hr>
-        <slider :change="info" />
+        
 
         <section class="undo-redo">
             <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
@@ -106,8 +97,8 @@ export default {
         updateBgClr(ev) {
             this.updateCmp('background-color', ev.target?.value || ev)
         },
-        updateFS(ev) {
-            this.updateCmp('font-size', ev.target.value + 'px')
+        updateFS(val) {
+            this.updateCmp('font-size', val + 'px')
         },
         updateWeight(ev) {
             this.updateCmp('font-weight', ev.target.checked ? 'bold' : '')
@@ -121,10 +112,10 @@ export default {
         updateFont(val) {
             this.updateCmp('font-family', val)
         },
-        updateRadius(ev) {
-            this.updateCmp('border-radius', ev.target.value + '%')
+        updateRadius(val) {
+            this.updateCmp('border-radius', val + '%')
         },
-        updateCmp(att, value) {
+        updateCmp(att, val) {
             const { key, path, elIdx } = this.info
             const cmp = this.getCurrCmp(path)
             const copyCmp = utilService.copy(cmp)
@@ -134,7 +125,7 @@ export default {
             } else {
                 elCopy = copyCmp.info[key]
             }
-            elCopy.style[att] = value
+            elCopy.style[att] = val
             // CMP UPDATE
             if (elIdx !== undefined) {
                 copyCmp.info[key][elIdx] = elCopy
@@ -149,9 +140,13 @@ export default {
             }
         },
         goBack() {
+            // TODO: IM FOR REDO UNDO
+
             this.$store.dispatch({ type: 'goBack' })
         },
         goForwards() {
+            // TODO: IM FOR REDO UNDO
+
             this.$store.dispatch({ type: 'goForwards' })
         },
         getCurrCmp(path) {
@@ -180,6 +175,7 @@ export default {
         },
 
         getHistory() {
+            // TODO: IM FOR REDO UNDO
             return this.$store.getters.getHistory
         }
     },

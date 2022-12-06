@@ -4,7 +4,7 @@
 
            
             <p v-if="(cmp.info.logo.type==='txt')" class="logo">{{ cmp.info.logo.txt }}</p>
-            <img v-if="(cmp.info.logo.type==='img')" class="logo" src="{{ cmp.info.logo.src}}">
+            <img v-if="(cmp.info.logo.type==='img')" class="logo" :src="cmp.info.logo.src">
             
             <p class="copyright">{{ cmp.info.copyright.txt }}</p>
         </section>

@@ -8,8 +8,8 @@
                 @openEditor="$emit('openEditor', $event)" />
             <!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
-                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"
-                    @click.stop="openEditor('imgs', idx)">
+                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"  @dragstart.prevent
+                    @mousedown.stop="openEditor('imgs', idx)" @click.stop>
             </section>
 
         </section>
@@ -22,7 +22,6 @@
 
 import wapGallery from './wap-gallery-edit.vue'
 
-import wapImg from './wap-img-edit.vue'
 import wapCard from './wap-card-edit.vue'
 
 import { utilService } from '../../services/util.service';
@@ -30,7 +29,7 @@ import { utilService } from '../../services/util.service';
 export default {
     name: 'dynamic-container-cmp',
     props: { cmp: Object },
-    components: { wapGallery, wapImg, wapCard },
+    components: { wapGallery, wapCard },
     data() {
         return {};
     },
@@ -62,7 +61,7 @@ export default {
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            return { fatherIdx: cmpIdx, idx }
+            return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
     computed: {},

@@ -20,8 +20,23 @@
     > section {
         margin-inline-start: em(50px);
         margin-inline-end: em(18px);
-        @media (max-width: 800px) {
-            margin-inline-start: em(18px);
+        @media (max-width: 900px) {
+            margin-inline-start: em(8px);
+        }
+    }
+
+
+    .undo-redo {
+        button {
+            color: $clr4;
+            background-color: transparent;
+            margin: 0;
+            margin-inline-end: 5px;
+            padding: 0;
+    
+            &:disabled {
+                opacity: 0.4;
+            }
         }
     }
 
@@ -42,7 +57,7 @@
             // background: radial-gradient(lighten($clr1, 33%), transparent);
             background: $clr5;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             display: none;
         }
     }
@@ -53,6 +68,16 @@
         background-color: $clr5;
         border-radius: 0.6em;
         padding: 5px 2em;
+
+        @media (max-width: 900px) {
+            padding: 5px 10px;
+        }
+
+        .material-symbols-outlined{
+            @media (max-width:550px){
+                display: none;
+            }
+        }
 
         div {
             color: $border-clr;

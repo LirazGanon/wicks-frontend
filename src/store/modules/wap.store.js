@@ -104,8 +104,8 @@ export const wapStore = {
                     wap.cmps[path.fatherIdx] = cmp
                 }
                 context.commit({ type: 'saveHistory', wap })
-                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
+                wap = await wapService.save(wap)
                 return wap
             } catch (err) {
                 context.commit({ type: 'setLastHistoryState' })
@@ -117,8 +117,8 @@ export const wapStore = {
             socketService.emit(SOCKET_EVENT_SEND_UPDATE_WAP, wap)
             try {
                 context.commit({ type: 'saveHistory', wap })
-                wap = await wapService.save(wap)
                 context.commit({ type: 'updateWap', wap })
+                wap = await wapService.save(wap)
             } catch {
                 context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updateWap', err)

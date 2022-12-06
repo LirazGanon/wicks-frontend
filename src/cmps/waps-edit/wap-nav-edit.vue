@@ -8,8 +8,8 @@
             }}</a> -->
 
 
-        <a v-for="(l, idx) in cmp.info.links" @click.stop="openEditor('links', idx)" :style="l.style"
-            contenteditable="true" @input="updateCmp($event,'links',idx)">
+        <a v-for="(l, idx) in cmp.info.links" @mousedown.stop="openEditor('links', idx)" :style="l.style" @click.stop
+            contenteditable="true" @blur="updateCmp($event,'links',idx)">
             <span>
                 {{ l.txt }}
             </span>
@@ -31,7 +31,6 @@ export default {
         };
     },
     created() {
-        this.updateCmp = utilService.debounce(this.updateCmp,500)
     },
     methods: {
         openEditor(key, idx) {

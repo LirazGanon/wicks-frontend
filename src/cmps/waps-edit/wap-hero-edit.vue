@@ -1,26 +1,26 @@
 <template>
 
-    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style">
+    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style" >
 
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
-            <h1 contenteditable="true" @click.stop="openEditor('heading')" :style="cmp.info.heading.style"
-                @input="updateCmp($event, 'heading')">
+            <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" :style="cmp.info.heading.style"
+                @blur="updateCmp($event, 'heading')">
                 {{ cmp.info.heading.txt }}
             </h1>
-            <p contenteditable="true" @click.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
-                @input="updateCmp($event, 'subHeading')">{{
+            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
+                @blur="updateCmp($event, 'subHeading')">{{
                         (cmp.info.subHeading.txt)
                 }}</p>
 
-            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click.stop="openEditor('btns', idx)"
+            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click.stop @mousedown.stop="openEditor('btns', idx)"
                 :style="btn.style">
                 {{ btn.txt }}
             </button>
 
 
-            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes"
-                :style="img.style" @click.stop="openEditor('imgs', idx)" />
+            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes" @dragstart.prevent
+                :style="img.style" @click.stop @mousedown.stop="openEditor('imgs', idx)" />
 
 
         </section>
@@ -38,7 +38,6 @@ export default {
         return {}
     },
     created() { 
-        this.updateCmp = utilService.debounce(this.updateCmp,500)
     },
     methods: {
         openSectionEditor() {
@@ -76,7 +75,7 @@ export default {
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            return { fatherIdx: cmpIdx, idx }
+            return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
     computed: {},

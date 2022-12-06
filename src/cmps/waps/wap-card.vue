@@ -1,7 +1,7 @@
 <template>
 
     <!-- <pre>{{cmp.info}}</pre> -->
-    <section class="wap-card" :class="cmp.info.classes">
+    <section class="wap-card" :class="cmp.classes">
         <img  v-if="cmp.info.imgs" v-for="img in cmp.info.imgs" :src="img.src" alt="">
         <h1 v-if="cmp.info.heading">{{ cmp.info.heading?.txt }}</h1>
         <p v-if="cmp.info.subHeading">{{ cmp.info.subHeading?.txt }}</p>

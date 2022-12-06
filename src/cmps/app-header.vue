@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted(){
-    new ResizeObserver(this.resized).observe(this.$refs.header)
+    // new ResizeObserver(this.resized).observe(this.$refs.header)
 
   },
   computed: {

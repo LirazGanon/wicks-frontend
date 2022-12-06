@@ -1,6 +1,8 @@
 import { templateService } from '../../services/template.service.js'
 import { wapService } from '../../services/wap.service.js'
 import { utilService } from '../../services/util.service.js'
+import { socketService, SOCKET_EVENT_SEND_UPDATE_WAP } from '../../services/socket.service.js'
+
 
 
 export const wapStore = {
@@ -112,6 +114,7 @@ export const wapStore = {
             }
         },
         async updateWapFull(context, { wap }) {
+            socketService.emit(SOCKET_EVENT_SEND_UPDATE_WAP, wap)
             try {
                 context.commit({ type: 'saveHistory', wap })
                 wap = await wapService.save(wap)

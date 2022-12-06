@@ -33,15 +33,11 @@ async function query() {
 }
 async function getTemplate(id) {
     const template = await httpService.get(`wap/template/${id}`)
-    console.log(template)
 
     return  template
 }
 async function getTemplateToEdit(id) {
-    console.log(id)
     const template = await httpService.get(`wap/template/edit/${id}`)
-    console.log(template)
-
     return  template
 }
 

@@ -1,6 +1,6 @@
 <template>
 
-    <section class="main-layout full" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"  >
+    <section class="main-layout full" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"   :class="[...cmp.classes, selected]">
 
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
@@ -32,16 +32,18 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-hero-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object, isSelected: Boolean },
     components: {},
     data() {
-        return {}
+        return {
+        }
     },
     created() { 
     },
     methods: {
+        unselect() {
+        },
         openSectionEditor() {
-
             const payload = {
                 el: { type: 'section' },
                 currCmp: this.cmp,
@@ -78,7 +80,11 @@ export default {
             return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
-    computed: {},
+    computed: {
+        selected() {
+            return this.isSelected ? 'selected' : ''
+        }
+    },
     unmounted() { },
 };
 </script>

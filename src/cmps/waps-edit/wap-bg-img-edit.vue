@@ -1,5 +1,5 @@
 <template>
-    <section class="wap-bg-img bakery full" :style="{ backgroundImage: 'url(' + cmp.info.img.src + ')' }" @click="openEditor('img')" @mousedown="$emit('acceptDrop')">
+    <section class="wap-bg-img bakery full" :style="{ backgroundImage: 'url(' + cmp.info.img.src + ')' }" @click="openEditor('img')" @mousedown="$emit('acceptDrop')" :class="selected">
         <!-- <img :src="cmp.info.img.src" alt=""> -->
     </section>
 </template>
@@ -8,7 +8,7 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'wap-bg-img',
-    props: { cmp: Object },
+    props: { cmp: Object,  isSelected: Boolean  },
     components: {},
     data() {
         return {};
@@ -33,7 +33,11 @@ export default {
             return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
-    computed: {},
+    computed: {
+        selected() {
+            return this.isSelected ? 'selected' : ''
+        }
+    },
     unmounted() { },
 };
 </script>

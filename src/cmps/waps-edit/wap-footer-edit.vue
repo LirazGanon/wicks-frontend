@@ -1,10 +1,12 @@
 <template>
-    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')">
-        <section class="wap-footer" :style="cmp.style" :class="cmp.classes">
+    <section class="main-layout full" @click="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"
+        :class="[...cmp.classes, selected]">
+        <section class="wap-footer">
 
 
-            <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true" @mousedown.stop="openEditor('logo')" @click.stop
-                :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">
+            <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true"
+                @mousedown.stop="openEditor('logo')" @click.stop :style="cmp.info.logo.style"
+                @blur="updateCmp($event, 'logo')">
                 {{ cmp.info.logo.txt }}</p>
             <img v-if="(cmp.info.logo.type === 'img')" class="logo" :src="cmp.info.logo.src">
 
@@ -20,12 +22,12 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-footer-cmp',
-    props: { cmp: Object },
+    props: { cmp: Object, isSelected: Boolean },
     components: {},
     data() {
         return {};
     },
-    created() { 
+    created() {
     },
     methods: {
         openSectionEditor() {
@@ -65,7 +67,11 @@ export default {
             return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
         }
     },
-    computed: {},
+    computed: {
+        selected() {
+            return this.isSelected ? 'selected' : ''
+        }
+    },
     unmounted() { },
 };
 </script>

@@ -12,7 +12,7 @@
 
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      :should-accept-drop="() => true" :should-animate-drop="() => true" @drop="onDrop($event)">
+      :should-accept-drop="() => lirazKing" :should-animate-drop="() => true" @drop="onDrop($event)">
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
         <div class="main-layout full">
           <component :is="cmp.type" :cmp="cmp" @openEditor="makeLirazjQueen" @MakeLirazKing="makeLirazKing" />
@@ -49,6 +49,8 @@ import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
+import {socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP} from '../services/socket.service'
+
 export default {
   name: "wap",
   components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
@@ -57,21 +59,38 @@ export default {
     return {
       responsiveClass: [],
       conMaxWidth: null,
-      myClass: []
+      myClass: [],
+      lirazKing: false
     }
   },
   created() {
-    this.setWapToEdit()
-  },
+        this.setWapToEdit()
+        socketService.on(SOCKET_EMIT_GET_UPDATED_WAP, this.getUpdate())
+    },
 
   mounted() {
     eventBus.on('resizeWap', this.resize)
+    eventBus.on('drag',this.makeLirazKing)
     new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
   methods: {
+    makeLirazKing() {
+      this.lirazKing = true
+      console.log('6:', 6)
+
+    },
+    makeLirazjQueen(ev) {
+      this.lirazKing = false
+      this.$emit('openEditor', ev)
+    },
+    getUpdate(wap){
+      console.log('baba')
+    console.log(wap)
+    },
+
     async setWapToEdit() {
       const id = this.$route.params
       const wapId = (id.wapId)

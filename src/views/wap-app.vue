@@ -9,6 +9,8 @@
 import wapList from '../cmps/wap-list.vue'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import appHeader from '../cmps/app-header.vue'
+import {socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP} from '../services/socket.service'
+
 export default {
   name: 'wap-app',
   components: {
@@ -31,6 +33,12 @@ export default {
   },
   created() {
     this.$store.dispatch({ type: 'loadTemplates' })
+    socketService.on(SOCKET_EVENT_SEND_UPDATE_WAP)
+
+  },
+  destroyed() {
+    socketService.off(SOCKET_EMIT_GET_UPDATED_WAP)
+    // socketService.terminate()
   },
   methods: {
     async addWapMsg(wapId) {

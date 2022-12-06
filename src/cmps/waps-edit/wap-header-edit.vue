@@ -1,7 +1,7 @@
 <template>
 
     <header class="wap-header main-layout full" :class="cmp.classes" @click.stop="openSectionEditor" :style="cmp.style"
-        v-bind:class="class" >
+        v-bind:class="class" @mousedown="$emit('MakeLirazKing')">
         <section class="flex space-between">
 
 
@@ -11,7 +11,9 @@
 
 
 
-                <h4 v-else contenteditable="true" @click.stop @mousedown.stop="openEditor('logo')"
+                <h4 v-else 
+                contenteditable="true" 
+                @click.stop @mousedown.stop="openEditor('logo')"
                     :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">{{
                             cmp.info.logo.txt
                     }}</h4>

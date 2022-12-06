@@ -6,7 +6,8 @@
       disabled_by_default
     </span>
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
+       :should-accept-drop="() => false" :should-animate-drop="() => true"
+      @mousedown="onDragStart"
       @drop="onDrop($event)">
 
       <Draggable v-for="item in cmps" :key="item._id">
@@ -32,7 +33,7 @@
   
 <script>
 import { Container, Draggable } from "vue3-smooth-dnd";
-
+import { eventBus } from "../services/event-bus.service";
 export default {
   name: "cmps-preview",
   components: { Draggable, Container },
@@ -82,6 +83,8 @@ export default {
       return Date.now() / 1500
     },
     onDragStart(...args) {
+      eventBus.emit('drag')
+      
     },
 
   },

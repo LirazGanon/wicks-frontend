@@ -50,7 +50,7 @@ import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
-import { socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP } from '../services/socket.service'
+import { socketService,  SOCKET_EVENT_GET_UPDATED_WAP,SOCKET_EMIT_SET_USER_EDITOR } from '../services/socket.service'
 
 export default {
   name: "wap",
@@ -67,7 +67,7 @@ export default {
   },
   created() {
     this.setWapToEdit()
-    socketService.on(SOCKET_EMIT_GET_UPDATED_WAP, this.getUpdate())
+    socketService.on(SOCKET_EVENT_GET_UPDATED_WAP, this.getUpdate)
   },
 
   mounted() {
@@ -78,6 +78,11 @@ export default {
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
+  destroyed(){
+    // socketService.off(SOCKET_EVENT_GET_UPDATED_WAP)
+    socketService.off(SOCKET_EMIT_SET_USER_EDITOR)
+  },
+  
   methods: {
     acceptDrop() {
       this.shouldAcceptDrop = true
@@ -88,16 +93,19 @@ export default {
       this.$emit('openEditor', ev)
     },
     getUpdate(wap) {
-      console.log('baba')
-      console.log(wap)
+      this.$store.commit({type:'updateWap', wap})
+      // console.log('baba')
+      // console.log(data)
     },
 
     async setWapToEdit() {
-      const id = this.$route.params
-      const wapId = (id.wapId)
+      const {wapId} = this.$route.params
+      // const wapId = (id.wapId)
       console.log(wapId)
+      socketService.emit(SOCKET_EMIT_SET_USER_EDITOR, wapId)
       if (!this.$store.getters.getWapToEdit) {
         await this.$store.dispatch({ type: 'setWapToEdit', wapId })
+        // const userId = userService.getLoggedinUser().id
       }
     },
 

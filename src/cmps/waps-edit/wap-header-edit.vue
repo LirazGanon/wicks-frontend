@@ -70,6 +70,10 @@ export default {
             const path = this.getPath()
             let cmp = this.getCurrCmp(path)
             cmp = utilService.copy(cmp)
+
+       
+            if(cmp.info[key].txt === ev.target.innerText) return
+
             cmp.info[key].txt = ev.target.innerText
 
             try {

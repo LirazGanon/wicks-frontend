@@ -58,13 +58,14 @@ export const wapStore = {
         },
         saveHistory({ history }, { wap }) {
             if (history.currState < history.waps.length - 1
-                && history.currState) {
+                ) {
                 history.waps = history.waps.slice(0, history.currState + 1)
             }
             if (history.waps.length - 1 > 30) {
                 history.waps.shift()
             }
             history.currState++
+            console.log(history);
             history.waps.push(wap)
         },
         goBack(state) {
@@ -80,7 +81,7 @@ export const wapStore = {
             state.history.currState--
             state.wapInEdit = state.history.waps[state.history.waps.length - 1]
         },
-       
+
 
     },
     actions: {
@@ -159,9 +160,9 @@ export const wapStore = {
             }
         },
         async setWapToEdit(context, { wapId }) {
-            if(context.state.wapInEdit){
-               let currWapId = context.state.wapInEdit._id
-               if(wapId===currWapId) return
+            if (context.state.wapInEdit) {
+                let currWapId = context.state.wapInEdit._id
+                if (wapId === currWapId) return
             }
             try {
                 const wapToEdit = await templateService.getTemplateToEdit(wapId)
@@ -175,7 +176,7 @@ export const wapStore = {
         // async getCustomWap(context, { wapId }) {
         //     console.log('get custom')
         //     try {
-                // const wapToEdit = await templateService.getCustomWap(wapId)
+        // const wapToEdit = await templateService.getCustomWap(wapId)
         //         context.commit({ type: 'setWapToEdit', wapToEdit })
         //         // TODO: check what is the eror from the console
         //         return wapToEdit

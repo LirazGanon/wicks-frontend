@@ -8,7 +8,7 @@
     </div>
 
     <div class="wap-details">
-      <span>{{ template.type }}</span> - <span> {{ template.name }}</span>
+       <span> {{ template.name }}</span>
     </div>
 
 

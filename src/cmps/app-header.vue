@@ -1,6 +1,9 @@
 <template>
+  <section class="main-layout">
+
   <header class="main-header">
-    <router-link to="/">
+      
+      <router-link to="/">
       <span role="img" aria-label="logo">
         <img v-if="!noLogo" class="logo" src="@/assets/logo-black.png" alt="">
       </span>
@@ -21,7 +24,11 @@
         <img :src="loggedInUser.imgUrl" />
       </div>
     </section>
+
+    
   </header>
+</section>
+
 </template>
 <script>
 import 'animate.css'

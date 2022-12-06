@@ -2,7 +2,7 @@
     <section class="img-cmp-editor flex column">
         <h2>Edit Image</h2>
         <section class="img-replace flex column">
-            <img :src="getSrc.src" :style="info.el.style">
+            <img :src="getSrc.src" >
             <section class="img-replace-src">
                 <label>
                     <span>src </span>

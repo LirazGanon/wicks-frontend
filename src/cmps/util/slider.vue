@@ -50,7 +50,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 html input[type=range] {
     outline: 0;
     border: 0;
@@ -65,6 +65,7 @@ html input[type=range] {
     html input[type=range] {
         height: 8px;
         -webkit-appearance: none;
+        appearance: none;
         background-color: #ddd;
     }
 

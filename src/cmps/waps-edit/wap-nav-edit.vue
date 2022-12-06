@@ -49,6 +49,8 @@ export default {
         updateCmp(ev, key, idx) {
             const path = this.path
             let cmp = utilService.copy(this.cmp)
+            if(cmp.info[key][idx].txt === ev.target.innerText) return
+           
             cmp.info[key][idx].txt = ev.target.innerText
 
             try {

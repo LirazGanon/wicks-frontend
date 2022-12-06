@@ -152,8 +152,6 @@ export default {
         getCurrCmp(path) {
             const wap = this.$store.getters.getLastState
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
-            console.log(wap.cmps[cmpIdx]);
-            console.log(cmpIdx);
 
             if (path.idx !== undefined) {
                 return wap.cmps[cmpIdx].cmps[path.idx]

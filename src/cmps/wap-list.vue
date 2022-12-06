@@ -12,7 +12,7 @@
     <section v-else>
 
       <h1>Pick one of our professionally designed website templates</h1>
-
+      <h4>Or express your inner creativity and start from blank</h4>
       <ul class="wap-list">
         <li v-for="template in templates" :key="template._id">
           <wap-preview :template="template" @setIsLoading="toggleIsLoading" />

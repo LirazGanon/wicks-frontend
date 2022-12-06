@@ -1,6 +1,6 @@
 .main-editor {
     height: calc(100vh - 127px);
-
+    user-select: none;
     .left-nav {
         // background-color: aqua;
         border-right: 1px solid $border-clr;

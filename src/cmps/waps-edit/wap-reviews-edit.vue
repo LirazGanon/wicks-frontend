@@ -64,11 +64,14 @@ export default {
 
             if (idx !== undefined) {
                 if (author) {
+                    if (cmp.info[key][idx][author] === ev.target.innerText) return
                     cmp.info[key][idx][author] = ev.target.innerText
                 } else {
+                    if (cmp.info[key][idx].txt === ev.target.innerText) return
                     cmp.info[key][idx].txt = ev.target.innerText
                 }
             } else {
+                if (cmp.info[key].txt === ev.target.innerText) return
                 cmp.info[key].txt = ev.target.innerText
             }
 

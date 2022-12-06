@@ -98,6 +98,22 @@ header {
         cursor: pointer;
     }
 }
+.coffee-shop {
+    font-family: comfortaa, Helvetica, Arial, sans-serif;
+    letter-spacing: 1.5px;
+    button {
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: $bakery-pr-clr !important;
+        color: $clr6;
+        cursor: pointer;
+    }
+}
+
+
+
+
 
 .tooltip {
     background: rgba(1, 1, 1, 0.7);

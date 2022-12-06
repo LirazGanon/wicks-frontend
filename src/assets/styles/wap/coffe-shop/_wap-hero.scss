@@ -1,10 +1,6 @@
 .wap-hero {
-    display: grid;
-    perspective: 10px;
-    overflow: hidden;
-    padding: em(60px) 0;
 
-    &.coffe-shop {
+    &.coffee-shop {
         grid-template-areas:
             ". t t . "
             ". ml ml ."

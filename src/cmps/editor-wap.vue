@@ -136,8 +136,8 @@ export default {
     resized() {
       if (!this.$refs.container) return
       const { offsetWidth } = this.$refs.container
-      if (offsetWidth < 620) this.responsiveClass = 'mobile'
-      if (offsetWidth >= 620) this.responsiveClass = this.small()
+      if (offsetWidth < 550) this.responsiveClass = 'mobile'
+      if (offsetWidth >= 550) this.responsiveClass = this.small()
       if (offsetWidth >= 860) this.responsiveClass = this.medium()
       if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
       if (offsetWidth >= 1300) this.responsiveClass = this.normal()

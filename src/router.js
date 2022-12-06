@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import home from './views/home.vue'
 import chat from './views/chat.vue'
@@ -55,7 +55,8 @@ const routes = [
 
 export const router = createRouter({
   routes,
-  history: createWebHashHistory()
+  history: createWebHistory()
+  // history: createWebHashHistory()
   // base: process.env.BASE_URL,
 })
 

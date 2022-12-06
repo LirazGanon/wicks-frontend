@@ -1,6 +1,6 @@
 <template>
     <main class="edit-container">
-        <app-header />
+        <app-header :mainLayout="''"/>
         <editor-top />
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->

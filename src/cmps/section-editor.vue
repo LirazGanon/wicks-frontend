@@ -1,13 +1,23 @@
 <template>
 
 
-    <section class="section-cmp-editor flex column" >
+    <section class="section-cmp-editor flex column">
         <h2>Section Edit</h2>
         <section class="delete-duplicate" v-if="cmpsLength">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
+                undo
+            </button>
+            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
+                @click="goForwards" v-tooltip="'Redo'">
+                redo
+            </button>
             <button v-tooltip="'Delete Section'" class="material-symbols-outlined" @click="removeCmp">delete</button>
             <button v-tooltip="'Copy Section'" class="material-symbols-outlined"
-            @click="duplicateCmp">content_copy</button>
-    
+                @click="duplicateCmp">content_copy</button>
+
+
+
+
             <hr>
             <span class="background-color">Background Color</span>
             <color-picker @setColor="updateBgClr" />
@@ -96,11 +106,21 @@ export default {
             }
 
         },
+        goBack() {
+            this.$store.dispatch({ type: 'goBack' })
+        },
+        goForwards() {
+            this.$store.dispatch({ type: 'goForwards' })
+        },
     },
     computed: {
         cmpsLength() {
             const wap = this.$store.getters.getWapToEdit
             return wap.cmps.length
+        },
+        getHistory() {
+            // TODO: IM FOR REDO UNDO
+            return this.$store.getters.getHistory
         }
     },
     unmounted() { },

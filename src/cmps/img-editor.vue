@@ -1,12 +1,23 @@
 <template>
     <section class="img-cmp-editor flex column">
         <h2>Edit Image</h2>
+        <section class="section-cmp-editor undo">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
+                undo
+            </button>
+            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
+                @click="goForwards" v-tooltip="'Redo'">
+                redo
+            </button>
+        </section>
+        <hr>
+
         <section class="img-replace flex column">
             <img :src="getSrc.src" >
             <section class="img-replace-src">
                 <label>
                     <span>src </span>
-                    <input type="text" :value="getSrc.src" @input="updateSrc">
+                    <input type="text" :value="getSrc?.src" @input="updateSrc">
                 </label>
                 <img-uploader @uploaded="changeImg" />
             </section>
@@ -121,7 +132,13 @@ export default {
             } else {
                 return wap.cmps[cmpIdx]
             }
-        }
+        },
+        goBack() {
+            this.$store.dispatch({ type: 'goBack' })
+        },
+        goForwards() {
+            this.$store.dispatch({ type: 'goForwards' })
+        },
     },
     computed: {
         rangeValue() {
@@ -140,6 +157,10 @@ export default {
             }
             return elCopy
 
+        },
+        getHistory() {
+            // TODO: IM FOR REDO UNDO
+            return this.$store.getters.getHistory
         }
     },
     unmounted() { },

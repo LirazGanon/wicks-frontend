@@ -1,7 +1,7 @@
 <template>
-  <section class="main-layout" ref="header">
+  <section :class="[mainLayout]" ref="header">
 
-    <header class="main-header" >
+    <header class="main-header">
 
       <router-link to="/">
         <span role="img" aria-label="logo">
@@ -43,17 +43,17 @@ import 'animate.css'
 
 export default {
   props: {
-    noLogo: Boolean,
+    noLogo: Boolean, mainLayout: String
   },
   name: 'main-header',
   data() {
     return {
       avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670322893/user_ha6zol.png',
       menuOpen: false,
-      
+
     }
   },
-  mounted(){
+  mounted() {
     // new ResizeObserver(this.resized).observe(this.$refs.header)
 
   },
@@ -69,7 +69,8 @@ export default {
       const { offsetWidth } = this.$refs.header
       if (offsetWidth < 550) console.log('puki');
       else console.log('yay');
-    }
+    },
+
   }
 }
 </script>

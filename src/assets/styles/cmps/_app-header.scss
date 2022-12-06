@@ -5,7 +5,7 @@ header {
     align-items: center;
     height: 78.5px;
 
-    .home{
+    .home {
         color: #eee;
     }
 
@@ -21,6 +21,8 @@ header {
     a:not(:last-child) {
         margin-inline-end: 20px;
     }
+
+    
 
     .loggedin-user {
         * {
@@ -52,30 +54,22 @@ header {
             margin-inline-start: 15px;
         }
 
-        
-        .edit-container &{
+        .edit-container & {
             .logo {
                 max-height: em(46px);
+                margin-inline-start: 56px;
             }
-            
+
             nav > * {
                 color: black;
             }
-        
-            border-bottom: 1px solid $border-clr;
+            border-bottom: 1px solid #3335;
         }
-     
-    
+
         &.home {
             * {
                 color: $clr5;
             }
         }
-
-        
     }
-
-    
-
-    
 }

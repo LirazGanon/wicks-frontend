@@ -5,17 +5,7 @@
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
     <section class="editor-top flex">
         <section class="flex space-between full align-center">
-            <section class="undo-redo">
-            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
-                v-tooltip="'Undo'">
-                undo
-            </button>
-            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
-                @click="goForwards" v-tooltip="'Redo'">
-                redo
-            </button>
-        </section>
-
+ 
             <section class="view-port-editor flex">
                 <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
                     desktop_windows

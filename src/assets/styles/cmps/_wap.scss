@@ -40,7 +40,6 @@ section.page-editor {
 
     .wap-placeholder {
         position: absolute;
-        // background: red;
         width: 100%;
         height: 50vh;
         &::after {
@@ -54,8 +53,17 @@ section.page-editor {
             transform: translate(-50%, -50%);
             display: grid;
             place-items: center;
-            font-size: 3em;
+            font-size: 1.5em;
             font-family: Raleway;
+
+            @media (min-width:400px){
+                font-size: 2em;
+            }
+            @media (min-width:800px){
+                font-size: 3em;
+            }
         }
+
+        
     }
 }

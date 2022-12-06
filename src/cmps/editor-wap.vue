@@ -39,6 +39,8 @@ import wapHero from '../cmps/waps-edit/wap-hero-edit.vue'
 import wapForm from '../cmps/waps-edit/wap-form-edit.vue'
 import wapContainer from '../cmps/waps-edit/wap-container-edit.vue'
 
+
+import wapMap from '../cmps/waps-edit/wap-map-edit.vue'
 import wapContact from '../cmps/waps-edit/wap-contact-edit.vue'
 import wapReviews from '../cmps/waps-edit/wap-reviews-edit.vue'
 
@@ -56,7 +58,7 @@ import { socketService,  SOCKET_EVENT_GET_UPDATED_WAP,SOCKET_EMIT_SET_USER_EDITO
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg ,wapMap},
   props: { wap: Object },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <section class="container home flex column">
-    <app-header :noLogo="true" class="home" />
+    <app-header :noLogo="true" class="home" :mainLayout="'main-layout'"/>
 
     <!-- <h1>Home Page</h1>
     <h5 class="text-center">

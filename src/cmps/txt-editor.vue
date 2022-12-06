@@ -2,6 +2,18 @@
 
     <section class="flex column txt-cmps-editor">
         <h2>Edit</h2>
+
+        <section class="section-cmp-editor undo">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
+                undo
+            </button>
+            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
+                @click="goForwards" v-tooltip="'Redo'">
+                redo
+            </button>
+        </section>
+        <hr/>
+
         <section class="color-picker-wrapper">
             <span>Text Color:</span>
             <color-picker @setColor="updateClr" />
@@ -49,16 +61,7 @@
         <hr>
 
 
-        <section class="undo-redo">
-            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
-                v-tooltip="'Undo'">
-                undo
-            </button>
-            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
-                @click="goForwards" v-tooltip="'Redo'">
-                redo
-            </button>
-        </section>
+        
     </section>
 
 </template>

@@ -13,7 +13,6 @@
     </ul> -->
     <ul>
       <li>
-<div>{{userWaps}}</div> 
       </li>
     </ul>
     <details>

@@ -7,7 +7,7 @@
         background-size: cover;
         background-position: right;
         background-repeat: no-repeat;
-        h1{
+        h1 {
             margin-inline-start: 1em;
             margin-bottom: 2em;
             font-size: 2em;
@@ -15,6 +15,15 @@
         }
         img {
             width: 40%;
+        }
+
+        header {
+            img {
+                width: 100%;
+            }
+            a {
+                color: #eee;
+            }
         }
 
         button {
@@ -25,10 +34,9 @@
             color: rgb(233, 233, 233);
             margin-inline-start: calc(20px + 25vw);
             background-color: $clr3;
-            transition:background-color 0.2s;
-            &:hover{
+            transition: background-color 0.2s;
+            &:hover {
                 background-color: $clr2;
-
             }
         }
     }

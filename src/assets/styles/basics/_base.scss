@@ -62,29 +62,7 @@ a:hover {
     font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
 }
 
-header {
-    &.main-header {
-        padding: 0;
-        background-color: transparent;
-        * {
-            color: $text-primary;
-            font-size: 1.1em;
-        }
-        .logo {
-            max-width: 5.19em;
-            margin-block: 10px;
-            margin-inline-start: 15px;
-        }
-        nav {
-            margin-inline-end: 50px;
-        }
-        &.home {
-            * {
-                color: $clr5;
-            }
-        }
-    }
-}
+
 
 .bakery {
     font-family: workSans-eLight, Helvetica, Arial, sans-serif;

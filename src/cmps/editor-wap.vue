@@ -13,10 +13,12 @@
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
-      <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        <div class="main-layout full">
-          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
-          :isSelected="selectedId === cmp.id ? true : false" />
+      
+      <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id" >
+        <div class="main-layout full" >
+          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop" 
+          :isSelected="selectedId === cmp.id ? true : false" 
+          />
         </div>
       </Draggable>
 
@@ -84,6 +86,9 @@ export default {
   },
   
   methods: {
+    log(){
+      console.log('lala');
+    },
     acceptDrop() {
       this.shouldAcceptDrop = true
     },

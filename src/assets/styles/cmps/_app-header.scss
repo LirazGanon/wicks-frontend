@@ -3,9 +3,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
     height: 78.5px;
- 
+
+    .home{
+        color: #eee;
+    }
+
     .logo {
         width: rem(150px);
     }
@@ -13,25 +16,19 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
 
-    a:not(:last-child){
+    a:not(:last-child) {
         margin-inline-end: 20px;
     }
 
     .loggedin-user {
-
-        padding-inline-end: 20px;
- 
         * {
             display: flex;
             align-items: center;
         }
         span {
             background-color: $clr2;
-            padding: 4px;
-            margin: 10px;
             border-radius: 50%;
         }
         img {
@@ -39,6 +36,46 @@ header {
             height: 2em;
             border-radius: 50%;
             object-fit: cover;
+            width: 100%;
         }
     }
+    &.main-header {
+        padding: 0;
+        background-color: transparent;
+        * {
+            color: $text-primary;
+            font-size: 1.1em;
+        }
+        .logo {
+            max-width: 5.19em;
+            margin-block: 10px;
+            margin-inline-start: 15px;
+        }
+
+        
+        .edit-container &{
+            .logo {
+                max-height: em(46px);
+            }
+            
+            nav > * {
+                color: black;
+            }
+        
+            border-bottom: 1px solid $border-clr;
+        }
+     
+    
+        &.home {
+            * {
+                color: $clr5;
+            }
+        }
+
+        
+    }
+
+    
+
+    
 }

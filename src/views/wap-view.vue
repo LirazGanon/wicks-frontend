@@ -1,9 +1,10 @@
 <template>
+   
 
-    <div class="wap-view">
-        <div v-for="item in view.cmps" :key="item.id">
+    <div class="wap-view"  ref="view" :class="[responsiveClass]">
+        <div v-for="cmp in view.cmps" :key="cmp.id">
             <div class="main-layout full">
-                <component :is="(item.type || 'wapHeader')" :cmp="item" />
+                <component :is="cmp.type" :cmp="cmp" />
             </div>
         </div>
     </div>
@@ -36,11 +37,16 @@ export default {
     components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, wapBgImg, wapGallery },
     data() {
         return {
-            view: {}
+            view: {},
+            responsiveClass: [],
+
         };
     },
     created() {
         this.getCurrWap()
+    },
+    mounted() {
+        new ResizeObserver(this.resized).observe(this.$refs.view)
     },
     methods: {
         async getCurrWap() {
@@ -51,6 +57,33 @@ export default {
             console.log(template)
             console.log(this.view)
             this.view = template
+        },
+        resized() {
+            if (!this.$refs.view) return
+            const { offsetWidth } = this.$refs.view
+            if (offsetWidth < 550) this.responsiveClass = 'mobile'
+            if (offsetWidth >= 550) this.responsiveClass = this.small()
+            if (offsetWidth >= 860) this.responsiveClass = this.medium()
+            if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
+            if (offsetWidth >= 1300) this.responsiveClass = this.normal()
+            if (offsetWidth >= 1500) this.responsiveClass = this.wide()
+
+        },
+
+        small() {
+            return ['small']
+        },
+        medium() {
+            return [...this.small(), 'medium']
+        },
+        narrow() {
+            return [...this.medium(), 'narrow']
+        },
+        normal() {
+            return [...this.narrow(), 'normal']
+        },
+        wide() {
+            return [...this.normal(), 'wide']
         }
     },
     computed: {},

@@ -1,20 +1,6 @@
 <template>
 
-    <section class="editor-header flex space-between">
-        <router-link to="/">
-            <span role="img" aria-label="logo">
-                <img class="logo" src="@/assets/logo-black.png" alt="">
-            </span>
-        </router-link>
-
-        <nav class="flex align-center">
-      <router-link to="/wap">Template</router-link>
-
-      <router-link to="/review">Reviews</router-link>
-      <router-link to="/chat">Chat</router-link>
-      <router-link to="/login">Login / Signup</router-link>
-    </nav>
-    </section>
+    
 
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
     <section class="editor-top flex">

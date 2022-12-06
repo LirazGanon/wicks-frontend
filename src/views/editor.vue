@@ -1,6 +1,6 @@
 <template>
     <main class="edit-container">
-
+        <app-header />
         <editor-top />
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->
@@ -19,19 +19,19 @@
 import editorWap from '../cmps/editor-wap.vue'
 import editorSide from '../cmps/editor-side.vue'
 import editorTop from '../cmps/editor-top.vue'
-
+import appHeader from '../cmps/app-header.vue'
 
 export default {
     name: 'wap-edit',
     props: {},
-    components: { editorSide, editorWap, editorTop },
+    components: { editorSide, editorWap, editorTop, appHeader },
     data() {
         return {
             type: null,
             editor: null,
         }
     },
- 
+
     methods: {
 
         openEditor(editorContent) {

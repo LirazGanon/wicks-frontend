@@ -1,17 +1,3 @@
-.editor-header {
-    .logo {
-        max-height: em(46px);
-        margin-block: 10px;
-        margin-inline-start: 15px;
-    }
-
-    nav > * {
-        color: black;
-        padding: 10px;
-    }
-
-    border-bottom: 1px solid $border-clr;
-}
 
 .editor-top {
     border-bottom: 1px solid $border-clr;
@@ -138,8 +124,6 @@
         justify-self: end;
         font-weight: lighter;
 
-        span {
-            // color:$clr4;
-        }
+       
     }
 }

@@ -48,6 +48,8 @@ import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
+import {socketService, SOCKET_EVENT_SEND_UPDATE_WAP, SOCKET_EMIT_GET_UPDATED_WAP} from '../services/socket.service'
+
 export default {
   name: "wap",
   components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg },
@@ -61,9 +63,10 @@ export default {
     }
   },
   created() {
-    this.setWapToEdit()
-  },
-  
+        this.setWapToEdit()
+        socketService.on(SOCKET_EMIT_GET_UPDATED_WAP, this.getUpdate())
+    },
+
   mounted() {
     eventBus.on('resizeWap', this.resize)
     eventBus.on('drag',this.makeLirazKing)
@@ -82,6 +85,11 @@ export default {
       this.lirazKing = false
       this.$emit('openEditor', ev)
     },
+    getUpdate(wap){
+      console.log('baba')
+    console.log(wap)
+    },
+
     async setWapToEdit() {
       const id = this.$route.params
       const wapId = (id.wapId)

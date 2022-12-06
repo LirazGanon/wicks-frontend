@@ -10,11 +10,16 @@ export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
+// update wap events
 export const SOCKET_EVENT_SEND_UPDATE_WAP= 'send-update-wap'
 export const SOCKET_EMIT_GET_UPDATED_WAP = 'get-update-wap'
 
-export const SOCKET_EVENT__GET_POINTER = 'send-pointer-pos'
-export const SOCKET_EMIT_SEND_POINTER = 'get-pointer-pos'
+// export const SOCKET_EVENT__GET_POINTER = 'send-pointer-pos'
+// export const SOCKET_EMIT_SEND_POINTER = 'get-pointer-pos'
+
+// MOUSE EVENTS
+export const SOCKET_GET_MOUSE = 'get-pointer-pos'
+export const SOCKET_SEND_MOUSE = 'send-pointer-pos'
 
 
 
@@ -23,8 +28,8 @@ const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
-// export const socketService = createSocketService()
-export const socketService = createDummySocketService()
+export const socketService = createSocketService()
+// export const socketService = createDummySocketService()
 
 // for debugging from console
 window.socketService = socketService
@@ -53,7 +58,7 @@ function createSocketService() {
     emit(eventName, data) {
       data = JSON.parse(JSON.stringify(data))
       socket.emit(eventName, data)
-    },
+  },
     login(userId) {
       socket.emit(SOCKET_EMIT_LOGIN, userId)
     },
@@ -98,7 +103,7 @@ function createDummySocketService() {
       })
     },
     // Functions for easy testing of pushed data
-    testChatMsg() {
+    testChatMsg() {setWa
       this.emit(SOCKET_EVENT_ADD_MSG, { from: 'Someone', txt: 'Aha it worked!' })
     },
     testUserUpdate() {
@@ -112,14 +117,19 @@ function createDummySocketService() {
 
 // Basic Tests
 function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
+
 function msg(msg) {
   console.log(msg)
   socketService.emit(msg)
 }
+function sendPointer(ev){
+console.log(ev)
+  socketService.emit(ev.clientx)
+}
 
 socketService.on('baba', cb('puk'))
 socketService.on('incoming-msg')
-// socketService.on('baba', cb)
+socketService.on('send-pointer-pos', sendPointer)
 // socketService.on('mama', cb)
 // socketService.emit('baba', 'Puk')
 // socketService.off('baba', cb)

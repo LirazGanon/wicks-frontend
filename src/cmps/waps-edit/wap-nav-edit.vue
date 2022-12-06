@@ -8,7 +8,7 @@
             }}</a> -->
 
 
-        <a v-for="(l, idx) in cmp.info.links" @click.stop="openEditor('links', idx)" :style="l.style"
+        <a v-for="(l, idx) in cmp.info.links" @mousedown.stop="openEditor('links', idx)" :style="l.style" @click.stop
             contenteditable="true" @blur="updateCmp($event,'links',idx)">
             <span>
                 {{ l.txt }}

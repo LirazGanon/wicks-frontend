@@ -8,8 +8,8 @@
                 @openEditor="$emit('openEditor', $event)" />
             <!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
-                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"
-                    @click.stop="openEditor('imgs', idx)">
+                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"  @dragstart.prevent
+                    @mousedown.stop="openEditor('imgs', idx)" @click.stop>
             </section>
 
         </section>

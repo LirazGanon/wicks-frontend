@@ -1,7 +1,7 @@
 <template>
 
     <header class="wap-header main-layout full" :class="cmp.classes" @click.stop="openSectionEditor" :style="cmp.style"
-        v-bind:class="class" @mousedown="$emit('MakeLirazKing')">
+        v-bind:class="class" >
         <section class="flex space-between">
 
 
@@ -19,7 +19,7 @@
 
             </div>
 
-            <component v-for="(curCmp, idx) in     cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
+            <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
 
 
@@ -46,9 +46,6 @@ export default {
         this.updateCmp = utilService.debounce(this.updateCmp, 0)
     },
     methods: {
-        puki() {
-            console.log('pukiel ben david is dead');
-        },
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
             el = utilService.copy(el)

@@ -1,9 +1,9 @@
 <template>
-    <section class="wap-reviews" @click="openSectionEditor" :style="cmp.style">
-        <h4 contenteditable="true" @click.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')"
+    <section class="wap-reviews" @click="openSectionEditor" :style="cmp.style"  >
+        <h4 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')"
             :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
         <section class="reviews-container">
-            <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop="openEditor('reviews', idx)"
+            <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop @mousedown.stop="openEditor('reviews', idx)"
                 :style="review.style">
                 <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx)">{{ review.txt }}</p>
                 <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx, 'author')">{{ review.author }}</p>

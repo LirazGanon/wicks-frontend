@@ -19,18 +19,18 @@ export const wapService = {
 window.cs = wapService
 
 
-async function query(filterBy = { txt: '', desc: '' }) {
-    // return httpService.get(STORAGE_KEY, filterBy)
+async function query(filterBy = { userId:'' ,txt: '', desc: '' }) {
+    return httpService.get(STORAGE_KEY, filterBy)
 
-    var waps = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        waps = waps.filter(wap => regex.test(wap.name) || regex.test(wap.description))
-    }
-    if (filterBy.desc) {
-        waps = waps.filter(wap => wap.desc <= filterBy.desc)
-    }
-    return waps
+    // var waps = await storageService.query(STORAGE_KEY)
+    // if (filterBy.txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
+    //     waps = waps.filter(wap => regex.test(wap.name) || regex.test(wap.description))
+    // }
+    // if (filterBy.desc) {
+    //     waps = waps.filter(wap => wap.desc <= filterBy.desc)
+    // }
+    // return waps
 
 }
 function getById(wapId) {

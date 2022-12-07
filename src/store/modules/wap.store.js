@@ -16,7 +16,8 @@ export const wapStore = {
         history: {
             currState: 0,
             waps: []
-        }
+        },
+        userWaps:null
     },
     getters: {
         templates({ templates }) { return templates },
@@ -53,6 +54,9 @@ export const wapStore = {
                 waps: [wapToEdit]
             }
         },
+        setUserWaps(state, {waps}){
+        state.userWaps = waps
+        },
         removeWapToEdit(state) {
             state.wapToEdit = null
             state.history.waps = []
@@ -83,6 +87,7 @@ export const wapStore = {
             state.history.currState--
             state.wapInEdit = state.history.waps[state.history.waps.length - 1]
         },
+   
 
 
     },
@@ -178,11 +183,11 @@ export const wapStore = {
                 throw err
             }
         },
-        async getUserWaps(context, {userId}){
+        async getWaps(context, {filterBy}){
             try{
-                const waps = await wapService.getByUserId(userId)
+                const waps = await wapService.query(filterBy)
                 console.log(waps)
-                this.$commit({type:'setUserWaps', waps})
+                if(filterBy.userId)context.commit({type:'setUserWaps', waps})
             }catch(err){
             console.log('could not get user waps')
             throw err
@@ -256,6 +261,6 @@ export const wapStore = {
             console.log(context.state.templates)
             return context.state.templates.find(template => template._id === id)
         },
-
+    
     }
 }

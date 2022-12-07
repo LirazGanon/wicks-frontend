@@ -26,7 +26,7 @@ const routes = [
     component: editor
   },
   {
-    path: '/wap/:wapId',
+    path: '/wap/:wapId/:isTemplate?',
     name: 'wap-view',
     component: wapView
   },

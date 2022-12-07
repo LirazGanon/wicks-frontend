@@ -126,6 +126,7 @@ export const wapStore = {
         },
         async updateWapFull(context, { wap }) {
             try {
+                console.log(wap, 'wapwap')
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
@@ -174,7 +175,7 @@ export const wapStore = {
                 if (wapId === currWapId) return
             }
             try {
-                const user = userService.getLoggedinUser
+                // const user = userService.getLoggedinUser()
                 const wapToEdit = await templateService.getTemplateToEdit(wapId)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
                 return wapToEdit

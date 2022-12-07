@@ -100,12 +100,15 @@
         }
 
         &.img-pill-cards {
-            padding: 3em;
             display: grid;
             grid-template-columns: 1fr;
-
+            text-align: center;
+            position: relative;
+            transform: translateY(-70px);
+            
             gap: 2em;
             grid-template-areas:
+            "h1"
                 "tl"
                 "bl"
                 "tr"
@@ -114,16 +117,26 @@
             margin: auto;
             width: 100%;
             $img-height: 50px;
-
+            padding: 1em;
+            
+            * {
+                color: #111;
+            }
+            .small &{
+                transform: translateY(0px);
+            }
+            .narrow &,
             .wide & {
+                padding: 3em;
                 $img-height: 20em;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 0.7fr 1fr;
+                grid-template-rows: min-content 1fr 0.7fr 1fr;
                 grid-template-areas:
+                    "h1 h1"
                     "tl tr"
                     "tl br"
                     "bl br";
-                width: 1200px;
+                width: 1030px;
             }
 
             .wap-card {
@@ -138,50 +151,100 @@
                     object-fit: contain;
                     height: $img-height;
                     width: 100%;
+
                 }
 
                 p {
-                    // text-align: center;
+                    font-size: 1.5em;
                 }
             }
 
             > :nth-child(1) {
-                grid-area: tl;
+                grid-area: h1;
+                text-align: center;
+                font-weight: bold;
+                position: relative;
+                font-size: 3em;
+                transform: translateY(100px);
 
-                p {
-                    flex: 1;
+                .small & {
+                    font-size: 3.5em;
+                    transform: translateY(30px);
                 }
 
-                img {
-                    object-position: bottom;
+                .medium &,
+                .narrow &,
+                .wide & {
+                    font-size: 4em;
+                    transform: translateY(0);
+                }
+            }
+
+            > :nth-child(2) {
+                grid-area: tl;
+
+                .wap-card {
+                    flex-direction: column-reverse;
+
+                    p {
+                        flex: 1;
+
+                    }
+
+                    img {
+                        object-position: bottom;
+
+                    }
                 }
 
             }
 
-            > :nth-child(2) {
+            > :nth-child(3) {
                 grid-area: tr;
+                color: $coffee-bg;
                 background-color: #c2ad91;
                 border-radius: 1.5em;
                 padding: 1em;
                 height: $img-height;
+                display: flex;
+                align-items: center;
+
+                p {
+                    color: $coffee-bg;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+                }
             }
 
-            > :nth-child(3) {
+            > :nth-child(4) {
                 grid-area: bl;
                 background-color: #c2ad91;
                 border-radius: 1.5em;
                 padding: 1em;
                 height: $img-height;
+                display: flex;
+                align-items: center;
+
+                p {
+                    color: $coffee-bg;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+                }
+
             }
 
-            > :nth-child(4) {
+            > :nth-child(5) {
                 grid-area: br;
 
 
                 .wap-card {
                     height: 100%;
                     display: flex;
-                    flex-direction: column-reverse;
+
 
                     p {
                         flex: 1;

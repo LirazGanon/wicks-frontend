@@ -1,20 +1,19 @@
 <template>
 
-    
+
 
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
     <section class="editor-top flex">
         <section class="flex space-between full align-center">
- 
+
             <section class="view-port-editor flex">
                 <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
                     desktop_windows
                 </div>
-                <div class="material-symbols-outlined icon"
-                v-tooltip="'Switch to Tablet'" @click="changeView('860')">
+                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Tablet'" @click="changeView('860')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon"  v-tooltip="'Switch to Mobile'" @click="changeView('420')">
+                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Mobile'" @click="changeView('420')">
                     phone_iphone
                 </div>
             </section>
@@ -24,7 +23,7 @@
                 </div>
                 <span>https</span>
                 <span>://wicks.in/</span>
-                <span contenteditable="true">my-site</span>
+                <span contenteditable="true" @input="chooseUrl">my-site</span>
             </div>
 
             <section class="preview-container flex">
@@ -33,20 +32,21 @@
                     </button> -->
                 <div class="site-preview">
                     <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
-                        <span>Preview</span>
-                        <!-- <span class="material-symbols-outlined">
+                    <span>Preview</span>
+                    <!-- <span class="material-symbols-outlined">
                             visibility
                         </span> -->
                     <!-- </router-link> -->
-    
+
                 </div>
                 <div class="site-publish">
-                    
+
                     <div @click="publish" class="flex">
                         <span>Publish</span><span class="material-symbols-outlined">
                             publish
-                        </span></div>
-    
+                        </span>
+                    </div>
+
                 </div>
 
             </section>
@@ -66,16 +66,21 @@ export default {
     components: {},
     data() {
         return {
-
+            url: null
         };
     },
     created() {
 
     },
+  
     methods: {
-        changeView(size){
-            eventBus.emit('resizeWap',size)
-        }
+        changeView(size) {
+            eventBus.emit('resizeWap', size)
+        },
+        chooseUrl(ev) {
+            this.url = ev.target.innerText
+        },
+
     },
     computed: {
         wapId() {
@@ -95,8 +100,8 @@ export default {
             // TODO: IM FOR REDO UNDO
             return this.$store.getters.getHistory
         },
-        publish(){
-            this.$emit('published')
+        publish() {
+            this.$emit('published', this.url)
         },
     },
     watch: {

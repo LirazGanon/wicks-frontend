@@ -22,7 +22,6 @@ import editorTop from '../cmps/editor-top.vue'
 import appHeader from '../cmps/app-header.vue'
 import { utilService } from '../services/util.service'
 import { userService } from '../services/user.service'
-
 export default {
     name: 'wap-edit',
     props: {},
@@ -37,10 +36,13 @@ export default {
         openEditor(editorContent) {
             this.editor = editorContent
         },
-        async publish() {
+        async publish(url) {
             try {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
                 let user = userService.getLoggedinUser()
+                if(!user){
+                    return
+                }
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user
                 wap.isPublish = true

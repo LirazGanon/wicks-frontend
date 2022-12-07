@@ -1,40 +1,65 @@
 <template>
   <app-header main-layout="main-header" />
-  
+
   <section v-if="user" class="dashboard">
-    
+
     <section class="top-dashboard">
-        <h4>My Sites</h4>
-        <div>
-          <h3>{{user.fullname}}'s Backoffice'</h3>
-        </div>
+      <h4>My Sites</h4>
+      <div class="user-name">
+        <h4>{{ user.fullname }}'s BackOffice</h4>
+      </div>
     </section>
+    <main class="dashboard-content">
 
-    <section class="left-user-nav">
+      <section class="left-user-nav">
 
-      <ul>
-        <li v-for="wap in userWaps">
-          {{ wap.name }}
-        </li>
+        <ul class="curr-user-waps">
+          <li v-for="wap in userWaps" @click="(chosenWap = wap)">
+            {{ wap.name }}
+          </li>
 
-        <li @click="logout">
+
+        </ul>
+        <li @click="logout" class="logout-user-dash">
           Logout
         </li>
-  
-      </ul>
-    </section>
-
-    <section class="main-dashboard">
-
-      <section class="wap-table">
-
       </section>
 
-      <section class="dashboard-stats">
+      <section class="main-dashboard">
+
+
+        <section class="chosen-wap-display" v-if="chosenWap">
+
+          <img v-if="chosenWap.src" :src="chosenWap.src" alt="" class="chosen-wap-img">
+          <div v-else class="chosen-wap-img">placeholder</div>
+          <h3>{{ chosenWap.name }}</h3>
+          <!-- <pre>{{ chosenWap }}</pre> -->
+
+        </section>
+        <section class="dashboard-stats">
+
+
+
+        </section>
+
+        <section class="wap-table">
+          <ul class="table-head flex">
+            <li>name</li>
+            <li>email</li>
+            <li>request</li>
+            <li>date</li>
+          </ul>
+          <ul class="table-body flex">
+            <li>puki</li>
+            <li>puki@gmail.com</li>
+            <li>I want a new site!</li>
+            <li>two hours ago</li>
+          </ul>
+        </section>
+
 
       </section>
-
-    </section>
+    </main>
 
 
 
@@ -61,7 +86,8 @@ export default {
       userWaps: [],
       filterBy: {
         userId: ''
-      }
+      },
+      chosenWap: null
       // user: null
     }
   },
@@ -72,13 +98,14 @@ export default {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
+    this.chosenWap = userWaps[0]
     // const user = await userService.getById(id)
     // this.user = user
   },
   methods: {
     logout() {
       console.log('baba')
-      this.$store.dispatch({type:'logout'})
+      this.$store.dispatch({ type: 'logout' })
       this.$router.push('/')
     }
   },

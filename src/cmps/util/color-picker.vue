@@ -4,7 +4,7 @@
             <el-color-picker v-model="color1" show-alpha @change="$emit('setColor', color1)" />
         </div>
         <div class="color-picker-item" v-for="(item, index) in colors" :key="index">
-            <div :style="{ backgroundColor: item }" @click="$emit('setColor', item)"></div>
+            <div :style="{ backgroundColor: item }" @click="setColor(item)"></div>
         </div>
 
     </section>
@@ -32,6 +32,10 @@ export default {
     created() {
     },
     methods: {
+        setColor(val){
+            this.color1 = val
+            this.$emit('setColor', val)
+        }
     },
     computed: {}
 }
@@ -44,15 +48,21 @@ export default {
     border: none;
     height: 35px;
     width: 35px;
+    display: flex;
 }
 
 .demo-color-block .el-icon svg {
-    scale: 1.7;
+    scale: 2.5;
 }
+.el-color-picker .el-color-picker__icon{
+height: 100%;
+width: 100%;
+}
+
 
 .demo-color-block .el-color-picker__color-inner,
 .el-color-picker__color.is-alpha {
-    border-radius: 50%;
+    border-radius: 20%;
 }
 
 .demo-color-block .el-color-picker__color {

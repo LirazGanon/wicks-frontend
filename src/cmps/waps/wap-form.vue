@@ -1,12 +1,10 @@
 <template>
     <section class="wap-form" :class="cmp.classes">
-        <pre>{{wap}}</pre>
 
         <!-- <h4>form-{{ info.heading.txt }}</h4> -->
         
         <form >
             <label >
-                {{cmp.info}}
                 <span v-if="cmp.info.textInput.label">{{cmp.info.textInput.label}}</span>
                 <input  type="text" v-model="textInput" />
         
@@ -16,7 +14,7 @@
                 <input  type="email" v-model="emailInput" />
             </label>
             <label >
-                <span v-if="cmp.info.textarea.label">{{cmp.info.textarea.label}}</span>
+                <span v-if="cmp.info.textarea?.label">{{cmp.info.textarea.label}}</span>
                 <textarea v-model="messageInput" ></textarea>
             </label>
             <button v-for="btn in cmp.info.btns" @click.prevent="sendMsg">{{btn.txt}}</button>

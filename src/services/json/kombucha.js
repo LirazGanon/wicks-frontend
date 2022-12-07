@@ -384,6 +384,18 @@
     
                         }
                     },
+                },
+                "textInput": {
+                  "label": "",
+                  "placeholder": "Enter your name",
+                  "style": {}
+                },
+                "emailInput": {
+                  "label": "Email",
+                  "placeholder": "Enter Address",
+                  "isRequired": true,
+                  "style": {}
+                },
                     "inputs" : [
                         {
                             "type" : "txt",

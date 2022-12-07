@@ -10,6 +10,10 @@
     @media (min-width:1600px){
         grid-template-columns: 1fr 1400px 1fr;
     }
+    @media (min-width:1800px){
+        grid-template-columns: 1fr 1600px 1fr;
+    }
+
     h1 {
         font-size: em(16px);
         width: 18pc;

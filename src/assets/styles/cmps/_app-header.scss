@@ -6,11 +6,15 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 78.5px;
-    @media (min-width: 1000px) {
+    @media (min-width:1000px){
+        
         grid-template-columns: 80px 1fr 80px;
     }
-    @media (min-width: 1600px) {
+    @media (min-width:1600px){
         grid-template-columns: 1fr 1400px 1fr;
+    }
+    @media (min-width:1800px){
+        grid-template-columns: 1fr 1600px 1fr;
     }
     .home {
         color: #eee;

@@ -19,10 +19,10 @@
       :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
 
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
-        
-          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
-            :isSelected="selectedId === cmp.id ? true : false" />
-       
+
+        <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
+          :isSelected="selectedId === cmp.id ? true : false" />
+
       </Draggable>
 
     </Container>
@@ -79,12 +79,12 @@ export default {
     // TODO:LEHOZI MEHEARA
     socketService.on(SOCKET_SEND_MOUSE)
     socketService.on(SOCKET_GET_MOUSE, this.handleUsersPointer)
-
   },
-
+  
   mounted() {
     eventBus.on('resizeWap', this.resize)
     eventBus.on('drag', this.acceptDrop)
+    eventBus.on('reselect', this.selectNew)
     new ResizeObserver(this.resized).observe(this.$refs.container)
   },
   unmounted() {
@@ -107,6 +107,10 @@ export default {
     },
     getUpdate(wap) {
       this.$store.commit({ type: 'updateWap', wap })
+    },
+    selectNew(id) {
+      console.log('id:', id)
+      this.selectedId = id
     },
 
     async setWapToEdit() {

@@ -1,6 +1,6 @@
 <template>
     <section class="wap-form" :class="cmp.classes">
-        <!-- <pre>{{ cmp.info }}</pre> -->
+        <pre>{{wap}}</pre>
 
         <!-- <h4>form-{{ info.heading.txt }}</h4> -->
         
@@ -18,7 +18,7 @@
                 :placeholder="input.placeholder">
             </textarea>
             </div>
-            <button v-for="btn in cmp.info.btns" @click.prevent>{{btn.txt}}</button>
+            <button v-for="btn in cmp.info.btns" @click.prevent="sendMsg">{{btn.txt}}</button>
         </form>
     </section>
 
@@ -34,8 +34,18 @@ export default {
     created() { 
     
     },
-    methods: {},
-    computed: {},
+    methods: {
+        sendMsg(){
+        console.log('baba')
+        },
+    },
+    computed: {
+    wap(){
+        const id = this.$route.params
+      return   this.$store.dispatch({type:'getWapById', id})
+
+    }
+    },
     unmounted() { },
 };
 </script>

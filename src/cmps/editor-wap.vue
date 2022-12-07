@@ -7,7 +7,7 @@
 
     <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
       v-for="(pointer, idx) in pointers" :class="pointers[idx]">arrow_selector_tool
-    <!-- {{pointers.length}} -->
+      <!-- {{pointers.length}} -->
     </div>
     <section v-if="!cmpsLength" class="wap-placeholder">
 
@@ -76,9 +76,9 @@ export default {
   async created() {
     await this.setWapToEdit()
     socketService.on(SOCKET_EVENT_GET_UPDATED_WAP, this.getUpdate)
-// TODO:LEHOZI MEHEARA
-    // socketService.on(SOCKET_SEND_MOUSE)
-    // socketService.on(SOCKET_GET_MOUSE, this.handleUsersPointer)
+    // TODO:LEHOZI MEHEARA
+    socketService.on(SOCKET_SEND_MOUSE)
+    socketService.on(SOCKET_GET_MOUSE, this.handleUsersPointer)
 
   },
 
@@ -97,9 +97,6 @@ export default {
   },
 
   methods: {
-    log() {
-      console.log('lala');
-    },
     acceptDrop() {
       this.shouldAcceptDrop = true
     },
@@ -110,8 +107,6 @@ export default {
     },
     getUpdate(wap) {
       this.$store.commit({ type: 'updateWap', wap })
-      // console.log('baba')
-      // console.log(data)
     },
 
     async setWapToEdit() {
@@ -123,11 +118,10 @@ export default {
         // const userId = userService.getLoggedinUser().id
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()
-        // addEventListener('mouseover', ({ clientX, clientY }) => {
-        //   const mouseLoc = { x: clientX, y: clientY }
-        //   socketService.emit(SOCKET_SEND_MOUSE, { mouseLoc, id: this.pointerId })
-        //   // console.log(mouseLoc)
-        // })
+        addEventListener('mouseover', ({ clientX, clientY }) => {
+          const mouseLoc = { x: clientX, y: clientY }
+          socketService.emit(SOCKET_SEND_MOUSE, mouseLoc)
+        })
       }
     },
 
@@ -205,14 +199,12 @@ export default {
     wide() {
       return [...this.normal(), 'wide']
     },
-    handleUsersPointer({ mouseLoc, id }) {
-      console.log(id)
+    handleUsersPointer({ loc, id }) {
       if (!this.pointers.includes(id)) this.pointers.push(id)
       const elPointer = document.querySelector(`.${id}`)
-      console.log(elPointer)
       elPointer.style.color = 'blue'
-      elPointer.style.left = mouseLoc.x + 'px'
-      elPointer.style.top = mouseLoc.y + 'px'
+      elPointer.style.left = loc.x + 'px'
+      elPointer.style.top = loc.y + 'px'
     },
   },
 

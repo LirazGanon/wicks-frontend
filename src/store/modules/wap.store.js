@@ -256,6 +256,6 @@ export const wapStore = {
             console.log(context.state.templates)
             return context.state.templates.find(template => template._id === id)
         },
-
+    
     }
 }

@@ -1,6 +1,5 @@
 <template>
 
-    <!-- <pre>{{cmp.info}}</pre> -->
     <section class="wap-card" :class="cmp.classes">
        
         <section class="card-details">
@@ -31,7 +30,6 @@ export default {
             return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
         }
     },
-    unmounted() { },
 };
 </script>
 <style>

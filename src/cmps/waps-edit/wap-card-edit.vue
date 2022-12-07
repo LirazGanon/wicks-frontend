@@ -1,4 +1,5 @@
 <template>
+
     <section class="wap-card" v-if="cmp.info" :class="cmp.classes">
         <section class="card-details"> 
 
@@ -12,6 +13,8 @@
             @mousedown.stop="openEditor('texts', idx)" :style="txt?.style" @blur="updateCmp($event, 'texts', idx)">{{
                     txt.txt
             }}</p>
+        <p v-if="cmp.info.price">{{ localeCurrency }}</p>
+
 
         <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
             @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{
@@ -78,8 +81,11 @@ export default {
             }
         }
     },
-    computed: {},
-    unmounted() { },
+    computed: {
+        localeCurrency() {
+            return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+        }
+    },
 };
 </script>
 <style>

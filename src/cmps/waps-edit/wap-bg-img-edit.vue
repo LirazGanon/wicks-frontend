@@ -35,7 +35,7 @@ export default {
     },
     computed: {
         selected() {
-            return this.isSelected ? 'selected' : ''
+            return this.isSelected ? 'selected1' : ''
         }
     },
     unmounted() { },

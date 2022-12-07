@@ -17,7 +17,7 @@
             <form action="" v-if="cmp.info.inputs" @submit.prevent>
                 <div v-for="input in cmp.info.inputs">
                     <label>
-                        <span v-if="input.label">{{input.label}}</span>
+                        <span v-if="input.label">{{ input.label }}</span>
                         <input v-if="input.inpType === 'input'" :type="input.inpContentType"
                             :placeholder="input.placeholder" :required="input.isRequired">
 
@@ -29,7 +29,7 @@
                 <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
                     @mousedown.stop="openEditor('btns', idx)" :style="btn.style"
                     @blur="updateCmp($event, 'btns', idx)">{{
-                            btn.txt
+        btn.txt
                     }}</button>
             </form>
 
@@ -94,9 +94,9 @@ export default {
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
-            return { fatherIdx: cmpIdx, idx, id: this.cmp.id }
+            return { fatherIdx: cmpIdx, elIdx: idx, id: this.cmp.id }
         },
-        
+
     },
     computed: {
         selected() {

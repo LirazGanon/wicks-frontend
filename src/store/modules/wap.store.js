@@ -188,6 +188,7 @@ export const wapStore = {
                 const waps = await wapService.query(filterBy)
                 console.log(waps)
                 if(filterBy.userId)context.commit({type:'setUserWaps', waps})
+                return waps
             }catch(err){
             console.log('could not get user waps')
             throw err

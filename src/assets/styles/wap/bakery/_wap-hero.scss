@@ -2,12 +2,12 @@
     display: grid;
     overflow: hidden;
     font-size: 1rem;
-    padding-top: em(10px);
-    padding-bottom: em(80px);
+    margin-top: em(10px);
+    margin-bottom: em(80px);
     
     .medium & {
 
-        padding-bottom: em(80px);
+        margin-bottom: em(80px);
     }
 
     >img {

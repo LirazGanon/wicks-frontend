@@ -12,7 +12,7 @@
     <main class="dashboard-content">
 
       <section class="left-user-nav">
-
+        
         <ul class="curr-user-waps">
           <li v-for="wap in userWaps" @click="(chosenWap = wap)">
             {{ wap.name }}

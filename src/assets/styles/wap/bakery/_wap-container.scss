@@ -10,8 +10,8 @@
             flex-direction: column;
         }
 
-        padding-top: clamp(10px, 5%, 50px);
-        padding-bottom: clamp(10px, 5%, 50px);
+        margin-top: clamp(10px, 5%, 50px);
+        margin-bottom: clamp(10px, 5%, 50px);
 
         .wap-card {
             margin-inline-end: 2vw;

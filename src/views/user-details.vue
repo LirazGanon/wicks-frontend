@@ -1,27 +1,36 @@
 <template>
-  <app-header main-layout="main-header"/>
-  <section v-if="user">
-    <button @click="logout">Logout</button>
-    <!-- <h1>User Details - {{ user.fullname }}</h1> -->
-    <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
-    <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
-    <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
-    <!-- <ul>
-      <li v-for="review in user.givenReviews" :key="review._id">
-        {{ review.txt }}
-        <router-link :to="`/user/${review.aboutUser._id}`">
-          About {{ review.aboutUser.fullname }}
-        </router-link>
+  <app-header main-layout="main-header" />
+  
+  <section class="top-Dashboard">
+      <h4>My Sites</h4>
+      <div>
+        <h3>{{user.fullname}}'s Backoffice'</h3>
+      </div>
+  </section>
+  <section v-if="user" class="dashboard">
+
+
+    <ul>
+      <li v-for="wap in userWaps">
+        {{ wap.name }}
       </li>
-    </ul> -->
+
+    </ul>
+
+
+
+    <button @click="logout">Logout</button>
+
+    <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
+
+    <pre>{{ user }}</pre>
+    <pre>{{ userWaps.length }}</pre>
+    <div v-for="wap in userWaps">{{ wap.name }}</div>
     <ul>
       <li>
       </li>
     </ul>
-    <!-- <details>
-      <summary>Full JSON</summary>
-      <pre>{{ user }}</pre>
-    </details> -->
+
   </section>
 </template>
 

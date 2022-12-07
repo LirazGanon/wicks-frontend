@@ -1,6 +1,6 @@
 <template>
 
-    <section class="main-layout full" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"   :class="[...cmp.classes, selected]">
+    <section class="main-layout full wap-hero-wrapper" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"   :class="[...cmp.classes, selected]">
 
         <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
 
@@ -8,9 +8,9 @@
                 @blur="updateCmp($event, 'heading')">
                 {{ cmp.info.heading.txt }}
             </h1>
-            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading.style"
+            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
                 @blur="updateCmp($event, 'subHeading')">{{
-                        (cmp.info.subHeading.txt)
+                        (cmp.info.subHeading?.txt)
                 }}</p>
 
             <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click.stop @mousedown.stop="openEditor('btns', idx)"
@@ -19,12 +19,12 @@
             </button>
 
 
-            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img.classes" @dragstart.prevent
+            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img?.classes" @dragstart.prevent
                 :style="img.style" @click.stop @mousedown.stop="openEditor('imgs', idx)" />
-
-
+                
+                
+            </section>
         </section>
-    </section>
 
 </template>
 <script>

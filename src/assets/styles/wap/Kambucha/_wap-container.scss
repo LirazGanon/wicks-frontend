@@ -1,0 +1,87 @@
+.wap-container {
+    &.kombucha {
+        .wap-card {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            min-height: 45vh;
+            background-color: $Kambucha-sc-clr;
+            img {
+                width: 50%;
+                object-fit: cover;
+            }
+
+            .card-details {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                h1 {
+                    font-size: 2em;
+                    font-family: montserratBold;
+                    color: #fff;
+                }
+                p {
+                    max-width: 80%;
+                    margin-block-end: 40px;
+                    color: #fff;
+                }
+                button {
+                    font-family: montserratBold;
+                    background: transparent;
+                    border: 3px solid #fff;
+                }
+
+                @media (min-width: 800px) {
+                    h1 {
+                        font-size: 3em;
+                    }
+                    p {
+                        margin-block-end: 50px;
+                        max-width: 60%;
+                    }
+                    button {
+                        font-size: 1.6em;
+                        border: 4px solid #fff;
+                    }
+                }
+            }
+
+            &.top {
+                flex-direction: row;
+                background-color: $Kambucha-pr-clr;
+                h1 {
+                    margin-block-end: 50px;
+                }
+            }
+        }
+        &.nine {
+            h1 {
+                font-size: 200px;
+            }
+            .wap-gallery {
+                display: grid;
+                grid-template-columns: repeat(3, 200px);
+                grid-auto-rows: 200px;
+                gap: 5px;
+                place-content: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+                img:hover {
+                    filter: blur(3px);
+                }
+                img:after {
+                    content: "dsadsadsa";
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

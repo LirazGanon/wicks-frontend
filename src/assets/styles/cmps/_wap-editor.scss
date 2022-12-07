@@ -67,6 +67,12 @@
         .prev-cmp-img-container {
             overflow-y: auto;
             height: calc(100vh - 185px);
+            .close-icon{
+                @media(max-width:550px) {
+                    left: 5px;
+                    
+                }
+            }
         }
 
         .draggable-item {
@@ -191,6 +197,7 @@
             }
 
             .upload-preview {
+                margin-block: 0.5em;
                 text-align: center;
 
             }
@@ -199,9 +206,8 @@
                 margin: 0;
             }
 
-            span{
+            span {
                 display: inline-block;
-                margin-top: 0.5em;
             }
 
         }
@@ -349,6 +355,8 @@
                 top: 5px;
                 background-color: rgb(244, 244, 246);
                 z-index: 15;
+              
+
             }
 
             .cmp-editor {

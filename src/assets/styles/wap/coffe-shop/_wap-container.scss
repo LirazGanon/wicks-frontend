@@ -2,16 +2,18 @@
 
     background-size: cover;
     background-position: right;
+    // background-color: aqua;
 }
 
 .wap-container {
-font-size: 1rem;
+    font-size: 1rem;
+
     &.coffee-shop {
         * {
             color: $text-primary;
         }
 
-        >div {
+        >div:has(.coffee-shop.hero) {
             display: flex;
             align-items: center;
             height: 670px;
@@ -68,17 +70,20 @@ font-size: 1rem;
                 line-height: 2.1;
                 margin: 0;
                 font-size: 1.2em;
-                .small &{
+
+                .small & {
                     line-height: 1.2;
                 }
-                .medium &{
+
+                .medium & {
                     line-height: 1.4;
                     font-size: 1.5em;
                 }
-    
-    
+
+
             }
-            button{
+
+            button {
                 width: fit-content;
                 text-transform: uppercase;
                 padding: 1em 3em;
@@ -87,36 +92,52 @@ font-size: 1rem;
                 font-size: 1em;
                 letter-spacing: 2px;
                 border-radius: 3em;
-                .medium &{
+
+                .medium & {
                     font-size: 1.2em;
                 }
             }
         }
 
-
-
         &.img-pill-cards {
+            padding: 3em;
             display: grid;
-            width: 80%;
-            margin: auto;
-            grid-template-areas:
-                "tl tr"
-                "tl br"
-                "bl br";
+            grid-template-columns: 1fr;
 
-            // gap: 15px;
+            gap: 2em;
+            grid-template-areas:
+                "tl"
+                "bl"
+                "tr"
+                "br";
+
+            margin: auto;
+            width: 100%;
+            $img-height: 50px;
+
+            .wide & {
+                $img-height: 20em;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 0.7fr 1fr;
+                grid-template-areas:
+                    "tl tr"
+                    "tl br"
+                    "bl br";
+                width: 1200px;
+            }
 
             .wap-card {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 10em;
                 gap: 15px;
                 position: relative;
 
                 img {
-                    height: 10em;
                     margin: 0;
+                    object-fit: contain;
+                    height: $img-height;
+                    width: 100%;
                 }
 
                 p {
@@ -126,44 +147,52 @@ font-size: 1rem;
 
             > :nth-child(1) {
                 grid-area: tl;
-                height: 20em;
-                img{
-                    height: 20em;
-                    object-fit: contain;
-                }
 
                 p {
-                    height: 10em;
+                    flex: 1;
+                }
+
+                img {
+                    object-position: bottom;
                 }
 
             }
 
             > :nth-child(2) {
                 grid-area: tr;
-                // height: 12em;
-                display: block;
-
                 background-color: #c2ad91;
                 border-radius: 1.5em;
+                padding: 1em;
+                height: $img-height;
             }
 
             > :nth-child(3) {
                 grid-area: bl;
                 background-color: #c2ad91;
+                border-radius: 1.5em;
+                padding: 1em;
+                height: $img-height;
             }
 
             > :nth-child(4) {
                 grid-area: br;
-                img{
-                    height: 20em;
-                    object-fit: contain;
-                }
+
 
                 .wap-card {
-                    flex-direction: column-reverse;
-                    justify-content: st;
                     height: 100%;
+                    display: flex;
+                    flex-direction: column-reverse;
+
+                    p {
+                        flex: 1;
+                    }
+
+                    img {
+                        object-position: top;
+                    }
+
                 }
+
             }
         }
     }

@@ -1,5 +1,7 @@
 <template>
-    <section class="wap-card" v-if="cmp.info">
+    <section class="wap-card" v-if="cmp.info" :class="cmp.classes">
+        <section class="card-details">
+
         <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" :style="cmp.info.heading?.style"
             @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
@@ -15,6 +17,8 @@
             @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{
                     btn.txt
             }}</button>
+        </section>
+
         <img v-for="(img, idx) in cmp.info.imgs" @click.stop @mousedown.stop="openEditor('imgs', idx)"
             @dragstart.prevent :src="img.src" :style="img.style" />
     </section>
@@ -58,8 +62,8 @@ export default {
         updateCmp(ev, key) {
             const path = this.path
             let cmp = utilService.copy(this.cmp)
-            
-            if(cmp.info[key].txt === ev.target.innerText) return
+
+            if (cmp.info[key].txt === ev.target.innerText) return
 
             console.log('variable:', cmp.info[key].txt === ev.target.innerText)
             console.log(cmp.info[key].txt);

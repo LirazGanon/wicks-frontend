@@ -1,0 +1,38 @@
+.wap-header {
+    &.Kambucha {
+        background: $Kambucha-bg;
+        font-size: 1rem;
+
+        .wap-logo {
+            text-transform: uppercase;
+            // font-size: em(25px);
+            scale: 0.6;
+            @media (min-width: 1200px) {
+                scale: 0.8;
+            }
+        }
+
+        .wap-nav {
+            font-size: rem(15px);
+
+            a {
+                color: #000;
+                font-family: RussoOne;
+                letter-spacing: 0.05em;
+                display: flex;
+                align-items: center;
+            }
+
+            a:not(:last-child) {
+                margin-inline-end: rem(20px);
+            }
+
+            @media (min-width: 1100px) {
+                font-size: 1.1rem;
+            }
+            @media (min-width: 1400px) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

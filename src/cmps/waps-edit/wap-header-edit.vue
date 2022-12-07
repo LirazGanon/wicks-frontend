@@ -6,7 +6,7 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.img" v-if="cmp.info.logo.img" @click.stop="openEditor('imgs', idx)"
+                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @click.stop="openEditor('imgs', idx)"
                     :style="cmp.info.logo.style">
 
 

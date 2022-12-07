@@ -1,0 +1,56 @@
+.wap-hero-wrapper {
+    &.kombucha {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    font-family: montserrat, sans-serif;
+
+    .wap-hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.kombucha {
+            min-height: 60vh;
+            h1 {
+                font-family: montserratBold, sans-serif;
+                width: 5em;
+                color: black;
+                font-size: em(40px);
+                margin-block-start: 40px;
+
+                @media (min-width: 600px) {
+                    font-size: em(60px);
+                    margin-block-start: 60px;
+                }
+            }
+
+            p {
+                color: #474747;
+                font-size: em(15px);
+                width: 300px;
+
+                @media (min-width: 600px) {
+                    font-size: 20px;
+                    width: 400px;
+                }
+            }
+
+            button {
+                font-family: montserratBold, sans-serif;
+                align-self: flex-end;
+                background: #fff;
+                color: $Kambucha-pr-clr;
+                border: 6px solid $Kambucha-pr-clr;
+                font-size: em(18px);
+                height: 70px;
+                width: 140px;
+                @media (min-width: 800px) {
+                    font-size: em(26px);
+                    height: 100px;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

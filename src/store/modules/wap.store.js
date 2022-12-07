@@ -71,7 +71,6 @@ export const wapStore = {
                 history.waps.shift()
             }
             history.currState++
-            console.log(history);
             history.waps.push(wap)
         },
         goBack(state) {
@@ -126,7 +125,6 @@ export const wapStore = {
         },
         async updateWapFull(context, { wap }) {
             try {
-                console.log(wap, 'wapwap')
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
@@ -141,7 +139,6 @@ export const wapStore = {
             try {
                 context.commit({ type: 'toggleLoading' })
                 const templates = await templateService.query()
-                console.log(templates)
                 context.commit({ type: 'setTemplates', templates })
                 context.commit({ type: 'toggleLoading' })
                 // return templates
@@ -195,6 +192,16 @@ export const wapStore = {
             throw err
             }
         },
+        async getWapById(context, {id}){
+            try{
+                const wap = await wapService.getById(id)
+                // if(filterBy.userId)context.commit({type:'setUserWaps', waps})
+                return wap
+            }catch(err){
+            console.log('could not get wap')
+            throw err
+            }
+        },
         // async getCustomWap(context, { wapId }) {
         //     console.log('get custom')
         //     try {
@@ -215,7 +222,6 @@ export const wapStore = {
                     wap.cmps[cmpIdx].cmps.splice(path.idx, 0, cmp)
                 } else {
                     wap.cmps.splice([cmpIdx], 0, cmp)
-                    console.log(cmp)
                 }
 
                 wap = await wapService.save(wap)
@@ -260,7 +266,6 @@ export const wapStore = {
             }
         },
         getCurrWap(context, id) {
-            console.log(context.state.templates)
             return context.state.templates.find(template => template._id === id)
         },
     

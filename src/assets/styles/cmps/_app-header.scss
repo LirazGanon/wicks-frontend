@@ -1,10 +1,17 @@
+
+
 header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 78.5px;
-
+    @media (min-width: 1000px) {
+        grid-template-columns: 80px 1fr 80px;
+    }
+    @media (min-width: 1600px) {
+        grid-template-columns: 1fr 1400px 1fr;
+    }
     .home {
         color: #eee;
     }
@@ -12,6 +19,7 @@ header {
     .logo {
         width: rem(150px);
     }
+
     article {
         display: flex;
         align-items: start;
@@ -52,6 +60,7 @@ header {
 
         .main-nav {
             background: #eee;
+            color: #eee;
             position: absolute;
             right: 0;
             height: calc(100vh - 80px);
@@ -64,6 +73,7 @@ header {
             &.active {
                 width: 30%;
                 flex-direction: column;
+                color: #333;
 
                 > * {
                     border-bottom: 1px solid #5555;
@@ -133,4 +143,17 @@ header {
             }
         }
     }
+}
+
+.main-layout-header{
+    margin-inline: 10px;
+    @media (min-width: 1000px) {
+        margin-inline: 80px;
+    }
+    @media (min-width: 1600px) {
+        max-width: 1400px;
+        margin-inline: auto;
+    }
+
+
 }

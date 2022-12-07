@@ -1,10 +1,11 @@
 <template>
+  <app-header main-layout="main-header"/>
   <section v-if="user">
     <button @click="logout">Logout</button>
-    <h1>User Details - {{ user.fullname }}</h1>
+    <!-- <h1>User Details - {{ user.fullname }}</h1> -->
     <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
-    <img style="max-width: 200px;" :src="user.imgUrl" />
-    <img v-for="wap in userWaps" :src="wap.src" alt="site img">
+    <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
+    <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
     <!-- <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
         {{ review.txt }}
@@ -17,16 +18,16 @@
       <li>
       </li>
     </ul>
-    <details>
+    <!-- <details>
       <summary>Full JSON</summary>
       <pre>{{ user }}</pre>
-    </details>
+    </details> -->
   </section>
 </template>
 
 <script>
 // import {userService} from '../services/user.service'
-
+import appHeader from '../cmps/app-header.vue'
 import { userService } from '../services/user.service'
 
 export default {
@@ -34,12 +35,15 @@ export default {
 
   data() {
     return {
-      userWaps:[],
+      userWaps: [],
       filterBy: {
         userId: ''
       }
       // user: null
     }
+  },
+  components: {
+    appHeader
   },
   async created() {
     this.filterBy.userId = this.userId

@@ -10,6 +10,7 @@
     border-left: 6px solid $primary-clr;
     padding: 1em;
     transform: translateX(-200%);
+    font-family: rob;
     
     &.shown {
         transform: translateX(0);

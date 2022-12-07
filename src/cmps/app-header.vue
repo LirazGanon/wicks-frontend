@@ -11,9 +11,6 @@
       <nav class="main-nav" :class="{ active: !menuOpen }">
         <article>
           <router-link to="/wap">Template</router-link>
-          <span v-if="!menuOpen" class="material-symbols-outlined">
-            grid_view
-          </span>
         </article>
 <!-- 
         <article>

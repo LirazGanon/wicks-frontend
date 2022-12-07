@@ -17,6 +17,7 @@ import { Container, Draggable } from "vue3-smooth-dnd";
 import wapHeader from '../cmps/waps/wap-header.vue'
 import wapHero from '../cmps/waps/wap-hero.vue'
 import wapForm from '../cmps/waps/wap-form.vue'
+import wapMap from '../cmps/waps/wap-map.vue'
 import wapContainer from '../cmps/waps/wap-container.vue'
 
 import wapContact from '../cmps/waps/wap-contact.vue'
@@ -34,7 +35,9 @@ import { templateService } from "../services/template.service";
 export default {
     name: 'variable',
     props: {},
-    components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, wapBgImg, wapGallery },
+    components: { Draggable, Container, wapHeader, wapHero, wapForm,
+                 wapContainer, wapContact, wapReviews, wapFooter, wapBgImg, 
+                 wapGallery, wapMap },
     data() {
         return {
             view: {},

@@ -396,32 +396,7 @@
                   "isRequired": true,
                   "style": {}
                 },
-                    "inputs" : [
-                        {
-                            "type" : "txt",
-                            "label" : "",
-                            "placeholder" : "Enter your name",
-                            "inpType" : "input",
-                            "inpContentType" : "text",
-                            "title" : "",
-                            "isRequired" : true,
-                            "style" : {
-    
-                            }
-                        },
-                        {
-                            "type" : "txt",
-                            "label" : "",
-                            "placeholder" : "Enter Address",
-                            "inpType" : "input",
-                            "inpContentType" : "email",
-                            "title" : "",
-                            "isRequired" : true,
-                            "style" : {
-    
-                            }
-                        }
-                    ],
+
                     "btns" : [
                         {
                             "type" : "txt",
@@ -441,3 +416,30 @@
         "name" : "kambucha"
     }
 ]
+
+// "inputs" : [
+//     {
+//         "type" : "txt",
+//         "label" : "",
+//         "placeholder" : "Enter your name",
+//         "inpType" : "input",
+//         "inpContentType" : "text",
+//         "title" : "",
+//         "isRequired" : true,
+//         "style" : {
+
+//         }
+//     },
+//     {
+//         "type" : "txt",
+//         "label" : "",
+//         "placeholder" : "Enter Address",
+//         "inpType" : "input",
+//         "inpContentType" : "email",
+//         "title" : "",
+//         "isRequired" : true,
+//         "style" : {
+
+//         }
+//     }
+// ],

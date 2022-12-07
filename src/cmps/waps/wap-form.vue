@@ -1,23 +1,22 @@
 <template>
     <section class="wap-form" :class="cmp.classes">
 
-        <!-- <h4>form-{{ info.heading.txt }}</h4> -->
         
-        <form >
+        <form @submit.prevent="sendMsg">
             <label >
-                <span v-if="cmp.info.textInput.label">{{cmp.info.textInput.label}}</span>
-                <input  type="text" v-model="textInput" />
+                <span v-if="cmp.info.textInput?.label">{{cmp.info.textInput.label}}</span>
+                <input  type="text" v-model="textInput" required/>
         
             </label>
             <label >
-                <span v-if="cmp.info.emailInput.label">{{cmp.info.emailInput.label}}</span>
-                <input  type="email" v-model="emailInput" />
+                <span v-if="cmp.info.emailInput?.label">{{cmp.info.emailInput.label}}</span>
+                <input  type="email" v-model="emailInput" required/>
             </label>
             <label >
                 <span v-if="cmp.info.textarea?.label">{{cmp.info.textarea.label}}</span>
-                <textarea v-model="messageInput" ></textarea>
+                <textarea v-model="messageInput" required></textarea>
             </label>
-            <button v-for="btn in cmp.info.btns" @click.prevent="sendMsg">{{btn.txt}}</button>
+            <button v-for="btn in cmp.info.btns">{{btn.txt}}</button>
         </form>
         </section>
         </template>

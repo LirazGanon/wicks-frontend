@@ -1,6 +1,6 @@
 <template>
 
-
+<signin-modalp v-if="isOpenModal" @click-outside="closeModal"/>
 
   <section class="page-editor" ref="container" :class="[responsiveClass, myClass, wrapper()]"
     :style="{ maxWidth: conMaxWidth }">
@@ -51,6 +51,7 @@ import wapFooter from '../cmps/waps-edit/wap-footer-edit.vue'
 import wapBgImg from '../cmps/waps-edit/wap-bg-img-edit.vue'
 import appHeader from "./app-header.vue";
 
+import signinModal from "./signin-modal.vue";
 
 import { templateService } from '../services/template.service.js'
 import { wapService } from '../services/wap.service.js'
@@ -61,7 +62,7 @@ import { socketService, SOCKET_EVENT_GET_UPDATED_WAP, SOCKET_EMIT_SET_USER_EDITO
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap, signinModal },
   props: { wap: Object },
   data() {
     return {
@@ -71,6 +72,7 @@ export default {
       shouldAcceptDrop: false,
       selectedId: null,
       pointers: [],
+      isModalOpen:true
     }
   },
   async created() {
@@ -210,7 +212,10 @@ export default {
       elPointer.style.left = loc.x + 'px'
       elPointer.style.top = loc.y + 'px'
     },
-  },
+    closeModal(){
+    this.isModalOpen=false
+    },
+    },
 
   computed: {
     wapToEdit() {

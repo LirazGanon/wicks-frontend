@@ -5,6 +5,10 @@
   <section class="page-editor" ref="container" :class="[responsiveClass, myClass, wrapper()]"
     :style="{ maxWidth: conMaxWidth }">
 
+    <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
+      v-for="(pointer, idx) in pointers" :class="pointers[idx]">arrow_selector_tool
+    <!-- {{pointers.length}} -->
+    </div>
     <section v-if="!cmpsLength" class="wap-placeholder">
 
     </section>
@@ -13,12 +17,11 @@
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
-      
-      <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id" >
-        <div class="main-layout full" >
-          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop" 
-          :isSelected="selectedId === cmp.id ? true : false" 
-          />
+
+      <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
+        <div class="main-layout full">
+          <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
+            :isSelected="selectedId === cmp.id ? true : false" />
         </div>
       </Draggable>
 
@@ -54,11 +57,11 @@ import { wapService } from '../services/wap.service.js'
 import { utilService } from "../services/util.service";
 import { eventBus } from "../services/event-bus.service";
 import { useStore } from "vuex";
-import { socketService,  SOCKET_EVENT_GET_UPDATED_WAP,SOCKET_EMIT_SET_USER_EDITOR } from '../services/socket.service'
+import { socketService, SOCKET_EVENT_GET_UPDATED_WAP, SOCKET_EMIT_SET_USER_EDITOR, SOCKET_GET_MOUSE, SOCKET_SEND_MOUSE } from '../services/socket.service'
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg ,wapMap},
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap },
   props: { wap: Object },
   data() {
     return {
@@ -66,12 +69,17 @@ export default {
       conMaxWidth: null,
       myClass: [],
       shouldAcceptDrop: false,
-      selectedId:null
+      selectedId: null,
+      pointers: [],
     }
   },
-  created() {
-    this.setWapToEdit()
+  async created() {
+    await this.setWapToEdit()
     socketService.on(SOCKET_EVENT_GET_UPDATED_WAP, this.getUpdate)
+// TODO:LEHOZI MEHEARA
+    // socketService.on(SOCKET_SEND_MOUSE)
+    // socketService.on(SOCKET_GET_MOUSE, this.handleUsersPointer)
+
   },
 
   mounted() {
@@ -82,13 +90,14 @@ export default {
   unmounted() {
     this.$store.commit({ type: 'removeWapToEdit' })
   },
-  destroyed(){
+  destroyed() {
     // socketService.off(SOCKET_EVENT_GET_UPDATED_WAP)
     socketService.off(SOCKET_EMIT_SET_USER_EDITOR)
+    socketService.off(SOCKET_GET_MOUSE)
   },
-  
+
   methods: {
-    log(){
+    log() {
       console.log('lala');
     },
     acceptDrop() {
@@ -100,19 +109,25 @@ export default {
       this.$emit('openEditor', ev)
     },
     getUpdate(wap) {
-      this.$store.commit({type:'updateWap', wap})
+      this.$store.commit({ type: 'updateWap', wap })
       // console.log('baba')
       // console.log(data)
     },
 
     async setWapToEdit() {
-      const {wapId} = this.$route.params
-      // const wapId = (id.wapId)
-      console.log(wapId)
+      const { wapId } = this.$route.params
       socketService.emit(SOCKET_EMIT_SET_USER_EDITOR, wapId)
+
       if (!this.$store.getters.getWapToEdit) {
         await this.$store.dispatch({ type: 'setWapToEdit', wapId })
         // const userId = userService.getLoggedinUser().id
+        // TODO:LEHOZI MEHEARA
+        // this.pointerId = utilService.makeId()
+        // addEventListener('mouseover', ({ clientX, clientY }) => {
+        //   const mouseLoc = { x: clientX, y: clientY }
+        //   socketService.emit(SOCKET_SEND_MOUSE, { mouseLoc, id: this.pointerId })
+        //   // console.log(mouseLoc)
+        // })
       }
     },
 
@@ -189,8 +204,18 @@ export default {
     },
     wide() {
       return [...this.normal(), 'wide']
-    }
+    },
+    handleUsersPointer({ mouseLoc, id }) {
+      console.log(id)
+      if (!this.pointers.includes(id)) this.pointers.push(id)
+      const elPointer = document.querySelector(`.${id}`)
+      console.log(elPointer)
+      elPointer.style.color = 'blue'
+      elPointer.style.left = mouseLoc.x + 'px'
+      elPointer.style.top = mouseLoc.y + 'px'
+    },
   },
+
   computed: {
     wapToEdit() {
       return this.$store.getters.getWapToEdit
@@ -204,3 +229,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.pointer {
+  position: absolute
+}
+</style>

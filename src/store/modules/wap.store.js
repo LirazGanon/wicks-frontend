@@ -169,6 +169,7 @@ export const wapStore = {
                 if (wapId === currWapId) return
             }
             try {
+                const user = userService.getLoggedinUser
                 const wapToEdit = await templateService.getTemplateToEdit(wapId)
                 context.commit({ type: 'setWapToEdit', wapToEdit })
                 return wapToEdit
@@ -179,7 +180,8 @@ export const wapStore = {
         },
         async getUserWaps(context, {userId}){
             try{
-                const waps = await wapService.getByUserId(id)
+                const waps = await wapService.getByUserId(userId)
+                console.log(waps)
                 this.$commit({type:'setUserWaps', waps})
             }catch(err){
             console.log('could not get user waps')

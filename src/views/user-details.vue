@@ -1,5 +1,6 @@
 <template>
   <section v-if="user">
+    <button @click="logout">Logout</button>
     <h1>User Details - {{ user.fullname }}</h1>
     <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
     <img style="max-width: 200px;" :src="user.imgUrl" />
@@ -25,6 +26,8 @@
 <script>
 // import {userService} from '../services/user.service'
 
+import { userService } from '../services/user.service'
+
 export default {
   name: 'user-details',
 
@@ -35,9 +38,17 @@ export default {
     }
   },
   async created() {
-    await this$store.dispath({type:'getUserWaps', userId})
+    const userId = this.userId
+    await this.$store.dispatch({type:'getUserWaps', userId})
     // const user = await userService.getById(id)
     // this.user = user
+  },
+  methods:{
+    logout(){
+      console.log('baba')
+      userService.logout()
+      this.$router.push('/')
+    }
   },
   watch: {
     userId: {

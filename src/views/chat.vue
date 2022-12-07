@@ -53,12 +53,12 @@ export default {
     //   el.style.y = data.line[0].y
     // })
     this.pointerId = utilService.makeId()
-    socketService.on(SOCKET_SEND_MOUSE)
-    socketService.on(SOCKET_GET_MOUSE, this.test)
-    addEventListener('mouseover', ({ clientX, clientY }) => {
-      const mouseLoc = { x: clientX, y: clientY }
-      socketService.emit(SOCKET_SEND_MOUSE, {mouseLoc, id:this.pointerId})
-    })
+    // socketService.on(SOCKET_SEND_MOUSE)
+    // socketService.on(SOCKET_GET_MOUSE, this.test)
+    // addEventListener('mouseover', ({ clientX, clientY }) => {
+    //   const mouseLoc = { x: clientX, y: clientY }
+    //   socketService.emit(SOCKET_SEND_MOUSE, {mouseLoc, id:this.pointerId})
+    // })
     socketService.on(SOCKET_EVENT_ADD_MSG, this.addMsg)
     socketService.on(SOCKET_EMIT_SEND_MSG, this.addMsg)
   },
@@ -67,16 +67,12 @@ export default {
     // socketService.terminate()
   },
   methods: {
-    test(e, id) {
+    handleUsersPointer(e, id) {
       if (!this.pointers.includes(id)) this.pointers.push(id)
-
-
       const elPointer = document.querySelector(`.${id}`)
-
       elPointer.style.color = 'blue'
       elPointer.style.left = e.x + 'px'
       elPointer.style.top = e.y + 'px'
-
     },
 
     // getCursorElement(id) {

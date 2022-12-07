@@ -19,8 +19,8 @@ export const SOCKET_EVENT_GET_UPDATED_WAP = 'updated-wap'
 // export const SOCKET_EMIT_SEND_POINTER = 'get-pointer-pos'
 
 // MOUSE EVENTS
-export const SOCKET_GET_MOUSE = 'get-pointer-pos'
-export const SOCKET_SEND_MOUSE = 'send-pointer-pos'
+export const SOCKET_GET_MOUSE = 'mouse-move'
+export const SOCKET_SEND_MOUSE = 'user-mouse-move'
 
 
 
@@ -58,6 +58,7 @@ function createSocketService() {
     },
     emit(eventName, data) {
       data = JSON.parse(JSON.stringify(data))
+      console.log(eventName)
       socket.emit(eventName, data)
   },
     login(userId) {

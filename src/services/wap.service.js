@@ -39,6 +39,7 @@ function getById(wapId) {
 }
 function getByUserId(userId) {
     // return storageService.get(STORAGE_KEY, wapId)
+    console.log(userId)
     return httpService.get(`wap/user/${userId}`)
 }
 

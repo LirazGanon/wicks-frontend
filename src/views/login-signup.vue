@@ -99,7 +99,7 @@ export default {
         this.$router.push(`/user/${loggedinUserId}`)
       } catch (err) {
         console.log(err)
-        this.msg = 'Failed to login'
+        this.msg = 'The username/password are incorrect.'
       }
     },
     doLogout() {
@@ -114,7 +114,8 @@ export default {
         return
       }
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
-      // this.$router.push('/')
+
+      this.$router.push('/')
 
     },
     loadUsers() {

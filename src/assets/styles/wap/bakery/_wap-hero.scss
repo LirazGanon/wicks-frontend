@@ -4,7 +4,7 @@
     font-size: 1rem;
     padding-top: em(10px);
     padding-bottom: em(80px);
-
+    
     .medium & {
 
         padding-bottom: em(80px);
@@ -46,7 +46,9 @@
 
 
             .mobile & {
+                
                 font-size: em(30px);
+
             }
 
             .small & {

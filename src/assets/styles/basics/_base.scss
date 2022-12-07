@@ -130,8 +130,11 @@ a:hover {
 
 .selected1{
     border: 4px dashed $clr3;
-    position: relative;
 }
 
 
 
+*:focus-visible{
+    outline: dashed 2px ;
+    margin-inline:2px ;
+}

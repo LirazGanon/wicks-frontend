@@ -53,10 +53,8 @@ export default {
             // TODO:ARRANGE THE PARAMS TO DIFFER BETWEEN WAP AND TEMPLATE
             const id = this.$route.params.wapId
             const { isTemplate } = this.$route.params
-            console.log(this.$route.params);
             // const {isTemplate }= this.$route.data
             // const wap = await wapService.getById(id)
-            console.log(isTemplate);
             let wap
             if (isTemplate) {
                 wap = await templateService.getTemplate(id)

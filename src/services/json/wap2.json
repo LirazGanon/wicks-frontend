@@ -13,9 +13,10 @@
     "usersData": {
       "contacts": [
         {
-          "email": "user@user.com",
-          "msg": "Please send me stuff",
-          "at": 123
+          "name":"",
+          "email": "",
+          "msg": "",
+          "at": 0
         }
       ],
       "signups": [
@@ -112,7 +113,9 @@
               "type": "img",
               "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790203/wicks/bakery-hero-bg.jpg",
               "style": {},
-              "classes": ["right"]
+              "classes": [
+                "right"
+              ]
             }
           ]
         },
@@ -1302,6 +1305,23 @@
                 "txt": "",
                 "style": {}
               },
+              "textInput": {
+                "label": "Name",
+                "placeholder": "Enter your name",
+                "isRequired": true,
+                "style": {}
+              },
+              "emailInput": {
+                "label": "Email",
+                "placeholder": "Enter a valid email address",
+                "isRequired": true,
+                "style": {}
+              },
+              "textarea": {
+                "label": "Message",
+                "isRequired": true,
+                "style": {}
+              },
               "inputs": [
                 {
                   "type": "txt",
@@ -1384,7 +1404,6 @@
           "background-color": ""
         }
       }
-     
     ],
     "isPublic": true
   }

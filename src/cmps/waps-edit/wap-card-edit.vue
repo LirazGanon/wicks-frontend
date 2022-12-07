@@ -1,22 +1,26 @@
 <template>
+
     <section class="wap-card" v-if="cmp.info" :class="cmp.classes">
-        <section class="card-details"> 
+        <section class="card-details">
 
-        <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" :style="cmp.info.heading?.style"
-            @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
+            <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')"
+                :style="cmp.info.heading?.style" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
-        <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')"
-            :style="cmp.info.subHeading?.style" @blur="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt }}
-        </p>
-        <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click.stop
-            @mousedown.stop="openEditor('texts', idx)" :style="txt?.style" @blur="updateCmp($event, 'texts', idx)">{{
-                    txt.txt
-            }}</p>
+            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')"
+                :style="cmp.info.subHeading?.style" @blur="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt
+                }}
+            </p>
+            <p v-for="(txt, idx) in cmp.info.texts" contenteditable="true" @click.stop
+                @mousedown.stop="openEditor('texts', idx)" :style="txt?.style" @blur="updateCmp($event, 'texts', idx)">
+                {{
+                        txt.txt
+                }}</p>
+         
 
-        <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
-            @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{
-                    btn.txt
-            }}</button>
+            <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
+                @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{
+                        btn.txt
+                }}</button>
         </section>
 
         <img v-for="(img, idx) in cmp.info.imgs" @click.stop @mousedown.stop="openEditor('imgs', idx)"
@@ -78,8 +82,11 @@ export default {
             }
         }
     },
-    computed: {},
-    unmounted() { },
+    computed: {
+        localeCurrency() {
+            return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+        }
+    },
 };
 </script>
 <style>

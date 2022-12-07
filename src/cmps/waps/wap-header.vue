@@ -4,7 +4,7 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.img" alt="" v-if="cmp.info.logo.img">
+                <img :src="cmp.info.logo?.src" alt="" v-if="cmp.info.logo.src">
                 <h4 v-else>{{ cmp.info.logo.txt }}</h4>
             </div>
 

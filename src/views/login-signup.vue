@@ -1,8 +1,12 @@
 <template>
-  <div class="container about">
-    <p>{{ msg }}</p>
 
-    <div v-if="loggedinUser">
+  <section class="whole-login">
+    <div class="bubble-move"></div>
+    <div class="bubble-move"></div>
+    <div class="bubble-move"></div>
+
+    <app-header :hideLogin="true" :mainLayout="'main-layout-header'" />
+    <div v-if="loggedinUser" class="login-page">
       <h3>
         Loggedin User:
         {{ loggedinUser.fullname }}
@@ -10,50 +14,54 @@
       </h3>
     </div>
     <div v-else>
-      <section v-if="!isLogin">
+      <section class="login-form" :class="{ signup: isLogin }">
 
-        <h2>Login</h2>
-        <form @submit.prevent="doLogin">
-          <input type="text" v-model="loginCred.username" placeholder="puki">
-          <input type="text" v-model="loginCred.password" placeholder="ja">
+        <section v-if="!isLogin">
+          <h2>Login </h2>
+          <form @submit.prevent="doLogin">
+            <input type="text" v-model="loginCred.username" placeholder="Username">
+            <input type="password" v-model="loginCred.password" placeholder="Password">
+            <p class="fail-to-login">{{ msg }}</p>
+            <button>Login</button>
+            <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup</span></p>
+          </form>
+        </section>
 
+        <section v-else>
+          <form @submit.prevent="doSignup">
+            <h2>Signup</h2>
+            <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+            <input type="text" v-model="signupCred.username" placeholder="Username" />
+            <input type="password" v-model="signupCred.password" placeholder="Password" />
+            <!-- <img-uploader @uploaded="onUploaded"></img-uploader> -->
+            <p class="fail-to-login">{{ msg }}</p>
+            <button>Signup</button>
+            <p>Already have an account? <span @click="(isLogin = !isLogin)">Log in</span></p>
 
-          <button>Login</button>
-        </form>
-        <p class="mute">user1 or admin, pass:123 </p>
-      </section>
-      <section v-if="isLogin">
-        <form @submit.prevent="doSignup">
-          <h2>Signup</h2>
-          <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-          <input type="text" v-model="signupCred.password" placeholder="Password" />
-          <input type="text" v-model="signupCred.username" placeholder="Username" />
-          <img-uploader @uploaded="onUploaded"></img-uploader>
-          <button>Signup</button>
-        </form>
+          </form>
+
+        </section>
+
       </section>
     </div>
-    <hr />
-    <details>
-      <summary>
-        Admin Section
-      </summary>
-      <ul>
-        <li v-for="user in users" :key="user._id">
-          <pre>{{ user }}</pre>
-          <button @click="removeUser(user._id)">x</button>
-        </li>
-      </ul>
-    </details>
-  </div>
+
+
+  </section>
+
 </template>
 
 <script>
 
+import appHeader from '../cmps/app-header.vue'
 import imgUploader from '../cmps/img-uploader.vue'
 
 export default {
   name: 'login-signup',
+  props: {},
+  components: {
+    imgUploader,
+    appHeader
+  },
   data() {
     return {
       msg: '',
@@ -78,7 +86,10 @@ export default {
 
       // TODO:MAKE IT ASSENTIAL TO FILL THE INPUT AND GET RID OF THIS CONDITION
       if (!this.loginCred.username || !this.loginCred.password) {
-        this.msg = 'Please enter username/password'
+        this.msg = 'The username/password are incorrect.'
+        setTimeout(() => {
+          this.msg = ''
+        }, 5000)
         return
       }
       try {
@@ -88,7 +99,7 @@ export default {
         this.$router.push(`/user/${loggedinUserId}`)
       } catch (err) {
         console.log(err)
-        this.msg = 'Failed to login'
+        this.msg = 'The username/password are incorrect.'
       }
     },
     doLogout() {
@@ -97,10 +108,14 @@ export default {
     async doSignup() {
       if (!this.signupCred.fullname || !this.signupCred.password || !this.signupCred.username) {
         this.msg = 'Please fill up the form'
+        setTimeout(() => {
+          this.msg = ''
+        }, 5000)
         return
       }
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
-      // this.$router.push('/')
+
+      this.$router.push('/')
 
     },
     loadUsers() {
@@ -118,9 +133,6 @@ export default {
       this.signupCred.imgUrl = imgUrl
     }
 
-  },
-  components: {
-    imgUploader
   }
 }
 </script>

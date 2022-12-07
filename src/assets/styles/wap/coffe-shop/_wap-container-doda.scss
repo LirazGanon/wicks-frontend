@@ -5,23 +5,21 @@
     margin-top: 5em;
     display: flex;
     justify-content: center;
-    
-    .mobile &{
+
+    .mobile & {
         margin-top: 0em;
         padding-top: 15em;
     }
-    
-    .narrow &{
+
+    .narrow & {
         margin-top: 0;
         padding-top: 0;
     }
 }
 
-section:has(.doda-cards) {
-    // background-color: aqua;
-    // background-size: 100% 50%;
-    // background-size: cover;
-    // background-repeat: no-repeat;
+.wap-container-wrapper.shower-cards {
+    background-color: #BFA98B;
+    padding-top: 6em;
 }
 
 .wap-container {
@@ -31,7 +29,7 @@ section:has(.doda-cards) {
             color: $text-primary;
         }
 
-       
+
 
 
 
@@ -44,26 +42,29 @@ section:has(.doda-cards) {
             width: 90%;
             $img-height: 900px;
             flex-wrap: wrap;
+            margin-bottom: 2em;
 
-            .narrow &{
-                flex-wrap:nowrap !important;
+
+            .narrow & {
+                flex-wrap: nowrap !important;
                 height: $img-height;
             }
 
 
 
             >div:has(.wap-card) {
-           
+
                 .small &,
                 .medium & {
                     width: 40%;
                 }
-                .narrow &{
+
+                .narrow & {
 
                     margin-bottom: 5em;
                 }
 
-                
+
 
             }
 
@@ -74,31 +75,32 @@ section:has(.doda-cards) {
                 position: absolute;
                 height: $img-height;
                 transform: translateX(-20%);
-                
+
                 .mobile & {
-                    top:0;
+                    top: 0;
                     transform: translateY(-30%);
-                    
+
                 }
-                .narrow &{
+
+                .narrow & {
                     padding: 0;
                 }
             }
 
             img {
-                
+
                 width: 110%;
                 height: 50%;
                 object-fit: cover;
-                object-position:center -100px;
+                object-position: center -100px;
                 transform: translateX(-5%);
-                
-                .small &{
-                    
+
+                .small & {
+
                     transform: translateX(0);
                     width: 140%;
                     height: 120%;
-                    
+
                 }
             }
 
@@ -114,9 +116,10 @@ section:has(.doda-cards) {
                 background-color: #fff;
                 height: 20em;
 
-                .mobile &{
+                .mobile & {
                     height: inherit;
                 }
+
                 .mobile &,
                 .small &,
                 .medium & {
@@ -149,8 +152,6 @@ section:has(.doda-cards) {
 
                 }
             }
-
-
         }
 
         &.shower-cards {
@@ -158,30 +159,93 @@ section:has(.doda-cards) {
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            background-color: #BFA98B;
+
             padding: 40px;
 
+
+
+            h1 {
+                position: absolute;
+                transform: translateY(-110px);
+                color: $coffee-bg;
+                font-size: 4em;
+                font-weight: bold;
+
+            }
+
             .wap-card {
-                width: 15em;
+                width: 100%;
                 background-color: rgb(238, 233, 233);
                 border-radius: 1.5em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                padding: 1em;
+                position: relative;
+
+                .small &{
+                    width: 90%; 
+                }
+                .medium & {
+                    width: 12em;
+                }
+                
+                .narrow & {
+                    width: 17em;
+                }
+                .wide &{width: 22em;}
+
+                p:first-child {
+                    margin-top: 1em;
+                    color: #bfa98b;
+                    font-weight: bold;
+                    font-size: 1.5em;
+
+                    .medium & {
+                        font-size: 0.9em;
+                    }
+                }
+
+                p:nth-child(2) {
+                    margin-bottom: 5em;
+                }
+
 
             }
 
             img {
                 width: 100%;
-                border-top-left-radius: 1.5em;
-                border-top-right-radius: 1.5em;
-                object-position: top;
+                border-radius: 1.5em;
+                order: -1;
 
             }
 
+            p:last-of-type {
+                position: absolute;
+                left: 30px;
+                bottom: 5px;
+                color: #bfa98b;
+                font-size: 2em;
+                font-weight: bold;
+
+                .narrow & {
+                    font-size: 1.8em;
+                }
+            }
+
             button {
-                width: 50%;
+                position: absolute;
                 border-radius: 1.5em;
+                font-size: 1.7em;
+                right: 15px;
+                color: $coffee-bg;
+                background-color: #bfa98b;
+                bottom: 21px;
+                padding: 0.3em 0.7em;
+
+                .narrow & {
+                    font-size: 1.5em;
+                }
             }
         }
     }

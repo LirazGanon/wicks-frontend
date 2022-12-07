@@ -1,0 +1,54 @@
+.wap-form-warper {
+    &.kambucha {
+        background-color: $Kambucha-pr-clr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            color: #fff;
+            font-family: montserratBold;
+            font-size: 24px;
+            margin-block: 34px;
+            text-align: center;
+            @media (min-width: 1000px) {
+                margin-block: 54px;
+                font-size: 30px;
+            }
+        }
+
+        form {
+            margin-block-end: 34px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            @media (min-width: 1000px) {
+                flex-direction: row;
+                gap: 5vw;
+                margin-block-end: 54px;
+            }
+
+            input {
+                border: none;
+                background: none;
+                border-bottom: 2px solid #fff;
+                color: #fff;
+                outline: none;
+                font-size: 16px;
+
+                &::placeholder {
+                    color: #fff;
+                }
+                @media (min-width: 1000px) {
+                    font-size: 18px;
+                }
+            }
+            & button {
+                background-color: #fff;
+                color: #333;
+                border-radius: 4px;
+            }
+        }
+    }
+}

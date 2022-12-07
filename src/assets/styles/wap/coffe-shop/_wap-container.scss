@@ -5,6 +5,11 @@
     // background-color: aqua;
 }
 
+.wap-container-wrapper.ice-cream.coffee-shop {
+    background-position: left;
+    margin-block-end: 2em;
+}
+
 .wap-container {
     font-size: 1rem;
 
@@ -33,6 +38,8 @@
             height: 85%;
             padding: 2.5em 1.5em 2em 1.5em;
             border-radius: 1em;
+
+          
 
             .card-details {
                 display: flex;
@@ -271,12 +278,23 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 13em 13em;
-            width: 50%;
             margin-inline-start: auto;
+            width: 100%;
             height: 700px;
             place-content: center;
             gap: 30px;
-
+         
+            
+            .small &{
+                width: 80%;
+            }
+            .medium &{
+                width: 70%;
+            }
+            .narrow &{
+                width: 50%;
+            }
+            
             .wap-card {
                 * {
                     color: $coffee-bg;
@@ -291,8 +309,10 @@
                 justify-content: center;
                 gap: 1em;
 
-                h1 {
+                p {
                     font-family: Lato, sans-serif;
+                    font-weight: bold;
+                    text-align: center;
                 }
 
                 img {

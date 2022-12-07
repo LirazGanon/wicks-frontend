@@ -64,7 +64,7 @@ export default {
   methods: {
     logout() {
       console.log('baba')
-      userService.logout()
+      this.$store.dispatch({type:'logout'})
       this.$router.push('/')
     }
   },

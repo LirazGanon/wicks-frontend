@@ -10,32 +10,28 @@
       </h3>
     </div>
     <div v-else>
-      <h2>Login</h2>
-      <form @submit.prevent="doLogin">
-        <input type="text" v-model="loginCred.username" placeholder="puki">
-        <input type="text" v-model="loginCred.password" placeholder="ja">
+      <section v-if="!isLogin">
 
-        <!-- <select v-model="loginCred.username">
-          <option value="">Select User</option>
-          <option v-for="user in users" :key="user._id" :value="user.username">{{ user.fullname }}</option>
-        </select> -->
-        <!-- <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input
-          type="text"
-          v-model="loginCred.password"
-          placeholder="Password"
-        /> -->
-        <button>Login</button>
-      </form>
-      <p class="mute">user1 or admin, pass:123 </p>
-      <form @submit.prevent="doSignup">
-        <h2>Signup</h2>
-        <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-        <input type="text" v-model="signupCred.password" placeholder="Password" />
-        <input type="text" v-model="signupCred.username" placeholder="Username" />
-        <img-uploader @uploaded="onUploaded"></img-uploader>
-        <button>Signup</button>
-      </form>
+        <h2>Login</h2>
+        <form @submit.prevent="doLogin">
+          <input type="text" v-model="loginCred.username" placeholder="puki">
+          <input type="text" v-model="loginCred.password" placeholder="ja">
+
+
+          <button>Login</button>
+        </form>
+        <p class="mute">user1 or admin, pass:123 </p>
+      </section>
+      <section v-if="isLogin">
+        <form @submit.prevent="doSignup">
+          <h2>Signup</h2>
+          <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+          <input type="text" v-model="signupCred.password" placeholder="Password" />
+          <input type="text" v-model="signupCred.username" placeholder="Username" />
+          <img-uploader @uploaded="onUploaded"></img-uploader>
+          <button>Signup</button>
+        </form>
+      </section>
     </div>
     <hr />
     <details>
@@ -63,6 +59,7 @@ export default {
       msg: '',
       loginCred: { username: '', password: '' },
       signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
+      isLogin: false
     }
   },
   computed: {

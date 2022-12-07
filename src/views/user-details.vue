@@ -1,36 +1,50 @@
 <template>
   <app-header main-layout="main-header" />
   
-  <section class="top-Dashboard">
-      <h4>My Sites</h4>
-      <div>
-        <h3>{{user.fullname}}'s Backoffice'</h3>
-      </div>
-  </section>
   <section v-if="user" class="dashboard">
+    
+    <section class="top-dashboard">
+        <h4>My Sites</h4>
+        <div>
+          <h3>{{user.fullname}}'s Backoffice'</h3>
+        </div>
+    </section>
+
+    <section class="left-user-nav">
+
+      <ul>
+        <li v-for="wap in userWaps">
+          {{ wap.name }}
+        </li>
+
+        <li @click="logout">
+          Logout
+        </li>
+  
+      </ul>
+    </section>
+
+    <section class="main-dashboard">
+
+      <section class="wap-table">
+
+      </section>
+
+      <section class="dashboard-stats">
+
+      </section>
+
+    </section>
 
 
-    <ul>
-      <li v-for="wap in userWaps">
-        {{ wap.name }}
-      </li>
 
-    </ul>
-
-
-
-    <button @click="logout">Logout</button>
 
     <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
 
-    <pre>{{ user }}</pre>
+    <!-- <pre>{{ user }}</pre>
     <pre>{{ userWaps.length }}</pre>
     <div v-for="wap in userWaps">{{ wap.name }}</div>
-    <ul>
-      <li>
-      </li>
-    </ul>
-
+     -->
   </section>
 </template>
 

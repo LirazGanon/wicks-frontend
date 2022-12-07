@@ -33,18 +33,20 @@ export default {
 
   data() {
     return {
-
+      filterBy: {
+        userId: ''
+      }
       // user: null
     }
   },
   async created() {
-    const userId = this.userId
-    await this.$store.dispatch({type:'getUserWaps', userId})
+    this.filterBy.userId = this.userId
+    await this.$store.dispatch({ type: 'getWaps', filterBy:this.filterBy })
     // const user = await userService.getById(id)
     // this.user = user
   },
-  methods:{
-    logout(){
+  methods: {
+    logout() {
       console.log('baba')
       userService.logout()
       this.$router.push('/')
@@ -67,8 +69,8 @@ export default {
     userId() {
       return this.$route.params.id
     },
-    userWaps(){
-    return this.$store.getter.userWaps
+    userWaps() {
+      return this.$store.getter.userWaps
     }
   },
 }

@@ -4,6 +4,8 @@
     <h1>User Details - {{ user.fullname }}</h1>
     <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
     <img style="max-width: 200px;" :src="user.imgUrl" />
+    <img v-for="wap in userWaps" :src="wap.src" alt="">
+    {{userWaps[0]}}
     <!-- <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
         {{ review.txt }}
@@ -33,6 +35,7 @@ export default {
 
   data() {
     return {
+      userWaps:[],
       filterBy: {
         userId: ''
       }
@@ -41,7 +44,8 @@ export default {
   },
   async created() {
     this.filterBy.userId = this.userId
-    await this.$store.dispatch({ type: 'getWaps', filterBy:this.filterBy })
+    const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
+    this.userWaps = userWaps
     // const user = await userService.getById(id)
     // this.user = user
   },
@@ -69,9 +73,9 @@ export default {
     userId() {
       return this.$route.params.id
     },
-    userWaps() {
-      return this.$store.getter.userWaps
-    }
+    // userWaps() {
+    //   return this.$store.getter.userWaps
+    // }
   },
 }
 </script>

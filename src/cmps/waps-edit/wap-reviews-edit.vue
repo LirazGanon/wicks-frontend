@@ -1,5 +1,5 @@
 <template>
-    <div class="main-layout full" :class="[...cmp.classes, selected]">
+    <div class="main-layout full" :class="[...cmp.classes, selected]" :style="cmp.style">
         <section class="wap-reviews" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')" :class="cmp.classes" 
 >
 

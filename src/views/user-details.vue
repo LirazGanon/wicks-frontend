@@ -4,8 +4,7 @@
     <h1>User Details - {{ user.fullname }}</h1>
     <!-- <h3>{{ user.username }} score: {{ user.score }}</h3> -->
     <img style="max-width: 200px;" :src="user.imgUrl" />
-    <img v-for="wap in userWaps" :src="wap.src" alt="">
-    {{userWaps[0]}}
+    <img v-for="wap in userWaps" :src="wap.src" alt="site img">
     <!-- <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
         {{ review.txt }}

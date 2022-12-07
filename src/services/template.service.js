@@ -1,6 +1,8 @@
 
 import { utilService } from './util.service.js'
 import { httpService } from './http.service.js'
+import { userService } from './user.service'
+import { wapService } from './wap.service.js'
 
 // import { userService } from './user.service.js'
 // import defaultTemplates from './json/wap.json' assert{type: 'json'}
@@ -37,9 +39,14 @@ async function getTemplate(id) {
     return  template
 }
 async function getTemplateToEdit(id) {
-    const template = await httpService.get(`wap/template/edit/${id}`)
-    return  template
+    let template = await httpService.get(`wap/template/edit/${id}`)
+    const user = userService.getLoggedinUser()
+    if(!user)return  template
+    template = wapService.updateOwner(template, user)
+    return template
 }
+
+
 
 // async function getCustomWap(wapId) {
 //     // const wapToEdit = await JSON.parse(JSON.stringify(getById(wapId)))

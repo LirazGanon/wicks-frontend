@@ -38,7 +38,7 @@ export default {
       this.$emit('setIsLoading', false)
     },
     viewTemplate(templateId) {
-      this.$router.push(`/wap/${templateId}`);
+      this.$router.push({path: `/wap/${templateId}/true`});
       console.log(this.template)
     },
   },

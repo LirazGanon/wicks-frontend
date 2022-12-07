@@ -124,8 +124,9 @@ a:hover {
 .selected1 {
     // border: 5px dashed $primary-clr;
     position: relative;
-    &::before{
-        content: '';
+    &::before {
+        content: "";
+        pointer-events: none;
         position: absolute;
         background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23873DC8FF' stroke-width='6' stroke-dasharray='6%2c 18' stroke-dashoffset='51' stroke-linecap='square'/%3e%3c/svg%3e");
         width: 100%;
@@ -136,4 +137,8 @@ a:hover {
 .page-editor *:focus-visible {
     outline: dashed 2px;
     margin-inline: 2px;
+}
+
+button {
+    border: none;
 }

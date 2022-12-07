@@ -1,53 +1,105 @@
+.wap-container-wrapper:has(.doda-cards) {
+    overflow: hidden;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    
+    .mobile &{
+        margin-top: 0em;
+        padding-top: 15em;
+    }
+    
+    .narrow &{
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
 section:has(.doda-cards) {
     // background-color: aqua;
     // background-size: 100% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-size: cover;
+    // background-repeat: no-repeat;
 }
 
 .wap-container {
 
     &.coffee-shop {
-
         * {
             color: $text-primary;
         }
 
-        @media (max-width: 650px) {
-            flex-direction: column;
-        }
+       
 
 
 
         &.doda-cards {
             position: relative;
-            height: 900px;
             display: flex;
             gap: 30px;
             justify-content: center;
             align-items: flex-end;
-            width: 100%;
+            width: 90%;
+            $img-height: 900px;
+            flex-wrap: wrap;
+
+            .narrow &{
+                flex-wrap:nowrap !important;
+                height: $img-height;
+            }
+
+
+
+            >div:has(.wap-card) {
+           
+                .small &,
+                .medium & {
+                    width: 40%;
+                }
+                .narrow &{
+
+                    margin-bottom: 5em;
+                }
+
+                
+
+            }
 
             // position: relative;
-            .bg-img {
-                background-image: url("https://res.cloudinary.com/dzghqfyip/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg");
-                height: 90%;
+            .wap-img {
                 z-index: -1;
                 width: 99%;
                 position: absolute;
-                // transform: translateY(-312px);
-                background-position: 0,100px;
-                    background-size: cover;
-                    // background-repeat: no-repeat;
+                height: $img-height;
+                transform: translateX(-20%);
+                
+                .mobile & {
+                    top:0;
+                    transform: translateY(-30%);
+                    
+                }
+                .narrow &{
+                    padding: 0;
+                }
             }
 
             img {
-                position: absolute;
-                z-index: -1;
-                // height: 50%;
-                width: 100px;
-                // display: none;
+                
+                width: 110%;
+                height: 50%;
                 object-fit: cover;
+                object-position:center -100px;
+                transform: translateX(-5%);
+                
+                .small &{
+                    
+                    transform: translateX(0);
+                    width: 140%;
+                    height: 120%;
+                    
+                }
             }
 
 
@@ -58,9 +110,20 @@ section:has(.doda-cards) {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                height: 20em;
                 width: 14em;
                 background-color: #fff;
+                height: 20em;
+
+                .mobile &{
+                    height: inherit;
+                }
+                .mobile &,
+                .small &,
+                .medium & {
+                    width: 100%;
+                }
+
+
 
                 h1 {
                     color: #BFA98B;
@@ -90,34 +153,37 @@ section:has(.doda-cards) {
 
         }
 
-    }
-
-    &.shower-cards{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        background-color: #BFA98B;
-        padding: 40px;
-
-        .wap-card{
-            width: 15em;
-            background-color: rgb(238, 233, 233);
-            border-radius: 1.5em;
+        &.shower-cards {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-    
-        }
-        img{
-        width: 100%;
-        border-top-left-radius:1.5em ;
-        border-top-right-radius:1.5em ;
-    
-        }
-        button{
-        width: 50%;
-        border-radius: 1.5em;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background-color: #BFA98B;
+            padding: 40px;
+
+            .wap-card {
+                width: 15em;
+                background-color: rgb(238, 233, 233);
+                border-radius: 1.5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+
+            img {
+                width: 100%;
+                border-top-left-radius: 1.5em;
+                border-top-right-radius: 1.5em;
+                object-position: top;
+
+            }
+
+            button {
+                width: 50%;
+                border-radius: 1.5em;
+            }
         }
     }
+
 }

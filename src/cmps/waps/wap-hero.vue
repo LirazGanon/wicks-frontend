@@ -1,5 +1,5 @@
 <template>
-    <section class="main-layout full" :style="cmp.style">
+    <section class="main-layout full wap-hero-wrapper" :style="cmp.style">
 
         <section class="wap-hero " :class="cmp.classes">
 
@@ -8,6 +8,7 @@
             <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">
                 {{ btn.txt }}
             </button>
+          
                 <img v-for="img in cmp.info.imgs" :src="img.src"  alt="" class="wap-img" :class="img.classes" :style="img.style">
                     
 

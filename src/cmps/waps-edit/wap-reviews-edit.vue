@@ -1,18 +1,22 @@
 <template>
-    <section class="wap-reviews" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"
-        :class="[...cmp.classes, selected]">
+    <div class="main-layout full" :class="cmp.classes">
+        <section class="wap-reviews" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"
+            :class="[...cmp.classes, selected]">
 
-        <h4 contenteditable="true" @click.stop="openEditor('heading')" @mousedown.stop
-            @blur="updateCmp($event, 'heading')" :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
+            <h4 contenteditable="true" @click.stop="openEditor('heading')" @mousedown.stop
+                @blur="updateCmp($event, 'heading')" :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
 
-        <section class="reviews-container">
-            <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop="openEditor('reviews', idx)" @mousedown.stop
-                :style="review.style">
-                <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx)">{{ review.txt }}</p>
-                <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx, 'author')">{{ review.author }}</p>
-            </div>
+            <section class="reviews-container">
+                <div v-for=" ( review, idx) in cmp.info.reviews" @click.stop="openEditor('reviews', idx)"
+                    @mousedown.stop :style="review.style">
+                    <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx)">{{ review.txt }}</p>
+                    <p contenteditable="true" @blur="updateCmp($event, 'reviews', idx, 'author')">{{ review.author }}
+                    </p>
+                </div>
+            </section>
+
         </section>
-    </section>
+    </div>
 
 </template>
 <script>

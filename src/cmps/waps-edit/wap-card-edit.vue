@@ -1,6 +1,6 @@
 <template>
     <section class="wap-card" v-if="cmp.info" :class="cmp.classes">
-        <section class="card-details">
+        <section class="card-details"> 
 
         <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" :style="cmp.info.heading?.style"
             @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>

@@ -15,7 +15,7 @@
             grid_view
           </span>
         </article>
-
+<!-- 
         <article>
 
           <router-link to="/review">Reviews</router-link>
@@ -23,7 +23,7 @@
         <article>
 
           <router-link to="/chat">Chat</router-link>
-        </article>
+        </article> -->
 
         <article class="loggedin-user flex" v-if="loggedInUser">
           <router-link :to="`/user/${loggedInUser._id}`">

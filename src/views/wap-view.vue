@@ -18,6 +18,7 @@ import wapHeader from '../cmps/waps/wap-header.vue'
 import wapHero from '../cmps/waps/wap-hero.vue'
 import wapForm from '../cmps/waps/wap-form.vue'
 import wapMap from '../cmps/waps/wap-map.vue'
+import wapTube from'../cmps/waps/wap-tube.vue'
 import wapContainer from '../cmps/waps/wap-container.vue'
 
 import wapContact from '../cmps/waps/wap-contact.vue'
@@ -26,7 +27,6 @@ import wapBgImg from '../cmps/waps/wap-bg-img.vue'
 import wapGallery from '../cmps/waps/wap-gallery.vue'
 
 import wapFooter from '../cmps/waps/wap-footer.vue'
-
 
 // import { templateService } from '../services/template.service.js'
 import { wapService } from '../services/wap.service.js'
@@ -37,7 +37,7 @@ export default {
     props: {},
     components: { Draggable, Container, wapHeader, wapHero, wapForm,
                  wapContainer, wapContact, wapReviews, wapFooter, wapBgImg, 
-                 wapGallery, wapMap },
+                 wapGallery, wapMap, wapTube },
     data() {
         return {
             view: {},

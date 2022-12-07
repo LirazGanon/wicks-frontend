@@ -1,11 +1,16 @@
 <template>
-    <section class="main-layout full wap-form-warper" :style="cmp.style" :class="[...cmp.classes, selected]" @click.stop="openSectionEditor"  @mousedown="$emit('acceptDrop')" >
+    <section class="main-layout full wap-form-warper" :style="cmp.style" :class="[...cmp.classes, selected]"
+        @click.stop="openSectionEditor" @mousedown="$emit('acceptDrop')">
 
         <section class="wap-form">
-            <h1 v-if="cmp.info.heading.txt" @click.stop @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
+            <h1 v-if="cmp.info.heading.txt" :style="cmp.info.heading.style" @click.stop
+                @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
 
-
-            <h1 v-if="cmp.info.subHeading.txt">{{ cmp.info.subHeading.txt }}</h1>
+            <p  contenteditable="true" v-if="cmp.info.subHeading" @click.stop @mousedown.stop="openEditor('subHeading')"
+                :style="cmp.info.subHeading?.style"  @blur="updateCmp($event, 'subHeading')">
+                {{
+                        (cmp.info.subHeading?.txt)
+                }}</p>
 
             <form action="" v-if="cmp.info.inputs" @submit.prevent>
                 <div v-for="input in cmp.info.inputs">

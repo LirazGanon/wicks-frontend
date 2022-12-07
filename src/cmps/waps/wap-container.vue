@@ -1,18 +1,21 @@
 <template>
 
     <section class="main-layout full  wap-container-wrapper" :style="cmp.style">
-        
 
-        <section class="wap-container" :class="cmp.classes" >
 
-           <div v-if="(cmp.style[background-image])" class="bg-img"></div>
+        <section class="wap-container" :class="cmp.classes">
+
+            <h1 v-if="cmp.info.heading" :style="cmp.info.heading.style">
+                {{ cmp.info.heading.txt }}
+
+            </h1>
 
 
             <div v-for="childCmp in cmp.cmps">
                 <component :is="(childCmp.type)" :cmp="childCmp" :cmpId="cmp.id" />
             </div>
 
-            <div v-if="cmp.info.price">{{cmp.info.price}}</div>
+            <div v-if="cmp.info.price">{{ cmp.info.price }}</div>
 
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="img in cmp.info.imgs" :src="img.src" alt="" :style="img.style">

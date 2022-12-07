@@ -1,14 +1,18 @@
 <template>
     <!-- <h2>{{ info }}</h2> -->
-    <section class="main-layout full wap-container-wrapper" v-if="cmp" @click="openSectionEditor" @mousedown="$emit('acceptDrop')" :style="cmp.style" :class="[...cmp.classes, selected]">
+    <section class="main-layout full wap-container-wrapper" v-if="cmp" @click="openSectionEditor"
+        @mousedown="$emit('acceptDrop')" :style="cmp.style" :class="[...cmp.classes, selected]">
 
-        <section class="wap-container"  :style="cmp.style" :class="cmp.classes">
+        <section class="wap-container"  :class="cmp.classes">
+
+            <h1 v-if="cmp.info.heading?.txt" :style="cmp.info.heading.style" @click.stop
+                @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
                 @openEditor="$emit('openEditor', $event)" />
             <!-- TODO:IMG EDITOR -->
             <section class="wap-img" v-if="cmp.info.imgs">
-                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style"  @dragstart.prevent
+                <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style" @dragstart.prevent
                     @mousedown.stop="openEditor('imgs', idx)" @click.stop>
             </section>
 
@@ -36,8 +40,8 @@ export default {
         };
     },
     created() {
-        
-     },
+
+    },
     methods: {
 
         openSectionEditor() {

@@ -1,6 +1,6 @@
 <template>
-  <div v-show="alive" class="alert" :class="alertClass">
-    {{ msg?.txt }}
+  <div  class="alert" ref="msg" >
+    {{ msg }}
   </div>
 </template>
 
@@ -12,12 +12,16 @@ export default {
   name:'user-msg',
   created() {
     eventBus.on(SHOW_MSG, (msg) => {
+      const el = this.$refs.msg
+      console.log(el);
       this.msg = msg
-      var delay = msg.delay || 2000
-      this.alive = true
+      var delay =  2000
+      // this.alive = true
+      el.classList.add('shown')
       window.scrollTo({top: 0, behavior: 'smooth'});
       setTimeout(() => {
-        this.alive = false
+        // this.alive = false
+        el.classList.remove('shown')
       }, delay)
     })
   },

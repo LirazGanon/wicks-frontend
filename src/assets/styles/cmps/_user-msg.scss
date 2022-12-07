@@ -1,11 +1,19 @@
-
-
 .alert {
-    background-color: lightgray;
-    position: absolute;
-    top: 0;
-    right: 0.5em;
+    background-color: #fff;
+    box-shadow: 0 0 3px #3335;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 2500;
+    overflow: hidden;
+    transition: .3s;
+    border-left: 6px solid $primary-clr;
     padding: 1em;
+    transform: translateX(-200%);
+    
+    &.shown {
+        transform: translateX(0);
+    }
     &.alert-success {
         background-color: lightgreen;
     }
@@ -13,4 +21,3 @@
         background-color: lightcoral;
     }
 }
-

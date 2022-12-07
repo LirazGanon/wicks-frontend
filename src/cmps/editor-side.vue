@@ -95,6 +95,7 @@ import txtEditor from './txt-editor.vue'
 import imgEditor from './img-editor.vue'
 import sectionEditor from './section-editor.vue'
 import { utilService } from '../services/util.service'
+import { showUserMsg } from '../services/event-bus.service'
 
 
 export default {
@@ -185,7 +186,9 @@ export default {
             else this.active = null
         },
         placholder() {
-            alert('Hi King!')
+            const ref = window.location.href
+            navigator.clipboard.writeText(ref)
+            showUserMsg('Url copied! send it to work together')
         },
 
         clear() {

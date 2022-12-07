@@ -3,7 +3,7 @@
     <section class="main-layout full wap-container-wrapper" v-if="cmp" @click="openSectionEditor"
         @mousedown="$emit('acceptDrop')" :style="cmp.style" :class="[...cmp.classes, selected]">
 
-        <section class="wap-container" :style="cmp.style" :class="cmp.classes">
+        <section class="wap-container"  :class="cmp.classes">
 
             <h1 v-if="cmp.info.heading?.txt" :style="cmp.info.heading.style" @click.stop
                 @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>

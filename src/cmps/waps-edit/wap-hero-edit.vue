@@ -2,18 +2,18 @@
 
     <section class="main-layout full wap-hero-wrapper" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"   :class="[...cmp.classes, selected]">
 
-        <section class="wap-hero " :style="cmp.style" :class="cmp.classes">
+        <section class="wap-hero "  :class="cmp.classes">
 
-            <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" :style="cmp.info.heading.style"
+            <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" v-if="cmp.info.heading" :style="cmp.info.heading.style"
                 @blur="updateCmp($event, 'heading')">
                 {{ cmp.info.heading.txt }}
             </h1>
-            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
+            <p contenteditable="true" v-if="cmp.info.subHeading" @click.stop @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
                 @blur="updateCmp($event, 'subHeading')">{{
                         (cmp.info.subHeading?.txt)
                 }}</p>
 
-            <button contenteditable="true" v-for="(btn, idx) in cmp.info.btns" @click.stop @mousedown.stop="openEditor('btns', idx)"
+            <button contenteditable="true" v-if="cmp.info.btns" v-for="(btn, idx) in cmp.info.btns" @click.stop @mousedown.stop="openEditor('btns', idx)"
                 :style="btn.style">
                 {{ btn.txt }}
             </button>

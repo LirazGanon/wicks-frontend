@@ -1,6 +1,6 @@
 <template>
 
-    <section class="main-layout full" :style="cmp.style">
+    <section class="main-layout full  wap-container-wrapper" :style="cmp.style">
         
 
         <section class="wap-container" :class="cmp.classes" >

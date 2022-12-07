@@ -1,7 +1,7 @@
 .wap-hero-wrapper {
     &.kombucha {
-        background-size: cover;
         background-repeat: no-repeat;
+        background-size: cover;
         background-position: center;
         background-size: 100%;
     }
@@ -51,6 +51,42 @@
                     width: 200px;
                 }
             }
+        }
+
+        &.nine {
+            display: grid;
+            margin-inline: auto;
+            grid-template-columns: repeat(3, minmax(100px, .6fr));
+            grid-auto-rows: minmax(100px, .6fr);
+            padding-block-end: 50px;
+            grid-template-areas:
+                "header header header"
+                "g1 g2 g3"
+                "g4 g5 g6"
+                "g7 g8 g9"
+                "g10 g11 g12";
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            h1 {
+                width: 100%;
+                grid-area: header;
+                text-align: center;
+                display: grid;
+                place-content: center;
+                font-size: 2em;
+                margin: 0;
+                color: $Kambucha-pr-clr;
+                letter-spacing: 0.1em;
+                @media (min-width:800px){
+                    font-size: 4em;
+                }
+            }
+
+
         }
     }
 }

@@ -2,13 +2,17 @@
 
     <!-- <pre>{{cmp.info}}</pre> -->
     <section class="wap-card" :class="cmp.classes">
-        <img  v-if="cmp.info.imgs" v-for="img in cmp.info.imgs" :src="img.src" alt="">
-        <h1 v-if="cmp.info.heading">{{ cmp.info.heading?.txt }}</h1>
-        <p v-if="cmp.info.subHeading">{{ cmp.info.subHeading?.txt }}</p>
-        <p v-if="cmp.info.texts" v-for="txt in cmp.info.texts">{{ txt.txt }}</p>
-        <p v-if="cmp.info.price">{{localeCurrency}}</p>
+       
+        <section class="card-details">
 
-        <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">{{ btn.txt }}</button>
+            <h1 v-if="cmp.info.heading">{{ cmp.info.heading?.txt }}</h1>
+            <p v-if="cmp.info.subHeading">{{ cmp.info.subHeading?.txt }}</p>
+            <p v-if="cmp.info.texts" v-for="txt in cmp.info.texts">{{ txt.txt }}</p>
+            <p v-if="cmp.info.price">{{ localeCurrency }}</p>
+
+            <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">{{ btn.txt }}</button>
+        </section>
+        <img v-if="cmp.info.imgs" v-for="img in cmp.info.imgs" :src="img.src" alt="">
     </section>
 
 </template>
@@ -23,9 +27,9 @@ export default {
     created() { },
     methods: {},
     computed: {
-    localeCurrency(){
-        return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-    }
+        localeCurrency() {
+            return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+        }
     },
     unmounted() { },
 };

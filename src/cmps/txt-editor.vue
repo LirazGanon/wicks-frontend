@@ -123,6 +123,7 @@ export default {
             const cmp = this.getCurrCmp(path)
             const copyCmp = utilService.copy(cmp)
             let elCopy
+
             if (elIdx !== undefined) {
                 elCopy = copyCmp.info[key][elIdx]
             } else {
@@ -130,6 +131,7 @@ export default {
             }
             elCopy.style[att] = val
             console.log(elCopy);
+            console.log(path);
             // CMP UPDATE
             if (elIdx !== undefined) {
                 copyCmp.info[key][elIdx] = elCopy
@@ -156,7 +158,6 @@ export default {
         getCurrCmp(path) {
             const wap = this.$store.getters.getLastState
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === path.id)
-
             if (path.idx !== undefined) {
                 return wap.cmps[cmpIdx].cmps[path.idx]
             } else {

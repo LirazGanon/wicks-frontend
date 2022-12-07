@@ -13,6 +13,7 @@ export const wapService = {
     save,
     remove,
     // getCustomWap,
+    updateOwner,
     getByUserId,
     addWapMsg
 }
@@ -67,6 +68,15 @@ async function addWapMsg(wapId, txt) {
     return savedMsg
 }
 
+function updateOwner(wap, user){
+    const {_id, fullname, imgUrl}= user
+    const {createdBy} = wap
+    createdBy._id = _id
+    createdBy.fullname = fullname
+    createdBy.src = imgUrl
+    wap.createdBy = createdBy
+    return wap
+ }
 
 // function getCustomWap() {
 //     return {

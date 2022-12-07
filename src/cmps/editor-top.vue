@@ -42,10 +42,10 @@
                 </div>
                 <div class="site-publish">
                     
-                    <router-link :to="(`/wap/` + wapId)" class="flex">
+                    <div @click="publish" class="flex">
                         <span>Publish</span><span class="material-symbols-outlined">
                             publish
-                        </span></router-link>
+                        </span></div>
     
                 </div>
 
@@ -94,7 +94,10 @@ export default {
         getHistory() {
             // TODO: IM FOR REDO UNDO
             return this.$store.getters.getHistory
-        }
+        },
+        publish(){
+            this.$emit('published')
+        },
     },
     watch: {
 

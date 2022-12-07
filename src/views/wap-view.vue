@@ -1,7 +1,7 @@
 <template>
-   
 
-    <div class="wap-view"  ref="view" :class="[responsiveClass]">
+
+    <div class="wap-view" ref="view" :class="[responsiveClass]">
         <div v-for="cmp in view.cmps" :key="cmp.id">
             <div class="main-layout full">
                 <component :is="cmp.type" :cmp="cmp" />
@@ -52,11 +52,20 @@ export default {
         async getCurrWap() {
             // TODO:ARRANGE THE PARAMS TO DIFFER BETWEEN WAP AND TEMPLATE
             const id = this.$route.params.wapId
+            const { isTemplate } = this.$route.params
+            console.log(this.$route.params);
+            // const {isTemplate }= this.$route.data
             // const wap = await wapService.getById(id)
-            const template = await templateService.getTemplate(id)
-            console.log(template)
-            console.log(this.view)
-            this.view = template
+            console.log(isTemplate);
+            let wap
+            if (isTemplate) {
+                wap = await templateService.getTemplate(id)
+            } else {
+                wap = await wapService.getById(id)
+            }
+            // console.log(template)
+            // console.log(this.view)
+            this.view = wap
         },
         resized() {
             if (!this.$refs.view) return

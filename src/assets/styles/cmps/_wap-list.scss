@@ -1,7 +1,15 @@
 .wap-list-container {
     margin-block-start: 3.125em;
     font-family: workSans;
-
+    grid-template-columns: 20px 1fr 20px;
+    
+    @media (min-width:1000px){
+        
+        grid-template-columns: 80px 1fr 80px;
+    }
+    @media (min-width:1600px){
+        grid-template-columns: 1fr 1400px 1fr;
+    }
     h1 {
         font-size: em(16px);
         width: 18pc;
@@ -31,7 +39,7 @@
 
     .wap-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 1.5em;
         min-width: 100%;
         margin: 0 0;

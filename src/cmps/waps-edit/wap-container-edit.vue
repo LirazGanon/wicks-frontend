@@ -3,7 +3,7 @@
     <section class="main-layout full wap-container-wrapper" v-if="cmp" @click="openSectionEditor"
         @mousedown="$emit('acceptDrop')" :style="cmp.style" :class="[...cmp.classes, selected]">
 
-        <section class="wap-container" :class="cmp.classes" :style="cmp.style">
+        <section class="wap-container" :class="cmp.classes" :style="getCmpStyle">
 
             <h1 v-if="cmp.info.heading?.txt" :style="cmp.info.heading.style" @click.stop
                 @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
@@ -14,7 +14,7 @@
             </div>
             <!-- TODO:IMG EDITOR -->
             <div v-if="cmp.info.price">{{ cmp.info.price }}</div>
-            
+
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style" @dragstart.prevent
                     @mousedown.stop="openEditor('imgs', idx)" @click.stop>
@@ -77,6 +77,12 @@ export default {
     computed: {
         selected() {
             return this.isSelected ? 'selected1' : ''
+        },
+        getCmpStyle() {
+            const style = utilService.copy(this.cmp.style)
+            delete style['background-image']
+            console.log('style:', style)
+            return style
         }
     },
     unmounted() { },

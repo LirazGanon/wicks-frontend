@@ -36,7 +36,7 @@
             .logout-user-dash {
                 border-top: 1px solid #5555;
             }
-            .curr-user-waps{
+            .curr-user-waps {
                 overflow-y: auto;
             }
             li {
@@ -50,7 +50,7 @@
                 &:not(.logout-user-dash):hover {
                     background-color: #5555;
                 }
-                &.logout-user-dash{
+                &.logout-user-dash {
                     width: 100%;
                     bottom: 0;
                     left: 0;
@@ -60,14 +60,16 @@
         .main-dashboard {
             flex: 1;
 
-            .chosen-wap-display{
-
-                .chosen-wap-img{
-                    height: 400px;
-                    width: 600px;
-                    background: red;
+            .chosen-wap-display {
+                .chosen-wap-img {
+                    height: 200px;
+                    width: 300px;
+                    border-radius: 1em;
+                    box-shadow: 1px 1px 3px #5555 ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
-
             }
         }
     }

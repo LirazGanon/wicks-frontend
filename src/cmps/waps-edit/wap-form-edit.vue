@@ -14,24 +14,31 @@
                         (cmp.info.subHeading?.txt)
                 }}</p>
 
-            <form action="" v-if="cmp.info.inputs" @submit.prevent>
-                <div v-for="input in cmp.info.inputs">
-                    <label>
-                        <span v-if="input.label">{{ input.label }}</span>
-                        <input v-if="input.inpType === 'input'" :type="input.inpContentType"
-                            :placeholder="input.placeholder" :required="input.isRequired">
 
-                        <textarea v-if="input.inpType === 'textarea'" :type="input.inpContentType">
-                </textarea>
-                    </label>
+            <form @submit.prevent>
 
-                </div>
+                <label v-if="cmp.info.textInput">
+                    <span v-if="cmp.info.textInput?.label">{{ cmp.info.textInput.label }}</span>
+                    <input type="text" :placeholder="cmp.info.textInput.placeholder" />
+
+                </label>
+                <label v-if="cmp.info.emailInput">
+                    <span v-if="cmp.info.emailInput?.label">{{ cmp.info.emailInput.label }}</span>
+                    <input type="email" :placeholder="cmp.info.emailInput.placeholder" />
+                </label>
+                <label v-if="cmp.info.textarea">
+                    <span v-if="cmp.info.textarea?.label">{{ cmp.info.textarea.label }}</span>
+                    <textarea v-if="cmp.info.textarea"></textarea>
+                </label>
+
                 <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
                     @mousedown.stop="openEditor('btns', idx)" :style="btn.style"
                     @blur="updateCmp($event, 'btns', idx)">{{
         btn.txt
                     }}</button>
             </form>
+
+
 
             <!-- <pre>{{ cmp.info.inputs }}</pre> -->
         </section>

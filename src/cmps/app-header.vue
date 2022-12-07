@@ -12,7 +12,7 @@
         <article>
           <router-link to="/wap">Template</router-link>
         </article>
-<!-- 
+        <!-- 
         <article>
 
           <router-link to="/review">Reviews</router-link>
@@ -31,7 +31,7 @@
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
         </article>
-        <router-link v-else to="/login">Login / Signup</router-link>
+        <router-link v-else to="/login" v-if="!hideLogin">Login / Signup</router-link>
       </nav>
 
       <div class="burger" :class="{ active: !menuOpen }" @click="(menuOpen = !menuOpen)">
@@ -52,7 +52,7 @@ import 'animate.css'
 
 export default {
   props: {
-    noLogo: Boolean, mainLayout: String
+    noLogo: Boolean, mainLayout: String, hideLogin: Boolean
   },
   name: 'main-header',
   data() {

@@ -1,0 +1,173 @@
+body {
+    overflow-x: hidden;
+}
+
+.whole-login {
+    height: 100vh;
+    .bubble-move{
+
+        display: none;
+    }
+    @media (min-width: 1000px) {
+        .bubble-move {
+            display: block;
+            background-color: #8882;
+            position: absolute;
+
+            border-radius: 62% 38% 43% 57% / 42% 63% 37% 58%;
+            animation: animateBubble 14s linear infinite;
+            &:nth-child(1) {
+                height: 400px;
+                width: 400px;
+                left: 20%;
+                top: 70%;
+                animation: jump 6s linear infinite;
+            }
+
+            &:nth-child(2) {
+                height: 200px;
+                width: 200px;
+                left: 20%;
+                top: 20%;
+                animation: animateBubble 24s linear infinite;
+            }
+            &:nth-child(3) {
+                height: 450px;
+                width: 450px;
+                left: 80%;
+                top: 60%;
+                animation: animateBubble 44s linear infinite;
+            }
+
+            @keyframes jump {
+                0%,
+                100% {
+                    transform: translate(-50%, -50%);
+                }
+                50% {
+                    transform: translate(-50%, -30%);
+                }
+            }
+            @keyframes animateBubble {
+                0% {
+                    border-radius: 62% 38% 43% 57% / 42% 63% 37% 58%;
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+
+                50% {
+                    border-radius: 21% 79% 26% 74% / 43% 65% 35% 57%;
+                    transform: translate(-50%, -50%) rotate(180deg);
+                }
+                100% {
+                    border-radius: 49% 51% 70% 30% / 28% 34% 66% 72%;
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
+        }
+    }
+    .login-form {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: lato;
+        transition: all 0.3s;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -110%);
+
+        margin-block-start: 100px;
+        background: linear-gradient(45deg, #c78afb 20%, #ff82d8, #ff8daa, #ffac7f);
+        width: 450px;
+        height: 450px;
+        margin-inline: auto;
+        border-radius: 33% 67% 68% 32% / 30% 38% 62% 70%;
+        box-shadow: -20px 25px #6661;
+        color: #eee;
+
+        & > section {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        h2 {
+            font-size: 40px;
+            font-family: montserratBold;
+            letter-spacing: 0.15em;
+            text-align: center;
+            margin-block: 15px;
+        }
+
+        input {
+            outline: none;
+            // color: ;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #eee;
+            padding-inline-start: 6px;
+            padding-block: 4px;
+            color: #eee;
+            font-family: lato;
+            &::placeholder {
+                color: #eee9;
+            }
+        }
+        button {
+            background: $primary-clr;
+            color: #eee;
+            border: 1px solid #eee5;
+            font-size: 18px;
+            margin-block-end: 20px;
+            margin-block-start: 40px;
+            margin-inline: auto;
+            padding: 10px 44px;
+            width: auto;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: lighten($primary-clr, 2%);
+            }
+        }
+        p {
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            width: auto;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+        }
+
+        .fail-to-login {
+            position: absolute;
+        }
+        span {
+            transition: 0.3s;
+            position: relative;
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                bottom: -3px;
+                background: #eee;
+                transition: 0.5s;
+            }
+            &:hover::after {
+                width: 45px;
+            }
+        }
+
+        &.signup {
+            width: 450px;
+            height: 500px;
+            border-radius: 46% 54% 34% 66% / 60% 63% 37% 40%;
+        }
+    }
+}

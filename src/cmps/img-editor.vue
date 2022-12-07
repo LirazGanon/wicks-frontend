@@ -19,9 +19,10 @@
                     <span>Insert an image src: </span>
                     <input type="text" :value="getSrc?.src" @input="updateSrc">
                 </label>
-                <p>OR</p>
+                <p> </p>
                 <img-uploader @uploaded="changeImg" />
             </section>
+            <hr>
         </section>
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
             <span>Border-radius: </span>

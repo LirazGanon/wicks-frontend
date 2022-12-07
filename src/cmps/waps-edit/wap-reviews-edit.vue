@@ -1,7 +1,7 @@
 <template>
-    <div class="main-layout full" :class="cmp.classes">
-        <section class="wap-reviews" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"
-            :class="[...cmp.classes, selected]">
+    <div class="main-layout full" :class="[...cmp.classes, selected]" :style="cmp.style">
+        <section class="wap-reviews" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')" :class="cmp.classes" 
+>
 
             <h4 contenteditable="true" @click.stop="openEditor('heading')" @mousedown.stop
                 @blur="updateCmp($event, 'heading')" :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}</h4>
@@ -88,7 +88,7 @@ export default {
     },
     computed: {
         selected() {
-            return this.isSelected ? 'selected' : ''
+            return this.isSelected ? 'selected1' : ''
         }
     },
     unmounted() { },

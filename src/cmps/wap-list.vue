@@ -1,6 +1,7 @@
 <template>
   <section class="wap-list-container main-layout">
 
+    <div class="bubble-list"></div>
 
     <h1>Pick one of our professionally designed website templates</h1>
       <h4>Or express your inner creativity and start from blank</h4>

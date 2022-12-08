@@ -114,15 +114,15 @@ export default {
             themes: {
                 a: {
                     main: {
-                        'background-color': '#333333',
+                        'background-color': '#6B5A7D',
                         'color': '#ffffff'
                     },
                     secondary: {
-                        'background-color': '#345543',
+                        'background-color': '#D293B9',
                         'color': '#333333'
                     },
                     break: {
-                        'background-color': '#556778',
+                        'background-color': '#FFB08F',
                         'color': '#333333'
                     }
                 },

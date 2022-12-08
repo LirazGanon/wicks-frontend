@@ -44,6 +44,7 @@ header {
         background-color: transparent;
         position: relative;
         display: flex;
+        grid-area: c;
         * {
             color: $text-primary;
             font-size: 1.1em;
@@ -150,12 +151,23 @@ header {
     @media (min-width: 1000px) {
         margin-inline: 80px;
     }
-    @media (min-width: 1600px) {
-        max-width: 1400px;
-        margin-inline: auto;
+    // @media (min-width: 1600px) {
+    //     max-width: 1400px;
+    //     margin-inline: auto;
+    // }
+
+
+}
+.list-layout-header{
+    display: grid;
+    grid-template-areas: ". c .";
+    grid-template-columns: 10px 1fr 10px;
+    @media (min-width: 1000px) {
+        grid-template-columns: 80px 1fr 80px;
     }
-
-
+    @media (min-width: 1600px) {
+        grid-template-columns: 1fr 1400px 1fr;
+    }
 }
 
 .editor-header{

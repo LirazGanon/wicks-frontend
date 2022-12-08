@@ -2,14 +2,14 @@
     background-color: #fff;
     box-shadow: 0 0 3px #3335;
     position: fixed;
-    bottom: 80px;
-    left: 20px;
+    bottom: 40px;
+    left: 60px;
     z-index: 2500;
     overflow: hidden;
     transition: .3s;
     border-left: 6px solid $primary-clr;
     padding: 1em;
-    transform: translateX(-200%);
+    transform: translateX(-250%);
     
     &.shown {
         transform: translateX(0);

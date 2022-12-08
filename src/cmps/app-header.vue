@@ -11,24 +11,13 @@
         <article>
           <router-link to="/wap">Templates</router-link>
         </article>
-        <!-- 
-        <article>
-
-          <router-link to="/review">Reviews</router-link>
-        </article>
-        <article>
-
-          <router-link to="/chat">Chat</router-link>
-        </article> -->
-
         <article class="loggedin-user flex" v-if="loggedInUser">
           <router-link :to="`/user/${loggedInUser._id}`">
             {{ loggedInUser.fullname }}
           </router-link>
-          <!-- <span>{{ loggedInUser.score.toLocaleString() }}</span> -->
-          <div>
+          <!-- <div>
             <img :src="loggedInUser.imgUrl || avatarIcon" />
-          </div>
+          </div> -->
         </article>
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>

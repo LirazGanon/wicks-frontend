@@ -15,7 +15,7 @@ export default {
       const el = this.$refs.msg
       console.log(el);
       this.msg = msg
-      var delay =  2000
+      var delay =  5000
       // this.alive = true
       el.classList.add('shown')
       window.scrollTo({top: 0, behavior: 'smooth'});

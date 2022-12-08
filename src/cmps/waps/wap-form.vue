@@ -59,6 +59,9 @@ export default {
             const wap = await this.wap
             wap.usersData.contacts.push(contact)
             this.$store.dispatch({ type: 'updateWapFull', wap })
+            this.textInput = ''
+            this.emailInput = ''
+            this.messageInput = ''
         },
     },
     computed: {

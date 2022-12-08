@@ -96,7 +96,7 @@
                         height: 0;
                         overflow: hidden;
                         transition: 0.3s;
-
+                    
                         button {
                             font-size: 1.3em;
                             align-self: center;
@@ -106,7 +106,8 @@
                             border: 1px solid #eee5;
                             background-color: $primary-clr;
                             transition: background 0.3s;
-
+                        color: #eee;
+                        
                             &:hover {
                                 background: lighten($primary-clr, 10%);
                             }

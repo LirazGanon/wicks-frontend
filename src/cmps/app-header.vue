@@ -1,6 +1,5 @@
 <template>
   <section :class="[mainLayout]" ref="mainHeader">
-
     <header class="main-header">
 
       <router-link to="/">
@@ -10,7 +9,7 @@
       </router-link>
       <nav class="main-nav" :class="{ active: !menuOpen }">
         <article>
-          <router-link to="/wap">Template</router-link>
+          <router-link to="/wap">Templates</router-link>
         </article>
         <!-- 
         <article>
@@ -31,7 +30,7 @@
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
         </article>
-        <router-link v-else to="/login" v-if="!hideLogin">Login / Signup</router-link>
+        <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>
 
       <div class="burger" :class="{ active: !menuOpen }" @click="(menuOpen = !menuOpen)">

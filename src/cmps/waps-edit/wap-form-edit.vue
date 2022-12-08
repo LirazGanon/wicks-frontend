@@ -3,15 +3,20 @@
         @click.stop="openSectionEditor" @mousedown="$emit('acceptDrop')">
 
         <section class="wap-form">
-            <h1 v-if="cmp.info.heading?.txt" contenteditable="true" :style="cmp.info.heading.style" @click.stop
-                @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading.txt }}
-            </h1>
+
+            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img?.classes"
+                @dragstart.prevent :style="img.style" @click.stop @mousedown.stop="openEditor('imgs', idx)" />
+<span>
+
+    <h1 v-if="cmp.info.heading?.txt" contenteditable="true" :style="cmp.info.heading.style" @click.stop
+    @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading.txt }}
+</h1>
 
             <p contenteditable="true" v-if="cmp.info.subHeading?.txt" @click.stop
                 @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
                 @blur="updateCmp($event, 'subHeading')">
                 {{
-                        (cmp.info.subHeading?.txt)
+                    (cmp.info.subHeading?.txt)
                 }}</p>
 
 
@@ -34,16 +39,17 @@
                 <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
                     @mousedown.stop="openEditor('btns', idx)" :style="btn.style"
                     @blur="updateCmp($event, 'btns', idx)">{{
-        btn.txt
+                        btn.txt
                     }}</button>
             </form>
-
-
-
+        </span>
+            
+            
+            
             <!-- <pre>{{ cmp.info.inputs }}</pre> -->
         </section>
     </section>
-
+    
 </template>
 <script>
 import { utilService } from '../../services/util.service';

@@ -56,19 +56,20 @@
             }
 
             h1 {
-                font-size: 44px;
+                font-size: 50px;
                 font-weight: bold;
-                margin-bottom: 16px;
-
+                margin-bottom: 1.1em;
+                
                 .small & {
                     font-size: 35px;
                 }
-
+                
                 .medium & {
                     font-size: 49px;
                 }
-
+                
                 .narrow & {
+                    margin-bottom: 30px;
                     font-size: 60px;
                 }
 
@@ -80,9 +81,9 @@
 
             p {
                 flex: 1;
-                line-height: 2.1;
+                line-height: 1.5;
                 margin: 0;
-                font-size: 1.2em;
+                font-size: 1.3em;
 
                 .small & {
                     line-height: 1.2;
@@ -91,6 +92,10 @@
                 .medium & {
                     line-height: 1.4;
                     font-size: 1.5em;
+                }
+                .narrow &{
+                    
+                    font-size: 1.3em;
                 }
 
 
@@ -319,70 +324,6 @@
 
                 img {
                     filter: invert(117%) sepia(3%) saturate(1000%) hue-rotate(280deg);
-                }
-            }
-        }
-
-        &.contact-form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            
-            .medium &{
-                flex-direction: row-reverse;
-            }
-
-            button {
-                font-size: 1.5em;
-                width: 90%;
-                border-radius: 2em;
-                padding-block: 0.5em;
-                background-color: #000;
-                color: $coffee-bg;
-            }
-
-            :first-child {
-                width: 100%;
-
-                h1 {
-                    font-size: 2em;
-                    text-align: center;
-                }
-
-                flex-basis: 50%;
-
-                form {
-                    width: 100%;
-                    border: none;
-                    align-items: flex-start;
-
-                    >label {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    label:nth-child(3) {
-                        height: 100%;
-                    }
-
-                    input,
-                    textarea {
-                        border: none;
-                        width: 100%;
-                        border-bottom: 1px solid #000;
-                        outline: none;
-                    }
-
-                }
-            }
-
-            :nth-child(2) {
-                flex-basis: 50%;
-
-                img {
-                    width: 100%;
-                    max-width: 700px;
                 }
             }
         }

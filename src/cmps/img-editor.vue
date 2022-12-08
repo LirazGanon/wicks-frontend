@@ -14,14 +14,15 @@
 
         <section class="img-replace flex column">
             <img :src="getSrc.src" >
-            <section class="img-replace-src">
+            <!-- <section class="img-replace-src">
                 <label>
                     <span>Insert an image src: </span>
                     <input type="text" :value="getSrc?.src" @input="updateSrc">
                 </label>
                 <p> </p>
+            </section> -->
+            <hr>
                 <img-uploader @uploaded="changeImg" />
-            </section>
             <hr>
         </section>
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
@@ -151,7 +152,6 @@ export default {
             const cmp = this.getCurrCmp(path)
             const copyCmp = utilService.copy(cmp)
             let elCopy
-
             if (elIdx !== undefined) {
                 elCopy = copyCmp.info[key][elIdx]
             } else {

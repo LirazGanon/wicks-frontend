@@ -13,7 +13,7 @@
                     @openEditor="$emit('openEditor', $event)" />
             </div>
             <!-- TODO:IMG EDITOR -->
-            <div v-if="cmp.info.price">{{ cmp.info.price }}</div>
+            <!-- <div v-if="cmp.info.price">{{ cmp.info.price }}</div> -->
 
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style" @dragstart.prevent
@@ -81,7 +81,6 @@ export default {
         getCmpStyle() {
             const style = utilService.copy(this.cmp.style)
             delete style['background-image']
-            console.log('style:', style)
             return style
         }
     },

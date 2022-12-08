@@ -4,8 +4,7 @@ body {
 
 .whole-login {
     height: 100vh;
-    .bubble-move{
-
+    .bubble-move {
         display: none;
     }
     @media (min-width: 1000px) {
@@ -76,7 +75,15 @@ body {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -110%);
+
+        transform: translate(-50%, -90%) scale(0.6);
+        @media (min-width: 500px) {
+            transform: translate(-50%, -90%) scale(1);
+        }
+        @media (min-height: 400px) {
+            transform: translate(-50%, -80%) scale(1);
+        }
+       
 
         margin-block-start: 100px;
         background: linear-gradient(45deg, #c78afb 20%, #ff82d8, #ff8daa, #ffac7f);

@@ -39,6 +39,10 @@ function getById(url) {
         return httpService.get(`wap/${url.wapId}`)
     } else if (url.pathName) {
         return httpService.get(`wap/name/${url.pathName}`)
+    }else{
+    const id = url
+    console.log(id)
+    return httpService.get(`wap/${id}`)
     }
 }
 function getByUserId(userId) {
@@ -52,6 +56,7 @@ async function remove(wapId) {
     return httpService.delete(`wap/${wapId}`)
 }
 async function save(wap) {
+    console.log(wap)
     var savedWap
     if (wap._id) {
         // savedWap = await storageService.put(STORAGE_KEY, wap)

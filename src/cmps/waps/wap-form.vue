@@ -55,9 +55,11 @@ export default {
     methods: {
         async sendMsg() {
             if (this.isTemplate) return
-            const contact = { name: this.textInput, email: this.emailInput, mag: this.messageInput, at: Date.now() }
+            const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
             const wap = await this.wap
+            console.log(wap)
             wap.usersData.contacts.push(contact)
+            console.log( wap.usersData.contacts)
             this.$store.dispatch({ type: 'updateWapFull', wap })
         },
     },

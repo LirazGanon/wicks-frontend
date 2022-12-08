@@ -1,4 +1,7 @@
 <template>
+
+    <login-modal v-if="modalOpen" @close="closeModal" v-click-outside="onToggleModal" />
+
     <main class="edit-container">
         <app-header :mainLayout="'main-header'" />
         <editor-top @published="publish" />
@@ -20,16 +23,18 @@ import editorWap from '../cmps/editor-wap.vue'
 import editorSide from '../cmps/editor-side.vue'
 import editorTop from '../cmps/editor-top.vue'
 import appHeader from '../cmps/app-header.vue'
+import loginModal from '../cmps/login-modal.vue'
 import { utilService } from '../services/util.service'
 import { userService } from '../services/user.service'
 export default {
     name: 'wap-edit',
     props: {},
-    components: { editorSide, editorWap, editorTop, appHeader },
+    components: { editorSide, editorWap, editorTop, appHeader, loginModal },
     data() {
         return {
             type: null,
             editor: null,
+            modalOpen: false,
         }
     },
     methods: {
@@ -37,7 +42,6 @@ export default {
             this.editor = editorContent
         },
         async updateName(pathName) {
-            console.log(pathName)
             if (pathName === 'wap' || pathName === '' || pathName === 'home' ||
                 pathName === 'review' || pathName === 'chat') return false//nidicate the user 'invalid site name'
             try {
@@ -51,15 +55,16 @@ export default {
         },
         async publish(pathName) {
             try {
-                let user = userService.getLoggedinUser()
-                if (!user) return//open login modal that leads back to the edit page
-
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
-
-                console.log(pathName)
+                let user = userService.getLoggedinUser()
+                console.log(user)
+                if (!user) {
+                    this.modalOpen = true
+                    return
+                } //open login modal that leads back to the edit page
+                
                 const name = await this.updateName(pathName)
-                console.log(name)
-                if(!name)return
+                if (!name) return
                 wap.pathName = pathName
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user
@@ -74,6 +79,12 @@ export default {
             } catch (err) {
                 console.log(err);
             }
+        },
+        closeModal() {
+            this.modalOpen = false
+        },
+        onToggleModal() {
+            this.modalOpen = !this.modalOpen
         },
     },
     computed: {

@@ -1,14 +1,21 @@
+.main-layout:has(.wap-footer.coffee-shop.footer) {
+    background-color: #333333;
+}
+
 .wap-footer {
-    &.coffee-shop  {
+
+
+    &.coffee-shop {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
         color: $bakery-bg;
-        background-color: $bakery-pr-clr;
         height: 12vh;
+
         p {
             margin: 0;
+            color: $bakery-bg;
         }
 
         .logo {
@@ -16,6 +23,7 @@
             text-align: center;
             font-size: 1.5em;
         }
+
         .copyright {
             font-size: em(13px);
             white-space: nowrap;

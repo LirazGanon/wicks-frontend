@@ -10,8 +10,23 @@
     </h5> -->
     <img alt="Vue logo" src="@/assets/logo-white.png"  class="animate__animated animate__bounce animate__delay-1s">
     <h1 class="animate__animated animate__slideInLeft">Build Amazing Sites</h1>
-    <button class="animate__animated animate__slideInRight" @click="this.$router.push('/wap')">Start Now</button>
+    <section class="flex">
+      <a href="#more"><button class="animate__animated animate__slideInRight" >Read More</button></a>
+      <button class="animate__animated animate__slideInRight" @click="this.$router.push('/wap')">Start Now</button>
+    </section>
+  </section>
 
+  <section id="more">
+
+
+    WOW THIS IS MORE
+    <br>
+    <br>
+    PMG
+    <br>
+    OMG
+    <br>
+    DMG
   </section>
 
 

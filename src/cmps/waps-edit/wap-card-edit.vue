@@ -3,7 +3,7 @@
     <section class="wap-card" v-if="cmp.info" :class="cmp.classes">
         <section class="card-details">
 
-            <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')"
+            <h1  v-if="cmp.info.heading" contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')"
                 :style="cmp.info.heading?.style" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
             <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')"
@@ -15,8 +15,9 @@
                 {{
                         txt.txt
                 }}</p>
-         
-
+            <p v-if="cmp.info.price" @click.stop contenteditable="true"
+                @mousedown.stop="openEditor('texts', 0)" @blur="updateCmp($event, 'texts', idx)">{{ localeCurrency }}</p>
+<!-- :TODO fix this -->
             <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
                 @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{
                         btn.txt

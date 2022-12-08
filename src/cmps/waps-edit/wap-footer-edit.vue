@@ -1,7 +1,7 @@
 <template>
     <section class="main-layout full" @click="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"
         :class="[...cmp.classes, selected]">
-        <section class="wap-footer">
+        <section class="wap-footer" :class="cmp.classes" >
 
 
             <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true"

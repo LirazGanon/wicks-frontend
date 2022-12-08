@@ -19,6 +19,7 @@
         width: 18pc;
         margin-block-end: 10px;
         font-weight: 700;
+        font-family: montserrat, Helvetica, Arial, sans-serif;
 
         @media (min-width: 350px) {
             font-size: em(26px);
@@ -32,6 +33,7 @@
     h4 {
         font-size: em(12px);
         margin-block-end: 30px;
+        font-family: montserrat, Helvetica, Arial, sans-serif;
 
         @media (min-width: 350px) {
             font-size: em(14px);
@@ -92,6 +94,7 @@
 
                     span:first-child {
                         color: $clr3;
+                        font-family: comfortaa, sans-serif;
                     }
                 }
 

@@ -13,7 +13,7 @@
                 <div class="material-symbols-outlined icon" :class="{active:viewSize==='860'}" v-tooltip="'Switch to Tablet'" @click="changeView('860')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon" :class="{active:viewSize==='420'}" v-tooltip="'Switch to Mobile'" @click="changeView('420')">
+                <div class="material-symbols-outlined icon" :class="{active:viewSize==='450'}" v-tooltip="'Switch to Mobile'" @click="changeView('450')">
                     phone_iphone
                 </div>
             </section>

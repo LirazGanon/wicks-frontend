@@ -15,7 +15,8 @@ export const wapService = {
     // getCustomWap,
     updateOwner,
     getByUserId,
-    addWapMsg
+    addWapMsg,
+    savePathName
 }
 window.cs = wapService
 
@@ -68,6 +69,12 @@ async function save(wap) {
         savedWap = await httpService.post('wap', wap)
     }
     return savedWap
+}
+
+async function savePathName(pathName) {
+const name = {pathName}
+    console.log(name, 'pathNAME')
+return httpService.post(`wap/pathName`,name )
 }
 
 async function addWapMsg(wapId, txt) {

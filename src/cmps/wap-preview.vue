@@ -1,17 +1,20 @@
 <template>
   <section class="wap-preview ">
-    <img v-if="template.src" :src="template.src" :alt="template.name">
-    <div v-else class="wapless">BLANK</div>
-    <div class="preview-btns">
-      <button @click="editWap(template._id)">Edit</button>
-      <button @click="viewTemplate(template._id)">Preview</button>
+
+    <div class="preview-continue">
+      <img v-if="template.src" :src="template.src" :alt="template.name">
+      <div v-else class="wapless">BLANK</div>
+      <div class="preview-btns">
+        <button @click="editWap(template._id)">Edit</button>
+        <button @click="viewTemplate(template._id)">Preview</button>
+      </div>
     </div>
 
+    
+    
     <div class="wap-details">
       <span> {{ template.name }}</span>
     </div>
-
-
   </section>
 
 
@@ -38,7 +41,7 @@ export default {
       this.$emit('setIsLoading', false)
     },
     viewTemplate(templateId) {
-      this.$router.push({path: `/wap/${templateId}/true`});
+      this.$router.push({ path: `/wap/${templateId}/true` });
       console.log(this.template)
     },
   },

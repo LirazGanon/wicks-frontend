@@ -1,24 +1,16 @@
 <template>
-    <nav class="wap-nav flex" v-if="cmp.info.links">
-
-        <!-- TODO:START -->
-
-        <!-- <a href="" v-for="(l, idx) in nav.info.links" contenteditable="true" @click="openEditor('links', idx)"
-            :style="nav.info.links[idx].style" @input="updateCmp($event, idx)" data-type="links"> {{ l.txt
-            }}</a> -->
-
+    <nav class="wap-nav flex" v-if="cmp.info.links" :class="{'menu-open':menuOpen}">
 
         <a v-for="(l, idx) in cmp.info.links" @mousedown.stop="openEditor('links', idx)" :style="l.style" @click.stop
-            contenteditable="true" @blur="updateCmp($event,'links',idx)">
+            contenteditable="true" @blur="updateCmp($event, 'links', idx)">
             <span>
                 {{ l.txt }}
             </span>
         </a>
-        <!-- <pre style="background:green;font-size:20px;color:black">{{ cmp }}</pre> -->
 
     </nav>
 
-    
+
 
 </template>
 <script>
@@ -26,7 +18,7 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-nav-cmp',
-    props: { cmp: Object, path: Object },
+    props: { cmp: Object, path: Object, menuOpen: Boolean },
     components: {},
     data() {
         return {
@@ -51,8 +43,8 @@ export default {
         updateCmp(ev, key, idx) {
             const path = this.path
             let cmp = utilService.copy(this.cmp)
-            if(cmp.info[key][idx].txt === ev.target.innerText) return
-           
+            if (cmp.info[key][idx].txt === ev.target.innerText) return
+
             cmp.info[key][idx].txt = ev.target.innerText
 
             try {

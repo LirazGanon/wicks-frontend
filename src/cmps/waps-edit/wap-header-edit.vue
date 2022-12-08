@@ -1,12 +1,12 @@
 <template>
 
     <header class="wap-header main-layout full" :class="[...cmp.classes, selected]" @click.stop="openSectionEditor"
-        :style="cmp.style" @mousedown="$emit('acceptDrop')" >
+        :style="cmp.style" @mousedown="$emit('acceptDrop')">
         <section class="flex space-between">
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @mousedown.stop="openEditor('logo')"  @click.stop 
+                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @mousedown.stop="openEditor('logo')" @click.stop
                     :style="cmp.info.logo.style">
 
 
@@ -20,8 +20,13 @@
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
-                @openEditor="$emit('openEditor', $event)" />
+                @openEditor="$emit('openEditor', $event)" :menuOpen="menuOpen"/>
 
+            <div class="burger" @click.stop="(menuOpen = !menuOpen)">
+                <span style="--i: -1"></span>
+                <span style="--i: 0"></span>
+                <span style="--i: 1"></span>
+            </div>
 
         </section>
 
@@ -35,10 +40,11 @@ import { utilService } from '../../services/util.service';
 
 export default {
     name: 'dynamic-header-cmp',
-    props: { cmp: Object ,isSelected: Boolean },
+    props: { cmp: Object, isSelected: Boolean },
     components: { wapNav },
     data() {
         return {
+            menuOpen:false
         };
     },
     created() {
@@ -72,8 +78,8 @@ export default {
             let cmp = this.getCurrCmp(path)
             cmp = utilService.copy(cmp)
 
-       
-            if(cmp.info[key].txt === ev.target.innerText) return
+
+            if (cmp.info[key].txt === ev.target.innerText) return
 
             cmp.info[key].txt = ev.target.innerText
 

@@ -1,0 +1,106 @@
+.wap-header {
+    z-index: 2500;
+    nav {
+        z-index: 2500;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: tr;
+        height: 100%;
+        width: 0%;
+        overflow: hidden;
+        background-color: #3339;
+        transition: 0.5s;
+        height: 100vh;
+
+        @media (min-width: 600px) {
+            height: auto;
+            width: auto;
+            position: relative;
+            flex-direction: row;
+            font-family: comfortaa;
+            background-color: transparent;
+        }
+
+        a {
+            height: 100px;
+            display: grid;
+            place-content: center;
+            background: #eee9;
+            width: 100%;
+            box-shadow: 0 0 2px #3339;
+            margin-inline-end: 0 ;
+            pointer-events: none;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                background: #eee;
+            }
+
+            @media (min-width: 600px) {
+                height: auto;
+                width: auto;
+                background-color: transparent;
+                box-shadow: none;
+
+                &:not(:last-child) {
+                    margin-inline-end: rem(24px);
+                }
+            }
+
+            span {
+                color: #333;
+                // font-size: 24px;
+                font-family: montserratBold;
+
+                @media (min-width: 600px) {
+                    height: auto;
+                    width: auto;
+                    background-color: transparent;
+                    box-shadow: none;
+                    font-family: montserrat;
+                    font-size: em(16px);
+                }
+            }
+        }
+    }
+
+    nav.menu-open {
+        width: 100%;
+    }
+
+    .burger {
+        z-index: 2500;
+
+        height: 65px;
+        width: 65px;
+        position: relative;
+        cursor: pointer;
+
+        @media (min-width: 600px) {
+            display: none;
+        }
+    }
+    .burger > * {
+        width: 40%;
+        height: 4px;
+        background: $coffee-pr-clr;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: calc(8px * var(--i) + 50%);
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+    nav.menu-open ~ .burger > *:not(:nth-child(even)) {
+        background-color: #333;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        top: 50%;
+    }
+    nav.menu-open ~ .burger > *:not(:nth-child(odd)) {
+        background-color: #333;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}

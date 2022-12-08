@@ -1,5 +1,5 @@
 <template>
-  <app-header :mainLayout="'main-layout-header'"/>
+  <app-header :mainLayout="'list-layout-header'"/>
     <div class="container">
       <wap-list :templates="templates" :loading="isLoading" />
     </div>

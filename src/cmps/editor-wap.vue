@@ -183,7 +183,7 @@ export default {
     },
 
     wrapper() {
-      if (this.conMaxWidth === 420) return 'smartphone'
+      if (this.conMaxWidth === 460) return 'smartphone'
       if (this.conMaxWidth === 800) return 'tablet'
       return ''
     },

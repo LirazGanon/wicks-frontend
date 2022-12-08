@@ -6,7 +6,8 @@
       @dragover.prevent="isDragover = true"
       @dragleave="isDragover = false"
   >
-      <label v-if="!isUploading" :class="{ drag: isDragover }">
+  <label v-if="!isUploading" :class="{ drag: isDragover }">
+    <p>Upload image:</p>
         <upload-icon :class="{ drag: isDragover }" />
           <p> Drag or click to upload</p>
           <input type="file" @change="uploadImg" hidden />

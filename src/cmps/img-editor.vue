@@ -23,10 +23,10 @@
             </section> -->
             <hr>
                 <img-uploader @uploaded="changeImg" />
+            </section>
             <hr>
-        </section>
         <label v-if="info.currCmp.type !== 'wap-bg-img'">
-            <span>Border-radius: </span>
+            <span>Border radius: </span>
             <slider :change="info" @changed="updateRadius" />
         </label>
     </section>

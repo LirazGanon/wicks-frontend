@@ -7,13 +7,13 @@
         <section class="flex space-between full align-center">
 
             <section class="view-port-editor flex">
-                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
+                <div class="material-symbols-outlined icon" :class="{active:viewSize==='100'}" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
                     desktop_windows
                 </div>
-                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Tablet'" @click="changeView('860')">
+                <div class="material-symbols-outlined icon" :class="{active:viewSize==='860'}" v-tooltip="'Switch to Tablet'" @click="changeView('860')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon" v-tooltip="'Switch to Mobile'" @click="changeView('420')">
+                <div class="material-symbols-outlined icon" :class="{active:viewSize==='420'}" v-tooltip="'Switch to Mobile'" @click="changeView('420')">
                     phone_iphone
                 </div>
             </section>
@@ -66,6 +66,8 @@ export default {
     components: {},
     data() {
         return {
+            url: null,
+            viewSize:'100',
             pathName: null
         };
     },
@@ -75,6 +77,7 @@ export default {
   
     methods: {
         changeView(size) {
+            this.viewSize = size;
             eventBus.emit('resizeWap', size)
         },
         chooseUrl(ev) {

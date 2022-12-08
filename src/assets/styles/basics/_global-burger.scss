@@ -14,6 +14,8 @@
         background-color: #3339;
         transition: 0.5s;
         height: 100vh;
+        pointer-events: none;
+
 
         @media (min-width: 600px) {
             height: auto;
@@ -22,13 +24,15 @@
             flex-direction: row;
             font-family: comfortaa;
             background-color: transparent;
+            pointer-events: all;
+
         }
 
         a {
             height: 100px;
             display: grid;
             place-content: center;
-            background: #eee9;
+            background: rgba(238, 238, 238, 0.952);
             width: 100%;
             box-shadow: 0 0 2px #3339;
             margin-inline-end: 0 ;
@@ -74,7 +78,7 @@
     .burger {
         z-index: 2500;
 
-        height: 65px;
+        height: auto;
         width: 65px;
         position: relative;
         cursor: pointer;

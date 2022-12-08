@@ -34,9 +34,12 @@ async function query(filterBy = { userId:'' ,txt: '', desc: '' }) {
     // return waps
 
 }
-function getById(wapId) {
-    // return storageService.get(STORAGE_KEY, wapId)
-    return httpService.get(`wap/${wapId}`)
+function getById(url) {
+    if (url.wapId) {
+        return httpService.get(`wap/${url.wapId}`)
+    } else if (url.pathName) {
+        return httpService.get(`wap/name/${url.pathName}`)
+    }
 }
 function getByUserId(userId) {
     // return storageService.get(STORAGE_KEY, wapId)

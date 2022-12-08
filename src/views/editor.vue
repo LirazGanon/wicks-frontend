@@ -36,21 +36,32 @@ export default {
         openEditor(editorContent) {
             this.editor = editorContent
         },
-        async publish(url) {
+        async updateName(pathName){
+            try{
+                const wap = utilService.copy(this.$store.getters.getWapToEdit)
+                wap.pathName = pathName
+                await this.$store.dispatch({ type: 'updateWapFull', wap })
+            } catch(err){
+            
+            }
+        },
+        async publish(pathName) {
             try {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
+                if (pathName) wap.pathName = pathName
                 let user = userService.getLoggedinUser()
-                if(!user){
-                    return
-                }
+                if (!user) return
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user
                 wap.isPublish = true
+                
+                const routName = pathName ? 'published' : 'wap-view'
+                const params = pathName ? {pathName} : {wapId: wap._id}
                 await this.$store.dispatch({ type: 'updateWapFull', wap })
-                let routeData = this.$router.resolve({name: 'wap-view', params: wap._id })
+                let routeData = this.$router.resolve({ name: routName, params })
                 window.open(routeData.href, '_blank')
                 console.log('Published Successfully');
-            } catch(err) {
+            } catch (err) {
                 console.log(err);
             }
         },

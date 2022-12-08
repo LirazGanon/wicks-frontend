@@ -21,16 +21,6 @@ const routes = [
     component: wapApp
   },
   {
-    path: '/wap/edit/:wapId',
-    name: 'editor',
-    component: editor
-  },
-  {
-    path: '/wap/:wapId/:isTemplate?',
-    name: 'wap-view',
-    component: wapView
-  },
-  {
     path: '/review',
     name: 'review',
     component: reviewApp
@@ -44,6 +34,21 @@ const routes = [
     path: '/login',
     name: 'loginSignup',
     component: loginSignup
+  },
+  {
+    path: '/:pathName',
+    name: 'published',
+    component: wapView
+  },
+  {
+    path: '/wap/edit/:wapId',
+    name: 'editor',
+    component: editor
+  },
+  {
+    path: '/wap/:wapId/:isTemplate?',
+    name: 'wap-view',
+    component: wapView
   },
   {
     path: '/user/:id',

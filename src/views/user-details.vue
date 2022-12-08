@@ -9,58 +9,32 @@
         <h4>{{ user.fullname }}'s BackOffice</h4>
       </div>
     </section>
-    <main class="dashboard-content">
+    <main class="dashboard-content" v-if="userWaps.length">
 
       <section class="left-user-nav">
-        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.name }}</div>
+        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName || 'GuyKing' }}
+        </div>
 
         <div @click="logout" class="logout-user-dash">
           Logout
         </div>
 
       </section>
-
       <section class="main-dashboard">
+          <section class="top-half">
+            <chosen-wap-display :info="chosenWap" />
+            <contacts-table :info="chosenWap.usersData.contacts" />
+          </section>
 
-
-        <section class="chosen-wap-display" v-if="chosenWap">
-
-          <img v-if="chosenWap.src" :src="chosenWap.src" alt="" class="chosen-wap-img">
-          <div v-else class="chosen-wap-img">placeholder</div>
-          <h3>{{ chosenWap.name }}</h3>
-          <div class="wap-actions-dash">
-
-            <button @click="editWap(chosenWap._id)">Edit</button>
-            <button @click="viewTemplate(chosenWap._id)">Preview</button>
+          <div class="bottom-half">
+            <charts :info="chosenWap.usersData.contacts" :data="testData" />
           </div>
-
-        </section>
-        <section class="dashboard-stats">
-
-          <pre>{{user}}</pre>
-
-        </section>
-
-        <section class="wap-table">
-          <ul class="table-head flex">
-            <li>name</li>
-            <li>email</li>
-            <li>request</li>
-            <li>date</li>
-          </ul>
-          <ul class="table-body flex">
-            <li>puki</li>
-            <li>puki@gmail.com</li>
-            <li>I want a new site!</li>
-            <li>two hours ago</li>
-          </ul>
-        </section>
-
-
       </section>
+
     </main>
 
 
+    <dash-board-place-holder :user="user" :temp="templates" v-else />
 
 
     <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
@@ -76,7 +50,10 @@
 // import {userService} from '../services/user.service'
 import appHeader from '../cmps/app-header.vue'
 import { userService } from '../services/user.service'
-
+import contactsTable from '../cmps/contacts-table.vue'
+import chosenWapDisplay from '../cmps/chosen-wap-display.vue'
+import dashBoardPlaceHolder from '../cmps/dash-board-place-holder.vue'
+import charts from '../cmps/charts.vue'
 export default {
   name: 'user-details',
 
@@ -86,18 +63,40 @@ export default {
       filterBy: {
         userId: ''
       },
-      chosenWap: null
+      chosenWap: null,
+      testData: {
+        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+        datasets: [
+          {
+            data: [30, 40, 60, 70, 40],
+            backgroundColor: [
+              'skyblue',
+              '#77CEFF',
+              '#0079AF',
+              '#123E6B',
+              '#97B0C4',
+              '#A5C8ED',
+            ],
+            tension: .3,
+          },
+        ],
+      },
       // user: null
     }
   },
   components: {
-    appHeader
+    appHeader,
+    contactsTable,
+    chosenWapDisplay,
+    dashBoardPlaceHolder,
+    charts
   },
   async created() {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
     this.chosenWap = userWaps[0]
+    this.setData()
     // const user = await userService.getById(id)
     // this.user = user
   },
@@ -119,6 +118,12 @@ export default {
       this.$router.push({ path: `/wap/${wapId}` });
       console.log(this.template)
     },
+    localeDate(at) {
+      console.log(a);
+      const date = new Date(at)
+      console.log(date);
+      return new Intl.DateTimeFormat('en-US').format(date)
+    }
   },
   watch: {
     userId: {
@@ -137,9 +142,35 @@ export default {
     userId() {
       return this.$route.params.id
     },
+    templates() {
+      return this.$store.getters.templates
+    },
+
     // userWaps() {
     //   return this.$store.getter.userWaps
     // }
   },
 }
 </script>
+
+<style scoped>
+.demonstration {
+  color: var(--el-text-color-secondary);
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+  text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+</style>

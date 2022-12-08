@@ -26,9 +26,9 @@
             {{ loggedInUser.fullname }}
           </router-link>
           <!-- <span>{{ loggedInUser.score.toLocaleString() }}</span> -->
-          <div>
+          <!-- <div>
             <img :src="loggedInUser.imgUrl || avatarIcon" />
-          </div>
+          </div> -->
         </article>
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>

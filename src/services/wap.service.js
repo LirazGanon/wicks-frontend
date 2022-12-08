@@ -56,7 +56,6 @@ async function remove(wapId) {
     return httpService.delete(`wap/${wapId}`)
 }
 async function save(wap) {
-    console.log(wap)
     var savedWap
     if (wap._id) {
         // savedWap = await storageService.put(STORAGE_KEY, wap)

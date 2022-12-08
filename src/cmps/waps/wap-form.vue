@@ -2,6 +2,9 @@
     <section class="main-layout full wap-form-warper" :style="cmp.style" :class="cmp.classes">
 
         <section class="wap-form">
+            <img v-for="img in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img?.classes"
+               :style="img.style" />
+
             <h1 v-if="cmp.info.heading?.txt" :style="cmp.info.heading.style">{{ cmp.info.heading.txt }}
             </h1>
 
@@ -14,12 +17,12 @@
             <form @submit.prevent="sendMsg">
                 <label v-if="cmp.info.textInput">
                     <span v-if="cmp.info.textInput?.label">{{ cmp.info.textInput.label }}</span>
-                    <input type="text" v-model="textInput" required  :placeholder="cmp.info.textInput.placeholder"/>
+                    <input type="text" v-model="textInput" required :placeholder="cmp.info.textInput.placeholder" />
 
                 </label>
                 <label v-if="cmp.info.emailInput">
                     <span v-if="cmp.info.emailInput?.label">{{ cmp.info.emailInput.label }}</span>
-                    <input type="email" v-model="emailInput" required :placeholder="cmp.info.emailInput.placeholder"/>
+                    <input type="email" v-model="emailInput" required :placeholder="cmp.info.emailInput.placeholder" />
                 </label>
                 <label v-if="cmp.info.textarea">
                     <span v-if="cmp.info.textarea?.label">{{ cmp.info.textarea.label }}</span>
@@ -68,20 +71,3 @@ export default {
     unmounted() { },
 };
 </script>
-<style>
-
-</style>
-<!-- <input type="email"> -->
-        <!-- <div v-for="input, idx in cmp.info.inputs">
-            <label for="">{{input.label}}</label>
-            <input v-if="input.inpType === 'input'" 
-            :type="input.inpContentType"
-            :placeholder="input.placeholder"
-            v-model="contact[idx]"
-            >
-
-            <textarea v-if="input.inpType === 'textarea'"
-            :type="input.inpContentType"
-            :placeholder="input.placeholder">
-            </textarea>
-        </div> -->

@@ -3,6 +3,10 @@
         @click.stop="openSectionEditor" @mousedown="$emit('acceptDrop')">
 
         <section class="wap-form">
+
+            <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img?.classes"
+                @dragstart.prevent :style="img.style" @click.stop @mousedown.stop="openEditor('imgs', idx)" />
+
             <h1 v-if="cmp.info.heading?.txt" contenteditable="true" :style="cmp.info.heading.style" @click.stop
                 @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading.txt }}
             </h1>

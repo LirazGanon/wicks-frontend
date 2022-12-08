@@ -6,7 +6,7 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @click.stop="openEditor('imgs', idx)"
+                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @mousedown.stop="openEditor('logo')"  @click.stop 
                     :style="cmp.info.logo.style">
 
 
@@ -47,6 +47,7 @@ export default {
 
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]
+
             el = utilService.copy(el)
             const wapContent = {
                 key,

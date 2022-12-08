@@ -16,7 +16,7 @@
                         txt.txt
                 }}</p>
             <p v-if="cmp.info.price" @click.stop contenteditable="true"
-                @mousedown.stop="openEditor('texts', 0)" @blur="updateCmp($event, 'texts', idx)">{{ localeCurrency }}</p>
+                @mousedown.stop="openEditor('price')" @blur="updateCmp($event, 'price')" :style="cmp.info.price?.style">{{ localeCurrency }}</p>
 <!-- :TODO fix this -->
             <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
                 @mousedown.stop="openEditor('btns', idx)" :style="btn.style" @blur="updateCmp($event, 'btns', idx)">{{

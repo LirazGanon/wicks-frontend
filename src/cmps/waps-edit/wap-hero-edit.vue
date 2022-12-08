@@ -2,7 +2,7 @@
 
     <section class="main-layout full wap-hero-wrapper" @click.stop="openSectionEditor" :style="cmp.style" @mousedown="$emit('acceptDrop')"   :class="[...cmp.classes, selected]">
 
-        <section class="wap-hero "  :style="getCmpStyle" :class="cmp.classes">
+        <section class="wap-hero " :style="getCmpStyle" :class="cmp.classes">
 
             <h1 contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')" v-if="cmp.info.heading" :style="cmp.info.heading.style"
                 @blur="updateCmp($event, 'heading')">
@@ -91,7 +91,6 @@ export default {
         getCmpStyle() {
             const style = utilService.copy(this.cmp.style)
             delete style['background-image']
-            console.log('style:', style)
             return style
         }
     },

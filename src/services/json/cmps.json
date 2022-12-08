@@ -49,7 +49,7 @@
         "style": {}
       }
     ],
-    "style": {"background-color": "#1c2e3b"}
+    "style": { "background-color": "#1c2e3b" }
   },
   {
     "type": "wap-hero",
@@ -397,5 +397,60 @@
     "style": {
       "background-color": "#1c2e3b"
     }
+  },
+  {
+    "type": "wap-form",
+    "id": "nslzzqh0foy",
+    "classes": ["coffee-shop"],
+    "info": {
+      "heading": {
+        "type": "txt",
+        "txt": "Contact Us",
+        "style": {}
+      },
+      "subHeading": {
+        "type": "txt",
+        "txt": "",
+        "style": {}
+      },
+      "textInput": {
+        "label": "Name",
+        "placeholder": "Enter your name",
+        "isRequired": true,
+        "style": {}
+      },
+      "emailInput": {
+        "label": "Email",
+        "placeholder": "Enter a valid email address",
+        "isRequired": true,
+        "style": {}
+      },
+      "textarea": {
+        "label": "Message",
+        "isRequired": true,
+        "style": {}
+      },
+      "btns": [
+        {
+          "type": "txt",
+          "txt": "Submit",
+          "style": {}
+        }
+      ],
+      "imgs": [
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
+          "style": {},
+          "classes": []
+        }
+      ]
+    },
+    "style": {}
   }
+  
+  
+
 ]
+
+

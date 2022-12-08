@@ -12,17 +12,12 @@
     <main class="dashboard-content">
 
       <section class="left-user-nav">
-        
-        <ul class="curr-user-waps">
-          <li v-for="wap in userWaps" @click="(chosenWap = wap)">
-            {{ wap.name }}
-          </li>
+        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.name }}</div>
 
-
-        </ul>
-        <li @click="logout" class="logout-user-dash">
+        <div @click="logout" class="logout-user-dash">
           Logout
-        </li>
+        </div>
+
       </section>
 
       <section class="main-dashboard">
@@ -33,12 +28,16 @@
           <img v-if="chosenWap.src" :src="chosenWap.src" alt="" class="chosen-wap-img">
           <div v-else class="chosen-wap-img">placeholder</div>
           <h3>{{ chosenWap.name }}</h3>
-          <!-- <pre>{{ chosenWap }}</pre> -->
+          <div class="wap-actions-dash">
+
+            <button @click="editWap(chosenWap._id)">Edit</button>
+            <button @click="viewTemplate(chosenWap._id)">Preview</button>
+          </div>
 
         </section>
         <section class="dashboard-stats">
 
-
+          <pre>{{user}}</pre>
 
         </section>
 
@@ -107,7 +106,19 @@ export default {
       console.log('baba')
       this.$store.dispatch({ type: 'logout' })
       this.$router.push('/')
-    }
+    },
+    async editWap(wapId) {
+      this.$emit('setIsLoading', true)
+      console.log(wapId)
+      const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId })
+      console.log(wap)
+      this.$router.push(`/wap/edit/${wap._id}`);
+      this.$emit('setIsLoading', false)
+    },
+    viewTemplate(wapId) {
+      this.$router.push({ path: `/wap/${wapId}` });
+      console.log(this.template)
+    },
   },
   watch: {
     userId: {

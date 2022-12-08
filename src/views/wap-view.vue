@@ -46,6 +46,8 @@ export default {
         };
     },
     created() {
+       
+
         this.getCurrWap()
     },
     mounted() {
@@ -54,15 +56,16 @@ export default {
     methods: {
         async getCurrWap() {
             // TODO:ARRANGE THE PARAMS TO DIFFER BETWEEN WAP AND TEMPLATE
-            const id = this.$route.params.wapId
+            const url = this.$route.params
             const { isTemplate } = this.$route.params
             // const {isTemplate }= this.$route.data
             // const wap = await wapService.getById(id)
+            console.log(url)
             let wap
             if (isTemplate) {
-                wap = await templateService.getTemplate(id)
+                wap = await templateService.getTemplate(url.wapId)
             } else {
-                wap = await wapService.getById(id)
+                wap = await wapService.getById(url)
             }
             // console.log(template)
             // console.log(this.view)

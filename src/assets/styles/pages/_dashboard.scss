@@ -1,4 +1,5 @@
 .dashboard {
+    font-family: montserrat;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 78.5px);
@@ -7,6 +8,8 @@
         border-top: 1px solid #5555;
         border-bottom: 1px solid #5555;
         padding-block: 10px;
+        font-family: montserratBold;
+        align-items: center;
 
         h4 {
             border-right: 1px solid #5555;
@@ -32,15 +35,13 @@
             border-right: 1px solid #5555;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            overflow-y: hidden;
+            font-family: lato;
+            position: relative;
+
+            .wap-left-dash,
             .logout-user-dash {
-                border-top: 1px solid #5555;
-            }
-            .curr-user-waps {
-                overflow-y: auto;
-            }
-            li {
-                padding-inline-start: 30px;
+                padding-inline-start: 20px;
                 padding-block: 12px;
                 border-bottom: 1px solid #5555;
                 text-transform: capitalize;
@@ -51,9 +52,15 @@
                     background-color: #5555;
                 }
                 &.logout-user-dash {
-                    width: 100%;
+                    border-top: 1px solid #5555;
+                    background-color: #5558;
+                    color: #eee;
+                    position: absolute;
                     bottom: 0;
-                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    padding-inline-start: 0px;
+                    font-family: montserratBold;
                 }
             }
         }
@@ -61,14 +68,48 @@
             flex: 1;
 
             .chosen-wap-display {
+                // grid-template-areas: ;
+                margin-block: 20px;
+                display: grid;
+                place-content: center;
+                align-items: center;
                 .chosen-wap-img {
                     height: 200px;
                     width: 300px;
                     border-radius: 1em;
-                    box-shadow: 1px 1px 3px #5555 ;
+                    box-shadow: 1px 1px 3px #5555,
+                    -1px -1px 1px #9992;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                }
+                h3 {
+                    margin-block: 20px;
+                    font-family: montserratBold;
+                    border-left: 4px solid $primary-clr;
+                    padding-inline-start: 10px;
+                }
+                .wap-actions-dash {
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        width: 50%;
+                        font-family: workSans;
+                        padding-block: 0.4em;
+                        border-radius: 5px;
+                        box-shadow: 0 0 0 1px $logo-clr;
+                        background: $primary-clr;
+                        transition: 0.3s;
+                        font-size: 16px;
+                        cursor: pointer;
+                        &:last-child {
+                            background: none;
+                        }
+                        &:hover {
+                            box-shadow: 0 0 0 1px #333;
+                            background-color: lighten($primary-clr, 10%);
+                        }
+                    }
                 }
             }
         }

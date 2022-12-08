@@ -31,6 +31,7 @@
           <form @submit.prevent="doSignup">
             <h2>Signup</h2>
             <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+            <input type="email" v-model="signupCred.fullname" placeholder="Email" />
             <input type="text" v-model="signupCred.username" placeholder="Username" />
             <input type="password" v-model="signupCred.password" placeholder="Password" />
             <!-- <img-uploader @uploaded="onUploaded"></img-uploader> -->
@@ -82,6 +83,7 @@ export default {
     this.loadUsers()
   },
   methods: {
+
     async doLogin() {
 
       // TODO:MAKE IT ASSENTIAL TO FILL THE INPUT AND GET RID OF THIS CONDITION
@@ -133,6 +135,11 @@ export default {
       this.signupCred.imgUrl = imgUrl
     }
 
+  },
+  watch:{
+    loggedinUser(){
+      this.$router.push('/')
+    }
   }
 }
 </script>

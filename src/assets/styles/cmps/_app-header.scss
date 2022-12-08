@@ -24,15 +24,7 @@ header {
         width: rem(150px);
     }
 
-    article {
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
-        > :last-child {
-            padding-inline-end: 20px;
-        }
-    }
-
+   
     .loggedin-user {
         display: flex;
         span {
@@ -59,7 +51,7 @@ header {
         .logo {
             max-width: 5.19em;
             margin-block: 10px;
-            margin-inline-start: 15px;
+            padding-inline-start: 15px;
         }
 
         .main-nav {
@@ -92,8 +84,12 @@ header {
                 flex-direction: row;
                 width: auto;
                 top: 0;
+                gap: 20px;
                 height: auto;
                 background: transparent;
+                *:last-child{
+                    margin-inline-end: 20px;
+                }
             }
         }
 
@@ -160,4 +156,11 @@ header {
     }
 
 
+}
+
+.editor-header{
+    margin: 0;
+    display: block;
+    width: 100%;
+    background: red;
 }

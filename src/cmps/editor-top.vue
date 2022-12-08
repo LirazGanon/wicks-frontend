@@ -67,7 +67,8 @@ export default {
     data() {
         return {
             url: null,
-            viewSize:'100'
+            viewSize:'100',
+            pathName: null
         };
     },
     created() {
@@ -80,7 +81,7 @@ export default {
             eventBus.emit('resizeWap', size)
         },
         chooseUrl(ev) {
-            this.url = ev.target.innerText
+            this.pathName = ev.target.innerText
         },
 
     },
@@ -103,7 +104,7 @@ export default {
             return this.$store.getters.getHistory
         },
         publish() {
-            this.$emit('published', this.url)
+            this.$emit('published', this.pathName)
         },
     },
     watch: {

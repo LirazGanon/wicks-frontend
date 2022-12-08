@@ -16,7 +16,11 @@
         "p6"
         "bt";
         align-content: center;
-        gap: 2em;
+        gap:3em 0;
+        .mobile &{
+            gap:1em 0;
+            
+        }
 
         .small &,
         .medium & {
@@ -39,7 +43,8 @@
         }
 
         img {
-            width: 100%;
+            width: 90%;
+            margin: auto;
             transition: 0.3s;
             aspect-ratio: 1/1;
             object-fit: cover;

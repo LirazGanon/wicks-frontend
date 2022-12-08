@@ -37,11 +37,14 @@
             color: #1c2e3bc9;
             border-radius: 10px;
             transition: background 0.3s;
+            &.active{
+                background: #ede6f3;
+            }
         }
 
         .icon:hover {
             // background: radial-gradient(lighten($clr1, 33%), transparent);
-            background: $clr5;
+            background: #ede6f3;
         }
         @media (max-width: 900px) {
             display: none;
@@ -106,9 +109,11 @@
         border-radius: 0.4em;
         transition: background-color 0.2s;
 
+
         * {
             color: aliceblue;
             text-decoration: none;
+            cursor: pointer;
         }
 
         &:hover {

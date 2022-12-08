@@ -141,6 +141,7 @@
                 p:nth-of-type(1) {
                     font-size: 1.4em;
                     font-weight: bold;
+                    margin-bottom: 0;
                 }
 
                 p:nth-of-type(2) {
@@ -150,6 +151,7 @@
 
                 p {
                     padding-inline-start: 15px;
+                    padding: 1em;
 
 
                 }
@@ -172,6 +174,10 @@
                 color: $coffee-bg;
                 font-size: 4em;
                 font-weight: bold;
+                .mobile &{
+                    font-size: 3em;
+                    
+                }
 
             }
 
@@ -185,37 +191,23 @@
                 padding: 1em;
                 position: relative;
 
-                .small &{
-                    width: 90%; 
+                .small & {
+                    width: 90%;
                 }
+
                 .medium & {
                     width: 12em;
                 }
-                
+
                 .narrow & {
                     width: 17em;
                 }
-                .wide &{width: 22em;}
 
-                p:first-child {
-                    margin-top: 1em;
-                    color: #bfa98b;
-                    font-weight: bold;
-                    font-size: 1.5em;
-
-                    .medium & {
-                        font-size: 0.9em;
-                    }
-                    .narrow &{
-                        font-size: 1.5em;
-                    }
+                .wide & {
+                    width: 22em;
                 }
 
-                p:nth-child(2) {
-                    margin-bottom: 5em;
-                }
-
-
+                
             }
 
             img {
@@ -225,31 +217,57 @@
 
             }
 
-            p:last-of-type {
-                position: absolute;
-                left: 30px;
-                bottom: 5px;
-                color: #bfa98b;
-                font-size: 2em;
-                font-weight: bold;
+            .card-details {
 
-                .narrow & {
-                    font-size: 1.8em;
-                }
-            }
-
-            button {
-                position: absolute;
-                border-radius: 1.5em;
-                font-size: 1.7em;
-                right: 15px;
-                color: $coffee-bg;
-                background-color: #bfa98b;
-                bottom: 21px;
-                padding: 0.3em 0.7em;
-
-                .narrow & {
+                >p:first-child {
+                    margin-top: 1em;
+                    color: #bfa98b;
+                    font-weight: bold;
                     font-size: 1.5em;
+
+                    .medium & {
+                        font-size: 0.9em;
+                    }
+
+                    .narrow & {
+                        font-size: 1.5em;
+                    }
+                }
+
+                p:nth-child(2) {
+                    margin-bottom: 2em;
+                }
+
+
+                >span {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items:baseline;
+
+                    p {
+                        color: #bfa98b;
+                        font-size: 2em;
+                        font-weight: bold;
+                        margin: 0;
+                        .narrow & {
+                            font-size: 2em;
+                        }
+                        &::after{
+                            content: "$";
+                        }
+                    }
+
+                    button {
+                        border-radius: 1.5em;
+                        font-size: 1.7em;
+                        color: $coffee-bg;
+                        background-color: #bfa98b;
+                        padding: 0.5em 1em;
+
+                        .narrow & {
+                            font-size: 1.5em;
+                        }
+                    }
                 }
             }
         }

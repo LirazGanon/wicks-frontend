@@ -14,7 +14,9 @@
                 </button>
                 <button class="material-symbols-outlined" v-tooltip="'Edit Section'"
                     :class="{ active: active === 'edit' }" @click="toggleActive('edit')">
-                    brush
+                    <span class="material-symbols-outlined">
+                        tune
+                    </span>
                 </button>
                 <button class="material-symbols-outlined app-btn" @click="toggleMobileButton()">
                     apps
@@ -22,9 +24,7 @@
             </section>
             <section class="bottom-button flex column">
                 <button class="material-symbols-outlined" v-tooltip="'Work With Friends'" @click="placholder">
-                    <span class="material-symbols-outlined">
-                        groups
-                    </span>
+                    groups
                 </button>
             </section>
         </section>
@@ -69,7 +69,8 @@
             <img @click="setTheme('c')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_3_dmrup6.png" alt="">
             <img @click="setTheme('d')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_4png_ypukjj.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_4png_ypukjj.png"
+                alt="">
 
         </section>
 

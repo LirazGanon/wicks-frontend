@@ -77,8 +77,8 @@ export default {
             if (offsetWidth >= 1024) this.responsiveClass = this.narrow()
             if (offsetWidth >= 1300) this.responsiveClass = this.normal()
             if (offsetWidth >= 1500) this.responsiveClass = this.wide()
-
         },
+      
 
         small() {
             return ['small']

@@ -5,6 +5,7 @@
     .left-nav {
         // background-color: aqua;
         border-right: 1px solid $border-clr;
+        padding: 0 2px;
 
         .app-btn {
             display: none;
@@ -17,19 +18,23 @@
             border-radius: 50%;
             transition: background 0.3s;
             font-size: 1.5em;
-            padding: 8px;
+            padding: 7px;
 
             &:hover {
-                background: $clr5;
+                background: #ede6f3;
             }
 
             &.active {
-                background: $clr5;
+                background: #ede6f3;
             }
         }
 
         .bottom-button {
             margin-bottom: 40px;
+
+            button {
+                scale: 1.1;
+            }
         }
     }
 
@@ -67,10 +72,11 @@
         .prev-cmp-img-container {
             overflow-y: auto;
             height: calc(100vh - 185px);
-            .close-icon{
+
+            .close-icon {
                 @media(max-width:550px) {
                     left: 5px;
-                    
+
                 }
             }
         }
@@ -101,7 +107,7 @@
             // height: 100%;
 
             >* {
-                padding-inline-start: 10px;
+                padding-inline: 10px;
             }
 
             h2 {
@@ -186,6 +192,9 @@
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 10px;
+                @media (max-width:900px) {
+                    margin: auto;
+                }
             }
 
             .img-replace-src {
@@ -355,7 +364,7 @@
                 top: 5px;
                 background-color: rgb(244, 244, 246);
                 z-index: 15;
-              
+
 
             }
 
@@ -488,14 +497,21 @@
                 max-height: 150px;
                 object-fit: cover;
                 align-self: flex-end;
+                margin: auto;
+                margin-bottom: auto;
             }
 
             .img-replace {
                 flex-direction: row-reverse;
 
+                hr {
+                    display: none;
+                }
+
+
                 label:first-child {
                     display: inline-block;
-                    margin-bottom: 0.5em;
+                    margin: auto
                 }
 
                 .img-replace-src {

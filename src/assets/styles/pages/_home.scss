@@ -36,16 +36,16 @@
             width: 300px;
             padding: 20px;
             color: rgb(233, 233, 233);
-            background-color: $clr3;
+            background-color: $hover-clr;
             margin-inline-start: 1em;
             transition: background-color 0.2s;
             border-radius: 7px;
             font-family: montserrat, Helvetica, Arial, sans-serif;
-
+            
             
             &:first-child {
-                background-color:transparent;
                 border: 2px solid $hover-clr;
+                background-color:transparent;
             }
             &:hover {
                 background-color: $clr2;

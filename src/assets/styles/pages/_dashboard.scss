@@ -70,9 +70,8 @@
             width: 100%;
             max-width: 1400px;
             margin-inline: auto;
-           
-            .top-half{
-                
+
+            .top-half {
                 .chosen-wap-display {
                     margin-block: 20px;
                     margin-inline: auto;
@@ -124,7 +123,7 @@
                         }
                     }
                 }
-    
+
                 .wap-table {
                     grid-area: userTable;
                     max-width: 800px;
@@ -135,7 +134,7 @@
                     }
                 }
 
-                @media(min-width: 1400px){
+                @media (min-width: 1400px) {
                     display: flex;
                 }
             }
@@ -150,16 +149,42 @@
 
     .main-dash-placeholder {
         display: grid;
-        grid-template-columns: 20px 1fr 20px;
+        grid-template-columns: 10px 1fr 10px;
 
+        @media (min-width: 800px) {
+            grid-template-columns: 60px 1fr 60px;
+        }
 
-        section{
-
-            h2{
-                font-size: 46px;
-                margin-block: 40px;
-                text-transform: capitalize;
+        section {
+            .ps-dush-top {
+                h2 {
+                    font-size: 46px;
+                    margin-block: 40px;
+                    text-transform: capitalize;
+                    margin-inline: 40px;
+                    text-align: center;
+                }
             }
+            .dash-placeholder-txt {
+                width: 80%;
+                margin-inline: auto;
+                p {
+                    margin: 0;
+                }
+            }
+
+            .carousel{
+                width: 60%;
+                margin-inline: auto;
+                margin-block:20px ;
+                height: 200px;
+
+                >*{
+                    height: 100%;
+                }
+
+            }
+
         }
     }
 }

@@ -22,7 +22,7 @@
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>
 
-      <div class="burger" :class="{ active: !menuOpen }" @click="(menuOpen = !menuOpen)">
+      <div class="burger" :class="{ active: !menuOpen }"  @click.stop="(menuOpen = !menuOpen)">
         <span style="--i: -1"></span>
         <span style="--i: 0"></span>
         <span style="--i: 1"></span>

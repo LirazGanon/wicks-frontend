@@ -2,21 +2,28 @@
     <div class="main-dash-placeholder">
         <div></div>
         <section>
-            <h2>Welcome {{ user.fullname }}! </h2>
-            <p> Seems like your'e new to Wicks.in</p>
-            <p>Here you can pick one of our favorite and best seller templates</p>
-            <p> Or even start from scratch</p>
+            <div class="ps-dush-top">
 
-            <div class="block text-center" m="t-4" v-if="temp">
-                <el-carousel trigger="click" height="150px">
-                    <el-carousel-item v-for="item in temp" :key="item">
-                        <img :src="item.src" alt="" v-if="item.src" @click="editWap(item._id)">
-                        <div class="placeholder" v-else @click="editWap(item._id)"> Clean Sheet</div>
-
-                    </el-carousel-item>
-                </el-carousel>
+                <h2>Welcome {{ user.fullname }}! </h2>
             </div>
-            <pre>{{ templates }}</pre>
+            <div class="dash-placeholder-txt">
+
+                <p> Seems like your'e new to Wicks.in</p>
+                <p>Here you can pick one of our favorite and best seller templates</p>
+                <p> Or even start from scratch</p>
+            </div>
+
+            <div class="carousel">
+                <div class="block text-center" m="t-4" v-if="temp">
+                    <el-carousel trigger="click" height="150px">
+                        <el-carousel-item v-for="item in temp" :key="item">
+                            <img :src="item.src" alt="" v-if="item.src" @click="editWap(item._id)">
+                            <div class="placeholder" v-else @click="editWap(item._id)"> Clean Sheet</div>
+
+                        </el-carousel-item>
+                    </el-carousel>
+                </div>
+            </div>
         </section>
     </div>
 </template>

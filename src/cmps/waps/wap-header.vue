@@ -8,7 +8,7 @@
                 <h4 v-else>{{ cmp.info.logo.txt }}</h4>
             </div>
 
-            <component v-for="cmp in cmp.cmps" :is="cmp.type" :cmp="cmp" />
+            <component v-for="cmp in cmp.cmps" :is="cmp.type" :cmp="cmp" :menuOpen="menuOpen"/>
 
             <div class="burger" @click="(menuOpen = !menuOpen)">
                 <span style="--i: -1"></span>

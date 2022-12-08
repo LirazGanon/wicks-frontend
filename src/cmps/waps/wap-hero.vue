@@ -19,6 +19,8 @@
 
 </template>
 <script>
+import { utilService } from '../../services/util.service';
+
 export default {
     name: 'dynamic-hero-cmp',
     props: { cmp: Object },

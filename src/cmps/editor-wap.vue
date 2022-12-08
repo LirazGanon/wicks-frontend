@@ -205,6 +205,7 @@ export default {
     handleUsersPointer({ loc, id }) {
       if (!this.pointers.includes(id)) this.pointers.push(id)
       const elPointer = document.querySelector(`.${id}`)
+      console.log(elPointer)
       elPointer.style.color = 'blue'
       elPointer.style.left = loc.x + 'px'
       elPointer.style.top = loc.y + 'px'
@@ -230,6 +231,8 @@ export default {
 
 <style>
 .pointer {
-  position: absolute
+  position: absolute;
+  font-size: 50px;
+  z-index:1000;
 }
 </style>

@@ -135,6 +135,20 @@ export const wapStore = {
                 throw err
             }
         },
+        async updatePathName(context, { pathName }){
+            try {
+                console.log(pathName)
+                const name = await wapService.savePathName(pathName)
+                console.log(name, 'name')
+                 return name
+                // context.commit({ type: 'updateWap', wap })
+                // socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
+            } catch(err) {
+                // context.commit({ type: 'setLastHistoryState' })
+                console.log('wapStore: Error in updatePathName', err)
+                throw err
+            }
+        },
         async loadTemplates(context) {
             try {
                 context.commit({ type: 'toggleLoading' })

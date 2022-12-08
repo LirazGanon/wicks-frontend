@@ -2,7 +2,7 @@
     <nav class="wap-nav flex" :class="{'menu-open':menuOpen}">
 
         <a href="#" v-for="l in cmp.info.links">
-            <span v-if="(l.type)">
+            <span v-if="(l.type)" :style="l.style">
                 {{ l.txt }}
             </span>
         </a>

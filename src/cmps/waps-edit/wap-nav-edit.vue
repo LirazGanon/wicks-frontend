@@ -1,9 +1,9 @@
 <template>
     <nav class="wap-nav flex" v-if="cmp.info.links" :class="{'menu-open':menuOpen}">
 
-        <a v-for="(l, idx) in cmp.info.links" @mousedown.stop="openEditor('links', idx)" :style="l.style" @click.stop
+        <a v-for="(l, idx) in cmp.info.links" @mousedown.stop="openEditor('links', idx)"  @click.stop
             contenteditable="true" @blur="updateCmp($event, 'links', idx)">
-            <span>
+            <span :style="l.style">
                 {{ l.txt }}
             </span>
         </a>

@@ -57,14 +57,12 @@ export default {
             try {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
                 let user = userService.getLoggedinUser()
-                console.log(user)
                 if (!user) {
                     this.modalOpen = true
                     return
-                } //open login modal that leads back to the edit page
-                
+                }
+                // checking if user gave name to his site
                 const name = await this.updateName(pathName)
-                if (!name) return
                 wap.pathName = pathName
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user

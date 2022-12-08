@@ -36,27 +36,37 @@ export default {
         openEditor(editorContent) {
             this.editor = editorContent
         },
-        async updateName(pathName){
-            try{
+        async updateName(pathName) {
+            console.log(pathName)
+            if (pathName === 'wap' || pathName === '' || pathName === 'home' ||
+                pathName === 'review' || pathName === 'chat') return false//nidicate the user 'invalid site name'
+            try {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
                 wap.pathName = pathName
-                await this.$store.dispatch({ type: 'updateWapFull', wap })
-            } catch(err){
-            
+                return await this.$store.dispatch({ type: 'updatePathName', pathName })
+            } catch (err) {
+                console.log(err)
+                //indication to the user that the name is taken
             }
         },
         async publish(pathName) {
             try {
-                const wap = utilService.copy(this.$store.getters.getWapToEdit)
-                if (pathName) wap.pathName = pathName
                 let user = userService.getLoggedinUser()
-                if (!user) return
+                if (!user) return//open login modal that leads back to the edit page
+
+                const wap = utilService.copy(this.$store.getters.getWapToEdit)
+
+                console.log(pathName)
+                const name = await this.updateName(pathName)
+                console.log(name)
+                if(!name)return
+                wap.pathName = pathName
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user
                 wap.isPublish = true
-                
+
                 const routName = pathName ? 'published' : 'wap-view'
-                const params = pathName ? {pathName} : {wapId: wap._id}
+                const params = pathName ? { pathName } : { wapId: wap._id }
                 await this.$store.dispatch({ type: 'updateWapFull', wap })
                 let routeData = this.$router.resolve({ name: routName, params })
                 window.open(routeData.href, '_blank')

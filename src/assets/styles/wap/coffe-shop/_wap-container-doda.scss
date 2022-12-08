@@ -1,11 +1,7 @@
 .wap-container-wrapper:has(.doda-cards) {
     overflow: hidden;
-    padding-bottom: 5em;
-    padding-top: 5em;
-    margin-top: 5em;
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
 
     .mobile & {
         margin-top: 0em;
@@ -21,7 +17,6 @@
 .wap-container-wrapper.shower-cards {
     background-color: #BFA98B;
     padding-top: 6em;
-    margin-bottom: 2em;
 }
 
 .wap-container {
@@ -30,9 +25,6 @@
         * {
             color: $text-primary;
         }
-
-
-
 
 
         &.doda-cards {
@@ -196,11 +188,14 @@
                 }
 
                 .medium & {
-                    width: 12em;
+                    width: 20em;
                 }
 
                 .narrow & {
                     width: 17em;
+                }
+                .normal & {
+                    width: 20em;
                 }
 
                 .wide & {

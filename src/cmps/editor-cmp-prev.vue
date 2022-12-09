@@ -5,7 +5,7 @@
     <!-- <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
       disabled_by_default
     </span> -->
-    <span class="close-editor-icon" @click="(active = null)">
+    <span class="close-editor-icon" @click="$emit('closeEditor')">
                 <span class="material-symbols-outlined arrow">
                     chevron_left
                 </span>

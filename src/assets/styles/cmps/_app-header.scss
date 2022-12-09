@@ -58,7 +58,7 @@ header {
         .logo {
             max-width: 5.19em;
             margin-block: 10px;
-            padding-inline-start: 15px;
+            // padding-inline-start: 15px;
         }
 
         .main-nav {
@@ -97,7 +97,7 @@ header {
                 height: auto;
                 background: transparent;
 
-                *:last-child {
+                >:last-child {
                     margin-inline-end: 20px;
                 }
             }
@@ -139,7 +139,7 @@ header {
         .edit-container & {
             .logo {
                 max-height: em(46px);
-                margin-inline-start: 56px;
+                margin-inline-start: 20px;
             }
 
             nav > * {

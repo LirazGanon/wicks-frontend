@@ -7,49 +7,53 @@
         <section class="flex space-between full align-center">
 
             <section class="view-port-editor flex">
-                <div class="material-symbols-outlined icon" :class="{active:viewSize==='100'}" v-tooltip="'Switch to Desktop'" @click="changeView('100')">
+                <div class="material-symbols-outlined icon" :class="{ active: viewSize === '100' }"
+                    v-tooltip="'Switch to Desktop'" @click="changeView('100')">
                     desktop_windows
                 </div>
-                <div class="material-symbols-outlined icon" :class="{active:viewSize==='860'}" v-tooltip="'Switch to Tablet'" @click="changeView('860')">
+                <div class="material-symbols-outlined icon" :class="{ active: viewSize === '860' }"
+                    v-tooltip="'Switch to Tablet'" @click="changeView('860')">
                     tablet_mac
                 </div>
-                <div class="material-symbols-outlined icon" :class="{active:viewSize==='450'}" v-tooltip="'Switch to Mobile'" @click="changeView('450')">
+                <div class="material-symbols-outlined icon" :class="{ active: viewSize === '450' }"
+                    v-tooltip="'Switch to Mobile'" @click="changeView('450')">
                     phone_iphone
                 </div>
             </section>
-            <div class="dynamic-url">
-                <div class="material-symbols-outlined">
-                    vpn_key
-                </div>
-                <span>https</span>
-                <span>://wicks.in/</span>
-                <span contenteditable="true" @input="chooseUrl">YOUR-SITE-NAME</span>
-            </div>
+            <div class="right-editor-top flex">
 
-            <section class="preview-container flex">
-                <!-- <button class="material-symbols-outlined site-preview" v-tooltip="'Site Preview'" @click="placholder">
+                <div class="dynamic-url">
+                    <div class="material-symbols-outlined">
+                        vpn_key
+                    </div>
+                    <span>https</span>
+                    <span>://wicks.in/</span>
+                    <span contenteditable="true" @input="chooseUrl">YOUR-SITE-NAME</span>
+                </div>
+
+                <section class="preview-container flex">
+                    <!-- <button class="material-symbols-outlined site-preview" v-tooltip="'Site Preview'" @click="placholder">
                         visibility
                     </button> -->
-                <div class="site-preview">
-                    <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
-                    <span>Preview</span>
-                    <!-- <span class="material-symbols-outlined">
+                    <div class="site-preview">
+                        <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
+                        <span>Preview</span>
+                        <!-- <span class="material-symbols-outlined">
                             visibility
                         </span> -->
-                    <!-- </router-link> -->
+                        <!-- </router-link> -->
 
-                </div>
-                <div class="site-publish">
+                    </div>
+                    <div class="site-publish">
 
-                    <div @click="publish" class="flex">
-                        <span>Publish</span><span class="material-symbols-outlined">
-                            publish
-                        </span>
+                        <div @click="publish" class="flex">
+                            <span>Publish</span>
+                        </div>
+
                     </div>
 
-                </div>
-
-            </section>
+                </section>
+            </div>
 
         </section>
 
@@ -67,14 +71,14 @@ export default {
     data() {
         return {
             url: null,
-            viewSize:'100',
+            viewSize: '100',
             pathName: null
         };
     },
     created() {
 
     },
-  
+
     methods: {
         changeView(size) {
             this.viewSize = size;

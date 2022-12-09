@@ -2,13 +2,16 @@
 
   <section class="prev-cmp-img-container" v-if="view">
 
-    <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
+    <!-- <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
       disabled_by_default
+    </span> -->
+    <span class="material-symbols-outlined close-editor-icon"  @click="$emit('closeEditor')">
+      chevron_left
     </span>
+
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
-      @mousedown="onDragStart"
-      @drop="onDrop($event)">
+      @mousedown="onDragStart" @drop="onDrop($event)">
 
       <Draggable v-for="item in cmps" :key="item._id">
         <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true"
@@ -22,7 +25,7 @@
 
 
       </Draggable>
-   
+
     </Container>
 
 
@@ -84,7 +87,7 @@ export default {
     },
     onDragStart(...args) {
       eventBus.emit('drag')
-      
+
     },
 
   },

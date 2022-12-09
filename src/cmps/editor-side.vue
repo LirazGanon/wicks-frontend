@@ -58,8 +58,11 @@
 
         <!-- THEME PICKER -->
         <section class="flex options theme" :class="{ active: active === 'palette' }">
-            <span class="material-symbols-outlined close-icon" @click="(active = null)">
+            <!-- <span class="material-symbols-outlined close-icon" @click="(active = null)">
                 disabled_by_default
+            </span> -->
+            <span class="material-symbols-outlined close-editor-icon" @click="(active = null)">
+                chevron_left
             </span>
             <h2>Theme</h2>
             <img @click="setTheme('a')"
@@ -77,8 +80,12 @@
 
         <!-- ACTUAL CMP EDITOR -->
         <section class="flex cmp-side-editor options" :class="{ active: active === 'edit' && editor }">
-            <span class="material-symbols-outlined close-icon" @click="(active = null)">
+            <!-- <span class="material-symbols-outlined close-icon" @click="(active = null)">
+                
                 disabled_by_default
+            </span> -->
+            <span class="material-symbols-outlined close-editor-icon" @click="(active = null)">
+                chevron_left
             </span>
             <ul class="cmp-side-editor">
                 <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor"

@@ -1,4 +1,14 @@
 // Colors
+
+:root {
+    --polka-bg-image:
+      radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%),
+      radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%);
+    --polka-bg-position: 0px 0px, 8px 8px;
+    --polka-bg-size: 16px 16px;
+    --polka-bg-color: rgb(255, 255, 255);
+  }
+  
 $clr1: #5a4066;
 $clr2: #4f3a65;
 $clr3: #7124b4;

@@ -14,7 +14,7 @@
 
         <article class="loggedin-user flex" v-if="loggedInUser">
 
-          <div>
+          <div class="flex">
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 

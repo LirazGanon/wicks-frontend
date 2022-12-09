@@ -142,3 +142,15 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.drop-placeholder {
+    // border: 3px dotted $primary-clr;
+    background-image: 
+    radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%),
+    radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%);
+  background-position: 0px 0px, 8px 8px;
+  background-size: 16px 16px;
+  background-color: rgb(255, 255, 255);
+
+}
+

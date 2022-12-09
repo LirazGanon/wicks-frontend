@@ -4,8 +4,8 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.src" alt="" v-if="cmp.info.logo.src">
-                <h4 v-else>{{ cmp.info.logo.txt }}</h4>
+                <img :src="cmp.info.logo?.src" alt="" v-if="cmp.info.logo?.src">
+                <h4 v-else>{{ cmp.info.logo?.txt }}</h4>
             </div>
 
             <component v-for="cmp in cmp.cmps" :is="cmp.type" :cmp="cmp" :menuOpen="menuOpen"/>

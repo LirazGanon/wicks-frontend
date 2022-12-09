@@ -6,14 +6,14 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @mousedown.stop="openEditor('logo')" @click.stop
-                    :style="cmp.info.logo.style">
+                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo?.src" @mousedown.stop="openEditor('logo')" @click.stop
+                    :style="cmp.info.logo?.style">
 
 
 
                 <h4 v-else contenteditable="true" @click.stop @mousedown.stop="openEditor('logo')"
-                    :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">{{
-                            cmp.info.logo.txt
+                    :style="cmp.info.logo?.style" @blur="updateCmp($event, 'logo')">{{
+                            cmp.info.logo?.txt
                     }}</h4>
 
 

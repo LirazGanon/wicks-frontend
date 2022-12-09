@@ -2216,7 +2216,7 @@
         {
             "type" : "wap-form",
             "id" : "nslz9xhd23oy",
-            "src" : "https://res.cloudinary.com/wicksin/image/upload/v1670600312/wicks/form-fun_iambrg.png"
+            "src" : "https://res.cloudinary.com/wicksin/image/upload/v1670600312/wicks/form-fun_iambrg.png",
             "classes" : [
                 "kambucha"
             ],

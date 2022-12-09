@@ -1,5 +1,5 @@
 <template>
-    <section class="main-layout full wap-hero-wrapper" :style="cmp.style">
+    <section class="main-layout full wap-hero-wrapper" :class="cmp.classes" :style="cmp.style">
 
         <section class="wap-hero " :style="getCmpStyle" :class="cmp.classes">
 

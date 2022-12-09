@@ -5,9 +5,14 @@
     <!-- <span class="material-symbols-outlined close-icon" @click="$emit('closeEditor')">
       disabled_by_default
     </span> -->
-    <span class="material-symbols-outlined close-editor-icon"  @click="$emit('closeEditor')">
-      chevron_left
-    </span>
+    <span class="close-editor-icon" @click="$emit('closeEditor')">
+                <span class="material-symbols-outlined arrow">
+                    chevron_left
+                </span>
+                <span class="material-symbols-outlined dote">
+                    more_vert
+                </span>
+            </span>
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"

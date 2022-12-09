@@ -4,7 +4,7 @@
 
     <!-- <section class="editor-top main-container"> Liraz:removed:"main-container" -->
     <section class="editor-top flex">
-        <section class="flex space-between full align-center">
+        <section class="flex  full align-center">
 
             <section class="view-port-editor flex">
                 <div class="material-symbols-outlined icon" :class="{ active: viewSize === '100' }"
@@ -23,12 +23,15 @@
             <div class="right-editor-top flex">
 
                 <div class="dynamic-url">
-                    <div class="material-symbols-outlined">
+                    <!-- <div class="material-symbols-outlined">
                         vpn_key
-                    </div>
+                    </div> -->
                     <span>https</span>
                     <span>://wicks.in/</span>
-                    <span contenteditable="true" @input="chooseUrl">my-site</span>
+                    <span class="choose-url" contenteditable="true" @input="chooseUrl">my-site-name</span>
+                    <span class="material-symbols-outlined arrow">
+                        keyboard_backspace
+                    </span>
                 </div>
 
                 <section class="preview-container flex">

@@ -11,18 +11,32 @@
         <article>
           <router-link to="/wap">Templates</router-link>
         </article>
+
         <article class="loggedin-user flex" v-if="loggedInUser">
-          <router-link :to="`/user/${loggedInUser._id}`">
-            {{ loggedInUser.fullname }}
-          </router-link>
+
           <div>
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
+
+          <div class="main-dropdown">
+
+            <router-link :to="`/user/${loggedInUser._id}`">
+              {{ loggedInUser.fullname }}
+            </router-link>
+
+
+            <div @click="logout" class="logout-user-dash">
+              Logout
+            </div>
+          </div>
+
+
         </article>
+
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>
 
-      <div class="burger" :class="{ active: !menuOpen }"  @click.stop="(menuOpen = !menuOpen)">
+      <div class="burger" :class="{ active: !menuOpen }" @click.stop="(menuOpen = !menuOpen)">
         <span style="--i: -1"></span>
         <span style="--i: 0"></span>
         <span style="--i: 1"></span>
@@ -47,13 +61,18 @@ export default {
     return {
       avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670322893/user_ha6zol.png',
       menuOpen: true,
-
     }
   },
   mounted() {
     // new ResizeObserver(this.resized).observe(this.$refs.mainHeader)
     // new ResizeObserver(this.resized).observe(this.$refs.mainHeader)
     // TODO: ASK GUY
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch({ type: 'logout' })
+      this.$router.push('/')
+    },
   },
   computed: {
     loggedInUser() {

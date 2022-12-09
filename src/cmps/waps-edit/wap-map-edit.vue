@@ -2,8 +2,6 @@
 <!-- thisns needed to be edited:
 lat lng with input to change the markers(cmp.info.markers.position.lat/.lng)
 center with input
-on lines 97-98 the lat lng is given on ckick on the map
-there is some errors in this page aboute mutationing the store outside of the store and some more errors that need to be inspected
 -->
 
 <template>
@@ -21,12 +19,12 @@ there is some errors in this page aboute mutationing the store outside of the st
           <div id="siteNotice"></div>
 
           <h1 id="firstHeading" class="firstHeading" v-if="m.title" contenteditable="true"
-            @click.stop@mousedown.stop="openEditor('heading')">title
+            @click.stop @mousedown.stop="openEditor('heading')">title
           </h1>
 
           <div id="bodyContent">
 
-            <b contenteditable="true" @click.stop@mousedown.stop="openEditor('title')">sub title</b>
+            <b contenteditable="true" @click.stop @mousedown.stop="openEditor('title')">sub title</b>
 
             <p v-if="m.details" contenteditable="true" @mousedown.stop="openEditor('details')">
               here you can write things about your buissness or whatever it is that you want to share with the visitors

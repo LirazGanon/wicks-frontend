@@ -61,8 +61,13 @@
             <!-- <span class="material-symbols-outlined close-icon" @click="(active = null)">
                 disabled_by_default
             </span> -->
-            <span class="material-symbols-outlined close-editor-icon" @click="(active = null)">
-                chevron_left
+            <span class="close-editor-icon" @click="(active = null)">
+                <span class="material-symbols-outlined arrow">
+                    chevron_left
+                </span>
+                <span class="material-symbols-outlined dote">
+                    more_vert
+                </span>
             </span>
             <h2>Theme</h2>
             <img @click="setTheme('a')"
@@ -84,8 +89,13 @@
                 
                 disabled_by_default
             </span> -->
-            <span class="material-symbols-outlined close-editor-icon" @click="(active = null)">
-                chevron_left
+            <span class="close-editor-icon" @click="(active = null)">
+                <span class="material-symbols-outlined arrow">
+                    chevron_left
+                </span>
+                <span class="material-symbols-outlined dote">
+                    more_vert
+                </span>
             </span>
             <ul class="cmp-side-editor">
                 <component v-if="editor" :is="editor.el.type + 'Editor'" :info="editor" class="cmp-editor"

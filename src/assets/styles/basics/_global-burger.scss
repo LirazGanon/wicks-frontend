@@ -16,8 +16,7 @@
         height: 100vh;
         pointer-events: none;
 
-
-        @media (min-width: 600px) {
+        .medium & {
             height: auto;
             width: auto;
             position: relative;
@@ -25,7 +24,6 @@
             font-family: comfortaa;
             background-color: transparent;
             pointer-events: all;
-
         }
 
         a {
@@ -35,7 +33,7 @@
             background: rgba(238, 238, 238, 0.952);
             width: 100%;
             box-shadow: 0 0 2px #3339;
-            margin-inline-end: 0 ;
+            margin-inline-end: 0;
             // pointer-events: none;
             transition: 0.3s;
             cursor: pointer;
@@ -43,7 +41,7 @@
                 background: #eee;
             }
 
-            @media (min-width: 600px) {
+            .medium & {
                 height: auto;
                 width: auto;
                 background-color: transparent;
@@ -59,7 +57,7 @@
                 // font-size: 24px;
                 font-family: montserratBold;
 
-                @media (min-width: 600px) {
+                .medium & {
                     height: auto;
                     width: auto;
                     background-color: transparent;
@@ -83,7 +81,7 @@
         position: relative;
         cursor: pointer;
 
-        @media (min-width: 600px) {
+        .medium & {
             display: none;
         }
     }

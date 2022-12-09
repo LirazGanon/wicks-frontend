@@ -1,0 +1,14 @@
+.wap-header {
+
+    &.barber {
+        background: darken($barber-dark, 5%);
+        font-size: 1rem;
+
+        * {
+            color: $barber-light;
+        }
+
+        height: min-content;
+
+    }
+}

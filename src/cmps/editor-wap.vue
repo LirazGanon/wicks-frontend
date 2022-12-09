@@ -69,6 +69,7 @@ export default {
       shouldAcceptDrop: false,
       selectedId: null,
       pointers: [],
+      isEditorMode: true,
     }
   },
   async created() {

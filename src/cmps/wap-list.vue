@@ -7,7 +7,7 @@
       <h4>Or express your inner creativity and start from blank</h4>
 
     <section v-if="loading" class="wap-list">
-	  <div v-for="n in 5" class="card-preview is-loading">
+	  <div v-for="n in 8" class="card-preview is-loading">
 	    <div class="image"></div>
 	    <div class="content" >
 	      <h2></h2>

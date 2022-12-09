@@ -1,4 +1,4 @@
-.wap-container-wrapper:has(.doda-cards) {
+.wap-container-wrapper.doda-cards {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -8,6 +8,8 @@
         padding-top: 15em;
     }
 
+    padding-block: 1em;
+
     .narrow & {
         margin-top: 0;
         padding-top: 0;
@@ -16,7 +18,15 @@
 
 .wap-container-wrapper.shower-cards {
     background-color: #BFA98B;
-    padding-top: 6em;
+    .mobile &,.small &{
+        padding-top: 6em;
+        
+    }
+    padding-top: 1.5em;
+    .normal &{
+        padding-top: 6em;
+        
+    }
 }
 
 .wap-container {
@@ -68,15 +78,16 @@
                 width: 99%;
                 position: absolute;
                 height: $img-height;
-                transform: translateX(-20%);
+                transform: translate(-20%,25px);
 
                 .mobile & {
                     top: 0;
                     transform: translateY(-30%);
-
+                    
                 }
-
+                
                 .narrow & {
+                    transform: translate(-20%);
                     padding: 0;
                 }
             }
@@ -166,9 +177,10 @@
                 color: $coffee-bg;
                 font-size: 4em;
                 font-weight: bold;
-                .mobile &{
+
+                .mobile & {
                     font-size: 3em;
-                    
+
                 }
 
             }
@@ -194,6 +206,7 @@
                 .narrow & {
                     width: 17em;
                 }
+
                 .normal & {
                     width: 20em;
                 }
@@ -202,7 +215,7 @@
                     width: 22em;
                 }
 
-                
+
             }
 
             img {
@@ -237,17 +250,19 @@
                 >span {
                     display: flex;
                     justify-content: space-between;
-                    align-items:baseline;
+                    align-items: baseline;
 
                     p {
                         color: #bfa98b;
                         font-size: 2em;
                         font-weight: bold;
                         margin: 0;
+
                         .narrow & {
                             font-size: 2em;
                         }
-                        &::after{
+
+                        &::after {
                             content: "$";
                         }
                     }

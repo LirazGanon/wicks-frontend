@@ -5,6 +5,20 @@
     // background-color: aqua;
 }
 
+section.wap-container.coffee-shop.img-pill-cards {
+    margin-block: -40px;
+
+    .medium & {
+        margin-block: -20px;
+    }
+
+    .normal & {
+        margin-block: 0;
+
+    }
+
+}
+
 .wap-container-wrapper.ice-cream.coffee-shop {
     background-position: left;
     padding: 1em;
@@ -65,6 +79,7 @@
                 }
 
                 .medium & {
+                    margin-bottom: 0.5em;
                     font-size: 49px;
                 }
 
@@ -142,19 +157,22 @@
             * {
                 color: #111;
             }
-            .mobile &{
+
+            .mobile & {
                 padding: 0 0.5em;
                 gap: 1.2em;
-                p{
+
+                p {
                     font-size: 1.1em !important;
                 }
             }
-
+            
             .medium &,
             .narrow &,
             .wide & {
                 padding-top: 0;
                 $img-height: 20em;
+        
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:
                     "h1 h1"
@@ -165,16 +183,19 @@
             }
 
             .medium & {
-                width: 880px;
+                width: 95%;
+                padding: 0;
+                gap: 0 2em;
 
                 P {
                     scale: 0.8;
                 }
             }
-
+            
             .wide &,
             .narrow & {
                 width: 1030px;
+                gap:3em;
 
                 P {
                     scale: 1;
@@ -209,20 +230,24 @@
                 position: relative;
                 font-size: 3em;
 
-                .mobile &{
-                    transform: translateY(100px);
-                  
+                .mobile & {
+                    transform: translateY(80px);
+
                 }
 
                 .small & {
                     font-size: 3.5em;
+                    transform: translateY(60px);
                 }
 
                 .medium &,
-                .narrow &,
-                .wide & {
+                .narrow & {
                     font-size: 4em;
                     transform: translateY(50px);
+                }
+
+                .normal & {
+                    transform: translateY(40px);
                 }
             }
 
@@ -265,6 +290,15 @@
                 height: em(230px);
                 margin-block-start: auto;
 
+                .medium & {
+                    padding: 0;
+                    height: em(190px);
+                }
+                .normal & {
+                    padding: 1em;
+                    height: em(230px);
+                }
+
                 p {
                     font-size: 1.3em;
                     color: $coffee-bg;
@@ -272,7 +306,7 @@
 
                     &:first-child {
                         font-weight: bold;
-                        margin-bottom: 0.7em;
+                        margin-bottom: 0em;
                     }
                 }
 
@@ -288,6 +322,14 @@
                 align-items: center;
                 height: em(230px);
                 margin-block-end: auto;
+                .medium & {
+                    padding: 0;
+                    height: em(190px);
+                }
+                .normal & {
+                    padding: 1em;
+                    height: em(230px);
+                }
 
                 p {
                     color: $coffee-bg;
@@ -296,7 +338,7 @@
 
                     &:first-child {
                         font-weight: bold;
-                        margin-bottom: 0.7em;
+                        margin-bottom: 0;
                     }
                 }
 

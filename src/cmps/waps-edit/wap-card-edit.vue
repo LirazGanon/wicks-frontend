@@ -6,7 +6,7 @@
             <h1 v-if="cmp.info.heading" contenteditable="true" @click.stop @mousedown.stop="openEditor('heading')"
                 :style="cmp.info.heading?.style" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading?.txt }}</h1>
 
-            <p contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')"
+            <p v-if="cmp.info?.subHeading" contenteditable="true" @click.stop @mousedown.stop="openEditor('subHeading')"
                 :style="cmp.info.subHeading?.style" @blur="updateCmp($event, 'subHeading')">{{ cmp.info.subHeading?.txt
                 }}
             </p>

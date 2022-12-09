@@ -20,9 +20,9 @@
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
-                @openEditor="$emit('openEditor', $event)" :menuOpen="menuOpen"/>
+                @openEditor="$emit('openEditor', $event)" :menuOpen="menuOpen" />
 
-            <div class="burger" @click.stop="(menuOpen = !menuOpen)">
+            <div class="burger" @click.stop="deselect">
                 <span style="--i: -1"></span>
                 <span style="--i: 0"></span>
                 <span style="--i: 1"></span>
@@ -44,12 +44,16 @@ export default {
     components: { wapNav },
     data() {
         return {
-            menuOpen:false
+            menuOpen: false
         };
     },
     created() {
     },
     methods: {
+        deselect() {
+            this.$emit('deselect')
+            this.menuOpen = !this.menuOpen
+        },
 
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]

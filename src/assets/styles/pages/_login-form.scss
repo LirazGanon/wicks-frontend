@@ -3,7 +3,10 @@ body {
 }
 
 .whole-login {
-    height: 100vh;
+    height: 100%;
+    background: #3335;
+    box-shadow: 0 0 0 200vh #3335;
+
     .bubble-move {
         display: none;
     }
@@ -83,12 +86,11 @@ body {
         @media (min-height: 400px) {
             transform: translate(-50%, -80%) scale(1);
         }
-       
 
         margin-block-start: 100px;
         background: linear-gradient(45deg, #c78afb 20%, #ff82d8, #ff8daa, #ffac7f);
-        width: 450px;
-        height: 450px;
+        width: 500px;
+        height: 500px;
         margin-inline: auto;
         border-radius: 33% 67% 68% 32% / 30% 38% 62% 70%;
         box-shadow: -20px 25px #6661;
@@ -140,9 +142,9 @@ body {
             &:hover {
                 background-color: lighten($primary-clr, 2%);
             }
-            &.google-login{
+            &.google-login {
                 padding: 10px;
-                margin: 5px 0 0 0 ;
+                margin: 5px 0 0 0;
             }
         }
         p {

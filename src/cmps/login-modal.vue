@@ -1,47 +1,48 @@
 <template>
-<section class="login-modal">
-    <section class="whole-login">
-        <div class="bubble-move"></div>
-        <div class="bubble-move"></div>
-        <div class="bubble-move"></div>
+        <section class="login-modal" :class="{ dark: isDarkScreen }">
+            <section class="whole-login">
+                <div class="bubble-move"></div>
+                <div class="bubble-move"></div>
+                <div class="bubble-move"></div>
 
-      
-        <div>
-            <section class="login-form" :class="{ signup: isLogin }">
 
-                <section v-if="!isLogin">
-                    <h2>Login </h2>
-                    <form @submit.prevent="doLogin">
-                        <input type="text" v-model="loginCred.username" placeholder="Username">
-                        <input type="password" v-model="loginCred.password" placeholder="Password">
-                        <p class="fail-to-login">{{ msg }}</p>
-                        <button>Login</button>
-                        <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup</span></p>
-                    </form>
-                </section>
+                <div>
+                    <section class="login-form" :class="{ signup: isLogin }">
 
-                <section v-else>
-                    <form @submit.prevent="doSignup">
-                        <h2>Signup</h2>
-                        <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-                        <input type="email" v-model="signupCred.email" placeholder="Email" />
-                        <input type="text" v-model="signupCred.username" placeholder="Username" />
-                        <input type="password" v-model="signupCred.password" placeholder="Password" />
-                        <!-- <img-uploader @uploaded="onUploaded"></img-uploader> -->
-                        <p class="fail-to-login">{{ msg }}</p>
-                        <button>Signup</button>
-                        <p>Already have an account? <span @click="(isLogin = !isLogin)">Log in</span></p>
+                        <section v-if="!isLogin">
+                            <h2>Login </h2>
+                            <form @submit.prevent="doLogin">
+                                <input type="text" v-model="loginCred.username" placeholder="Username">
+                                <input type="password" v-model="loginCred.password" placeholder="Password">
+                                <p class="fail-to-login">{{ msg }}</p>
+                                <button>Login</button>
+                                <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup</span></p>
+                            </form>
+                        </section>
 
-                    </form>
+                        <section v-else>
+                            <form @submit.prevent="doSignup">
+                                <h2>Signup</h2>
+                                <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+                                <input type="email" v-model="signupCred.email" placeholder="Email" />
+                                <input type="text" v-model="signupCred.username" placeholder="Username" />
+                                <input type="password" v-model="signupCred.password" placeholder="Password" />
+                                <!-- <img-uploader @uploaded="onUploaded"></img-uploader> -->
+                                <p class="fail-to-login">{{ msg }}</p>
+                                <button>Signup</button>
+                                <p>Already have an account? <span @click="(isLogin = !isLogin)">Log in</span></p>
 
-                </section>
+                            </form>
+
+                        </section>
+
+                    </section>
+                </div>
+
 
             </section>
-        </div>
+        </section>
 
-
-    </section>
-</section>
 </template>
   
 <script>
@@ -52,6 +53,7 @@ import imgUploader from '../cmps/img-uploader.vue'
 export default {
     name: 'login-signup',
     props: {
+        isDarkScreen: Boolean
     },
     components: {
         imgUploader,
@@ -136,13 +138,13 @@ export default {
 }
 </script>
 <style>
-.login-modal{
-width: 400px;
-height: 400px;
-position: absolute;
-z-index:100;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+.login-modal {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>

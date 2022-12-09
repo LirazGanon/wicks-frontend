@@ -72,10 +72,10 @@
           "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593517/wicks/barber/Logo-Barber_vttz8t.png",
           "style": {}
         }
-      ],
-      "style": {
-        "background-image": "url(https://res.cloudinary.com/wicksin/image/upload/v1670593375/wicks/barber/barbershop-1-1_eztbvf.jpg)"
-      }
+      ]
+    },
+    "style": {
+      "background-image": "url(https://res.cloudinary.com/wicksin/image/upload/v1670593375/wicks/barber/barbershop-1-1_eztbvf.jpg)"
     }
   },
   {

@@ -8,20 +8,20 @@
         </span>
       </router-link>
       <nav class="main-nav" :class="{ active: !menuOpen }">
-        <article>
+        <article class="temp-header">
           <router-link to="/wap">Templates</router-link>
         </article>
 
         <article class="loggedin-user flex" v-if="loggedInUser">
 
-          <div class="flex">
+          <div v-if="loggedInUser" @click="(openDropDown = !openDropDown)" class="user-icon">
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 
-          <div class="main-dropdown">
+          <div class="main-dropdown" :class="{ openMenu: openDropDown }">
 
             <router-link :to="`/user/${loggedInUser._id}`">
-              {{ loggedInUser.fullname }}
+              BackOffice
             </router-link>
 
 
@@ -61,10 +61,10 @@ export default {
     return {
       avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670322893/user_ha6zol.png',
       menuOpen: true,
+      openDropDown: false
     }
   },
   mounted() {
-    // new ResizeObserver(this.resized).observe(this.$refs.mainHeader)
     // new ResizeObserver(this.resized).observe(this.$refs.mainHeader)
     // TODO: ASK GUY
   },

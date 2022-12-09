@@ -9,18 +9,19 @@
                 @mousedown.stop="openEditor('heading')">{{ cmp.info.heading.txt }}</h1>
 
             <div v-for="(curCmp, idx) in cmp.cmps">
-                <component :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
+                <component :is="curCmp?.type" :cmp="curCmp" :path="getPath(idx)"
                     @openEditor="$emit('openEditor', $event)" />
             </div>
-            <!-- TODO:IMG EDITOR -->
-            <!-- <div v-if="cmp.info.price">{{ cmp.info.price }}</div> -->
-
+            
             <section class="wap-img" v-if="cmp.info.imgs">
                 <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" :style="img.style" @dragstart.prevent
-                    @mousedown.stop="openEditor('imgs', idx)" @click.stop>
+                @mousedown.stop="openEditor('imgs', idx)" @click.stop>
             </section>
-
+            
         </section>
+        <!-- <pre>{{cmp}}</pre> -->
+        <!-- TODO:IMG EDITOR -->
+        <!-- <div v-if="cmp.info.price">{{ cmp.info.price }}</div> -->
         <!-- <pre>{{ cmp }}</pre> -->
     </section>
 

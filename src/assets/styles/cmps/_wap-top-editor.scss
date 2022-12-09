@@ -1,13 +1,16 @@
 .editor-top {
     border-bottom: 1px solid $border-clr;
     min-height: em(45px);
-
+    
     > section {
+        justify-content: space-between;
         margin-inline-start: em(50px);
         margin-inline-end: em(18px);
         @media (max-width: 900px) {
-            margin-inline-start: em(8px);
+            margin-inline:0;
+            justify-content: flex-end;
         }
+        
     }
 
     // margin-block-end: 5px;
@@ -38,9 +41,10 @@
         display: flex;
         font-size: rem(16px);
         background-color: $clr5;
-        border-radius: 0.3em;
-        padding: 5px 2em;
+        border-radius: 0.1em;
+        padding: 5px 1em;
         letter-spacing: 0.04em;
+        // flex: 1;
 
         .material-symbols-outlined {
             @media (max-width: 550px) {
@@ -53,20 +57,26 @@
             margin-inline-end: 10px;
         }
 
-        > span:last-of-type {
+        > span.choose-url {
             color: $logo-clr;
             border-bottom: 0.8px dashed;
             outline: none;
+            font-weight: 600;
+            margin-block-end: 4px;
+            min-width: 15px;
+        }
+        >span.arrow{
+            transform: translateY(-2px);
         }
     }
 
     .right-editor-top {
         display: flex;
-        width: 100%;
+        // width: 100%;
         transition: all 0.5s;
         flex-direction: column;
         margin-block: 20px;
-        max-width: 300px;
+        max-width: max-content;
         margin-inline: auto;
         gap: 10px;
         @media (min-width: 600px) {
@@ -79,15 +89,25 @@
         
         @media (min-width: 900px) {
             padding-inline: none;
-
-            width: 550px;
+            
+            width: max-content;
+        }
+        @media (max-width:600px) {
+            width: 95%;
+            
         }
     }
 
     .preview-container {
         border-radius: 2em;
         // margin-inline-start: 20px;
-        // gap: 10px;
+        @media (max-width:600px) {
+            gap: 10px;
+          
+         justify-content: space-between; 
+        }
+            
+        
     }
 
     .site-preview {
@@ -97,7 +117,10 @@
         transition: background-color 0.2s;
         width: 50%;
         cursor: pointer;
-
+        @media (max-width:600px) {
+            // width: 120px;
+            border: 1px solid $logo-clr; 
+        }
         span {
             padding: 5px 12px;
             margin-inline: auto;
@@ -111,6 +134,10 @@
         width: 50%;
         background-color: $logo-clr;
         transition: background-color 0.2s;
+        border-radius: 0.1em;
+        @media (max-width:600px) {
+            // width: 120px;
+        }
 
         span {
             padding: 5px 12px;

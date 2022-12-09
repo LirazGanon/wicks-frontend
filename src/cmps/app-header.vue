@@ -14,11 +14,7 @@
 
         <article class="loggedin-user flex" v-if="loggedInUser">
 
-<<<<<<< HEAD
           <div v-if="loggedInUser" @click="(openDropDown = !openDropDown)" class="user-icon">
-=======
-          <div class="flex">
->>>>>>> 054b15f5a4bff7c8999679e08fd20c7e6613924f
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 

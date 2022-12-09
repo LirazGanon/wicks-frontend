@@ -1,6 +1,7 @@
 <template>
 
-    <login-modal v-if="modalOpen" @close="closeModal" v-click-outside="onToggleModal" />
+    <login-modal v-if="loginModalOpen" @close="closeLoginModal" v-click-outside="onToggleLoginModal" />
+    <name-modal v-if="nameModalOpen" @close="closeNameModal" v-click-outside="onToggleNameModal" />
 
     <main class="edit-container">
         <app-header :mainLayout="'main-header'" />
@@ -24,17 +25,19 @@ import editorSide from '../cmps/editor-side.vue'
 import editorTop from '../cmps/editor-top.vue'
 import appHeader from '../cmps/app-header.vue'
 import loginModal from '../cmps/login-modal.vue'
+import nameModal from '../cmps/name-modal.vue'
 import { utilService } from '../services/util.service'
 import { userService } from '../services/user.service'
 export default {
     name: 'wap-edit',
     props: {},
-    components: { editorSide, editorWap, editorTop, appHeader, loginModal },
+    components: { editorSide, editorWap, editorTop, appHeader, loginModal,nameModal },
     data() {
         return {
             type: null,
             editor: null,
-            modalOpen: false,
+            loginModalOpen: false,
+            nameModalOpen: false,
         }
     },
     methods: {
@@ -49,7 +52,7 @@ export default {
                 wap.pathName = pathName
                 return await this.$store.dispatch({ type: 'updatePathName', pathName })
             } catch (err) {
-                console.log(err)
+                console.log(err.response.data)
                 //indication to the user that the name is taken
             }
         },
@@ -58,11 +61,16 @@ export default {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
                 let user = userService.getLoggedinUser()
                 if (!user) {
-                    this.modalOpen = true
+                    this.loginModalOpen = true
                     return
                 }
                 // checking if user gave name to his site
                 const name = await this.updateName(pathName)
+                if(!name){
+                    this.nameModalOpen=true
+                console.log('i am taken')
+                return
+                }
                 wap.pathName = pathName
                 user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
                 wap.createdBy = user
@@ -73,16 +81,23 @@ export default {
                 await this.$store.dispatch({ type: 'updateWapFull', wap })
                 let routeData = this.$router.resolve({ name: routName, params })
                 window.open(routeData.href, '_blank')
+                this.$router.push(`/user/${user._id}`)
                 console.log('Published Successfully');
             } catch (err) {
                 console.log(err);
             }
         },
-        closeModal() {
-            this.modalOpen = false
+        closeLoginModal() {
+            this.loginModalOpen = false
         },
-        onToggleModal() {
-            this.modalOpen = !this.modalOpen
+        onToggleLoginModal() {
+            this.loginModalOpen = !this.loginModalOpen
+        },
+        closeNameModal() {
+            this.nameModalOpen = false
+        },
+        onToggleNameModal() {
+            this.nameModalOpen = !this.nameModalOpen
         },
     },
     computed: {

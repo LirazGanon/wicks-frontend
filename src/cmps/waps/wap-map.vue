@@ -36,5 +36,26 @@ export default {
 
     }
   },
+  methods:{
+    mapClicked(ev) {
+console.log(ev.latLng.lat())
+console.log(ev.latLng.lng())
+// console.log(this. GoogleMap)
+      // GoogleMap.addListener("click", (mapsMouseEvent) => {
+      //   // Close the current InfoWindow.
+        infoWindow.close();
+
+      //   // Create a new InfoWindow.
+      //   infoWindow = new google.maps.InfoWindow({
+      //     position: mapsMouseEvent.latLng,
+      //   });
+      //   console.log(mapsMouseEvent.latLng)
+      //   infoWindow.setContent(
+      //     JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+      //   );
+      //   infoWindow.open(map);
+      // });
+    }
+  }
 }
 </script>

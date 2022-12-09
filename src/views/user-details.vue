@@ -24,6 +24,8 @@
           <section class="top-half">
             <chosen-wap-display :info="chosenWap" />
             <contacts-table :info="chosenWap.usersData.contacts" />
+            <admin-chat :info="chosenWap"/>
+
           </section>
 
           <div class="bottom-half">
@@ -35,7 +37,6 @@
 
 
     <dash-board-place-holder :user="user" :temp="templates" v-else />
-
 
     <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
 
@@ -54,6 +55,7 @@ import contactsTable from '../cmps/contacts-table.vue'
 import chosenWapDisplay from '../cmps/chosen-wap-display.vue'
 import dashBoardPlaceHolder from '../cmps/dash-board-place-holder.vue'
 import charts from '../cmps/charts.vue'
+import adminChat from '../cmps/admin-chat.vue'
 export default {
   name: 'user-details',
 
@@ -89,7 +91,8 @@ export default {
     contactsTable,
     chosenWapDisplay,
     dashBoardPlaceHolder,
-    charts
+    charts,
+    adminChat
   },
   async created() {
     this.filterBy.userId = this.userId

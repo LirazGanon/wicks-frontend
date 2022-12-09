@@ -72,9 +72,12 @@ async function save(wap) {
 }
 
 async function savePathName(pathName) {
-const name = {pathName}
+try{const name = {pathName}
     console.log(name, 'pathNAME')
 return httpService.post(`wap/pathName`,name )
+}catch(err){
+console.log(err)
+}
 }
 
 async function addWapMsg(wapId, txt) {

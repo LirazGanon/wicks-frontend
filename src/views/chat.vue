@@ -28,7 +28,7 @@
 
 <script>
 import {
-  socketService, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_TOPIC,
+  socketService, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_ROOM,
   SOCKET_GET_MOUSE, SOCKET_SEND_MOUSE
 } from '../services/socket.service'
 import { utilService } from '../services/util.service'
@@ -105,7 +105,7 @@ export default {
       this.msg = { from, txt: '' }
     },
     changeTopic() {
-      socketService.emit(SOCKET_EMIT_SET_TOPIC, this.topic)
+      socketService.emit(SOCKET_EMIT_SET_ROOM, this.topic)
     }
   }
 }

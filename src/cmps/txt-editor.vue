@@ -4,7 +4,8 @@
         <h2>Edit</h2>
 
         <section class="section-cmp-editor undo">
-            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
+            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                v-tooltip="'Undo'">
                 undo
             </button>
             <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
@@ -12,60 +13,62 @@
                 redo
             </button>
         </section>
-        <hr/>
-<section class="edit-options-wrapper">
+        <hr />
+        <section class="edit-options-wrapper">
 
-    <section class="color-picker-wrapper">
-        <span>Text Color:</span>
-        <color-picker @setColor="updateClr" />
-            <span v-if="info.key === 'btns'">Background Color:</span>
-            <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+            <section class="color-picker-wrapper">
+                <span>Text Color:</span>
+                <color-picker @setColor="updateClr" />
+                <span v-if="info.key === 'btns'">Background Color:</span>
+                <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
+            </section>
+            <hr>
+
+
+            <section class="text-format">
+
+                <span>Font Size: </span>
+                <slider :change="info" @changed="updateFS" />
+
+                <section class="editor-checkbox flex">
+                    <label class="flex align-center">
+                        <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'"
+                            @change="updateWeight">
+                        <span class="material-symbols-outlined">
+                            format_bold
+                        </span>
+                    </label>
+                    <label class="flex">
+                        <input type="checkbox" :checked="info.el.style['font-style'] === 'italic'"
+                            @change="updateStyle">
+                        <span class="material-symbols-outlined">
+                            format_italic
+                        </span>
+                    </label>
+                    <label class="flex">
+                        <input type="checkbox" :checked="info.el.style['text-decoration'] === 'underline'"
+                            @change="updateUnderline">
+                        <span class="material-symbols-outlined">
+                            format_underlined
+                        </span>
+                    </label>
+                </section>
+                <label for="font" class="flex align-center gap font-picker-wrapper">
+                    <span>Choose Font:</span>
+                    <font-picker @setFont="updateFont" />
+                </label>
+                <label v-if="info.key === 'btns'" class="border-radius-bar">
+                    <span>Border-radius</span>
+                    <slider :change="info" @changed="updateRadius" />
+                </label>
+            </section>
         </section>
         <hr>
 
 
-        <section class="text-format">
 
-            <span>Font Size: </span>
-            <slider :change="info" @changed="updateFS" />
-            
-            <section class="editor-checkbox flex">
-                <label class="flex align-center">
-                    <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
-                    <span class="material-symbols-outlined">
-                        format_bold
-                    </span>
-                </label>
-                <label class="flex">
-                    <input type="checkbox" :checked="info.el.style['font-style'] === 'italic'" @change="updateStyle">
-                    <span class="material-symbols-outlined">
-                        format_italic
-                    </span>
-                </label>
-                <label class="flex">
-                    <input type="checkbox" :checked="info.el.style['text-decoration'] === 'underline'"
-                        @change="updateUnderline">
-                        <span class="material-symbols-outlined">
-                        format_underlined
-                    </span>
-                </label>
-            </section>
-            <label for="font" class="flex align-center gap font-picker-wrapper">
-                <span>Choose Font:</span>
-                <font-picker @setFont="updateFont" />
-            </label>
-            <label v-if="info.key === 'btns'" class="border-radius-bar">
-                <span>Border-radius</span>
-                <slider :change="info" @changed="updateRadius" />
-            </label>
-        </section>
     </section>
-    <hr>
-        
-        
-        
-    </section>
-    
+
 </template>
 <script>
 import { xor } from 'lodash';
@@ -103,7 +106,8 @@ export default {
             this.updateCmp('background-color', ev.target?.value || ev)
         },
         updateFS(val) {
-            this.updateCmp('font-size', val + 'px')
+           val = val > 30 ? val / 50 : .5
+            this.updateCmp('font-size', val + 'em')
         },
         updateWeight(ev) {
             this.updateCmp('font-weight', ev.target.checked ? 'bold' : '')
@@ -118,7 +122,7 @@ export default {
             this.updateCmp('font-family', val)
         },
         updateRadius(val) {
-            this.updateCmp('border-radius', val + '%')
+            this.updateCmp('border-radius', (val / 50) + 'em')
         },
         updateCmp(att, val) {
             const { key, path, elIdx } = this.info

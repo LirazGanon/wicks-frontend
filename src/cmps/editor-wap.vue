@@ -24,7 +24,7 @@
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
 
         <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
-          :isSelected="selectedId === cmp.id ? true : false" />
+          :isSelected="selectedId === cmp.id ? true : false" @deselect="(selectedId = null)" />
 
       </Draggable>
 

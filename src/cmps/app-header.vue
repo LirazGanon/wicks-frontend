@@ -18,15 +18,19 @@
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 
-          
-          <router-link :to="`/user/${loggedInUser._id}`">
-            {{ loggedInUser.fullname }}
-          </router-link>
+          <div class="main-dropdown">
+
+            <router-link :to="`/user/${loggedInUser._id}`">
+              {{ loggedInUser.fullname }}
+            </router-link>
 
 
-          <div @click="logout" class="logout-user-dash">
-            Logout
+            <div @click="logout" class="logout-user-dash">
+              Logout
+            </div>
           </div>
+
+
         </article>
 
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>

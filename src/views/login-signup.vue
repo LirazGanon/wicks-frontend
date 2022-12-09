@@ -23,8 +23,9 @@
             <input type="password" v-model="loginCred.password" placeholder="Password">
             <p class="fail-to-login">{{ msg }}</p>
             <button>Login</button>
-            <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup</span></p>
+            <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup </span>OR:</p>
           </form>
+          <google-login/>
         </section>
 
         <section v-else>
@@ -46,7 +47,6 @@
       </section>
     </div>
 
-
   </section>
 
 </template>
@@ -55,13 +55,16 @@
 
 import appHeader from '../cmps/app-header.vue'
 import imgUploader from '../cmps/img-uploader.vue'
+import googleLogin from '../cmps/util/google-login.vue'
 
+googleLogin
 export default {
   name: 'login-signup',
   props: {},
   components: {
     imgUploader,
-    appHeader
+    appHeader,
+    googleLogin
   },
   data() {
     return {

@@ -4,15 +4,19 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 78.5px;
+
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
     }
+
     @media (min-width: 1600px) {
         grid-template-columns: 1fr 1400px 1fr;
     }
+
     @media (min-width: 1800px) {
         grid-template-columns: 1fr 1600px 1fr;
     }
+
     .home {
         color: #eee;
     }
@@ -23,28 +27,34 @@ header {
 
     .loggedin-user {
         display: flex;
+        gap: 10px;
+        align-items: center;
+
         span {
             background-color: $clr2;
             border-radius: 50%;
         }
+
         img {
-            width: 36px;
-            height: 36px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            width: 100%;
         }
     }
+
     &.main-header {
         padding: 0;
         background-color: transparent;
         position: relative;
         display: flex;
         grid-area: c;
+
         * {
             color: $text-primary;
             font-size: 1.1em;
         }
+
         .logo {
             max-width: 5.19em;
             margin-block: 10px;
@@ -63,12 +73,14 @@ header {
             transition: width 0.3s;
             overflow: hidden;
             display: flex;
+            align-items: center;
+
             &.active {
                 width: 30%;
                 flex-direction: column;
                 color: #333;
 
-                > * {
+                >* {
                     border-bottom: 1px solid #5555;
                     padding-block: 0.8em;
                     width: 100%;
@@ -84,6 +96,7 @@ header {
                 gap: 20px;
                 height: auto;
                 background: transparent;
+
                 *:last-child {
                     margin-inline-end: 20px;
                 }
@@ -100,7 +113,8 @@ header {
             @media (min-width: 900px) {
                 display: none;
             }
-            > * {
+
+            >* {
                 width: 40%;
                 height: 3px;
                 background: $clr2;
@@ -112,11 +126,12 @@ header {
                 transition: 0.5s;
             }
 
-            &.active > *:not(:nth-child(even)) {
+            &.active>*:not(:nth-child(even)) {
                 transform: translate(-50%, -50%) rotate(-45deg);
                 top: 50%;
             }
-            &.active > *:not(:nth-child(odd)) {
+
+            &.active>*:not(:nth-child(odd)) {
                 transform: translate(-50%, -50%) rotate(45deg);
             }
         }
@@ -127,7 +142,7 @@ header {
                 margin-inline-start: 56px;
             }
 
-            nav > * {
+            nav>* {
                 color: black;
             }
 
@@ -144,21 +159,26 @@ header {
 
 .main-layout-header {
     margin-inline: 10px;
+
     @media (min-width: 1000px) {
         margin-inline: 80px;
     }
+
     // @media (min-width: 1600px) {
     //     max-width: 1400px;
     //     margin-inline: auto;
     // }
 }
+
 .list-layout-header {
     display: grid;
     grid-template-areas: ". c .";
     grid-template-columns: 10px 1fr 10px;
+
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
     }
+
     @media (min-width: 1600px) {
         grid-template-columns: 1fr 1400px 1fr;
     }
@@ -170,5 +190,3 @@ header {
     width: 100%;
     background: red;
 }
-
-

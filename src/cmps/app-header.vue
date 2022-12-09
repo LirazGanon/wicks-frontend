@@ -15,9 +15,9 @@
           <router-link :to="`/user/${loggedInUser._id}`">
             {{ loggedInUser.fullname }}
           </router-link>
-          <!-- <div>
+          <div>
             <img :src="loggedInUser.imgUrl || avatarIcon" />
-          </div> -->
+          </div>
         </article>
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>

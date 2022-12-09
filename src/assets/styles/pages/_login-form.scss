@@ -140,6 +140,10 @@ body {
             &:hover {
                 background-color: lighten($primary-clr, 2%);
             }
+            &.google-login{
+                padding: 10px;
+                margin: 5px 0 0 0 ;
+            }
         }
         p {
             font-size: 14px;

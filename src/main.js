@@ -5,6 +5,7 @@ import { store } from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import Tooltip from '../lib/tooltip'
+import vue3GoogleLogin from 'vue3-google-login'
 
 
 
@@ -33,6 +34,9 @@ import {
     offsetX: 60,
     offsetY: 20
  })
+ app.use(vue3GoogleLogin, {
+  clientId: '847813311602-36c40kl53jhbtrvp0o5qt8a6600klboj.apps.googleusercontent.com'
+})
 
  
   

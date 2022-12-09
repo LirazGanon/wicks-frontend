@@ -16,6 +16,7 @@ export const userService = {
     getById,
     remove,
     update,
+    googleLogin
     // changeScore
 }
 
@@ -65,6 +66,17 @@ async function login(userCred) {
         return saveLocalUser(user)
     }
 }
+
+async function googleLogin(userCred) {
+    // const users = await storageService.query('user')
+    // const user = users.find(user => user.username === userCred.username)
+    const user = await httpService.post('user/google', userCred)
+    if (user) {
+        // socketService.login(user._id)
+        console.log(user)
+        return saveLocalGoogleUser(user)
+    }
+}
 async function signup(userCred) {
     // userCred.score = 10000
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
@@ -90,6 +102,12 @@ async function logout() {
 
 function saveLocalUser(user) {
     user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl/*, score: user.score*/}
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+    return user
+}
+function saveLocalGoogleUser(user) {
+    console.log(user)
+    user = {_id: user.sub, fullname: user.name, imgUrl: user.picture/*, score: user.score*/}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }

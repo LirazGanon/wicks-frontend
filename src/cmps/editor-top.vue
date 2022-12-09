@@ -23,7 +23,7 @@
                 </div>
                 <span>https</span>
                 <span>://wicks.in/</span>
-                <span contenteditable="true" @input="chooseUrl">my-site</span>
+                <span contenteditable="true" @input="chooseUrl">YOUR-SITE-NAME</span>
             </div>
 
             <section class="preview-container flex">

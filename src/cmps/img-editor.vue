@@ -11,25 +11,28 @@
             </button>
         </section>
         <hr>
+        <section class="edit-options-wrapper">
 
-        <section class="img-replace flex column">
-            <img :src="getSrc.src" >
-            <!-- <section class="img-replace-src">
-                <label>
-                    <span>Insert an image src: </span>
-                    <input type="text" :value="getSrc?.src" @input="updateSrc">
-                </label>
-                <p> </p>
-            </section> -->
+            <section class="img-replace flex column">
+                <img :src="getSrc.src" >
+                <!-- <section class="img-replace-src">
+                    <label>
+                        <span>Insert an image src: </span>
+                        <input type="text" :value="getSrc?.src" @input="updateSrc">
+                    </label>
+                    <p> </p>
+                </section> -->
             <hr>
-                <img-uploader @uploaded="changeImg" />
-            </section>
+            <img-uploader @uploaded="changeImg" />
+        </section>
             <hr>
-        <label v-if="info.currCmp.type !== 'wap-bg-img'">
-            <span>Border radius: </span>
-            <slider :change="info" @changed="updateRadius" />
-        </label>
-    </section>
+            <label v-if="info.currCmp.type !== 'wap-bg-img'">
+                <span>Border radius: </span>
+                <slider :change="info" @changed="updateRadius" />
+            </label>
+        </section>
+        <hr>
+</section>
    
     <!-- <pre>{{getSrc}}</pre> -->
 </template>

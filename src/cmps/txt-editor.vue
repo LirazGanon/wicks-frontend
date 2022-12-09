@@ -13,10 +13,11 @@
             </button>
         </section>
         <hr/>
+<section class="edit-options-wrapper">
 
-        <section class="color-picker-wrapper">
-            <span>Text Color:</span>
-            <color-picker @setColor="updateClr" />
+    <section class="color-picker-wrapper">
+        <span>Text Color:</span>
+        <color-picker @setColor="updateClr" />
             <span v-if="info.key === 'btns'">Background Color:</span>
             <color-picker @setColor="updateBgClr" v-if="info.key === 'btns'" />
         </section>
@@ -27,7 +28,7 @@
 
             <span>Font Size: </span>
             <slider :change="info" @changed="updateFS" />
-
+            
             <section class="editor-checkbox flex">
                 <label class="flex align-center">
                     <input type="checkbox" :checked="info.el.style['font-weight'] === 'bold'" @change="updateWeight">
@@ -44,7 +45,7 @@
                 <label class="flex">
                     <input type="checkbox" :checked="info.el.style['text-decoration'] === 'underline'"
                         @change="updateUnderline">
-                    <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined">
                         format_underlined
                     </span>
                 </label>
@@ -58,12 +59,13 @@
                 <slider :change="info" @changed="updateRadius" />
             </label>
         </section>
-        <hr>
-
-
+    </section>
+    <hr>
+        
+        
         
     </section>
-
+    
 </template>
 <script>
 import { xor } from 'lodash';

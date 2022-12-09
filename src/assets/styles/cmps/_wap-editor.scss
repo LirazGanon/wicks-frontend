@@ -189,7 +189,9 @@
                 margin-bottom: 10px;
 
                 @media (max-width: 900px) {
-                    margin: auto;
+                    margin: 0;
+                    height: 150px;
+                    margin-bottom: 0.5em;
                 }
             }
 
@@ -198,12 +200,27 @@
                     width: 80%;
                     height: 30px;
                     margin: 0.5em 0 1em 0;
+                    object-fit: cover;
                 }
             }
 
             .upload-preview {
                 margin-block: 0.5em;
                 text-align: center;
+                .upload-img-header{
+                    text-align: start;
+                }
+
+        .upload-icon-wrapper{
+            margin-top: 0.5em;
+            border: 1px dotted $logo-clr;
+            padding-block: 1.5em;
+            @media (max-width:550px) {
+                padding-block: 1.3em;
+                
+                
+            }
+        }
             }
 
             p {
@@ -313,6 +330,7 @@
             background-color: rgb(244, 244, 246);
             border: none;
             border-top: 1px solid $border-clr;
+  
 
             .material-symbols-outlined:hover {
                 background-color: transparent;
@@ -343,6 +361,8 @@
             width: 100% !important;
             z-index: 10;
             box-shadow: 0px 10px 13px -7px #000000, 0px -3px 10px 0px rgba(0, 0, 0, 0.35);
+            // height: 200px;
+            // overflow-y: scroll;
 
             .close-icon {
                 top: 5px;
@@ -500,6 +520,21 @@
     }
 
     @media (max-width: 550px) {
+
+        .edit-options-wrapper{
+            height: 150px;
+            overflow-y: auto;
+            
+            .text-format{
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .img-replace{
+                gap:10px
+            }
+        }
+            
         .left-nav {
             background-color: $clr2;
             width: 200px;
@@ -514,6 +549,7 @@
                 color: $clr5 !important;
             }
 
+          
             .app-btn {
                 display: inherit;
             }

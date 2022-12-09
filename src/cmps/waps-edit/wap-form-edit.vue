@@ -6,50 +6,51 @@
 
             <img v-for="(img, idx) in cmp.info.imgs" :src="img.src" alt="" class="wap-img" :class="img?.classes"
                 @dragstart.prevent :style="img.style" @click.stop @mousedown.stop="openEditor('imgs', idx)" />
-<span>
+            <span>
 
-    <h1 v-if="cmp.info.heading?.txt" contenteditable="true" :style="cmp.info.heading.style" @click.stop
-    @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading.txt }}
-</h1>
+                <h1 v-if="cmp.info.heading?.txt" contenteditable="true" :style="cmp.info.heading.style" @click.stop
+                    @mousedown.stop="openEditor('heading')" @blur="updateCmp($event, 'heading')">{{ cmp.info.heading.txt
+                    }}
+                </h1>
 
-            <p contenteditable="true" v-if="cmp.info.subHeading?.txt" @click.stop
-                @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
-                @blur="updateCmp($event, 'subHeading')">
-                {{
-                    (cmp.info.subHeading?.txt)
-                }}</p>
+                <p contenteditable="true" v-if="cmp.info.subHeading?.txt" @click.stop
+                    @mousedown.stop="openEditor('subHeading')" :style="cmp.info.subHeading?.style"
+                    @blur="updateCmp($event, 'subHeading')">
+                    {{
+                            (cmp.info.subHeading?.txt)
+                    }}</p>
 
 
-            <form @submit.prevent>
+                <form @submit.prevent>
 
-                <label v-if="cmp.info.textInput">
-                    <span v-if="cmp.info.textInput?.label">{{ cmp.info.textInput.label }}</span>
-                    <input type="text" :placeholder="cmp.info.textInput.placeholder" />
+                    <label v-if="cmp.info.textInput">
+                        <span v-if="cmp.info.textInput?.label">{{ cmp.info.textInput.label }}</span>
+                        <input type="text" :placeholder="cmp.info.textInput.placeholder" />
 
-                </label>
-                <label v-if="cmp.info.emailInput">
-                    <span v-if="cmp.info.emailInput?.label">{{ cmp.info.emailInput.label }}</span>
-                    <input type="email" :placeholder="cmp.info.emailInput.placeholder" />
-                </label>
-                <label v-if="cmp.info.textarea">
-                    <span v-if="cmp.info.textarea?.label">{{ cmp.info.textarea.label }}</span>
-                    <textarea v-if="cmp.info.textarea"></textarea>
-                </label>
+                    </label>
+                    <label v-if="cmp.info.emailInput">
+                        <span v-if="cmp.info.emailInput?.label">{{ cmp.info.emailInput.label }}</span>
+                        <input type="email" :placeholder="cmp.info.emailInput.placeholder" />
+                    </label>
+                    <label v-if="cmp.info.textarea">
+                        <span v-if="cmp.info.textarea?.label">{{ cmp.info.textarea.label }}</span>
+                        <textarea v-if="cmp.info.textarea"></textarea>
+                    </label>
 
-                <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
-                    @mousedown.stop="openEditor('btns', idx)" :style="btn.style"
-                    @blur="updateCmp($event, 'btns', idx)">{{
-                        btn.txt
-                    }}</button>
-            </form>
-        </span>
-            
-            
-            
+                    <button v-for="(btn, idx) in cmp.info.btns" contenteditable="true" @click.stop
+                        @mousedown.stop="openEditor('btns', idx)" :style="btn.style"
+                        @blur="updateCmp($event, 'btns', idx)">{{
+        btn.txt
+                        }}</button>
+                </form>
+            </span>
+
+
+
             <!-- <pre>{{ cmp.info.inputs }}</pre> -->
         </section>
     </section>
-    
+
 </template>
 <script>
 import { utilService } from '../../services/util.service';

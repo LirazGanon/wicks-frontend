@@ -131,16 +131,16 @@ export default {
             themes: {
                 a: {
                     main: {
-                        'background-color': '#6B5A7D',
+                        'background-color': '#C78AFB',
                         'color': '#ffffff'
                     },
                     secondary: {
-                        'background-color': '#D293B9',
-                        'color': '#333333'
+                        'background-color': '#FF82D8',
+                        'color': '#ffffff'
                     },
                     break: {
-                        'background-color': '#FFB08F',
-                        'color': '#333333'
+                        'background-color': '#FF8DAA',
+                        'color': '#ffffff'
                     }
                 },
                 b: {

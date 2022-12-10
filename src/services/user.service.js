@@ -1,7 +1,7 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 import { store } from '../store'
-import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH,  } from './socket.service'
+import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH, } from './socket.service'
 import { showSuccessMsg } from './event-bus.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -74,7 +74,9 @@ async function googleLogin(userCred) {
     if (user) {
         // socketService.login(user._id)
         console.log(user)
-        return saveLocalGoogleUser(user)
+        // return saveLocalGoogleUser(user)
+        const loggedinUser = await saveLocalUser(user)
+        return loggedinUser
     }
 }
 async function signup(userCred) {
@@ -101,13 +103,13 @@ async function logout() {
 
 
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl/*, score: user.score*/}
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl/*, score: user.score*/ }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
 function saveLocalGoogleUser(user) {
     console.log(user)
-    user = {_id: user.sub, fullname: user.name, imgUrl: user.picture/*, score: user.score*/}
+    user = { _id: user.sub, fullname: user.name, imgUrl: user.picture/*, score: user.score*/ }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }

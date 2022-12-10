@@ -1,0 +1,11 @@
+.wap-footer.yoga{
+padding: 2em;
+p{
+    margin: 0;
+    text-align: end;
+    .mobile &{
+        text-align: center;
+    }
+}
+
+}

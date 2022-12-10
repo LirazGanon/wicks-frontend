@@ -1,13 +1,69 @@
-.wap-container-wrapper.yoga.about{
-background-color: $yoga-bg;
-padding-block: 3em;
+.wap-container-wrapper.yoga.about {
+    background-color: $yoga-bg;
+    padding: 3em 1em;
 
-.wap-card{
-    text-align: center;
-    h1{
-        color: $yoga-headers;
-        font-size: 3em;
+    .wap-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+            font-family: RussoOne;
+            color: $yoga-headers;
+            font-size: 3em;
+
+            .small & {
+                font-size: 4em;
+
+            }
+        }
+
+        p {
+            max-width: 70ch;
+            font-size: 1.1em;
+            line-height: 1.5;
+
+        }
     }
+
 }
 
+.wap-container-wrapper.yoga.test {
+padding: 3em 1em;
+    .wap-card,
+    .card-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wap-card {
+        flex-direction: column-reverse;
+    }
+
+    >section>div:first-child {
+        margin-bottom: 1em;
+        img {
+            width: 100px;
+        }
+        p{
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 50ch;
+            line-height: 1.5;
+        }
+    }
+
+    >section>div:nth-child(2){
+        img{
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+        p{
+            color: $yoga-headers;
+        }
+        
+    }
 }

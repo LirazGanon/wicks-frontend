@@ -1,7 +1,30 @@
 <template>
     <section class="chart-line">
+        <div class="interactions-stats">
 
-        <h3>User Interactions</h3>
+            <div>
+                <span>Visits</span>
+
+                <h3>
+                    {{ data.datasets[0].data[data.datasets[0].data.length - 1] }}
+                </h3>
+            </div>
+            <div>
+                <span>Subscriptions</span>
+                <h3>
+                    {{ data.datasets[1].data[data.datasets[0].data.length - 1] }}
+                </h3>
+            </div>
+            <div>
+                <span>Subscriptions rate</span>
+                <h3>
+                {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
+                        data.datasets[1].data[data.datasets[0].data.length - 1]).toFixed(2)
+                }}%
+                </h3>
+            </div>
+        </div>
+
         <LineChart :chartData="data" :options="options" />
     </section>
 </template>
@@ -29,6 +52,9 @@ export default {
             },
         }
     },
+    computed: {
+
+    }
 }
 </script>
   

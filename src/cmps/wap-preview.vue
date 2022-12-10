@@ -13,8 +13,8 @@
     
     
     <div class="wap-details">
-      <span v-if="template.theme"> {{ template.theme }} - </span>
-      <span> {{ template.name }}</span>
+      <span v-if="template.name"> {{ template.name }}</span>
+      <!-- <span> {{ template.name }}</span> -->
     </div>
   </section>
 

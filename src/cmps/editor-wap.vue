@@ -14,13 +14,17 @@
 
 
 
-    <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
-      :should-accept-drop="() => shouldAcceptDrop" :should-animate-drop="() => true" @drop="onDrop($event)">
+    <Container group-name="column" orientation="vertical" :drop-placeholder="{
+      className: 'drop-placeholder',
+      animationDuration: '200',
+      showOnTop: true
+    }" :get-child-payload="itemIndex => getChildPayload(itemIndex)" :should-accept-drop="() => shouldAcceptDrop"
+      :should-animate-drop="() => true" @drop="onDrop($event)">
 
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
 
         <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
-          :isSelected="selectedId === cmp.id ? true : false" />
+          :isSelected="selectedId === cmp.id ? true : false" @deselect="(selectedId = null)" />
 
       </Draggable>
 
@@ -59,7 +63,7 @@ import { socketService, SOCKET_EVENT_GET_UPDATED_WAP, SOCKET_EMIT_SET_USER_EDITO
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap,  },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap, },
   props: { wap: Object },
   data() {
     return {
@@ -69,6 +73,7 @@ export default {
       shouldAcceptDrop: false,
       selectedId: null,
       pointers: [],
+      isEditorMode: true,
     }
   },
   async created() {
@@ -78,7 +83,7 @@ export default {
     socketService.on(SOCKET_SEND_MOUSE)
     socketService.on(SOCKET_GET_MOUSE, this.handleUsersPointer)
   },
-  
+
   mounted() {
     eventBus.on('resizeWap', this.resize)
     eventBus.on('drag', this.acceptDrop)
@@ -107,7 +112,7 @@ export default {
       this.$store.commit({ type: 'updateWap', wap })
     },
     selectNew(id) {
-      console.log('id:', id)
+      console.log('hereee:')
       this.selectedId = id
     },
 
@@ -209,10 +214,10 @@ export default {
       elPointer.style.left = loc.x + 'px'
       elPointer.style.top = loc.y + 'px'
     },
-    closeModal(){
-    this.isModalOpen=false
+    closeModal() {
+      this.isModalOpen = false
     },
-    },
+  },
 
   computed: {
     wapToEdit() {
@@ -232,6 +237,6 @@ export default {
 .pointer {
   position: absolute;
   font-size: 50px;
-  z-index:1000;
+  z-index: 1000;
 }
 </style>

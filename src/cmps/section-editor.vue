@@ -20,19 +20,24 @@
 
 
             <hr>
-            <section class="color-picker-wrapper">
-                <span class="background-color">Background Color</span>
-                <color-picker @setColor="updateBgClr" />
+            <section class="edit-options-wrapper">
+                
+                <section class="color-picker-wrapper">
+                    <span class="background-color">Background Color</span>
+                    <color-picker @setColor="updateBgClr" />
+                </section>
+                
+                <img-uploader  @uploaded="changeSrc" />
+                <!-- <img-uploader v-if="cmp.style['background-image']" @uploaded="changeSrc" /> -->
             </section>
-
-            <img-uploader v-if="cmp.style['background-image']" @uploaded="changeSrc" />
+            <hr>
         </section>
-        <section v-else>
-            Please select a section
-        </section>
-
-
-
+            <section v-else>
+                Please select a section
+            </section>
+            
+            
+            
     </section>
 </template>
 <script>

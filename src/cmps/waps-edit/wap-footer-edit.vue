@@ -4,14 +4,14 @@
         <section class="wap-footer" :class="cmp.classes" :style="cmp.style" >
 
 
-            <p v-if="(cmp.info.logo.type === 'txt')" class="logo" contenteditable="true"
-                @mousedown.stop="openEditor('logo')" @click.stop :style="cmp.info.logo.style"
+            <p v-if="(cmp.info.logo?.type === 'txt')" class="logo" contenteditable="true"
+                @mousedown.stop="openEditor('logo')" @click.stop :style="cmp.info.logo?.style"
                 @blur="updateCmp($event, 'logo')">
-                {{ cmp.info.logo.txt }}</p>
-            <img v-if="(cmp.info.logo.type === 'img')" class="logo" :src="cmp.info.logo.src">
+                {{ cmp.info.logo?.txt }}</p>
+            <img v-if="(cmp.info.logo?.type === 'img')" class="logo" :src="cmp.info.logo?.src">
 
             <p class="copyright" contenteditable="true" @mousedown.stop="openEditor('copyright')" @click.stop
-                :style="cmp.info.copyright.style" @blur="updateCmp($event, 'copyright')">{{ cmp.info.copyright.txt }}
+                :style="cmp.info.copyright?.style" @blur="updateCmp($event, 'copyright')">{{ cmp.info.copyright?.txt }}
             </p>
         </section>
     </section>

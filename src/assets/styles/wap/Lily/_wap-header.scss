@@ -1,0 +1,14 @@
+.wap-header {
+
+    &.lily {
+        background: darken($lily-bg, 5%);
+        font-size: 1rem;
+
+        .wap-logo {
+            text-transform: uppercase;
+            color: $lily-txt-clr;
+            font-size: em(25px);
+        }
+
+    }
+}

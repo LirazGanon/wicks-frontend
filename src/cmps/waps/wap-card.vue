@@ -1,6 +1,6 @@
 <template>
 
-    <section class="wap-card" :class="cmp.classes">
+    <section class="wap-card" :class="(cmp.classes +' '+ cmp.animated)">
        
         <section class="card-details">
 
@@ -29,7 +29,7 @@ export default {
     computed: {
         localeCurrency() {
             return this.cmp.info.price.txt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-        }
+        }        
     },
 };
 </script>

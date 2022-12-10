@@ -1,4 +1,14 @@
 // Colors
+
+:root {
+    --polka-bg-image:
+      radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%),
+      radial-gradient(rgb(100, 46, 147) 12.8%, transparent 12.8%);
+    --polka-bg-position: 0px 0px, 8px 8px;
+    --polka-bg-size: 16px 16px;
+    --polka-bg-color: rgb(255, 255, 255);
+  }
+  
 $clr1: #5a4066;
 $clr2: #4f3a65;
 $clr3: #7124b4;
@@ -30,6 +40,17 @@ $vendor-hover-clr:#B26E44;
 $Kambucha-pr-clr:#72ccd2;
 $Kambucha-sc-clr:#facc75;
 $Kambucha-bg:#fff;
+
+
+$lily-bg:#f8ebe1;
+$lily-txt-clr:#333;
+$lily-txt-sec-clr:#35221b;
+
+$barber-dark :#262221;
+$barber-light:#eee;
+
+$yoga-bg:#f9fafa;
+$yoga-headers:rgb(72,174,203);
 
 
 // Breakpoints

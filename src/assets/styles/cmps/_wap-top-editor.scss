@@ -50,6 +50,7 @@
         padding: 5px 1em;
         letter-spacing: 0.04em;
         // flex: 1;
+        position: relative;
 
         .material-symbols-outlined {
             @media (max-width: 550px) {
@@ -117,10 +118,11 @@
     .site-preview {
         display: flex;
         align-items: center;
-        color: $logo-clr;
+        justify-content: center;
         transition: background-color 0.2s;
         width: 50%;
         cursor: pointer;
+        
         @media (max-width:600px) {
             // width: 120px;
             border: 1px solid $logo-clr; 
@@ -128,6 +130,7 @@
         span {
             padding: 5px 12px;
             margin-inline: auto;
+            color: $logo-clr ;
         }
         &:hover {
             color: $hover-clr;

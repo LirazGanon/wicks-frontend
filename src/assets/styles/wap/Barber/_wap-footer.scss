@@ -1,0 +1,21 @@
+.main-layout:has(.wap-footer.barber){
+    background: darken($barber-dark, 5%);
+padding: 1em;
+}
+
+.wap-footer.barber{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff80;
+    font-family: Lato, sans-serif;
+    gap: 1em;
+    img{
+        width: 200px;
+    }
+
+
+
+
+}

@@ -1,21 +1,24 @@
+.wap-hero-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .wap-hero {
     display: grid;
     overflow: hidden;
     font-size: 1rem;
-    margin-top: em(10px);
-    margin-bottom: em(80px);
-    
-    .medium & {
+    // margin-top: em(10px);
+    // margin-bottom: em(80px);
 
-        margin-bottom: em(80px);
-    }
-
-    >img {
-        border-radius: 5px;
-    }
-
+    background-repeat: no-repeat;
 
     &.bakery {
+        > img {
+            border-radius: 5px;
+        }
+
+        margin-bottom: em(80px);
         grid-template-areas:
             " t  "
             " ml  "
@@ -44,11 +47,8 @@
             max-width: clamp(16px, 100%, 12em);
             text-transform: capitalize;
 
-
             .mobile & {
-                
                 font-size: em(30px);
-
             }
 
             .small & {
@@ -67,10 +67,7 @@
                 margin-top: em(5px);
                 font-size: em(100px);
             }
-
         }
-
-
 
         p {
             grid-area: ml;
@@ -90,10 +87,8 @@
 
             .medium & {
                 font-size: em(30px);
-                max-width: em(170px)
+                max-width: em(170px);
             }
-
-
         }
 
         .wap-img.left {
@@ -108,8 +103,6 @@
             .small & {
                 display: block;
             }
-
-
         }
 
         .wap-img.right {
@@ -127,10 +120,6 @@
             .medium & {
                 height: 500px;
             }
-
         }
-
     }
-
-
 }

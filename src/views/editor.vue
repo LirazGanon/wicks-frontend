@@ -1,11 +1,11 @@
 <template>
 
-    <login-modal v-if="loginModalOpen" @close="closeLoginModal" v-click-outside="onToggleLoginModal" />
-    <name-modal v-if="nameModalOpen" @close="closeNameModal" v-click-outside="onToggleNameModal" />
+    <login-modal v-if="loginModalOpen" @close="closeLoginModal" v-click-outside="onToggleLoginModal"/>
+
 
     <main class="edit-container">
         <app-header :mainLayout="'main-header'" />
-        <editor-top @published="publish" />
+        <editor-top  @toggleLogin="onToggleLoginModal"/>
         <section class="wap-editor flex">
             <!-- EDITOR TOP -->
             <editor-side :cmps="cmps" v-if="cmps" :editor="editor" />
@@ -99,6 +99,9 @@ export default {
         onToggleNameModal() {
             this.nameModalOpen = !this.nameModalOpen
         },
+        toggleLogin(){
+            console.log('hi:')
+        }
     },
     computed: {
         cmps() {

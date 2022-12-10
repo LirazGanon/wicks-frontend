@@ -25,7 +25,7 @@
             <button>Login</button>
             <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup </span>OR:</p>
           </form>
-          <google-login/>
+          <google-login @goToUserDash="dashUser" />
         </section>
 
         <section v-else>
@@ -136,11 +136,16 @@ export default {
     },
     onUploaded(imgUrl) {
       this.signupCred.imgUrl = imgUrl
+    },
+    dashUser(loggedinUser) {
+      console.log(loggedinUser)
+      this.$store.dispatch({ type: "setLoggedinUser", loggedinUser })
+      this.$router.push(`/user/${loggedinUser._id}`)
     }
 
   },
-  watch:{
-    loggedinUser(){
+  watch: {
+    loggedinUser() {
       this.$router.push('/')
     }
   }

@@ -1,0 +1,32 @@
+.wap-hero-wrapper.yoga {
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .wap-hero{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 150px;
+            order:2;
+        }
+        h1{
+            font-family: RussoOne;
+            font-size: 5em;
+            color: rgb(254, 251, 255);
+            text-align: center;
+
+        }
+        p{
+            color: $barber-light;
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+
+        }
+        >:nth-child(1){
+            order:1;
+        }
+    }
+}

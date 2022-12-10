@@ -16,16 +16,18 @@
 
     h1 {
         font-size: em(16px);
-        width: 18pc;
-        margin-block-end: 10px;
+        width: 24pc;
+        margin-block: 30px 10px;
         font-weight: 700;
         font-family: montserrat, Helvetica, Arial, sans-serif;
         border-left: 6px solid $primary-clr;
         padding-inline-start: 10px;
+        
+
 
         @media (min-width: 350px) {
-            font-size: em(26px);
             width: 30pc;
+            font-size: em(26px);
         }
         @media (min-width: 750px) {
             width: 40pc;
@@ -37,6 +39,7 @@
         margin-block-end: 30px;
         font-family: montserrat, Helvetica, Arial, sans-serif;
         padding-inline-start: 25px;
+        margin: 0 2%;
 
         @media (min-width: 350px) {
             font-size: em(14px);
@@ -47,9 +50,10 @@
     }
 
     .wap-list {
+        margin-block-start: 20px;
         grid-gap: 50px;
         display: grid;
-        gap: 50px px;
+        gap: 50px ;
         grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
         justify-content: center;
         padding: 0 6%;

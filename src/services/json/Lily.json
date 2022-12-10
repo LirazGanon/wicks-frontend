@@ -1,0 +1,430 @@
+[
+  {
+    "id": "fhnzh31",
+    "type": "wap-header",
+    "classes": ["lily"],
+    "info": {
+      "logo": {
+        "type": "txt",
+        "txt": "Lily-",
+        "src": "",
+        "style": {}
+      },
+      "cmps": [
+        {
+          "id": "w9c5",
+          "type": "wap-nav",
+          "style": {},
+          "classes": [],
+          "info": {
+            "links": [
+              {
+                "type": "txt",
+                "txt": "Home",
+                "link": "#Home",
+                "style": {}
+              },
+              {
+                "type": "txt",
+                "txt": "Meet Lily",
+                "link": "#Meet Lily",
+                "style": {}
+              },
+              {
+                "type": "txt",
+                "txt": "Treatments",
+                "link": "#Treatments",
+                "style": {}
+              },
+              {
+                "type": "txt",
+                "txt": "Blog",
+                "link": "#Blog",
+                "style": {}
+              },
+              {
+                "type": "txt",
+                "txt": "Contact",
+                "link": "#contact",
+                "style": {}
+              },
+              {
+                "type": "txt",
+                "txt": "Members",
+                "link": "#Members",
+                "style": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "style": {}
+  },
+  {
+    "id": "nssd34dzs29",
+    "type": "wap-hero",
+    "classes": ["lily"],
+    "info": {
+      "heading": {
+        "type": "txt",
+        "txt": "Lily Organic Beautician",
+        "style": {}
+      },
+      "subHeading": {
+        "type": "txt",
+        "txt": "Hand Crafted Natural Treatments",
+        "style": {}
+      },
+      "btns": [
+        {
+          "type": "txt",
+          "txt": "Book an Appointment",
+          "style": {}
+        }
+      ],
+      "imgs": [
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514990/wicks/lily/lily-hero_gmxnyj.png"
+        }
+      ]
+    },
+    "style": {}
+  },
+  {
+    "id": "nsl42ixeifo",
+    "type": "wap-container",
+    "classes": ["lily"],
+    "info": {
+      "heading": {
+        "type": "txt",
+        "txt": "My Treatments",
+        "style": {}
+      }
+    },
+    "cmps": [
+      {
+        "id": "nslq8mdgmtq6",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514680/wicks/lily/nina-3.jpg_xgdjvv.png",
+              "style": {}
+            }
+          ],
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "90 mins",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "200$",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "id": "nslqklv95mtq6",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514494/wicks/lily/nina1_usexgi.png",
+              "style": {}
+            }
+          ],
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "60 mins",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "160$",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "id": "nslqnla7mt9q6",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514622/wicks/lily/nina2_kjoyrm.png",
+              "style": {}
+            }
+          ],
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "60 mins",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "160$",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style": {}
+  },
+  {
+    "id": "nsl42qwezx9o",
+    "type": "wap-container",
+    "classes": ["lily"],
+    "info": {
+      "imgs": [
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1670578734/wicks/lily/buety13_u2hufq.webp",
+          "style": {}
+        }
+      ]
+    },
+    "cmps": [
+      {
+        "id": "nslq8m9nkatq6",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Hi, I'm Lily",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "Meet Lili",
+            "style": {}
+          },
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style":{}
+  },
+  {
+    "id": "nslnlnr9x3x9o",
+    "type": "wap-container",
+    "classes": ["lily"],
+    "info": {},
+    "cmps": [
+      {
+        "id": "nslnlwnh8",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "LORI BISHOP",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "I'm a testimonial. Click to edit me and add text that says something nice about you and your services.",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "id": "nsdskjzwn8",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "EMMA GRAY",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "I'm a testimonial. Click to edit me and add text that says something nice about you and your services.",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "id": "nslmxunaoo",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670578935/wicks/cmp-prev/1111_lmhz7y.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style":{}
+  },
+  {
+    "id": "nslmc93la9o",
+    "type": "wap-container",
+    "classes": ["lily"],
+    "info": {},
+    "cmps": [
+      {
+        "id": "nsldmlcsnh8",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Lily Organic Beautician",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "I'm a paragraph. Click here to add your own text and edit me.",
+            "style": {}
+          },
+          "btns": [
+            {
+              "type": "txt",
+              "txt": "Book now",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "id": "nsdsns2947n8",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Info",
+            "style": {}
+          },
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "500 Terry Francois Street",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "San Francisco, CA 94158",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "info@mysite.com",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "Tel: 123-456-7890",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "id": "nsdsns2947n8",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Opening Hours",
+            "style": {}
+          },
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "Mon - Fri: 10am - 8pm",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "Sat: 10am - 4pm​​",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "Sun: 10am - 6pm",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-form",
+        "id": "nslnlayv29y",
+        "classes": ["buety"],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Contact",
+            "style": {}
+          },
+          "textInput": {
+            "label": "",
+            "placeholder": "Name",
+            "isRequired": true,
+            "style": {}
+          },
+          "emailInput": {
+            "label": "",
+            "placeholder": "Email",
+            "isRequired": true,
+            "style": {}
+          },
+          "textarea": {
+            "label": "Message",
+            "isRequired": true,
+            "style": {}
+          },
+          "btns": [
+            {
+              "type": "txt",
+              "txt": "Submit",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style": {}
+  }
+]
+

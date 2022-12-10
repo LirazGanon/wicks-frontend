@@ -1,1277 +1,435 @@
 [
-    {
-        "_id": "5e283938sdflkh923ihre4e4ghhhh4",
-        "name": "pnina-rosenblum",
-        "src": "",
-        "type": "buety",
+  {
+    "id": "fhnvsk931",
+    "type": "wap-header",
+    "classes": ["barber"],
+    "info": {
+      "logo": {
+        "type": "img",
+        "txt": "",
+        "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593519/wicks/barber/Logo-Barber_header_dwf3ug.png",
+        "style": {}
+      }
+    },
+    "cmps": [
+      {
+        "id": "w8nke5",
+        "type": "wap-nav",
         "style": {},
-        "createdBy": {
-            "_id": "638d1ca050c96c176828c90d",
-            "fullname": "puki ja"
-        },
-        "usersData": {
-            "contacts": [
-                {
-                    "email": "user@user.com",
-                    "msg": "Please send me stuff",
-                    "at": 123
-                }
-            ],
-            "signups": [
-                {
-                    "email": "user@user.com",
-                    "at": 123
-                }
-            ]
-        },
-        "theme": "inviting",
-        "cmps": [
+        "classes": [],
+        "info": {
+          "links": [
             {
-                "id": "fhnzh31",
-                "type": "wap-header",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {
-                    "logo": {
-                        "type": "txt",
-                        "txt": "Lily-",
-                        "src": "",
-                        "style": {}
-                    },
-                    "nav": {
-                        "id": "w9c5",
-                        "type": "wap-nav",
-                        "style": {},
-                        "classes": [],
-                        "info": {
-                            "links": [
-                                {
-                                    "type": "txt",
-                                    "txt": "Home",
-                                    "link": "#Home",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "Meet Lily",
-                                    "link": "#Meet Lily",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "Treatments",
-                                    "link": "#Treatments",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "Blog",
-                                    "link": "#Blog",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "Contact",
-                                    "link": "#contact",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "Members",
-                                    "link": "#Members",
-                                    "style": {}
-                                }
-                            ]
-                        }
-                    }
-                },
-                "style": {}
+              "type": "txt",
+              "txt": "Home",
+              "link": "#Home",
+              "style": {}
             },
             {
-                "id": "nssd34dzs29",
-                "type": "wap-hero",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {
-                    "heading": {
-                        "type": "txt",
-                        "txt": "Lily Organic Beautician",
-                        "style": {}
-                    },
-                    "subHeading": {
-                        "type": "txt",
-                        "txt": "Hand Crafted Natural Treatments",
-                        "style": {}
-                    },
-                    "btns": [
-                        {
-                            "type": "txt",
-                            "txt": "Book an Appointment",
-                            "style": {}
-                        }
-                    ],
-                    "imgs": [
-                        {
-                            "type": "img",
-                            "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514990/wicks/pnina/pnina-hero_gmxnyj.png"
-                        }
-                    ]
-                },
-                "style": {}
+              "type": "txt",
+              "txt": "services",
+              "link": "#services",
+              "style": {}
             },
             {
-                "id": "nsl42ixeifo",
-                "type": "wap-container",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {
-                    "heading": {
-                        "type": "txt",
-                        "txt": "My Treatments",
-                        "style": {}
-                    },
-                    "btns": [
-                        {
-                            "type": "txt",
-                            "txt": "Book Now",
-                            "style": {}
-                        }
-                    ]
-                },
-                "cmps": [
-                    {
-                        "id": "nslq8mdgmtq6",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "imgs": [
-                                {
-                                    "type": "img",
-                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514680/wicks/pnina/nina-3.jpg_xgdjvv.png",
-                                    "style": {}
-                                }
-                            ],
-                            "texts": [
-                                {
-                                    "type": "txt",
-                                    "txt": "90 mins",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "200$",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nslqklv95mtq6",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "imgs": [
-                                {
-                                    "type": "img",
-                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514494/wicks/pnina/nina1_usexgi.png",
-                                    "style": {}
-                                }
-                            ],
-                            "texts": [
-                                {
-                                    "type": "txt",
-                                    "txt": "60 mins",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "160$",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nslqnla7mt9q6",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "imgs": [
-                                {
-                                    "type": "img",
-                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514622/wicks/pnina/nina2_kjoyrm.png",
-                                    "style": {}
-                                }
-                            ],
-                            "texts": [
-                                {
-                                    "type": "txt",
-                                    "txt": "60 mins",
-                                    "style": {}
-                                },
-                                {
-                                    "type": "txt",
-                                    "txt": "160$",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    }
-                ],
-                "style": {}
+              "type": "txt",
+              "txt": "About",
+              "link": "#About",
+              "style": {}
             },
             {
-                "id": "nsl42qwezx9o",
-                "type": "wap-container",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {},
-                "cmps": [
-                    {
-                        "id": "nslmpqn60cmp",
-                        "type": "wap-img",
-                        "classes": [],
-                        "info": {
-                            "imgs": [
-                                {
-                                    "type": "img",
-                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670578734/wicks/pnina/buety13_u2hufq.webp",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nslq8m9nkatq6",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "Hi, I'm Lily",
-                                "style": {}
-                            },
-                            "subHeading": {
-                                "type": "txt",
-                                "txt": "Meet Lili",
-                                "style": {}
-                            },
-                            "texts": [
-                                {
-                                    "type": "txt",
-                                    "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    }
-                ]
+              "type": "txt",
+              "txt": "Shop",
+              "link": "#Shop",
+              "style": {}
             },
             {
-                "id": "nslnlnr9x3x9o",
-                "type": "wap-container",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {},
-                "cmps": [
-                    {
-                        "id": "nslnlwnh8",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "LORI BISHOP",
-                                "style": {}
-                            },
-                            "subHeading": {
-                                "type": "txt",
-                                "txt": "I'm a testimonial. Click to edit me and add text that says something nice about you and your services.",
-                                "style": {}
-                            }
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nsdskjzwn8",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "EMMA GRAY",
-                                "style": {}
-                            },
-                            "subHeading": {
-                                "type": "txt",
-                                "txt": "I'm a testimonial. Click to edit me and add text that says something nice about you and your services.",
-                                "style": {}
-                            }
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nslmxunaoo",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "imgs": [
-                                {
-                                    "type": "img",
-                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670578935/wicks/cmp-prev/1111_lmhz7y.png",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    }
-                ]
+              "type": "txt",
+              "txt": "Contact",
+              "link": "#Contact",
+              "style": {}
             },
             {
-                "id": "nslmc93la9o",
-                "type": "wap-container",
-                "classes": [
-                    "pnina"
-                ],
-                "info": {},
-                "cmps": [
-                    {
-                        "id": "nsldmlcsnh8",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "Lily Organic Beautician",
-                                "style": {}
-                            },
-                            "subHeading": {
-                                "type": "txt",
-                                "txt": "I'm a paragraph. Click here to add your own text and edit me.",
-                                "style": {}
-                            },
-                            "btns": [
-                                {
-                                    "type": "txt",
-                                    "txt": "Book now",
-                                    "style": {}
-                                }
-                            ]
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nsdsns2947n8",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "Info",
-                                "style": {}
-                            },
-                            "texts":[
-                                {
-                                   "type": "txt",
-                                   "txt": "500 Terry Francois Street",
-                                   "style": {}
-                               },
-                                {
-                                   "type": "txt",
-                                   "txt": "San Francisco, CA 94158",
-                                   "style": {}
-                               },
-                                {
-                                   "type": "txt",
-                                   "txt": "info@mysite.com",
-                                   "style": {}
-                               },
-                                {
-                                   "type": "txt",
-                                   "txt": "Tel: 123-456-7890",
-                                   "style": {}
-                               }
-                            ]
-                        },
-                        "style": {}
-                    },
-                    {
-                        "id": "nsdsns2947n8",
-                        "type": "wap-card",
-                        "classes": [],
-                        "info": {
-                            "heading": {
-                                "type": "txt",
-                                "txt": "Opening Hours",
-                                "style": {}
-                            },
-                            "texts":[
-                                {
-                                   "type": "txt",
-                                   "txt": "Mon - Fri: 10am - 8pm",
-                                   "style": {}
-                               },
-                                {
-                                   "type": "txt",
-                                   "txt": "Sat: 10am - 4pm​​",
-                                   "style": {}
-                               },
-                                {
-                                   "type": "txt",
-                                   "txt": "Sun: 10am - 6pm",
-                                   "style": {}
-                               }
-                            ]
-                            
-                        },
-                        "style": {}
-                    },
-                    {
-                        "type" : "wap-form",
-                        "id" : "nslnlayv29y",
-                        "classes" : [
-                            "buety"
-                        ],
-                        "info" : {
-                            "heading" : {
-                                "type" : "txt",
-                                "txt" : "Contact",
-                                "style" : {
-            
-                                }
-                            },
-                            "textInput" : {
-                                "label" : "",
-                                "placeholder" : "Name",
-                                "isRequired" : true,
-                                "style" : {
-            
-                                }
-                            },
-                            "emailInput" : {
-                                "label" : "",
-                                "placeholder" : "Email",
-                                "isRequired" : true,
-                                "style" : {
-            
-                                }
-                            },
-                            "textarea" : {
-                                "label" : "Message",
-                                "isRequired" : true,
-                                "style" : {
-            
-                                }
-                            },
-                            "btns" : [
-                                {
-                                    "type" : "txt",
-                                    "txt" : "Submit",
-                                    "style" : {
-            
-                                    }
-                                }
-                            ]
-                           
-                        },
-                        "style" : {
-            
-                        }
-                    }
-                    
-
-
-                ],
-                "style":{}
+              "type": "txt",
+              "txt": "Blog",
+              "link": "#Blog",
+              "style": {}
             }
-        ],
-
-        "isPublic": true
-    }]
-
-
-
-
-
-//             },
-//             {
-//                 "id": "nslqnla7mt9q6",
-//                 "type": "wap-card",
-//                 "classes": [],
-//                 "info": {
-//                     "imgs": [
-//                         {
-//                             "type": "img",
-//                             "src": "https://res.cloudinary.com/wicksin/image/upload/v1670514622/wicks/pnina/nina2_kjoyrm.png",
-//                             "style": {}
-//                         }
-//                     ],
-//                     "texts": [
-//                         {
-//                             "type": "txt",
-//                             "txt": "60 mins",
-//                             "style": {}
-//                         },
-//                         {
-//                             "type": "txt",
-//                             "txt": "160$",
-//                             "style": {}
-//                         }
-//                     ]
-//                 },
-//                 "style": {}
-//             }
-//         ],
-//         "style":{},
-
-//         }
-// ]
-//     },
-//     {
-//         "id": "nsld13h14dk",
-//         "classes": [
-//             "card-gallery bakery"
-//         ],
-//         "type": "wap-container",
-//         "info": {
-//             "cmps": [
-//                 {
-//                     "id": "nslz8zq9on7",
-//                     "type": "wap-img",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922269/wicks/coffeshop/fgfggfgf-min_yr7jyl.jpg",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "wap-card",
-//                     "id": "nslu6wzhz73",
-//                     "info": {
-//                         "heading": {
-//                             "type": "txt",
-//                             "txt": "01",
-//                             "style": {}
-//                         },
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "About Us",
-//                             "style": {}
-//                         },
-//                         "txts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "wap-card",
-//                     "id": "nslget8pkhp",
-//                     "info": {
-//                         "heading": {
-//                             "type": "txt",
-//                             "txt": "02",
-//                             "style": {}
-//                         },
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "Our Food",
-//                             "style": {}
-//                         },
-//                         "txts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "wap-card",
-//                     "id": "nsl1bqio51l",
-//                     "info": {
-//                         "heading": {
-//                             "type": "txt",
-//                             "txt": "03",
-//                             "style": {}
-//                         },
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "Our Drinks",
-//                             "style": {}
-//                         },
-//                         "txts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "wap-card",
-//                     "id": "nsln9nrxpbh",
-//                     "info": {
-//                         "heading": {
-//                             "type": "txt",
-//                             "txt": "04",
-//                             "style": {}
-//                         },
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "Excellent coffee",
-//                             "style": {}
-//                         },
-//                         "txts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 }
-//             ]
-//         },
-//         "style": {}
-//     },
-//     {
-//         "id": "nslpcescfpm",
-//         "classes": [
-//             "card-img bakery"
-//         ],
-//         "type": "wap-container",
-//         "info": {
-//             "cmps": [
-//                 {
-//                     "id": "nslp2esnfplm",
-//                     "classes": [],
-//                     "type": "wap-bg-img",
-//                     "info": {
-//                         "img": {
-//                             "type": "img",
-//                             "txt": "",
-//                             "src": "https://res.cloudinary.com/wicksin/image/upload/v1669932077/wicks/coffeshop/bg-cake_gdwsxs.jpg",
-//                             "style": {}
-//                         }
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "id": "nslak11kqzi",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "TOP ICE-CREAM",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "nsl3ehjdu50",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "FRUIT SORBETS",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "nslihk05av4",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "CHIP FLAVORS",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "nslwiybtbje",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "SUNDAES",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "nsldnst0gcx",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "SMOOTHIES",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "nslrfvkrvt1",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "DRINKS & MORE",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     }
-//                 },
-//                 {
-//                     "id": "234msd09",
-//                     "type": "wap-img",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669790202/wicks/bakery-buggete-bag.jpg",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 }
-//             ]
-//         },
-//         "style": {
-//             "background-color": "#ca8263"
-//         }
-//     },
-//     {
-//         "id": "",
-//         "classes": [
-//             "card-img bakery"
-//         ],
-//         "type": "wap-container",
-//         "info": {
-//             "cmps": [
-//                 {
-//                     "id": "",
-//                     "classes": [],
-//                     "type": "wap-heading",
-//                     "info": {
-//                         "img": {
-//                             "type": "txt",
-//                             "txt": "Popular Dishes",
-//                             "style": {}
-//                         }
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922275/wicks/coffeshop/1_vxfvru.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "TIRAMISU CAKE",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "10",
-//                             "style": {}
-//                         }
-//                     }
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922274/wicks/coffeshop/2_mqxqn4.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "CHIA PUDDING",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "8",
-//                             "style": {}
-//                         }
-//                     }
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922274/wicks/coffeshop/4_lb0c6r.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "CHEESECAKE",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "7",
-//                             "style": {}
-//                         }
-//                     }
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922274/wicks/coffeshop/677u_yrukuv.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "CHOCOLATE CAKE",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "7",
-//                             "style": {}
-//                         }
-//                     }
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922274/wicks/coffeshop/7_pb3r8p.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "CHEESECAKE",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "7",
-//                             "style": {}
-//                         }
-//                     }
-//                 },
-//                 {
-//                     "id": "",
-//                     "type": "wap-card",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922273/wicks/coffeshop/fff_ftdytx.jpg",
-//                                 "txt": "",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "ORANGE CAKE",
-//                             "style": {}
-//                         },
-//                         "texts": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Sample text. Click to select the text box. Click again or double click to start editing the text.",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Buy now",
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "price": {
-//                             "type": "price",
-//                             "txt": "7",
-//                             "style": {}
-//                         }
-//                     }
-//                 }
-//             ]
-//         },
-//         "style": {}
-//     },
-//     {
-//         "id": "nsl8suwq8sn",
-//         "type": "wap-gallery",
-//         "classes": [],
-//         "info": {
-//             "heading": {
-//                 "type": "txt",
-//                 "txt": "Cake & Dessert Cafe",
-//                 "style": {}
-//             },
-//             "btns": [
-//                 {
-//                     "type": "txt",
-//                     "txt": "View more",
-//                     "style": {}
-//                 }
-//             ],
-//             "imgs": [
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922272/wicks/coffeshop/22_xeoe3v.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922272/wicks/coffeshop/rrr_dpjppp.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922272/wicks/coffeshop/jjj_a9bg0u.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922272/wicks/coffeshop/ghgh_wcfcdj.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922271/wicks/coffeshop/ghghgh_ijkutq.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 },
-//                 {
-//                     "type": "img",
-//                     "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922271/wicks/coffeshop/trtrt_u0rwfm.jpg",
-//                     "txt": "",
-//                     "style": {}
-//                 }
-//             ],
-//             "style": {}
-//         },
-//         "style": {}
-//     },
-//     {
-//         "id": "nsl41t81v4b",
-//         "type": "wap-container",
-//         "classes": [],
-//         "info": {
-//             "cmps": [
-//                 {
-//                     "id": "nsljuwytauf",
-//                     "type": "wap-img",
-//                     "classes": [],
-//                     "info": {
-//                         "imgs": [
-//                             {
-//                                 "type": "img",
-//                                 "src": "https://res.cloudinary.com/wicksin/image/upload/v1669922271/wicks/coffeshop/dfdf_elim8j.jpg",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 },
-//                 {
-//                     "id": "nslzzqh0foy",
-//                     "type": "wap-form",
-//                     "classes": [],
-//                     "info": {
-//                         "heading": {
-//                             "type": "txt",
-//                             "txt": "Contact Us",
-//                             "style": {}
-//                         },
-//                         "subHeading": {
-//                             "type": "txt",
-//                             "txt": "",
-//                             "style": {}
-//                         },
-//                         "inputs": [
-//                             {
-//                                 "type": "txt",
-//                                 "label": "Name",
-//                                 "placeholder": "Enter your name",
-//                                 "inpType": "input",
-//                                 "inpContentType": "text",
-//                                 "title": "",
-//                                 "isRequired": true,
-//                                 "style": {}
-//                             },
-//                             {
-//                                 "type": "txt",
-//                                 "label": "Email",
-//                                 "placeholder": "Enter a valid email address",
-//                                 "inpType": "input",
-//                                 "inpContentType": "email",
-//                                 "title": "",
-//                                 "isRequired": true,
-//                                 "style": {}
-//                             },
-//                             {
-//                                 "type": "txt",
-//                                 "label": "Message",
-//                                 "placeholder": "",
-//                                 "inpType": "textarea",
-//                                 "inpContentType": "",
-//                                 "title": "",
-//                                 "isRequired": true,
-//                                 "style": {}
-//                             },
-//                             {
-//                                 "type": "txt",
-//                                 "label": "I accept the",
-//                                 "link": "Terms of Service",
-//                                 "placeholder": "",
-//                                 "inpType": "input",
-//                                 "inpContentType": "checkbox",
-//                                 "title": "",
-//                                 "isRequired": true,
-//                                 "style": {}
-//                             }
-//                         ],
-//                         "style": {},
-//                         "btns": [
-//                             {
-//                                 "type": "txt",
-//                                 "txt": "Submit",
-//                                 "style": {}
-//                             }
-//                         ]
-//                     },
-//                     "style": {}
-//                 }
-//             ]
-//         },
-//         "style": {}
-//     },
-//     {
-//         "id": "nsllxnq80yu",
-//         "classes": [],
-//         "type": "wap-footer",
-//         "info": {
-//             "logo": {
-//                 "type": "txt",
-//                 "txt": "pukoffe",
-//                 "src": "",
-//                 "style": {}
-//             },
-//             "socials": [
-//                 {}
-//             ],
-//             "copyright": {
-//                 "type": "txt",
-//                 "txt": "CoffeRights 2035 by Pucoffe. Proudly created with Wicks.in",
-//                 "style": {}
-//             }
-//         },
-//         "style": {
-//             "background-color": ""
-//         }
-//     }
-// ],
-// "isPublic": true
-// }
-// ]
+          ]
+        }
+      }
+    ],
+    "style": {}
+  },
+  {
+    "id": "nsl25c0j9",
+    "type": "wap-hero",
+    "classes": ["barber full"],
+    "info": {
+      "imgs": [
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593517/wicks/barber/Logo-Barber_vttz8t.png",
+          "style": {}
+        }
+      ]
+    },
+    "style": {
+      "background-image": "url(https://res.cloudinary.com/wicksin/image/upload/v1670593375/wicks/barber/barbershop-1-1_eztbvf.jpg)"
+    }
+  },
+  {
+    "id": "nsl9vm3c3x",
+    "type": "wap-container",
+    "classes": ["barber"],
+    "info": {
+      "imgs": [
+        {
+          "type": "img",
+          "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593462/wicks/barber/p-hover-1_es6vq4.png",
+          "txt": "",
+          "style": {}
+        }
+      ]
+    },
+    "cmps": [
+      {
+        "id": "nsllycp9c5me5",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "About Us.",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor",
+            "style": {}
+          },
+          "texts": [
+            {
+              "type": "txt",
+              "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisr sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq.",
+              "style": {}
+            },
+            {
+              "type": "txt",
+              "txt": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style": {}
+  },
+  {
+    "id": "nsld13nvis7k",
+    "type": "wap-container",
+    "classes": ["barber"],
+    "info": {},
+    "cmps": [
+      {
+        "id": "nslz8zx9on7",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Styles",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslundhz7",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The rock",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "10$-15%",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslnxvnk2",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Proffesor",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "10$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-7_had4vn.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nsl3njvelp",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Baker",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "15$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-6_stwogd.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslsd708n",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Nuton",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "10$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-5_inqaug.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslnxl3vnj84",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Macho",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "15$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-4_wimsxw.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslnxle38xd",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Hipster",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "15$-25$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-3_kgycwg.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslnxcn38p",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Renger",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "10$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-4_wimsxw.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-card",
+        "id": "nslnxdfj920",
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "The Rock Star",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "10$-20$",
+            "style": {}
+          },
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593462/wicks/barber/p-hover-1_es6vq4.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {}
+      }
+    ],
+    "style": {}
+  },
+  {
+    "id": "nslsdfkjo",
+    "type": "wap-container",
+    "classes": ["barber"],
+    "info": {},
+    "cmps": [
+      {
+        "id": "nsllycp9c5me5",
+        "type": "wap-card",
+        "classes": [],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Unforgettable Atmosphere",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "id": "nsldla71ytyjs",
+        "type": "wap-gallery",
+        "classes": [],
+        "info": {
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593402/wicks/barber/barber-gallery1_rv7n5c.jpg",
+              "txt": "",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593408/wicks/barber/barber-gallery2_l60obp.jpg",
+              "txt": "",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593417/wicks/barber/barber-gallery3_o5gdjq.jpg",
+              "txt": "",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593431/wicks/barber/barber-gallery4_cesduu.jpg",
+              "txt": "",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593431/wicks/barber/barber-gallery4_cesduu.jpg",
+              "txt": "",
+              "style": {}
+            },
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593446/wicks/barber/barber-gallery6_l5hido.jpg",
+              "txt": "",
+              "style": {}
+            }
+          ],
+          "style": {}
+        }
+      }
+    ],
+    "style": {}
+  },
+  {
+    "id": "nsllxnq80yu",
+    "classes": ["barber"],
+    "type": "wap-footer",
+    "info": {
+      "logo": {
+        "type": "img",
+        "txt": "",
+        "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593519/wicks/barber/Logo-Barber_header_dwf3ug.png",
+        "style": {}
+      },
+      "socials": [{}],
+      "copyright": {
+        "type": "txt",
+        "txt": "Coffeeright © 2097 AbutbulBarber.com",
+        "style": {}
+      }
+    },
+    "style": {}
+  }
+]

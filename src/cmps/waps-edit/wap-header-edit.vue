@@ -6,23 +6,23 @@
 
 
             <div class="wap-logo flex align-center">
-                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo.src" @mousedown.stop="openEditor('logo')" @click.stop
-                    :style="cmp.info.logo.style">
+                <img :src="cmp.info.logo?.src" v-if="cmp.info.logo?.src" @mousedown.stop="openEditor('logo')" @click.stop
+                    :style="cmp.info.logo?.style">
 
 
 
                 <h4 v-else contenteditable="true" @click.stop @mousedown.stop="openEditor('logo')"
-                    :style="cmp.info.logo.style" @blur="updateCmp($event, 'logo')">{{
-                            cmp.info.logo.txt
+                    :style="cmp.info.logo?.style" @blur="updateCmp($event, 'logo')">{{
+                            cmp.info.logo?.txt
                     }}</h4>
 
 
             </div>
 
             <component v-for="(curCmp, idx) in cmp.cmps" :is="curCmp.type" :cmp="curCmp" :path="getPath(idx)"
-                @openEditor="$emit('openEditor', $event)" :menuOpen="menuOpen"/>
+                @openEditor="$emit('openEditor', $event)" :menuOpen="menuOpen" />
 
-            <div class="burger" @click.stop="(menuOpen = !menuOpen)">
+            <div class="burger" @click.stop="deselect">
                 <span style="--i: -1"></span>
                 <span style="--i: 0"></span>
                 <span style="--i: 1"></span>
@@ -44,12 +44,16 @@ export default {
     components: { wapNav },
     data() {
         return {
-            menuOpen:false
+            menuOpen: false
         };
     },
     created() {
     },
     methods: {
+        deselect() {
+            this.$emit('deselect')
+            this.menuOpen = !this.menuOpen
+        },
 
         openEditor(key, idx) {
             let el = (idx !== undefined) ? this.cmp.info[key][idx] : this.cmp.info[key]

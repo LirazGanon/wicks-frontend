@@ -18,8 +18,10 @@
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 
-          <div class="main-dropdown" :class="{ openMenu: openDropDown }" >
-<!-- TODO add v-click-outside="openDropDown = false" -->
+          <div class="main-dropdown" :class="{ openMenu: openDropDown }">
+            <!-- TODO add v-click-outside="openDropDown = false" -->
+              <img :src="loggedInUser.imgUrl || avatarIcon" />
+            <p class="username-dropdown">{{loggedInUser.fullname}}</p>
             <router-link :to="`/user/${loggedInUser._id}`">
               BackOffice
             </router-link>

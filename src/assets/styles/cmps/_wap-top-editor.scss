@@ -118,6 +118,7 @@
     .site-preview {
         display: flex;
         align-items: center;
+        justify-content: center;
         transition: background-color 0.2s;
         width: 50%;
         cursor: pointer;

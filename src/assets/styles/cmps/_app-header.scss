@@ -83,7 +83,7 @@ header {
             }
 
             > * {
-                padding-inline-start: 5px;
+                // padding-inline-start: 5px;
                 padding-block: 0;
                 opacity: 0;
                 width: 100%;
@@ -95,7 +95,7 @@ header {
             }
 
             &.openMenu {
-                height: 240px;
+                height: 245px;
                 display: flex;
                 flex-direction: column;
                 & * {

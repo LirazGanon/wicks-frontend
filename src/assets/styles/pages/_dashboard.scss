@@ -77,9 +77,11 @@
                     display: flex;
 
                     .chosen-wap-display {
-                        margin: 20px 20px 0 0;
-                        width: auto;
+                        flex: 1;
                         h3 {
+                            max-width: 250px;
+                            line-break: anywhere;
+                            min-width: 250px;
                             font-size: 30px;
                             padding-inline-start: 6px;
                             border-left: 4px solid $primary-clr;
@@ -89,27 +91,86 @@
                         }
                         margin-block-start: 5vh;
                         margin-inline-start: 20px;
+
+                        .wap-actions-dash {
+                            display: flex;
+                            flex-direction: column;
+
+                            button {
+                                transition: 0.2s;
+                                &:first-child {
+                                    background-color: $primary-clr;
+
+                                    &:hover {
+                                        background-color: lighten($primary-clr, 10%);
+                                    }
+                                }
+                                &:last-child {
+                                    box-shadow: 0 0 3px $primary-clr;
+
+                                    &:hover {
+                                        background-color: lighten($primary-clr, 15%);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
+                .chart-line {
+                    margin-block: 40px;
+                    margin-inline-start: 50px;
+                    flex: 1;
+                    padding-inline: 20px;
 
-                .wap-table {
-                    grid-area: userTable;
-                    max-width: 800px;
-                    margin-inline: auto;
-                    margin-block: 20px;
-                    h3 {
-                        margin-block-end: 20px;
+                    .interactions-stats {
+                        display: flex;
+                        gap: 40px;
+                        justify-content: space-evenly;
+
+                        div {
+                            width: 200px;
+                            background-color: $primary-clr;
+                            height: 80px;
+                            display: grid;
+                            place-content: center;
+                            border-radius: 6px;
+                            text-align: center;
+                            box-shadow: 3px 2px #3332, inset 3px 2px 5px #eee5;
+                            font-size: 16px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 10px;
+                            margin-block-end: 20px;
+                            transition: filter 0.5s;
+
+                            &:hover {
+                                filter: brightness(1.1);
+                            }
+                            span {
+                                font-family: lato;
+                            }
+                            h3 {
+                                font-family: montserratBold;
+                                font-size: 20px;
+                            }
+
+                            &:first-child {
+                                background-color: lighten($primary-clr, 10%);
+                            }
+                            &:last-child {
+                                background-color: darken($primary-clr, 5%);
+                            }
+                        }
                     }
-                }
-
-                @media (min-width: 1400px) {
-                    display: flex;
                 }
             }
-            .chart-line {
+
+            .bottom-half{
+                width: 95%;
                 margin-inline: auto;
-                grid-area: chartLine;
-                margin-block: 40px;
+                
+
             }
         }
     }

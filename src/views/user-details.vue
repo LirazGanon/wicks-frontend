@@ -12,7 +12,9 @@
     <main class="dashboard-content" v-if="userWaps.length">
 
       <section class="left-user-nav">
-        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName || 'My-site' }}
+        <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName ||
+            wap.name + ` - ${idx}`
+        }}
         </div>
 
         <div @click="logout" class="logout-user-dash">
@@ -27,7 +29,7 @@
 
           <charts :info="chosenWap.usersData.contacts" :data="testData" />
         </section>
-        {{ chosenWap.usersData.activity }}
+
 
         <div class="bottom-half">
           <contacts-table :info="chosenWap.usersData.contacts" />
@@ -74,12 +76,11 @@ export default {
             label: 'Line  Dataset',
             data: [30, 40, 60, 70, 40],
             backgroundColor: [
-              'skyblue',
-              '#77CEFF',
-              '#0079AF',
-              '#123E6B',
-              '#97B0C4',
-              '#A5C8ED',
+              '#c78afb',
+              '#873dc8',
+              '#c78afb',
+              '#873dc8',
+              ,
             ],
             tension: .3,
           },
@@ -87,12 +88,11 @@ export default {
             label: 'Bar Dataset',
             data: [30, 40, 80, 70, 40],
             backgroundColor: [
-              'skyblue',
-              '#77CEFF',
-              '#0079AF',
-              '#123E6B',
-              '#97B0C4',
-              '#A5C8ED',
+              '#c78afb',
+              '#873dc8',
+              '#c78afb',
+              '#873dc8',
+              ,
             ],
             tension: .3,
           },
@@ -114,6 +114,9 @@ export default {
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
     this.chosenWap = userWaps[0]
+    console.log(userWaps[0]);
+    this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
+    this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
     // this.setData()
     const user = await userService.getById(id)
     this.user = user

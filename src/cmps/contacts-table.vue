@@ -2,9 +2,7 @@
 
     <section class="wap-table">
         <h3>Leads</h3>
-        <el-table :data="table" 
-        :default-sort="{ prop: 'at', order: 'descending' }" 
-        style="width: 100%"
+        <el-table :data="table" :default-sort="{ prop: 'at', order: 'descending' }" style="width: 100%"
             :row-class-name="tableRowClassName">
 
 
@@ -19,9 +17,9 @@
             </el-table-column>
 
 
-            <el-table-column prop="at" label="Date"  sortable  />
-            <el-table-column prop="name" label="Name" sortable/>
-            <el-table-column prop="email" label="Email" sortable/>
+            <el-table-column prop="at" label="Date" sortable />
+            <el-table-column prop="name" label="Name" sortable />
+            <el-table-column prop="email" label="Email" sortable />
             <!-- <el-table-column prop="msg" label="Comments " /> -->
         </el-table>
 
@@ -42,9 +40,7 @@ export default {
     },
     created() { },
     methods: {
-        tableRowClassName({ row, rowIndex }) {
-            console.log('row:', row)
-            console.log('idx:', rowIndex)
+        tableRowClassName({ rowIndex }) {
             if (rowIndex % 2 === 0) return "dark"
         }
     },

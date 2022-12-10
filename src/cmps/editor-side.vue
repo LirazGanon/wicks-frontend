@@ -217,49 +217,45 @@ export default {
             let wap = this.$store.getters.getWapToEdit
             wap = utilService.copy(wap)
             const cmps = wap.cmps.map(cmp => {
+                let newTheme
+                switch (cmp.type) {
+                    case 'wap-header':
+                    case 'wap-hero':
+                    case 'wap-footer':
+                        newTheme = this.themes[theme].main
+                        break;
+                    case 'wap-container':
+                    case 'wap-form':
+                    case 'wap-map':
+                    case 'wap-reviews':
+                        newTheme = this.themes[theme].secondary
+                        break;
+                    default:
+                        newTheme = this.themes[theme].break
+                }
+
                 if (cmp.cmps) {
                     cmp.cmps = cmp.cmps.map(innerCmp => {
                         for (let [key, value] of Object.entries(innerCmp.info)) {
                             if (value[0]) {
                                 value = value.map(k => {
-                                    k.style = {}
+                                    k.style = newTheme
+                                    delete k.style['background-color']
                                     return k
                                 })
                             } else {
-                                value.style = {}
+                                value.style = newTheme
+                                value.style['background-color']
                             }
                             innerCmp.info[key] = value
                         }
                         return innerCmp
                     })
                 }
-                for (let [key, value] of Object.entries(cmp.info)) {
-                    if (value[0]) {
-                        value = value.map(k => {
-                            k.style = {}
-                            return k
-                        })
-                    } else {
-                        value.style = {}
-                    }
-                    cmp.info[key] = value
-                }
-                switch (cmp.type) {
-                    case 'wap-header':
-                    case 'wap-hero':
-                    case 'wap-footer':
-                        cmp.style = this.themes[theme].main
-                        break;
-                    case 'wap-container':
-                    case 'wap-form':
-                    case 'wap-map':
-                    case 'wap-reviews':
-                        cmp.style = this.themes[theme].secondary
-                        break;
-                    default:
-                        cmp.style = this.themes[theme].break
-                }
+
+                cmp.style = newTheme
                 return cmp
+
             })
 
             wap.cmps = cmps

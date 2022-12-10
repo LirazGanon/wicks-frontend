@@ -107,6 +107,7 @@ export default {
         },
         getPath(idx) {
             const wap = this.$store.getters.getWapToEdit
+       
             const cmpIdx = wap.cmps.findIndex(cmp => cmp.id === this.cmp.id)
             return { fatherIdx: cmpIdx, elIdx: idx, id: this.cmp.id }
         },

@@ -106,6 +106,7 @@ export default {
     openEditor(ev) {
       this.shouldAcceptDrop = false
       this.selectedId = ev.path.id
+      console.log('this.selectedId:', this.selectedId)
       this.$emit('openEditor', ev)
     },
     getUpdate(wap) {
@@ -209,7 +210,7 @@ export default {
     handleUsersPointer({ loc, id }) {
       if (!this.pointers.includes(id)) this.pointers.push(id)
       const elPointer = document.querySelector(`.${id}`)
-      console.log(elPointer)
+      // console.log(elPointer)
       elPointer.style.color = 'blue'
       elPointer.style.left = loc.x + 'px'
       elPointer.style.top = loc.y + 'px'

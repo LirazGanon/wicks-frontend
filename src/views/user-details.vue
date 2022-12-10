@@ -17,10 +17,6 @@
         }}
         </div>
 
-        <div @click="logout" class="logout-user-dash">
-          Logout
-        </div>
-
       </section>
       <section class="main-dashboard">
         <section class="top-half">

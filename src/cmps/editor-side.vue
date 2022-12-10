@@ -283,7 +283,9 @@ export default {
                 }
 
                 if (cmp.style['background-image']) {
-                    delete newTheme['background-color']
+                    console.log('here');
+                    cmp.style['color'] = theme.color
+                    return cmp
                 }
                 cmp.style = utilService.copy(newTheme)
                 return cmp

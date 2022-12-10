@@ -69,16 +69,27 @@
                     more_vert
                 </span>
             </span>
-            <h2>Theme</h2>
+            <h2>Themes</h2>
+            <section class="section-cmp-editor undo">
+                <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                    v-tooltip="'Undo'">
+                    undo
+                </button>
+                <button class="material-symbols-outlined"
+                    :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards"
+                    v-tooltip="'Redo'">
+                    redo
+                </button>
+                <hr>
+            </section>
             <img @click="setTheme('a')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_1_an9yi7.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/1_amrigo.jpg" alt="">
             <img @click="setTheme('b')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_2_ezy13a.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/2_prfgwl.jpg" alt="">
             <img @click="setTheme('c')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_3_dmrup6.png" alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/3_knuihv.jpg" alt="">
             <img @click="setTheme('d')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670276422/wicks/pallte/pal_4png_ypukjj.png"
-                alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690583/wicks/4_u1kqb2.jpg" alt="">
 
         </section>
 
@@ -145,15 +156,15 @@ export default {
                 },
                 b: {
                     main: {
-                        'background-color': '#111134',
+                        'background-color': '#FFFFAF',
                         'color': 'blue'
                     },
                     secondary: {
-                        'background-color': '#ff838f',
+                        'background-color': '#B4DFA4',
                         'color': '#333333'
                     },
                     break: {
-                        'background-color': '#f738f8',
+                        'background-color': '#76BB9D',
                         'color': '#333333'
                     },
 
@@ -175,15 +186,15 @@ export default {
                 },
                 d: {
                     main: {
-                        'background-color': '#f38292',
+                        'background-color': '#D5BEA0',
                         'color': 'red'
                     },
                     secondary: {
-                        'background-color': '#9393f3',
+                        'background-color': '#9E896C',
                         'color': '#333333'
                     },
                     break: {
-                        'background-color': '#1222f3',
+                        'background-color': '#FFEDCB',
                         'color': '#333333'
                     }
                 }
@@ -212,54 +223,60 @@ export default {
         clear() {
             this.active = null
         },
+        goBack() {
+            this.$store.dispatch({ type: 'goBack' })
+        },
+        goForwards() {
+            this.$store.dispatch({ type: 'goForwards' })
+        },
         setTheme(theme) {
 
             let wap = this.$store.getters.getWapToEdit
             wap = utilService.copy(wap)
             const cmps = wap.cmps.map(cmp => {
+                let newTheme
+                switch (cmp.type) {
+                    case 'wap-header':
+                    case 'wap-hero':
+                    case 'wap-footer':
+                        newTheme = this.themes[theme].main
+                        break;
+                    case 'wap-container':
+                    case 'wap-form':
+                    case 'wap-map':
+                    case 'wap-reviews':
+                        newTheme = this.themes[theme].secondary
+                        break;
+                    default:
+                        newTheme = this.themes[theme].break
+                }
+                for(let [key,value] of Object.entries(cmp.info)){
+                    value.style = newTheme
+                }
+
                 if (cmp.cmps) {
+                    console.log(cmp.type);
                     cmp.cmps = cmp.cmps.map(innerCmp => {
                         for (let [key, value] of Object.entries(innerCmp.info)) {
-                            if (value[0]) {
+                            if (Array.isArray(value)) {
                                 value = value.map(k => {
-                                    k.style = {}
+                                    k.style = newTheme
+                                    delete k.style['background-color']
                                     return k
                                 })
                             } else {
-                                value.style = {}
+                                value.style = newTheme
+                                value.style['background-color']
                             }
                             innerCmp.info[key] = value
                         }
                         return innerCmp
                     })
                 }
-                for (let [key, value] of Object.entries(cmp.info)) {
-                    if (value[0]) {
-                        value = value.map(k => {
-                            k.style = {}
-                            return k
-                        })
-                    } else {
-                        value.style = {}
-                    }
-                    cmp.info[key] = value
-                }
-                switch (cmp.type) {
-                    case 'wap-header':
-                    case 'wap-hero':
-                    case 'wap-footer':
-                        cmp.style = this.themes[theme].main
-                        break;
-                    case 'wap-container':
-                    case 'wap-form':
-                    case 'wap-map':
-                    case 'wap-reviews':
-                        cmp.style = this.themes[theme].secondary
-                        break;
-                    default:
-                        cmp.style = this.themes[theme].break
-                }
+
+                cmp.style = newTheme
                 return cmp
+
             })
 
             wap.cmps = cmps
@@ -280,6 +297,10 @@ export default {
         },
         cmps() {
             return this.$store.getters.cmps
+        },
+        getHistory() {
+            // TODO: IM FOR REDO UNDO
+            return this.$store.getters.getHistory
         },
 
     },

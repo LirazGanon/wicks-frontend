@@ -70,18 +70,21 @@
                 </span>
             </span>
             <h2>Themes</h2>
-            <section class="section-cmp-editor undo">
-                <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+            <section class="undo-wrapper">
+
+                <section class="section-cmp-editor undo">
+                    <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
                     v-tooltip="'Undo'">
                     undo
                 </button>
                 <button class="material-symbols-outlined"
-                    :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards"
-                    v-tooltip="'Redo'">
-                    redo
-                </button>
-                <hr>
-            </section>
+                :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards"
+                v-tooltip="'Redo'">
+                redo
+            </button>
+        </section>
+        <hr>
+    </section>
             <img @click="setTheme('a')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/1_amrigo.jpg" alt="">
             <img @click="setTheme('b')"

@@ -270,7 +270,6 @@ export default {
                             }
                             innerCmp.info[key] = value
                         }
-                        console.log(innerCmp.info);
                         return innerCmp
                     })
                 }

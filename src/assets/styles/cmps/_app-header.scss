@@ -47,63 +47,66 @@ header {
             cursor: pointer;
         }
 
-        @media (min-width: 900px) {
-            .main-dropdown {
+        .main-dropdown {
+            position: absolute;
+            top: 70px;
+            // TODO: FINISH HERE
+            right: -8px;
+            font-size: 16px;
+            width: 200px;
+            background: #eee;
+            box-shadow: 1px 1px 1px #3335, -1px -1px 4px #3335;
+            // padding: 20px 10px;
+            border-radius: 2px;
+            height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+            z-index: 3000;
+            a{
+                color: #333 !important;
+            }
+
+            &::before {
+                content: "";
                 position: absolute;
-                top: 70px;
-                // TODO: FINISH HERE
-                right: -8px;
-                font-size: 16px;
-                width: 200px;
-                background: #eee;
-                box-shadow: 1px 1px 1px #3335, -1px -1px 4px #3335;
-                // padding: 20px 10px;
-                border-radius: 2px;
-                height: 0;
-                overflow: hidden;
-                transition: 0.3s;
+                height: 25px;
+                width: 25px;
+                background: linear-gradient(135deg, #eee 60%, transparent 60%);
+                box-shadow: -1px -1.5px 1px #3333;
+                top: -12px;
+                right: 20px;
+                transform: rotate(45deg);
+            }
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    height: 25px;
-                    width: 25px;
-                    background: linear-gradient(135deg, #eee 60%, transparent 60%);
-                    box-shadow: -1px -1.5px 1px #3333;
-                    top: -12px;
-                    right: 20px;
-                    transform: rotate(45deg);
+            > * {
+                padding-inline-start: 5px;
+                padding-block: 0;
+                opacity: 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &.openMenu {
+                height: calc(42.6px * 2);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                overflow: visible;
+                & * {
+                    opacity: 1;
+                    padding-block: 10px;
+                    cursor: pointer;
                 }
 
-                > * {
-                    padding-inline-start: 5px;
-                    padding-block: 0;
-                    opacity: 0;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-                &.openMenu {
-                    height: calc(42.6px * 2);
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    overflow: visible;
-                    & * {
-                        opacity: 1;
-                        padding-block: 10px;
-                        cursor: pointer;
-                    }
-
-                    a {
-                        // box-shadow: 0px 1px  #333;
-                        border-bottom: 1px solid #9995;
-                    }
+                a {
+                    // box-shadow: 0px 1px  #333;
+                    border-bottom: 1px solid #9995;
                 }
             }
         }
+       
     }
 
     &.main-header {
@@ -125,87 +128,25 @@ header {
         }
 
         .main-nav {
-            background: #eee;
-            color: #eee;
-            position: absolute;
-            right: 0;
-            height: calc(100vh - 80px);
-            z-index: 20;
-            top: 80px;
-            width: 0;
-            transition: width 0.3s;
+          
+
             display: flex;
-            align-items: center;
-            z-index: 350;
-
-            opacity: 0;
-
-            &.active {
-                width: 100%;
-                flex-direction: column;
-                color: #333;
-                .temp-header {
-                    padding-inline-start: 65px;
-                }
-                opacity: 1;
-                > * {
-                    border-bottom: 1px solid #5555;
-                    padding-block: 0.8em;
-                    padding-inline-start: 10px;
-                    width: 100%;
-                    font-size: em(14px);
-                }
-            }
-
-            @media (min-width: 900px) {
-                display: flex;
-                position: relative;
-                flex-direction: row;
-                width: auto;
-                top: 0;
-                gap: 20px;
-                height: auto;
-                background: transparent;
-                opacity: 1;
-
-                > :last-child {
-                    margin-inline-end: 20px;
-                }
-            }
-        }
-
-        .burger {
-            height: 80px;
-            width: 80px;
             position: relative;
-            cursor: pointer;
-            z-index: 30;
+            flex-direction: row;
+            width: auto;
+            top: 0;
+            gap: 20px;
+            height: auto;
+            background: transparent;
+            opacity: 1;
+            align-items: center;
 
-            @media (min-width: 900px) {
-                display: none;
-            }
-
-            > * {
-                width: 40%;
-                height: 3px;
-                background: $clr2;
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                top: calc(10px * var(--i) + 50%);
-                border-radius: 25px;
-                transition: 0.5s;
-            }
-
-            &.active > *:not(:nth-child(even)) {
-                transform: translate(-50%, -50%) rotate(-45deg);
-                top: 50%;
-            }
-
-            &.active > *:not(:nth-child(odd)) {
-                transform: translate(-50%, -50%) rotate(45deg);
+            > :last-child {
+                margin-inline-end: 20px;
             }
         }
+
+      
 
         .edit-container & {
             .logo {

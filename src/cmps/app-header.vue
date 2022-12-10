@@ -18,8 +18,8 @@
             <img :src="loggedInUser.imgUrl || avatarIcon" />
           </div>
 
-          <div class="main-dropdown" :class="{ openMenu: openDropDown }">
-
+          <div class="main-dropdown" :class="{ openMenu: openDropDown }" >
+<!-- TODO add v-click-outside="openDropDown = false" -->
             <router-link :to="`/user/${loggedInUser._id}`">
               BackOffice
             </router-link>
@@ -35,12 +35,6 @@
 
         <router-link v-else to="/login" v-if="!hideLogin">Login</router-link>
       </nav>
-
-      <div class="burger" :class="{ active: !menuOpen }" @click.stop="(menuOpen = !menuOpen)">
-        <span style="--i: -1"></span>
-        <span style="--i: 0"></span>
-        <span style="--i: 1"></span>
-      </div>
 
 
 

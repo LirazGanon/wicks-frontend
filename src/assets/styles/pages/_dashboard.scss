@@ -73,20 +73,11 @@
 
             .top-half {
                 .chosen-wap-display {
-                    margin-block: 20px;
-                    margin-inline: auto;
-                    width: 80%;
-                    box-shadow: 0 0 0 1px #9999;
-                    padding: 10px;
-                    border-radius: 0.365em;
-                    background-color: #9995;
-                    grid-area: card;
+                    max-width: 300px;
                     img,
                     .chosen-wap-img {
-                        width: 100%;
-                        height: 80%;
-                        display: grid;
-                        place-content: center;
+                        max-width: 300px;
+                        object-fit: cover;
                     }
                     h3 {
                         padding-inline-start: 6px;
@@ -173,18 +164,16 @@
                 }
             }
 
-            .carousel{
+            .carousel {
                 width: 60%;
                 margin-inline: auto;
-                margin-block:20px ;
+                margin-block: 20px;
                 height: 200px;
 
-                >*{
+                > * {
                     height: 100%;
                 }
-
             }
-
         }
     }
 }

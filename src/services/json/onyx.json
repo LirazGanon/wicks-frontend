@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Danielle Jones",
+    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670598209/wicks/bakery-preview_o95gsg.jpg",
+    "type": "Yoga Instructor",
+    "style": {},
+    "createdBy": {
+      "_id": "5e26e0b718a0891d4c995bgfhghh527",
+      "fullname": "Nadav Gonen",
+      "src": "img.jpg"
+    },
+    "usersData": {
+      "contacts": [
+        {
+          "email": "user@user.com",
+          "msg": "Amazing designs!",
+          "at": 1670878560
+        }
+      ],
+      "signups": [
+        {
+          "email": "user@user.com",
+          "at": 1670878560,
+          "msg": "Is my order ready?"
+        }
+      ]
+    },
+    "theme": "yoga",
+    "cmps": [
+      {
+        "id": "fhn21dasddk931",
+        "type": "wap-header",
+        "classes": ["yoga"],
+        "info": {},
+        "cmps": [
+          {
+            "id": "w8nfake5",
+            "type": "wap-nav",
+            "style": {},
+            "classes": [],
+            "info": {
+              "links": [
+                {
+                  "type": "txt",
+                  "txt": "HOME",
+                  "link": "#HOME",
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "txt": "ABOUT",
+                  "link": "#ABOUT",
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "txt": "Book ONLINE",
+                  "link": "#Book ONLINE",
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "txt": "PLANS & PRICING",
+                  "link": "#PLANS & PRICING",
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "txt": "CONTACT",
+                  "link": "#CONTACT",
+                  "style": {}
+                }
+              ]
+            }
+          }
+        ],
+        "style": {}
+      },
+      {
+        "type": "wap-hero",
+        "id": "asdadzxdasdc23sd",
+        "classes": ["yoga"],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Danielle Jones",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "Yoga Instructor",
+            "style": {}
+          },
+          "btns": [],
+          "imgs": [
+            {
+              "type": "img",
+              "src": "https://res.cloudinary.com/wicksin/image/upload/v1670622320/wicks/yoga/5bfb6f_8830d02959d64dfead0f7de1ed433783_d5wrfz.png",
+              "style": {}
+            }
+          ]
+        },
+        "style": {
+          "background-image": "url(https://res.cloudinary.com/wicksin/image/upload/v1670623475/wicks/yoga/5bfb6f_39aceda91fed409b99bccc866aef62c2_kgymsh.jpg)"
+        }
+      },
+      {
+        "type": "wap-container",
+        "id": "asdadaszd1dxc23sd",
+        "classes": ["yoga"],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "About",
+            "style": {}
+          }
+        },
+        "cmps": [
+          {
+            "id": "nslz8zx9on7",
+            "type": "wap-card",
+            "classes": [],
+            "info": {
+              "heading": {
+                "type": "txt",
+                "txt": "Styles",
+                "style": {}
+              },
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. ",
+                  "style": {}
+                },
+                {
+                  "type": "txt",
+                  "txt": "This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          }
+        ],
+        "style": {}
+      },
+      {
+        "type": "wap-bg-img",
+        "id": "wc05jsadcasdcd1jjj4",
+        "classes": ["full"],
+        "info": {
+          "img": {
+            "type": "img",
+            "txt": "",
+            "src": "https://res.cloudinary.com/wicksin/image/upload/v1670623716/wicks/yoga/5bfb6f_b177f923900c44db8ce8719c79b8c3b1_zvg6nw.jpg",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-bg-img",
+        "id": "wc0as5j123sadd1jjj4",
+        "classes": ["full"],
+        "info": {
+          "img": {
+            "type": "img",
+            "txt": "",
+            "src": "https://res.cloudinary.com/wicksin/image/upload/v1670623769/wicks/yoga/5bfb6f_7f7e85aefdcf43c6bdbf6fda84df0778_ywilm4.jpg",
+            "style": {}
+          }
+        },
+        "style": {}
+      },
+      {
+        "type": "wap-container",
+        "id": "asd99d8d1dxc23sd",
+        "classes": ["yoga"],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "About",
+            "style": {}
+          }
+        },
+        "cmps": [
+          {
+            "id": "nslz8zxsd9on7",
+            "type": "wap-card",
+            "classes": [],
+            "info": {
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "“I'm a testimonial. Click to edit me and add text that says something nice about you and your services.” ",
+                  "style": {}
+                }
+              ],
+              "imgs": [
+                {
+                  "type": "img",
+                  "txt": "",
+                  "src": "https://res.cloudinary.com/wicksin/image/upload/v1670624250/wicks/yoga/quote_ekdzew.png",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          },
+          {
+            "id": "nslz8zxsd9adon7",
+            "type": "wap-card",
+            "classes": [],
+            "info": {
+              "texts": [
+                {
+                  "type": "txt",
+                  "txt": "Amber Robertson ",
+                  "style": {}
+                }
+              ],
+              "imgs": [
+                {
+                  "type": "img",
+                  "txt": "",
+                  "src": "https://res.cloudinary.com/wicksin/image/upload/v1670624344/wicks/yoga/743c02101a664cd79e4fcf3e39288ce5_doe0sk.jpg",
+                  "style": {}
+                }
+              ]
+            },
+            "style": {}
+          }
+        ],
+        "style": {}
+      },
+      {
+        "type": "wap-form",
+        "id": "nslz9133xa12xhd23oy",
+        "classes": ["yoga"],
+        "info": {
+          "heading": {
+            "type": "txt",
+            "txt": "Get In Touch",
+            "style": {}
+          },
+          "subHeading": {
+            "type": "txt",
+            "txt": "500 Terry Francois Street, San Francisco, CA 94158 info@mysite.com \\\\ Tel: 123-456-7890",
+
+            "style": {}
+          },
+          "textInput": {
+            "label": "",
+            "placeholder": "Name",
+            "style": {}
+          },
+          "emailInput": {
+            "label": "",
+            "placeholder": "Email",
+            "isRequired": true,
+            "style": {}
+          },
+          "textarea": {
+            "label": "Message",
+            "isRequired": true,
+            "style": {},
+            "btns": [
+              {
+                "type": "txt",
+                "txt": "Submit",
+                "style": {}
+              }
+            ]
+          },
+          "style": {}
+        },
+        "style": {}
+      },
+      {
+        "id": "nsllxnq80yu",
+        "type": "wap-footer",
+        "classes": ["yoga footer"],
+        "info": {
+          "copyright": {
+            "type": "txt",
+            "txt": "© 2035 by Danielle Yoga. Proudly created with Wicks.in",
+            "style": {}
+          }
+        },
+        "style": {}
+      }
+    ],
+    "isPublic": true
+  }
+]
+// https://www.wix.com/website-template/view/html/2726?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%3Fcriteria%3Dpaint%26page%3D7&tpClick=view_button&esi=cf6dcf4d-2b73-4fb4-9d73-8504f907a8c7

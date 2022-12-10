@@ -34,7 +34,7 @@
                     </span>
 
                     
-                         />
+                      
                     <name-modal v-if="nameModalOpen" @close="closeNameModal"  />
 
                 </div>
@@ -44,12 +44,10 @@
                         visibility
                     </button> -->
                     <div class="site-preview">
-                        <!-- <router-link :to="(`/wap/` + wapId)" class="flex"> -->
+                        <router-link :to="(`/wap/` + wapId)" class="flex">
                         <span>Preview</span>
-                        <!-- <span class="material-symbols-outlined">
-                            visibility
-                        </span> -->
-                        <!-- </router-link> -->
+                      
+                        </router-link>
 
                     </div>
                     <div class="site-publish">
@@ -100,8 +98,17 @@ export default {
             this.pathName = ev.target.innerText
         },
         async updateName(pathName) {
-            if (pathName === 'wap' || pathName === '' || pathName === 'home' ||
-                pathName === 'review' || pathName === 'chat') return false//nidicate the user 'invalid site name'
+            switch(pathName){
+                case '':
+                case 'wap':
+                case 'home':
+                case 'review':
+                case 'chat':
+                case 'my-site-name':
+                    return false
+            }
+            // if (pathName === 'wap' || pathName === '' || pathName === 'home' ||
+            //     pathName === 'review' || pathName === 'chat') return false//nidicate the user 'invalid site name'
             try {
                 const wap = utilService.copy(this.$store.getters.getWapToEdit)
                 wap.pathName = pathName
@@ -156,6 +163,7 @@ export default {
             this.nameModalOpen = !this.nameModalOpen
         },
         publish() {
+            eventBus.emit('reselect', null)
             this.tryPublish(this.pathName)
             // this.$emit('published', this.pathName)
         },

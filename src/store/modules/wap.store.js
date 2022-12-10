@@ -137,9 +137,9 @@ export const wapStore = {
         },
         async updatePathName(context, { pathName }){
             try {
-                console.log(pathName)
+                // console.log(pathName)
                 const name = await wapService.savePathName(pathName)
-                console.log(name, 'name')
+                // console.log(name, 'name')
                  return name
                 // context.commit({ type: 'updateWap', wap })
                 // socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )

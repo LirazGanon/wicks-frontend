@@ -112,7 +112,7 @@ export default {
       this.$store.commit({ type: 'updateWap', wap })
     },
     selectNew(id) {
-      console.log('id:', id)
+      console.log('hereee:')
       this.selectedId = id
     },
 

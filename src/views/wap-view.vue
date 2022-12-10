@@ -59,7 +59,6 @@ export default {
             const { isTemplate } = this.$route.params
             // const {isTemplate }= this.$route.data
             // const wap = await wapService.getById(id)
-            console.log(url)
             let wap
             if (isTemplate) {
                 wap = await templateService.getTemplate(url.wapId)

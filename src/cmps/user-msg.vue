@@ -13,7 +13,6 @@ export default {
   created() {
     eventBus.on(SHOW_MSG, (msg) => {
       const el = this.$refs.msg
-      console.log(el);
       this.msg = msg
       var delay =  5000
       // this.alive = true

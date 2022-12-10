@@ -73,9 +73,9 @@ export default {
 
             if (cmp.info[key].txt === ev.target.innerText) return
 
-            console.log('variable:', cmp.info[key].txt === ev.target.innerText)
-            console.log(cmp.info[key].txt);
-            console.log(ev.target.innerText);
+            // console.log('variable:', cmp.info[key].txt === ev.target.innerText)
+            // console.log(cmp.info[key].txt);
+            // console.log(ev.target.innerText);
 
             cmp.info[key].txt = ev.target.innerText
 

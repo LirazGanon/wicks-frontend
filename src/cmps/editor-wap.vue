@@ -23,8 +23,12 @@
 
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
 
-        <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
-          :isSelected="selectedId === cmp.id ? true : false" @deselect="(selectedId = null)" />
+        <component :is="cmp.type" 
+        :cmp="cmp" 
+        @openEditor="openEditor" 
+        @acceptDrop="acceptDrop"
+        :isSelected="selectedId === cmp.id ? true : false" 
+        @deselect="(selectedId = null)" />
 
       </Draggable>
 
@@ -113,7 +117,7 @@ export default {
       this.$store.commit({ type: 'updateWap', wap })
     },
     selectNew(id) {
-      console.log('hereee:')
+      // console.log('hereee:')
       this.selectedId = id
     },
 

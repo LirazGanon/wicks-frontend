@@ -44,15 +44,15 @@ export default {
     methods: {
         async editWap(wapId) {
             this.$emit('setIsLoading', true)
-            console.log(wapId)
+            // console.log(wapId)
             const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId })
-            console.log(wap)
+            // console.log(wap)
             this.$router.push(`/wap/edit/${wap._id}`);
             this.$emit('setIsLoading', false)
         },
         viewTemplate(wapId) {
             this.$router.push({ path: `/wap/${wapId}` });
-            console.log(this.template)
+            // console.log(this.template)
         },
     },
     computed: {

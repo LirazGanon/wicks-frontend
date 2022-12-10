@@ -35,7 +35,7 @@ export const clickOutsideDirective = {
       ) {
         cb()
       } else {
-        console.log('inside')
+        // console.log('inside')
       }
     }
     setTimeout(() => {

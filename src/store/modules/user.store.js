@@ -66,7 +66,6 @@ export const userStore = {
             try {
                 const users = await userService.getUsers()
                 commit({ type: 'setUsers', users })
-                console.log(users)
             } catch (err) {
                 console.log('userStore: Error in loadUsers', err)
                 throw err
@@ -102,7 +101,6 @@ export const userStore = {
 
         },
         setLoggedinUser({ commit }, { loggedinUser }) {
-            console.log(loggedinUser)
             commit({ type: 'setLoggedinUser', user: loggedinUser })
         },
 

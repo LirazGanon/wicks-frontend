@@ -99,7 +99,6 @@ export default {
       }
       try {
         await this.$store.dispatch({ type: "login", userCred: this.loginCred })
-        console.log(this.loggedinUser)
         const loggedinUserId = this.loggedinUser._id
         this.$router.push(`/user/${loggedinUserId}`)
       } catch (err) {
@@ -138,7 +137,6 @@ export default {
       this.signupCred.imgUrl = imgUrl
     },
     dashUser(loggedinUser) {
-      console.log(loggedinUser)
       this.$store.dispatch({ type: "setLoggedinUser", loggedinUser })
       this.$router.push(`/user/${loggedinUser._id}`)
     }

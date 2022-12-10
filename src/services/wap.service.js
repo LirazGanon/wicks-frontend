@@ -42,13 +42,11 @@ function getById(url) {
         return httpService.get(`wap/name/${url.pathName}`)
     }else{
     const id = url
-    console.log(id)
     return httpService.get(`wap/${id}`)
     }
 }
 function getByUserId(userId) {
     // return storageService.get(STORAGE_KEY, wapId)
-    console.log(userId)
     return httpService.get(`wap/user/${userId}`)
 }
 
@@ -73,7 +71,6 @@ async function save(wap) {
 
 async function savePathName(pathName) {
 try{const name = {pathName}
-    console.log(name, 'pathNAME')
 return httpService.post(`wap/pathName`,name )
 }catch(err){
 console.log(err)

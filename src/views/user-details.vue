@@ -55,6 +55,10 @@ import chosenWapDisplay from '../cmps/chosen-wap-display.vue'
 import dashBoardPlaceHolder from '../cmps/dash-board-place-holder.vue'
 import charts from '../cmps/charts.vue'
 import adminChat from '../cmps/admin-chat.vue'
+import { socketService, SOCKET_EVENT_GET_LEAD, SOCKET_EMIT_SET_ROOM } from '../services/socket.service.js'
+import { utilService } from '../services/util.service'
+import { showUserMsg } from '../services/event-bus.service'
+
 export default {
   name: 'user-details',
 
@@ -110,7 +114,10 @@ export default {
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
     this.chosenWap = userWaps[0]
-    console.log(userWaps[0]);
+    // socket service signin:
+    socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
+    socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
+
     this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
     this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
     // this.setData()
@@ -135,11 +142,17 @@ export default {
       // console.log(this.template)
     },
     localeDate(at) {
-      console.log(a);
       const date = new Date(at)
-      console.log(date);
       return new Intl.DateTimeFormat('en-US').format(date)
-    }
+    },
+    async getLead(data) {
+      let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
+      wap = utilService.copy(wap)
+      wap.usersData.contacts.push(data.contact)
+      this.$store.commit({ type: 'updateUserWapLocally', wapId: wap._id, contact: data.contact })
+      showUserMsg(`user sended msg from site ${wap.pathName}`)
+
+    },
   },
   watch: {
     userId: {

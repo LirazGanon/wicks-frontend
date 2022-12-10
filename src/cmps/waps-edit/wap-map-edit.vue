@@ -139,8 +139,8 @@ export default {
     // },
 
     mapClicked(ev) {
-      console.log(ev.latLng.lat())
-      console.log(ev.latLng.lng())
+      // console.log(ev.latLng.lat())
+      // console.log(ev.latLng.lng())
       // console.log(this. GoogleMap)
       // GoogleMap.addListener("click", (mapsMouseEvent) => {
       //   // Close the current InfoWindow.
@@ -158,10 +158,10 @@ export default {
       // });
     },
     markerClicked(idx) {
-      console.log(idx)
+      // console.log(idx)
     },
     searchLocation(ev) {
-      console.log(ev.target.value)
+      // console.log(ev.target.value)
       this.getLocationByName(ev.target.value)
     },
 

@@ -136,8 +136,8 @@ export default {
                 elCopy = copyCmp.info[key]
             }
             elCopy.style[att] = val
-            console.log(elCopy);
-            console.log(path);
+            // console.log(elCopy);
+            // console.log(path);
             // CMP UPDATE
             if (elIdx !== undefined) {
                 copyCmp.info[key][elIdx] = elCopy

@@ -50,7 +50,7 @@ export default {
         }
     },
     created() {
-        console.log(this.info.createdBy._id)
+        // console.log(this.info.createdBy._id)
         socketService.emit(SOCKET_EMIT_SET_ROOM, this.info.createdBy._id)
     //     socketService.on(SOCKET_EVENT_ADD_MSG, this.addMsg)
     //     socketService.on(SOCKET_EMIT_SEND_MSG, this.addMsg)
@@ -60,7 +60,7 @@ export default {
             this.msgs.push(msg)
         },
         sendMsg() {
-            console.log('Sending', this.msg)
+            // console.log('Sending', this.msg)
             // TODO: next line not needed after connecting to backend
             this.addMsg(this.msg)
             // setTimeout(() => this.addMsg({ from: 'Dummy', txt: 'Yey' }), 2000)

@@ -71,15 +71,17 @@
             </span>
             <h2>Themes</h2>
             <section class="section-cmp-editor undo">
-            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
-                undo
-            </button>
-            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
-                @click="goForwards" v-tooltip="'Redo'">
-                redo
-            </button>
-            <hr>
-        </section>
+                <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                    v-tooltip="'Undo'">
+                    undo
+                </button>
+                <button class="material-symbols-outlined"
+                    :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards"
+                    v-tooltip="'Redo'">
+                    redo
+                </button>
+                <hr>
+            </section>
             <img @click="setTheme('a')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/1_amrigo.jpg" alt="">
             <img @click="setTheme('b')"
@@ -87,8 +89,7 @@
             <img @click="setTheme('c')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/3_knuihv.jpg" alt="">
             <img @click="setTheme('d')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670690583/wicks/4_u1kqb2.jpg"
-                alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690583/wicks/4_u1kqb2.jpg" alt="">
 
         </section>
 
@@ -249,11 +250,15 @@ export default {
                     default:
                         newTheme = this.themes[theme].break
                 }
+                for(let [key,value] of Object.entries(cmp.info)){
+                    value.style = newTheme
+                }
 
                 if (cmp.cmps) {
+                    console.log(cmp.type);
                     cmp.cmps = cmp.cmps.map(innerCmp => {
                         for (let [key, value] of Object.entries(innerCmp.info)) {
-                            if (value[0]) {
+                            if (Array.isArray(value)) {
                                 value = value.map(k => {
                                     k.style = newTheme
                                     delete k.style['background-color']
@@ -265,6 +270,7 @@ export default {
                             }
                             innerCmp.info[key] = value
                         }
+                        console.log(innerCmp.info);
                         return innerCmp
                     })
                 }

@@ -16,7 +16,7 @@
                 </h3>
             </div>
             <div>
-                <span>Subs rate</span>
+                <span>Subscriptions rate</span>
                 <h3>
                 {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
                         data.datasets[1].data[data.datasets[0].data.length - 1]).toFixed(2)

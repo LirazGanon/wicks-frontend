@@ -3,11 +3,13 @@
 
         <h3>User Interactions</h3>
         <LineChart :chartData="data" :options="options" />
+        <BarChart :chartData="data" :options="options" />
     </section>
 </template>
   
 <script>
 import { LineChart } from 'vue-chart-3'
+import { BarChart } from 'vue-chart-3'
 import { Chart, registerables } from 'chart.js'
 
 Chart.register(...registerables)
@@ -17,7 +19,7 @@ export default {
     props: {
         data: Object,
     },
-    components: { LineChart },
+    components: { LineChart, BarChart },
     data() {
         return {
             options: {

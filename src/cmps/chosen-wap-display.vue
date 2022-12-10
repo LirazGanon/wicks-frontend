@@ -3,9 +3,8 @@
 
         <section class="chosen-wap-display" v-if="info">
 
-            <img v-if="info.src" :src="info.src" alt="" class="chosen-wap-img">
-            <div v-else class="chosen-wap-img">placeholder</div>
-            <h3>{{ info.pathName || 'GuyKing' }}</h3>
+            
+            <h3>{{ info.pathName || 'My-site' }}</h3>
             <div class="wap-actions-dash">
 
                 <button @click="editWap(info._id)">Edit</button>
@@ -37,7 +36,6 @@ export default {
         },
         viewTemplate(wapId) {
             this.$router.push({ path: `/wap/${wapId}` });
-            console.log(this.template)
         },
     },
     computed: {},

@@ -72,46 +72,23 @@
             margin-inline: auto;
 
             .top-half {
-                .chosen-wap-display {
-                    max-width: 300px;
-                    img,
-                    .chosen-wap-img {
-                        max-width: 300px;
-                        object-fit: cover;
-                    }
-                    h3 {
-                        padding-inline-start: 6px;
-                        border-left: 4px solid $primary-clr;
-                        text-transform: capitalize;
-                        margin-inline-start: 4px;
-                        margin-block: 12px;
-                    }
-                    .wap-actions-dash {
-                        display: flex;
-                        justify-content: space-around;
-                        button {
-                            width: 48%;
-                            margin: 0;
-                            padding: 10px 24px;
-                            font-size: 18px;
-                            font-family: raleway;
-                            border: 1px solid #fff;
-                            background-color: $primary-clr;
-                            border-radius: 6px;
-                            transition: 0.3s;
-                            cursor: pointer;
-                            &:hover {
-                                background-color: lighten($primary-clr, 10%);
-                                border: 1px solid #333;
-                            }
-                            &:last-child {
-                                border: 1px solid $primary-clr;
-                                background-color: #fff;
-                                &:hover {
-                                    background-color: darken(#fff, 20);
-                                }
-                            }
+                display: flex;
+                .dash-card-wrapper {
+                    display: flex;
+
+                    .chosen-wap-display {
+                        margin: 20px 20px 0 0;
+                        width: auto;
+                        h3 {
+                            font-size: 30px;
+                            padding-inline-start: 6px;
+                            border-left: 4px solid $primary-clr;
+                            text-transform: capitalize;
+                            margin-inline-start: 4px;
+                            margin-block: 12px;
                         }
+                        margin-block-start: 5vh;
+                        margin-inline-start: 20px;
                     }
                 }
 
@@ -130,7 +107,6 @@
                 }
             }
             .chart-line {
-                width: 90%;
                 margin-inline: auto;
                 grid-area: chartLine;
                 margin-block: 40px;

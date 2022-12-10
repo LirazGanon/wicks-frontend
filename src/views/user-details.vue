@@ -12,7 +12,7 @@
     <main class="dashboard-content" v-if="userWaps.length">
 
       <section class="left-user-nav">
-        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName || 'GuyKing' }}
+        <div class="wap-left-dash" v-for="wap in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName || 'My-site' }}
         </div>
 
         <div @click="logout" class="logout-user-dash">
@@ -21,16 +21,17 @@
 
       </section>
       <section class="main-dashboard">
-          <section class="top-half">
-            <chosen-wap-display :info="chosenWap" />
-            <contacts-table :info="chosenWap.usersData.contacts" />
-            <admin-chat :info="chosenWap"/>
+        <section class="top-half">
+          <chosen-wap-display :info="chosenWap" />
+          <!-- <admin-chat :info="chosenWap"/> -->
 
-          </section>
+          <charts :info="chosenWap.usersData.contacts" :data="testData" />
+        </section>
+        {{ chosenWap.usersData.activity }}
 
-          <div class="bottom-half">
-            <charts :info="chosenWap.usersData.contacts" :data="testData" />
-          </div>
+        <div class="bottom-half">
+          <contacts-table :info="chosenWap.usersData.contacts" />
+        </div>
       </section>
 
     </main>
@@ -67,10 +68,24 @@ export default {
       },
       chosenWap: null,
       testData: {
-        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+        labels: ['August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
+            label: 'Line  Dataset',
             data: [30, 40, 60, 70, 40],
+            backgroundColor: [
+              'skyblue',
+              '#77CEFF',
+              '#0079AF',
+              '#123E6B',
+              '#97B0C4',
+              '#A5C8ED',
+            ],
+            tension: .3,
+          },
+          {
+            label: 'Bar Dataset',
+            data: [30, 40, 80, 70, 40],
             backgroundColor: [
               'skyblue',
               '#77CEFF',
@@ -99,27 +114,26 @@ export default {
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
     this.chosenWap = userWaps[0]
-    this.setData()
-    // const user = await userService.getById(id)
-    // this.user = user
+    // this.setData()
+    const user = await userService.getById(id)
+    this.user = user
   },
   methods: {
     logout() {
-      console.log('baba')
       this.$store.dispatch({ type: 'logout' })
       this.$router.push('/')
     },
     async editWap(wapId) {
       this.$emit('setIsLoading', true)
-      console.log(wapId)
+      // console.log(wapId)
       const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId })
-      console.log(wap)
+      // console.log(wap)
       this.$router.push(`/wap/edit/${wap._id}`);
       this.$emit('setIsLoading', false)
     },
     viewTemplate(wapId) {
       this.$router.push({ path: `/wap/${wapId}` });
-      console.log(this.template)
+      // console.log(this.template)
     },
     localeDate(at) {
       console.log(a);

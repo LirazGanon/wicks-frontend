@@ -253,31 +253,42 @@ export default {
                     default:
                         newTheme = this.themes[theme].break
                 }
-                for(let [key,value] of Object.entries(cmp.info)){
-                    value.style = newTheme
+
+                for (let [key, value] of Object.entries(cmp.info)) {
+                    if (value['background-image'])
+                        newTheme
+                    value.style = utilService.copy(newTheme)
+                    delete value.style['background-color']
+
                 }
 
                 if (cmp.cmps) {
-                    console.log(cmp.type);
                     cmp.cmps = cmp.cmps.map(innerCmp => {
                         for (let [key, value] of Object.entries(innerCmp.info)) {
                             if (Array.isArray(value)) {
                                 value = value.map(k => {
-                                    k.style = newTheme
+                                    k.style = utilService.copy(newTheme)
                                     delete k.style['background-color']
+                                    // console.log(k);
                                     return k
                                 })
                             } else {
-                                value.style = newTheme
+                                value.style = utilService.copy(newTheme)
                                 value.style['background-color']
+                                delete value.style['background-color']
+
                             }
                             innerCmp.info[key] = value
                         }
+
                         return innerCmp
                     })
                 }
 
-                cmp.style = newTheme
+                if (cmp.style['background-image']) {
+                    delete newTheme['background-color']
+                }
+                cmp.style = utilService.copy(newTheme)
                 return cmp
 
             })

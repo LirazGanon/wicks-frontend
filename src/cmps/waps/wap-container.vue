@@ -31,7 +31,6 @@ import wapBgImg from './wap-bg-img.vue'
 import wapCard from './wap-card.vue'
 
 import wapGallery from './wap-gallery.vue'
-import wapForm from './wap-form.vue'
 
 export default {
 
@@ -41,7 +40,6 @@ export default {
         wapImg,
         wapCard,
         wapGallery,
-        wapForm,
         wapImg,
         wapBgImg
     },

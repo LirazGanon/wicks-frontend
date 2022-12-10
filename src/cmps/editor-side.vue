@@ -70,16 +70,21 @@
                 </span>
             </span>
             <h2>Themes</h2>
-            <section class="section-cmp-editor undo">
-            <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack" v-tooltip="'Undo'">
-                undo
-            </button>
-            <button class="material-symbols-outlined" :disabled="(getHistory.currState === getHistory.waps.length - 1)"
-                @click="goForwards" v-tooltip="'Redo'">
+            <section class="undo-wrapper">
+
+                <section class="section-cmp-editor undo">
+                    <button class="material-symbols-outlined" :disabled="!getHistory.currState" @click="goBack"
+                    v-tooltip="'Undo'">
+                    undo
+                </button>
+                <button class="material-symbols-outlined"
+                :disabled="(getHistory.currState === getHistory.waps.length - 1)" @click="goForwards"
+                v-tooltip="'Redo'">
                 redo
             </button>
-            <hr>
         </section>
+        <hr>
+    </section>
             <img @click="setTheme('a')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/1_amrigo.jpg" alt="">
             <img @click="setTheme('b')"
@@ -87,8 +92,7 @@
             <img @click="setTheme('c')"
                 src="https://res.cloudinary.com/wicksin/image/upload/v1670690582/wicks/3_knuihv.jpg" alt="">
             <img @click="setTheme('d')"
-                src="https://res.cloudinary.com/wicksin/image/upload/v1670690583/wicks/4_u1kqb2.jpg"
-                alt="">
+                src="https://res.cloudinary.com/wicksin/image/upload/v1670690583/wicks/4_u1kqb2.jpg" alt="">
 
         </section>
 

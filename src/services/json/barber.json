@@ -1,0 +1,506 @@
+[
+    {
+        "_id": "5e2839389cddf209a0jj4e4ghhhh4",
+        "name": "abutbul",
+        "src": "https://res.cloudinary.com/wicksin/image/upload/v1669927585/wicks/coffeshop/coffe-shop-preview_pmpvox.png",
+        "type": "barber",
+        "createdBy": {
+            "_id": "5e26e0b7d8a0z91d4c995bgfhghh527",
+            "fullname": "guy kingos"
+        },
+        "usersData": {
+            "contacts": [
+                {
+                    "email": "user@user.com",
+                    "msg": "Please send me stuff",
+                    "at": 123
+                }
+            ],
+            "signups": [
+                {
+                    "email": "user@user.com",
+                    "at": 123
+                }
+            ]
+        },
+        "theme": "inviting",
+        "cmps": [
+            {
+                "id": "fhnvsk931",
+                "type": "wap-header",
+                "classes": [],
+                "info": {
+                    "logo": {
+                        "type": "img",
+                        "txt": "",
+                        "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593519/wicks/barber/Logo-Barber_header_dwf3ug.png",
+                        "style": {}
+                    },
+                    "nav": {
+                        "id": "w8nke5",
+                        "type": "wap-nav",
+                        "style": {},
+                        "classes": [],
+                        "info": {
+                            "links": [
+                                {
+                                    "type": "txt",
+                                    "txt": "Home",
+                                    "link": "#Home",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "services",
+                                    "link": "#services",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "About",
+                                    "link": "#About",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Shop",
+                                    "link": "#Shop",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Contact",
+                                    "link": "#Contact",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Blog",
+                                    "link": "#Blog",
+                                    "style": {}
+                                }
+                            ]
+                        }
+                    }
+                },
+                "style": {}
+            },
+            {
+                "id": "nsl25c0j9",
+                "type": "wap-container",
+                "classes": [
+                    "barber"
+                ],
+                "info": {
+                    "cmps": [
+                        {
+                            "id": "nslclo8yss",
+                            "classes": [
+                                "full"
+                            ],
+                            "type": "wap-bg-img",
+                            "info": {
+                                "img": {
+                                    "type": "img",
+                                    "txt": "",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593375/wicks/barber/barbershop-1-1_eztbvf.jpg",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        {
+                            "id": "nslxdno3c2",
+                            "type": "wap-img",
+                            "classes": [],
+                            "info": {
+                                "imgs": [
+                                    {
+                                        "type": "img",
+                                        "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593517/wicks/barber/Logo-Barber_vttz8t.png",
+                                        "style": {}
+                                    }
+                                ]
+                            },
+                            "style": {}
+                        }
+                    ],
+                    "style": {}
+                }
+            },
+            {
+                "id": "nsl9vm3c3x",
+                "type": "wap-container",
+                "classes": "barber",
+                "info": {},
+                "cmps": [
+                    {
+                        "id": "nsldla71ytyjs",
+                        "type": "wap-img",
+                        "classes": [],
+                        "info": {
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593462/wicks/barber/p-hover-1_es6vq4.png",
+                                    "txt": "",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "id": "nsllycp9c5me5",
+                        "type": "wap-card",
+                        "classes": [],
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "About Us.",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor",
+                                "style": {}
+                            },
+                            "texts": [
+                                {
+                                    "type": "txt",
+                                    "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisr sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq.",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "nsld13nvis7k",
+                "type": "wap-container",
+                "classes": [
+                    "barber"
+                ],
+                "info": {},
+                "cmps": [
+                    {
+                        "id": "nslz8zx9on7",
+                        "type": "wap-card",
+                        "classes": [],
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "Styles",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun",
+                                "style": {}
+                            }
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslundhz7",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The rock",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "img",
+                                "txt": "10$-15%",
+                                "style": {}
+                            }
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslnxvnk2",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Proffesor",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "10$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "srchttps://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-7_had4vn.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nsl3njvelp",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Baker",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "15$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-6_stwogd.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslsd708n",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Nuton",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "10$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-5_inqaug.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslnxl3vnj84",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Macho",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "15$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-4_wimsxw.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslnxle38xd",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Hipster",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "15$-25$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-3_kgycwg.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslnxcn38p",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Renger",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "10$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593320/wicks/barber/p-hover-4_wimsxw.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    },
+                    {
+                        "type": "wap-card",
+                        "id": "nslnxdfj920",
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "The Rock Star",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "10$-20$",
+                                "style": {}
+                            },
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593462/wicks/barber/p-hover-1_es6vq4.png",
+                                    "style": {}
+                                }
+                            ]
+                        },
+                        "style": {}
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "nslsdfkjo",
+                "type": "wap-container",
+                "classes": "barber",
+                "info": {},
+                "cmps": [
+                    {
+                        "id": "nsllycp9c5me5",
+                        "type": "wap-card",
+                        "classes": [],
+                        "info": {
+                            "heading": {
+                                "type": "txt",
+                                "txt": "Unforgettable Atmosphere",
+                                "style": {}
+                            },
+                            "subHeading": {
+                                "type": "txt",
+                                "txt": "Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun",
+                                "style": {}
+                            }
+                        },
+                        "style": {}
+                    },
+                    {
+                        "id": "nsldla71ytyjs",
+                        "type": "wap-gallery",
+                        "classes": [],
+                        "info": {
+                            "imgs": [
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593402/wicks/barber/barber-gallery1_rv7n5c.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593408/wicks/barber/barber-gallery2_l60obp.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593417/wicks/barber/barber-gallery3_o5gdjq.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593431/wicks/barber/barber-gallery4_cesduu.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593431/wicks/barber/barber-gallery4_cesduu.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "img",
+                                    "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593446/wicks/barber/barber-gallery6_l5hido.jpg",
+                                    "txt": "",
+                                    "style": {}
+                                }
+                            ],
+                            "style": {}
+                        }
+                    }
+                ],
+                "style":{}
+            },
+                {
+                    "id": "nsllxnq80yu",
+                    "classes": [],
+                    "type": "wap-footer",
+                    "info": {
+                        "logo": {
+                            "type": "img",
+                            "txt": "",
+                            "src": "https://res.cloudinary.com/wicksin/image/upload/v1670593519/wicks/barber/Logo-Barber_header_dwf3ug.png",
+                            "style": {}
+                        },
+                        "socials": [
+                            {}
+                        ],
+                        "copyright": {
+                            "type": "txt",
+                            "txt": "Coffeeright © 2097 AbutbulBarber.com",
+                            "style": {}
+                        }
+                    },
+                    "style": {}
+                }
+            ],
+                "style": {},
+                "isPublic": true
+        }
+
+
+
+
+
+
+
+
+

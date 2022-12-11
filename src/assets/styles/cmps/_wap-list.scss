@@ -60,9 +60,10 @@ main:has(.wap-list-container){
         gap: 50px ;
         grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
         justify-content: center;
-        padding: 0 6%;
+        // padding: 0 6%;
         li {
-            padding: 10px;
+            // padding: 10px;
+            aspect-ratio: 28/36;
             &:first-child {
                 & button:last-child {
                     display: none;
@@ -90,6 +91,7 @@ main:has(.wap-list-container){
                     }
 
                     img {
+                        padding: 4px;
                         aspect-ratio: 16/9;
                         object-fit: cover;
                         height: 360px;

@@ -23,7 +23,7 @@
               <img :src="loggedInUser.imgUrl || avatarIcon" />
             <p class="username-dropdown">{{loggedInUser.fullname}}</p>
             <router-link :to="`/user/${loggedInUser._id}`">
-              BackOffice
+              Back-Office
             </router-link>
 
 

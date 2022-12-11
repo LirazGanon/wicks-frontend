@@ -1,6 +1,5 @@
-main:has(.dashboard)>.main-header
-{
-    padding: 24px;
+main:has(.dashboard)>.main-header {
+    padding: 28px;
     padding-bottom: 12px;
 }
 
@@ -10,6 +9,7 @@ main:has(.dashboard)>.main-header
     display: flex;
     flex-direction: column;
     height: calc(100vh - 50.5px);
+
     .top-dashboard {
         display: flex;
         border-top: 1px solid #5555;
@@ -20,17 +20,20 @@ main:has(.dashboard)>.main-header
 
         h4 {
             border-right: 1px solid #5555;
-            min-width: 126px;
+            min-width: 176px;
             font-size: 20px;
             text-transform: capitalize;
         }
+
         .user-name {
             margin-inline-start: 30px;
+
             h4 {
                 border-right: none;
-                margin-inline-start: 30px;
+                margin-inline-start: 27px;
             }
         }
+
     }
 
     main {
@@ -38,26 +41,42 @@ main:has(.dashboard)>.main-header
         flex: 1;
 
         .left-user-nav {
-            min-width: 150px;
+            width: 200px;
+            padding: 12px;
             border-right: 1px solid #5555;
             display: flex;
             flex-direction: column;
             overflow-y: hidden;
-            font-family: lato;
+            font-family: inter;
             position: relative;
+
+            .selected {
+                transition: 0s;
+                color: lighten($logo-clr, 5);
+
+                /* $ */
+            }
+
 
             .wap-left-dash,
             .logout-user-dash {
-                padding-inline-start: 20px;
+
+                padding-inline-start: 12px;
                 padding-block: 12px;
                 border-bottom: 1px solid #5555;
                 text-transform: capitalize;
                 transition: 0.3s;
                 cursor: pointer;
                 list-style-type: none;
-                &:not(.logout-user-dash):hover {
-                    background-color: #5555;
+
+                &:first-of-type {
+                    padding-top: 0;
                 }
+
+                &:not(.logout-user-dash):hover {
+                    color: lighten($logo-clr, 15)
+                }
+
                 &.logout-user-dash {
                     border-top: 1px solid #5555;
                     background-color: #5558;
@@ -69,6 +88,7 @@ main:has(.dashboard)>.main-header
                     padding-inline-start: 0px;
                     font-family: montserratBold;
                 }
+
             }
         }
 
@@ -79,7 +99,9 @@ main:has(.dashboard)>.main-header
             margin-inline: auto;
 
             .top-half {
+                padding: 24px;
                 display: flex;
+
                 .dash-card-wrapper {
                     display: flex;
 
@@ -87,6 +109,7 @@ main:has(.dashboard)>.main-header
                         flex: 1;
                         display: flex;
                         flex-direction: column;
+
                         h3 {
                             max-width: 250px;
                             min-width: 250px;
@@ -94,46 +117,64 @@ main:has(.dashboard)>.main-header
                             padding-inline-start: 6px;
                             border-left: 4px solid $primary-clr;
                             text-transform: capitalize;
-                            margin-inline-start: 4px;
-                            margin-block: 12px;
+                            // margin-inline-start: 4px;
+                            margin-bottom: 24px;
                         }
-                        margin-block-start: 5vh;
+
+                        // margin-block-start: 5vh;
                         margin-inline-start: 20px;
+
                         .prev-img {
                             width: 220px;
-                            margin-inline: auto;
-                            border:  8px $primary-clr;
-                            
+                            // margin-inline: auto;
+                            border: 8px $primary-clr;
+                            margin-bottom: 20px;
+                            box-shadow: 0 1px 4px 1px #0000002e;
                         }
+
                         .wap-actions-dash {
                             display: flex;
                             flex-direction: column;
 
                             button {
+                                width: 220px;
+                                font-size: 1em;
+                                padding: 12px;
                                 transition: 0.2s;
+                                font-family: inter;
+                                margin-inline: 0;
+                                color: #eee;
+                                border: 1px solid lighten($logo-clr, 10);
+
                                 &:first-child {
-                                    background-color: $primary-clr;
+                                    background-color: lighten($logo-clr, 10);
+                                    margin-bottom: 12px;
 
                                     &:hover {
-                                        background-color: lighten($primary-clr, 10%);
+                                        background-color: lighten($logo-clr, 20%);
                                     }
                                 }
+
                                 &:last-child {
-                                    box-shadow: 0 0 3px $primary-clr;
+                                    background-color: transparent;
+                                    color: #111;
 
                                     &:hover {
-                                        background-color: lighten($primary-clr, 15%);
+                                        background-color: lighten($logo-clr, 20%);
+                                        color: #eee;
                                     }
                                 }
                             }
                         }
                     }
                 }
+
                 .chart-line {
-                    margin-block: 40px;
+                    // margin-block: 40px;
                     margin-inline-start: 50px;
                     flex: 1;
-                    padding-inline: 20px;
+                    // padding-inline: 20px;
+                    width: 200px !important;
 
                     .interactions-stats {
                         display: flex;
@@ -163,7 +204,9 @@ main:has(.dashboard)>.main-header
                             span {
                                 font-family: lato;
                             }
+
                             h3 {
+                                margin-inline: 0;
                                 font-family: montserratBold;
                                 font-size: 20px;
                             }
@@ -197,9 +240,11 @@ main:has(.dashboard)>.main-header
                     text-align: center;
                 }
             }
+
             .dash-placeholder-txt {
                 width: 80%;
                 margin-inline: auto;
+
                 p {
                     margin: 0;
                 }
@@ -211,7 +256,7 @@ main:has(.dashboard)>.main-header
                 margin-block: 20px;
                 height: 200px;
 
-                > * {
+                >* {
                     height: 100%;
                 }
             }

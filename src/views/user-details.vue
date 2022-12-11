@@ -6,7 +6,7 @@
     <section class="top-dashboard">
       <h4>My Sites</h4>
       <div class="user-name">
-        <h4>{{ user.fullname }}'s BackOffice</h4>
+        <h4>{{ user.fullname }}'s Back-Office</h4>
       </div>
     </section>
     <main class="dashboard-content" v-if="userWaps.length">
@@ -219,11 +219,6 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-.selected{
-  transition: 0s;
-  box-shadow: inset 14px 0px 0px -10px #c78afb;
 
-/* $ */
-}
 
 </style>

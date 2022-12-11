@@ -187,7 +187,6 @@ export default {
       return this.$store.getters.templates
     },
     wapById() {
-      console.log(this.$route.params)
       const id = this.$route.params.wapId
       return this.userWaps.find(userWap => userWap._id === id)
     },

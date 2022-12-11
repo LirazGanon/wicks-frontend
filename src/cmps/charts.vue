@@ -10,13 +10,13 @@
                 </h3>
             </div>
             <div>
-                <span>Subscriptions</span>
+                <span>Leads</span>
                 <h3>
                     {{ data.datasets[1].data[data.datasets[0].data.length - 1] }}
                 </h3>
             </div>
             <div>
-                <span>Subscriptions rate</span>
+                <span>Convertion rate</span>
                 <h3>
                 <!-- {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
                         data.datasets[1].data[data.datasets[0].data.length - 1]).toFixed(2)

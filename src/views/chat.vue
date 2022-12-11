@@ -67,13 +67,13 @@ export default {
     // socketService.terminate()
   },
   methods: {
-    handleUsersPointer(e, id) {
-      if (!this.pointers.includes(id)) this.pointers.push(id)
-      const elPointer = document.querySelector(`.${id}`)
-      elPointer.style.color = 'blue'
-      elPointer.style.left = e.x + 'px'
-      elPointer.style.top = e.y + 'px'
-    },
+    // handleUsersPointer(e, id) {
+    //   if (!this.pointers.includes(id)) this.pointers.push(id)
+    //   const elPointer = document.querySelector(`.${id}`)
+    //   elPointer.style.color = 'blue'
+    //   elPointer.style.left = e.x + 'px'
+    //   elPointer.style.top = e.y + 'px'
+    // },
 
     // getCursorElement(id) {
     //   var elementId = 'cursor-' + id;

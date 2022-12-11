@@ -6,7 +6,7 @@
     <section class="top-dashboard">
       <h4>My Sites</h4>
       <div class="user-name">
-        <h4>{{ user.fullname }}'s Back-Office</h4>
+        <h4>{{ user.fullname }}'s BackOffice</h4>
       </div>
     </section>
     <main class="dashboard-content" v-if="userWaps.length">
@@ -73,7 +73,7 @@ export default {
         labels: ['July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
-            label: 'Visits',
+            label: 'Line  Dataset',
             data: [30, 40, 60, 70, 40],
             backgroundColor: [
               '#c78afb',
@@ -85,7 +85,7 @@ export default {
             tension: .3,
           },
           {
-            label: 'Subscriptions',
+            label: 'Bar Dataset',
             data: [30, 40, 80, 70, 40],
             backgroundColor: [
               '#c78afb',
@@ -113,7 +113,7 @@ export default {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
-    this.chosenWap = userWaps[userWaps.length - 1]
+    this.chosenWap = userWaps[0]
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
@@ -121,7 +121,7 @@ export default {
     this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
     this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
     // this.setData()
-    const user = await userService.getById(id)
+    const user = await userService.getById(userId)
     this.user = user
   },
   methods: {
@@ -146,12 +146,18 @@ export default {
       return new Intl.DateTimeFormat('en-US').format(date)
     },
     async getLead(data) {
-      let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
-      wap = utilService.copy(wap)
-      wap.usersData.contacts.push(data.contact)
-      this.$store.commit({ type: 'updateUserWapLocally', wapId: wap._id, contact: data.contact })
-      showUserMsg(`user sended msg from site ${wap.pathName}`)
-
+      // let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
+      // wap = utilService.copy(wap)
+      // wap.usersData.contacts.unshift(data.contact)
+      // this.chosenWap.usersData.contacts.unshift(data.contact)
+      this.$store.commit({ type: 'updateUserWapLocally', wapId: data.wap._id, wap:data.wap, contact: data.contact })
+      showUserMsg(`user sended msg from site ${data.wap.pathName}`)
+      // this.chosenWap = wap
+      const userWaps = this.$store.getters.getUserWaps
+      // this.userWaps = userWaps
+      const idx = userWaps.findIndex(currWap => currWap._id === this.chosenWap._id)
+      this.chosenWap=userWaps[idx]
+      console.log(idx)
     },
   },
   watch: {

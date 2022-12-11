@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
-            v-for="(pointer, idx) in pointers" :class="pointers[idx]">arrow_selector_tool</div>
+        <div class="pointer material-symbols-outlined " ref="pointer" 
+        v-if="pointers.length" v-for="(pointer, idx) in pointers" :class="pointers[idx]">arrow_selector_tool</div>
         <h1>About Us</h1>
         <p>We like You</p>
         <h2>Lets Chat About {{ topic }}</h2>
@@ -108,10 +108,11 @@ export default {
 </script>
   
 <style>
-.pointer {
+/* .pointer { */
     /* width: 50px;
     height: 50px; */
-    position: absolute
-}
+    /* position: absolute */
+/* } */
+
 </style>
   

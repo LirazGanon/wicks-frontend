@@ -5,7 +5,7 @@
     :style="{ maxWidth: conMaxWidth }">
 
     <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
-      v-for="(pointer, idx) in pointers" :class="pointers[idx]">arrow_selector_tool
+      v-for="(pointer, idx) in pointers" :class="pointers[idx]" >arrow_selector_tool
       <!-- {{pointers.length}} -->
     </div>
     <section v-if="!cmpsLength" class="wap-placeholder">
@@ -243,5 +243,12 @@ export default {
   position: absolute;
   font-size: 50px;
   z-index: 1000;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
 }
 </style>

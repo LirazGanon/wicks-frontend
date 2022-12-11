@@ -64,8 +64,8 @@ export default {
                 if (this.isTemplate) return
                 const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
                 const wap = await this.wap
-                wap.usersData.contacts.push(contact)
-                socketService.emit(SOCKET_EMIT_SEND_LEAD, {room: wap.createdBy._id, contact, wapId:wap._id} )
+                wap.usersData.contacts.unshift(contact)
+                socketService.emit(SOCKET_EMIT_SEND_LEAD, {room: wap.createdBy._id, contact, wapId:wap._id, wap} )
                 this.$store.dispatch({ type: 'updateWapFull', wap })
                 this.textInput = ''
                 this.emailInput = ''

@@ -18,14 +18,26 @@
 
 .wap-container-wrapper.shower-cards {
     background-color: #BFA98B;
-    .mobile &,.small &{
+    padding-top: 1.5em;
+
+    .mobile &,
+    .small & {
         padding-top: 6em;
+
+    }
+
+    .medium & {
+        padding-top: 6em;
+    }
+    .tablet-display  &{
+        padding-top: 1.5em;
         
     }
-    padding-top: 1.5em;
-    .normal &{
+
+    .narrow &,
+    .normal & {
         padding-top: 6em;
-        
+
     }
 }
 
@@ -78,14 +90,14 @@
                 width: 99%;
                 position: absolute;
                 height: $img-height;
-                transform: translate(-20%,25px);
+                transform: translate(-20%, 25px);
 
                 .mobile & {
                     top: 0;
                     transform: translateY(-30%);
-                    
+
                 }
-                
+
                 .narrow & {
                     transform: translate(-20%);
                     padding: 0;

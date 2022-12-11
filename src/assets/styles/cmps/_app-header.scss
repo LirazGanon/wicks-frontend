@@ -150,14 +150,16 @@ header {
             align-items: center;
 
             > :last-child {
-                margin-inline-end: 20px;
+                // margin-inline-end: 20px;
             }
         }
 
         .edit-container & {
+            padding: 24px;
+            padding-bottom: 12px;
             .logo {
                 max-height: em(46px);
-                margin-inline-start: 20px;
+                // margin-inline-start: 20px;
             }
 
             nav > * {

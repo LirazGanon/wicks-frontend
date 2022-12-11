@@ -58,7 +58,7 @@ export default {
       avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670755305/wicks/unnamed_oa0qyr.png',
       menuOpen: true,
       openDropDown: false
-    }
+    } 
   },
   mounted() {
     // new ResizeObserver(this.resized).observe(this.$refs.mainHeader)

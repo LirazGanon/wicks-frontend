@@ -3,9 +3,9 @@
 
         <section class="wap-hero " :style="getCmpStyle" :class="cmp.classes">
 
-            <h1 v-if="cmp.info.heading"> {{ cmp.info.heading.txt }}</h1>
-            <p v-if="cmp.info.subHeading">{{ cmp.info.subHeading.txt }}</p>
-            <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns">
+            <h1 v-if="cmp.info.heading" :style="cmp.info.heading?.style" > {{ cmp.info.heading.txt }}</h1>
+            <p v-if="cmp.info.subHeading" :style="cmp.info.subHeading?.style"  >{{ cmp.info.subHeading.txt }}</p>
+            <button v-if="cmp.info.btns" v-for="btn in cmp.info.btns" :style="cmp.btns.subHeading?.style">
                 {{ btn.txt }}
             </button>
 

@@ -1,11 +1,12 @@
-main:has(.dashboard)
+main:has(.dashboard)>.main-header
 {
     padding: 24px;
+    padding-bottom: 12px;
 }
 
 
 .dashboard {
-    font-family: montserrat;
+    font-family: inter;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 50.5px);
@@ -13,14 +14,14 @@ main:has(.dashboard)
         display: flex;
         border-top: 1px solid #5555;
         border-bottom: 1px solid #5555;
-        padding-block: 10px;
-        font-family: montserratBold;
+        padding: 12px 24px;
+        font-family: inter;
         align-items: center;
 
         h4 {
             border-right: 1px solid #5555;
-            text-align: center;
-            min-width: 150px;
+            min-width: 126px;
+
             text-transform: capitalize;
         }
         .user-name {

@@ -70,10 +70,10 @@ export default {
       },
       chosenWap: null,
       testData: {
-        labels: ['August', 'September', 'October', 'November', 'December'],
+        labels: ['July','August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
-            label: 'Line  Dataset',
+            label: 'Visits',
             data: [30, 40, 60, 70, 40],
             backgroundColor: [
               '#c78afb',
@@ -85,7 +85,7 @@ export default {
             tension: .3,
           },
           {
-            label: 'Bar Dataset',
+            label: 'Subscriptions',
             data: [30, 40, 80, 70, 40],
             backgroundColor: [
               '#c78afb',
@@ -113,7 +113,7 @@ export default {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
-    this.chosenWap = userWaps[0]
+    this.chosenWap = userWaps[userWaps.length - 1]
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)

@@ -3,10 +3,10 @@
 
         <section class="chosen-wap-display" v-if="info">
 
-            
+
+            <img class="prev-img" :src="info.src" alt="Site preview image">
             <h3>{{ info.pathName || 'My-site' }}</h3>
             <div class="wap-actions-dash">
-
                 <button @click="editWap(info._id)">Edit</button>
                 <button @click="viewTemplate(info._id)">Preview</button>
             </div>
@@ -35,7 +35,7 @@ export default {
             this.$emit('setIsLoading', false)
         },
         viewTemplate(wapId) {
-            this.$router.push({ path: `/wap/${wapId}` });
+            this.$router.push({ path: `/wap/${wapId}`, target: '_blank' });
         },
     },
     computed: {},

@@ -14,9 +14,10 @@ main:has(.dashboard)>.main-header {
         display: flex;
         border-top: 1px solid #5555;
         border-bottom: 1px solid #5555;
-        padding: 12px 24px;
+        padding: 16px 24px;
         font-family: inter;
         align-items: center;
+        background-color: 
 
         h4 {
             border-right: 1px solid #5555;
@@ -96,7 +97,7 @@ main:has(.dashboard)>.main-header {
             flex: 1;
             width: 100%;
             max-width: 1400px;
-            margin-inline: auto;
+            // margin-inline: auto;
 
             .top-half {
                 padding: 24px;

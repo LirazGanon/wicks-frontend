@@ -18,9 +18,10 @@
             <div>
                 <span>Subscriptions rate</span>
                 <h3>
-                {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
+                <!-- {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
                         data.datasets[1].data[data.datasets[0].data.length - 1]).toFixed(2)
-                }}%
+                }}% -->
+                0%
                 </h3>
             </div>
         </div>

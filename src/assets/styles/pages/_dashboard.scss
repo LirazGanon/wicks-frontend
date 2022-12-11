@@ -1,20 +1,27 @@
+main:has(.dashboard)>.main-header
+{
+    padding: 24px;
+    padding-bottom: 12px;
+}
+
+
 .dashboard {
-    font-family: montserrat;
+    font-family: inter;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 78.5px);
+    height: calc(100vh - 50.5px);
     .top-dashboard {
         display: flex;
         border-top: 1px solid #5555;
         border-bottom: 1px solid #5555;
-        padding-block: 10px;
-        font-family: montserratBold;
+        padding: 12px 24px;
+        font-family: inter;
         align-items: center;
 
         h4 {
             border-right: 1px solid #5555;
-            text-align: center;
-            min-width: 150px;
+            min-width: 126px;
+            font-size: 20px;
             text-transform: capitalize;
         }
         .user-name {
@@ -78,11 +85,12 @@
 
                     .chosen-wap-display {
                         flex: 1;
+                        display: flex;
+                        flex-direction: column;
                         h3 {
                             max-width: 250px;
-                            line-break: anywhere;
                             min-width: 250px;
-                            font-size: 30px;
+                            font-size: 24px;
                             padding-inline-start: 6px;
                             border-left: 4px solid $primary-clr;
                             text-transform: capitalize;
@@ -91,7 +99,12 @@
                         }
                         margin-block-start: 5vh;
                         margin-inline-start: 20px;
-
+                        .prev-img {
+                            width: 220px;
+                            margin-inline: auto;
+                            border:  8px $primary-clr;
+                            
+                        }
                         .wap-actions-dash {
                             display: flex;
                             flex-direction: column;
@@ -124,18 +137,19 @@
 
                     .interactions-stats {
                         display: flex;
-                        gap: 40px;
-                        justify-content: space-evenly;
+                        gap: 21px;
+                        justify-content: center;
+                        color: #444;
 
                         div {
                             width: 200px;
-                            background-color: $primary-clr;
+                            background-color: #9992;
                             height: 80px;
                             display: grid;
                             place-content: center;
-                            border-radius: 6px;
+                            border-radius: 3px;
                             text-align: center;
-                            box-shadow: 3px 2px #3332, inset 3px 2px 5px #eee5;
+                            box-shadow: 3px 3px #3331, inset 3px 2px 5px #eee5;
                             font-size: 16px;
                             display: flex;
                             flex-direction: column;
@@ -144,9 +158,8 @@
                             margin-block-end: 20px;
                             transition: filter 0.5s;
 
-                            &:hover {
-                                filter: brightness(1.1);
-                            }
+                            transition: 0.3s;
+
                             span {
                                 font-family: lato;
                             }
@@ -154,23 +167,14 @@
                                 font-family: montserratBold;
                                 font-size: 20px;
                             }
-
-                            &:first-child {
-                                background-color: lighten($primary-clr, 10%);
-                            }
-                            &:last-child {
-                                background-color: darken($primary-clr, 5%);
-                            }
                         }
                     }
                 }
             }
 
-            .bottom-half{
+            .bottom-half {
                 width: 95%;
                 margin-inline: auto;
-                
-
             }
         }
     }

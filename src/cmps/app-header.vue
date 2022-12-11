@@ -23,7 +23,7 @@
               <img :src="loggedInUser.imgUrl || avatarIcon" />
             <p class="username-dropdown">{{loggedInUser.fullname}}</p>
             <router-link :to="`/user/${loggedInUser._id}`">
-              BackOffice
+              Back-Office
             </router-link>
 
 
@@ -55,7 +55,7 @@ export default {
   name: 'main-header',
   data() {
     return {
-      avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670322893/user_ha6zol.png',
+      avatarIcon: 'https://res.cloudinary.com/wicksin/image/upload/v1670755305/wicks/unnamed_oa0qyr.png',
       menuOpen: true,
       openDropDown: false
     }

@@ -149,6 +149,9 @@ header {
             opacity: 1;
             align-items: center;
 
+            a:hover{
+                color:$logo-clr;
+            }
             > :last-child {
                 // margin-inline-end: 20px;
             }

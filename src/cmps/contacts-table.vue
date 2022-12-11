@@ -73,7 +73,7 @@ export default {
 }
 
 .dark {
-    box-shadow: inset 0 0 510px #c68afb27;
+    box-shadow: inset 0 0 510px #9992;
 }
 
 p {

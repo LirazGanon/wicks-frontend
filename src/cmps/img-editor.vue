@@ -172,7 +172,6 @@ export default {
     watch: {
         info: function () {
             this.el = utilService.copy(this.info.el)
-            console.log('hi');
         }
     }
 

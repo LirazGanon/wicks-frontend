@@ -92,7 +92,7 @@ export default {
             }
             try {
                 await this.$store.dispatch({ type: "login", userCred: this.loginCred })
-                console.log(this.loggedinUser)
+                // console.log(this.loggedinUser)
                 //   const loggedinUserId = this.loggedinUser._id
                 this.$emit('close')
             } catch (err) {

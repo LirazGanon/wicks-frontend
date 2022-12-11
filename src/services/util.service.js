@@ -77,7 +77,7 @@ function findPath(ob, key, value){
       else if (Array.isArray(obj)) {
         let parentKey = path.length ? path.pop() : "";
   
-        console.log(obj)
+        // console.log(obj)
 
         for (let i = 0; i < obj.length; i++) {
           path.push(`${parentKey}[${i}]`);

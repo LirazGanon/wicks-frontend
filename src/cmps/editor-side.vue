@@ -286,7 +286,7 @@ export default {
                 }
 
                 if (cmp.style['background-image']) {
-                    console.log('here');
+                    // console.log('here');
                     cmp.style['color'] = theme.color
                     return cmp
                 }

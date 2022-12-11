@@ -40,6 +40,10 @@
    
 
 <script>
+import {socketService, SOCKET_EMIT_SEND_LEAD, SOCKET_EMIT_SET_ROOM} from '../../services/socket.service.js'
+import { wapService } from '../../services/wap.service';
+import { showUserMsg } from '../../services/event-bus.service'
+
 export default {
     name: 'dynamic-form-cmp',
     props: { cmp: Object },
@@ -51,23 +55,39 @@ export default {
             messageInput: ''
         };
     },
-    created() { },
+    created() {
+    
+    },
     methods: {
         async sendMsg() {
-            if (this.isTemplate) return
-            const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
-            const wap = await this.wap
-            wap.usersData.contacts.push(contact)
-            this.$store.dispatch({ type: 'updateWapFull', wap })
-            this.textInput = ''
-            this.emailInput = ''
-            this.messageInput = ''
+            try{
+                if (this.isTemplate) return
+                const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
+                const wap = await this.wap
+                wap.usersData.contacts.push(contact)
+                socketService.emit(SOCKET_EMIT_SEND_LEAD, {room: wap.createdBy._id, contact, wapId:wap._id} )
+                this.$store.dispatch({ type: 'updateWapFull', wap })
+                this.textInput = ''
+                this.emailInput = ''
+                this.messageInput = ''
+                showUserMsg('Message sent successfully')
+
+            }catch{
+                showUserMsg('could not send message')
+            }
         },
     },
     computed: {
-        wap() {
-            const id = this.$route.params.wapId
-            return this.$store.dispatch({ type: 'getWapById', id })
+       async  wap() {
+          
+            const url = this.$route.params
+            const { isTemplate } = this.$route.params
+            console.log(url)
+            if (isTemplate) {
+                return  await templateService.getTemplate(url.wapId)
+            } else {
+                return await wapService.getById(url)
+            }
         },
         isTemplate() {
             const { isTemplate } = this.$route.params

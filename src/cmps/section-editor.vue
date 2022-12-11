@@ -70,7 +70,7 @@ export default {
             this.updateCmp()
         },
         changeSrc(src) {
-            console.log(src);
+            // console.log(src);
             this.style = { 'background-image': `url(${src})` }
             this.updateCmp()
 
@@ -100,7 +100,7 @@ export default {
                 const wap = await this.$store.dispatch({ type: 'removeCmp', cmp: currCmp, path })
                 if (!wap.cmps.length) return
                 if (path.fatherIdx <= wap.cmps.length - 1) {
-                    console.log(path);
+                    // console.log(path);
                     this.cmp = wap.cmps[path.fatherIdx]
                 }
                 else {
@@ -111,7 +111,6 @@ export default {
                 const idx = this.path.fatherIdx
                 this.cmp = wap.cmps[idx]
                 this.path.id = wap.cmps[idx].id
-                console.log(idx);
                 eventBus.emit('reselect', wap.cmps[idx].id)
 
             } catch (err) {
@@ -122,7 +121,6 @@ export default {
         duplicateCmp() {
             const path = this.path
             const cmp = utilService.copy(this.cmp)
-            console.log(path);
             path.fatherIdx = this.getCurrCmpIdx()
 
             cmp.id = utilService.makeId()
@@ -161,7 +159,6 @@ export default {
     watch: {
         info: function () {
             this.setInfo()
-            console.log(this.cmp.id);
         }
     }
 

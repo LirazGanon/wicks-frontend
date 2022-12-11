@@ -73,7 +73,7 @@ async function googleLogin(userCred) {
     const user = await httpService.post('user/google', userCred)
     if (user) {
         // socketService.login(user._id)
-        console.log(user)
+        // console.log(user)
         // return saveLocalGoogleUser(user)
         const loggedinUser = await saveLocalUser(user)
         return loggedinUser
@@ -108,7 +108,7 @@ function saveLocalUser(user) {
     return user
 }
 function saveLocalGoogleUser(user) {
-    console.log(user)
+    // console.log(user)
     user = { _id: user.sub, fullname: user.name, imgUrl: user.picture/*, score: user.score*/ }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user

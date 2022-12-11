@@ -94,7 +94,7 @@ export default {
       this.msgs.push(msg)
     },
     sendMsg() {
-      console.log('Sending', this.msg)
+      // console.log('Sending', this.msg)
       // TODO: next line not needed after connecting to backend
       this.addMsg(this.msg)
       setTimeout(() => this.addMsg({ from: 'Dummy', txt: 'Yey' }), 2000)

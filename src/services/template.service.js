@@ -25,7 +25,7 @@ window.cs = templateService
 
 async function query() {
     const templates = await httpService.get(`wap/template`)
-    console.log(templates)
+    // console.log(templates)
     // var templates = await storageService.query(STORAGE_KEY)
     // if (!templates || !templates.length) {
     //     templates = defaultTemplates

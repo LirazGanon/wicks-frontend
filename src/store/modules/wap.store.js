@@ -17,7 +17,7 @@ export const wapStore = {
             currState: 0,
             waps: []
         },
-        userWaps:null
+        userWaps: null
     },
     getters: {
         templates({ templates }) { return templates },
@@ -54,8 +54,12 @@ export const wapStore = {
                 waps: [wapToEdit]
             }
         },
-        setUserWaps(state, {waps}){
-        state.userWaps = waps
+        setUserWaps(state, { waps }) {
+            state.userWaps = waps
+        },
+        updateUserWapLocally(state, { wapId, contact }) {
+            let wapToUpdate = state.userWaps.find(userWap => userWap._id === wapId)
+            wapToUpdate.usersData.contacts.push(contact)
         },
         removeWapToEdit(state) {
             state.wapToEdit = null
@@ -64,7 +68,7 @@ export const wapStore = {
         },
         saveHistory({ history }, { wap }) {
             if (history.currState < history.waps.length - 1
-                ) {
+            ) {
                 history.waps = history.waps.slice(0, history.currState + 1)
             }
             if (history.waps.length - 1 > 30) {
@@ -86,7 +90,7 @@ export const wapStore = {
             state.history.currState--
             state.wapInEdit = state.history.waps[state.history.waps.length - 1]
         },
-   
+
 
 
     },
@@ -114,7 +118,7 @@ export const wapStore = {
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
-                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
+                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap)
 
                 return wap
             } catch (err) {
@@ -128,22 +132,22 @@ export const wapStore = {
                 context.commit({ type: 'saveHistory', wap })
                 context.commit({ type: 'updateWap', wap })
                 wap = await wapService.save(wap)
-                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
-            } catch(err) {
+                socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap)
+            } catch (err) {
                 context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updateWap', err)
                 throw err
             }
         },
-        async updatePathName(context, { pathName }){
+        async updatePathName(context, { pathName }) {
             try {
                 // console.log(pathName)
                 const name = await wapService.savePathName(pathName)
                 // console.log(name, 'name')
-                 return name
+                return name
                 // context.commit({ type: 'updateWap', wap })
                 // socketService.emit(SOCKET_EMIT_SEND_UPDATE_WAP, wap )
-            } catch(err) {
+            } catch (err) {
                 // context.commit({ type: 'setLastHistoryState' })
                 console.log('wapStore: Error in updatePathName', err)
                 throw err
@@ -195,25 +199,24 @@ export const wapStore = {
                 throw err
             }
         },
-        async getWaps(context, {filterBy}){
-            try{
+        async getWaps(context, { filterBy }) {
+            try {
                 const waps = await wapService.query(filterBy)
-                console.log(waps)
-                if(filterBy.userId)context.commit({type:'setUserWaps', waps})
+                if (filterBy.userId) context.commit({ type: 'setUserWaps', waps })
                 return waps
-            }catch(err){
-            console.log('could not get user waps')
-            throw err
+            } catch (err) {
+                console.log('could not get user waps')
+                throw err
             }
         },
-        async getWapById(context, {id}){
-            try{
+        async getWapById(context, { id }) {
+            try {
                 const wap = await wapService.getById(id)
                 // if(filterBy.userId)context.commit({type:'setUserWaps', waps})
                 return wap
-            }catch(err){
-            console.log('could not get wap')
-            throw err
+            } catch (err) {
+                console.log('could not get wap')
+                throw err
             }
         },
         // async getCustomWap(context, { wapId }) {
@@ -282,6 +285,6 @@ export const wapStore = {
         getCurrWap(context, id) {
             return context.state.templates.find(template => template._id === id)
         },
-    
+
     }
 }

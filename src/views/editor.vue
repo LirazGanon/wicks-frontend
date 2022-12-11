@@ -68,7 +68,6 @@ export default {
                 const name = await this.updateName(pathName)
                 if(!name){
                     this.nameModalOpen=true
-                console.log('i am taken')
                 return
                 }
                 wap.pathName = pathName
@@ -100,7 +99,6 @@ export default {
             this.nameModalOpen = !this.nameModalOpen
         },
         toggleLogin(){
-            console.log('hi:')
         }
     },
     computed: {

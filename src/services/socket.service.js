@@ -11,6 +11,10 @@ export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
+// leads from forms
+export const SOCKET_EMIT_SEND_LEAD='lead-sended'
+export const SOCKET_EVENT_GET_LEAD= 'lead-added'
+
 // update wap events
 export const SOCKET_EMIT_SET_USER_EDITOR= 'user-entered-editor'
 export const SOCKET_EMIT_SEND_UPDATE_WAP= 'set-wap'
@@ -129,9 +133,9 @@ console.log(ev)
   socketService.emit(ev.clientx)
 }
 
-socketService.on('baba', cb('puk'))
-socketService.on('incoming-msg')
-socketService.on('send-pointer-pos', sendPointer)
+// socketService.on('baba', cb('puk'))
+// socketService.on('incoming-msg')
+// socketService.on('send-pointer-pos', sendPointer)
 // socketService.on('mama', cb)
 // socketService.emit('baba', 'Puk')
 // socketService.off('baba', cb)

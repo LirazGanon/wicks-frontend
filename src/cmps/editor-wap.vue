@@ -19,7 +19,8 @@
       animationDuration: '200',
       showOnTop: true
     }" :get-child-payload="itemIndex => getChildPayload(itemIndex)" :should-accept-drop="() => shouldAcceptDrop"
-      :should-animate-drop="() => true" @drop="onDrop($event)">
+      :should-animate-drop="() => true" @drop="onDrop($event)"
+      >
 
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
 
@@ -130,7 +131,8 @@ export default {
         // const userId = userService.getLoggedinUser().id
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()
-        document.querySelector('body').addEventListener('mouseover', ({ clientX, clientY,screenX, screenY }) => {
+        const container = this.$refs.container
+        container.addEventListener('mousemove', ({ clientX, clientY,screenX, screenY }) => {
           console.log(clientX,clientY)
           const mouseLoc = { x: clientX, y: clientY }
           socketService.emit(SOCKET_SEND_MOUSE, mouseLoc)

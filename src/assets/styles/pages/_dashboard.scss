@@ -90,7 +90,7 @@ main:has(.dashboard)>.main-header
                         h3 {
                             max-width: 250px;
                             min-width: 250px;
-                            font-size: 30px;
+                            font-size: 24px;
                             padding-inline-start: 6px;
                             border-left: 4px solid $primary-clr;
                             text-transform: capitalize;
@@ -139,7 +139,7 @@ main:has(.dashboard)>.main-header
                         display: flex;
                         gap: 21px;
                         justify-content: center;
-                        color: darken(#873dc8,15%);
+                        color: #444;
 
                         div {
                             width: 200px;

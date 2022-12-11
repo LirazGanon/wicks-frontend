@@ -70,7 +70,7 @@ export default {
       },
       chosenWap: null,
       testData: {
-        labels: ['July', 'August', 'September', 'October', 'November', 'December'],
+        labels: ['August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
             label: 'Line  Dataset',
@@ -146,6 +146,7 @@ export default {
       return new Intl.DateTimeFormat('en-US').format(date)
     },
     async getLead(data) {
+      var potato= 'puki is not a girl he is trans'
       // let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
       // wap = utilService.copy(wap)
       // wap.usersData.contacts.unshift(data.contact)

@@ -7,17 +7,19 @@
         background-size: cover;
         background-position: right;
         background-repeat: no-repeat;
+        padding: 24px;
+        
 
         h1 {
-            margin-inline-start: 1em;
-            margin-bottom: 2em;
-            font-size: 2.5em;
+            margin-inline-start: 5px;
+            margin-bottom: 1.5em;
+            font-size: 1.5em;
             color: $clr5;
             font-family: comfortaa, sans-serif;
         }
 
         >img {
-            width: 40%;
+            width: 320px
         }
 
         header {
@@ -27,28 +29,34 @@
 
             a {
                 color: #eee;
+
+                &:hover {
+                    color:#ffffff;             }
             }
         }
 
         button {
             cursor: pointer;
-            font-size: 2em;
-            width: 300px;
-            padding: 20px;
+            font-size: 1.1em;
+            width: 220px;
+            padding: 1em;
             color: rgb(233, 233, 233);
             background-color: $hover-clr;
-            margin-inline-start: 1em;
             transition: background-color 0.2s;
-            border-radius: 7px;
-            font-family: montserrat, Helvetica, Arial, sans-serif;
-            
-            
+            border-radius: 4px;
+            font-family: inter, Helvetica, Arial, sans-serif;
+            letter-spacing: 1px;
+            border: 1px solid $hover-clr;
+            margin-inline-end:1em ;
+
+
             &:first-child {
-                border: 2px solid $hover-clr;
-                background-color:transparent;
+                border: 1px solid $hover-clr;
+                background-color: transparent;
             }
+
             &:hover {
-                background-color: $clr2;
+                background-color: darken($logo-clr, 5);
             }
         }
     }

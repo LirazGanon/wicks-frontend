@@ -138,6 +138,7 @@ main:has(.dashboard)
                         display: flex;
                         gap: 21px;
                         justify-content: center;
+                        color: darken(#873dc8,15%);
 
                         div {
                             width: 200px;
@@ -147,7 +148,7 @@ main:has(.dashboard)
                             place-content: center;
                             border-radius: 3px;
                             text-align: center;
-                            box-shadow: 3px 4px #3332, inset 3px 2px 5px #eee5;
+                            box-shadow: 3px 3px #3331, inset 3px 2px 5px #eee5;
                             font-size: 16px;
                             display: flex;
                             flex-direction: column;
@@ -158,11 +159,6 @@ main:has(.dashboard)
 
                             transition: 0.3s;
 
-                            &:hover {
-                                filter: brightness(1.1);
-
-                                box-shadow: 3px 4px $primary-clr, inset 3px 2px 5px #eee5;
-                            }
                             span {
                                 font-family: lato;
                             }

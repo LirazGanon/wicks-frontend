@@ -12,11 +12,12 @@
     <main class="dashboard-content" v-if="userWaps.length">
 
       <section class="left-user-nav">
-        <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName ||
-            wap.name + ` - ${idx}`
-        }}
+        <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="chooseWap(wap)"
+          :class="{ selected: wap._id === chosenWap._id }"> {{ wap.pathName ||
+              wap.name + ` - ${idx}`
+          }}
         </div>
-
+        <!-- @click="(chosenWap = wap) -->
       </section>
       <section class="main-dashboard">
         <section class="top-half">
@@ -113,7 +114,7 @@ export default {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     this.userWaps = userWaps
-    this.chosenWap = userWaps[0]
+    this.chosenWap = this.wapById
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
@@ -121,7 +122,7 @@ export default {
     this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
     this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
     // this.setData()
-    const user = await userService.getById(userId)
+    const user = await userService.getById(this.userId)
     this.user = user
   },
   methods: {
@@ -146,19 +147,22 @@ export default {
       return new Intl.DateTimeFormat('en-US').format(date)
     },
     async getLead(data) {
-      var potato= 'puki is not a girl he is trans'
       // let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
       // wap = utilService.copy(wap)
       // wap.usersData.contacts.unshift(data.contact)
       // this.chosenWap.usersData.contacts.unshift(data.contact)
-      this.$store.commit({ type: 'updateUserWapLocally', wapId: data.wap._id, wap:data.wap, contact: data.contact })
+      this.$store.commit({ type: 'updateUserWapLocally', wapId: data.wap._id, wap: data.wap, contact: data.contact })
       showUserMsg(`user sended msg from site ${data.wap.pathName}`)
       // this.chosenWap = wap
       const userWaps = this.$store.getters.getUserWaps
       // this.userWaps = userWaps
       const idx = userWaps.findIndex(currWap => currWap._id === this.chosenWap._id)
-      this.chosenWap=userWaps[idx]
-      console.log(idx)
+      this.chosenWap = userWaps[idx]
+    },
+    chooseWap(wap) {
+      // console.log(wap._id)
+      this.$router.push(`/user/${this.userId}/${wap._id}`)
+      this.chosenWap = wap
     },
   },
   watch: {
@@ -180,6 +184,10 @@ export default {
     },
     templates() {
       return this.$store.getters.templates
+    },
+    wapById() {
+      const id = this.$route.params.wapId
+      return this.userWaps.find(userWap => userWap._id === id)
     },
 
     // userWaps() {
@@ -209,4 +217,11 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
+.selected{
+  transition: 0s;
+  box-shadow: inset 14px 0px 0px -10px #c78afb;
+
+/* $ */
+}
+
 </style>

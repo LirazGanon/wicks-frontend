@@ -55,7 +55,12 @@ const routes = [
     path: '/user/:id',
     name: 'user-details',
     component: userDetails
-  }
+  },
+  {
+    path: '/user/:id/:wapId',
+    name: 'user-details-wap',
+    component: userDetails
+  },
 ]
 
 

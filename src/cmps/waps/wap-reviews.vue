@@ -1,7 +1,7 @@
 <template>
     <section class="wap-reviews">
         <!-- <pre>{{cmp.info.reviews}}</pre> -->
-        <h4>{{ cmp.info.heading.txt }}</h4>
+        <h4 :style="cmp.info.heading?.style">{{ cmp.info.heading.txt }}</h4>
         <section class="reviews-container">
             <div v-for="review in cmp.info.reviews">
                 <!-- <div class="review"> -->

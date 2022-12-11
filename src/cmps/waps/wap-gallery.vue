@@ -1,6 +1,6 @@
 <template>
     <section class="wap-gallery" :class="cmp.classes">
-        <img v-for="img in cmp.info.imgs" :src="img.src">
+        <img v-for="img in cmp.info.imgs" :src="img.src" :style="img.style">
     </section>
 
 </template>

@@ -59,7 +59,7 @@ export const wapStore = {
         },
         updateUserWapLocally(state, { wapId, contact }) {
             let wapToUpdate = state.userWaps.find(userWap => userWap._id === wapId)
-            wapToUpdate.usersData.contacts.push(contact)
+            wapToUpdate.usersData.contacts.unshift(contact)
         },
         removeWapToEdit(state) {
             state.wapToEdit = null

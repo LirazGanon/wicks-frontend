@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import home from './views/home.vue'
-import chat from './views/chat.vue'
+// import chat from './views/chat.vue'
+import wapChat from './cmps/waps/wap-chat.vue'
 import wapApp from './views/wap-app.vue'
 import reviewApp from './views/review-app.vue'
 import loginSignup from './views/login-signup.vue'
@@ -28,7 +29,7 @@ const routes = [
   {
     path: '/chat',
     name: 'chat',
-    component: chat
+    component: wapChat
   },
   {
     path: '/login',

@@ -146,10 +146,10 @@ export default {
       return new Intl.DateTimeFormat('en-US').format(date)
     },
     async getLead(data) {
-      let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
-      wap = utilService.copy(wap)
-      wap.usersData.contacts.push(data.contact)
-      this.$store.commit({ type: 'updateUserWapLocally', wapId: wap._id, contact: data.contact })
+      // let wap = await this.$store.dispatch({ type: 'getWapById', id: data.wapId })
+      // wap = utilService.copy(wap)
+      // wap.usersData.contacts.push(data.contact)
+      this.$store.commit({ type: 'updateWap', wap:data.wap })
       showUserMsg(`user sended msg from site ${wap.pathName}`)
 
     },

@@ -13,8 +13,8 @@
 
       <section class="left-user-nav">
         <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="chooseWap(wap)"
-          :class="{ selected: wap._id === chosenWap._id }"> {{ wap.pathName ||
-              wap.name + ` - ${idx}`
+          :class="{ selected: wap?._id === chosenWap?._id }"> {{ wap?.pathName ||
+              wap?.name + ` - ${idx}`
           }}
         </div>
         <!-- @click="(chosenWap = wap) -->
@@ -24,12 +24,12 @@
           <chosen-wap-display :info="chosenWap" />
           <!-- <admin-chat :info="chosenWap"/> -->
 
-          <charts :info="chosenWap.usersData.contacts" :data="testData" />
+          <charts :info="chosenWap?.usersData?.contacts" :data="testData" />
         </section>
 
 
         <div class="bottom-half">
-          <contacts-table :info="chosenWap.usersData.contacts" />
+          <contacts-table :info="chosenWap?.usersData?.contacts" />
         </div>
       </section>
 
@@ -113,8 +113,9 @@ export default {
   async created() {
     this.filterBy.userId = this.userId
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
+    console.log(userWaps)
     this.userWaps = userWaps
-    this.chosenWap = this.wapById
+    this.chosenWap = this.wapById||this.userWaps[0]
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
@@ -186,6 +187,7 @@ export default {
       return this.$store.getters.templates
     },
     wapById() {
+      console.log(this.$route.params)
       const id = this.$route.params.wapId
       return this.userWaps.find(userWap => userWap._id === id)
     },

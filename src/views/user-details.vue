@@ -12,7 +12,7 @@
     <main class="dashboard-content" v-if="userWaps.length">
 
       <section class="left-user-nav">
-        <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="(chosenWap = wap)"> {{ wap.pathName ||
+        <div class="wap-left-dash" v-for="(wap, idx) in userWaps" @click="(chosenWap = wap)" v-if="wap.isPublic"> {{ wap.pathName ||
             wap.name + ` - ${idx}`
         }}
         </div>

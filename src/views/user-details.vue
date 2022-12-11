@@ -70,7 +70,7 @@ export default {
       },
       chosenWap: null,
       testData: {
-        labels: ['July','August', 'September', 'October', 'November', 'December'],
+        labels: ['July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
             label: 'Visits',

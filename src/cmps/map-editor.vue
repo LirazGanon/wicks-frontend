@@ -50,7 +50,7 @@
                 </label>
             </section>
             <label for="font" class="flex align-center gap font-picker-wrapper">
-                <span>Choose Font:</span>
+                <span>Font:</span>
                 <font-picker @setFont="updateFont" />
             </label>
             <label v-if="info.key === 'btns'" class="border-radius-bar">

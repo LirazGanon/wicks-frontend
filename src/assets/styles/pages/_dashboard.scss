@@ -1,3 +1,9 @@
+main:has(.dashboard)
+{
+    padding: 24px;
+}
+
+
 .dashboard {
     font-family: montserrat;
     display: flex;

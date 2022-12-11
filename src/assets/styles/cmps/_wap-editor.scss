@@ -1,5 +1,5 @@
 .main-editor {
-    height: calc(100vh - 127px);
+    height: calc(100vh - 135px);
     user-select: none;
 
     .left-nav {
@@ -61,7 +61,8 @@
         border-right: 1px solid $border-clr;
 
         h2 {
-            padding: 10px;
+            padding: 24px;
+            padding-bottom: 12px;
             border-bottom: 1px solid $border-clr;
             box-shadow: inset 0px 14px 0px -10px $primary-clr;
             font-weight: bold;
@@ -70,7 +71,7 @@
 
         .prev-cmp-img-container {
             overflow-y: auto;
-            height: calc(100vh - 185px);
+            height: calc(100vh - 200px);
 
             .close-icon {
                 @media (max-width: 550px) {
@@ -109,8 +110,8 @@
             h2 {
                 border-bottom: 1px solid $border-clr;
                 font-weight: bold;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding: 24px;
+                padding-bottom: 12px;
             }
 
             .color-picker-wrapper {
@@ -132,6 +133,7 @@
                 width: 95%;
                 color: $border-clr;
                 opacity: 0.2;
+                margin-top: 0;
             }
 
             .draggable-item {
@@ -213,7 +215,9 @@
 
         .upload-icon-wrapper{
             margin-top: 0.5em;
+
             border: 1px dotted $logo-clr;
+            border-radius: 5px;
             padding-block: 1.5em;
             @media (max-width:550px) {
                 padding-block: 1.3em;
@@ -225,6 +229,9 @@
 
             p {
                 margin: 0;
+                &:hover{
+                    cursor: pointer;
+                }
             }
 
             span {
@@ -259,6 +266,7 @@
 
             >li {
                 padding: 10px;
+                padding-inline:24px;
                 font-size: 0.9em;
                 cursor: pointer;
 
@@ -690,6 +698,7 @@ hr{
     width: 95%;
     color: rgba(51, 51, 51, 0.3333333333);
     opacity: 0.2;
+    margin-top: 0;
 }
 
 }

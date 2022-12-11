@@ -21,10 +21,10 @@ section.page-editor {
     max-height 0.3s,
     height 0.3s;
     overflow-x: hidden;
-    height: calc(100vh - 46px - 76.75px);
+    height: calc(100vh - 61px - 76.75px);
 
     &>div {
-        min-height: calc(100vh - 46px - 76.75px);
+        min-height: calc(100vh - 61px - 76.75px);
     }
 
     &.mobile-display {

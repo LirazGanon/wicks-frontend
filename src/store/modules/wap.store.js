@@ -4,6 +4,7 @@ import { utilService } from '../../services/util.service.js'
 import { socketService, SOCKET_EMIT_SEND_UPDATE_WAP } from '../../services/socket.service.js'
 import { storageService } from '../../services/async-storage.service.js'
 import { userService } from '../../services/user.service.js'
+import { store } from '../index.js'
 
 
 
@@ -25,6 +26,7 @@ export const wapStore = {
         getWapToEdit({ wapInEdit }) { return wapInEdit },
         getHistory({ history }) { return history },
         getLastState({ history }) { return history.waps[history.waps.length - 1] },
+        getUserWaps({userWaps}){return userWaps}
     },
     mutations: {
         setTemplates(state, { templates }) {
@@ -57,9 +59,10 @@ export const wapStore = {
         setUserWaps(state, { waps }) {
             state.userWaps = waps
         },
-        updateUserWapLocally(state, { wapId, contact }) {
-            let wapToUpdate = state.userWaps.find(userWap => userWap._id === wapId)
-            wapToUpdate.usersData.contacts.unshift(contact)
+        updateUserWapLocally(state, { wapId, contact, wap }) {
+            let idx = state.userWaps.findIndex(userWap => userWap._id === wap._id)
+            state.userWaps[idx] = wap
+            // wapToUpdate.usersData.contacts.unshift(contact)
         },
         removeWapToEdit(state) {
             state.wapToEdit = null

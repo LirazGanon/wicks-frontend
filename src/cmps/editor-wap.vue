@@ -5,7 +5,7 @@
     :style="{ maxWidth: conMaxWidth }">
 
     <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
-      v-for="(pointer) in pointers" :class="pointer" >arrow_selector_tool
+      v-for="(pointer, idx) in pointers" :class="pointers[idx]" >arrow_selector_tool
       <!-- {{pointers.length}} -->
     </div>
     <section v-if="!cmpsLength" class="wap-placeholder">
@@ -100,8 +100,7 @@ export default {
   destroyed() {
     // socketService.off(SOCKET_EVENT_GET_UPDATED_WAP)
     socketService.off(SOCKET_EMIT_SET_USER_EDITOR)
-    socketService.off(SOCKET_SEND_MOUSE)
-    socketService.off(SOCKET_GET_MOUSE, this.handleUsersPointer({id:null, position:null}))
+    socketService.off(SOCKET_GET_MOUSE)
   },
 
   methods: {
@@ -213,10 +212,6 @@ export default {
       return [...this.normal(), 'wide']
     },
     handleUsersPointer({ loc, id }) {
-      if(id===null){
-        console.log('baba')
-        return
-      }
       if (!this.pointers.includes(id)) this.pointers.push(id)
       const elPointer = document.querySelector(`.${id}`)
       // console.log(elPointer)
@@ -249,7 +244,7 @@ export default {
   font-size: 50px;
   z-index: 1000;
 }
-.material-symbols-outlined.pointer {
+.material-symbols-outlined {
   font-variation-settings:
   'FILL' 1,
   'wght' 700,

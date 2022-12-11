@@ -130,7 +130,8 @@ export default {
         // const userId = userService.getLoggedinUser().id
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()
-        addEventListener('mouseover', ({ clientX, clientY }) => {
+        document.querySelector('body').addEventListener('mouseover', ({ clientX, clientY,screenX, screenY }) => {
+          console.log(clientX,clientY)
           const mouseLoc = { x: clientX, y: clientY }
           socketService.emit(SOCKET_SEND_MOUSE, mouseLoc)
         })
@@ -244,7 +245,7 @@ export default {
   font-size: 50px;
   z-index: 1000;
 }
-.material-symbols-outlined {
+.material-symbols-outlined.pointer {
   font-variation-settings:
   'FILL' 1,
   'wght' 700,

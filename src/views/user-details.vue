@@ -22,13 +22,13 @@
         <section class="top-half">
           <chosen-wap-display :info="chosenWap" />
           <!-- <admin-chat :info="chosenWap"/> -->
-          <contacts-table :info="chosenWap?.usersData?.contacts" />
-
-        </section>
-
-
-        <div class="bottom-half">
           <charts v-if="chosenWap" :info="chosenWap?.usersData.activity" />
+          
+        </section>
+        
+        
+        <div class="bottom-half">
+          <contacts-table :info="chosenWap?.usersData?.contacts" />
         </div>
       </section>
 

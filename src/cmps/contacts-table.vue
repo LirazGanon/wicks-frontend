@@ -104,33 +104,34 @@ p {
     top: 0;
 }
 
-.el-table * {
+
+tr {
+    position: relative;
 }
 
-.el-table__expand-column {
-    height: 40px !important;
-    padding-inline: auto !important;
-    width: 100% !important;
-    background: transparent !important;
-    position: absolute !important;
-    z-index: 200 !important;
-    opacity: 0 !important;
-    padding: 0 !important;
-    /* margin-block: 20px !important; */
+td:has(div.cell) {
+    position: static !important;
 }
 
-.el-table__expand-column svg {
-    /* margin-block: 20px !important; */
-    opacity: 0 !important;
-    width: 100% !important;
-    height: 100px !important;
+div.cell:has(svg) {
     /* background: red; */
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid red; */
     padding: 0 !important;
-    scale: 200 !important;
-
+    /* margin:  !important; */
 }
 
-.el-table__expand-column * {
-    /* padding: 20px !important; */
+.el-table__expand-icon {
+    width: 100% !important;
+    height: 100% !important;
+}
+.el-table__expand-icon i{
+    height: 100% !important;
+    width: 100% !important;
+    transform: rotate(90deg);
+    opacity: 0;
 }
 </style>

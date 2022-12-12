@@ -5,7 +5,7 @@
     :style="{ maxWidth: conMaxWidth }">
 
 
-    <pointer v-for="pointer in pointers" :pointer="pointer" :key="pointer.id"/>
+    <pointer v-for="pointer in pointers" :pointer="pointer" :key="pointer.id" />
     <section v-if="!cmpsLength" class="wap-placeholder">
 
     </section>
@@ -17,17 +17,12 @@
       animationDuration: '200',
       showOnTop: true
     }" :get-child-payload="itemIndex => getChildPayload(itemIndex)" :should-accept-drop="() => shouldAcceptDrop"
-      :should-animate-drop="() => true" @drop="onDrop($event)"
-      >
+      :should-animate-drop="() => true" @drop="onDrop($event)">
 
       <Draggable v-if="wapToEdit" v-for="cmp in wapToEdit.cmps" :key="cmp.id">
 
-        <component :is="cmp.type" 
-        :cmp="cmp" 
-        @openEditor="openEditor" 
-        @acceptDrop="acceptDrop"
-        :isSelected="selectedId === cmp.id ? true : false" 
-        @deselect="(selectedId = null)" />
+        <component :is="cmp.type" :cmp="cmp" @openEditor="openEditor" @acceptDrop="acceptDrop"
+          :isSelected="selectedId === cmp.id ? true : false" @deselect="(selectedId = null)" />
 
       </Draggable>
 
@@ -66,7 +61,7 @@ import { socketService, SOCKET_EVENT_GET_UPDATED_WAP, SOCKET_EMIT_SET_USER_EDITO
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap,pointer },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap, pointer },
   props: { wap: Object },
   data() {
     return {
@@ -125,12 +120,15 @@ export default {
       socketService.emit(SOCKET_EMIT_SET_USER_EDITOR, wapId)
 
       if (!this.$store.getters.getWapToEdit) {
-        await this.$store.dispatch({ type: 'setWapToEdit', wapId })
+        const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId });
+        +wap.usersData.activity.visits++
+        this.$store.dispatch({ type: 'updateWapFull', wap })
+        
         // const userId = userService.getLoggedinUser().id
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()
         const container = this.$refs.container
-        container.addEventListener('mousemove', ({ clientX, clientY}) => {
+        container.addEventListener('mousemove', ({ clientX, clientY }) => {
           const mouseLoc = { x: clientX, y: clientY }
           socketService.emit(SOCKET_SEND_MOUSE, mouseLoc)
         })
@@ -214,10 +212,10 @@ export default {
     handleUsersPointer({ loc, id }) {
       const idx = this.pointers.findIndex(pointer => pointer.id === id)
       const pos = {
-            top: loc.y + 'px',
-            left: loc.x + 'px'
-          }
-       if(idx === -1){
+        top: loc.y + 'px',
+        left: loc.x + 'px'
+      }
+      if (idx === -1) {
         const color = utilService.getRandomColor()
         const pointer = {
           id,
@@ -228,7 +226,7 @@ export default {
       } else {
         this.pointers[idx].pos = pos
       }
-      
+
       // console.log(this.$refs)
       // var color
       // console.log('baba')
@@ -271,11 +269,12 @@ export default {
   font-size: 50px;
   z-index: 1000;
 }
+
 .material-symbols-outlined.pointer {
   font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
 }
 </style>

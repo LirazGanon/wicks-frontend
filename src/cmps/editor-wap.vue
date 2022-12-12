@@ -120,10 +120,9 @@ export default {
       socketService.emit(SOCKET_EMIT_SET_USER_EDITOR, wapId)
 
       if (!this.$store.getters.getWapToEdit) {
-        const wap = await this.$store.dispatch({ type: 'setWapToEdit', wapId });
-        +wap.usersData.activity.visits++
-        this.$store.dispatch({ type: 'updateWapFull', wap })
-        
+        await this.$store.dispatch({ type: 'setWapToEdit', wapId });
+
+
         // const userId = userService.getLoggedinUser().id
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()

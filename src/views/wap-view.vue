@@ -17,7 +17,7 @@ import wapHeader from '../cmps/waps/wap-header.vue'
 import wapHero from '../cmps/waps/wap-hero.vue'
 import wapForm from '../cmps/waps/wap-form.vue'
 import wapMap from '../cmps/waps/wap-map.vue'
-import wapTube from'../cmps/waps/wap-tube.vue'
+import wapTube from '../cmps/waps/wap-tube.vue'
 import wapContainer from '../cmps/waps/wap-container.vue'
 
 import wapContact from '../cmps/waps/wap-contact.vue'
@@ -34,9 +34,11 @@ import { templateService } from "../services/template.service";
 export default {
     name: 'variable',
     props: {},
-    components: { Draggable, Container, wapHeader, wapHero, wapForm,
-                 wapContainer, wapContact, wapReviews, wapFooter, wapBgImg, 
-                 wapGallery, wapMap, wapTube },
+    components: {
+        Draggable, Container, wapHeader, wapHero, wapForm,
+        wapContainer, wapContact, wapReviews, wapFooter, wapBgImg,
+        wapGallery, wapMap, wapTube
+    },
     data() {
         return {
             view: {},
@@ -45,7 +47,7 @@ export default {
         };
     },
     created() {
-       
+
 
         this.getCurrWap()
     },
@@ -65,6 +67,9 @@ export default {
             } else {
                 wap = await wapService.getById(url)
             }
+            +wap.usersData.activity.visits++
+            this.$store.dispatch({ type: 'updateWapFull', wap })
+
             // console.log(template)
             // console.log(this.view)
             this.view = wap
@@ -79,7 +84,7 @@ export default {
             if (offsetWidth >= 1300) this.responsiveClass = this.normal()
             if (offsetWidth >= 1500) this.responsiveClass = this.wide()
         },
-      
+
 
         small() {
             return ['small']

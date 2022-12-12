@@ -2,7 +2,7 @@ body {
     overflow-x: hidden;
 }
 
-.whole-login .main-layout-header{
+.whole-login .main-layout-header {
     padding: 24px;
 }
 
@@ -119,6 +119,7 @@ body {
         input {
             outline: none;
             // color: ;
+            margin-inline: auto;
             background: transparent;
             border: none;
             border-bottom: 2px solid #eee;
@@ -131,52 +132,31 @@ body {
             }
         }
 
-        div:has(.google-login){
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            p{
-                margin: 0;
-                transform: translateY(4px);
-                cursor: inherit;
-            }
-        }
         button {
-            background: lighten($logo-clr,5);
+            background: lighten($logo-clr, 5);
             color: #eee;
             border: 1px solid #eee5;
             font-size: 18px;
-            margin-block-end: 20px;
-            margin-block-start: 20px;
-            // margin-inline: auto;
-            padding: 10px 44px;
+            // margin-block-end: 20px;
+            // margin-block-start: 20px;
+            margin-inline: auto;
+            padding: 10px 34px;
             width: auto;
             cursor: pointer;
             transition: 0.3s;
+            display: flex;
 
             &:hover {
                 background-color: lighten($primary-clr, 2%);
             }
-            
-            &.google-login {
-                padding: 4px;
-                margin: 5px 0 0 0;
-                font-size: 0;
-                border-radius: 50%;
-                background-color: rgba(255, 255, 255, 0.975);
-                img{
-                    width: 38px;
-                }
+            img {
+                height: 18px;
+                width: 18px;
+                margin-inline-end: 10px;
             }
         }
         p {
-            font-size: 16px;
-            letter-spacing: 0.04em;
             width: auto;
-            cursor: pointer;
-            position: relative;
-            text-align: center;
         }
 
         .fail-to-login {
@@ -207,6 +187,13 @@ body {
             width: 450px;
             height: 500px;
             border-radius: 46% 54% 34% 66% / 60% 63% 37% 40%;
+            text-align: center;
+            margin-inline: auto;
         }
     }
+}
+.signup {
+    text-align: center;
+    margin-inline: auto;
+    width: auto;
 }

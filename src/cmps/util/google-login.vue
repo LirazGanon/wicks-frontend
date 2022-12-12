@@ -20,10 +20,9 @@ export default {
 
 
 <template>
-  <div>
+  
     <button class="google-login" @click="login">
       <img src="https://res.cloudinary.com/wicksin/image/upload/v1670837018/wicks/googlelogo_jdhmp8.png" />
+      Login Using Google 
     </button>
-    <p> Login Using Google </p>
-  </div>
 </template>

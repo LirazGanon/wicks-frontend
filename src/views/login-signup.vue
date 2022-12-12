@@ -24,13 +24,13 @@
             <p class="fail-to-login">{{ msg }}</p>
             <button>Login</button>
             <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup </span>or:</p>
+            <google-login @goToUserDash="dashUser" />
           </form>
-          <google-login @goToUserDash="dashUser" />
         </section>
 
         <section v-else>
           <form @submit.prevent="doSignup">
-            <h2>Signup</h2>
+            <h2 class="signup">Signup</h2>
             <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
             <input type="email" v-model="signupCred.email" placeholder="Email" />
             <input type="text" v-model="signupCred.username" placeholder="Username" />

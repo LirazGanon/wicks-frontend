@@ -64,14 +64,14 @@ export default {
                 if (this.isTemplate) return
                 const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
                 const wap = await this.wap
+                console.log(wap.createdBy._id)
                 wap.usersData.contacts.unshift(contact)
 
                 // const puk = wap.usersData.activity[wap.usersData.activity.length - 1].signups
 
                 wap.usersData.activity[wap.usersData.activity.length - 1].signups++
-                wap.usersData.activity[wap.usersData.activity.length - 1].visits++
-                // TAMUT!
-                socketService.emit(SOCKET_EMIT_SEND_LEAD, { room: wap.createdBy._id, contact, wapId: wap._id, wap })
+                console.log(wap)
+                socketService.emit(SOCKET_EMIT_SEND_LEAD, { room: wap.createdBy._id, contact, wapId: wap._id, wap, isMessage:true })
                 this.$store.dispatch({ type: 'updateWapFull', wap })
                 this.textInput = ''
                 this.emailInput = ''
@@ -85,7 +85,6 @@ export default {
     },
     computed: {
         async wap() {
-
             const url = this.$route.params
             const { isTemplate } = this.$route.params
             console.log(url)

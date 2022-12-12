@@ -30,6 +30,7 @@ import wapFooter from '../cmps/waps/wap-footer.vue'
 // import { templateService } from '../services/template.service.js'
 import { wapService } from '../services/wap.service.js'
 import { templateService } from "../services/template.service";
+import { socketService, SOCKET_EMIT_SEND_LEAD, SOCKET_EMIT_SET_ROOM } from '../services/socket.service.js'
 
 export default {
     name: 'variable',
@@ -67,8 +68,12 @@ export default {
             } else {
                 wap = await wapService.getById(url)
             }
-            +wap.usersData.activity.visits++
+            console.log('before', wap.usersData.activity[wap.usersData.activity.length-1].visits)
+            +wap.usersData.activity[wap.usersData.activity.length-1].visits++
+            console.log('after', wap.usersData.activity[wap.usersData.activity.length-1].visits)
             this.$store.dispatch({ type: 'updateWapFull', wap })
+            socketService.emit(SOCKET_EMIT_SEND_LEAD, { room: wap.createdBy._id, wapId: wap._id, wap, isMessage:false })
+
 
             // console.log(template)
             // console.log(this.view)

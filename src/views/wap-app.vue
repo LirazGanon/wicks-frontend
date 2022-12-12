@@ -32,6 +32,7 @@ export default {
     }
   },
   created() {
+    Notification.requestPermission()
     this.$store.dispatch({ type: 'loadTemplates' })
     socketService.on(SOCKET_EMIT_SEND_UPDATE_WAP)
 

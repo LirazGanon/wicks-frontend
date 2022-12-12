@@ -36,6 +36,7 @@ async function query(filterBy = { userId:'' ,txt: '', desc: '' }) {
 
 }
 function getById(url) {
+    console.log(url)
     if (url.wapId) {
         return httpService.get(`wap/${url.wapId}`)
     } else if (url.pathName) {

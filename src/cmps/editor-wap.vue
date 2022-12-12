@@ -4,10 +4,8 @@
   <section class="page-editor" ref="container" :class="[responsiveClass, myClass, wrapper()]"
     :style="{ maxWidth: conMaxWidth }">
 
-    <div class="pointer material-symbols-outlined" ref="pointer" v-if="pointers.length"
-      v-for="(pointer, idx) in pointers" :class="pointers[idx]" >arrow_selector_tool
-      <!-- {{pointers.length}} -->
-    </div>
+
+    <pointer v-for="pointer in pointers" :pointer="pointer" :key="pointer.id"/>
     <section v-if="!cmpsLength" class="wap-placeholder">
 
     </section>
@@ -43,7 +41,7 @@
   
 <script>
 import { Container, Draggable } from "vue3-smooth-dnd";
-
+import pointer from '../cmps/pointer.vue'
 import wapHeader from '../cmps/waps-edit/wap-header-edit.vue'
 import wapHero from '../cmps/waps-edit/wap-hero-edit.vue'
 import wapForm from '../cmps/waps-edit/wap-form-edit.vue'
@@ -68,7 +66,7 @@ import { socketService, SOCKET_EVENT_GET_UPDATED_WAP, SOCKET_EMIT_SET_USER_EDITO
 
 export default {
   name: "wap",
-  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap, },
+  components: { Draggable, Container, wapHeader, wapHero, wapForm, wapContainer, wapContact, wapReviews, wapFooter, appHeader, wapBgImg, wapMap,pointer },
   props: { wap: Object },
   data() {
     return {
@@ -132,8 +130,7 @@ export default {
         // TODO:LEHOZI MEHEARA
         // this.pointerId = utilService.makeId()
         const container = this.$refs.container
-        container.addEventListener('mousemove', ({ clientX, clientY,screenX, screenY }) => {
-          console.log(clientX,clientY)
+        container.addEventListener('mousemove', ({ clientX, clientY}) => {
           const mouseLoc = { x: clientX, y: clientY }
           socketService.emit(SOCKET_SEND_MOUSE, mouseLoc)
         })
@@ -215,12 +212,39 @@ export default {
       return [...this.normal(), 'wide']
     },
     handleUsersPointer({ loc, id }) {
-      if (!this.pointers.includes(id)) this.pointers.push(id)
-      const elPointer = document.querySelector(`.${id}`)
-      // console.log(elPointer)
-      elPointer.style.color = 'blue'
-      elPointer.style.left = loc.x + 'px'
-      elPointer.style.top = loc.y + 'px'
+      const idx = this.pointers.findIndex(pointer => pointer.id === id)
+      const pos = {
+            top: loc.y + 'px',
+            left: loc.x + 'px'
+          }
+       if(idx === -1){
+        const color = utilService.getRandomColor()
+        const pointer = {
+          id,
+          color,
+          pos
+        }
+        this.pointers.push(pointer)
+      } else {
+        this.pointers[idx].pos = pos
+      }
+      
+      // console.log(this.$refs)
+      // var color
+      // console.log('baba')
+      // if (!this.pointers.includes(id)) {
+      //   color = utilService.getRandomColor()
+      //   const idx = this.pointers.length
+      //   this.pointers.push(id)
+      //   setTimeout(() => {
+      //     this.pointers.splice(idx, 1)
+      //   }, 10000);
+      // }
+      // const elPointer = document.querySelector(`.${id}`)
+      // // console.log(elPointer)
+      // elPointer.style.color = color
+      // elPointer.style.left = loc.x + 'px'
+      // elPointer.style.top = loc.y + 'px'
     },
     closeModal() {
       this.isModalOpen = false

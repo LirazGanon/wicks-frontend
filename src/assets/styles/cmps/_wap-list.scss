@@ -1,4 +1,4 @@
-main:has(.wap-list-container){
+main:has(.wap-list-container) {
     padding: 24px;
 }
 
@@ -26,8 +26,6 @@ main:has(.wap-list-container){
         font-family: inter, Helvetica, Arial, sans-serif;
         border-left: 6px solid $primary-clr;
         padding-inline-start: 10px;
-        
-
 
         @media (min-width: 350px) {
             width: 30pc;
@@ -58,7 +56,7 @@ main:has(.wap-list-container){
         margin-bottom: 20px;
         grid-gap: 50px;
         display: grid;
-        gap: 50px ;
+        gap: 50px;
         grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
         justify-content: center;
         // padding: 0 6%;
@@ -105,11 +103,13 @@ main:has(.wap-list-container){
                         justify-content: center;
                         position: absolute;
                         bottom: 0em;
-                        background: #0002;
+                        background: #0003;
                         left: 50%;
                         transform: translateX(-50%);
                         width: 100%;
                         height: 0;
+                        height: 100%;
+                        opacity: 0;
                         overflow: hidden;
                         transition: 0.3s;
 
@@ -144,9 +144,12 @@ main:has(.wap-list-container){
 
                     &:hover {
                         margin-bottom: -0px;
-
+                        img {
+                            filter: blur(1px);
+                        }
                         .preview-btns {
-                            height: calc(100%);
+                            // height: calc(100%);
+                            opacity: 1;
                         }
                     }
                 }

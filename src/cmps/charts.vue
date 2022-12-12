@@ -1,7 +1,7 @@
 <template>
     <section class="chart-line">
         <div class="interactions-stats">
-            <pre>{{info}}</pre>
+            <!-- <pre>{{ info }}</pre> -->
             <div>
                 <span>Visits</span>
 
@@ -16,13 +16,13 @@
                 </h3>
             </div>
             <div>
-                <span>Convertion rate</span>
+                <span>Conversion rate</span>
                 <h3>
-                    {{ 
-                    ((testData.datasets[0].data[testData.datasets[0].data.length - 1] /
-                            testData.datasets[1].data[testData.datasets[0].data.length - 1]).toFixed(2)) * 100 || 0
+                    {{
+                            ((testData.datasets[1].data[testData.datasets[0].data.length - 1] /
+                                testData.datasets[0].data[testData.datasets[0].data.length - 1]) * 100).toFixed(0)  || 0
                     
-
+                    
                     }}%
 
                 </h3>
@@ -56,10 +56,10 @@ export default {
                 },
             },
             testData: {
-                labels: ['August', 'September', 'October', 'November', 'December'],
+                labels: ['July','August', 'September', 'October', 'November', 'December'],
                 datasets: [
                     {
-                        label: 'Line  Dataset',
+                        label: 'Visits',
                         data: [30, 40, 60, 70, 40],
                         backgroundColor: [
                             '#c78afb',
@@ -71,7 +71,7 @@ export default {
                         tension: .3,
                     },
                     {
-                        label: 'Bar Dataset',
+                        label: 'Leads',
                         data: [30, 40, 80, 70, 40],
                         backgroundColor: [
                             '#c78afb',
@@ -87,12 +87,21 @@ export default {
 
         }
     },
-    computed: {
+    created() {
+        this.setData()
 
     },
-    watch:{
-        info(){
-           console.log('hi');
+    methods: {
+        setData() {
+            const visits = this.info.map(x => x.visits)
+            const signups = this.info.map(x => x.signups)
+            this.testData.datasets[0].data = visits
+            this.testData.datasets[1].data = signups
+        }
+    },
+    watch: {
+        info() {
+            this.setData()
         }
     }
 }

@@ -1,34 +1,79 @@
 .container {
     &.home {
-        gap: 20px;
+        // background: lighten($logo-clr, 7%);
+
+        background-position: left;
         background-image: url(@/assets/wicks-hero.jpg);
-        width: 100%;
+
+        @media (min-width: 1280px) {
+            background-position: right;
+
+        }
+
+        gap: 20px;
         height: 100vh;
+        width: 100%;
         background-size: cover;
-        background-position: right;
         background-repeat: no-repeat;
         padding: 24px;
-        
+        @media (min-width: 2000px){
+            padding-inline: 96px;
+        }
+        @media (min-width: 2500px){
+            padding-inline: 182px;
+        }
+        @media (min-width: 3000px){
+            padding-inline: 400 px;
+        }
+
 
         h1 {
-            margin-inline-start: 5px;
+            text-align: center;
+
+            @media (min-width: 768px) {
+
+                text-align: left;
+                margin-inline-start: 5px;
+            }
+
             margin-bottom: 1.5em;
             font-size: 1.5em;
             color: $clr5;
-            font-family: comfortaa, sans-serif;
+            font-family: comfortaa,
+            sans-serif;
         }
 
         >img {
+            margin-inline: auto;
+            margin-top: 24px;
+
+            @media (min-width: 768px) {
+                margin: inherit;
+            }
+
             width: 320px
         }
 
         header {
-        
+
             a {
                 color: #eee;
 
                 &:hover {
-                    color:#ffffff;             }
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .home-button {
+            flex-direction: column;
+            margin-inline: auto;
+            gap: 16px;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                margin-inline: inherit;
+                gap: 0;
             }
         }
 
@@ -44,7 +89,8 @@
             font-family: inter, Helvetica, Arial, sans-serif;
             letter-spacing: 1px;
             border: 1px solid $hover-clr;
-            margin-inline-end:1em ;
+            margin-inline-end: 1em;
+
 
 
             &:first-child {
@@ -58,3 +104,130 @@
         }
     }
 }
+
+#more {
+    >* {
+        text-align: center;
+    }
+
+    .top-info {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        height: 65vh;
+        gap: 16px;
+
+        >* {
+            color: #111;
+        }
+
+        h1 {
+            font-size: clamp(24px, 2.7vw, 60px);
+            margin-top: 24px;
+
+            @media (max-width:700px) {
+                max-width: 20ch;
+            }
+        }
+
+        p {
+            font-size: clamp(16px, 1.1vw, 45px);
+            max-width: 60ch;
+            line-height: 1.6;
+
+            @media (max-width:700px) {
+                max-width: 40ch;
+            }
+        }
+
+        img {
+            transform: translateY(5%);
+            width: clamp(400px, 50%, 1500px);
+            border: 1px solid rgb(175, 175, 175);
+            box-shadow: 0 -1px 4px 1px #0000002e;
+        }
+    }
+
+    .bottom-info {
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $logo-clr;
+        gap: 20px;
+
+        >* {
+            transform: translateY(50%);
+        }
+
+        h1 {
+            font-size: clamp(24px, 2.7vw, 60px);
+            color: #eee;
+
+            @media (max-width:700px) {
+                max-width: 20ch;
+            }
+        }
+
+        button {
+            color: #eee;
+            padding: 1em 2em;
+            background-color: transparent;
+            border: #eee 1px solid;
+            font-size: clamp(16px, 1.1vw, 50px);
+            transition: 0.2s;
+
+            &:hover {
+                background-color: rgba(238, 238, 238, 0.102);
+            }
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     .top-info {
+//         display: flex;
+//         height: 50vh;
+//         padding: 24px;
+//         gap:2em;
+//         h1{
+//            font-size: 3em;
+//            width: 52%;
+//         }
+//         p{
+//             font-size:1.5em;
+//         }
+//     }
+
+//     img{
+//         position: absolute;
+//         width: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -70%);
+//         box-shadow: 5px 3px 5px rgba(51, 51, 51, 0.2), -3px -3px 5px rgba(51, 51, 51, 0.0666666667);
+
+//     }
+//     .bottom-info{
+//         padding: 24px;
+//         height: 50vh;
+//         background-color: $primary-clr;
+//     }
+// }

@@ -40,7 +40,7 @@
    
 
 <script>
-import {socketService, SOCKET_EMIT_SEND_LEAD, SOCKET_EMIT_SET_ROOM} from '../../services/socket.service.js'
+import { socketService, SOCKET_EMIT_SEND_LEAD, SOCKET_EMIT_SET_ROOM } from '../../services/socket.service.js'
 import { wapService } from '../../services/wap.service';
 import { showUserMsg } from '../../services/event-bus.service'
 
@@ -56,35 +56,41 @@ export default {
         };
     },
     created() {
-    
+
     },
     methods: {
         async sendMsg() {
-            try{
+            try {
                 if (this.isTemplate) return
                 const contact = { name: this.textInput, email: this.emailInput, msg: this.messageInput, at: Date.now() }
                 const wap = await this.wap
                 wap.usersData.contacts.unshift(contact)
-                socketService.emit(SOCKET_EMIT_SEND_LEAD, {room: wap.createdBy._id, contact, wapId:wap._id, wap} )
+
+                // const puk = wap.usersData.activity[wap.usersData.activity.length - 1].signups
+
+                wap.usersData.activity[wap.usersData.activity.length - 1].signups++
+                wap.usersData.activity[wap.usersData.activity.length - 1].visits++
+                // TAMUT!
+                socketService.emit(SOCKET_EMIT_SEND_LEAD, { room: wap.createdBy._id, contact, wapId: wap._id, wap })
                 this.$store.dispatch({ type: 'updateWapFull', wap })
                 this.textInput = ''
                 this.emailInput = ''
                 this.messageInput = ''
                 showUserMsg('Message sent successfully')
 
-            }catch{
+            } catch {
                 showUserMsg('could not send message')
             }
         },
     },
     computed: {
-       async  wap() {
-          
+        async wap() {
+
             const url = this.$route.params
             const { isTemplate } = this.$route.params
             console.log(url)
             if (isTemplate) {
-                return  await templateService.getTemplate(url.wapId)
+                return await templateService.getTemplate(url.wapId)
             } else {
                 return await wapService.getById(url)
             }

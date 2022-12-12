@@ -23,13 +23,13 @@
         <section class="top-half">
           <chosen-wap-display :info="chosenWap" />
           <!-- <admin-chat :info="chosenWap"/> -->
-
-          <charts :info="chosenWap?.usersData?.contacts" :data="testData" />
-        </section>
-
-
-        <div class="bottom-half">
           <contacts-table :info="chosenWap?.usersData?.contacts" />
+
+        </section>
+        
+        
+        <div class="bottom-half">
+          <charts :info="chosenWap?.usersData?.contacts"  />
         </div>
       </section>
 
@@ -37,6 +37,7 @@
 
 
     <dash-board-place-holder :user="user" :temp="templates" v-else />
+    <pre>{{ chosenWap?.usersData.activity }}</pre>
 
     <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
 
@@ -70,35 +71,7 @@ export default {
         userId: ''
       },
       chosenWap: null,
-      testData: {
-        labels: ['August', 'September', 'October', 'November', 'December'],
-        datasets: [
-          {
-            label: 'Line  Dataset',
-            data: [30, 40, 60, 70, 40],
-            backgroundColor: [
-              '#c78afb',
-              '#873dc8',
-              '#c78afb',
-              '#873dc8',
-              ,
-            ],
-            tension: .3,
-          },
-          {
-            label: 'Bar Dataset',
-            data: [30, 40, 80, 70, 40],
-            backgroundColor: [
-              '#c78afb',
-              '#873dc8',
-              '#c78afb',
-              '#873dc8',
-              ,
-            ],
-            tension: .3,
-          },
-        ],
-      },
+     
       // user: null
     }
   },
@@ -115,7 +88,7 @@ export default {
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     console.log(userWaps)
     this.userWaps = userWaps
-    this.chosenWap = this.wapById||this.userWaps[0]
+    this.chosenWap = this.wapById || this.userWaps[0]
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
@@ -190,6 +163,9 @@ export default {
       const id = this.$route.params.wapId
       return this.userWaps.find(userWap => userWap._id === id)
     },
+    tableData() {
+      return this.chosenWap?.usersData?.contacts
+    }
 
     // userWaps() {
     //   return this.$store.getter.userWaps
@@ -218,6 +194,4 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-
-
 </style>

@@ -46,6 +46,8 @@
                     <li @click="setFilter('hero')" :class="{ active: cmpFilter === 'hero' }">Heros</li>
                     <li @click="setFilter('container')" :class="{ active: cmpFilter === 'container' }">Sections
                     </li>
+                    <li @click="setFilter('contact')" :class="{ active: cmpFilter === 'contact' }">Contact
+                    </li>
                     <!-- <li @click="setFilter('reviews')" :class="{ active: cmpFilter === 'reviews' }">Testimonials
                     </li> -->
                     <li @click="setFilter('gallery')" :class="{ active: cmpFilter === 'gallery' }">Images</li>

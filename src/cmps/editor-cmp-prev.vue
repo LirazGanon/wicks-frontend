@@ -6,13 +6,13 @@
       disabled_by_default
     </span> -->
     <span class="close-editor-icon" @click="$emit('closeEditor')">
-                <span class="material-symbols-outlined arrow">
-                    chevron_left
-                </span>
-                <span class="material-symbols-outlined dote">
-                    more_vert
-                </span>
-            </span>
+      <span class="material-symbols-outlined arrow">
+        chevron_left
+      </span>
+      <span class="material-symbols-outlined dote">
+        more_vert
+      </span>
+    </span>
 
     <Container group-name="column" :get-child-payload="itemIndex => getChildPayload(itemIndex)"
       @drag-start="onDragStart" :should-accept-drop="() => false" :should-animate-drop="() => true"
@@ -21,11 +21,13 @@
       <Draggable v-for="item in cmps" :key="item._id">
         <div v-if="('All' === filter)" class="draggable-item" @mousedown="isDragging = true"
           @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
-          <img :src="item.src" />
+          <img :src="item.src" v-if="item.src" />
+          <div v-else>{{ item.category }}</div>
         </div>
-        <div v-else-if="(item.type === filter)" class="draggable-item" @mousedown="isDragging = true"
+        <div v-else-if="(item.category === filter)" class="draggable-item" @mousedown="isDragging = true"
           @mouseup="isDragging = false" @mouseover="isDragging = false" :class="{ isDragging: isDragging }">
-          <img :src="item.src" />
+          <img :src="item.src" v-if="item.src" />
+          <div v-else>{{ item.category }}</div>
         </div>
 
 

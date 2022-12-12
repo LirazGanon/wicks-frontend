@@ -87,7 +87,8 @@ export default {
     const userWaps = await this.$store.dispatch({ type: 'getWaps', filterBy: this.filterBy })
     console.log(userWaps)
     this.userWaps = userWaps
-    this.chosenWap = this.wapById || this.userWaps.find(wap => wap.pathName)
+    const possibleWaps = this.userWaps.filter(wap => wap.pathName)
+    this.chosenWap = this.wapById || possibleWaps[possibleWaps.length - 1]
     // socket service signin:
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getUpdatedWap)
@@ -126,7 +127,7 @@ export default {
       // wap.usersData.contacts.unshift(data.contact)
       // this.chosenWap.usersData.contacts.unshift(data.contact)
       this.$store.commit({ type: 'updateUserWapLocally', wapId: data.wap._id, wap: data.wap, contact: data.contact })
-      if(data.isMessage)showUserMsg(`user sended msg from site ${data.wap.pathName}`)
+      if (data.isMessage) showUserMsg(`user sended msg from site ${data.wap.pathName}`)
       // this.chosenWap = wap
       const userWaps = this.$store.getters.getUserWaps
       // this.userWaps = userWaps

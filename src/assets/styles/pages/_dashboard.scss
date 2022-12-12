@@ -8,7 +8,7 @@ main:has(.dashboard)>.main-header {
     font-family: inter;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 50.5px);
+    height: calc(100vh - 100px);
 
     .top-dashboard {
         display: flex;
@@ -46,6 +46,7 @@ main:has(.dashboard)>.main-header {
         flex: 1;
 
         .left-user-nav {
+            z-index: 10;
             width: 200px;
             padding: 12px;
             border-right: 1px solid #5555;
@@ -110,6 +111,36 @@ main:has(.dashboard)>.main-header {
                 gap: 24px;
                 justify-content: space-between;
 
+                @media (max-width:1000px) {
+                    flex-direction: column;
+
+                    .chosen-wap-display {
+                        flex-direction: row !important;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        h3 {
+                            margin: 0 !important;
+                            min-width: min-content !important;
+                        }
+                    }
+
+                    .wap-actions-dash {
+                        flex-direction: row !important;
+                        gap: 10px;
+
+                        button {
+                            margin-block: 0 !important;
+                            width: 150px !important;
+                        }
+                    }
+
+                    .prev-img {
+                        display: none;
+                    }
+
+                }
+
                 .dash-card-wrapper {
                     display: flex;
 
@@ -130,7 +161,7 @@ main:has(.dashboard)>.main-header {
                         }
 
                         // margin-block-start: 5vh;
-                        margin-inline-start: 20px;
+                        // margin-inline-start: 20px;
 
                         .prev-img {
                             width: 220px;
@@ -178,9 +209,10 @@ main:has(.dashboard)>.main-header {
                 }
             }
 
-            .top-half {
+            .bottom-half {
                 .wap-table {
-                    width: 100%;
+                    padding: 32px;
+                    padding-inline-end: 0;
 
                     // padding: 24px;
                     >div {
@@ -190,7 +222,7 @@ main:has(.dashboard)>.main-header {
                     }
 
                     tbody {
-                        tr{
+                        tr {
                             margin-inline-end: 10px;
                         }
                     }
@@ -204,14 +236,20 @@ main:has(.dashboard)>.main-header {
                         margin-bottom: 24px;
                     }
                 }
+
+                .el-table {
+                    width: calc(100vw - 245px) !important;
+                    transform: translateX(-50px);
+                }
             }
 
-            .bottom-half {
-                padding: 28px;
+
+            .top-half {
+                padding: 32px;
 
                 .chart-line {
                     // margin-block: 40px;
-                    margin-inline-start: 50px;
+                    // margin-inline-start: 50px;
                     flex: 1;
                     // padding-inline: 20px;
                     // width: 200px !important;
@@ -223,14 +261,29 @@ main:has(.dashboard)>.main-header {
                         color: #444;
 
                         div {
+                            font-family: inter;
                             width: 200px;
+
+                            @media (max-width:1400px) {
+                                width: 150px;
+                            }
+
+                            @media (max-width:1200px) {
+                                width: 100px;
+
+                                h3 {
+                                    font-size: 16px !important
+                                }
+                            }
+
                             background-color: #9992;
                             height: 80px;
                             display: grid;
                             place-content: center;
                             border-radius: 3px;
                             text-align: center;
-                            box-shadow: 3px 3px #3331, inset 3px 2px 5px #eee5;
+                            box-shadow: 3px 3px #3331,
+                            inset 3px 2px 5px #eee5;
                             font-size: 16px;
                             display: flex;
                             flex-direction: column;

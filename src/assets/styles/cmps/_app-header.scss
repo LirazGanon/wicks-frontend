@@ -41,6 +41,10 @@ header {
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
+            box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.6);
+            -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.6);
+            -moz-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.6);
+
         }
 
         .user-icon {
@@ -64,10 +68,11 @@ header {
             transition: 0.3s;
             align-items: center;
             z-index: 3000;
-            
+
             a {
                 color: #333 !important;
             }
+
             .username-dropdown {
                 margin: 0;
                 padding: 0;
@@ -75,6 +80,7 @@ header {
                 width: 100%;
                 text-align: center;
             }
+
             img {
                 // object-fit: cover;
                 padding: 0 !important;
@@ -83,7 +89,7 @@ header {
                 margin-top: 20px;
             }
 
-            > * {
+            >* {
                 // padding-inline-start: 5px;
                 padding-block: 0;
                 opacity: 0;
@@ -99,6 +105,7 @@ header {
                 height: 245px;
                 display: flex;
                 flex-direction: column;
+
                 & * {
                     opacity: 1;
                     padding-block: 10px;
@@ -108,10 +115,11 @@ header {
                 a {
                     // box-shadow: 0px 1px  #333;
                     padding-block: 20px;
-                    
+
                     border-bottom: 1px solid #9995;
                 }
-                div{
+
+                div {
                     padding-block: 20px;
 
                 }
@@ -149,9 +157,10 @@ header {
             opacity: 1;
             align-items: center;
 
-            a:hover{
-                color:$logo-clr;
+            a:hover {
+                color: $logo-clr;
             }
+
             > :last-child {
                 // margin-inline-end: 20px;
             }
@@ -160,12 +169,13 @@ header {
         .edit-container & {
             padding: 24px;
             padding-bottom: 12px;
+
             .logo {
                 max-height: em(46px);
                 // margin-inline-start: 20px;
             }
 
-            nav > * {
+            nav>* {
                 color: black;
             }
 
@@ -201,9 +211,11 @@ header {
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
     }
+
     @media (min-width: 1600px) {
         grid-template-columns: 1fr 1400px 1fr;
     }
+
     @media (min-width: 1800px) {
         grid-template-columns: 1fr 1600px 1fr;
     }

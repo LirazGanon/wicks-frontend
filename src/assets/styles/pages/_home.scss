@@ -174,13 +174,14 @@
         button {
             color: #eee;
             padding: 1em 2em;
-            background-color: transparent;
-            border: #eee 1px solid;
+            border: darken($primary-clr,40) 1px solid;
             font-size: clamp(16px, 1.1vw, 50px);
             transition: 0.2s;
-
+            border-radius: 4px;
+            
+            background-color: darken($primary-clr,20);
             &:hover {
-                background-color: rgba(238, 238, 238, 0.102);
+                background-color: darken($primary-clr,10);
             }
 
         }

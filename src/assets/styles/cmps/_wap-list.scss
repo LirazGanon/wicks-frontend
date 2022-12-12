@@ -7,6 +7,7 @@ main:has(.wap-list-container){
     // margin-block-start: 3.3giem;
     font-family: inter;
     grid-template-columns: 20px 1fr 20px;
+    justify-content:center;
 
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
@@ -30,11 +31,11 @@ main:has(.wap-list-container){
 
 
         @media (min-width: 350px) {
-            width: 30pc;
+            max-width: 30pc;
             font-size: em(26px);
         }
         @media (min-width: 750px) {
-            width: 40pc;
+            max-width: 40pc;
             font-size: em(34px);
         }
     }

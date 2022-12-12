@@ -40,7 +40,7 @@ main:has(.wap-list-container){
     }
     h4 {
         font-size: em(12px);
-        margin-block-end: 30px;
+        margin-block-end: 60px;
         font-family: inter, Helvetica, Arial, sans-serif;
         padding-inline-start: 16px;
         // margin: 0 2%;
@@ -55,6 +55,7 @@ main:has(.wap-list-container){
 
     .wap-list {
         margin-block-start: 20px;
+        margin-bottom: 20px;
         grid-gap: 50px;
         display: grid;
         gap: 50px ;

@@ -16,7 +16,7 @@
     </section>
   </section>
 
-  <section id="more">
+  <section ref="more" id="more">
     <section class="top-info">
 
       <h1>The Freedom to Create the Websites You Want</h1>
@@ -56,7 +56,7 @@ export default {
   methods: {
 
     doScrolling() {
-      var element = document.querySelector("#more");
+      const element = this.$refs.more
 
       // scroll to element
       element.scrollIntoView({ behavior: 'smooth', block: 'end'});

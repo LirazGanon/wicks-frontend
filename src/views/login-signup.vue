@@ -23,7 +23,7 @@
             <input type="password" v-model="loginCred.password" placeholder="Password">
             <p class="fail-to-login">{{ msg }}</p>
             <button>Login</button>
-            <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup </span>OR:</p>
+            <p>Not a member yet? <span @click="(isLogin = !isLogin)">signup </span>or:</p>
           </form>
           <google-login @goToUserDash="dashUser" />
         </section>

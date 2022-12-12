@@ -7,6 +7,7 @@ main:has(.wap-list-container) {
     // margin-block-start: 3.3giem;
     font-family: inter;
     grid-template-columns: 20px 1fr 20px;
+    justify-content:center;
 
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
@@ -20,7 +21,7 @@ main:has(.wap-list-container) {
 
     h1 {
         font-size: em(16px);
-        width: 24pc;
+        width: 40pc;
         margin-block: 30px 10px;
         font-weight: 700;
         font-family: inter, Helvetica, Arial, sans-serif;
@@ -28,11 +29,11 @@ main:has(.wap-list-container) {
         padding-inline-start: 10px;
 
         @media (min-width: 350px) {
-            width: 30pc;
+            max-width: 23pc;
             font-size: em(26px);
         }
         @media (min-width: 750px) {
-            width: 40pc;
+            max-width: 40pc;
             font-size: em(34px);
         }
     }
@@ -44,10 +45,12 @@ main:has(.wap-list-container) {
         // margin: 0 2%;
 
         @media (min-width: 350px) {
-            font-size: em(14px);
+            font-size: em(16px);
+            max-width: 18pc;
         }
         @media (min-width: 750px) {
             font-size: em(16px);
+            max-width: inherit;
         }
     }
 
@@ -103,7 +106,7 @@ main:has(.wap-list-container) {
                         justify-content: center;
                         position: absolute;
                         bottom: 0em;
-                        background: #0003;
+                        background: #0005;
                         left: 50%;
                         transform: translateX(-50%);
                         width: 100%;
@@ -120,12 +123,13 @@ main:has(.wap-list-container) {
                             margin-block-end: 10px;
                             cursor: pointer;
                             border: 1px solid #eee5;
-                            background-color: $primary-clr;
+                            background-color: lighten($logo-clr,10);
                             transition: background 0.3s;
                             color: #eee;
-
+                            
                             &:hover {
-                                background: lighten($primary-clr, 10%);
+                                background: lighten($logo-clr,15);
+                                color: #fff;
                             }
                         }
                         :first-child {

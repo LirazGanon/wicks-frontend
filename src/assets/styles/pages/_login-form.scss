@@ -2,10 +2,14 @@ body {
     overflow-x: hidden;
 }
 
+.whole-login .main-layout-header{
+    padding: 24px;
+}
+
 .whole-login {
     height: 100%;
-    background: #3335;
-    box-shadow: 0 0 0 200vh #3335;
+    // background: #3335;
+    // box-shadow: 0 0 0 200vh #3335;
 
     .bubble-move {
         display: none;
@@ -73,7 +77,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        font-family: lato;
+        font-family: inter;
         transition: all 0.3s;
         position: absolute;
         left: 50%;
@@ -126,14 +130,26 @@ body {
                 color: #eee9;
             }
         }
+
+        div:has(.google-login){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            p{
+                margin: 0;
+                transform: translateY(4px);
+                cursor: inherit;
+            }
+        }
         button {
-            background: $primary-clr;
+            background: lighten($logo-clr,5);
             color: #eee;
             border: 1px solid #eee5;
             font-size: 18px;
             margin-block-end: 20px;
-            margin-block-start: 40px;
-            margin-inline: auto;
+            margin-block-start: 20px;
+            // margin-inline: auto;
             padding: 10px 44px;
             width: auto;
             cursor: pointer;
@@ -142,13 +158,20 @@ body {
             &:hover {
                 background-color: lighten($primary-clr, 2%);
             }
+            
             &.google-login {
-                padding: 10px;
+                padding: 4px;
                 margin: 5px 0 0 0;
+                font-size: 0;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.975);
+                img{
+                    width: 38px;
+                }
             }
         }
         p {
-            font-size: 14px;
+            font-size: 16px;
             letter-spacing: 0.04em;
             width: auto;
             cursor: pointer;
@@ -162,6 +185,9 @@ body {
         span {
             transition: 0.3s;
             position: relative;
+            color: $logo-clr;
+            font-size: 16px;
+            font-weight: bold;
             &::after {
                 content: "";
                 width: 0;

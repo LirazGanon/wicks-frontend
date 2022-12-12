@@ -6,13 +6,13 @@
                 <span>Visits</span>
 
                 <h3>
-                    {{ testData.datasets[0].data[testData.datasets[0].data.length - 1] }}
+                    {{ testData.datasets[0].data[testData.datasets[0].data.length - 1].toLocaleString()  }}
                 </h3>
             </div>
             <div>
                 <span>Leads</span>
                 <h3>
-                    {{ testData.datasets[1].data[testData.datasets[0].data.length - 1] }}
+                    {{ testData.datasets[1].data[testData.datasets[0].data.length - 1]}}
                 </h3>
             </div>
             <div>

@@ -42,14 +42,14 @@
 
                 <ul class="prev-cmp-filter">
                     <li @click="setFilter('All')" :class="{ active: cmpFilter === 'All' }">All</li>
-                    <li @click="setFilter('wap-header')" :class="{ active: cmpFilter === 'wap-header' }">Headers</li>
-                    <li @click="setFilter('wap-hero')" :class="{ active: cmpFilter === 'wap-hero' }">Heros</li>
-                    <li @click="setFilter('wap-container')" :class="{ active: cmpFilter === 'wap-container' }">Sections
+                    <li @click="setFilter('header')" :class="{ active: cmpFilter === 'header' }">Headers</li>
+                    <li @click="setFilter('hero')" :class="{ active: cmpFilter === 'hero' }">Heros</li>
+                    <li @click="setFilter('container')" :class="{ active: cmpFilter === 'container' }">Sections
                     </li>
-                    <li @click="setFilter('wap-reviews')" :class="{ active: cmpFilter === 'wap-reviews' }">Testimonials
-                    </li>
-                    <li @click="setFilter('wap-bg-img')" :class="{ active: cmpFilter === 'wap-bg-img' }">Images</li>
-                    <li @click="setFilter('wap-footer')" :class="{ active: cmpFilter === 'wap-footer' }">Footer</li>
+                    <!-- <li @click="setFilter('reviews')" :class="{ active: cmpFilter === 'reviews' }">Testimonials
+                    </li> -->
+                    <li @click="setFilter('gallery')" :class="{ active: cmpFilter === 'gallery' }">Images</li>
+                    <li @click="setFilter('footer')" :class="{ active: cmpFilter === 'footer' }">Footer</li>
                 </ul>
                 <editor-cmp-prev :cmps="cmps" :filter="cmpFilter" @closeEditor="(active = null)" />
             </section>

@@ -29,7 +29,7 @@
         
         
         <div class="bottom-half">
-          <charts :info="chosenWap?.usersData?.contacts"  />
+          <charts v-if="chosenWap" :info="chosenWap?.usersData.activity"  />
         </div>
       </section>
 
@@ -37,7 +37,7 @@
 
 
     <dash-board-place-holder :user="user" :temp="templates" v-else />
-    <pre>{{ chosenWap?.usersData.activity }}</pre>
+    <!-- <pre>{{ chosenWap?.usersData.activity }}</pre> -->
 
     <!-- <img v-for="wap in userWaps" :src="wap.src" alt="site img"> -->
 
@@ -93,8 +93,8 @@ export default {
     socketService.emit(SOCKET_EMIT_SET_ROOM, this.userId)
     socketService.on(SOCKET_EVENT_GET_LEAD, this.getLead)
 
-    this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
-    this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
+    // this.testData.datasets[0].data = userWaps[0].usersData.activity.map(i => i.visits)
+    // this.testData.datasets[1].data = userWaps[0].usersData.activity.map(i => i.signups)
     // this.setData()
     const user = await userService.getById(this.userId)
     this.user = user

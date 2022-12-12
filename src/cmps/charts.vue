@@ -1,7 +1,7 @@
 <template>
     <section class="chart-line">
         <div class="interactions-stats">
-
+            <pre>{{info}}</pre>
             <div>
                 <span>Visits</span>
 
@@ -18,8 +18,11 @@
             <div>
                 <span>Convertion rate</span>
                 <h3>
-                    {{ (testData.datasets[0].data[testData.datasets[0].data.length - 1] /
-                            testData.datasets[1].data[testData.datasets[0].data.length - 1]).toFixed(2) || 0
+                    {{ 
+                    ((testData.datasets[0].data[testData.datasets[0].data.length - 1] /
+                            testData.datasets[1].data[testData.datasets[0].data.length - 1]).toFixed(2)) * 100 || 0
+                    
+
                     }}%
 
                 </h3>
@@ -39,7 +42,7 @@ Chart.register(...registerables)
 export default {
     name: 'awesome-chart',
     props: {
-        data: Object,
+        info: Object,
     },
     components: { LineChart },
     data() {
@@ -86,6 +89,11 @@ export default {
     },
     computed: {
 
+    },
+    watch:{
+        info(){
+           console.log('hi');
+        }
     }
 }
 </script>

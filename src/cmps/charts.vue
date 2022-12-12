@@ -6,27 +6,27 @@
                 <span>Visits</span>
 
                 <h3>
-                    {{ data.datasets[0].data[data.datasets[0].data.length - 1] }}
+                    {{ testData.datasets[0].data[testData.datasets[0].data.length - 1] }}
                 </h3>
             </div>
             <div>
                 <span>Subscriptions</span>
                 <h3>
-                    {{ data.datasets[1].data[data.datasets[0].data.length - 1] }}
+                    {{ testData.datasets[1].data[testData.datasets[0].data.length - 1] }}
                 </h3>
             </div>
             <div>
                 <span>Subscriptions rate</span>
                 <h3>
-                {{ (data.datasets[0].data[data.datasets[0].data.length - 1] /
-                        data.datasets[1].data[data.datasets[0].data.length - 1]).toFixed(2) || 0
-                }}%
-                
+                    {{ (testData.datasets[0].data[testData.datasets[0].data.length - 1] /
+                            testData.datasets[1].data[testData.datasets[0].data.length - 1]).toFixed(2) || 0
+                    }}%
+
                 </h3>
             </div>
         </div>
 
-        <LineChart :chartData="data" :options="options" />
+        <LineChart :chartData="testData" :options="options" />
     </section>
 </template>
   
@@ -44,6 +44,7 @@ export default {
     components: { LineChart },
     data() {
         return {
+
             options: {
                 plugins: {
                     legend: {
@@ -51,6 +52,36 @@ export default {
                     },
                 },
             },
+            testData: {
+                labels: ['August', 'September', 'October', 'November', 'December'],
+                datasets: [
+                    {
+                        label: 'Line  Dataset',
+                        data: [30, 40, 60, 70, 40],
+                        backgroundColor: [
+                            '#c78afb',
+                            '#873dc8',
+                            '#c78afb',
+                            '#873dc8',
+                            ,
+                        ],
+                        tension: .3,
+                    },
+                    {
+                        label: 'Bar Dataset',
+                        data: [30, 40, 80, 70, 40],
+                        backgroundColor: [
+                            '#c78afb',
+                            '#873dc8',
+                            '#c78afb',
+                            '#873dc8',
+                            ,
+                        ],
+                        tension: .3,
+                    },
+                ],
+            },
+
         }
     },
     computed: {

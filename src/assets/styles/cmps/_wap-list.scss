@@ -70,7 +70,10 @@ main:has(.wap-list-container) {
             &:first-child {
                 & button:last-child {
                     display: none;
-           &:last-child {
+                }
+            }
+            // Coming Soon
+            &:last-child {
                 & button {
                     display: none;
                 }
@@ -83,8 +86,7 @@ main:has(.wap-list-container) {
                             left: 50%;
                             transform: translate(-50%, -50%);
                             color: #fff;
-                            font-weight: 900;
-                            font-size: 40px;
+                            font-weight: 900;font-size: 40px;
                             text-align: center;
                             line-height: 45px;
                         }
@@ -192,9 +194,6 @@ main:has(.wap-list-container) {
                     }
                 }
             }
-        }         }
-            }
-            // Coming Soon
-        
+        }
     }
 }

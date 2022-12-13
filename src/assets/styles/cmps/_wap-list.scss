@@ -7,7 +7,7 @@ main:has(.wap-list-container) {
     // margin-block-start: 3.3giem;
     font-family: inter;
     grid-template-columns: 20px 1fr 20px;
-    justify-content:center;
+    justify-content: center;
 
     @media (min-width: 1000px) {
         grid-template-columns: 80px 1fr 80px;
@@ -65,15 +65,39 @@ main:has(.wap-list-container) {
         // padding: 0 6%;
         li {
             // padding: 10px;
+            position: relative;
             aspect-ratio: 28/36;
             &:first-child {
                 & button:last-child {
                     display: none;
                 }
             }
+            // Coming Soon
+            &:last-child {
+                & button {
+                    display: none;
+                }
+                & .preview-continue {
+                    &:hover {
+                        &::after {
+                            content: "COMING SOON";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: #fff;
+                            font-weight: 900;
+                            font-size: 40px;
+                            text-align: center;
+                            line-height: 45px;
+                        }
+                    }
+                }
+            }
             .wap-preview {
                 box-shadow: 5px 3px 5px #3333, -3px -3px 5px #3331;
                 border-radius: 0.25em;
+
                 .preview-continue {
                     position: relative;
                     // height: auto;
@@ -123,12 +147,12 @@ main:has(.wap-list-container) {
                             margin-block-end: 10px;
                             cursor: pointer;
                             border: 1px solid #eee5;
-                            background-color: lighten($logo-clr,10);
+                            background-color: lighten($logo-clr, 10);
                             transition: background 0.3s;
                             color: #eee;
-                            
+
                             &:hover {
-                                background: lighten($logo-clr,15);
+                                background: lighten($logo-clr, 15);
                                 color: #fff;
                             }
                         }

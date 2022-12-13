@@ -22,7 +22,7 @@ export default {
     components: {},
     data() {
         return {
-            colors: ['#E3F09B','#9FBBCC', '#6D67E4', '#937DC2', '#F79F79', '#CF9893', '#F2DEBA', 
+            colors: ['#E3F09B','#9FBBCC', '#6D67E4', '#937DC2', '#F79F79', '#d1884d', '#F2DEBA', 
               '#739E82','#46C2CB','#FB2576','#65647C','#285430','#DC3535',
             ],
             color1: ref('rgba(65, 163, 255, 1)')

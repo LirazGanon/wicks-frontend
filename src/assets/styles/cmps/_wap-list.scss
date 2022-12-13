@@ -70,10 +70,7 @@ main:has(.wap-list-container) {
             &:first-child {
                 & button:last-child {
                     display: none;
-                }
-            }
-            // Coming Soon
-            &:last-child {
+           &:last-child {
                 & button {
                     display: none;
                 }
@@ -195,6 +192,9 @@ main:has(.wap-list-container) {
                     }
                 }
             }
-        }
+        }         }
+            }
+            // Coming Soon
+        
     }
 }
